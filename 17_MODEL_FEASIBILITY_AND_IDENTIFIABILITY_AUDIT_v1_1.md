@@ -14,4 +14,4 @@ The only items eligible for an early freeze are (1) research positioning and cla
 | Literature claims | Primary-source claim-to-equation matrix and uncertainty labels | OPEN |
 | Scope | M5 outside static baseline; G04 evidence-only; A_obs vs A* in gap; single-case external validity | DOCUMENT REVISED, EMPIRICAL CHECK OPEN |
 
-The two Claude diagnostic scripts and full A–J report are not present in this repository. Their reported 6/9 and 9/9 results are cited as reviewer findings, not rerun evidence. The conditions and execution record are in 23. Until gates close, no `STRONG PASS` label applies to requirement thresholds.
+The full A–J report, subsequent rereview, SHA-256 manifest, scripts and reviewer outputs are now under `claude_review_evidence/`. We verified the manifest and reran both scripts locally on the unchanged v1.0 simulated 04/05 inputs; results and the original **R1–R14** closure status are in 23. These tests still cannot validate the new candidate equations in 25. Until gates close, no `STRONG PASS` label applies to requirement thresholds.

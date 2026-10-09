@@ -8,4 +8,4 @@ Google Drive synchronized reading copy of 21–24: https://docs.google.com/docum
 
 Decision chain: JPC Boss → Manager → Junior. Fullon/全漢 relationship and board governance can constrain it only to the extent actual rights are documented; Mega VC/兆豐創投 independently challenges public-value/risk assumptions and is not the study's main decision maker. M5 stays outside the static baseline; G04 remains evidence-only.
 
-The original Claude A–J report and both diagnostics are not included here. `23` therefore distinguishes reviewer-reported simulated findings from checks run in this branch.
+The original A–J report, second rereview, both diagnostic scripts, captured output and checksum manifest are now in `claude_review_evidence/`. `23` records the verified local reruns, their simulated-only scope, and R1–R14. The new candidates 25–27 specify bilevel lookup equations, G-to-mechanism trace/anchors, and interview ethics. They are not an empirically calibrated solver.

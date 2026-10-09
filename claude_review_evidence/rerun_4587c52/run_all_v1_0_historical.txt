@@ -1,0 +1,8 @@
+=== AI x Decision x MLP v1.0 LOCAL VALIDATION ===
+[1/4] Solver reproduction: PASS
+[2/4] 9-scenario reproduction: PASS
+[3/4] Domain conformance: PASS (cases=768, states=3121, mismatches=0)
+[4/4] Returned-solution constraints: PASS
+Mutation regression: PASS (720/768 detected)
+
+FINAL LOCAL VERDICT: PASS
