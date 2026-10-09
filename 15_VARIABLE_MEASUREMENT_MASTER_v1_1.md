@@ -4,6 +4,8 @@ Base mathematical freeze: `main@1f2e72f1894c8d4eb7929c39756d7b6af607545b`.
 
 This file does **not** modify the v1.0 mathematical skeleton. It defines the empirical calibration layer needed to move from simulated feasibility inputs to public-data / consented-elicitation parameters.
 
+**Audit dependency:** construct definitions and measurement logic are subject to review in `20_CLAUDE_REVIEW_PACKET_GAP_TO_CONSTRUCT_MODEL_v1_1.md` before any v1.1 measurement freeze.
+
 ## 1. Governing separation
 
 The empirical design must keep five object types separate:
