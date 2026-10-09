@@ -1,5 +1,7 @@
 # AI × Decision × MLP — Variable & Measurement Master v1.1
 
+> **SUPERSEDED / HISTORICAL v1.1 PROPOSAL — Measurement freeze FAIL.** Read 21–23 for the governing v1.2 candidate and 24 for the Claude re-review. The no-structural-change, three-independent-level, threshold-identification and static-M5 claims below are withdrawn where they conflict. v1.0 solver remains a simulated historical baseline.
+
 Base mathematical freeze: `main@1f2e72f1894c8d4eb7929c39756d7b6af607545b`.
 
 This file does **not** modify the v1.0 mathematical skeleton. It defines the empirical calibration layer needed to move from simulated feasibility inputs to public-data / consented-elicitation parameters.

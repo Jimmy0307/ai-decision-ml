@@ -1,5 +1,7 @@
 # JPC Expert Elicitation Protocol v1.1
 
+> **SUPERSEDED / HISTORICAL v1.1 PROPOSAL — Measurement freeze FAIL.** Read 21–23 for the governing v1.2 candidate and 24 for the Claude re-review. The no-structural-change, three-independent-level, threshold-identification and static-M5 claims below are withdrawn where they conflict. v1.0 solver remains a simulated historical baseline.
+
 Purpose: collect only the judgments and workflow evidence needed to calibrate the frozen v1.0 MLP. This protocol does **not** request confidential internal records, exact undisclosed budgets, ERP transaction dumps, private customer data, or privileged system logs.
 
 ## 1. Target panel

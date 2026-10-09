@@ -1,4 +1,5 @@
 Block,Equation_or_Object,Parameter_or_Input,Role,Primary_Source,Secondary_Source,Collection_Method,Identification_Status,Recommended_Treatment
+STATUS,SUPERSEDED_BY_21_22_23,REVIEW_CANDIDATE,Historical matrix only,Claude F1-F3,See corrected v1.2 candidate,Do not calibrate from legacy rows,FAIL,Not frozen
 Evidence,"O/E = Observed / (k_a*k_d/M)",O/E,Evidence descriptor,Frozen Priority_Gaps,None,Direct calculation,C1,Do not use as optimization weight
 Industry,"Z_t=(ID,TP,CP,SC,SP)",ID_t,Exogenous context,Public industry data,Spokesperson; Fullon executive,Time-series/public coding,C1/C2,Scenario/index
 Industry,"Z_t=(ID,TP,CP,SC,SP)",TP_t,Exogenous context,Public technology/industry sources,Fullon executive,Structured coding,C1/C2,Scenario/index
