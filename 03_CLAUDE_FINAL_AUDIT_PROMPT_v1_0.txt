@@ -1,0 +1,26 @@
+Final adversarial audit of AI × Decision × MLP v1.0.
+
+Goal: decide whether the mathematical skeleton can be frozen and empirical calibration can begin.
+
+Required checks:
+1. Run 04 and compare all nine scenarios to 05.
+2. Run 06 and compare to 07; it is a consistency check, not external independent validation.
+3. Verify 768/3121/0 conformance and 720/768 mutation detection.
+4. Verify file 11 includes k_a,k_d,M,E_analytic and O_E_Ratio=Observed/E_analytic for 16/16.
+5. Verify Null_Mean is the 10,000-replicate mean and is not the O/E denominator.
+6. Verify four q columns exist for all G01–G16 and all four q≤.05.
+7. Verify all four direction columns are DEPLETED and Directional_Consistency_All4=True for all 16.
+8. Verify workbook Priority_Gaps_Freeze_v1.0 matches CSV on all shared columns.
+9. Verify source-governance limitation: Priority_Gaps governs; independent V5 file-level derivation is not established; future conflicts require explicit reconciliation.
+10. Verify robust-depletion definition includes BH q≤.05 AND four-analysis directional consistency plus non-inference boundaries.
+11. Verify threshold formulas match code with adj inside max.
+12. Verify T3 exact solver order and T2 uses same rank.
+13. Verify G10 exact mechanism: L1 b_A=0 -> Abar=0 -> L2 A=0; fixed L2 state still AIAssist.
+14. Verify A6=F1/F2/U_im; optimistic/pessimistic caveat; common-mode caveat; non-tractability sentence.
+15. Verify G16=BASELINE_BRIDGE and static role count=13.
+16. Verify all component/config/governance/process tables remain code-consistent.
+17. Verify W1–W5 from Claude v0.9 are closed.
+18. Identify any remaining mismatch that changes equations, outputs, proof validity or source semantics.
+
+Required verdict: PASS / PASS WITH CORRECTIONS / FAIL.
+If only cosmetic formatting remains, classify it separately and do not block mathematical freeze.

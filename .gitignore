@@ -1,0 +1,4 @@
+LOCAL_solver_results.json
+LOCAL_consistency_results.json
+__pycache__/
+*.pyc

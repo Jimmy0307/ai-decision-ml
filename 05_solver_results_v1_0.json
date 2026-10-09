@@ -1,0 +1,819 @@
+{
+  "model": "AI × Decision × MLP Mathematical Feasibility Prototype v1.0",
+  "warning": "ALL NUMERIC VALUES ARE SIMULATED; NO PRIVILEGED INTERNAL JPC DATA USED.",
+  "claim_scope": "v1.0 mathematical freeze: exact only over the bounded finite Option-alpha prototype domain under fixed tie-breaking selections; not a tractability claim for arbitrary continuous/nonconvex tri-level programs.",
+  "robust_depletion_definition": "A robust depletion is a document-level AI-family x Decision-family cell whose observed edge count is significantly below the specified null expectation (BH q<=0.05) and directionally consistent in all four V5 analyses. It describes literature structure conditional on the observed marginal structure; it is not a field-wide absence claim and not an enterprise practical-problem claim.",
+  "priority_gaps_freeze_note": "O_E_Ratio uses the analytic expectation E=k_a*k_d/M (M=2180), not Null_Mean. Null_Mean is the mean of 10,000 fixed-degree null replicates. The v1.0 validation pack includes all four manuscript q-value columns and direction indicators for G01-G16.",
+  "tie_breaking_T3_order": [
+    "HumanOnly",
+    "AIAssist",
+    "HumanFirstAICheck",
+    "AIFirstReview",
+    "BoundedAutomation"
+  ],
+  "conformance_common_mode_caveat": "The generator-vs-canonical test shares D_req/R_req/H_req/EA_req/WI_req implementations between oracle and generator. It detects generator-domain regressions but cannot by itself detect a common-mode defect in those threshold functions.",
+  "option_alpha_note": "On ordinal L={0,1,2,3}, H<=3A, EA<=3A, WI<=3A bind only at A=0.",
+  "toy_resource_unit_cost_c_ir": 1.0,
+  "incorrect_decision_factor": 0.35,
+  "g10_modeling_disclosure": "Single fixed score/truth realization per selection process. s_i and truth_i are known to all three toy levels when they optimise. tau acts as a step at s_i. Oversight/assurance and review configurations reduce risk or change utility but do not correct a wrong AI recommendation. In the tau_P2=0.70 probe, Level 1 sets P2 b_A=0, so Abar_P2=0 and Level 2 must choose A=0. At a fixed Level-2 state (1,1,1,1), the Level-3 follower would still prefer AIAssist. This is a perfect-information sensitivity toy, not an ex-ante uncertainty/error-rate model.",
+  "proof_checks": {
+    "A0_thresholds_zero": true,
+    "HumanOnly_requirements_zero": true,
+    "HumanOnly_allowed_all_governance": true,
+    "governance_capacity_nonnegative": true,
+    "zero_allocation_exists": true,
+    "null_architecture_exists_C": true,
+    "null_architecture_exists_F": true,
+    "null_architecture_exists_D": true,
+    "all_sufficient_conditions_pass": true
+  },
+  "generator_vs_canonical_domain_check": {
+    "cases": 768,
+    "canonical_feasible_states_counted_with_repetition": 3121,
+    "mismatch_cases": 0,
+    "pass": true,
+    "first_mismatches": []
+  },
+  "mutation_sensitivity_check": {
+    "mutation": "disable_option_alpha_and_relax_A0_branch_in_real_generator",
+    "cases": 768,
+    "detected_mismatch_cases": 720,
+    "pass": true
+  },
+  "governance_permission_probe": {
+    "scenario": "C,B=5",
+    "baseline_F1": 2.157977,
+    "restricted_F1": 0.837493,
+    "baseline_configs": [
+      "AIAssist",
+      "AIAssist",
+      "AIAssist"
+    ],
+    "restricted_configs": [
+      "HumanOnly",
+      "HumanOnly",
+      "HumanFirstAICheck"
+    ],
+    "permission_path_operates": true
+  },
+  "g10_full_model_sensitivity": [
+    {
+      "tau_P2": 0.5,
+      "score_P2": 0.65,
+      "truth_P2": 1,
+      "F1": 2.244444,
+      "F2": 4.528273,
+      "P2_configuration": "AIAssist",
+      "P2_AI_recommended_decision": 1,
+      "P2_adopted_decision": 1,
+      "P2_reported_psi": 1.08,
+      "P2_local_utility": 0.520705
+    },
+    {
+      "tau_P2": 0.6,
+      "score_P2": 0.65,
+      "truth_P2": 1,
+      "F1": 2.244444,
+      "F2": 4.528273,
+      "P2_configuration": "AIAssist",
+      "P2_AI_recommended_decision": 1,
+      "P2_adopted_decision": 1,
+      "P2_reported_psi": 1.08,
+      "P2_local_utility": 0.520705
+    },
+    {
+      "tau_P2": 0.7,
+      "score_P2": 0.65,
+      "truth_P2": 1,
+      "F1": 1.450338,
+      "F2": 4.435481,
+      "P2_configuration": "HumanOnly",
+      "P2_AI_recommended_decision": 0,
+      "P2_adopted_decision": null,
+      "P2_reported_psi": null,
+      "P2_local_utility": 0.0
+    }
+  ],
+  "activity_notes": {
+    "G05": "Allocation task-class slice is not instantiated by the three-process v1.0 toy.",
+    "G03": "The execution-specific A=3 WI floor is not reached in the nine baseline runs.",
+    "G07": "Reliance/override is embedded in configuration utility and is not separately identified in v1.0.",
+    "G16": "BASELINE_BRIDGE: bridge evidence for the bounded-automation compatibility row; not a duplicate hard constraint.",
+    "G02_G08": "The u-indexed oversight slices are structurally distinct but numerically identical in v1.0 because all mode adjustments are 0.",
+    "G05_G13": "The t-indexed assurance slices are structurally distinct but numerically identical in v1.0 because all task adjustments are 0."
+  },
+  "depletion_roles": {
+    "baseline": [
+      "G01",
+      "G02",
+      "G03",
+      "G05",
+      "G06",
+      "G07",
+      "G08",
+      "G09",
+      "G10",
+      "G13",
+      "G14",
+      "G15"
+    ],
+    "baseline_bridge": [
+      "G16"
+    ],
+    "static_baseline_role_count": 13,
+    "dynamic_extension": [
+      "G11",
+      "G12"
+    ],
+    "temporal_monitor": [
+      "G04"
+    ]
+  },
+  "results": [
+    {
+      "governance": "C",
+      "budget": 3,
+      "F1_best": 1.708084,
+      "F2_response": 4.386533,
+      "L1_allocation_vector": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "caps": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        0,
+        2,
+        1
+      ],
+      "realized_value": 1.55952,
+      "residual_risk": 0.268421,
+      "AI_adoptions": 2,
+      "processes": [
+        {
+          "process": "P1",
+          "A": 1,
+          "H": 1,
+          "WI": 1,
+          "EA": 1,
+          "configuration": "AIAssist",
+          "AI_recommended_decision": null,
+          "adopted_decision": null,
+          "reported_psi": 1.08,
+          "local_utility": 0.654695
+        },
+        {
+          "process": "P2",
+          "A": 1,
+          "H": 1,
+          "WI": 1,
+          "EA": 1,
+          "configuration": "AIAssist",
+          "AI_recommended_decision": 1,
+          "adopted_decision": 1,
+          "reported_psi": 1.08,
+          "local_utility": 0.505509
+        },
+        {
+          "process": "P3",
+          "A": 0,
+          "H": 0,
+          "WI": 0,
+          "EA": 0,
+          "configuration": "HumanOnly",
+          "AI_recommended_decision": 1,
+          "adopted_decision": null,
+          "reported_psi": null,
+          "local_utility": 0.0
+        }
+      ],
+      "status": "SIMULATED FEASIBILITY ONLY — NOT EMPIRICAL RESULT"
+    },
+    {
+      "governance": "F",
+      "budget": 3,
+      "F1_best": 1.775158,
+      "F2_response": 4.430393,
+      "L1_allocation_vector": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "caps": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        0,
+        2,
+        1
+      ],
+      "realized_value": 1.6416,
+      "residual_risk": 0.315789,
+      "AI_adoptions": 2,
+      "processes": [
+        {
+          "process": "P1",
+          "A": 1,
+          "H": 1,
+          "WI": 1,
+          "EA": 1,
+          "configuration": "AIAssist",
+          "AI_recommended_decision": null,
+          "adopted_decision": null,
+          "reported_psi": 1.08,
+          "local_utility": 0.686053
+        },
+        {
+          "process": "P2",
+          "A": 1,
+          "H": 1,
+          "WI": 1,
+          "EA": 1,
+          "configuration": "AIAssist",
+          "AI_recommended_decision": 1,
+          "adopted_decision": 1,
+          "reported_psi": 1.08,
+          "local_utility": 0.520705
+        },
+        {
+          "process": "P3",
+          "A": 0,
+          "H": 0,
+          "WI": 0,
+          "EA": 0,
+          "configuration": "HumanOnly",
+          "AI_recommended_decision": 1,
+          "adopted_decision": null,
+          "reported_psi": null,
+          "local_utility": 0.0
+        }
+      ],
+      "status": "SIMULATED FEASIBILITY ONLY — NOT EMPIRICAL RESULT"
+    },
+    {
+      "governance": "D",
+      "budget": 3,
+      "F1_best": 1.842232,
+      "F2_response": 4.474253,
+      "L1_allocation_vector": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "caps": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        0,
+        2,
+        1
+      ],
+      "realized_value": 1.72368,
+      "residual_risk": 0.363158,
+      "AI_adoptions": 2,
+      "processes": [
+        {
+          "process": "P1",
+          "A": 1,
+          "H": 1,
+          "WI": 1,
+          "EA": 1,
+          "configuration": "AIAssist",
+          "AI_recommended_decision": null,
+          "adopted_decision": null,
+          "reported_psi": 1.08,
+          "local_utility": 0.717411
+        },
+        {
+          "process": "P2",
+          "A": 1,
+          "H": 1,
+          "WI": 1,
+          "EA": 1,
+          "configuration": "AIAssist",
+          "AI_recommended_decision": 1,
+          "adopted_decision": 1,
+          "reported_psi": 1.08,
+          "local_utility": 0.535901
+        },
+        {
+          "process": "P3",
+          "A": 0,
+          "H": 0,
+          "WI": 0,
+          "EA": 0,
+          "configuration": "HumanOnly",
+          "AI_recommended_decision": 1,
+          "adopted_decision": null,
+          "reported_psi": null,
+          "local_utility": 0.0
+        }
+      ],
+      "status": "SIMULATED FEASIBILITY ONLY — NOT EMPIRICAL RESULT"
+    },
+    {
+      "governance": "C",
+      "budget": 5,
+      "F1_best": 2.157977,
+      "F2_response": 4.464747,
+      "L1_allocation_vector": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "caps": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        2
+      ],
+      "realized_value": 2.22072,
+      "residual_risk": 0.450564,
+      "AI_adoptions": 3,
+      "processes": [
+        {
+          "process": "P1",
+          "A": 1,
+          "H": 1,
+          "WI": 1,
+          "EA": 1,
+          "configuration": "AIAssist",
+          "AI_recommended_decision": null,
+          "adopted_decision": null,
+          "reported_psi": 1.08,
+          "local_utility": 0.654695
+        },
+        {
+          "process": "P2",
+          "A": 1,
+          "H": 1,
+          "WI": 1,
+          "EA": 1,
+          "configuration": "AIAssist",
+          "AI_recommended_decision": 1,
+          "adopted_decision": 1,
+          "reported_psi": 1.08,
+          "local_utility": 0.505509
+        },
+        {
+          "process": "P3",
+          "A": 1,
+          "H": 2,
+          "WI": 2,
+          "EA": 2,
+          "configuration": "AIAssist",
+          "AI_recommended_decision": 1,
+          "adopted_decision": 1,
+          "reported_psi": 1.16,
+          "local_utility": 0.394093
+        }
+      ],
+      "status": "SIMULATED FEASIBILITY ONLY — NOT EMPIRICAL RESULT"
+    },
+    {
+      "governance": "F",
+      "budget": 5,
+      "F1_best": 2.244444,
+      "F2_response": 4.528273,
+      "L1_allocation_vector": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "caps": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        2
+      ],
+      "realized_value": 2.3376,
+      "residual_risk": 0.530075,
+      "AI_adoptions": 3,
+      "processes": [
+        {
+          "process": "P1",
+          "A": 1,
+          "H": 1,
+          "WI": 1,
+          "EA": 1,
+          "configuration": "AIAssist",
+          "AI_recommended_decision": null,
+          "adopted_decision": null,
+          "reported_psi": 1.08,
+          "local_utility": 0.686053
+        },
+        {
+          "process": "P2",
+          "A": 1,
+          "H": 1,
+          "WI": 1,
+          "EA": 1,
+          "configuration": "AIAssist",
+          "AI_recommended_decision": 1,
+          "adopted_decision": 1,
+          "reported_psi": 1.08,
+          "local_utility": 0.520705
+        },
+        {
+          "process": "P3",
+          "A": 1,
+          "H": 2,
+          "WI": 2,
+          "EA": 2,
+          "configuration": "AIAssist",
+          "AI_recommended_decision": 1,
+          "adopted_decision": 1,
+          "reported_psi": 1.16,
+          "local_utility": 0.404786
+        }
+      ],
+      "status": "SIMULATED FEASIBILITY ONLY — NOT EMPIRICAL RESULT"
+    },
+    {
+      "governance": "D",
+      "budget": 5,
+      "F1_best": 2.33091,
+      "F2_response": 4.591798,
+      "L1_allocation_vector": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "caps": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        2
+      ],
+      "realized_value": 2.45448,
+      "residual_risk": 0.609586,
+      "AI_adoptions": 3,
+      "processes": [
+        {
+          "process": "P1",
+          "A": 1,
+          "H": 1,
+          "WI": 1,
+          "EA": 1,
+          "configuration": "AIAssist",
+          "AI_recommended_decision": null,
+          "adopted_decision": null,
+          "reported_psi": 1.08,
+          "local_utility": 0.717411
+        },
+        {
+          "process": "P2",
+          "A": 1,
+          "H": 1,
+          "WI": 1,
+          "EA": 1,
+          "configuration": "AIAssist",
+          "AI_recommended_decision": 1,
+          "adopted_decision": 1,
+          "reported_psi": 1.08,
+          "local_utility": 0.535901
+        },
+        {
+          "process": "P3",
+          "A": 1,
+          "H": 2,
+          "WI": 2,
+          "EA": 2,
+          "configuration": "AIAssist",
+          "AI_recommended_decision": 1,
+          "adopted_decision": 1,
+          "reported_psi": 1.16,
+          "local_utility": 0.415479
+        }
+      ],
+      "status": "SIMULATED FEASIBILITY ONLY — NOT EMPIRICAL RESULT"
+    },
+    {
+      "governance": "C",
+      "budget": 7,
+      "F1_best": 2.157977,
+      "F2_response": 4.464747,
+      "L1_allocation_vector": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "caps": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        2
+      ],
+      "realized_value": 2.22072,
+      "residual_risk": 0.450564,
+      "AI_adoptions": 3,
+      "processes": [
+        {
+          "process": "P1",
+          "A": 1,
+          "H": 1,
+          "WI": 1,
+          "EA": 1,
+          "configuration": "AIAssist",
+          "AI_recommended_decision": null,
+          "adopted_decision": null,
+          "reported_psi": 1.08,
+          "local_utility": 0.654695
+        },
+        {
+          "process": "P2",
+          "A": 1,
+          "H": 1,
+          "WI": 1,
+          "EA": 1,
+          "configuration": "AIAssist",
+          "AI_recommended_decision": 1,
+          "adopted_decision": 1,
+          "reported_psi": 1.08,
+          "local_utility": 0.505509
+        },
+        {
+          "process": "P3",
+          "A": 1,
+          "H": 2,
+          "WI": 2,
+          "EA": 2,
+          "configuration": "AIAssist",
+          "AI_recommended_decision": 1,
+          "adopted_decision": 1,
+          "reported_psi": 1.16,
+          "local_utility": 0.394093
+        }
+      ],
+      "status": "SIMULATED FEASIBILITY ONLY — NOT EMPIRICAL RESULT"
+    },
+    {
+      "governance": "F",
+      "budget": 7,
+      "F1_best": 2.244444,
+      "F2_response": 4.528273,
+      "L1_allocation_vector": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "caps": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        2
+      ],
+      "realized_value": 2.3376,
+      "residual_risk": 0.530075,
+      "AI_adoptions": 3,
+      "processes": [
+        {
+          "process": "P1",
+          "A": 1,
+          "H": 1,
+          "WI": 1,
+          "EA": 1,
+          "configuration": "AIAssist",
+          "AI_recommended_decision": null,
+          "adopted_decision": null,
+          "reported_psi": 1.08,
+          "local_utility": 0.686053
+        },
+        {
+          "process": "P2",
+          "A": 1,
+          "H": 1,
+          "WI": 1,
+          "EA": 1,
+          "configuration": "AIAssist",
+          "AI_recommended_decision": 1,
+          "adopted_decision": 1,
+          "reported_psi": 1.08,
+          "local_utility": 0.520705
+        },
+        {
+          "process": "P3",
+          "A": 1,
+          "H": 2,
+          "WI": 2,
+          "EA": 2,
+          "configuration": "AIAssist",
+          "AI_recommended_decision": 1,
+          "adopted_decision": 1,
+          "reported_psi": 1.16,
+          "local_utility": 0.404786
+        }
+      ],
+      "status": "SIMULATED FEASIBILITY ONLY — NOT EMPIRICAL RESULT"
+    },
+    {
+      "governance": "D",
+      "budget": 7,
+      "F1_best": 2.615502,
+      "F2_response": 4.916448,
+      "L1_allocation_vector": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        2,
+        0,
+        2
+      ],
+      "caps": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        2,
+        2,
+        3
+      ],
+      "realized_value": 3.28608,
+      "residual_risk": 0.736131,
+      "AI_adoptions": 3,
+      "processes": [
+        {
+          "process": "P1",
+          "A": 1,
+          "H": 1,
+          "WI": 1,
+          "EA": 1,
+          "configuration": "AIAssist",
+          "AI_recommended_decision": null,
+          "adopted_decision": null,
+          "reported_psi": 1.08,
+          "local_utility": 0.717411
+        },
+        {
+          "process": "P2",
+          "A": 1,
+          "H": 1,
+          "WI": 1,
+          "EA": 1,
+          "configuration": "AIAssist",
+          "AI_recommended_decision": 1,
+          "adopted_decision": 1,
+          "reported_psi": 1.08,
+          "local_utility": 0.535901
+        },
+        {
+          "process": "P3",
+          "A": 2,
+          "H": 3,
+          "WI": 3,
+          "EA": 3,
+          "configuration": "HumanFirstAICheck",
+          "AI_recommended_decision": 1,
+          "adopted_decision": 1,
+          "reported_psi": 1.24,
+          "local_utility": 1.05317
+        }
+      ],
+      "status": "SIMULATED FEASIBILITY ONLY — NOT EMPIRICAL RESULT"
+    }
+  ],
+  "runtime_seconds": 13.8855
+}

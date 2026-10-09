@@ -1,0 +1,628 @@
+{
+  "verifier": "reimplementation_consistency_check_v0_7",
+  "generator_vs_canonical_domain_check": {
+    "cases": 768,
+    "canonical_feasible_states_counted_with_repetition": 3121,
+    "pass": true,
+    "mismatch_cases": 0
+  },
+  "domain_mismatches": [],
+  "official_9_scenario_reproduction": [
+    {
+      "budget": 3,
+      "governance": "C",
+      "F1_reimpl": 1.708084,
+      "F1_official": 1.708084,
+      "F2_reimpl": 4.386533,
+      "F2_official": 4.386533,
+      "alloc_match": true,
+      "configs_reimpl": [
+        "AIAssist",
+        "AIAssist",
+        "HumanOnly"
+      ],
+      "configs_official": [
+        "AIAssist",
+        "AIAssist",
+        "HumanOnly"
+      ],
+      "per_process_checks": [
+        {
+          "process": "P1",
+          "A_match": true,
+          "H_match": true,
+          "WI_match": true,
+          "EA_match": true,
+          "configuration_match": true,
+          "AI_recommended_decision_match": true,
+          "adopted_decision_match": true,
+          "reported_psi_match": true,
+          "local_utility_match": true,
+          "pass": true
+        },
+        {
+          "process": "P2",
+          "A_match": true,
+          "H_match": true,
+          "WI_match": true,
+          "EA_match": true,
+          "configuration_match": true,
+          "AI_recommended_decision_match": true,
+          "adopted_decision_match": true,
+          "reported_psi_match": true,
+          "local_utility_match": true,
+          "pass": true
+        },
+        {
+          "process": "P3",
+          "A_match": true,
+          "H_match": true,
+          "WI_match": true,
+          "EA_match": true,
+          "configuration_match": true,
+          "AI_recommended_decision_match": true,
+          "adopted_decision_match": true,
+          "reported_psi_match": true,
+          "local_utility_match": true,
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "budget": 3,
+      "governance": "F",
+      "F1_reimpl": 1.775158,
+      "F1_official": 1.775158,
+      "F2_reimpl": 4.430393,
+      "F2_official": 4.430393,
+      "alloc_match": true,
+      "configs_reimpl": [
+        "AIAssist",
+        "AIAssist",
+        "HumanOnly"
+      ],
+      "configs_official": [
+        "AIAssist",
+        "AIAssist",
+        "HumanOnly"
+      ],
+      "per_process_checks": [
+        {
+          "process": "P1",
+          "A_match": true,
+          "H_match": true,
+          "WI_match": true,
+          "EA_match": true,
+          "configuration_match": true,
+          "AI_recommended_decision_match": true,
+          "adopted_decision_match": true,
+          "reported_psi_match": true,
+          "local_utility_match": true,
+          "pass": true
+        },
+        {
+          "process": "P2",
+          "A_match": true,
+          "H_match": true,
+          "WI_match": true,
+          "EA_match": true,
+          "configuration_match": true,
+          "AI_recommended_decision_match": true,
+          "adopted_decision_match": true,
+          "reported_psi_match": true,
+          "local_utility_match": true,
+          "pass": true
+        },
+        {
+          "process": "P3",
+          "A_match": true,
+          "H_match": true,
+          "WI_match": true,
+          "EA_match": true,
+          "configuration_match": true,
+          "AI_recommended_decision_match": true,
+          "adopted_decision_match": true,
+          "reported_psi_match": true,
+          "local_utility_match": true,
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "budget": 3,
+      "governance": "D",
+      "F1_reimpl": 1.842232,
+      "F1_official": 1.842232,
+      "F2_reimpl": 4.474253,
+      "F2_official": 4.474253,
+      "alloc_match": true,
+      "configs_reimpl": [
+        "AIAssist",
+        "AIAssist",
+        "HumanOnly"
+      ],
+      "configs_official": [
+        "AIAssist",
+        "AIAssist",
+        "HumanOnly"
+      ],
+      "per_process_checks": [
+        {
+          "process": "P1",
+          "A_match": true,
+          "H_match": true,
+          "WI_match": true,
+          "EA_match": true,
+          "configuration_match": true,
+          "AI_recommended_decision_match": true,
+          "adopted_decision_match": true,
+          "reported_psi_match": true,
+          "local_utility_match": true,
+          "pass": true
+        },
+        {
+          "process": "P2",
+          "A_match": true,
+          "H_match": true,
+          "WI_match": true,
+          "EA_match": true,
+          "configuration_match": true,
+          "AI_recommended_decision_match": true,
+          "adopted_decision_match": true,
+          "reported_psi_match": true,
+          "local_utility_match": true,
+          "pass": true
+        },
+        {
+          "process": "P3",
+          "A_match": true,
+          "H_match": true,
+          "WI_match": true,
+          "EA_match": true,
+          "configuration_match": true,
+          "AI_recommended_decision_match": true,
+          "adopted_decision_match": true,
+          "reported_psi_match": true,
+          "local_utility_match": true,
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "budget": 5,
+      "governance": "C",
+      "F1_reimpl": 2.157977,
+      "F1_official": 2.157977,
+      "F2_reimpl": 4.464747,
+      "F2_official": 4.464747,
+      "alloc_match": true,
+      "configs_reimpl": [
+        "AIAssist",
+        "AIAssist",
+        "AIAssist"
+      ],
+      "configs_official": [
+        "AIAssist",
+        "AIAssist",
+        "AIAssist"
+      ],
+      "per_process_checks": [
+        {
+          "process": "P1",
+          "A_match": true,
+          "H_match": true,
+          "WI_match": true,
+          "EA_match": true,
+          "configuration_match": true,
+          "AI_recommended_decision_match": true,
+          "adopted_decision_match": true,
+          "reported_psi_match": true,
+          "local_utility_match": true,
+          "pass": true
+        },
+        {
+          "process": "P2",
+          "A_match": true,
+          "H_match": true,
+          "WI_match": true,
+          "EA_match": true,
+          "configuration_match": true,
+          "AI_recommended_decision_match": true,
+          "adopted_decision_match": true,
+          "reported_psi_match": true,
+          "local_utility_match": true,
+          "pass": true
+        },
+        {
+          "process": "P3",
+          "A_match": true,
+          "H_match": true,
+          "WI_match": true,
+          "EA_match": true,
+          "configuration_match": true,
+          "AI_recommended_decision_match": true,
+          "adopted_decision_match": true,
+          "reported_psi_match": true,
+          "local_utility_match": true,
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "budget": 5,
+      "governance": "F",
+      "F1_reimpl": 2.244444,
+      "F1_official": 2.244444,
+      "F2_reimpl": 4.528273,
+      "F2_official": 4.528273,
+      "alloc_match": true,
+      "configs_reimpl": [
+        "AIAssist",
+        "AIAssist",
+        "AIAssist"
+      ],
+      "configs_official": [
+        "AIAssist",
+        "AIAssist",
+        "AIAssist"
+      ],
+      "per_process_checks": [
+        {
+          "process": "P1",
+          "A_match": true,
+          "H_match": true,
+          "WI_match": true,
+          "EA_match": true,
+          "configuration_match": true,
+          "AI_recommended_decision_match": true,
+          "adopted_decision_match": true,
+          "reported_psi_match": true,
+          "local_utility_match": true,
+          "pass": true
+        },
+        {
+          "process": "P2",
+          "A_match": true,
+          "H_match": true,
+          "WI_match": true,
+          "EA_match": true,
+          "configuration_match": true,
+          "AI_recommended_decision_match": true,
+          "adopted_decision_match": true,
+          "reported_psi_match": true,
+          "local_utility_match": true,
+          "pass": true
+        },
+        {
+          "process": "P3",
+          "A_match": true,
+          "H_match": true,
+          "WI_match": true,
+          "EA_match": true,
+          "configuration_match": true,
+          "AI_recommended_decision_match": true,
+          "adopted_decision_match": true,
+          "reported_psi_match": true,
+          "local_utility_match": true,
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "budget": 5,
+      "governance": "D",
+      "F1_reimpl": 2.33091,
+      "F1_official": 2.33091,
+      "F2_reimpl": 4.591798,
+      "F2_official": 4.591798,
+      "alloc_match": true,
+      "configs_reimpl": [
+        "AIAssist",
+        "AIAssist",
+        "AIAssist"
+      ],
+      "configs_official": [
+        "AIAssist",
+        "AIAssist",
+        "AIAssist"
+      ],
+      "per_process_checks": [
+        {
+          "process": "P1",
+          "A_match": true,
+          "H_match": true,
+          "WI_match": true,
+          "EA_match": true,
+          "configuration_match": true,
+          "AI_recommended_decision_match": true,
+          "adopted_decision_match": true,
+          "reported_psi_match": true,
+          "local_utility_match": true,
+          "pass": true
+        },
+        {
+          "process": "P2",
+          "A_match": true,
+          "H_match": true,
+          "WI_match": true,
+          "EA_match": true,
+          "configuration_match": true,
+          "AI_recommended_decision_match": true,
+          "adopted_decision_match": true,
+          "reported_psi_match": true,
+          "local_utility_match": true,
+          "pass": true
+        },
+        {
+          "process": "P3",
+          "A_match": true,
+          "H_match": true,
+          "WI_match": true,
+          "EA_match": true,
+          "configuration_match": true,
+          "AI_recommended_decision_match": true,
+          "adopted_decision_match": true,
+          "reported_psi_match": true,
+          "local_utility_match": true,
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "budget": 7,
+      "governance": "C",
+      "F1_reimpl": 2.157977,
+      "F1_official": 2.157977,
+      "F2_reimpl": 4.464747,
+      "F2_official": 4.464747,
+      "alloc_match": true,
+      "configs_reimpl": [
+        "AIAssist",
+        "AIAssist",
+        "AIAssist"
+      ],
+      "configs_official": [
+        "AIAssist",
+        "AIAssist",
+        "AIAssist"
+      ],
+      "per_process_checks": [
+        {
+          "process": "P1",
+          "A_match": true,
+          "H_match": true,
+          "WI_match": true,
+          "EA_match": true,
+          "configuration_match": true,
+          "AI_recommended_decision_match": true,
+          "adopted_decision_match": true,
+          "reported_psi_match": true,
+          "local_utility_match": true,
+          "pass": true
+        },
+        {
+          "process": "P2",
+          "A_match": true,
+          "H_match": true,
+          "WI_match": true,
+          "EA_match": true,
+          "configuration_match": true,
+          "AI_recommended_decision_match": true,
+          "adopted_decision_match": true,
+          "reported_psi_match": true,
+          "local_utility_match": true,
+          "pass": true
+        },
+        {
+          "process": "P3",
+          "A_match": true,
+          "H_match": true,
+          "WI_match": true,
+          "EA_match": true,
+          "configuration_match": true,
+          "AI_recommended_decision_match": true,
+          "adopted_decision_match": true,
+          "reported_psi_match": true,
+          "local_utility_match": true,
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "budget": 7,
+      "governance": "F",
+      "F1_reimpl": 2.244444,
+      "F1_official": 2.244444,
+      "F2_reimpl": 4.528273,
+      "F2_official": 4.528273,
+      "alloc_match": true,
+      "configs_reimpl": [
+        "AIAssist",
+        "AIAssist",
+        "AIAssist"
+      ],
+      "configs_official": [
+        "AIAssist",
+        "AIAssist",
+        "AIAssist"
+      ],
+      "per_process_checks": [
+        {
+          "process": "P1",
+          "A_match": true,
+          "H_match": true,
+          "WI_match": true,
+          "EA_match": true,
+          "configuration_match": true,
+          "AI_recommended_decision_match": true,
+          "adopted_decision_match": true,
+          "reported_psi_match": true,
+          "local_utility_match": true,
+          "pass": true
+        },
+        {
+          "process": "P2",
+          "A_match": true,
+          "H_match": true,
+          "WI_match": true,
+          "EA_match": true,
+          "configuration_match": true,
+          "AI_recommended_decision_match": true,
+          "adopted_decision_match": true,
+          "reported_psi_match": true,
+          "local_utility_match": true,
+          "pass": true
+        },
+        {
+          "process": "P3",
+          "A_match": true,
+          "H_match": true,
+          "WI_match": true,
+          "EA_match": true,
+          "configuration_match": true,
+          "AI_recommended_decision_match": true,
+          "adopted_decision_match": true,
+          "reported_psi_match": true,
+          "local_utility_match": true,
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "budget": 7,
+      "governance": "D",
+      "F1_reimpl": 2.615502,
+      "F1_official": 2.615502,
+      "F2_reimpl": 4.916448,
+      "F2_official": 4.916448,
+      "alloc_match": true,
+      "configs_reimpl": [
+        "AIAssist",
+        "AIAssist",
+        "HumanFirstAICheck"
+      ],
+      "configs_official": [
+        "AIAssist",
+        "AIAssist",
+        "HumanFirstAICheck"
+      ],
+      "per_process_checks": [
+        {
+          "process": "P1",
+          "A_match": true,
+          "H_match": true,
+          "WI_match": true,
+          "EA_match": true,
+          "configuration_match": true,
+          "AI_recommended_decision_match": true,
+          "adopted_decision_match": true,
+          "reported_psi_match": true,
+          "local_utility_match": true,
+          "pass": true
+        },
+        {
+          "process": "P2",
+          "A_match": true,
+          "H_match": true,
+          "WI_match": true,
+          "EA_match": true,
+          "configuration_match": true,
+          "AI_recommended_decision_match": true,
+          "adopted_decision_match": true,
+          "reported_psi_match": true,
+          "local_utility_match": true,
+          "pass": true
+        },
+        {
+          "process": "P3",
+          "A_match": true,
+          "H_match": true,
+          "WI_match": true,
+          "EA_match": true,
+          "configuration_match": true,
+          "AI_recommended_decision_match": true,
+          "adopted_decision_match": true,
+          "reported_psi_match": true,
+          "local_utility_match": true,
+          "pass": true
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "official_all_pass": true,
+  "structural_sufficient_condition_checks": {
+    "A0_thresholds_zero": true,
+    "human_only_zero_requirements": true,
+    "governance_capacity_nonnegative": true,
+    "human_only_allowed_all_governance": true,
+    "toy_resource_cost_normalization": true
+  },
+  "structural_all_pass": true,
+  "returned_solution_constraint_checks": [
+    {
+      "budget": 3,
+      "governance": "C",
+      "pass": true,
+      "reasons": []
+    },
+    {
+      "budget": 3,
+      "governance": "F",
+      "pass": true,
+      "reasons": []
+    },
+    {
+      "budget": 3,
+      "governance": "D",
+      "pass": true,
+      "reasons": []
+    },
+    {
+      "budget": 5,
+      "governance": "C",
+      "pass": true,
+      "reasons": []
+    },
+    {
+      "budget": 5,
+      "governance": "F",
+      "pass": true,
+      "reasons": []
+    },
+    {
+      "budget": 5,
+      "governance": "D",
+      "pass": true,
+      "reasons": []
+    },
+    {
+      "budget": 7,
+      "governance": "C",
+      "pass": true,
+      "reasons": []
+    },
+    {
+      "budget": 7,
+      "governance": "F",
+      "pass": true,
+      "reasons": []
+    },
+    {
+      "budget": 7,
+      "governance": "D",
+      "pass": true,
+      "reasons": []
+    }
+  ],
+  "returned_solution_constraints_all_pass": true,
+  "note": "Re-implementation consistency check; shares transcribed coefficients/equations with the canonical toy and is not external independent validation. v1.0 additionally compares per-process A/H/WI/EA, configuration, AI recommendation, adopted decision, reported psi, utility, and checks Option-alpha on returned optima."
+}

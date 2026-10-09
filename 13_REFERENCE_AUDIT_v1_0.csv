@@ -1,0 +1,8 @@
+﻿Ref_ID,Reference,DOI,Role,Boundary
+M01,"Dempe (2002), Foundations of Bilevel Programming",10.1007/b101970,Bilevel hierarchy/nonunique follower response,Not custom theorem source
+M02,"Colson, Marcotte & Savard (2007), An overview of bilevel optimization",10.1007/s10479-007-0176-2,Bilevel formulation/solution/MPEC overview,Not empirical validation
+M03,Fortuny-Amat & McCarl (1981),10.1057/jors.1981.156,KKT/complementarity reformulation for analysed two-level class where KKT characterises lower optimum,Future reformulation only
+M04,Jeroslow (1985),10.1007/BF01586088,Multilevel complexity warning,Existence does not imply scalability
+M05,"Lee & Shih (2001), Fuzzy and Multi-Level Decision Making: An Interactive Computational Approach",10.1007/978-1-4471-0683-8,Fuzzy-interactive multilevel methods,Does not calibrate this study's membership functions
+M06,"Cheng, Shih & Lee (2019), Fuzzy and Multi-Level Decision Making: Soft Computing Approaches, 2nd ed.",10.1007/978-3-319-92525-7,Updated fuzzy/multilevel methods,Not custom theorem source
+M07,"Nash (1951), Non-Cooperative Games",10.2307/1969529,Boundary reference for finite non-cooperative mixed equilibrium,Not coupled generalized equilibrium

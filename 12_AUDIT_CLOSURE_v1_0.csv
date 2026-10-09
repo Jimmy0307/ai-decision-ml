@@ -1,0 +1,6 @@
+﻿ID,Claude v0.9 remaining correction,v1.0 response
+W1,O/E denominator ambiguous,"Added k_a,k_d,M,E_analytic and explicit analytic-denominator statement; Null_Mean separated."
+W2,Four-analysis criterion not self-contained,Added all four q-values and four direction columns plus robustness flags.
+W3,Stale v0.8 labels,Updated relevant workbook headers/notes to v1.0.
+W4,G10 sensitivity wording imprecise,Exact L1 b_A=0 -> Abar=0 -> L2 A=0 wording applied.
+W5,Non-tractability sentence missing,Restored in canonical and formal proof.
