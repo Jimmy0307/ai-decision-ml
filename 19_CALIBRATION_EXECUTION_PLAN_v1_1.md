@@ -4,9 +4,25 @@ Base: v1.0 mathematical skeleton remains frozen on `main@1f2e72f1894c8d4eb7929c3
 
 Goal: replace simulated inputs with a transparent mixture of public observations, consented observations, expert elicitation, interval/fuzzy values and scenario/sensitivity parameters without changing the mathematical skeleton unless a true contradiction is discovered.
 
-## Phase 0 — Freeze decision use cases
+**New governing audit gate:** before use cases are frozen, review `20_CLAUDE_REVIEW_PACKET_GAP_TO_CONSTRUCT_MODEL_v1_1.md`. The mechanism consolidation, construct definitions, 0–3 anchors, requirement-threshold logic, ordinal/cardinal separation, and multilevel hierarchy must survive conceptual audit first.
 
-Before interviews, define 4–6 decision processes `i`.
+## Phase 0 — Gap-to-construct audit
+
+Review and resolve:
+
+- G01–G16 → M1–M5/T1 mechanism assignments;
+- D/R/A/G/H/WI/EA construct distinctness;
+- 0–3 anchor observability;
+- requirement-threshold interpretation;
+- ordinal/cardinal separation;
+- multilevel hierarchy validity;
+- identification status of every parameter family.
+
+**Go/No-Go Gate 0A:** do not freeze empirical use cases or issue a questionnaire until the measurement architecture is judged defensible.
+
+## Phase 0B — Freeze decision use cases
+
+After Gate 0A, define 4–6 decision processes `i`.
 
 Selection criteria:
 
@@ -26,7 +42,7 @@ Target coverage should include at least:
 - execution / coordination;
 - a case with meaningful human-accountability or assurance requirements.
 
-**Go/No-Go Gate 0:** no questionnaire is finalized until the use-case list is frozen.
+**Go/No-Go Gate 0B:** no questionnaire is finalized until the use-case list is frozen.
 
 ## Phase 1 — Public-data calibration table
 
