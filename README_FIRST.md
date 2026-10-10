@@ -1,19 +1,25 @@
-# READ FIRST — Enterprise AI Adoption v2.1 candidate
+# READ FIRST — Enterprise AI Adoption v2.2 candidate
 
 本分支目前唯一 canonical working line：
 
 **企業人工智慧導入作為多層級決策系統：治理、能力配置、組織採用與價值實現。**
 
-## 閱讀順序
+## 閱讀順序（v2.2，2026-10-11）
 
-1. `48_FORENSIC_AUDIT_AND_V2_1_FREEZE_STATUS.md` — freeze 狀態、已修缺陷、剩餘 open gates。
-2. `41_G01_G16_CONVERGENCE_AND_CONSTRUCT_FREEZE_v2_1.md` — G01–G16 收斂至 M1–M4／M5／optional／evidence-only。
-3. `42_ENTERPRISE_PORTFOLIO_MODEL_v2_1.md` — canonical Enterprise–Business Unit bilevel portfolio model。
-4. `43_PARAMETER_IDENTIFICATION_AND_QUANTIFICATION_v2_1.md` — 每個參數的識別需求與缺值後果。
-5. `44_MANUSCRIPT_ENTERPRISE_AI_DECISION_v2_1.md` — Ch1–3 完整、Ch4–6 skeleton、reference audit。
-6. `45_MODEL_VALIDATION_AND_SOLVER_PLAN_v2_1.md` — V0–V7、solver 與 sensitivity 尚待項。
-7. `46_enterprise_portfolio_solver_v2_1.py`、`47_SOLVER_ORACLE_RUN_v2_1.txt` — `SIMULATED_ONLY` reference oracle。
-8. `49_V5_CORPUS_LINEAGE_RECONCILIATION_v2_1.md` — V5 corpus lineage 已調和。
+1. `58_V2_2_FORENSIC_AUDIT_AND_FREEZE_STATUS.md` — v2.2 freeze 狀態、六項稽核、blockers（supersedes 48）。
+2. `41_G01_G16_CONVERGENCE_AND_CONSTRUCT_FREEZE_v2_1.md` — G01–G16 收斂（研究者裁決；G04、G10、G11 經 AI pilot 標為爭議，見 54C）。
+3. `42_ENTERPRISE_PORTFOLIO_MODEL_v2_2.md` — canonical model（supersedes 42 v2.1；修訂見 §20）。
+4. `43_PARAMETER_IDENTIFICATION_AND_QUANTIFICATION_v2_1.md` — 參數識別（未變）。
+5. `44_MANUSCRIPT_ENTERPRISE_AI_DECISION_v2_2.md` — 稿件 v2.2（本機重建；`[DRIVE DIFF PENDING]`）。
+6. `45_MODEL_VALIDATION_AND_SOLVER_PLAN_v2_2.md` — 測試清單與 V0–V7。
+7. `50_SOLVER_COMPLETION_AND_V3_V6_VALIDATION_v2_2.md` — 20 項 synthetic 檢查證據、兩輪稽核、獨立手算 oracle。
+8. `51_enterprise_portfolio_solver_v2_2.py`、`52_SOLVER_ORACLE_RUN_v2_2.txt` — `SIMULATED_ONLY` reference oracle（`V2_2_SYNTHETIC_ENGINEERING_VERDICT: PASS`）。
+9. `53A`（sealed-key commitment）、`53B`（V1 盲編 protocol，預先登記判準）、`54A`／`54B`（盲化題包）、`54C`（AI-BLIND-CODING PILOT）、`55`（裁決模板）、`v1_blind/`、`v1_human_packet/`（人類編碼者用）。
+10. `56_EAX_CONTENT_VALIDITY_PACKET_v2_2.md` — EA-X 內容效度（AI pilot＋人類評分用 v2.2.1 錨點）。
+11. `57_REFERENCE_VERIFICATION_CLOSURE_v2_2.md` — 引文核對。
+12. `49_V5_CORPUS_LINEAGE_RECONCILIATION_v2_1.md` — V5 corpus lineage（已調和）。
+
+v2.1 的 42、44（locator）、45、46、47、48 保留作 provenance。
 
 38–40 為 v2.0 上游 provenance；26、29、30、33–36 為早期 theory／audit／synthetic evidence，不再高於 41–49。
 
@@ -34,4 +40,6 @@ Stage 2 unresolved mapping 使用 `qwen2.5:14b` constrained double-pass。較早
 - shared cost 不可跨 unit 重複扣除。
 - 外部 productivity effect 不可當企業自身 effect。
 - user layer 預設為 conditional response，不為了 multilevel 名稱硬造第三層 optimizer。
-- `SYNTHETIC_ORACLE_PASS` 只代表模型／程式在合成實例的一致性。
+- `SYNTHETIC_ORACLE_PASS`／`V2_2_SYNTHETIC_ENGINEERING_VERDICT: PASS` 只代表模型／程式在合成實例的一致性。
+- 兩個 LLM 編碼者的結果不得當作人類 V1 PASS；目前 `V1_AI_PILOT_COMPLETE`、`V1_HUMAN_BLIND_CODING_PENDING`。
+- 人類編碼者只拿 `v1_human_packet/`，不得取得本 repository（54C 已揭露答案鍵）。

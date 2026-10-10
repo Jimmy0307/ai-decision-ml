@@ -1,17 +1,23 @@
-# AI × Decision × Enterprise AI Adoption — v2.1 Candidate Research Branch
+# AI × Decision × Enterprise AI Adoption — v2.2 Candidate Research Branch
 
 This branch is the active research-design line for **Enterprise AI Adoption as a Multilevel Decision System**.
 
-## Canonical reading order (v2.1 candidate, 2026-10-11)
+## Canonical reading order (v2.2 candidate, 2026-10-11)
 
-1. `41_G01_G16_CONVERGENCE_AND_CONSTRUCT_FREEZE_v2_1.md` — G01–G16 → I1–I4 (M1–M4) + M5 + optional + evidence-only; construct freeze
-2. `42_ENTERPRISE_PORTFOLIO_MODEL_v2_1.md` — canonical Enterprise–Business Unit bilevel portfolio model (P1–P8, Lemma E, Lemma R)
-3. `43_PARAMETER_IDENTIFICATION_AND_QUANTIFICATION_v2_1.md` — identification requirements by model block
-4. `44_MANUSCRIPT_ENTERPRISE_AI_DECISION_v2_1.md` — GitHub locator for the complete canonical manuscript; the full 100,827-byte Markdown manuscript is preserved in Google Drive file `1XNhw0c4s2rUeADll5XBHSGXNWnFjr9nO` because the connected GitHub contents writer cannot safely transmit the full manuscript in one write without truncation
-5. `45_MODEL_VALIDATION_AND_SOLVER_PLAN_v2_1.md` — test inventory and V0–V7 status
-6. `46_enterprise_portfolio_solver_v2_1.py` + `47_SOLVER_ORACLE_RUN_v2_1.txt` — synthetic reference oracle (SIMULATED_ONLY)
-7. `48_FORENSIC_AUDIT_AND_V2_1_FREEZE_STATUS.md` — Phase F audit and freeze status
-8. `49_V5_CORPUS_LINEAGE_RECONCILIATION_v2_1.md` — resolved V5 corpus denominator/model lineage
+1. `58_V2_2_FORENSIC_AUDIT_AND_FREEZE_STATUS.md` — v2.2 forensic audit (six sections) and freeze status; supersedes 48
+2. `41_G01_G16_CONVERGENCE_AND_CONSTRUCT_FREEZE_v2_1.md` — G01–G16 convergence (researcher adjudication; G04/G10/G11 contested by the AI pilot)
+3. `42_ENTERPRISE_PORTFOLIO_MODEL_v2_2.md` — canonical model; supersedes 42 v2.1 (revision log §20)
+4. `43_PARAMETER_IDENTIFICATION_AND_QUANTIFICATION_v2_1.md` — identification requirements (unchanged)
+5. `44_MANUSCRIPT_ENTERPRISE_AI_DECISION_v2_2.md` — manuscript v2.2, rebuilt locally from the v2.1 text + 49 lineage edits + v2.2 changes; `[DRIVE DIFF PENDING]` against the Drive v2.1 full text (file ID `1XNhw0c4s2rUeADll5XBHSGXNWnFjr9nO`)
+6. `45_MODEL_VALIDATION_AND_SOLVER_PLAN_v2_2.md` — test inventory and V0–V7 status
+7. `50_SOLVER_COMPLETION_AND_V3_V6_VALIDATION_v2_2.md` — evidence for the 20 synthetic engineering items, two adversarial reviews, independent hand oracle
+8. `51_enterprise_portfolio_solver_v2_2.py` + `52_SOLVER_ORACLE_RUN_v2_2.txt` — synthetic reference oracle (SIMULATED_ONLY; verdict PASS)
+9. `53A`/`53B`/`54A`/`54B`/`54C`/`55` + `v1_blind/` + `v1_human_packet/` — V1 blind coding: sealed-key commitment, pre-registered protocol, packets, AI pilot, adjudication template, human packet
+10. `56_EAX_CONTENT_VALIDITY_PACKET_v2_2.md` — EA-X content validity (AI pilot + revised anchors for humans)
+11. `57_REFERENCE_VERIFICATION_CLOSURE_v2_2.md` — reference closure
+12. `49_V5_CORPUS_LINEAGE_RECONCILIATION_v2_1.md` — resolved V5 corpus lineage
+
+v2.1 files 42, 44 (locator), 45, 46, 47, 48 remain as provenance.
 
 Files 38–40 and earlier 26/29/30/33–36 remain upstream provenance or historical synthetic evidence; they no longer govern the working specification.
 
@@ -53,6 +59,8 @@ The v1.5/v1.6 synthetic validators remain useful only for regression, schema, un
 
 ## Current status
 
-v2.1 is the active **theoretical/model candidate freeze** for G01–G16 convergence, constructs, the Enterprise–Business Unit portfolio model, parameter-identification specification, manuscript Chapters 1–3, and the Chapter 4 results skeleton.
-
-V0, V1, V2, and V7 remain OPEN; V3–V6 are PARTIAL. Empirical parameters, enterprise decision rights, cross-unit preference conflict, EA-X content validity, firm-specific ROI, V1 independent blind coding, and enterprise empirical calibration remain open. `SYNTHETIC_ORACLE_PASS` is implementation evidence only, not an empirical result.
+- `V2_2_SYNTHETIC_ENGINEERING_VERDICT: PASS` — synthetic engineering only (SIMULATED_ONLY); V3–V6 complete at the synthetic level.
+- `INDEPENDENT_COMPUTATIONAL_REDERIVATION_PASS` (T-ORC-8).
+- `V1_AI_PILOT_COMPLETE`, `V1_HUMAN_BLIND_CODING_PENDING` — there is no V1 PASS; two human coders are required.
+- EA-X remains a conditional candidate (ρ grouping key only).
+- V0, V2, V7 OPEN. No enterprise result, ROI, or calibrated decision exists.
