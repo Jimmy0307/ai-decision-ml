@@ -1,0 +1,17 @@
+PASS P1 ordering: A <= C0 <= A+ <= B and C0 <= C <= B (opt and pess); P1 precondition checked
+PASS NOT_COMPARABLE raised when sum(B0)+gov exceeds pooled budget
+PASS P2 aligned => DL = DL0 = 0 on 6 seeds; misaligned DL>0 on 0/6
+PASS NEV = VCP + VSC - DL and VCP = VRA + DL0
+PASS Lemma E finite envelopes == integer-grid envelopes (opt and pess)
+PASS P4 F_c: single switch; F_c^dagger=82.4965 == G1-G0=82.4965 (SIMULATED_ONLY)
+PASS P4 delta (source-indexed reuse, local builds allowed): monotone 0->1 at most once; 7 seeds switched
+PASS P5 strictly increasing ordinal relabeling leaves solution unchanged
+PASS P6 money x1000 and all per-period parameters x2 invariance
+PASS shared fixed cost: independent re-evaluation equals solver value; +1 TWD on F_c lowers F_E by exactly 1 with 4 initiatives using it
+PASS ties: optimistic 286.208 > pessimistic 276.073 (SIMULATED_ONLY)
+PASS missing config -> RESTRICTED; missing status quo -> rejected; missing Allow not defaulted; missing ledger split -> B solved, C refused; bad rho, forbidden response, ordinal arithmetic, cross-construct comparison rejected
+PASS P7 in B (RE=-45.062 <= 0; VG=EE+RE+CE); requirement screening in C raises F_C from 10 to 15 while B is unchanged at 15 (SIMULATED_ONLY)
+PASS F9 hard incident tolerance enforced without monetization (4 configs excluded)
+PASS ROBUST / CONDITIONAL / FRAGILE classification logic
+PASS hand oracle: aligned B=C=30; misaligned-blockable DL=0 (envelope blocks); misaligned-unblockable B=15, C=10, DL=5, VSC=15, NEV=10
+SYNTHETIC_ORACLE_PASS: all assertions hold on SIMULATED_ONLY instances; no empirical claim.
