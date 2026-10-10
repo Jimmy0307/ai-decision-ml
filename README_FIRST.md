@@ -10,7 +10,7 @@
 2. `41_G01_G16_CONVERGENCE_AND_CONSTRUCT_FREEZE_v2_1.md` — G01–G16 收斂（研究者裁決；G04、G10、G11 經 AI pilot 標為爭議，見 54C）。
 3. `42_ENTERPRISE_PORTFOLIO_MODEL_v2_2.md` — canonical model（supersedes 42 v2.1；修訂見 §20）。
 4. `43_PARAMETER_IDENTIFICATION_AND_QUANTIFICATION_v2_1.md` — 參數識別（未變）。
-5. `44_MANUSCRIPT_ENTERPRISE_AI_DECISION_v2_2.md` — 稿件 v2.2（本機重建；`[DRIVE DIFF PENDING]`）。
+5. `44_MANUSCRIPT_ENTERPRISE_AI_DECISION_v2_2.md` — canonical 稿件 v2.2（已以 100,827-byte Drive v2.1 權威全文完成三方 reconciliation）。
 6. `45_MODEL_VALIDATION_AND_SOLVER_PLAN_v2_2.md` — 測試清單與 V0–V7。
 7. `50_SOLVER_COMPLETION_AND_V3_V6_VALIDATION_v2_2.md` — 20 項 synthetic 檢查證據、兩輪稽核、獨立手算 oracle。
 8. `51_enterprise_portfolio_solver_v2_2.py`、`52_SOLVER_ORACLE_RUN_v2_2.txt` — `SIMULATED_ONLY` reference oracle（`V2_2_SYNTHETIC_ENGINEERING_VERDICT: PASS`）。

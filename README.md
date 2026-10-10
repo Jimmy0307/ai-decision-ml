@@ -8,7 +8,7 @@ This branch is the active research-design line for **Enterprise AI Adoption as a
 2. `41_G01_G16_CONVERGENCE_AND_CONSTRUCT_FREEZE_v2_1.md` — G01–G16 convergence (researcher adjudication; G04/G10/G11 contested by the AI pilot)
 3. `42_ENTERPRISE_PORTFOLIO_MODEL_v2_2.md` — canonical model; supersedes 42 v2.1 (revision log §20)
 4. `43_PARAMETER_IDENTIFICATION_AND_QUANTIFICATION_v2_1.md` — identification requirements (unchanged)
-5. `44_MANUSCRIPT_ENTERPRISE_AI_DECISION_v2_2.md` — manuscript v2.2, rebuilt locally from the v2.1 text + 49 lineage edits + v2.2 changes; `[DRIVE DIFF PENDING]` against the Drive v2.1 full text (file ID `1XNhw0c4s2rUeADll5XBHSGXNWnFjr9nO`)
+5. `44_MANUSCRIPT_ENTERPRISE_AI_DECISION_v2_2.md` — canonical manuscript v2.2; three-way reconciled onto the authoritative 100,827-byte Drive v2.1 text, with the corpus-parity wording preserved and v2.2 changes applied
 6. `45_MODEL_VALIDATION_AND_SOLVER_PLAN_v2_2.md` — test inventory and V0–V7 status
 7. `50_SOLVER_COMPLETION_AND_V3_V6_VALIDATION_v2_2.md` — evidence for the 20 synthetic engineering items, two adversarial reviews, independent hand oracle
 8. `51_enterprise_portfolio_solver_v2_2.py` + `52_SOLVER_ORACLE_RUN_v2_2.txt` — synthetic reference oracle (SIMULATED_ONLY; verdict PASS)

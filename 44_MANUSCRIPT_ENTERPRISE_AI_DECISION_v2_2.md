@@ -2,7 +2,7 @@
 
 **Enterprise AI Adoption as a Multilevel Decision System: Governance, Capability Allocation, Organizational Adoption, and Value Realization**
 
-**稿件版本：v2.2 engineering + construct-validation candidate（2026-10-11）。Supersedes `44_MANUSCRIPT_ENTERPRISE_AI_DECISION_v2_1.md`。** `[DRIVE DIFF PENDING：本檔由本機保存的 v2.1 全文（99,649 bytes，handoff bundle 歷史）重建，並重新套用 49 號文件的語料 lineage 修訂與 v2.2 變更。權威 v2.1 全文在 Google Drive（file ID 1XNhw0c4s2rUeADll5XBHSGXNWnFjr9nO，100,827 bytes），本 session 無法讀取；兩者約 1.2 KB 的差異尚未逐字比對。同步到 Drive 前，須以 Drive 版為底重新套用附錄 D 所列修訂，或逐字比對後確認本檔可取代。]` 本稿整合 `41`（G01–G16 收斂與構念凍結）、`42` v2.2（企業 AI portfolio 多層模型）、`43`（參數識別）、`45` v2.2（驗證計畫）、`50`–`52`（v2.2 求解器與 synthetic 驗證）、`53B`–`56`（V1 盲編與 EA-X 內容效度）、`57`（引文核對）。**本稿不報告任何企業實證效果、ROI、樣本結果或已校準的最適配置。** 第四章為結果骨架；凡尚無資料處標示 `[EMPIRICAL RESULT PENDING]`，凡參數尚未識別處標示 `UNIDENTIFIED`。第四章 4.5 節所報的 synthetic oracle 結果僅為實作一致性證據（`SIMULATED_ONLY`），不是企業結果；4.1 與 4.2 節的 AI 編碼與 AI 評分只是 pilot（`AI-BLIND-CODING PILOT`、`AI_CONTENT_VALIDITY_PILOT`），不是人類構念效度證據。
+**稿件版本：v2.2 engineering + construct-validation candidate（2026-10-11）。Supersedes `44_MANUSCRIPT_ENTERPRISE_AI_DECISION_v2_1.md`。** `[DRIVE RECONCILIATION COMPLETE：v2.2 變更已以 Google Drive 權威 v2.1 全文（100,827 bytes）為 current、Claude 本機 v2.1（99,649 bytes）為 base、bundle v2.2 為 proposed change 完成三方合併；三處重疊文字已逐項裁決，保留 Drive 的 corpus-parity 限制並納入 v2.2 的 783-document lineage 與 reference-closure 更新。]` 本稿整合 `41`（G01–G16 收斂與構念凍結）、`42` v2.2（企業 AI portfolio 多層模型）、`43`（參數識別）、`45` v2.2（驗證計畫）、`50`–`52`（v2.2 求解器與 synthetic 驗證）、`53B`–`56`（V1 盲編與 EA-X 內容效度）、`57`（引文核對）。**本稿不報告任何企業實證效果、ROI、樣本結果或已校準的最適配置。** 第四章為結果骨架；凡尚無資料處標示 `[EMPIRICAL RESULT PENDING]`，凡參數尚未識別處標示 `UNIDENTIFIED`。第四章 4.5 節所報的 synthetic oracle 結果僅為實作一致性證據（`SIMULATED_ONLY`），不是企業結果；4.1 與 4.2 節的 AI 編碼與 AI 評分只是 pilot（`AI-BLIND-CODING PILOT`、`AI_CONTENT_VALIDITY_PILOT`），不是人類構念效度證據。
 
 ---
 
@@ -38,7 +38,7 @@ Enterprise adoption of artificial intelligence has shifted from adopting individ
 
 本研究以這 16 個 robust depletion 格（G01–G16）作為研究線索。Depletion 在此只表示：**在指定的零模型結構與觀察邊際下，該 AI 功能族與決策功能族的配對在文獻中相對低度出現。** 它不表示企業中存在 16 個問題，不表示相應功能無效、不相容或不重要，也不提供任何模型權重。網絡證據另有一項幅度解讀上的限制：AI 側證據有相當比例來自摘要層級，決策側則以全文為主；因此本研究只使用 depletion 的方向作為研究線索，而不使用其幅度。
 
-**語料 lineage（v2.1 已調和；見 49 號文件）。** V5 網絡建構的分析單位依序為：6,499 筆 strict analytical records → 3,125 筆 fully mapped（pair-eligible）semantic records → 783 篇 pair-eligible unique documents → M = 2,180 條 document-level AI-family × Decision-family edges；3,125 與 2,180 之差（945）是文件層級去重時合併的重複紀錄，不是兩個互相競爭的語料規模。V5 Stage 2 的受限雙 pass 語意映射模型為 `qwen2.5:14b`。較早的 two-track 語料線（404 篇最終文獻、2,425 筆 strict records、GPT-5.6 Sol 語意編碼）屬前階段的語料與證據產生紀錄，只作歷史 provenance 保留，**不是** G01–G16 凍結網絡的分母，也不寫入定義 M = 2,180 的方法敘述。
+**語料 lineage（v2.1 已調和；見 49 號文件）。** V5 網絡建構的分析單位依序為：6,499 筆 strict analytical records → 3,125 筆 fully mapped（pair-eligible）semantic records → 783 篇 pair-eligible unique documents → M = 2,180 條 document-level AI-family × Decision-family edges；3,125 與 2,180 之差（945）是文件層級去重時合併的重複紀錄，不是兩個互相競爭的語料規模。V5 Stage 2 的受限雙 pass 語意映射模型為 `qwen2.5:14b`。較早的 two-track 語料線（404 篇最終文獻、2,425 筆 strict records、GPT-5.6 Sol 語意編碼）屬前階段的語料與證據產生紀錄，只作歷史 provenance 保留，**不是** G01–G16 凍結網絡的分母，也不寫入定義 M = 2,180 的方法敘述。AI 側摘要／Decision 側全文的不對稱仍是 corpus-parity 限制，因此本研究只使用 robust depletion 的方向作為 research lead，不把幅度、O/E 或 q 值帶入企業模型。
 
 ## 1.3 研究缺口
 
@@ -754,7 +754,8 @@ v2.1 的 46 號參考實作在隨機產生的合成實例與一個手算實例�
 
 ## 5.10 語料 parity 限制
 
-- G01–G16 的方向可作研究線索，幅度不作解讀：AI 側證據較多來自摘要層級，決策側則以全文為主（49 號文件）。因此 robust depletion 的方向只作研究線索；O/E 與 q 值從不進入企業最佳化模型。
+- V5 的正式方法鏈已調和為 `6,499 analytical strict-frame records → 3,125 fully mapped / pair-eligible semantic records → 783 pair-eligible unique documents → M = 2,180 document-level edges`；V5 Stage 2 使用 `qwen2.5:14b` constrained double-pass mapping。較早的 404 publications／2,425 strict records／GPT-5.6 Sol lineage 僅保留為 predecessor provenance，不作本版 network denominator。
+- Corpus parity 的限制仍存在：AI 軌有較高比例的 abstract-level evidence，Decision 軌主要由 full-text evidence 構成。因此 G01–G16 僅以 robust depletion 的方向作研究線索，其幅度、O/E 或 q 值不得被解讀為企業 effect size 或模型係數。
 - Depletion 不等於企業中的缺口或不重要性。
 
 ## 5.11 M5 縱向擴充
@@ -926,7 +927,7 @@ Wiesemann, W., Tsoukalas, A., Kleniati, P.-M., & Rustem, B. (2013). Pessimistic 
 | B8 | Model A 的現況部門預算是否可得，且總和不超過池化總量 | VCP、NEV 可比性 | 若不可得，只報 B、C、VSC、DL |
 | B9 | 歐盟 AI 法之適用性 | `Legal_jk` | 視企業市場與產品逐條法律核對；未核對前不在正文主張其適用 |
 | B10 | 本稿與專案中 V5 會議稿的關係（是否為同一研究的延伸論文或學位論文） | 稿件定位與格式 | 由作者決定投稿或學位論文格式 |
-| B11 | Drive 權威 v2.1 全文與本機重建版的逐字差異（約 1.2 KB） | 本檔是否可取代 Drive 版 | 以 Drive 版為底重新套用附錄 D，或逐字比對（`[DRIVE DIFF PENDING]`） |
+| B11 | **RESOLVED — Drive v2.1 → v2.2 reconciliation** | v2.2 已重新套用至 100,827-byte Drive 權威底稿；三處重疊已裁決 | 不再構成同步 blocker；本檔可作 v2.2 Drive/GitHub canonical manuscript |
 
 ---
 
@@ -936,7 +937,7 @@ Wiesemann, W., Tsoukalas, A., Kleniati, P.-M., & Rustem, B. (2013). Pessimistic 
 |---|---|---|
 | 題名、研究邊界（企業層級） | A 保留 | 沿用 v2.0 |
 | 摘要 | C 取代 | 加入收斂結果、模型比較量與命題 |
-| 1.2 前階段證據 | B 修訂 | 加入 V5 網絡計數（120 格、M = 2,180、47 → 32、16／16），區分 3,125 與 2,180；新增 lineage 待決註記 |
+| 1.2 前階段證據 | B 修訂 | 加入 V5 網絡計數（120 格、M = 2,180、47 → 32、16／16），並完成 `6,499 → 3,125 → 783 → 2,180` lineage reconciliation；移除舊版作者待決標記 |
 | 1.3 研究缺口 | C 取代 | 改為「文獻破碎 → G01–G16 → 介面 → 企業耦合 → 數學模型需要」四步論證 |
 | 1.4–1.5 目的與 RQ | B 修訂 | RQ 改寫為五題並對應 Q1–Q8 |
 | 第貳章 | C 取代 | 由 7 節改為 8 節，每節採「主張／支持／不支持／意涵」結構；新增治理、流程、評估、共享能力、多層決策文獻 |
@@ -971,4 +972,4 @@ Wiesemann, W., Tsoukalas, A., Kleniati, P.-M., & Rustem, B. (2013). Pessimistic 
 | 4.3、4.4、4.6–4.10、第伍–陸章 | A 保留 | 仍為骨架；無任何虛構結果 |
 | 5.10 | B 修訂 | 以 parity 敘述取代待決註記 |
 | 參考文獻、附錄 A | B 修訂 | 依 57 更新：Mikalef & Gupta、Sculley、Teece、Shrestha、Kleinert、Ben-Tal、Dempe 改為已核；EU AI 法加註 2026/1744 修正；新增 Cohen (1960)、Krippendorff (2004)、Polit et al. (2007) |
-| 附錄 B | B 修訂 | B1–B3 已解決；B4、B5 更新；新增 B11（Drive 差異） |
+| 附錄 B | B 修訂 | B1–B3 已解決；B4、B5 更新；B11 已完成 Drive 三方 reconciliation，不再是 blocker |

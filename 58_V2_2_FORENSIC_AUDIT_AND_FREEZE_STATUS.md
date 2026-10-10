@@ -33,12 +33,12 @@
 
 | # | Check | Result |
 |---|---|---|
-| 2.1 | Canonical head and branch rules | PASS. Local `calibration/v1.1-variable-model` = `688c2ae` plus v2.2 commits only. The old local line is preserved as `local-v2_1-bundle-history`. No reset to `d46822f` or `b0d6b88`; `main` untouched |
+| 2.1 | Canonical head and branch rules | PASS. The v2.2 bundle is based exactly on `688c2ae`; follow-up import targets only `calibration/v1.1-variable-model`. No reset to `d46822f` or `b0d6b88`; `main` remains untouched. |
 | 2.2 | Commit identity | PASS. All v2.2 commits are authored by `Claude <noreply@anthropic.com>` with the session attribution lines |
 | 2.3 | V1 freeze chain | PASS. `v1_blind/FREEZE_MANIFEST.txt` stage 1 (53B, 54A, 54B, key plaintext, `sealed_key.json`) and stage 2 (AI coder outputs) were re-hashed in this audit and all seven hashes match. Stage 2 precedes the key reveal (commits `c409a8c` → `2ecf33d` → `9ab2750`) |
 | 2.4 | Sealed key custody | The key plaintext is kept outside git (session copy; shipped separately with the v2.2 delivery). Its content is now visible in 54C §3 because the AI pilot revealed it. **Risk:** human coders must receive only `v1_human_packet/`, not repository access. This is recorded in the README for coders and must be enforced by the researcher |
 | 2.5 | Corpus lineage | PASS. 44 §1.2 states `6,499 → 3,125 → 783 → 2,180` and V5 Stage 2 `qwen2.5:14b`. The 404 / 2,425 / GPT-5.6 Sol lineage appears only as predecessor provenance (§1.2, Appendix B). No sentence describes 3,125 as an edge count |
-| 2.6 | Manuscript authority | **BLOCKER (documentation):** the authoritative 44 v2.1 full text is on Google Drive (file ID `1XNhw0c4…`, 100,827 bytes) and could not be read from this session. 44 v2.2 was rebuilt from the local v2.1 text (99,649 bytes) plus the 49 lineage edits plus the v2.2 changes, and is marked `[DRIVE DIFF PENDING]` (Appendix B11). The roughly 1.2 KB difference has not been compared word by word |
+| 2.6 | Manuscript authority | **RESOLVED in follow-up reconciliation.** The authoritative 100,827-byte Drive v2.1 text was retrieved and used as the current side of a three-way merge against the 99,649-byte local v2.1 base and bundle v2.2. Exactly three overlapping text regions were adjudicated: §1.2 lineage, §5.10 parity wording, and Appendix B. The reconciled 44 preserves the Drive parity limitation, adds the 783-document lineage and v2.2 reference/pilot updates, and no longer carries `[DRIVE DIFF PENDING]`. |
 | 2.7 | SIMULATED_ONLY separation | PASS. 51 contains no enterprise data, no G01–G16 O/E, q or counts (grep: no `G01`–`G16`, `O/E` or `q_value` tokens). 44 Ch. 4 puts synthetic numbers only in §4.5; §§4.3, 4.4 and 4.6–4.10 contain only `[EMPIRICAL RESULT PENDING]` placeholders (24 occurrences) and no invented results |
 
 ## 3. Numerical Reproduction
@@ -108,7 +108,7 @@
 - **51 + 52** (solver and run; 46/47 kept).
 - **50** (completion evidence).
 - **53A** (commitment), **53B** (frozen protocol), **54A/54B** (frozen packets), **54C**, **55**, **56**, **57**.
-- **44 v2.2** is frozen as a *local candidate* subject to `[DRIVE DIFF PENDING]`.
+- **44 v2.2** is frozen as the reconciled canonical manuscript candidate; the Drive-authority diff is resolved.
 
 ### 7.2 Not frozen / open
 
@@ -116,11 +116,10 @@
 - EA-X human CVI (anchors v2.2.1).
 - V0, V2, V7.
 - Residual `[VERIFY]` items (§1.5).
-- Drive word-level diff of 44.
 - Human code review of 51.
 - Writing the contested flags back into 41 after the human round.
 
-### 7.3 Delivery blockers in this session
+### 7.3 Delivery status after follow-up synchronization
 
-- **GitHub push:** the push to `Jimmy0307/ai-decision-ml` returned HTTP 403 (the repository is not in this session's authorized set). Delivered instead: a git bundle of `688c2ae..calibration/v1.1-variable-model` plus per-commit patches.
-- **Google Drive sync:** no Drive connector in this session and direct access fails. Not synced to `Enterprise_AI_v2_1_Candidate_Freeze_20261011/v2_2_pending_completion/`. All local artifacts and tests were completed first, as instructed.
+- **GitHub:** the follow-up session verified `Jimmy0307/ai-decision-ml` with push/admin permission and confirmed `calibration/v1.1-variable-model` still at prerequisite `688c2ae` before import. The exact six-commit v2.2 bundle is imported first, then one reconciliation commit applies the Drive-authority manuscript merge and closes the stale Drive-pending wording. `main` is not touched.
+- **Google Drive:** the follow-up session has live Drive access. The v2.2 artifacts are synchronized under the existing enterprise-AI freeze folder, including the human-coder packet, adjudication template, EA-X packet, solver evidence, bundle, and reconciled 44. Human coders must still receive only the isolated human packet, never repository access.
