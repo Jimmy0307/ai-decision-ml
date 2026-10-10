@@ -34,3 +34,21 @@ Verdicts: `VERIFIED` (metadata and claim confirmed at a primary or publisher-mir
 6. Lynn (1986): page range and panel-size claim.
 
 None of these supports an empirical claim of this study; each is a methodological convention or a background citation. Pre-registered thresholds in 53B/56 are explicitly labelled as study conventions.
+
+---
+
+## v2.3 residual closure (2026-10-11)
+
+**Method:** a separate verification pass using web search and fetch, accepting primary or publisher sources only (Crossref API, publisher pages, PubMed/Europe PMC, Google Books record, institutional repository). JSTOR, Taylor & Francis and Wiley full texts were not reachable from this session. No metadata was inferred.
+
+| # | Item | Primary-source finding | Action | v2.3 status |
+|---|---|---|---|---|
+| R3 | McFarlan (1981) | hbr.org article page shows "From the Magazine (September 1981)". The HBR Store gives Product No. 81510, published September 1, 1981, 9 pages. No page shows volume, issue or pages. No DOI was found in Crossref, and PubMed/Europe PMC have no record | Reference rewritten to the verified elements only (September 1981, Product No. 81510, hbr.org URL). The unverified "59(5), 142–150" is **removed** | CLOSED (verified elements only) |
+| R9 | Savage (1951) | Crossref confirms JASA 46(253), 55–67, March 1951. Crossref has no abstract, and JSTOR and T&F were unreachable | Attribution of minimax regret kept as `[VERIFY]`. The criterion is used only as this study's operational definition (42 §13.2) | OPEN `[VERIFY]` |
+| R11 | Landis & Koch (1977) | Crossref and Europe PMC confirm Biometrics 33(1), 159–174 (PMID 843571). The benchmark labels were found only on secondary pages, and their lower boundaries differ between sources | **Claim removed:** 60 no longer prints labels, and 44 v2.3 / 59 say so. 53B (frozen) still mentions the labels as descriptive; that mention is superseded here | CLOSED (claim removed) |
+| R12a | Krippendorff thresholds (.800 / .667) | The UPenn repository confirms HCR 30(3), 411–433 (2004). The threshold wording was found only in secondary sources citing Content Analysis (2004) pp. 241–243 | Thresholds stay as pre-registered **study conventions** (53B C1); the attribution stays `[VERIFY]` | OPEN `[VERIFY]` (attribution only) |
+| R12b | Krippendorff, 4th ed. | Google Books record: ISBN-13 9781506395661, SAGE, published June 14, 2018, 472 pp.; SAGE shop: May 2018 | Year = **2018**. 53B (frozen) cites "2019"; this is corrected here, and any new citation uses 2018 | CLOSED |
+| R14 | Polit & Beck (2006) | Europe PMC confirms PMID 16977646, 29(5), 489–497. The abstract (quoted in 57 R14) supports two scale-level methods (universal agreement; average of I-CVIs) and the advice to report which is used. The labels "S-CVI/UA"/"S-CVI/Ave" and any .90 standard were not seen in a primary text | 44 v2.3 and 61 cite Polit & Beck (2006) **only** for the two methods and the reporting advice. The labels are this study's shorthand. No .90 standard is used | CLOSED (claim narrowed) |
+| R16 | Lynn (1986) | Crossref: 35(6), **382–386**; PubMed/Europe PMC (PMID 3640358): **382–385**. The panel-size advice was not seen | 44 does not cite Lynn. 56 §3's panel size (6–8) is a **study convention**: the attribution to Lynn is withdrawn, and the page range stays `[VERIFY: 382–385 vs 382–386]` if Lynn is ever cited | CLOSED for 44; page range OPEN |
+
+**Residual `[VERIFY]` after v2.3:** Savage (1951) attribution; Krippendorff threshold attribution; Lynn page range (not cited in 44). None of them supports an empirical claim. The frozen 53B is not edited, because its hash is part of the V1 freeze chain; the corrections above supersede its reference notes.

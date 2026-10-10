@@ -1,0 +1,293 @@
+{
+ "label": "SIMULATED_ONLY design screen (64 appendix); not empirical",
+ "runs": [
+  {
+   "seed": 40,
+   "n_candidates": 356,
+   "mmr": 28.294107611730254,
+   "voi_vertex": {
+    "V:value v_u": 0.0,
+    "V:loss l_u": 2.0115788667014556,
+    "V:time t": 0.0,
+    "X:impl cost": 0.0,
+    "E:shared F_c": 0.0,
+    "R:error rate P (one AI config)": 10.85605892003602,
+    "R:response rho (one row: Verify->Use)": 0.0
+   },
+   "voi_grid": {
+    "V:value v_u": 0.0,
+    "V:loss l_u": 1.0057894333507136,
+    "V:time t": 0.0,
+    "X:impl cost": 0.0,
+    "E:shared F_c": 0.0,
+    "R:error rate P (one AI config)": 7.93586573025064,
+    "R:response rho (one row: Verify->Use)": 0.0
+   },
+   "seconds": 194.8
+  },
+  {
+   "seed": 41,
+   "n_candidates": 356,
+   "mmr": 20.075676440862594,
+   "voi_vertex": {
+    "V:value v_u": 4.018888135632778,
+    "V:loss l_u": 0.0,
+    "V:time t": 0.16150474378093804,
+    "X:impl cost": 3.9552152686648583,
+    "E:shared F_c": 4.43743846713889,
+    "R:error rate P (one AI config)": 0.0,
+    "R:response rho (one row: Verify->Use)": 0.0
+   },
+   "voi_grid": {
+    "V:value v_u": 4.018888135632778,
+    "V:loss l_u": 0.0,
+    "V:time t": 0.16150474378093804,
+    "X:impl cost": 3.9552152686648583,
+    "E:shared F_c": 4.43743846713889,
+    "R:error rate P (one AI config)": 0.0,
+    "R:response rho (one row: Verify->Use)": 0.0
+   },
+   "seconds": 197.9
+  },
+  {
+   "seed": 42,
+   "n_candidates": 340,
+   "mmr": 56.80697452477577,
+   "voi_vertex": {
+    "V:value v_u": 2.668387967807149,
+    "V:loss l_u": 0.0,
+    "V:time t": 0.0,
+    "X:impl cost": 10.277034728612506,
+    "E:shared F_c": 5.89124151907626,
+    "R:error rate P (one AI config)": 26.43631337364647,
+    "R:response rho (one row: Verify->Use)": 14.18999988383149
+   },
+   "voi_grid": {
+    "V:value v_u": 2.668387967807149,
+    "V:loss l_u": 0.0,
+    "V:time t": 0.0,
+    "X:impl cost": 10.277034728612506,
+    "E:shared F_c": 3.205585276223104,
+    "R:error rate P (one AI config)": 17.92195565762674,
+    "R:response rho (one row: Verify->Use)": 7.094999941915773
+   },
+   "seconds": 184.6
+  },
+  {
+   "seed": 43,
+   "n_candidates": 357,
+   "mmr": 21.49796923115032,
+   "voi_vertex": {
+    "V:value v_u": 0.0,
+    "V:loss l_u": 0.0,
+    "V:time t": 0.0,
+    "X:impl cost": 1.5933513379519866,
+    "E:shared F_c": 0.0,
+    "R:error rate P (one AI config)": 5.171647436741104,
+    "R:response rho (one row: Verify->Use)": 0.0
+   },
+   "voi_grid": {
+    "V:value v_u": 0.0,
+    "V:loss l_u": 0.0,
+    "V:time t": 0.0,
+    "X:impl cost": 0.805935024624489,
+    "E:shared F_c": 0.0,
+    "R:error rate P (one AI config)": 5.171647436741104,
+    "R:response rho (one row: Verify->Use)": 0.0
+   },
+   "seconds": 201.6
+  },
+  {
+   "seed": 44,
+   "n_candidates": 329,
+   "mmr": 45.165193765537424,
+   "voi_vertex": {
+    "V:value v_u": 8.49462704870956,
+    "V:loss l_u": 0.0,
+    "V:time t": 0.0,
+    "X:impl cost": 0.0,
+    "E:shared F_c": 0.0,
+    "R:error rate P (one AI config)": 0.0,
+    "R:response rho (one row: Verify->Use)": 0.0
+   },
+   "voi_grid": {
+    "V:value v_u": 8.49462704870956,
+    "V:loss l_u": 0.0,
+    "V:time t": 0.0,
+    "X:impl cost": 0.0,
+    "E:shared F_c": 0.0,
+    "R:error rate P (one AI config)": 0.0,
+    "R:response rho (one row: Verify->Use)": 0.0
+   },
+   "seconds": 177.3
+  },
+  {
+   "seed": 45,
+   "n_candidates": 357,
+   "mmr": 18.130646305772586,
+   "voi_vertex": {
+    "V:value v_u": 0.0,
+    "V:loss l_u": 0.0,
+    "V:time t": 0.0,
+    "X:impl cost": 3.6274077837977075,
+    "E:shared F_c": 8.712833504596233,
+    "R:error rate P (one AI config)": 0.0,
+    "R:response rho (one row: Verify->Use)": 0.0
+   },
+   "voi_grid": {
+    "V:value v_u": 0.0,
+    "V:loss l_u": 0.0,
+    "V:time t": 0.0,
+    "X:impl cost": 3.5327390875659717,
+    "E:shared F_c": 8.712833504596233,
+    "R:error rate P (one AI config)": 0.0,
+    "R:response rho (one row: Verify->Use)": 0.0
+   },
+   "seconds": 186.4
+  },
+  {
+   "seed": 46,
+   "n_candidates": 317,
+   "mmr": 47.62761644094732,
+   "voi_vertex": {
+    "V:value v_u": 0.0,
+    "V:loss l_u": 0.0,
+    "V:time t": 0.0,
+    "X:impl cost": 0.0,
+    "E:shared F_c": 1.9645674016763621,
+    "R:error rate P (one AI config)": 0.0,
+    "R:response rho (one row: Verify->Use)": 0.0
+   },
+   "voi_grid": {
+    "V:value v_u": 0.0,
+    "V:loss l_u": 0.0,
+    "V:time t": 0.0,
+    "X:impl cost": 0.0,
+    "E:shared F_c": 1.9645674016763621,
+    "R:error rate P (one AI config)": 0.0,
+    "R:response rho (one row: Verify->Use)": 0.0
+   },
+   "seconds": 170.3
+  },
+  {
+   "seed": 47,
+   "n_candidates": 357,
+   "mmr": 48.64973413685482,
+   "voi_vertex": {
+    "V:value v_u": 0.0,
+    "V:loss l_u": 17.73787956038285,
+    "V:time t": 0.0,
+    "X:impl cost": 0.0,
+    "E:shared F_c": 4.125040540779992,
+    "R:error rate P (one AI config)": 35.491782783874015,
+    "R:response rho (one row: Verify->Use)": 0.0
+   },
+   "voi_grid": {
+    "V:value v_u": 0.0,
+    "V:loss l_u": 8.868939780191397,
+    "V:time t": 0.0,
+    "X:impl cost": 0.0,
+    "E:shared F_c": 4.125040540779992,
+    "R:error rate P (one AI config)": 18.733101273648458,
+    "R:response rho (one row: Verify->Use)": 0.0
+   },
+   "seconds": 187.7
+  },
+  {
+   "seed": 48,
+   "n_candidates": 300,
+   "mmr": 34.778327910335975,
+   "voi_vertex": {
+    "V:value v_u": 3.0393451018894098,
+    "V:loss l_u": 2.139904526775979,
+    "V:time t": 0.0,
+    "X:impl cost": 2.139904526775979,
+    "E:shared F_c": 6.22775452690707,
+    "R:error rate P (one AI config)": 0.0,
+    "R:response rho (one row: Verify->Use)": 0.0
+   },
+   "voi_grid": {
+    "V:value v_u": 3.0393451018894098,
+    "V:loss l_u": 2.139904526775979,
+    "V:time t": 0.0,
+    "X:impl cost": 2.139904526775979,
+    "E:shared F_c": 6.22775452690707,
+    "R:error rate P (one AI config)": 0.0,
+    "R:response rho (one row: Verify->Use)": 0.0
+   },
+   "seconds": 165.0
+  },
+  {
+   "seed": 49,
+   "n_candidates": 357,
+   "mmr": 10.570776669471513,
+   "voi_vertex": {
+    "V:value v_u": 0.0,
+    "V:loss l_u": 0.0,
+    "V:time t": 0.0,
+    "X:impl cost": 0.0,
+    "E:shared F_c": 0.0,
+    "R:error rate P (one AI config)": 0.0,
+    "R:response rho (one row: Verify->Use)": 0.0
+   },
+   "voi_grid": {
+    "V:value v_u": 0.0,
+    "V:loss l_u": 0.0,
+    "V:time t": 0.0,
+    "X:impl cost": 0.0,
+    "E:shared F_c": 0.0,
+    "R:error rate P (one AI config)": 0.0,
+    "R:response rho (one row: Verify->Use)": 0.0
+   },
+   "seconds": 188.6
+  },
+  {
+   "seed": 50,
+   "n_candidates": 341,
+   "mmr": 20.467198540357003,
+   "voi_vertex": {
+    "V:value v_u": 0.0,
+    "V:loss l_u": 0.0,
+    "V:time t": 0.0,
+    "X:impl cost": 1.9535985838174383,
+    "E:shared F_c": 9.612124856852432,
+    "R:error rate P (one AI config)": 0.0,
+    "R:response rho (one row: Verify->Use)": 0.0
+   },
+   "voi_grid": {
+    "V:value v_u": 0.0,
+    "V:loss l_u": 0.0,
+    "V:time t": 0.0,
+    "X:impl cost": 1.9535985838174383,
+    "E:shared F_c": 9.612124856852432,
+    "R:error rate P (one AI config)": 0.0,
+    "R:response rho (one row: Verify->Use)": 0.0
+   },
+   "seconds": 180.3
+  },
+  {
+   "seed": 51,
+   "n_candidates": 356,
+   "mmr": 6.63594862241176,
+   "voi_vertex": {
+    "V:value v_u": 0.0,
+    "V:loss l_u": 0.0,
+    "V:time t": 0.0,
+    "X:impl cost": 0.0,
+    "E:shared F_c": 0.0,
+    "R:error rate P (one AI config)": 0.0,
+    "R:response rho (one row: Verify->Use)": 0.0
+   },
+   "voi_grid": {
+    "V:value v_u": 0.0,
+    "V:loss l_u": 0.0,
+    "V:time t": 0.0,
+    "X:impl cost": 0.0,
+    "E:shared F_c": 0.0,
+    "R:error rate P (one AI config)": 0.0,
+    "R:response rho (one row: Verify->Use)": 0.0
+   },
+   "seconds": 189.2
+  }
+ ]
+}

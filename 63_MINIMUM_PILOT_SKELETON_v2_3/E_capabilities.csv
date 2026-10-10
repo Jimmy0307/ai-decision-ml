@@ -1,0 +1,6 @@
+capability_id,scope,unit_id,parameter,value,unit,provenance_type,source_id,period,uncertainty,lower,upper,identification_status,assumption_note
+CAP1,SHARED,,F,,TWD/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+CAP1,SHARED,,eng,,hours/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+CAP1,SHARED,,y_cur,,binary,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+CAP1,LOCAL,BU2,F,,TWD/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+CAP1,LOCAL,BU2,eng,,hours/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,

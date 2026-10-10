@@ -1,10 +1,26 @@
-# READ FIRST — Enterprise AI Adoption v2.2 candidate
+# READ FIRST — Enterprise AI Adoption v2.3 empirical-execution candidate
 
 本分支目前唯一 canonical working line：
 
 **企業人工智慧導入作為多層級決策系統：治理、能力配置、組織採用與價值實現。**
 
-## 閱讀順序（v2.2，2026-10-11）
+## v2.3 執行系統（先讀）
+
+v2.3 不擴充模型，只把 v2.2 已收斂的模型接上真實資料。
+
+| 檔案 | 用途 |
+|---|---|
+| `59_V1_HUMAN_VALIDATION_IMPORT_AND_ADJUDICATION_v2_3.md` ＋ `60_v1_human_validation_analyzer_v2_3.py` | 人類 G→M 盲編的匯入、信度、裁決、mapping sensitivity、G04／G10／G11 追蹤；目前 `V1_HUMAN_BLIND_CODING_PENDING` |
+| `61_EAX_HUMAN_CVI_ANALYZER_v2_3.py` ＋ `eax_cvi_import/` | EA-X 人類 CVI；目前 `CONDITIONAL_CANDIDATE` |
+| `62_ENTERPRISE_EMPIRICAL_DATA_TEMPLATE_v2_3/`（CSV＋.xlsx＋字典） | 以 43 為唯一契約的企業資料樣板 |
+| `63_MINIMUM_IDENTIFIABLE_ENTERPRISE_PILOT_v2_3.md` ＋ `63_MINIMUM_PILOT_SKELETON_v2_3/` | 最小可解 pilot 與 Q1–Q8 識別表；全 UNIDENTIFIED 的骨架 |
+| `64_EMPIRICAL_DATA_COLLECTION_PRIORITY_v2_3.md` | 依閘門、regret 抵銷與 VOI 排序的量測優先序 |
+| `65_enterprise_data_loader_v2_3.py` | validate → coverage → 51 instance → B／C／A+／C0／A → 第四章表格；registry 登記與 robust／VOI |
+| `44_MANUSCRIPT_ENTERPRISE_AI_DECISION_v2_3.md` | 第四章改為可回填骨架（無任何結果） |
+
+第一批資料後的指令：`python 65_enterprise_data_loader_v2_3.py --validate DATA` → `--run DATA` →（有區間時）`--make-registry` → commit → `--robust`。
+
+## 閱讀順序（v2.2 基礎）
 
 1. `58_V2_2_FORENSIC_AUDIT_AND_FREEZE_STATUS.md` — v2.2 freeze 狀態、六項稽核、blockers（supersedes 48）。
 2. `41_G01_G16_CONVERGENCE_AND_CONSTRUCT_FREEZE_v2_1.md` — G01–G16 收斂（研究者裁決；G04、G10、G11 經 AI pilot 標為爭議，見 54C）。

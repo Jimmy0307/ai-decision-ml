@@ -1,0 +1,5 @@
+{
+ "analyzer": "61_EAX_HUMAN_CVI_ANALYZER_v2_3",
+ "eax_status": "CONDITIONAL_CANDIDATE",
+ "reason": "no human ratings supplied; the AI content-validity pilot (56 section 8) is never used as CVI evidence"
+}

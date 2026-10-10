@@ -31,7 +31,7 @@ Levels are intended to be cumulative (level k presumes levels below it).
 
 ## 3. Reviewer panel
 
-- 6–8 reviewers spanning governance/risk, IT/data, process owners and frontline users of AI outputs (Lynn, 1986 discusses panel size; `[VERIFY]` see 57).
+- 6–8 reviewers spanning governance/risk, IT/data, process owners and frontline users of AI outputs. Panel size is a study convention; the earlier attribution to Lynn (1986) is withdrawn because it could not be verified at a primary source (57, v2.3 section). Analysis: `61_EAX_HUMAN_CVI_ANALYZER_v2_3.py`.
 - Each reviewer works independently and signs: "I rated these items independently and have not seen other reviewers' ratings."
 
 ## 4. Rating form (one row per anchor; repeat for the construct definition)
@@ -109,8 +109,6 @@ Revised confusion-sort statements: (1) "Given several justifications, the person
 ## References
 
 Bansal, G., Wu, T., Zhou, J., Fok, R., Nushi, B., Kamar, E., Ribeiro, M. T., & Weld, D. S. (2021). Does the whole exceed its parts? The effect of AI explanations on complementary team performance. In *Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems*. https://doi.org/10.1145/3411764.3445717
-
-Lynn, M. R. (1986). Determination and quantification of content validity. *Nursing Research, 35*(6), 382–385 `[VERIFY: Crossref lists 382–386]`. https://doi.org/10.1097/00006199-198611000-00017
 
 Polit, D. F., & Beck, C. T. (2006). The content validity index: Are you sure you know what's being reported? Critique and recommendations. *Research in Nursing & Health, 29*(5), 489–497. https://doi.org/10.1002/nur.20147
 

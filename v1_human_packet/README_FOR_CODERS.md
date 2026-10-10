@@ -13,6 +13,6 @@ Do not consult the project repository, the manuscript, or other coders until you
 
 - Assign at least two coders; alternate packets A and B.
 - On receipt, compute SHA-256 of each response sheet and append it to `v1_blind/FREEZE_MANIFEST.txt` (stage 3) **before** running the analysis or revealing the key.
-- Run `python v1_blind/reliability_v2_2.py <sheet1> <sheet2> [...]`; then, only after the hashes are recorded, add `--key` with the unsealed key (verify its hash against 53A).
+- Follow `59_V1_HUMAN_VALIDATION_IMPORT_AND_ADJUDICATION_v2_3.md` §1 and run `60_v1_human_validation_analyzer_v2_3.py` (stage R → adjudication → stage-4 freeze → stage K with the key). The analyzer enforces the freeze order and verifies the key hash against 53A.
 - Record every disagreement in `55_V1_BLIND_CODING_ADJUDICATION_TEMPLATE_v2_2.md` and apply 53B §9–§11.
 - Disclose that the clarifications were written after the AI pilot was compared with the researcher key (54C §6).

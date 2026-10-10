@@ -1,6 +1,20 @@
-# AI × Decision × Enterprise AI Adoption — v2.2 Candidate Research Branch
+# AI × Decision × Enterprise AI Adoption — v2.3 Empirical-Execution Branch
 
 This branch is the active research-design line for **Enterprise AI Adoption as a Multilevel Decision System**.
+
+## v2.3 empirical execution system (2026-10-11)
+
+v2.3 does not extend the model. It connects the converged v2.2 model to real data.
+
+| File | Role |
+|---|---|
+| `59_…_v2_3.md` + `60_v1_human_validation_analyzer_v2_3.py` | Human G→M blind coding: import, κ/α with bootstrap CIs, Jaccard, disagreement matrices, adjudication import, mapping sensitivity, G04/G10/G11 tracking, 53B C1–C7 decision. Current: `V1_HUMAN_BLIND_CODING_PENDING` |
+| `61_EAX_HUMAN_CVI_ANALYZER_v2_3.py` | EA-X human CVI (I-CVI, k*, S-CVI/Ave, S-CVI/UA, ambiguity, cumulativity, confusion sort). Current: `CONDITIONAL_CANDIDATE` |
+| `62_ENTERPRISE_EMPIRICAL_DATA_TEMPLATE_v2_3/` | CSV + .xlsx data contract (Blocks S, E, G, X, R, V, U), generated from 43 |
+| `63_…_v2_3.md` + `63_MINIMUM_PILOT_SKELETON_v2_3/` | Minimum identifiable pilot (2 units, 3 initiatives, 1 shared capability with a local alternative, 2 roles, 2 configurations, 2 policies) and the Q1–Q8 identification table |
+| `64_…_v2_3.md` | Data-collection priority by gate / regret-invariance / VOI |
+| `65_enterprise_data_loader_v2_3.py` | validate → coverage → 51 instance → B, C, A+, C0, A → Chapter 4 tables; registry pre-registration; robust and VOI |
+| `44_…_v2_3.md` | Manuscript with an executable Chapter 4 shell (no results) |
 
 ## Canonical reading order (v2.2 candidate, 2026-10-11)
 
@@ -64,3 +78,4 @@ The v1.5/v1.6 synthetic validators remain useful only for regression, schema, un
 - `V1_AI_PILOT_COMPLETE`, `V1_HUMAN_BLIND_CODING_PENDING` — there is no V1 PASS; two human coders are required.
 - EA-X remains a conditional candidate (ρ grouping key only).
 - V0, V2, V7 OPEN. No enterprise result, ROI, or calibrated decision exists.
+- v2.3: the execution system (59–65) is in place and self-tested on labelled TEST fixtures only; every Chapter 4 result cell is `[EMPIRICAL RESULT PENDING]` or `[HUMAN RESULT PENDING]`. Residual `[VERIFY]`: Savage (1951) attribution, Krippendorff threshold attribution, Lynn (1986) page range (57, v2.3 section).
