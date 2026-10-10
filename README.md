@@ -2,14 +2,20 @@
 
 This branch is the active research-design line for **Enterprise AI Adoption as a Multilevel Decision System**.
 
-## Canonical reading order
+## Canonical reading order (v2.1 candidate, 2026-10-10)
 
-1. `38_ENTERPRISE_AI_ADOPTION_RESEARCH_ARCHITECTURE_v2_0.md`
-2. `39_ENTERPRISE_MULTILEVEL_MODEL_AND_DATA_CONTRACT_v2_0.md`
-3. `40_MANUSCRIPT_CH1_3_ENTERPRISE_SCOPE_v2_0.md`
-4. `29_CLAIM_LEVEL_SOURCE_AUDIT_v1_5.md`
-5. `26_GAP_CONSTRUCT_TRACE_AND_ANCHORS_CANDIDATE_v1_3.md`
-6. `33_bilevel_validation_fixture_v1_5.py` and `35_schema_validator_synthetic_v1_6.py` as historical/synthetic implementation evidence only
+Input of this round: `handoff_v2_1_input/` (Claude handoff bundle v2.1; primary source), with 38–40 as the equivalent repository copies.
+
+1. `41_G01_G16_CONVERGENCE_AND_CONSTRUCT_FREEZE_v2_1.md` — G01–G16 → I1–I4 (M1–M4) + M5 + optional + evidence-only; construct freeze
+2. `42_ENTERPRISE_PORTFOLIO_MODEL_v2_1.md` — canonical Enterprise–Business Unit bilevel portfolio model (P1–P8, Lemma E, Lemma R)
+3. `43_PARAMETER_IDENTIFICATION_AND_QUANTIFICATION_v2_1.md` — identification requirements by model block
+4. `44_MANUSCRIPT_ENTERPRISE_AI_DECISION_v2_1.md` — manuscript: Ch1–3 full, Ch4 results skeleton, Ch5–6 skeletons, references, claim audit
+5. `45_MODEL_VALIDATION_AND_SOLVER_PLAN_v2_1.md` — test inventory and V0–V7 status
+6. `46_enterprise_portfolio_solver_v2_1.py` + `47_SOLVER_ORACLE_RUN_v2_1.txt` — synthetic reference oracle (SIMULATED_ONLY)
+7. `48_FORENSIC_AUDIT_AND_V2_1_FREEZE_STATUS.md` — Phase F audit and freeze status
+8. `49_V5_CORPUS_LINEAGE_RECONCILIATION_v2_1.md` — resolved V5 corpus denominator/model lineage
+
+Superseded as upper specification by 41–49 (kept for provenance): 38, 39, 40, 26, 29, 30, 33–36.
 
 ## Research scope
 
@@ -36,8 +42,10 @@ The evidence chain is:
 
 `main@1f2e72f` and the v1.0 files remain historical synthetic mathematical-feasibility evidence. Their PASS results do **not** validate the current enterprise model or any firm-specific empirical claim.
 
-The v1.5/v1.6 synthetic validators remain useful only for regression, schema, unit, probability, budget/capacity, and finite-enumeration checks. They must be generalized and extended before a v2.0 solver can pass V5.
+The v1.5/v1.6 synthetic validators remain useful only for regression, schema, unit, probability, budget/capacity, and finite-enumeration checks. They must be generalized and extended before a v2.1 solver can pass full V5/V6.
 
 ## Current status
 
-Research Architecture v2.0 is now the governing specification. Empirical parameters, enterprise decision rights, cross-unit preference conflict, questionnaire validity, firm-specific ROI, and V0–V7 empirical calibration remain open.
+v2.1 is the active **candidate freeze** for theory, G01–G16 convergence, constructs, the Enterprise–Business Unit portfolio model, parameter-identification specification, and manuscript Chapters 1–3. Files 38–40 remain upstream v2.0 provenance and are no longer the governing working specification.
+
+Empirical parameters, enterprise decision rights, cross-unit preference conflict, questionnaire validity, firm-specific ROI, V1 independent gap coding, and V0–V7 enterprise empirical calibration remain open. `SYNTHETIC_ORACLE_PASS` is implementation evidence only, not an empirical result.
