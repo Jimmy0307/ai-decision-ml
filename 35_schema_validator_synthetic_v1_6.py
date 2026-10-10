@@ -1,6 +1,6 @@
-"""Synthetic-only contract checks for candidate bilevel lookup inputs.
+"""Synthetic-only contract checks for candidate enterprise portfolio inputs.
 
-No JPC observations or calibrated parameters are contained in this file.
+No firm observations or calibrated parameters are contained in this file.
 Run: python 35_schema_validator_synthetic_v1_6.py
 """
 
@@ -182,7 +182,7 @@ def fixture() -> tuple[Case, Case]:
                     {("A0", "medium"): ("H1", "W1", "E1"),
                      ("A2", "medium"): ("H2", "W2", "E2")}, set())
 
-    return make("Q8_SYNTHETIC", 2), make("H1_SYNTHETIC", 3)
+    return make("BU_A_SYNTHETIC", 2), make("BU_B_SYNTHETIC", 3)
 
 
 def run() -> dict:
