@@ -12,6 +12,10 @@ Supersedes 46 (kept for provenance) as the reference implementation of
     hashing, MaxRegret and value-of-identification                             (T-SEN-3/4/6/7)
   * delta threshold scan in B and a Model C non-monotonic counterexample       (T-SEN-8)
   * independent hand-oracle comparison                                          (T-ORC-8)
+  * fixes for the two adversarial reviews recorded in 50 §7 (robust candidates from the theta-independent
+    superset; lambda box scan with exact vertex certificate for B/A+; DP enumeration fallback; config-local
+    missing inputs; joint-witness feasibility classes; vertex vs grid VOI; exact-float registry commitment
+    including nominal values; registry block validation; element-level classification)  (AUDIT)
 
 Every number produced here is SIMULATED_ONLY. No enterprise observation appears in this file.
 Run:  python 51_enterprise_portfolio_solver_v2_2.py          (all tests; prints verdict)
@@ -57,6 +61,18 @@ class FollowerLedgerUnidentified(MissingInput):
 
 
 class NotComparable(ValueError):
+    pass
+
+
+class MissingPermission(MissingInput):
+    """A policy permission (Allow) is UNIDENTIFIED: the configuration is excluded, the initiative is kept."""
+
+
+class MissingStateLookup(MissingInput):
+    """A capability-state lookup (R_j(s), D_j(s)) is UNIDENTIFIED for this state only."""
+
+
+class ModelAInfeasible(ValueError):
     pass
 
 
@@ -239,14 +255,16 @@ def validate_instance(inst):
                     raise InvalidInput(f"policies.{g}.{tbl}{key} must be binary")
         for j, e in pol["ebar"].items():
             _num(e, "incidents/period", f"policies.{g}.ebar.{j}", True)
-        for tname in ("H_req", "WI_req", "EA_req", "G_req"):
+        for tname, cons in (("H_req", "H"), ("WI_req", "WI"), ("EA_req", "EA"), ("G_req", "G")):
             for (a, kk), v in pol[tname].items():
-                if not (isinstance(a, Ord) and isinstance(kk, Ord)) or (v is not None and not isinstance(v, Ord)):
-                    raise InvalidInput(f"{tname} must be keyed and valued by ordinal keys")
-    for tname in ("R_req", "D_req"):
+                if not (isinstance(a, Ord) and a.construct == "A" and isinstance(kk, Ord) and kk.construct == "K"):
+                    raise InvalidInput(f"{tname} must be keyed by (Ord('A'), Ord('K'))")
+                if v is not None and not (isinstance(v, Ord) and v.construct == cons):
+                    raise InvalidInput(f"{tname} values must be Ord('{cons}')")
+    for tname, cons in (("R_req", "R"), ("D_req", "D")):
         for a, v in inst[tname].items():
-            if not isinstance(a, Ord) or (v is not None and not isinstance(v, Ord)):
-                raise InvalidInput(f"{tname} must use ordinal keys")
+            if not isinstance(a, Ord) or (v is not None and not (isinstance(v, Ord) and v.construct == cons)):
+                raise InvalidInput(f"{tname} must map Ord('A') to Ord('{cons}')")
     for j, ini in inst["initiatives"].items():
         for k, n in ini["N"].items():
             _num(n, "events/period", f"{j}.N.{k}", True)
@@ -279,13 +297,25 @@ def validate_instance(inst):
             for rows_name in ("rho", "rho_design"):
                 for rk, row in cfg.get(rows_name, {}).items():
                     _prob_row(row, f"{where}.{rows_name}[{rk}]")
+            for pk in cfg["P"]:
+                if not isinstance(pk, tuple) or len(pk) != 2:
+                    raise InvalidInput(f"{where}: P keys must be (z, omega)")
+            for rows_name in ("rho", "rho_design"):
+                for rk, row in cfg.get(rows_name, {}).items():
+                    for r, pr in row.items():
+                        if pr is not None and pr > 0 and r not in cfg["allowed_r"]:
+                            raise InvalidInput(f"{where}: response {r} has positive probability but is not allowed")
             for pk, cell in cfg["path"].items():
+                if not isinstance(pk, tuple) or len(pk) != 4:
+                    raise InvalidInput(f"{where}: path keys must be (role, z, omega, r)")
+                if set(cell) != set(PATH_UNITS):
+                    raise InvalidInput(f"{where}: path cell {pk} must have exactly the fields {sorted(PATH_UNITS)}")
                 for f, unit in PATH_UNITS.items():
                     _num(cell.get(f), unit, f"{where}.path[{pk}].{f}", True)
-        for tbl in ("R_state", "D_state"):
+        for tbl, cons in (("R_state", "R"), ("D_state", "D")):
             for key, v in ini[tbl].items():
-                if v is not None and not isinstance(v, Ord):
-                    raise InvalidInput(f"{j}.{tbl} must hold ordinal values")
+                if v is not None and not (isinstance(v, Ord) and v.construct == cons):
+                    raise InvalidInput(f"{j}.{tbl} must hold Ord('{cons}') values")
     return True
 
 
@@ -299,14 +329,18 @@ def _normalized(dist, what):
         raise InvalidInput(f"{what} must be nonnegative and normalized")
 
 
-def expect(cfg, fn, rho_key="rho"):
+def expect(cfg, fn, rho_key="rho", capkey=None):
+    """E_jk[f]. rho rows may be keyed (z, role) or (z, role, capability-source key); a capability-state row,
+    when present for the current state, takes precedence. omega never appears in a rho key (T-SCH-6)."""
     _normalized(cfg["pi"], "pi")
     _normalized(cfg["P"], "P")
     total = 0.0
     rho_tab = cfg[rho_key]
     for role, p_role in cfg["pi"].items():
         for (z, w), p_zw in cfg["P"].items():
-            rho = rho_tab.get((z, role))
+            rho = rho_tab.get((z, role, capkey)) if capkey is not None else None
+            if rho is None:
+                rho = rho_tab.get((z, role))
             if rho is None:
                 raise MissingInput("rho row missing")
             _normalized(rho, "rho")
@@ -333,68 +367,91 @@ def lam_of(inst, key, role):
     return v
 
 
+def _is_min_level(inst, ordv):
+    return ordv.code == min(inst["codes"][ordv.construct].values())
+
+
 def jk_eval(inst, j, k, y_shared, loc, gamma_name, rho_key="rho"):
     ini = inst["initiatives"][j]
     pol = inst["policies"][gamma_name]
     cfg, cfg0 = ini["configs"][k], ini["configs"][0]
     avail = set(y_shared) | set(loc)
     key = source_key(ini["rel"], y_shared, loc)
+    key_cur = source_key(ini["rel"], inst.get("y_cur", frozenset()), set())
     lam_override = inst.get("_lam_override", {})
 
     def lam(role, which="lam"):
-        if role in lam_override:
+        if which == "lam" and role in lam_override:      # override applies to the ENTERPRISE ledger only
             return lam_override[role]
         return lam_of(inst, which, role)
 
-    def g_E(c):
-        return expect(c, lambda x, role: x["v_u"] + x["v_x"] - x["l_u"] - x["l_x"] - x["c_u"] - x["c_x"] - lam(role) * x["t"], rho_key)
+    def g_E(c, ck):
+        return expect(c, lambda x, role: x["v_u"] + x["v_x"] - x["l_u"] - x["l_x"] - x["c_u"] - x["c_x"] - lam(role) * x["t"], rho_key, ck)
 
-    def opc(c):
-        return expect(c, lambda x, role: x["c_u"] + x["c_x"], rho_key)
+    def g_E_notime(c, ck):
+        return expect(c, lambda x, role: x["v_u"] + x["v_x"] - x["l_u"] - x["l_x"] - x["c_u"] - x["c_x"], rho_key, ck)
+
+    def opc(c, ck):
+        return expect(c, lambda x, role: x["c_u"] + x["c_x"], rho_key, ck)
 
     N_k, N_0 = strict(ini["N"], k, "N"), strict(ini["N"], 0, "N")
     impl = 0.0 if k == 0 else strict(cfg["impl"], key, "implementation cost")
     eng = 0.0 if k == 0 else strict(cfg["eng"], key, "engineering hours")
-    phiE = 0.0 if k == 0 else N_k * g_E(cfg) - N_0 * g_E(cfg0)
-    phiE = phiE - impl
-    bud = 0.0 if k == 0 else impl + N_k * opc(cfg) - N_0 * opc(cfg0)
-    rev = 0.0 if k == 0 else N_k * expect(cfg, lambda x, r: x["t_rev"], rho_key) - N_0 * expect(cfg0, lambda x, r: x["t_rev"], rho_key)
-    sev = N_k * expect(cfg, lambda x, r: x["I_sev"], rho_key)
-    hours = 0.0 if k == 0 else N_k * expect(cfg, lambda x, r: x["t"], rho_key) - N_0 * expect(cfg0, lambda x, r: x["t"], rho_key)
+    # incremental contribution vs the status quo at the CURRENT capability state (V2)
+    phi_nt = N_k * g_E_notime(cfg, key) - N_0 * g_E_notime(cfg0, key_cur) - impl
+    roles = sorted(cfg["pi"])
+    hours_by_role = {r: N_k * expect(cfg, lambda x, rr, r=r: x["t"] if rr == r else 0.0, rho_key, key)
+                     - N_0 * expect(cfg0, lambda x, rr, r=r: x["t"] if rr == r else 0.0, rho_key, key_cur) for r in roles}
+    phiE = N_k * g_E(cfg, key) - N_0 * g_E(cfg0, key_cur) - impl   # k=0: N_0[g_j0(state) - g_j0(current)]
+    bud = impl + N_k * opc(cfg, key) - N_0 * opc(cfg0, key_cur)
+    rev = N_k * expect(cfg, lambda x, r: x["t_rev"], rho_key, key) - N_0 * expect(cfg0, lambda x, r: x["t_rev"], rho_key, key_cur)
+    sev = N_k * expect(cfg, lambda x, r: x["I_sev"], rho_key, key)
+    hours = sum(hours_by_role.values())
     try:
-        def g_U(c):
-            return expect(c, lambda x, role: x["v_u"] - x["l_u"] - x["c_u"] - lam(role, "lam_u") * x["t"], rho_key)
+        def g_U(c, ck):
+            return expect(c, lambda x, role: x["v_u"] - x["l_u"] - x["c_u"] - lam(role, "lam_u") * x["t"], rho_key, ck)
         impl_x = 0.0 if k == 0 else strict(cfg, "impl_x", "central-funded implementation share")
         tau = 0.0 if k == 0 else sum(strict(ini["tau"], c, "chargeback rule")
                                      for c in cfg["pre"] if c in y_shared and c not in loc)
-        phiU = 0.0 if k == 0 else N_k * g_U(cfg) - N_0 * g_U(cfg0) - (impl - impl_x) - tau
+        phiU = N_k * g_U(cfg, key) - N_0 * g_U(cfg0, key_cur) - (impl - impl_x) - tau
     except MissingInput:
         phiU = None
 
     kap, A = ini["kappa"], cfg["A"]
     req = lambda table: strict(table, (A, kap), "requirement table cell")
-    # F5e state: configuration k>0 at the capability-source pattern it would run on; the status quo k=0 at
-    # the CURRENT capability state (consistent with the status-quo baseline of (V2)).
-    f5e_key = key if k != 0 else source_key(ini["rel"], inst.get("y_cur", frozenset()), set())
+    allow = pol["allow"].get((j, k))
+    if allow is None:
+        raise MissingPermission(f"Allow UNIDENTIFIED: {(j, k)}")
+
+    def f5e(tbl, req_tbl, label):
+        # F5e at the capability state the configuration actually runs on (all k, including the status quo).
+        r_req = strict(inst[req_tbl], A, f"{label}^req(A)")
+        if _is_min_level(inst, r_req):
+            return True                       # any level satisfies the scale minimum; no lookup needed
+        v = ini[tbl].get(key)
+        if v is None:
+            raise MissingStateLookup(f"{label}_j(s) UNIDENTIFIED: {sorted(key)}")
+        return v >= r_req
+
     codes = inst["codes"]
     static_ok = (
         cfg["legal"] == 1                                                              # F2
-        and strict(pol["allow"], (j, k), "Allow") == 1                                 # F3
+        and allow == 1                                                                 # F3
         and (j not in pol["forbid"] or k == 0)
         and all(c in avail for c in cfg["pre"])                                        # F4
         and cfg["H"] >= req(pol["H_req"])                                              # F5a
         and cfg["WI"] >= req(pol["WI_req"])                                            # F5b
         and strict(pol["G"], j, "G_j(gamma)") >= req(pol["G_req"])                     # F5c
         and cfg["EA"] >= req(pol["EA_req"])                                            # F5d
-        and strict(ini["R_state"], f5e_key, "R_j(s)") >= strict(inst["R_req"], A, "R^req(A)")   # F5e
-        and strict(ini["D_state"], f5e_key, "D_j(s)") >= strict(inst["D_req"], A, "D^req(A)")   # F5e
+        and f5e("R_state", "R_req", "R") and f5e("D_state", "D_req", "D")              # F5e
         and (not (req(pol["H_req"]) >= O("H", 2, codes)) or cfg["effH"] == 1)          # F6
         and (cfg["A"] < O("A", 2, codes) or cfg["FB"] == 1)                            # F7
         and cfg["cons"] == 1                                                           # F8
     )
     f9 = sev <= strict(pol["ebar"], j, "incident tolerance") + TOL                     # F9
     return dict(feasible=static_ok and f9, static_ok=static_ok, f9=f9, legal=cfg["legal"] == 1,
-                phiE=phiE, phiU=phiU, bud=bud, eng=eng, rev=rev, sev=sev, hours=hours)
+                phiE=phiE, phiE_notime=phi_nt, phiU=phiU, bud=bud, eng=eng, rev=rev, sev=sev, hours=hours,
+                hours_by_role=hours_by_role)
 
 
 # =============================================================================
@@ -406,7 +463,9 @@ def _subsets(items):
         yield from itertools.combinations(items, r)
 
 
-def unit_plans(inst, u, y_shared, gamma_name, allow_local=True, log=None, rho_key="rho"):
+def unit_plans(inst, u, y_shared, gamma_name, allow_local=True, log=None, rho_key="rho", static_only=False):
+    """Feasible plans of unit u. static_only=True keeps theta-independent feasibility only (F2-F8) and skips
+    the theta-dependent checks (F9, R2) -- used to build candidate sets for robust analysis."""
     pol = inst["policies"][gamma_name]
     js = sorted(j for j, ini in inst["initiatives"].items() if ini["unit"] == u)
     loc_caps = []
@@ -432,24 +491,34 @@ def unit_plans(inst, u, y_shared, gamma_name, allow_local=True, log=None, rho_ke
                     continue
                 try:
                     ev = jk_eval(inst, j, k, set(y_shared), set(loc), gamma_name, rho_key)
-                except MissingInput:
-                    if k == 0:
-                        raise
+                except (MissingPermission, MissingStateLookup) as e:
                     if log is not None:
-                        log.add((j, k))
+                        log.add((j, k, type(e).__name__))
                     continue
-                if ev["feasible"]:
+                except MissingInput:
+                    # local to this (j, k, capability state): the configuration is excluded in this state only.
+                    # An initiative whose status quo cannot be evaluated at the current state is removed earlier
+                    # by _drop_unevaluable (UNEVALUABLE_INITIATIVE).
+                    if log is not None:
+                        log.add((j, k, "MissingInput"))
+                    continue
+                if (ev["static_ok"] if static_only else ev["feasible"]):
                     opts.append((k, ev))
             per_j.append(opts)
         for combo in itertools.product(*per_j):
-            if sum(ev["rev"] for _, ev in combo) > strict(inst["rev_cap"], u, "rev_cap") + TOL:
+            if not static_only and sum(ev["rev"] for _, ev in combo) > strict(inst["rev_cap"], u, "rev_cap") + TOL:
                 continue
             fU = None if any(ev["phiU"] is None for _, ev in combo) else sum(ev["phiU"] for _, ev in combo) - loc_bud
+            hb = {}
+            for _, ev in combo:
+                for r, h in ev["hours_by_role"].items():
+                    hb[r] = hb.get(r, 0.0) + h
             plans.append(dict(configs=tuple((j, k) for j, (k, _) in zip(js, combo)), loc=tuple(loc),
                               bud=sum(ev["bud"] for _, ev in combo) + loc_bud,
                               eng=sum(ev["eng"] for _, ev in combo) + loc_eng,
                               fE=sum(ev["phiE"] for _, ev in combo) - loc_bud, fU=fU,
-                              hours=sum(ev["hours"] for _, ev in combo)))
+                              fE_notime=sum(ev["phiE_notime"] for _, ev in combo) - loc_bud,
+                              hours=sum(ev["hours"] for _, ev in combo), hours_by_role=hb))
     return plans
 
 
@@ -504,9 +573,15 @@ def _mck_dp_core(groups, cap_b, cap_e, beta_b, beta_e, rnd):
     return val, tuple(groups[i][ci] for i, ci in enumerate(path))
 
 
+DP_STATS = {"fallback_enum": 0}
+
+
 def mck_dp(groups, cap_b, cap_e, beta_b=1.0, beta_e=1.0):
-    """Returns (value, combo, exact, bound). Ceil-rounded weights give a feasible lower bound; floor-rounded
-    weights give a relaxation upper bound. exact=True iff all weights are integer multiples of the quanta."""
+    """Returns (value, combo, exact, bound).
+    Ceil-rounded weights give a feasible lower bound (lo); floor-rounded weights give a relaxation upper bound
+    (hi), so OPT is in [lo, hi] and bound = hi - lo. exact=True iff all shifted weights are integer multiples of
+    the quanta, OR the branch fell back to exhaustive enumeration because ceil-rounding found no feasible
+    combination while the relaxation did (counted in DP_STATS)."""
     def integral(x, beta):
         q = x / beta
         return abs(q - round(q)) < 1e-9
@@ -516,8 +591,13 @@ def mck_dp(groups, cap_b, cap_e, beta_b=1.0, beta_e=1.0):
     if exact:
         return lo_v, lo_c, True, 0.0
     hi_v, _ = _mck_dp_core(groups, cap_b, cap_e, beta_b, beta_e, lambda q: int(math.floor(q + 1e-9)))
-    bound = None if lo_v is None or hi_v is None else hi_v - lo_v
-    return lo_v, lo_c, False, bound
+    if hi_v is None:
+        return None, None, True, 0.0               # relaxation infeasible => truly infeasible
+    if lo_v is None:
+        DP_STATS["fallback_enum"] += 1
+        v, c = mck_enum(groups, cap_b, cap_e)
+        return v, c, True, 0.0
+    return lo_v, lo_c, False, hi_v - lo_v
 
 
 # =============================================================================
@@ -565,7 +645,7 @@ def solve_central(inst, gammas=None, allow_shared=True, method="enum", beta=(1.0
             if method == "dp":
                 v, combo, ex, bd = mck_dp(groups, rb, re_, *beta)
                 dp_exact &= ex
-                dp_bound = max(dp_bound, bd or 0.0) if not ex else dp_bound
+                dp_bound = max(dp_bound, bd)
             else:
                 v, combo = mck_enum(groups, rb, re_)
             if v is None:
@@ -613,7 +693,7 @@ def solve_bilevel(inst, gammas=None, envelope_fn=envelopes_lemmaE, allow_shared=
     """Model C (allow_shared) or C0. Returns {'opt': {...}, 'pess': {...}}."""
     gammas = sorted(gammas or inst["policies"])
     best = {"opt": None, "pess": None}
-    exact_all = True
+    exact_all, bound_all = True, 0.0
     for y in _subsets(_caps_list(inst, allow_shared)):
         if forced and any((c in y) != on for c, on in forced.items()):
             continue
@@ -636,8 +716,9 @@ def solve_bilevel(inst, gammas=None, envelope_fn=envelopes_lemmaE, allow_shared=
             for mode in ("opt", "pess"):
                 groups = [_pareto([(eb, ee, r[mode]) for eb, ee, r in cands]) for cands in raw]
                 if method == "dp":
-                    v, combo, ex, _ = mck_dp(groups, rb, re_, *beta)
+                    v, combo, ex, bd = mck_dp(groups, rb, re_, *beta)
                     exact_all &= ex
+                    bound_all = max(bound_all, bd)
                 else:
                     v, combo = mck_enum(groups, rb, re_)
                 if v is None:
@@ -649,6 +730,7 @@ def solve_bilevel(inst, gammas=None, envelope_fn=envelopes_lemmaE, allow_shared=
         for mode in best:
             if best[mode]:
                 best[mode]["dp_exact"] = exact_all
+                best[mode]["dp_bound"] = bound_all
     return best
 
 
@@ -670,7 +752,7 @@ def solve_independent(inst, gamma):
         plans = unit_plans(inst, u, (), gamma)
         resp = unit_response(plans, inst["B0"][u]["BUD"], inst["B0"][u]["ENG"])
         if resp is None:
-            raise InvalidInput("Model A infeasible for unit " + u)
+            raise ModelAInfeasible("Model A infeasible for unit " + u)
         lo += resp["pess"]
         hi += resp["opt"]
     return dict(opt=hi, pess=lo)
@@ -721,14 +803,18 @@ def _provenance_summary(inst):
     return counts or {"SIMULATED_ONLY": "all"}
 
 
-def _drop_unevaluable(inst, flags, details):
+def _drop_unevaluable(inst, gammas, flags, details):
+    """Drop an initiative only if its status quo cannot be evaluated for a REASON THAT IS NOT LOCAL TO ONE
+    CONFIGURATION. Only requested, usable policies are checked. A missing permission Allow(j,0) or a missing
+    state lookup excludes that configuration only (logged by unit_plans), never the whole initiative."""
     work = copy.deepcopy(inst)
     for j in sorted(work["initiatives"]):
         try:
-            for g in work["policies"]:
-                if work["policies"][g].get("gov_cost") is None:
+            for g in gammas:
+                try:
+                    ev = jk_eval(work, j, 0, set(), set(), g)
+                except (MissingPermission, MissingStateLookup):
                     continue
-                ev = jk_eval(work, j, 0, set(), set(), g)
                 if not ev["legal"] or not ev["f9"]:
                     flags.add("STATUS_QUO_NONCOMPLIANT")
                     details.setdefault("status_quo_noncompliant", []).append((j, g))
@@ -742,89 +828,137 @@ def _drop_unevaluable(inst, flags, details):
     return work
 
 
-def _restricted_log(inst, gammas):
+def _restricted_log(inst, gammas, allow_shared=True):
     log = set()
     for g in gammas:
-        for y in _subsets(sorted(inst["caps"])):
+        for y in _subsets(sorted(inst["caps"]) if allow_shared else []):
             for u in inst["units"]:
                 try:
                     unit_plans(inst, u, y, g, log=log)
                 except MissingInput:
                     pass
-    return sorted(log)
+    return sorted(log, key=str)
+
+
+def _roles_in_use(inst):
+    return sorted({r for ini in inst["initiatives"].values() for cfg in ini["configs"].values() for r in cfg["pi"]})
+
+
+SHARED_MODELS = ("B", "C")
 
 
 def solve(inst, model="B", gammas=None, method="enum", beta=(1.0, 1.0), registry=None):
     """Never raises for data problems: returns a portfolio_result dict with a status from STATUS_ORDER."""
     res = dict(solver_version=SOLVER_VERSION, model=model, status=None, flags=[], details={},
-               provenance_summary=_provenance_summary(inst))
+               provenance_summary=_provenance_summary(inst) if isinstance(inst, dict) else {})
+    try:
+        return _solve_guarded(inst, model, gammas, method, beta, registry, res)
+    except (MissingInput, NotComparable, ModelAInfeasible) as e:     # data problems outside the core solve
+        st = ("FOLLOWER_LEDGER_UNIDENTIFIED" if isinstance(e, FollowerLedgerUnidentified) else
+              "REJECT_INSUFFICIENT_IDENTIFIED_INPUTS" if isinstance(e, MissingInput) else
+              "NOT_COMPARABLE" if isinstance(e, NotComparable) else "INFEASIBLE")
+        res.update(status=st, flags=[st])
+        res["details"]["error"] = f"{type(e).__name__}: {e}"
+        return res
+    except (InvalidInput, TypeError, KeyError, ValueError, AttributeError, IndexError, ArithmeticError) as e:
+        res.update(status="INVALID_SCHEMA_OR_UNITS", flags=["INVALID_SCHEMA_OR_UNITS"])
+        res["details"]["error"] = f"{type(e).__name__}: {e}"
+        for k in ("F_E", "y", "configs", "gamma", "envelopes"):
+            res.pop(k, None)
+        return res
+
+
+def _finish(res, flags):
+    res["flags"] = sorted(flags, key=STATUS_ORDER.index)
+    res["status"] = res["flags"][0]
+    res.pop("infeasible", None)
+    return res
+
+
+def _solve_guarded(inst, model, gammas, method, beta, registry, res):
+    if model not in ("A", "Aplus", "B", "C0", "C"):
+        raise InvalidInput(f"unknown model {model}")
+    if method not in ("enum", "dp"):
+        raise InvalidInput(f"unknown method {method}")
+    if method == "dp" and not (len(beta) == 2 and all(isinstance(b, (int, float)) and not isinstance(b, bool)
+                                                       and math.isfinite(b) and b >= 1e-6 for b in beta)):
+        raise InvalidInput("DP quanta beta must be two finite numbers >= 1e-6")
+    flags = set()
+    validate_instance(inst)
     if registry is not None:
+        validate_registry(registry, inst)
         res["scenario_registry_hash"] = registry_hash(registry)
         res["parameter_ranges_hash"] = parameter_ranges_hash(registry)
-    flags = set()
-    try:
-        validate_instance(inst)
-    except (InvalidInput, TypeError, KeyError) as e:
-        res["status"], res["flags"], res["details"]["error"] = "INVALID_SCHEMA_OR_UNITS", ["INVALID_SCHEMA_OR_UNITS"], str(e)
-        return res
+        res["registry_commitment"] = registry_commitment(registry, inst)
     if inst["A_bar"].get("BUD") is None or inst["A_bar"].get("ENG") is None or \
        any(inst["rev_cap"].get(u) is None for u in inst["units"]):
-        res["status"] = "REJECT_INSUFFICIENT_IDENTIFIED_INPUTS"
-        res["flags"] = [res["status"]]
-        return res
-    usable = [g for g in sorted(gammas or inst["policies"]) if inst["policies"][g].get("gov_cost") is not None]
-    if len(usable) < len(gammas or inst["policies"]):
+        return _finish(res, {"REJECT_INSUFFICIENT_IDENTIFIED_INPUTS"})
+    requested = sorted(gammas or inst["policies"])
+    usable = [g for g in requested if inst["policies"][g].get("gov_cost") is not None]
+    if len(usable) < len(requested):
         flags.add("RESTRICTED_SOLVE")
-        res["details"]["excluded_policies"] = sorted(set(gammas or inst["policies"]) - set(usable))
+        res["details"]["excluded_policies"] = sorted(set(requested) - set(usable))
     if not usable:
-        res["status"] = "REJECT_INSUFFICIENT_IDENTIFIED_INPUTS"
-        res["flags"] = [res["status"]]
-        return res
-    roles_missing = sorted(r for r, v in inst["lam"].items() if v is None)
-    pre = copy.deepcopy(inst)
-    if roles_missing:
-        pre["_lam_override"] = {r: 0.0 for r in roles_missing}
-    work = _drop_unevaluable(pre, flags, res["details"])
-    if not work["initiatives"]:
-        res["status"] = "REJECT_INSUFFICIENT_IDENTIFIED_INPUTS"
-        res["flags"] = sorted(flags | {res["status"]}, key=STATUS_ORDER.index)
-        return res
-    # lambda missing -> PARTIAL_OBJECTIVE (never a silent zero): the objective is reported WITHOUT the time
-    # term as F_E_minus_time together with delta_hours, and the decision is scanned over [0, lambda^U].
-    if roles_missing:
-        flags.add("PARTIAL_OBJECTIVE")
-        res["details"]["lambda_unidentified_roles"] = roles_missing
-    # F_c missing -> THRESHOLD_MODE (never F_c = 0, never y_c = 0)
+        return _finish(res, flags | {"REJECT_INSUFFICIENT_IDENTIFIED_INPUTS"})
+    if model == "A" and len(usable) != 1:
+        raise InvalidInput("Model A requires exactly one usable policy")
+    # lambda: a role is missing if it appears in any pi but has no identified enterprise lambda
+    roles_missing = [r for r in _roles_in_use(inst) if inst["lam"].get(r) is None]
+    probe = copy.deepcopy(inst)
+    if roles_missing:            # values irrelevant here: used only to find non-lambda missing inputs
+        probe["_lam_override"] = {r: 0.0 for r in roles_missing}
+    probe = _drop_unevaluable(probe, usable, flags, res["details"])
+    if not probe["initiatives"]:
+        return _finish(res, flags | {"REJECT_INSUFFICIENT_IDENTIFIED_INPUTS"})
+    work = copy.deepcopy(probe)
+    work.pop("_lam_override", None)
+    allow_shared = model in SHARED_MODELS
     caps_missing = sorted(c for c, d in work["caps"].items() if d["F"] is None)
-    restr = set()
+    if caps_missing and not allow_shared:
+        # without sharing F_c enters only through the status-quo charge of capabilities already in y_cur
+        unused_caps = [c for c in caps_missing if c not in work.get("y_cur", frozenset())]
+        if unused_caps:
+            res["details"].setdefault("unidentified_inputs_not_used_by_this_model", []).extend(("caps.F", c) for c in unused_caps)
+        caps_missing = []
     try:
-        if caps_missing:
+        if roles_missing:
+            # PARTIAL_OBJECTIVE: never a silent zero. No point decision unless the decision is invariant over
+            # the pre-registered box [0, lambda^U]^m (exact vertex check for B/A+; grid for C/C0/A).
+            flags.add("PARTIAL_OBJECTIVE")
+            res["details"]["lambda_unidentified_roles"] = roles_missing
+            scan = lambda_scan(work, model, usable, roles_missing, method, beta, caps_missing=caps_missing)
+            res["details"]["lambda_scan"] = scan
+            if caps_missing:
+                flags.add("THRESHOLD_MODE")
+                res["details"]["threshold"] = scan.get("thresholds")
+            elif scan["classification"] == "INFEASIBLE_AT_ALL_POINTS":
+                flags.add("INFEASIBLE")
+            elif scan["classification"] == "ROBUST" and scan.get("certified"):
+                res.update(scan["decision"])
+                res["decision_valid_for_all_lambda_in_box"] = True
+            else:
+                res["point_decision"] = None
+        elif caps_missing:
             flags.add("THRESHOLD_MODE")
             res["details"]["threshold"] = threshold_mode(work, caps_missing, model, usable, method, beta)
         else:
-            core = _solve_core(work, model, usable, method, beta, log=restr)
+            core = _solve_core(work, model, usable, method, beta)
             res.update(core)
             if core.get("infeasible"):
                 flags.add("INFEASIBLE")
-        if "PARTIAL_OBJECTIVE" in flags and not caps_missing and not res.get("infeasible"):
-            res["F_E_minus_time"] = res.pop("F_E", None)
-            res["delta_hours"] = res.get("delta_hours")
-            res["details"]["lambda_scan"] = lambda_scan(work, model, usable, roles_missing, method, beta)
     except FollowerLedgerUnidentified as e:
         flags.add("FOLLOWER_LEDGER_UNIDENTIFIED")
         res["details"]["error"] = str(e)
     except NotComparable as e:
         flags.add("NOT_COMPARABLE")
         res["details"]["error"] = str(e)
+    except ModelAInfeasible as e:
+        flags.add("INFEASIBLE")
+        res["details"]["error"] = str(e)
     except MissingInput as e:
         flags.add("REJECT_INSUFFICIENT_IDENTIFIED_INPUTS")
         res["details"]["error"] = str(e)
-    except (InvalidInput, TypeError) as e:
-        res["status"], res["flags"], res["details"]["error"] = "INVALID_SCHEMA_OR_UNITS", ["INVALID_SCHEMA_OR_UNITS"], str(e)
-        return res
-    if caps_missing or model == "A":
-        restr |= set(_restricted_log(work, usable))
-    excluded = sorted(restr, key=str)
+    excluded = _restricted_log(probe, usable, allow_shared)
     if excluded:
         flags.add("RESTRICTED_SOLVE")
         res["details"]["excluded_configs"] = excluded
@@ -835,15 +969,12 @@ def solve(inst, model="B", gammas=None, method="enum", beta=(1.0, 1.0), registry
                 if k != 0 and cfg.get("impl_x") is None:
                     unused.append((j, k, "impl_x"))
             unused += [(j, c, "tau") for c in ini["rel"] if ini["tau"].get(c) is None]
-        unused += [("lam_u", r) for r, v in work["lam_u"].items() if v is None]
+        unused += [("lam_u", r) for r in _roles_in_use(work) if work["lam_u"].get(r) is None]
         if unused:
-            res["details"]["unidentified_inputs_not_used_by_this_model"] = sorted(unused, key=str)
+            res["details"].setdefault("unidentified_inputs_not_used_by_this_model", []).extend(sorted(unused, key=str))
     if not flags:
         flags.add("OK_POINT")
-    res["flags"] = sorted(flags, key=STATUS_ORDER.index)
-    res["status"] = res["flags"][0]
-    res.pop("infeasible", None)
-    return res
+    return _finish(res, flags)
 
 
 def _portfolio_hours(inst, sol, gamma):
@@ -858,10 +989,16 @@ def _solve_core(inst, model, gammas, method, beta, log=None):
         sol = solve_central(inst, gammas, allow_shared=(model == "B"), method=method, beta=beta, log=log)
         if sol is None:
             return {"infeasible": True}
+        _, _, charge, gov = shared_terms(inst, sol["y"], sol["gamma"])
+        hb = {}
+        for p in sol["plans"]:
+            for r, h in p["hours_by_role"].items():
+                hb[r] = hb.get(r, 0.0) + h
         out = dict(F_E=sol["F"], y=sorted(sol["y"]), gamma=sol["gamma"],
                    configs=sorted(jk for p in sol["plans"] for jk in p["configs"]),
                    y_loc=sorted((inst["initiatives"][p["configs"][0][0]]["unit"], c) for p in sol["plans"] for c in p["loc"]),
-                   delta_hours=_portfolio_hours(inst, sol, sol["gamma"]))
+                   delta_hours=_portfolio_hours(inst, sol, sol["gamma"]), delta_hours_by_role=hb,
+                   F_E_minus_time=sum(p["fE_notime"] for p in sol["plans"]) - charge - gov)
         if method == "dp":
             out.update(dp_exact=sol["dp_exact"], dp_bound=sol["dp_bound"])
         return out
@@ -869,10 +1006,13 @@ def _solve_core(inst, model, gammas, method, beta, log=None):
         sol = solve_bilevel(inst, gammas, allow_shared=(model == "C"), method=method, beta=beta, log=log)
         if sol["opt"] is None:
             return {"infeasible": True}
-        return dict(F_E={"opt": sol["opt"]["F"], "pess": sol["pess"]["F"]},
-                    y={"opt": sorted(sol["opt"]["y"]), "pess": sorted(sol["pess"]["y"])},
-                    gamma={"opt": sol["opt"]["gamma"], "pess": sol["pess"]["gamma"]},
-                    envelopes={"opt": sol["opt"]["env"], "pess": sol["pess"]["env"]})
+        out = dict(F_E={"opt": sol["opt"]["F"], "pess": sol["pess"]["F"] if sol["pess"] else None},
+                   y={m: sorted(sol[m]["y"]) for m in sol if sol[m]},
+                   gamma={m: sol[m]["gamma"] for m in sol if sol[m]},
+                   envelopes={m: sol[m]["env"] for m in sol if sol[m]})
+        if method == "dp":
+            out.update(dp_exact=sol["opt"]["dp_exact"], dp_bound=sol["opt"]["dp_bound"])
+        return out
     if model == "A":
         if len(gammas) != 1:
             raise InvalidInput("Model A requires exactly one policy")
@@ -882,52 +1022,98 @@ def _solve_core(inst, model, gammas, method, beta, log=None):
 
 
 def threshold_mode(inst, caps_missing, model, gammas, method, beta):
-    """F_c UNIDENTIFIED: report F_c^dagger = sup{F : building c is optimal}, with other missing caps
-    forced off (reported as such). Never sets F_c = 0 in the reported solution, never forces y_c = 0."""
+    """F_c UNIDENTIFIED (models B and C only): report F_c^dagger = sup{F : building c is optimal}, with other
+    missing caps forced off. Never sets F_c = 0 in a reported solution, never forces y_c = 0. For C both the
+    optimistic and the pessimistic threshold are reported. Bisection assumes 'built' is monotone in F_c, which
+    holds in B (the value of every y containing c falls one-for-one in F_c, others unchanged) and in C for the
+    same reason at fixed follower responses (responses do not depend on F_c)."""
+    if model not in SHARED_MODELS:
+        raise InvalidInput("THRESHOLD_MODE is defined only for models with shared capabilities (B, C)")
     out = {}
     hi_b = inst["A_bar"]["BUD"]
+    modes = ("opt", "pess") if model == "C" else ("point",)
     for c in caps_missing:
-        def built(F):
-            i = copy.deepcopy(inst)
-            i["caps"][c]["F"] = F
-            for o in caps_missing:
-                if o != c:
-                    i["caps"][o]["F"] = 0.0
-            forced = {o: False for o in caps_missing if o != c}
-            if model in ("C", "C0"):
-                s = solve_bilevel(i, gammas, forced=forced, method=method, beta=beta)["pess"]
-            else:
-                s = solve_central(i, gammas, forced=forced, method=method, beta=beta)
-            return s is not None and c in s["y"]
-        lo, hi = 0.0, hi_b
-        if not built(lo):
-            out[c] = dict(F_dagger=None, statement=f"{c} is not built even at F_c=0; F_c^dagger undefined (<0)")
-            continue
-        if built(hi):
-            out[c] = dict(F_dagger=hi, statement=f"{c} built for every F_c <= pooled budget")
-            continue
-        for _ in range(50):
-            mid = 0.5 * (lo + hi)
-            lo, hi = (mid, hi) if built(mid) else (lo, mid)
-        out[c] = dict(F_dagger=0.5 * (lo + hi),
-                      statement=f"y_{c}* = 1 iff F_{c} <= F_dagger (other missing capabilities forced off)",
-                      joint_threshold_computed=len(caps_missing) == 1)
+        forced = {o: False for o in caps_missing if o != c}
+        res_c = {}
+        for mode in modes:
+            def built(F):
+                i = copy.deepcopy(inst)
+                i["caps"][c]["F"] = F
+                for o in caps_missing:
+                    if o != c:
+                        i["caps"][o]["F"] = 0.0          # never built (forced off); value irrelevant
+                if model == "C":
+                    s_ = solve_bilevel(i, gammas, forced=forced, method=method, beta=beta)[mode]
+                else:
+                    s_ = solve_central(i, gammas, forced=forced, method=method, beta=beta)
+                return s_ is not None and c in s_["y"]
+            lo, hi = 0.0, hi_b
+            if not built(lo):
+                res_c[mode] = dict(F_dagger=None, statement=f"{c} is not built even at F_c=0; F_c^dagger undefined (<0)")
+                continue
+            if built(hi):
+                res_c[mode] = dict(F_dagger=hi, statement=f"{c} built for every F_c <= pooled budget")
+                continue
+            for _ in range(50):
+                mid = 0.5 * (lo + hi)
+                lo, hi = (mid, hi) if built(mid) else (lo, mid)
+            res_c[mode] = dict(F_dagger=0.5 * (lo + hi),
+                               statement=f"y_{c}* = 1 iff F_{c} <= F_dagger (other missing capabilities forced off)")
+        out[c] = res_c["point"] if model != "C" else res_c
+        if model != "C":
+            out[c]["joint_threshold_computed"] = len(caps_missing) == 1
     return out
 
 
-def lambda_scan(inst, model, gammas, roles, method, beta, grid=5):
+def _decision_sig(s):
+    return json.dumps(_canon({k: s.get(k) for k in ("infeasible", "y", "gamma", "configs", "envelopes", "y_loc")}), sort_keys=True)
+
+
+def lambda_scan(inst, model, gammas, roles, method, beta, grid=4, caps_missing=()):
+    """Scan the pre-registered box [0, lambda^U]^m over the missing roles. Solves inside the scan are always
+    exhaustive (exact), whatever method the caller asked for, so a certificate is never built on approximations.
+    B / A+: for a fixed portfolio F_E is affine in lambda and feasibility does not depend on lambda, so a
+    portfolio optimal at all 2^m vertices is optimal on the whole box -> 'certified'. C / C0: the pessimistic
+    value is a minimum over follower tie sets, so a grid of (grid+1)^m points is used; a common decision on the
+    grid is reported as ROBUST_ON_GRID and is NOT certified (no point decision is emitted). A: no leader decision."""
     lamU = inst.get("lam_U", {})
     if any(lamU.get(r) is None for r in roles):
-        return dict(classification="UNIDENTIFIED", reason="no upper bound lambda^U for some role")
-    decisions = []
-    for t in range(grid + 1):
+        return dict(classification="UNIDENTIFIED", reason="no upper bound lambda^U for some role", certified=False)
+    if model == "A":
+        return dict(classification="NO_LEADER_DECISION", certified=False,
+                    reason="Model A has no leader decision; its value is not identified without lambda")
+    exact = model in ("B", "Aplus")
+    pts = list(itertools.product(*[[0.0, lamU[r]] if exact else [lamU[r] * t / grid for t in range(grid + 1)]
+                                   for r in roles]))
+    decisions, sols, thresholds = {}, None, []
+    for pt in pts:
         i = copy.deepcopy(inst)
-        i["_lam_override"] = {r: lamU[r] * t / grid for r in roles}
-        s = _solve_core(i, model, gammas, method, beta)
-        decisions.append(json.dumps(_canon({k: s.get(k) for k in ("y", "gamma", "configs", "envelopes")}), sort_keys=True))
-    return dict(classification="ROBUST" if len(set(decisions)) == 1 else "FRAGILE",
-                distinct_decisions=len(set(decisions)), grid_points=grid + 1,
-                note="single pre-registered interval [0, lambda^U]; a change inside it is FRAGILE")
+        i["_lam_override"] = dict(zip(roles, pt))
+        if caps_missing:
+            thresholds.append((pt, threshold_mode(i, caps_missing, model, gammas, "enum", beta)))
+            continue
+        s = _solve_core(i, model, gammas, "enum", beta)
+        sig = _decision_sig(s)
+        decisions.setdefault(sig, []).append(pt)
+        if sols is None:
+            sols = s
+    out = dict(method="vertex (exact)" if exact else f"grid {(grid + 1)}^{len(roles)} (coverage only)",
+               points=len(pts), box={r: [0.0, lamU[r]] for r in roles}, solver_inside_scan="enum (exact)")
+    if caps_missing:
+        out.update(classification="THRESHOLD_BY_LAMBDA_POINT", thresholds=thresholds, certified=False)
+        return out
+    if len(decisions) == 1 and sols.get("infeasible"):
+        out.update(classification="INFEASIBLE_AT_ALL_POINTS", certified=exact)
+        return out
+    if len(decisions) == 1:
+        out["classification"] = "ROBUST" if exact else "ROBUST_ON_GRID"
+        out["certified"] = exact
+        out["decision"] = {k: sols[k] for k in ("y", "gamma", "configs", "y_loc", "envelopes", "delta_hours",
+                                                "delta_hours_by_role", "F_E_minus_time") if k in sols}
+    else:
+        out.update(classification="FRAGILE", certified=False, distinct_decisions=len(decisions),
+                   decision_regions={sig: pts_ for sig, pts_ in decisions.items()})
+    return out
 
 
 # =============================================================================
@@ -970,18 +1156,116 @@ def solve_model_D(inst, evidence, gammas=None):
 # =============================================================================
 # 11. Robustness: registry, Lemma R, robust feasibility, MaxRegret, VOI (T-SEN-3/4/6/7)
 # =============================================================================
+def _exact(x):
+    """Canonical form with EXACT floats (float.hex), used for commitments (no rounding)."""
+    if isinstance(x, bool) or x is None or isinstance(x, (int, str)):
+        return x
+    if isinstance(x, float):
+        return {"float": x.hex()}
+    if isinstance(x, (frozenset, set)):
+        return sorted((_exact(v) for v in x), key=lambda v: json.dumps(v, sort_keys=True, default=str))
+    if isinstance(x, (tuple, list)):
+        return [_exact(v) for v in x]
+    if isinstance(x, dict):
+        return sorted([[_exact(k), _exact(v)] for k, v in x.items()], key=lambda kv: json.dumps(kv[0], sort_keys=True, default=str))
+    if isinstance(x, Ord):
+        return {"ord": [x.construct, _exact(float(x.code)) if isinstance(x.code, float) else x.code]}
+    return repr(x)
+
+
+def _sha(obj):
+    return hashlib.sha256(json.dumps(obj, sort_keys=True, default=str).encode()).hexdigest()
+
+
 def registry_hash(reg):
-    return hashlib.sha256(json.dumps(_canon(reg), sort_keys=True, default=str).encode()).hexdigest()
+    return _sha(_exact(reg))
 
 
 def parameter_ranges_hash(reg):
     ranges = {g: [b for b in grp["blocks"]] for g, grp in reg["groups"].items()}
-    return hashlib.sha256(json.dumps(_canon(ranges), sort_keys=True, default=str).encode()).hexdigest()
+    return _sha(_exact(ranges))
 
 
-def verify_registry(result, reg):
-    return result.get("scenario_registry_hash") == registry_hash(reg) and \
+def registry_nominals(reg, inst):
+    """Nominal values of every registered target, read from the instance (exact floats)."""
+    out = []
+    for g in sorted(reg["groups"]):
+        for b in reg["groups"][g]["blocks"]:
+            if b["kind"] == "scale":
+                for path, field in b.get("targets", []):
+                    out.append([g, b["name"], list(path), field, _exact(_get(inst, path)[field])])
+            else:
+                out.append([g, b["name"], list(b["path"]), None, _exact(_get(inst, b["path"]))])
+    return out
+
+
+def registry_commitment(reg, inst):
+    """SHA-256 over the registry AND the nominal values it scales/mixes. Computed before a solve; a post-hoc
+    change of a range, of eps_R or of any targeted nominal value changes the commitment."""
+    return _sha({"registry": _exact(reg), "nominal": registry_nominals(reg, inst)})
+
+
+def _factor_kind(path, field):
+    """Factor kind of a registry target: the multiplicative role the cell plays in the value and slack formulas
+    (N, path cell, P, pi, rho, impl, eng, ebar, caps, A_bar, ...). A block must stay inside one kind so that every
+    value and slack is affine in each block separately (multilinear in theta) -- the assumption behind every
+    vertex argument (Lemma R, MaxRegret, robust feasibility certificates). This is conservative: some
+    multi-kind blocks would also be affine, but they are rejected."""
+    path = tuple(path)
+    if path[:1] == ("initiatives",):
+        if len(path) >= 5 and path[2] == "configs":
+            return path[4]
+        if len(path) >= 4 and path[2] == "configs":
+            return field
+        return path[2] if len(path) > 2 else field
+    return path[0]
+
+
+def validate_registry(reg, inst):
+    """Rejects (InvalidInput) registries whose blocks would break the multilinear structure or overwrite each
+    other: unknown target, non-numeric target, a block spanning several factor classes, two blocks touching the
+    same cell, a probability block whose vertices are not normalized, or a scale range with L > U."""
+    for g, grp in reg["groups"].items():
+        seen = {}
+        for b in grp["blocks"]:
+            if b["kind"] == "scale":
+                if not (isinstance(b["L"], (int, float)) and isinstance(b["U"], (int, float)) and
+                        math.isfinite(b["L"]) and math.isfinite(b["U"]) and b["L"] <= b["U"]):
+                    raise InvalidInput(f"registry {g}.{b['name']}: scale range invalid")
+                classes = set()
+                for path, field in b["targets"]:
+                    try:
+                        v = _get(inst, path)[field]
+                    except (KeyError, TypeError, IndexError):
+                        raise InvalidInput(f"registry {g}.{b['name']}: unknown target {path}.{field}")
+                    if not isinstance(v, (int, float)) or isinstance(v, bool):
+                        raise InvalidInput(f"registry {g}.{b['name']}: target {path}.{field} is not numeric")
+                    classes.add(_factor_kind(path, field))
+                    cell = (tuple(path), field)
+                    if cell in seen:
+                        raise InvalidInput(f"registry {g}: blocks {seen[cell]} and {b['name']} target the same cell")
+                    seen[cell] = b["name"]
+                if len(classes) > 1:
+                    raise InvalidInput(f"registry {g}.{b['name']}: one block spans several factor kinds {sorted(map(str, classes))}")
+            elif b["kind"] == "prob":
+                for vtx in b["vertices"]:
+                    if any((p is None) or p < -TOL for p in vtx.values()) or not math.isclose(sum(vtx.values()), 1.0, abs_tol=1e-9):
+                        raise InvalidInput(f"registry {g}.{b['name']}: vertex not a probability row")
+                cell = (tuple(b["path"]), None)
+                if any(c[0][:len(b["path"])] == tuple(b["path"]) for c in seen) or cell in seen:
+                    raise InvalidInput(f"registry {g}: probability block {b['name']} overlaps another block")
+                seen[cell] = b["name"]
+            else:
+                raise InvalidInput("unknown block kind")
+    return True
+
+
+def verify_registry(result, reg, inst=None):
+    ok = result.get("scenario_registry_hash") == registry_hash(reg) and \
         result.get("parameter_ranges_hash") == parameter_ranges_hash(reg)
+    if inst is not None:
+        ok = ok and result.get("registry_commitment") == registry_commitment(reg, inst)
+    return ok
 
 
 def _get(inst, path):
@@ -1026,15 +1310,18 @@ def theta_grid(blocks):
     return [tuple(v) for v in itertools.product(*[block_vertices(b) for b in blocks])]
 
 
-def enumerate_portfolios(inst, gamma, allow_shared=True):
-    """All feasible fixed portfolios (y, gamma, plans) for Model B at the given instance."""
+def enumerate_portfolios(inst, gamma, allow_shared=True, static_only=False):
+    """Fixed portfolios (y, gamma, plans) for Model B. static_only=False: feasible at this instance.
+    static_only=True: theta-independent feasibility only (F2-F8; no budget, hours, review or F9 check) -- the
+    candidate superset for robust analysis, which is then filtered by robust_feasibility. This avoids
+    dropping portfolios that are infeasible at the nominal theta but feasible on the registered set."""
     out = []
     for y in _subsets(_caps_list(inst, allow_shared)):
         sb, se, charge, gov = shared_terms(inst, y, gamma)
         rb, re_ = inst["A_bar"]["BUD"] - sb - gov, inst["A_bar"]["ENG"] - se
-        per_u = [unit_plans(inst, u, y, gamma) for u in sorted(inst["units"])]
+        per_u = [unit_plans(inst, u, y, gamma, static_only=static_only) for u in sorted(inst["units"])]
         for combo in itertools.product(*per_u):
-            if sum(p["bud"] for p in combo) <= rb + TOL and sum(p["eng"] for p in combo) <= re_ + TOL:
+            if static_only or (sum(p["bud"] for p in combo) <= rb + TOL and sum(p["eng"] for p in combo) <= re_ + TOL):
                 out.append((tuple(sorted(y)), tuple((p["configs"], p["loc"]) for p in combo)))
     return out
 
@@ -1073,21 +1360,63 @@ def theta_instances(inst, blocks):
     return [(th, apply_theta(inst, blocks, th)) for th in theta_grid(blocks)]
 
 
-def robust_feasibility(inst, gamma, d, blocks, tinst=None):
-    """ROBUSTLY_FEASIBLE: every constraint holds at every vertex (worst case of a multilinear slack is a
-    vertex, so this certifies all theta). INFEASIBLE: statically infeasible, or some single constraint is
-    violated at every vertex (its best case is also a vertex, so it is violated for all theta).
-    Otherwise CONDITIONALLY_FEASIBLE (feasible for some theta only; excluded from ROBUST candidate sets)."""
-    tinst = tinst or theta_instances(inst, blocks)
-    per = [portfolio_slacks(i, gamma, d) for _, i in tinst]
-    if not all(p[0] for p in per):
-        return "INFEASIBLE"
-    keys = per[0][1].keys()
-    if all(min(p[1].values()) >= -TOL for p in per):
-        return "ROBUSTLY_FEASIBLE"
-    if any(all(p[1][k] < -TOL for p in per) for k in keys):
-        return "INFEASIBLE"
-    return "CONDITIONALLY_FEASIBLE"
+def block_values(block, mode="grid", grid=4):
+    """Values of one block. 'vertex': its vertices. 'grid': scale -> grid+1 equally spaced points;
+    prob -> vertices plus 2-vertex mixtures at t/grid."""
+    if mode == "vertex":
+        return block_vertices(block)
+    if block["kind"] == "scale":
+        return [("scale", block["L"] + (block["U"] - block["L"]) * t / grid) for t in range(grid + 1)]
+    n = len(block["vertices"])
+    vals = [("vertex", i) for i in range(n)]
+    for a, b in itertools.combinations(range(n), 2):
+        for t in range(1, grid):
+            w = [0.0] * n
+            w[a], w[b] = 1 - t / grid, t / grid
+            vals.append(("mix", tuple(w)))
+    return vals
+
+
+def search_points(inst, blocks, grid=3, n_samples=40, seed=20261011):
+    """Theta points beyond the vertices (grid of block values and random interior samples), with instances."""
+    rng = random.Random(seed)
+    pts = [tuple(v) for v in itertools.product(*[block_values(b, "grid", grid) for b in blocks])]
+    pts += [tuple(block_sample(b, rng) for b in blocks) for _ in range(n_samples)]
+    return [(th, apply_theta(inst, blocks, th)) for th in pts]
+
+
+def feasibility_class(vertex_rows, search_rows):
+    """vertex_rows/search_rows: lists of (theta, static_ok, slacks). Each slack is assumed affine in every
+    block separately (multilinear), so its minimum and its maximum over the product polytope are attained at
+    vertices.
+      ROBUSTLY_FEASIBLE       every slack >= 0 at every vertex (certificate for all theta);
+      INFEASIBLE              statically infeasible everywhere, or one slack < 0 at every vertex (certificate);
+      CONDITIONALLY_FEASIBLE  some searched theta satisfies ALL constraints jointly (witness reported);
+      FEASIBILITY_UNDETERMINED no certificate either way and no joint witness found (the search is finite)."""
+    ok = lambda r: r[1] and min(r[2].values()) >= -TOL
+    if all(ok(r) for r in vertex_rows):
+        return "ROBUSTLY_FEASIBLE", None
+    if not any(r[1] for r in vertex_rows):
+        return "INFEASIBLE", None
+    keys = vertex_rows[0][2].keys()
+    if any(all(r[2][k] < -TOL for r in vertex_rows) for k in keys):
+        return "INFEASIBLE", None
+    for r in list(vertex_rows) + list(search_rows):
+        if ok(r):
+            return "CONDITIONALLY_FEASIBLE", r[0]
+    return "FEASIBILITY_UNDETERMINED", None
+
+
+def robust_feasibility(inst, gamma, d, blocks, tinst=None, spts=None, witness=False):
+    tinst = tinst if tinst is not None else theta_instances(inst, blocks)
+    vrows = [(th, *portfolio_slacks(i, gamma, d)[:2]) for th, i in tinst]
+    cls, w = feasibility_class(vrows, [])
+    if cls == "CONDITIONALLY_FEASIBLE" or cls in ("ROBUSTLY_FEASIBLE", "INFEASIBLE"):
+        return (cls, w) if witness else cls
+    spts = spts if spts is not None else search_points(inst, blocks)
+    srows = [(th, *portfolio_slacks(i, gamma, d)[:2]) for th, i in spts]
+    cls, w = feasibility_class(vrows, srows)
+    return (cls, w) if witness else cls
 
 
 def design_response_analysis(inst, gamma):
@@ -1104,24 +1433,36 @@ def design_response_analysis(inst, gamma):
 
 
 def solve_robust(inst, gamma, registry, group):
-    """Model B robust solve over one registered group: candidate set = robustly feasible portfolios;
-    returns minimax-regret decision, its MaxRegret and the whole-portfolio Lemma R certificate."""
+    """Model B robust solve over one registered group: candidate set = ROBUSTLY_FEASIBLE portfolios drawn from
+    the theta-independent superset (not from the nominal-feasible set); returns the minimax-regret decision, its
+    MaxRegret (exact: regret is a max of multilinear functions, so its maximum is at a vertex), the whole-portfolio
+    Lemma R certificate, feasibility-class counts and the registry commitment."""
+    try:
+        validate_instance(inst)
+        validate_registry(registry, inst)
+    except (InvalidInput, TypeError, KeyError) as e:
+        return dict(status="INVALID_SCHEMA_OR_UNITS", solver_version=SOLVER_VERSION, details={"error": str(e)})
+    commitment = registry_commitment(registry, inst)
     blocks = registry["groups"][group]["blocks"]
     tinst = theta_instances(inst, blocks)
-    cands = [d for d in enumerate_portfolios(inst, gamma)
-             if robust_feasibility(inst, gamma, d, blocks, tinst) == "ROBUSTLY_FEASIBLE"]
+    classes, cands = {}, []
+    for d in enumerate_portfolios(inst, gamma, static_only=True):
+        tinst_cls = robust_feasibility(inst, gamma, d, blocks, tinst, spts=[])
+        classes[tinst_cls] = classes.get(tinst_cls, 0) + 1
+        if tinst_cls == "ROBUSTLY_FEASIBLE":
+            cands.append(d)
+    base = dict(solver_version=SOLVER_VERSION, scenario_registry_hash=registry_hash(registry),
+                parameter_ranges_hash=parameter_ranges_hash(registry), registry_commitment=commitment,
+                feasibility_classes=classes, provenance_summary=_provenance_summary(inst))
     if not cands:
-        return dict(status="INFEASIBLE", solver_version=SOLVER_VERSION,
-                    scenario_registry_hash=registry_hash(registry), parameter_ranges_hash=parameter_ranges_hash(registry))
+        return dict(status="INFEASIBLE", **base)
     thetas = theta_grid(blocks)
     vals = regret_table(inst, gamma, cands, thetas, blocks)
     mr = {d: max_regret(vals, d) for d in cands}
     dstar = min(cands, key=lambda d: (mr[d], json.dumps(_canon(d))))
     cert = lemma_r_check(inst, gamma, dstar, cands, blocks)
-    return dict(status="OK_INTERVAL", solver_version=SOLVER_VERSION, decision=dstar, max_regret=mr[dstar],
-                whole_portfolio_robust=cert["robust"], n_candidates=len(cands),
-                scenario_registry_hash=registry_hash(registry), parameter_ranges_hash=parameter_ranges_hash(registry),
-                provenance_summary=_provenance_summary(inst))
+    return dict(status="OK_INTERVAL", decision=dstar, max_regret=mr[dstar], whole_portfolio_robust=cert["robust"],
+                n_candidates=len(cands), **base)
 
 
 def lemma_r_check(inst, gamma, d_star, competitors, blocks, model="B", scope="whole_portfolio"):
@@ -1162,21 +1503,65 @@ def minimax_regret(vals, candidates, thetas=None):
     return min(max_regret(vals, d, thetas) for d in candidates)
 
 
-def voi_table(vals, candidates, blocks):
-    """Value of identification per block: MMR(all) - max_v MMR(theta restricted to block value v)."""
-    thetas = list(vals)
-    mmr_all = minimax_regret(vals, candidates, thetas)
+def voi_generic(evalf, candidates, blocks, mode="grid", grid=4):
+    """Value of identification of each block b:
+         VOI_b = MMR(all theta) - sup_v MMR(theta_b = v),
+       where MMR over a set is the minimax regret over the candidate set. MMR(all) and each MMR(theta_b = v)
+       are exact on vertices of the other blocks (regret is a max of multilinear functions). The sup over v is
+       taken over block_values(b, mode): 'vertex' uses only the vertices of b (can overstate VOI because an
+       interior v may have larger MMR), 'grid' adds interior values (still an upper bound on the true VOI, and
+       never larger than the vertex version). evalf(d, theta) -> value."""
+    cache = {}
+
+    def row(th):
+        if th not in cache:
+            cache[th] = {d: evalf(d, th) for d in candidates}
+        return cache[th]
+
+    def mmr(ths):
+        return min(max(max(row(t).values()) - row(t)[d] for t in ths) for d in candidates)
+    verts = [block_vertices(b) for b in blocks]
+    mmr_all = mmr([tuple(v) for v in itertools.product(*verts)])
     out = {}
     for bi, b in enumerate(blocks):
         per_v = {}
-        for v in block_vertices(b):
-            sub = [th for th in thetas if th[bi] == v]
-            per_v[json.dumps(_canon(v), sort_keys=True)] = minimax_regret(vals, candidates, sub)
-        out[b["name"]] = dict(mmr_all=mmr_all, mmr_given_value=per_v, voi=mmr_all - max(per_v.values()))
+        for v in block_values(b, mode, grid):
+            others = [verts[i] if i != bi else [v] for i in range(len(blocks))]
+            per_v[json.dumps(_canon(v), sort_keys=True)] = mmr([tuple(x) for x in itertools.product(*others)])
+        worst = max(per_v, key=per_v.get)
+        out[b["name"]] = dict(mode=mode, mmr_all=mmr_all, mmr_given_value=per_v, voi=mmr_all - per_v[worst],
+                              worst_value=worst, n_values=len(per_v))
     return out
 
 
+def portfolio_evalf(inst, gamma, blocks):
+    cache = {}
+
+    vals = {}
+
+    def f(d, th):
+        if (d, th) in vals:
+            return vals[(d, th)]
+        if th not in cache:
+            cache[th] = apply_theta(inst, blocks, th)
+        v = evaluate_portfolio(cache[th], gamma, d)
+        if v is None:
+            raise ScopeError("candidate infeasible at a theta inside the registered set")
+        vals[(d, th)] = v
+        return v
+    return f
+
+
+def voi_table(inst, gamma, candidates, blocks, grid=4):
+    f = portfolio_evalf(inst, gamma, blocks)
+    return dict(vertex=voi_generic(f, candidates, blocks, "vertex"), grid=voi_generic(f, candidates, blocks, "grid", grid))
+
+
 def robustness_class(groups, element):
+    """groups: {group: [optimal-solution list at each theta]}. Element-level classification:
+    ROBUST if some element value is optimal at every theta of every group; CONDITIONAL if each group has such a
+    value but no common one; FRAGILE otherwise. With finitely many thetas this is a classification ON THE
+    EVALUATED POINTS, not a certificate (Lemma R does not extend to elements)."""
     per_g = {g: set.intersection(*[{element(s) for s in theta_sols} for theta_sols in sols])
              for g, sols in groups.items()}
     if set.intersection(*per_g.values()):
@@ -1184,6 +1569,28 @@ def robustness_class(groups, element):
     if all(per_g.values()):
         return "CONDITIONAL"
     return "FRAGILE"
+
+
+def classify_element(inst, gamma, registry, element, grid=2, n_samples=20, seed=20261011):
+    """Element-level classification for Model B over every registered group, using all optima at vertices,
+    grid points and random samples. Reports coverage; never labelled a certificate."""
+    validate_registry(registry, inst)
+    groups, coverage = {}, {}
+    for g, grp in sorted(registry["groups"].items()):
+        blocks = grp["blocks"]
+        pts = theta_grid(blocks)
+        nv = len(pts)
+        pts += [tuple(v) for v in itertools.product(*[block_values(b, "grid", grid) for b in blocks])]
+        rng = random.Random(seed)
+        pts += [tuple(block_sample(b, rng) for b in blocks) for _ in range(n_samples)]
+        sols = []
+        for th in pts:
+            r = solve_central(apply_theta(inst, blocks, th), [gamma], all_optima=True)
+            sols.append(sorted(r["optima"], key=str) if r else [None])
+        groups[g] = sols
+        coverage[g] = dict(vertices=nv, grid_and_samples=len(pts) - nv, total=len(pts))
+    return dict(classification=robustness_class(groups, element), coverage=coverage,
+                note="classification on evaluated points only; not a certificate")
 
 
 # =============================================================================
@@ -1431,11 +1838,11 @@ def t_sch5_typed_units():
 def t_sch6_omega_guard():
     inst = make_instance(2)
     j = sorted(inst["initiatives"])[0]
-    cfg = inst["initiatives"][j]["configs"][1]
+    capkey = frozenset({("c_model", "S")})
     ok = copy.deepcopy(inst)
-    ok["initiatives"][j]["configs"][1]["rho"][("flag", "junior", "S")] = {"Use": 1.0}  # capability-state key is legal
-    assert validate_instance(ok)
-    bad_keys = [("flag", "err", "junior"), ("err", "junior"), ("flag", "junior", "err")]
+    ok["initiatives"][j]["configs"][1]["rho"][("flag", "junior", capkey)] = {"Use": 1.0}  # capability-state key is legal
+    assert validate_instance(ok) and solve(ok, "B", ["g_base"])["status"] == "OK_POINT"
+    bad_keys = [("flag", "err", "junior"), ("err", "junior"), ("flag", "junior", "err"), ("flag", "err")]
     for bk in bad_keys:
         b = copy.deepcopy(inst)
         b["initiatives"][j]["configs"][1]["rho"][bk] = {"Use": 1.0}
@@ -1444,7 +1851,8 @@ def t_sch6_omega_guard():
     b["initiatives"][j]["configs"][1]["P"] = {("flag", "flag"): 1.0}            # signal/outcome labels collide
     _expect_status(solve(b, "B", ["g_base"]), "INVALID_SCHEMA_OR_UNITS")
     return ("T-SCH-6", "explicit omega leakage guard PASS",
-            "rho(r|k,z,role[,capstate]) accepted; 3 keys containing omega and 1 label collision rejected as INVALID_SCHEMA_OR_UNITS")
+            "rho(r|k,z,role) and rho(r|k,z,role,capability-state) accepted; 4 keys containing omega and 1 signal/outcome label collision "
+            "rejected as INVALID_SCHEMA_OR_UNITS")
 
 
 NUMERIC_SITES = [
@@ -1495,8 +1903,8 @@ def t_alg1_f5e():
         inst["initiatives"][j]["D_state"][key] = O("D", d_lvl, inst["codes"])
         return inst, j, key
 
-    def feas(inst, j):
-        return jk_eval(inst, j, 1, {"c_model"}, set(), "g_base")["feasible"]
+    def feas(inst, j, k=1, y=("c_model",)):
+        return jk_eval(inst, j, k, set(y), set(), "g_base")["feasible"]
     inst, j, _ = setup(3, 3)
     assert feas(inst, j)                                                    # R pass / D pass (A=2 needs >=2)
     inst, j, _ = setup(1, 3)
@@ -1506,14 +1914,38 @@ def t_alg1_f5e():
     inst, j, key = setup(3, 3)
     inst["initiatives"][j]["R_state"][key] = None
     res = solve(inst, "B", ["g_base"])
-    assert "RESTRICTED_SOLVE" in res["flags"] and any(e[:2] == (j, 1) for e in res["details"]["excluded_configs"])
-    inst2, j2, _ = setup(3, 3)
-    inst2["initiatives"][j2]["D_state"][frozenset()] = None                 # status-quo pattern missing
-    res2 = solve(inst2, "B", ["g_base"])
-    assert "UNEVALUABLE_INITIATIVE" in res2["flags"]
+    assert "RESTRICTED_SOLVE" in res["flags"] and (j, 1, "MissingStateLookup") in res["details"]["excluded_configs"]
+    assert "UNEVALUABLE_INITIATIVE" not in res["flags"]
     inst3, j3, key3 = setup(3, 3)
     del inst3["initiatives"][j3]["R_state"][key3]                           # absent cell, not just None
-    assert "RESTRICTED_SOLVE" in solve(inst3, "B", ["g_base"])["flags"]
+    assert (j3, 1, "MissingStateLookup") in solve(inst3, "B", ["g_base"])["details"]["excluded_configs"]
+    # status quo (k = 0): F5e is evaluated at the capability state actually chosen, for every k.
+    # A requirement at the scale minimum needs no lookup; above it, a missing lookup excludes k = 0 in THAT state only.
+    i4, j4, key4 = setup(3, 3)
+    i4["initiatives"][j4]["D_state"][frozenset()] = None
+    r4 = solve(i4, "B", ["g_base"])                                          # D_req(A=0) is the minimum: no lookup
+    assert r4["status"] == "OK_POINT", r4["status"]
+    i5 = copy.deepcopy(i4)
+    i5["D_req"][O("A", 0)] = O("D", 1)
+    r5 = solve(i5, "B", ["g_base"])
+    assert (j4, 0, "MissingStateLookup") in r5["details"]["excluded_configs"] and "UNEVALUABLE_INITIATIVE" not in r5["flags"]
+    i6 = copy.deepcopy(i5)
+    i6["initiatives"][j4]["D_state"][frozenset()] = O("D", 3)
+    i6["initiatives"][j4]["D_state"][key4] = O("D", 0)
+    assert feas(i6, j4, 0, ()) and not jk_eval(i6, j4, 0, {"c_model"}, set(), "g_base")["static_ok"]
+    # capability-state rho rows are used when the state matches, ignored otherwise
+    i7, j7, key7 = setup(3, 3)
+    i8 = copy.deepcopy(i7)
+    for z in ("flag", "noflag"):
+        for r in ("junior", "senior"):
+            i7["initiatives"][j7]["configs"][1]["rho"][(z, r, key7)] = {"Use": 1.0, "Verify": 0.0, "Reject": 0.0}
+            i8["initiatives"][j7]["configs"][1]["rho"][(z, r)] = {"Use": 1.0, "Verify": 0.0, "Reject": 0.0}
+    a7 = jk_eval(i7, j7, 1, {"c_model"}, set(), "g_base")["phiE"]
+    a8 = jk_eval(i8, j7, 1, {"c_model"}, set(), "g_base")["phiE"]
+    base = jk_eval(setup(3, 3)[0], j7, 1, {"c_model"}, set(), "g_base")["phiE"]
+    assert close(a7, a8) and not close(a7, base)
+    loc = jk_eval(i7, j7, 1, set(), {"c_model"}, "g_base")["phiE"]          # state (c_model, L): base rows
+    assert close(loc, jk_eval(setup(3, 3)[0], j7, 1, set(), {"c_model"}, "g_base")["phiE"])
     # relabel R/D (and every other ordinal) by a strictly increasing map: same feasibility and same solution
     codes = {k: {0: -5.0, 1: 0.1, 2: 0.11, 3: 77.0} for k in DEFAULT_CODES}
     for lv in ((3, 3), (1, 3), (3, 1)):
@@ -1522,21 +1954,26 @@ def t_alg1_f5e():
         assert feas(a, ja) == feas(b, jb)
         sa, sb = solve(a, "B", ["g_base"]), solve(b, "B", ["g_base"])
         assert sa["configs"] == sb["configs"] and close(sa["F_E"], sb["F_E"])
-    return ("T-ALG-1", "F5e PASS", "R pass/D pass feasible; R fail and D fail infeasible; missing R -> RESTRICTED_SOLVE; "
-            "missing D on status-quo pattern -> UNEVALUABLE_INITIATIVE; absent cell not defaulted; relabel-invariant")
+    return ("T-ALG-1", "F5e PASS", "R pass/D pass feasible; R fail and D fail infeasible; missing R(s) -> that (j,k) excluded, RESTRICTED_SOLVE, "
+            "initiative kept; absent cell not defaulted; status quo checked at the chosen state (scale-minimum requirement needs no "
+            "lookup; otherwise missing lookup excludes k=0 in that state only; same k=0 feasible in one state and not another); "
+            "capability-state rho rows used only in their state; relabel-invariant")
 
 
-# ---- State machine / output contract -------------------------------------------------------
 def t_state_machine():
     seen = {}
     base = make_instance(5)
     r = solve(base, "B", ["g_base"]); _expect_status(r, "OK_POINT"); seen["OK_POINT"] = 1
-    for key in ("status", "flags", "model", "solver_version", "provenance_summary", "F_E", "y", "configs", "delta_hours"):
+    for key in ("status", "flags", "model", "solver_version", "provenance_summary", "F_E", "y", "configs", "delta_hours",
+                "delta_hours_by_role", "F_E_minus_time"):
         assert key in r, key
     i = copy.deepcopy(base); i["A_bar"]["BUD"] = None
     _expect_status(solve(i, "B", ["g_base"]), "REJECT_INSUFFICIENT_IDENTIFIED_INPUTS"); seen["REJECT_INSUFFICIENT_IDENTIFIED_INPUTS"] = 1
     i = copy.deepcopy(base); i["caps"]["c_model"]["F"] = float("nan")
     _expect_status(solve(i, "B", ["g_base"]), "INVALID_SCHEMA_OR_UNITS"); seen["INVALID_SCHEMA_OR_UNITS"] = 1
+    for garbage in ({}, {"units": ["U1"]}, None):                          # malformed objects never raise
+        _expect_status(solve(garbage, "B"), "INVALID_SCHEMA_OR_UNITS")
+    _expect_status(solve(base, "Z", ["g_base"]), "INVALID_SCHEMA_OR_UNITS")
     i = copy.deepcopy(base); i["B0"]["U1"]["BUD"] = 1e6
     _expect_status(solve(i, "A", ["g_base"]), "NOT_COMPARABLE"); seen["NOT_COMPARABLE"] = 1
     i = copy.deepcopy(base); i["initiatives"]["U1_j0"]["configs"][1]["impl_x"] = None
@@ -1544,6 +1981,8 @@ def t_state_machine():
     _expect_status(solve(i, "C", ["g_base"]), "FOLLOWER_LEDGER_UNIDENTIFIED"); seen["FOLLOWER_LEDGER_UNIDENTIFIED"] = 1
     i = copy.deepcopy(base); i["policies"]["g_base"]["must"] = set(i["initiatives"]); i["A_bar"]["BUD"] = 1.0
     _expect_status(solve(i, "B", ["g_base"]), "INFEASIBLE"); seen["INFEASIBLE"] = 1
+    i = copy.deepcopy(base); i["policies"]["g_base"]["must"] = set(i["initiatives"]); i["B0"]["U1"]["BUD"] = 0.0
+    _expect_status(solve(i, "A", ["g_base"]), "INFEASIBLE")                 # Model A infeasible is INFEASIBLE, not INVALID
     i = copy.deepcopy(base); i["caps"]["c_model"]["F"] = None
     _expect_status(solve(i, "B", ["g_base"]), "THRESHOLD_MODE"); seen["THRESHOLD_MODE"] = 1
     i = copy.deepcopy(base); i["lam"]["senior"] = None
@@ -1562,7 +2001,6 @@ def t_state_machine():
         ini["configs"][1]["rho_design"] = {kk: {"Use": 0.0, "Verify": 1.0, "Reject": 0.0} for kk in ini["configs"][1]["rho"]}
         for cell in ini["configs"][1]["path"].values():                      # actual Use lets severe errors pass
             cell["I_sev"] = 0.3 if cell["I_sev"] > 0 else 0.0
-        ini["configs"][2]["allowed_r"] = ini["configs"][2]["allowed_r"]
         i["policies"]["g_base"]["allow"][(j, 2)] = 0
         i["policies"]["g_base"]["ebar"][j] = ini["N"][0] * expect(ini["configs"][0], lambda x, r: x["I_sev"]) + 0.5
     dr = design_response_analysis(i, "g_base")
@@ -1572,7 +2010,9 @@ def t_state_machine():
     assert rr["status"] == "OK_INTERVAL"; seen["OK_INTERVAL"] = 1
     missing = set(STATUS_ORDER) - set(seen)
     assert not missing, missing
-    return ("STATE", "state-machine/output-contract PASS", f"all {len(STATUS_ORDER)} statuses reachable and returned as results (no exception path)")
+    return ("STATE", "state-machine/output-contract PASS",
+            f"all {len(STATUS_ORDER)} statuses reachable and returned as results; malformed objects and an unknown model return "
+            "INVALID_SCHEMA_OR_UNITS; Model A infeasibility returns INFEASIBLE (no exception path)")
 
 
 def t_mis3_threshold():
@@ -1593,7 +2033,25 @@ def t_mis3_threshold():
     zero = copy.deepcopy(inst); zero["caps"]["c_model"]["F"] = 0.0
     rz = solve(zero, "B", ["g_base"])
     assert rz["status"] == "OK_POINT" and r["status"] != rz["status"]
-    return ("T-MIS-3", "missing F_c threshold mode PASS", f"THRESHOLD_MODE with F_c^dagger={Fd:.3f} consistent with 8 explicit F_c solves; no point decision; differs from F_c=0")
+    # C reports optimistic AND pessimistic thresholds, each consistent with explicit solves
+    rc = solve(i, "C", ["g_base"])
+    _expect_status(rc, "THRESHOLD_MODE")
+    tc = rc["details"]["threshold"]["c_model"]
+    assert set(tc) == {"opt", "pess"}
+    for mode in ("opt", "pess"):
+        fd = tc[mode]["F_dagger"]
+        if fd is not None:
+            for F in (fd * 0.5, fd * 1.5 + 1.0):
+                ii = copy.deepcopy(inst); ii["caps"]["c_model"]["F"] = F
+                assert ("c_model" in solve_bilevel(ii, ["g_base"], forced={"c_eval": False})[mode]["y"]) == (F <= fd), (mode, F, fd)
+    # models without shared capabilities do not use F_c: solved, and the missing input recorded as unused
+    for m in ("Aplus", "C0"):
+        ra = solve(i, m, ["g_base"])
+        assert ra["status"] == "OK_POINT" and ("caps.F", "c_model") in ra["details"]["unidentified_inputs_not_used_by_this_model"], (m, ra["status"])
+    return ("T-MIS-3", "missing F_c threshold mode PASS",
+            f"B: THRESHOLD_MODE with F_c^dagger={Fd:.3f} consistent with 8 explicit F_c solves; no point decision; differs from F_c=0. "
+            f"C: opt/pess thresholds ({tc['opt']['F_dagger']}, {tc['pess']['F_dagger']}) consistent with explicit solves. "
+            "A+ and C0: solved, F_c recorded as UNIDENTIFIED-unused")
 
 
 def t_mis4_partial():
@@ -1601,15 +2059,57 @@ def t_mis4_partial():
     i = copy.deepcopy(inst); i["lam"]["senior"] = None
     r = solve(i, "B", ["g_base"])
     _expect_status(r, "PARTIAL_OBJECTIVE")
-    assert "F_E_minus_time" in r and "F_E" not in r and "delta_hours" in r
-    assert r["details"]["lambda_scan"]["classification"] in ("ROBUST", "FRAGILE")
+    scan = r["details"]["lambda_scan"]
+    assert "F_E" not in r and scan["classification"] in ("ROBUST", "FRAGILE") and scan["method"] == "vertex (exact)"
+    if scan["classification"] == "ROBUST":
+        assert r["decision_valid_for_all_lambda_in_box"] and "F_E_minus_time" in r and "delta_hours_by_role" in r
+        # exactness of the vertex check: a dense grid on [0, lambda^U] never finds another decision
+        for t in range(11):
+            g = copy.deepcopy(inst); g["lam"]["senior"] = inst["lam_U"]["senior"] * t / 10
+            sg = solve_central(g, ["g_base"])
+            assert sorted(sg["y"]) == r["y"] and sorted(jk for p in sg["plans"] for jk in p["configs"]) == r["configs"]
+        # F_E^-time removes ALL lambda terms (also the identified junior one)
+        z = copy.deepcopy(inst); z["lam"] = {"junior": 0.0, "senior": 0.0}
+        zr = _solve_core(z, "B", ["g_base"], "enum", (1.0, 1.0))
+        if zr["configs"] == r["configs"] and zr["y"] == r["y"]:
+            assert close(zr["F_E"], r["F_E_minus_time"])
+    else:
+        assert r["point_decision"] is None and "y" not in r and len(scan["decision_regions"]) >= 2
+    # a ROBUST case: a narrow box keeps the decision; the point decision is reported and checked on a grid
+    n_ = copy.deepcopy(inst); n_["lam"]["senior"] = None; n_["lam_U"]["senior"] = 1e-3
+    rn = solve(n_, "B", ["g_base"])
+    assert rn["details"]["lambda_scan"]["classification"] == "ROBUST" and rn["decision_valid_for_all_lambda_in_box"]
+    for t in range(6):
+        g = copy.deepcopy(inst); g["lam"]["senior"] = 1e-3 * t / 5
+        sg = solve_central(g, ["g_base"])
+        assert sorted(sg["y"]) == rn["y"] and sorted(jk for p in sg["plans"] for jk in p["configs"]) == rn["configs"]
+    zz = copy.deepcopy(inst); zz["lam"] = {"junior": 0.0, "senior": 0.0}
+    zr = _solve_core(zz, "B", ["g_base"], "enum", (1.0, 1.0))
+    if zr["configs"] == rn["configs"] and zr["y"] == rn["y"]:
+        assert close(zr["F_E"], rn["F_E_minus_time"])
+    assert set(rn["delta_hours_by_role"]) == {"junior", "senior"}
+    # a FRAGILE case: a wide box over both roles changes the decision -> no point decision
+    w = copy.deepcopy(inst); w["lam"] = {"junior": None, "senior": None}; w["lam_U"] = {"junior": 200.0, "senior": 200.0}
+    rw = solve(w, "B", ["g_base"])
+    assert rw["status"] == "PARTIAL_OBJECTIVE" and rw["details"]["lambda_scan"]["points"] == 4
+    if rw["details"]["lambda_scan"]["classification"] == "FRAGILE":
+        assert rw["point_decision"] is None and "configs" not in rw
+    # absent key (not just None) is detected
+    a = copy.deepcopy(inst); del a["lam"]["senior"]
+    assert solve(a, "B", ["g_base"])["status"] == "PARTIAL_OBJECTIVE"
+    # the override never touches the follower ledger lambda_u: C with lam_u.senior missing is LEDGER-UNIDENTIFIED
+    c = copy.deepcopy(i); c["lam_u"]["senior"] = None
+    assert solve(c, "C", ["g_base"])["status"] == "FOLLOWER_LEDGER_UNIDENTIFIED"
     z = copy.deepcopy(inst); z["lam"]["senior"] = 0.0
     rz = solve(z, "B", ["g_base"])
     assert rz["status"] == "OK_POINT" and "F_E" in rz
     i2 = copy.deepcopy(i); i2["lam_U"]["senior"] = None
     assert solve(i2, "B", ["g_base"])["details"]["lambda_scan"]["classification"] == "UNIDENTIFIED"
     return ("T-MIS-4", "missing lambda partial objective PASS",
-            f"PARTIAL_OBJECTIVE with (F_E^-time, delta_hours={r['delta_hours']:.2f}); lambda in [0,lambda^U] scan = {r['details']['lambda_scan']['classification']}; no lambda^U -> UNIDENTIFIED")
+            f"PARTIAL_OBJECTIVE; exact 2^m vertex scan of [0,lambda^U] -> {scan['classification']} (confirmed on an 11-point grid); "
+            "narrow box -> ROBUST with point decision (confirmed on a grid; F_E^-time equals the lambda=0 objective); "
+            f"point decision only when ROBUST, reported as F_E^-time (all lambda terms removed) with delta_hours by role; wide box -> "
+            f"{rw['details']['lambda_scan']['classification']}; absent key detected; lambda_u untouched; no lambda^U -> UNIDENTIFIED")
 
 
 MISSING_SITES = [
@@ -1636,59 +2136,102 @@ MISSING_SITES = [
 ]
 
 
+DISCLOSURE_KEYS = ("excluded_configs", "unevaluable_initiatives", "lambda_unidentified_roles", "threshold",
+                   "unidentified_inputs_not_used_by_this_model", "error", "excluded_policies")
+
+
 def t_mis6_no_silent_zero():
-    rows = []
+    rows = {"no_point": 0, "payload_differs": 0, "disclosed": 0}
     for name, site in MISSING_SITES:
         for model in ("B", "C"):
             m, z = make_instance(5), make_instance(5)
             d, k = site(m); d[k] = None
             d2, k2 = site(z); d2[k2] = 0
             rm, rz = solve(m, model, ["g_base"]), solve(z, model, ["g_base"])
-            if model == "B" and "ledger" in name:
-                # the follower ledger split is not in B's identification set (43 §2): B is solved, and the
-                # result records the input as UNIDENTIFIED-but-unused instead of treating it as zero
-                assert rm["status"] == "OK_POINT" and rm["details"].get("unidentified_inputs_not_used_by_this_model")
-                assert not rz["details"].get("unidentified_inputs_not_used_by_this_model")
-                rows.append(f"{name}/B->OK_POINT(recorded unused)")
-                continue
-            assert rm["status"] != "OK_POINT", (name, model, rm["status"])
-            same = (rm["status"] == rz["status"] and rm.get("F_E") == rz.get("F_E") and rm.get("configs") == rz.get("configs"))
-            assert not same, (name, model)
-            rows.append(f"{name}/{model}->{rm['status']}")
-    nB = sum("recorded unused" in r for r in rows)
+            point = rm.get("F_E") is not None or rm.get("configs") is not None or rm.get("y") is not None
+            payload = lambda x: json.dumps(_canon({kk: x.get(kk) for kk in ("F_E", "configs", "y", "envelopes")}), sort_keys=True)
+            disc_m = {kk: rm["details"].get(kk) for kk in DISCLOSURE_KEYS if rm["details"].get(kk)}
+            disc_z = {kk: rz["details"].get(kk) for kk in DISCLOSURE_KEYS if rz["details"].get(kk)}
+            if not point:
+                rows["no_point"] += 1
+            elif payload(rm) != payload(rz):
+                rows["payload_differs"] += 1
+            else:
+                # same point decision as zero-fill (e.g. a missing permission treated as "not allowed"): only
+                # acceptable if the missing input is DISCLOSED in the result and the zero-filled run discloses nothing
+                assert disc_m and json.dumps(_canon(disc_m), sort_keys=True) != json.dumps(_canon(disc_z), sort_keys=True), (name, model)
+                rows["disclosed"] += 1
+            if not (model == "B" and "ledger" in name):
+                assert rm["status"] != "OK_POINT", (name, model, rm["status"])
+    n = sum(rows.values())
     return ("T-MIS-6", "no silent zero fill PASS",
-            f"{len(rows)} mutations ({len(MISSING_SITES)} missing classes x models B and C): every missing input either yields a non-OK_POINT "
-            f"status distinct from zero-fill, or ({nB} cases: follower-ledger fields under B, which B does not use) an OK_POINT that records "
-            "the input as UNIDENTIFIED-unused while the zero-filled run does not")
+            f"{n} mutations ({len(MISSING_SITES)} missing classes x models B and C) vs zero-fill: {rows['no_point']} emit no point decision, "
+            f"{rows['payload_differs']} emit a different decision/objective, {rows['disclosed']} emit the zero-fill decision but disclose "
+            "the UNIDENTIFIED input (excluded configuration or unused-by-model) while the zero-filled run discloses nothing")
 
 
-# ---- V5: DP, limits, gate, reproducibility --------------------------------------------------
 def t_orc9_dp():
-    n = 0
-    for s in range(1, 21):
-        inst = make_instance(100 + s, aligned=(s % 2 == 0), integer=True)
+    n, binding = 0, 0
+    for s_ in range(1, 21):
+        inst = make_instance(100 + s_, aligned=(s_ % 2 == 0), integer=True)
+        inst["A_bar"]["BUD"] = float(round(inst["A_bar"]["BUD"] * 0.3))
+        unc = copy.deepcopy(inst); unc["A_bar"]["BUD"] = 1e9
         e, d = solve_central(inst, ["g_base"]), solve_central(inst, ["g_base"], method="dp")
-        assert close(e["F"], d["F"]) and d["dp_exact"], (s, e["F"], d["F"])
+        assert (e is None and d is None) or (close(e["F"], d["F"]) and d["dp_exact"]), (s_,)
+        if e is not None and solve_central(unc, ["g_base"])["F"] > e["F"] + 1e-6:
+            binding += 1
         ce, cd = solve_bilevel(inst, ["g_base"]), solve_bilevel(inst, ["g_base"], method="dp")
         for mode in ("opt", "pess"):
-            assert close(ce[mode]["F"], cd[mode]["F"]) and cd[mode]["dp_exact"], (s, mode)
+            assert (ce[mode] is None and cd[mode] is None) or (close(ce[mode]["F"], cd[mode]["F"]) and cd[mode]["dp_exact"]), (s_, mode)
         for forced in ({"c_model": True}, {"c_model": False}):
             fe = solve_central(inst, ["g_base"], forced=forced)
             fd = solve_central(inst, ["g_base"], forced=forced, method="dp")
             assert (fe is None and fd is None) or close(fe["F"], fd["F"])
         n += 1
+    assert binding >= 5, binding
+    # random multiple-choice knapsack fuzz against enumeration
+    rng = random.Random(909)
+    for _ in range(400):                                                   # integer weights, mixed signs
+        G = [[(float(rng.randint(-5, 9)), float(rng.randint(-3, 6)), rng.uniform(-10, 10)) for _ in range(rng.randint(1, 4))]
+             for _ in range(rng.randint(1, 4))]
+        cb, ce_ = float(rng.randint(-4, 15)), float(rng.randint(-3, 10))
+        ve, _ = mck_enum(G, cb, ce_)
+        vd, _, ex, bd = mck_dp(G, cb, ce_)
+        assert ex and bd == 0.0 and ((ve is None and vd is None) or close(ve, vd)), (G, cb, ce_, ve, vd)
+    silent, inexact = 0, 0
+    for _ in range(400):                                                   # non-integer weights, quantum 0.5
+        G = [[(rng.uniform(-3, 6), rng.uniform(-2, 5), rng.uniform(-10, 10)) for _ in range(rng.randint(1, 4))]
+             for _ in range(rng.randint(1, 4))]
+        cb, ce_ = rng.uniform(-2, 10), rng.uniform(-2, 8)
+        ve, _ = mck_enum(G, cb, ce_)
+        vd, combo, ex, bd = mck_dp(G, cb, ce_, 0.5, 0.5)
+        if ve is not None and vd is None:
+            silent += 1
+        if ve is not None:
+            assert vd is not None and vd <= ve + 1e-7 and ve <= vd + bd + 1e-7, (ve, vd, bd)
+            assert sum(c[0] for c in combo) <= cb + 1e-7 and sum(c[1] for c in combo) <= ce_ + 1e-7
+            inexact += (not ex)
+        else:
+            assert vd is None
+    assert silent == 0
+    # forced fallback: ceil-rounding infeasible, relaxation feasible -> enumeration, exact
+    G = [[(0.0, 0.5, 1.0), (0.5, 0.0, 1.0)], [(0.0, 0.5, 1.0), (0.5, 0.0, 1.0)]]
+    before = DP_STATS["fallback_enum"]
+    v, _, ex, bd = mck_dp(G, 0.5, 0.5)
+    assert close(v, 2.0) and ex and DP_STATS["fallback_enum"] == before + 1
     tie = tie_instance()
     te, td = solve_bilevel(tie, ["g_base"]), solve_bilevel(tie, ["g_base"], method="dp", beta=(1e-3, 1e-3))
     assert te["opt"]["F"] > te["pess"]["F"] + 1e-6
     for mode in ("opt", "pess"):
-        lo = td[mode]["F"]
-        assert lo <= te[mode]["F"] + 1e-7
+        assert td[mode]["F"] <= te[mode]["F"] + 1e-7 and te[mode]["F"] <= td[mode]["F"] + td[mode]["dp_bound"] + 1e-7
     inst = make_instance(7)                                                # non-integer: not exact, bound reported
     e, d = solve_central(inst, ["g_base"]), solve_central(inst, ["g_base"], method="dp", beta=(1.0, 1.0))
     assert not d["dp_exact"] and d["F"] <= e["F"] + 1e-7 and e["F"] <= d["F"] + d["dp_bound"] + 1e-7
     return ("T-ORC-9", "DP == exhaustive PASS",
-            f"{n} integer seeds: B, C-opt, C-pess, capability forced on/off all equal and flagged exact; ties respected; "
-            f"non-integer case flagged inexact with bound {d['dp_bound']:.3f} containing the exhaustive optimum")
+            f"{n} integer seeds with budget x0.3 (binding in {binding}): B, C-opt, C-pess, capability forced on/off equal and exact; "
+            f"400 random integer MCK instances (mixed-sign weights) DP == enumeration; 400 non-integer instances: enumeration in "
+            f"[DP, DP+bound], 0 silent infeasibilities ({inexact} inexact); ceil-infeasible branch falls back to enumeration; "
+            f"ties respected; non-integer portfolio flagged inexact with bound {d['dp_bound']:.3f}")
 
 
 def tie_instance():
@@ -1707,17 +2250,25 @@ def tie_instance():
 
 
 def t_orc10_shared_limit():
-    for s in range(1, 9):
-        inst = make_instance(s, aligned=(s % 2 == 0))
+    chosen_normal = 0
+    for s_ in range(1, 9):
+        inst = make_instance(s_, aligned=(s_ % 2 == 0))
+        inst["A_bar"]["BUD"] = 1e9                                         # every option affordable
         B, Ap = solve_central(inst, ["g_base"]), solve_central(inst, ["g_base"], allow_shared=False)
         assert B["F"] >= Ap["F"] - 1e-7
+        chosen_normal += bool(B["y"])
         big = copy.deepcopy(inst)
         for c in big["caps"]:
             big["caps"][c]["F"] *= 1e4
         Bb, Apb = solve_central(big, ["g_base"]), solve_central(big, ["g_base"], allow_shared=False)
         assert not Bb["y"] and close(Bb["F"], Apb["F"])
+        # the large-F_c portfolio is affordable: it is rejected on value, not on the budget
+        forced = solve_central(big, ["g_base"], forced={c: True for c in big["caps"]})
+        assert forced is not None and forced["F"] < Bb["F"]
+    assert chosen_normal >= 1
     return ("T-ORC-10", "high-F_c shared limit PASS",
-            "VSC >= 0 on 8 seeds (sharing enlarges B's feasible set); with F_c x 1e4 no shared capability is chosen and VSC = 0")
+            f"budget non-binding: VSC >= 0 on 8 seeds; shared capability chosen at normal F_c in {chosen_normal}/8 seeds; with F_c x 1e4 "
+            "the all-shared portfolio is still affordable but has lower value, no shared capability is chosen and VSC = 0")
 
 
 def t_orc12_model_d_gate():
@@ -1793,8 +2344,9 @@ def relabel(inst, maps):
             nc["impl"] = {pat(kk): v for kk, v in cfg["impl"].items()}
             nc["eng"] = {pat(kk): v for kk, v in cfg["eng"].items()}
             nc["pi"] = {R[r]: v for r, v in cfg["pi"].items()}
-            nc["rho"] = {(z, R[r]): dict(v) for (z, r), v in cfg["rho"].items()}
-            nc["rho_design"] = {(z, R[r]): dict(v) for (z, r), v in cfg.get("rho_design", {}).items()}
+            rk_ = lambda rk: (rk[0], R[rk[1]]) + ((pat(rk[2]),) if len(rk) == 3 else ())
+            nc["rho"] = {rk_(rk): dict(v) for rk, v in cfg["rho"].items()}
+            nc["rho_design"] = {rk_(rk): dict(v) for rk, v in cfg.get("rho_design", {}).items()}
             nc["path"] = {(R[r], z, w, resp): dict(v) for (r, z, w, resp), v in cfg["path"].items()}
             ni["configs"][k] = nc
         n["initiatives"][J[j]] = ni
@@ -1863,7 +2415,9 @@ def t_sen3_lemma_r():
         reg = make_registry(inst, scale=(0.2, 3.0))
         blocks = reg["groups"]["g1"]["blocks"]
         tinst = theta_instances(inst, blocks)
-        cands = [d for d in enumerate_portfolios(inst, "g_base") if robust_feasibility(inst, "g_base", d, blocks, tinst) == "ROBUSTLY_FEASIBLE"]
+        allp = enumerate_portfolios(inst, "g_base", static_only=True)
+        cls = {d: robust_feasibility(inst, "g_base", d, blocks, tinst, spts=[]) for d in allp}
+        cands = [d for d in allp if cls[d] == "ROBUSTLY_FEASIBLE"]
         vert = {th: {d: evaluate_portfolio(i, "g_base", d) for d in cands} for th, i in tinst}
         samples = []
         for _ in range(60):
@@ -1884,6 +2438,14 @@ def t_sen3_lemma_r():
                 assert vgap <= sgap + 1e-9          # vertices are at least as extreme as interior samples
         cert = lemma_r_check(inst, "g_base", picks[0], cands, blocks)
         assert cert["robust"] == (min(row[picks[0]] - max(row.values()) for row in vert.values()) >= -1e-7)
+        if cert["robust"] and all(c in ("ROBUSTLY_FEASIBLE", "INFEASIBLE") for c in cls.values()):
+            # a certified whole portfolio implies its elements are ROBUST on every evaluated point -- valid only when
+            # no portfolio is merely conditionally feasible (otherwise classify_element compares against portfolios
+            # outside Lemma R's candidate set)
+            y_star = tuple(picks[0][0])
+            ce = classify_element(inst, "g_base", {"groups": {"g1": reg["groups"]["g1"]}}, lambda sig: tuple(sig[0]) if sig else None,
+                                  grid=2, n_samples=8)
+            assert ce["classification"] == "ROBUST", (seed, ce)
     assert certified >= 1 and violated >= 1, (certified, violated)
     for model, scope in (("C", "whole_portfolio"), ("B", "element")):
         try:
@@ -1891,13 +2453,23 @@ def t_sen3_lemma_r():
             raise AssertionError("scope guard failed")
         except ScopeError:
             pass
+    # element-level counterexample (42 §13.3): y=1 via portfolio a or b at every vertex, but y=0 optimal inside
     vals = lambda th: {"y1_a": th, "y1_b": 1 - th, "y0": 0.6}
     at_vertices = all(max(vals(t)["y1_a"], vals(t)["y1_b"]) >= vals(t)["y0"] for t in (0.0, 1.0))
     interior = max(vals(0.5)["y1_a"], vals(0.5)["y1_b"]) >= vals(0.5)["y0"]
     assert at_vertices and not interior
+    opt = lambda th: [d for d, v in vals(th).items() if v >= max(vals(th).values()) - 1e-12]
+    elem = lambda d: d.startswith("y1")
+    assert robustness_class({"g": [opt(0.0), opt(1.0)]}, elem) == "ROBUST"                   # vertices only: wrong
+    assert robustness_class({"g": [opt(t / 4) for t in range(5)]}, elem) == "FRAGILE"         # with interior points
+    assert robustness_class({"g1": [["a"], ["a", "b"]], "g2": [["a"]]}, lambda x: x) == "ROBUST"
+    assert robustness_class({"g1": [["a"], ["a"]], "g2": [["b"], ["b"]]}, lambda x: x) == "CONDITIONAL"
+    assert robustness_class({"g1": [["a"], ["b"]], "g2": [["a"]]}, lambda x: x) == "FRAGILE"
     return ("T-SEN-3", "Lemma R scope test PASS",
-            f"{certified} certified whole portfolios: 60 interior samples per seed found no violation; {violated} uncertified: "
-            "vertex gap <= sampled gap; ScopeError for Model C and element scope; element-level counterexample reproduced")
+            f"{certified} certified whole portfolios: 60 interior samples per seed found no violation and element classification on "
+            f"vertices+grid+samples agreed (ROBUST); {violated} uncertified: vertex gap <= sampled gap; ScopeError for Model C and "
+            "element scope; element-level counterexample: vertex-only classification says ROBUST, adding interior points gives FRAGILE; "
+            "robustness_class ROBUST/CONDITIONAL/FRAGILE unit cases")
 
 
 def t_sen4_robust_feasibility():
@@ -1907,29 +2479,44 @@ def t_sen4_robust_feasibility():
     inst["policies"]["g_base"]["ebar"][j] = sq * 1.05
     cells = [(("initiatives", j, "configs", 1, "path", key), "I_sev") for key in inst["initiatives"][j]["configs"][1]["path"]]
     blocks = [dict(name="Isev_scale", kind="scale", targets=cells, L=0.5, U=6.0)]
-    ports = enumerate_portfolios(inst, "g_base")
-    classes = {}
+    ports = enumerate_portfolios(inst, "g_base", static_only=True)
+    classes, witnesses = {}, {}
     for d in ports:
-        classes.setdefault(robust_feasibility(inst, "g_base", d, blocks), []).append(d)
+        c, w = robust_feasibility(inst, "g_base", d, blocks, witness=True)
+        classes.setdefault(c, []).append(d)
+        if c == "CONDITIONALLY_FEASIBLE":
+            witnesses[d] = w
     assert classes.get("CONDITIONALLY_FEASIBLE") and classes.get("ROBUSTLY_FEASIBLE")
+    for d, w in witnesses.items():                                         # every witness is jointly feasible
+        assert evaluate_portfolio(apply_theta(inst, blocks, w), "g_base", d) is not None
     uses = lambda d: any((j, 1) in configs for configs, _ in d[1])
-    assert all(uses(d) for d in classes["CONDITIONALLY_FEASIBLE"])
+    assert any(uses(d) for d in classes["CONDITIONALLY_FEASIBLE"])
     assert not any(uses(d) for d in classes["ROBUSTLY_FEASIBLE"])
     big = [dict(name="Isev_scale", kind="scale", targets=cells, L=50.0, U=60.0)]
     assert any(robust_feasibility(inst, "g_base", d, big) == "INFEASIBLE" for d in ports if uses(d))
     reg = {"groups": {"g1": {"blocks": blocks}}, "eps_R": 0.0, "tie_tol": 1e-9, "seed": 1}
     rr = solve_robust(inst, "g_base", reg, "g1")
     assert not uses(rr["decision"])
+    # jointly infeasible everywhere although each constraint holds at some vertex: must NOT be CONDITIONAL
+    rows = lambda ths: [(("scale", t), True, {"a": t - 0.6, "b": 0.4 - t}) for t in ths]
+    assert feasibility_class(rows([0.0, 1.0]), rows([x / 20 for x in range(21)]))[0] == "FEASIBILITY_UNDETERMINED"
+    ok_rows = lambda ths: [(("scale", t), True, {"a": t - 0.3, "b": 0.7 - t}) for t in ths]
+    c, w = feasibility_class(ok_rows([0.0, 1.0]), ok_rows([x / 20 for x in range(21)]))
+    assert c == "CONDITIONALLY_FEASIBLE" and 0.3 <= w[1] <= 0.7
     return ("T-SEN-4", "robust feasibility PASS",
-            f"{len(classes['ROBUSTLY_FEASIBLE'])} robust / {len(classes['CONDITIONALLY_FEASIBLE'])} conditional portfolios; "
-            "conditional ones (all using the risk-sensitive config) excluded from the robust candidate set; INFEASIBLE detected when violated at every vertex")
+            f"{len(classes['ROBUSTLY_FEASIBLE'])} robust / {len(classes['CONDITIONALLY_FEASIBLE'])} conditional (each with a jointly "
+            f"feasible witness) / {len(classes.get('INFEASIBLE', []))} infeasible / {len(classes.get('FEASIBILITY_UNDETERMINED', []))} "
+            "undetermined; the risk-sensitive config never robust and excluded from the robust candidate set; INFEASIBLE when violated "
+            "at every vertex; jointly-infeasible-everywhere case -> FEASIBILITY_UNDETERMINED, not CONDITIONAL")
 
 
 def t_sen6_registry():
     inst = make_instance(8, n_init=1)
     reg = make_registry(inst)
+    pre = registry_commitment(reg, inst)                                   # committed BEFORE the solve
     r = solve_robust(inst, "g_base", reg, "g1")
     r2 = solve(inst, "B", ["g_base"], registry=reg)
+    assert r["registry_commitment"] == pre and verify_registry(r, reg, inst)
     for x in (r, r2):
         assert len(x["scenario_registry_hash"]) == 64 and len(x["parameter_ranges_hash"]) == 64
         assert x["solver_version"] == SOLVER_VERSION and "provenance_summary" in x
@@ -1939,37 +2526,64 @@ def t_sen6_registry():
     assert not verify_registry(r, tampered)
     tampered2 = copy.deepcopy(reg); tampered2["eps_R"] = 1.0
     assert not verify_registry(r, tampered2)
+    tiny = copy.deepcopy(reg); tiny["groups"]["g1"]["blocks"][0]["U"] = reg["groups"]["g1"]["blocks"][0]["U"] + 1e-12
+    assert registry_hash(tiny) != registry_hash(reg)                         # no rounding in the commitment
+    nom = copy.deepcopy(inst)
+    path, field = next(t for t in reg["groups"]["g1"]["blocks"][0]["targets"] if _get(inst, t[0])[t[1]] != 0)
+    _get(nom, path)[field] = _get(nom, path)[field] * (1 + 1e-12)            # tamper with a targeted NOMINAL value
+    assert verify_registry(r, reg) and not verify_registry(r, reg, nom)
+    nomP = copy.deepcopy(inst)
+    _get(nomP, ("initiatives", "U2_j0", "configs", 1, "P"))[("flag", "ok")] += 0.0
+    assert verify_registry(r, reg, nomP)
     return ("T-SEN-6", "scenario registry hashing PASS",
-            "registry and parameter-range SHA-256, solver version and provenance summary emitted; post-hoc change of a range or of eps_R detected")
+            "registry, parameter-range and registry-commitment SHA-256 (exact float.hex, registry + targeted nominal values) emitted "
+            "and committed before solving; post-hoc change of a range, of eps_R, of a range by 1e-12, or of a targeted nominal value by "
+            "a relative 1e-12 detected; an unchanged instance verifies")
 
 
 def t_sen7_regret_voi():
+    # (1) analytic oracle: F_A = 1-v, F_B = v, F_D = q, F_E = 1-q, v,q in [0,1].
+    #     MMR(all) = 1; MMR(v fixed) = min(v, 1-v) is maximal at the interior point v = 1/2, so the true VOI_v = 0.5,
+    #     while conditioning only on vertices of v gives 1.
+    blocks = [dict(name="v", kind="scale", L=0.0, U=1.0), dict(name="q", kind="scale", L=0.0, U=1.0)]
+    F = {"A": lambda v, q: 1 - v, "B": lambda v, q: v, "D": lambda v, q: q, "E": lambda v, q: 1 - q}
+    ev = lambda d, th: F[d](th[0][1], th[1][1])
+    vv, vg = voi_generic(ev, list(F), blocks, "vertex"), voi_generic(ev, list(F), blocks, "grid", 4)
+    assert close(vv["v"]["mmr_all"], 1.0) and close(vv["v"]["voi"], 1.0) and close(vg["v"]["voi"], 0.5) and close(vg["q"]["voi"], 0.5)
+    vg9 = voi_generic(ev, list(F), blocks, "grid", 9)                       # grid without the 1/2 point: upper bound
+    assert vg9["v"]["voi"] >= 0.5 - 1e-12 and vg9["v"]["voi"] <= vv["v"]["voi"] + 1e-12
+    # (2) MaxRegret: vertex maximum equals the maximum over a dense interior grid (regret is a max of multilinear functions)
     informative = None
     for seed in range(9, 30):
         inst = make_instance(seed, aligned=False, n_init=1)
         reg = make_registry(inst, scale=(0.05, 6.0))
-        blocks = reg["groups"]["g1"]["blocks"]
-        tinst = theta_instances(inst, blocks)
-        cands = [d for d in enumerate_portfolios(inst, "g_base") if robust_feasibility(inst, "g_base", d, blocks, tinst) == "ROBUSTLY_FEASIBLE"]
-        thetas = theta_grid(blocks)
-        vals = regret_table(inst, "g_base", cands, thetas, blocks)
+        bl = reg["groups"]["g1"]["blocks"]
+        tinst = theta_instances(inst, bl)
+        cands = [d for d in enumerate_portfolios(inst, "g_base", static_only=True)
+                 if robust_feasibility(inst, "g_base", d, bl, tinst, spts=[]) == "ROBUSTLY_FEASIBLE"]
+        thetas = theta_grid(bl)
+        vals = regret_table(inst, "g_base", cands, thetas, bl)
         mmr = minimax_regret(vals, cands)
-        voi = voi_table(vals, cands, blocks)
-        for name, row in voi.items():
-            assert all(v <= mmr + 1e-9 for v in row["mmr_given_value"].values()), name   # more information never raises MMR
-            assert row["voi"] >= -1e-9
-        # information = restricting theta to a subset of the registered grid (same candidate set, same feasibility)
-        common = [th for th in thetas if th[0] == ("scale", blocks[0]["L"])]
-        assert minimax_regret(vals, cands, common) <= mmr + 1e-9
-        assert all(max_regret(vals, d) >= -1e-9 for d in cands)
-        if mmr > 1e-6 and informative is None:
-            informative = (seed, mmr, sorted(((round(r["voi"], 3), n) for n, r in voi.items()), reverse=True), len(cands), len(thetas))
-            break
+        if mmr <= 1e-6:
+            continue
+        f = portfolio_evalf(inst, "g_base", bl)
+        dense = [tuple(v) for v in itertools.product(*[block_values(b, "grid", 6) for b in bl])]
+        best_at = {th: max(f(dd, th) for dd in cands) for th in dense}
+        for d in cands:
+            dense_mr = max(best_at[th] - f(d, th) for th in dense)
+            assert dense_mr <= max_regret(vals, d) + 1e-7, (seed, d)
+        voi = voi_table(inst, "g_base", cands, bl, grid=4)
+        for name in voi["vertex"]:
+            assert -1e-9 <= voi["grid"][name]["voi"] <= voi["vertex"][name]["voi"] + 1e-9
+        informative = (seed, mmr, {n: (round(voi["vertex"][n]["voi"], 3), round(voi["grid"][n]["voi"], 3)) for n in voi["vertex"]},
+                       len(cands), len(thetas), len(dense))
+        break
     assert informative is not None, "no informative instance found"
-    seed, mmr, ranking, nc, nt = informative
+    seed, mmr, ranking, nc, nt, nd = informative
     return ("T-SEN-7", "MaxRegret PASS / VOI monotonic information test PASS",
-            f"seed {seed}: minimax regret {mmr:.3f} over {nt} vertices and {nc} robust candidates; conditioning on any block value never "
-            f"raised it; VOI ranking {ranking}")
+            "analytic oracle (F_A=1-v, F_B=v, F_D=q, F_E=1-q): vertex-conditioned VOI_v = 1 (overstated), grid VOI_v = 0.5 = true "
+            f"value; portfolio seed {seed}: minimax regret {mmr:.3f} over {nt} vertices and {nc} robust candidates, vertex MaxRegret "
+            f"never exceeded on a {nd}-point interior grid; VOI (vertex, grid) per block {ranking}; 0 <= grid VOI <= vertex VOI")
 
 
 def t_sen8_delta():
@@ -2041,10 +2655,90 @@ def t_regression_v21():
     return ("REG", "v2.1 regression PASS", "P1 (with C0), P2, identities, P8 screening (10->15), P7 in B, P6 money scaling")
 
 
+
+def t_audit_regressions():
+    """Regression tests for adversarial-audit findings 1, 8 and 11 (50 §7)."""
+    # finding 1: a portfolio infeasible at the nominal theta but robustly feasible on the registered set must be a
+    # candidate (the nominal theta need not lie in the registered set)
+    inst = make_instance(31, n_init=1)
+    j = "U1_j0"
+    sq = inst["initiatives"][j]["N"][0] * expect(inst["initiatives"][j]["configs"][0], lambda x, r: x["I_sev"])
+    inst["policies"]["g_base"]["ebar"][j] = sq * 1.01
+    cells = [(("initiatives", j, "configs", k, "path", key), "I_sev") for k in (1, 2) for key in inst["initiatives"][j]["configs"][k]["path"]]
+    for path, field in cells:                                                # nominal severity far above tolerance
+        _get(inst, path)[field] *= 30.0
+    reg = {"groups": {"g1": {"blocks": [dict(name="Isev_low", kind="scale", targets=cells, L=0.01, U=0.03)]}},
+           "eps_R": 0.0, "tie_tol": 1e-9, "seed": 1}
+    uses = lambda d: any((j, k) in configs for configs, _ in d[1] for k in (1, 2))
+    nominal_feasible = enumerate_portfolios(inst, "g_base")
+    assert not any(uses(d) for d in nominal_feasible)                        # nominal: AI configs violate F9
+    rr = solve_robust(inst, "g_base", reg, "g1")
+    assert rr["status"] == "OK_INTERVAL", rr
+    blocks = reg["groups"]["g1"]["blocks"]
+    robust_using = [d for d in enumerate_portfolios(inst, "g_base", static_only=True)
+                    if uses(d) and robust_feasibility(inst, "g_base", d, blocks, spts=[]) == "ROBUSTLY_FEASIBLE"]
+    assert robust_using and rr["n_candidates"] > len([d for d in nominal_feasible
+                                                      if robust_feasibility(inst, "g_base", d, blocks, spts=[]) == "ROBUSTLY_FEASIBLE"])
+    # finding 8a: a missing input in an UNREQUESTED policy never drops an initiative
+    i = make_instance(5)
+    i["policies"]["g_strict"]["ebar"]["U1_j0"] = None
+    r = solve(i, "B", ["g_base"])
+    assert r["status"] == "OK_POINT" and "UNEVALUABLE_INITIATIVE" not in r["flags"]
+    # finding 8b: missing Allow(j,0) excludes the status quo configuration only, never the initiative
+    i = make_instance(5)
+    i["policies"]["g_base"]["allow"][("U1_j0", 0)] = None
+    r = solve(i, "B", ["g_base"])
+    assert "UNEVALUABLE_INITIATIVE" not in r["flags"] and ("U1_j0", 0, "MissingPermission") in r["details"]["excluded_configs"]
+    assert r.get("configs") and any(jk[0] == "U1_j0" and jk[1] != 0 for jk in r["configs"])
+    # finding 11: covered in T-ALG-1 (k = 0 F5e at the chosen state; capability-state rho rows used)
+    # ---- re-review round 2 ----
+    base = make_instance(5)
+    i = copy.deepcopy(base); i["lam"]["senior"] = None
+    i["policies"]["g_base"]["must"] = set(i["initiatives"]); i["A_bar"]["BUD"] = 1.0
+    r = solve(i, "B", ["g_base"])
+    assert r["status"] == "INFEASIBLE" and "PARTIAL_OBJECTIVE" in r["flags"], r["flags"]       # (1) not INVALID
+    i = copy.deepcopy(base); i["lam"]["senior"] = None
+    rc = solve(i, "C", ["g_base"])
+    assert not rc.get("decision_valid_for_all_lambda_in_box") and "envelopes" not in rc and \
+        rc["details"]["lambda_scan"]["certified"] is False                                         # (2) C never certified
+    ra = solve(i, "A", ["g_base"])
+    assert ra["details"]["lambda_scan"]["classification"] == "NO_LEADER_DECISION" and "F_E" not in ra
+    i7 = make_instance(7); i7["lam"]["senior"] = None; i7["lam_U"]["senior"] = 1e-3
+    rd = solve(i7, "B", ["g_base"], method="dp", beta=(1.0, 1.0))
+    assert rd["details"]["lambda_scan"]["solver_inside_scan"] == "enum (exact)"                     # (3)
+    i = copy.deepcopy(base)
+    i["initiatives"]["U1_j0"]["configs"][0]["rho"][("flag", "junior", frozenset({("c_model", "S")}))] = {"NA": None}
+    r4 = solve(i, "B", ["g_base"])
+    assert r4["status"] == "RESTRICTED_SOLVE" and ("U1_j0", 0, "MissingInput") in r4["details"]["excluded_configs"]  # (4)
+    assert solve(base, "B", ["g_base"], method="dp", beta=(0.0, 1.0))["status"] == "INVALID_SCHEMA_OR_UNITS"        # (5)
+    assert solve(base, "B", ["g_base"], method="dp", beta=(1e-300, 1.0))["status"] == "INVALID_SCHEMA_OR_UNITS"
+    small = make_instance(8, n_init=1)
+    reg = make_registry(small)
+    rs = solve(small, "B", ["g_base"], registry=reg)
+    assert verify_registry(rs, reg, small)                                                     # (6)
+    bad = copy.deepcopy(reg)                                                                    # (7) overlapping blocks
+    bad["groups"]["g1"]["blocks"].append(dict(bad["groups"]["g1"]["blocks"][0], name="dup"))
+    assert solve_robust(small, "g_base", bad, "g1")["status"] == "INVALID_SCHEMA_OR_UNITS"
+    mixed = copy.deepcopy(reg)                                                                  # one block on N and path
+    mixed["groups"]["g1"]["blocks"][0]["targets"] = mixed["groups"]["g1"]["blocks"][0]["targets"] + [(("initiatives", "U1_j0", "N"), 1)]
+    assert solve_robust(small, "g_base", mixed, "g1")["status"] == "INVALID_SCHEMA_OR_UNITS"
+    assert solve(small, "B", ["g_base"], registry=mixed)["status"] == "INVALID_SCHEMA_OR_UNITS"
+    i = copy.deepcopy(base); i["y_cur"] = frozenset({"c_model"}); i["caps"]["c_model"]["F"] = None
+    rp = solve(i, "Aplus", ["g_base"])                                                          # F_c used via y_cur
+    assert rp["status"] == "REJECT_INSUFFICIENT_IDENTIFIED_INPUTS" and \
+        ("caps.F", "c_model") not in rp["details"].get("unidentified_inputs_not_used_by_this_model", [])
+    return ("AUDIT", "audit regression PASS",
+            f"finding 1: {len(robust_using)} robustly feasible AI portfolios that are infeasible at the nominal theta are now candidates; "
+            "finding 8: unrequested-policy gap does not drop an initiative, missing Allow(j,0) excludes only k=0; finding 11 in T-ALG-1; "
+            "re-review: missing lambda on an infeasible instance -> INFEASIBLE; C never lambda-certified, A has no leader decision; "
+            "lambda scan always exact; status-quo state-local gap -> RESTRICTED_SOLVE; invalid DP quanta -> INVALID; solve(registry) "
+            "commits; overlapping or multi-kind registry blocks rejected; A+ with F_c needed via y_cur -> REJECT")
+
+
 TESTS = [t_sch5_typed_units, t_sch6_omega_guard, t_sch7_nonfinite, t_alg1_f5e, t_state_machine, t_mis3_threshold,
          t_mis4_partial, t_mis6_no_silent_zero, t_orc9_dp, t_orc10_shared_limit, t_orc12_model_d_gate, t_orc13_repro,
          t_inv4_permutation, t_sen3_lemma_r, t_sen4_robust_feasibility, t_sen6_registry, t_sen7_regret_voi,
-         t_sen8_delta, t_orc8_independent_hand, t_regression_v21]
+         t_sen8_delta, t_orc8_independent_hand, t_regression_v21, t_audit_regressions]
 
 REQUIRED = ["typed units PASS", "explicit omega leakage guard PASS", "NaN/inf rejection PASS", "F5e PASS",
             "state-machine/output-contract PASS", "missing F_c threshold mode PASS", "missing lambda partial objective PASS",
