@@ -1,33 +1,97 @@
-# Calibration branch reading order
+# Calibration branch — Enterprise AI Adoption v2.0
 
-This branch preserves `main@1f2e72f` as the all-simulated v1.0 mathematical freeze. Claude reviewed this branch at `e9137d4` and judged Measurement Architecture v1.1 **FAIL**, while the old `run_all.py` remained PASS for its historical bounded domain.
+## Governing status
 
-Read 21 (research and decision architecture), 22 (measurement, interview and equation responsibility), 23 (failures and validation gate), then 24 (Claude re-review request). The corrected 17 and 19 withdraw their earlier PASS and no-structural-change claims. Files 15, 16, 18 and 20 at the audit baseline document the superseded proposal; where inconsistent, 21–23 govern this candidate. None of this is a new empirical or solver freeze.
+2026-10-10 scope correction: the active research object is now **enterprise-wide AI adoption as a multilevel decision system**. Earlier development stages narrowed the empirical design to a small number of vertical process examples; that direction is superseded and no longer governs the branch.
 
-Google Drive synchronized reading copy of 21–24: https://docs.google.com/document/d/171lerdnexjd_oMHz9va7Ezya5LztFBvqK3iKlFvQpkM/edit . The GitHub Markdown files are the canonical versioned source; the Google Doc reformats tables into labeled paragraphs for reading.
+The branch preserves historical evidence needed for auditability, but the current canonical research-design chain begins at files 38–40.
 
-Google Drive v1.3 reading copy of revised 21–23 and new 25–27: https://docs.google.com/document/d/1LdIQJn48eSYzIe5i-xn_-3vHGcRjmxHhcRuhVuHe08w/edit . The v1.2 copy remains an audit snapshot. The Markdown files and `claude_review_evidence/` on this branch govern the current review.
+## Canonical reading order
 
-Google Drive v1.4 reading copy adds the candidate 8D problem-solving and HR resume-screening vertical slices: https://docs.google.com/document/d/1ADPPiqy3BnWQUUxvxFK-mnYBbwYSVJvW-utfnUM6Ae4/edit . The source is `28_USE_CASE_VERTICAL_SLICES_CANDIDATE_v1_4.md`; both cases remain unverified candidates pending authorization, process evidence, and pilot interviews.
+1. `38_ENTERPRISE_AI_ADOPTION_RESEARCH_ARCHITECTURE_v2_0.md`
+   - enterprise-wide research boundary
+   - Enterprise > Business Unit / Function > AI Initiative / Shared Capability > Role-specific Users
+   - G01–G16 → M1–M4 → enterprise adoption architecture
+   - RQ1–RQ5
 
-Decision chain: JPC Boss → Manager → Junior. Fullon/全漢 relationship and board governance can constrain it only to the extent actual rights are documented; Mega VC/兆豐創投 independently challenges public-value/risk assumptions and is not the study's main decision maker. M5 stays outside the static baseline; G04 remains evidence-only.
+2. `39_ENTERPRISE_MULTILEVEL_MODEL_AND_DATA_CONTRACT_v2_0.md`
+   - Enterprise–Business Unit bilevel / portfolio model
+   - role-specific conditional user response `ρ`
+   - shared platform/governance costs vs local implementation costs
+   - cross-unit budget/capacity/policy coupling
+   - enterprise V0–V7 gates
 
-The original A–J report, second rereview, both diagnostic scripts, captured output and checksum manifest are now in `claude_review_evidence/`. `23` records the verified local reruns, their simulated-only scope, and R1–R14. The candidates 25–27 specify bilevel lookup equations, G-to-mechanism trace/anchors, and interview ethics; candidate 28 specifies two vertical slices and an interview/data contract. They are not an empirically calibrated solver.
+3. `40_MANUSCRIPT_CH1_3_ENTERPRISE_SCOPE_v2_0.md`
+   - formal design-stage manuscript, Chapters 1–3
+   - no firm-specific effect or ROI claim
 
-## v1.5 research specification and manuscript (2026-10-10)
+4. `29_CLAIM_LEVEL_SOURCE_AUDIT_v1_5.md`
+   - bounded literature claims that remain usable
 
-Read `29_CLAIM_LEVEL_SOURCE_AUDIT_v1_5.md` (six primary-source claim checks), `30_VARIABLE_FREEZE_AND_VALIDATION_PROTOCOL_v1_5.md` (fixed ontology/data contract and V0–V7 pending gates), `31_JPC_PILOT_QUESTIONNAIRE_v1_5.md` (two candidate cards and role paths), then `32_MANUSCRIPT_CH1_3_CANDIDATE_v1_5.md` (Chinese and English abstracts, introduction, literature review, methods, references). These supersede conflicting prose in the historical Google Drive v1.0 manuscript; they do not supersede the limits in 23–28. Variable *definitions and validation criteria* are now specified; empirical coefficients, actual decision rights, case observations, model validation, and results remain unidentified or pending.
+5. `26_GAP_CONSTRUCT_TRACE_AND_ANCHORS_CANDIDATE_v1_3.md`
+   - historical G01–G16 → M1–M4 candidate mapping and construct anchors
+   - must be revalidated at enterprise interfaces before empirical freeze
 
-Google Drive v1.5 integrated reading copy: https://docs.google.com/document/d/15Hp4Fn9ggUFUMqVXQiY6lB_GeZ7nOE_kP3lP0WE-RkQ/edit . Separate manuscript reading copy: https://docs.google.com/document/d/18yBNANLb0ewUkpUOJ1NSTQInHhcLIqLmh4QjHeb0cGs/edit . The GitHub Markdown files on this branch remain canonical; the Google Docs are formatted reading copies. The manuscript is a content draft and has not yet been typeset to the Chinese double-column submission template.
+6. `33_bilevel_validation_fixture_v1_5.py`, `34_VALIDATION_RUN_v1_5.md`, `35_schema_validator_synthetic_v1_6.py`, `36_SCHEMA_VALIDATION_RUN_v1_6.md`
+   - synthetic implementation evidence only
+   - not enterprise empirical calibration and not a complete v2.0 portfolio solver
 
-A narrow executable check is now in `33_bilevel_validation_fixture_v1_5.py` with its actual synthetic-only run in `34_VALIDATION_RUN_v1_5.md`. It exercises one case, Manager ties, central/bilevel comparison, uniform monetary scaling, and several input rejections; it does not satisfy V0–V7, calibrate JPC data, or establish the general solver. The integrated Drive reading copy includes 34 and the updated status paragraphs.
+## What remains valid from earlier work
 
-## v1.6 synthetic schema validation (2026-10-10)
+- `main@1f2e72f` v1.0: historical simulated mathematical-feasibility regression only.
+- G01–G16: literature-network research leads; not company gaps or weights.
+- M1 Governance/Decision Rights, M2 Workflow/Integration, M3 Human–AI Configuration, M4 Evaluation/Assurance: static candidate mechanism layer.
+- M5: longitudinal learning/resource-feedback extension only.
+- ordinal/cardinal correction: 0–3 constructs are threshold/lookup keys, not direct utility arithmetic.
+- provenance separation and `UNIDENTIFIED` missing-data rule.
+- Boss–Manager critique: a third optimization layer is not assumed without independent discretion, different objectives/constraints, managerial anticipation, and counterfactual upstream impact.
 
-Read `35_schema_validator_synthetic_v1_6.py` and `36_SCHEMA_VALIDATION_RUN_v1_6.md` after 33–34. This adds two-case/two-role contract checks, policy Allow and A×κ thresholds, visible-signal-only response indexing, typed TWD/event vs TWD/period vs hours/period, and budget/capacity filtering. Twelve invalid-input examples are rejected in the synthetic fixture. This is partial V3/V4 input validation only; it is not JPC calibration or a complete Boss–Manager solver, and V0–V7 remain open. Drive v1.6 reading copy: https://docs.google.com/document/d/1ch0HL5HcP7JZ-OxYRUu79YkbmoxO6wAN3S0HdOdlQHs/edit . The v1.5 copy stays unchanged.
+## v2.0 model hierarchy
 
-## v1.7 formal manuscript and scenario cost-benefit model (2026-10-10)
+### Enterprise / Executive
+Chooses strategy, policy, shared infrastructure/capabilities, risk appetite, budget, engineering capacity, and portfolio priorities.
 
-Start with `37_FORMAL_MANUSCRIPT_JPC_AI_DECISION_COST_BENEFIT_v1_7.md`. This is the first complete formal-article candidate rather than another incremental review memo. It centers the 8D and HR vertical slices, links Boss–Manager configuration to role-specific Junior responses, and adds an auditable labor-savings and break-even model. Third-party productivity findings define sensitivity ranges only; the 10%, 15%, and 37% scenarios, NT$350/500 loaded-hour assumptions, and NT$120,000 annualized-cost example are not JPC observations. Quality, customer, fairness, and compliance benefits remain unmonetized until authorized outcome data exist. The v1.5/v1.6 files remain evidence and validation appendices, and V0–V7 remain open.
+### Business Unit / Functional Management
+Chooses local configuration under enterprise constraints:
 
-Drive formatted v1.7 DOCX: https://docs.google.com/document/d/1WbNGAETGCDExWLO-SwtVQGEjSRvaKWUu/edit . It follows the supplied A4 Chinese double-column submission template and preserves all earlier Drive versions as historical snapshots.
+`x_j=(A_aut,j,H_j,WI_j,EA-V_j,m_j)`
+
+where `j` is a business unit, function, initiative, or shared-capability deployment context rather than a fixed use case.
+
+### Organizational users
+Modeled by role-specific conditional response distributions:
+
+`ρ_j(r|x_j,z,role,s)`
+
+with responses such as use, verify, modify, escalate, reject, and bypass. A true third optimization layer is evidence-contingent.
+
+## v2.0 economics
+
+The enterprise model separates:
+
+- `C_shared`: shared platform, infrastructure, security, governance, evaluation, and training costs
+- `C_impl,j`: unit/initiative-specific implementation and maintenance
+- `C_op,j`: operational/review/exception costs
+- `V_j`, `L_j`: traceable value/loss lookups
+- shared budget/capacity constraints and portfolio coupling
+
+Shared costs are not replicated once per business unit.
+
+## Validation status
+
+No v2.0 enterprise empirical gate is currently claimed as passed.
+
+- V0 enterprise authority/source evidence — OPEN
+- V1 construct validity and blind G→M coding — OPEN
+- V2 cross-functional pilot — OPEN
+- V3 schema/units — PARTIAL synthetic evidence inherited from v1.5/v1.6
+- V4 lookup completeness — PARTIAL synthetic rejection logic only
+- V5 enterprise portfolio solver — OPEN / requires v2.0 implementation
+- V6 sensitivity/invariance — PARTIAL historical synthetic evidence; enterprise Θ_adm scan OPEN
+- V7 enterprise empirical calibration — OPEN
+
+## Historical files and supersession rule
+
+Earlier files remain only when they contribute provenance, review evidence, literature auditing, construct development, or reusable synthetic validation. Any statement that conflicts with files 38–40 is superseded.
+
+The working branch must not reintroduce a single department/process as the central research object. Future empirical units are embedded evidence inside the enterprise architecture, not substitutes for the enterprise research boundary.
