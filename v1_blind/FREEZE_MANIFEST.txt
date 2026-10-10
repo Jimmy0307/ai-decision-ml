@@ -5,3 +5,6 @@
 62107a9ae8aeeb7fa31ec7504f97bd67a7fb4586ee63892bfca80dfeee83df7a  54B_V1_BLIND_PACKET_B_v2_2.csv
 9d9de02bfb68566d94cd7023fbff14b79f29fb5db8cf8d364fb941cb6b2e0d3d  53A_V1_RESEARCHER_MAPPING_SEALED_KEY_v2_2.PLAINTEXT.md
 d1702188359e2efa872ae3d5a3ebdae8b75bb220b49931af4f2f59e524936734  sealed_key.json
+# stage 2 (AI pilot outputs frozen BEFORE key reveal) 2026-10-10T17:09:56.420408+00:00
+81d7dbb8d5732091e9ee47b2eadaed2e12f5c050abc51159f41f762fed639e81  ai_coder_A_output.csv
+8ed9115c65a8cd556b784bf129ff443efdda2d7dec212a6f18f27288d8d39c2a  ai_coder_B_output.csv
