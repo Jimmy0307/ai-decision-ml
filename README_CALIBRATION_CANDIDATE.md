@@ -8,6 +8,8 @@ Google Drive synchronized reading copy of 21–24: https://docs.google.com/docum
 
 Google Drive v1.3 reading copy of revised 21–23 and new 25–27: https://docs.google.com/document/d/1LdIQJn48eSYzIe5i-xn_-3vHGcRjmxHhcRuhVuHe08w/edit . The v1.2 copy remains an audit snapshot. The Markdown files and `claude_review_evidence/` on this branch govern the current review.
 
+Google Drive v1.4 reading copy adds the candidate 8D problem-solving and HR resume-screening vertical slices: https://docs.google.com/document/d/1ADPPiqy3BnWQUUxvxFK-mnYBbwYSVJvW-utfnUM6Ae4/edit . The source is `28_USE_CASE_VERTICAL_SLICES_CANDIDATE_v1_4.md`; both cases remain unverified candidates pending authorization, process evidence, and pilot interviews.
+
 Decision chain: JPC Boss → Manager → Junior. Fullon/全漢 relationship and board governance can constrain it only to the extent actual rights are documented; Mega VC/兆豐創投 independently challenges public-value/risk assumptions and is not the study's main decision maker. M5 stays outside the static baseline; G04 remains evidence-only.
 
-The original A–J report, second rereview, both diagnostic scripts, captured output and checksum manifest are now in `claude_review_evidence/`. `23` records the verified local reruns, their simulated-only scope, and R1–R14. The new candidates 25–27 specify bilevel lookup equations, G-to-mechanism trace/anchors, and interview ethics. They are not an empirically calibrated solver.
+The original A–J report, second rereview, both diagnostic scripts, captured output and checksum manifest are now in `claude_review_evidence/`. `23` records the verified local reruns, their simulated-only scope, and R1–R14. The candidates 25–27 specify bilevel lookup equations, G-to-mechanism trace/anchors, and interview ethics; candidate 28 specifies two vertical slices and an interview/data contract. They are not an empirically calibrated solver.
