@@ -25,3 +25,9 @@ A narrow executable check is now in `33_bilevel_validation_fixture_v1_5.py` with
 ## v1.6 synthetic schema validation (2026-10-10)
 
 Read `35_schema_validator_synthetic_v1_6.py` and `36_SCHEMA_VALIDATION_RUN_v1_6.md` after 33–34. This adds two-case/two-role contract checks, policy Allow and A×κ thresholds, visible-signal-only response indexing, typed TWD/event vs TWD/period vs hours/period, and budget/capacity filtering. Twelve invalid-input examples are rejected in the synthetic fixture. This is partial V3/V4 input validation only; it is not JPC calibration or a complete Boss–Manager solver, and V0–V7 remain open. Drive v1.6 reading copy: https://docs.google.com/document/d/1ch0HL5HcP7JZ-OxYRUu79YkbmoxO6wAN3S0HdOdlQHs/edit . The v1.5 copy stays unchanged.
+
+## v1.7 formal manuscript and scenario cost-benefit model (2026-10-10)
+
+Start with `37_FORMAL_MANUSCRIPT_JPC_AI_DECISION_COST_BENEFIT_v1_7.md`. This is the first complete formal-article candidate rather than another incremental review memo. It centers the 8D and HR vertical slices, links Boss–Manager configuration to role-specific Junior responses, and adds an auditable labor-savings and break-even model. Third-party productivity findings define sensitivity ranges only; the 10%, 15%, and 37% scenarios, NT$350/500 loaded-hour assumptions, and NT$120,000 annualized-cost example are not JPC observations. Quality, customer, fairness, and compliance benefits remain unmonetized until authorized outcome data exist. The v1.5/v1.6 files remain evidence and validation appendices, and V0–V7 remain open.
+
+Drive formatted v1.7 DOCX: https://docs.google.com/document/d/1WbNGAETGCDExWLO-SwtVQGEjSRvaKWUu/edit . It follows the supplied A4 Chinese double-column submission template and preserves all earlier Drive versions as historical snapshots.
