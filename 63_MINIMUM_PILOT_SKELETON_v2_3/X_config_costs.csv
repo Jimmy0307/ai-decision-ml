@@ -1,0 +1,21 @@
+initiative_id,config_id,capability_state,parameter,value,unit,provenance_type,source_id,period,uncertainty,lower,upper,identification_status,assumption_note
+INI1,SQ,*,impl,,TWD/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,INVARIANT across capability states: status quo needs no implementation
+INI1,SQ,*,eng,,hours/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,INVARIANT across capability states: status quo needs no implementation
+INI1,AI1,NONE,impl,,TWD/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI1,AI1,NONE,eng,,hours/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI1,AI1,CAP1:S,impl,,TWD/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI1,AI1,CAP1:S,eng,,hours/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI2,SQ,*,impl,,TWD/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,INVARIANT across capability states: status quo needs no implementation
+INI2,SQ,*,eng,,hours/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,INVARIANT across capability states: status quo needs no implementation
+INI2,AI1,NONE,impl,,TWD/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI2,AI1,NONE,eng,,hours/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI2,AI1,CAP1:S,impl,,TWD/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI2,AI1,CAP1:S,eng,,hours/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI3,SQ,*,impl,,TWD/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,INVARIANT across capability states: status quo needs no implementation
+INI3,SQ,*,eng,,hours/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,INVARIANT across capability states: status quo needs no implementation
+INI3,AI1,NONE,impl,,TWD/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI3,AI1,NONE,eng,,hours/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI3,AI1,CAP1:S,impl,,TWD/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI3,AI1,CAP1:S,eng,,hours/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI3,AI1,CAP1:L,impl,,TWD/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI3,AI1,CAP1:L,eng,,hours/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
