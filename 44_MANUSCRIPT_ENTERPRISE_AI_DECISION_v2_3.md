@@ -219,7 +219,7 @@ Enterprise adoption of artificial intelligence has shifted from adopting individ
 
 # 參、研究方法
 
-本章的目標是：讀者讀完本章即可依公式實作求解器。完整規格與證明見 `42_ENTERPRISE_PORTFOLIO_MODEL_v2_1.md`；本章方程編號與其一致。
+本章的目標是：讀者讀完本章即可依公式實作求解器。完整規格與證明見 `42_ENTERPRISE_PORTFOLIO_MODEL_v2_2.md`；本章方程編號與其一致。
 
 ## 3.1 研究設計
 
