@@ -1,0 +1,72 @@
+@@@ L35
+This version also separates three independent levels of "how AI is implemented": the organizational implementation architecture (who selects use cases and configurations, who owns shared capabilities, and how budgets and engineering capacity are allocated), the technical deployment architecture (hosting outside the enterprise boundary or in an enterprise-controlled environment, crossed with standalone or embedded delivery; the two dimensions are orthogonal), and the task-level human–AI configuration. The formal model type is determined by rules from decision rights and resource structure only, never from the name of an organizational archetype; the five archetypes proposed by the researcher are analytical, may overlap, are not exhaustive, and are not an established taxonomy. External partners and champions are not decision-makers in the model. The organizational coding and mapping await human validation and enterprise data have not been collected; the study does not claim that any archetype or deployment option is superior.
+
+@@@ L105
+`人工智慧 × 決策文獻語料 → 語意證據與功能分類 → 文獻層級功能網路與零模型推論 → 主要穩健功能低整合（G01–G16，含證據單元持續性標記；人工稽核與目標式人工標籤替換的局部敏感度另行報告）→ 缺口—機制轉譯 → 企業決策介面 M1–M4（M5 為跨期擴充）→ 企業—事業單位雙層 portfolio 模型（含部署—採用—使用—有效使用層，v2.4 candidate）→ 參數識別與人類構念驗證 → 企業實證校準與穩健性`
+
+@@@ L112
+2. 分層界定上述結果的統計穩健性與測量穩健性，區分主要穩健集合、跨證據單元持續的配對與證據單元邊界敏感的配對，並報告人工稽核與目標式人工標籤替換所揭示的局部成員敏感度。
+
+@@@ L122
+本論文的研究問題依證據鏈排列。研究問題一、二與探索性問題由文獻分析的凍結主要結果回答；人工稽核之後的目標式人工標籤替換顯示部分配對的成員資格局部敏感，完整重分析尚待執行（第 4.5.5 節）。研究問題三的研究者轉譯已完成（理論收斂），人類構念效度驗證與企業層的介面活化檢驗尚待完成；研究問題四至六的模型與求解程序已完成、合成驗證已完成（僅合成實例），實證回答須待企業資料（V7）。
+
+@@@ L147
+| 研究問題二 | 四項統計／計數分析；兩種證據單元重切分；29 持續＋3 邊界敏感；人工稽核 κ；目標式人工標籤替換 | 3.6.2、3.7 | 4.4、4.5 | 已完成（凍結主要結果）；人工標籤替換：局部成員變動，完整重分析待執行 |
+
+@@@ L168
+企業層的推論邊界更嚴格。本論文不報告任何企業實證效果、投資報酬、樣本結果或已校準的最適配置；第四章凡尚無資料處標示 `[EMPIRICAL RESULT PENDING]`，人類驗證結果尚未取得處標示 `[HUMAN RESULT PENDING]`，參數尚未識別處標示 `UNIDENTIFIED`。合成資料的求解器檢查只表示在受測的合成實例上實作與方程一致、命題未被這些實例反駁（`SIMULATED_ONLY`）；AI 盲編與 AI 內容效度評分只是 pilot，研究者裁決也只是理論收斂，兩者都不是人類構念效度證據。在 V7 完成前，本論文不宣稱企業投資報酬、最適的企業人工智慧架構、最佳導入部門、因果的績效改善、企業層級的外部效度，或結果可推廣至其他企業。反方向的邊界同樣成立：文獻分析的凍結主要結果是正式的推論基準，不因企業層尚待實證而降為「初步」結果；但人工稽核顯示少數配對的成員資格對編碼與分類邊界敏感，完整重分析尚待執行（第 4.5.5 節），逐格解讀因此依證據強度分層。
+
+@@@ L254
+自動文本分析的效度取決於類別定義、分析單元、編碼程序與不確定結果的處理（Grimmer & Stewart, 2013；Krippendorff, 2019；Neuendorf, 2017）。內容分析研究亦把文字連續體的切分（unitizing）本身視為需要信度評估的測量問題（Krippendorff et al., 2016）；本研究據此推論，分析單元若過寬或邊界不一致，可能影響後續類別判定。大型語言模型可協助文本標註（Gilardi et al., 2023；Ziems et al., 2024），但其輸出須經人工驗證，不等同於研究真值（Ziems et al., 2024）。因此本研究把模型限制為受約束的編碼工具，並另外以人工稽核檢查分類邊界；對人工稽核所暴露的證據單元問題，再以替代重切分設定做敏感度分析。此設計與文字分析中以替代前處理設定檢查結果依賴性的原則一致（Denny & Spirling, 2018）。
+
+@@@ L356
+本論文據此提出的整合架構分為兩段。第一段把文獻證據收斂為 16 組主要穩健不足呈現（G01–G16），並為每一組保留證據單元持續性標記（第 3.8 節；目標式人工標籤替換未移除其中任何一組，第 4.5.5 節）。第二段只把這些配對當作「哪些企業決策元素必須存在於模型中」的線索，形成圖 2-1 的企業—事業單位架構；研究者的逐格轉譯見第 3.9 節，其驗證狀態見第 4.7 節。第 2.8 節的採用與有效使用文獻，在架構中對應使用者層的第一段：事業單位選定配置之後，在範圍內的事件先分為由 AI 處理與未由 AI 處理兩支（使用率 `α`），由 AI 處理者才進入角色反應 `ρ`（第 3.10.4、3.11.4 節；v2.4 candidate）。
+
+@@@ L405
+兩層的完成程度不同。第一層的資料蒐集、編碼、統計推論、人工稽核與證據單元敏感度分析已完成，凍結的主要結果在第 4.1–4.6 節報告；人工稽核之後的目標式人工標籤替換顯示主要穩健集合的成員有局部變動，完整重分析尚待執行（第 3.7.4、4.5.5 節）。第二層的理論轉譯（研究者裁決的理論收斂）、模型規格、求解程序與合成資料驗證（僅合成實例）已完成；獨立人類編碼者的轉譯驗證與企業參數的實證蒐集尚未完成，相應結果在第 4.7–4.10 節以待填欄位標示。整體流程如下：
+
+@@@ L412
+  → 目標式人工標籤替換（局部成員變動；凍結核心仍為推論基準；完整重分析待執行）
+
+@@@ L529
+第二階段處理第一階段無法唯一分類的 8,919 個端點，其中人工智慧端 4,137 個、決策端 4,782 個。每次只判定其中一端；人工智慧端只能在 10 個人工智慧家族中選擇，決策端只能在 12 個決策家族中選擇，另保留『模糊』與『證據不足』兩種非實質分類。這是一個封閉集合的模型輔助標註問題；既有研究顯示大型語言模型可用於文字標註（Gilardi et al., 2023；Ziems et al., 2024），且結果需經人工驗證（Ziems et al., 2024）；本研究另加上明確編碼簿與重複性檢查，這是本研究的程序設計。
+
+@@@ L603
+### 3.7.4 目標式人工標籤替換敏感度
+
+@@@ L1015
+本節是模型候選（隨稿附件 74），尚未取代第 3.11.2 節的 (X1) 與第 3.12 節的 v2.2 規格；採用與否待人工驗證後決定。
+
+@@@ L2354
+使用層擴充（第 3.10.4、3.11.4 節）有四項識別限制。第一，`α` 的量測依賴事件分類規則：若系統紀錄只記錄被接受的建議，而不記錄被拒用或繞過的輸出，估計的 `α` 會偏低，使用與反應也會被混在一起；事件分類規則必須在資料蒐集前與系統紀錄的欄位逐一對應。第二，有效使用的效果 `ATT` 是反事實量，需要隨機或分批導入、鼓勵設計、同一案件的配對題卡或有對照的前後比較等設計依據；焦點企業可能無法隨機化，此時只能報告各分支的觀察平均，`φ` 只能以未經設計的比較報告並標為 CONDITIONAL，不報 `ATT`（各種設計的識別條件見 Angrist et al., 1996；Callaway & Sant'Anna, 2021；Rosenbaum & Rubin, 1983）。第三，「未使用 AI 的事件照現況處理」（C2）與「是否使用與案件難易無關」（C3）在實務上可能不成立：影子使用會破壞 (C2)，自我選擇會破壞 (C3)。第四，模型候選假設分支查表不隨使用率改變（A-INV）；若擴大使用會使每次使用的效果遞減，價值對使用率非線性，穩健性只能以離散情境與涵蓋率報告。此外，訓練與組織氛圍只作解釋或情境，本研究不估計它們對使用率的因果效果；任務賦能與氛圍項目是研究者編碼，不是經驗證的量表。使用層的模型擴充與資料欄位目前都是候選，尚未經人工驗證，現行載入器也不讀取其資料。
+
+@@@ L2360
+### 5.8.9 凍結核心、局部敏感度與完整重分析
+
+@@@ L2366
+後續研究的第一個優先方向，是以一致的標籤完成文獻層的完整重分析（第 5.8.9 節），並同時改善證據單元界定與分類邊界。候選建立時可優先切出能單獨支持一組功能關係的最小實質單元，對多功能段落保留多配對表示，並以跨分層、獨立人工樣本檢查家族邊界。完成較穩定的文字測量後，再對功能低整合與可比較的過度呈現接口進行配對機制稽核，比較決策權、授權、異議或升級、執行責任與問責／監控是否存在系統差異，以檢驗低整合位置是否具有一致的決策編排特徵。
+
+@@@ L3039
+| E15 | v2.4 candidate 是否採用（混合算子、`α` 是否依角色、診斷門檻、求解器與載入器修改） | 第 3.11.4、4.10.6 節 | 人工驗證附件 74 後決定；未採用前正文維持 v2.2 為正式規格 |
+
+@@@ L3048
+| E24 | v2.5 candidate 樣板的 O 區塊與 `delivery_mode` 的 DEPRECATED 標記是否採用；O 區塊的載入步驟 | 第 3.14.2、4.10.7 節；附件 89–91 | 人工驗證後決定；現行載入器不讀 O 區塊 |
+
+@@@ L3005
+| 125 | — | `125_ENGINEERING_SOURCING_MODEL_RUN_v1_0.txt` | 參考實作的執行紀錄（SIMULATED_ONLY） | 第 3.12.7 節 |
+
+@@@ L3006
+| 126 | — | `126_MATHEMATICAL_MODEL_FORENSIC_AUDIT_v1_0.md` | 數學模型稽核與閘門 | 第 3.12.7 節 |
+
+@@@ L3007
+| 127 | — | `127_MERGED_MASTER_THESIS_R14_TO_ENTERPRISE_v1_6_MATH_CANONICAL_CANDIDATE.md` | 合併論文 v1.6（已保存的 checkpoint；未覆寫） | 本稿的修訂基礎 |
+
+@@@ L3009
+| 27 | — | `27_JPC_INTERVIEW_ETHICS_AND_CONSENT_DRAFT_v1_3.md` | 焦點企業訪談倫理與同意程序草案（DRAFT） | 第 3.14.7 節；附錄 E50 |
+
+@@@ L3010
+| 128 | — | `128_CANONICAL_STATE.md` | 權威來源、衝突與停止條件的盤點 | 本稿的來源裁定 |
+
+@@@ L3012
+| 130 | — | `130_MERGED_MASTER_THESIS_R14_TO_ENTERPRISE_v1_7_EVIDENCE_CONVERGED_CANDIDATE.md` | 合併論文 v1.7 | 本稿 |
+

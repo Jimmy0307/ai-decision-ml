@@ -1,0 +1,125 @@
+{
+ "first_n": 50,
+ "first_unique": 50,
+ "first_status": {
+  "COMPLETE": 50
+ },
+ "first_coder_ids": {
+  "1": 50
+ },
+ "first_ts_range": [
+  "2026-09-30T09:03:34+00:00",
+  "2026-10-02T18:44:12+00:00"
+ ],
+ "blind_n": 20,
+ "blind_unique": 20,
+ "blind_status": {
+  "COMPLETE": 20
+ },
+ "blind_coder_ids": {
+  "2": 20
+ },
+ "blind_ts_range": [
+  "2026-10-02T21:22:29+00:00",
+  "2026-10-03T06:38:24+00:00"
+ ],
+ "blind_subset_of_first": true,
+ "pre_adjudication_reliability_recomputed": {
+  "human_evidence_valid": {
+   "exact": 15,
+   "n": 20,
+   "kappa": 0.5614
+  },
+  "human_relation_type": {
+   "exact": 7,
+   "n": 20,
+   "kappa": 0.1798
+  },
+  "human_ai_family": {
+   "exact": 4,
+   "n": 20,
+   "kappa": 0.0476
+  },
+  "human_decision_family": {
+   "exact": 4,
+   "n": 20,
+   "kappa": 0.1398
+  },
+  "human_include": {
+   "exact": 12,
+   "n": 20,
+   "kappa": 0.3162
+  }
+ },
+ "records_with_any_disagreement": 19,
+ "confidence_exact": 9,
+ "reconciled_n": 20,
+ "reconciled_unique": 20,
+ "reconciled_final_populated": 20,
+ "reconciled_with_event": 19,
+ "reconciled_basis": {
+  "UNANIMOUS_PRE_ADJUDICATION": 1,
+  "HUMAN_ADJUDICATION": 19
+ },
+ "reconciled_original_columns_mismatch_vs_frozen": 0,
+ "events_n": 19,
+ "events_types": {
+  "COMPLETE": 19
+ },
+ "events_researcher_ids": {
+  "3": 19
+ },
+ "events_ts_range": [
+  "2026-10-03T07:45:24.075240+00:00",
+  "2026-10-03T11:09:05.968909+00:00"
+ ],
+ "events_prev_link_ok": true,
+ "event_hash_formula_reproduced": {
+  "sorted_compact": 19
+ },
+ "reconciled_event_hash_match": 19,
+ "epoch2_prev_link_ok_from_genesis_file_hash": true,
+ "sens_cells": 120,
+ "sens_official_core": 32,
+ "sens_sidecar_core": 32,
+ "sens_official_core_dirs": {
+  "ENRICHED": 16,
+  "DEPLETED": 16
+ },
+ "sens_sidecar_core_dirs": {
+  "ENRICHED": 15,
+  "DEPLETED": 17
+ },
+ "sens_membership_changed": [
+  [
+   "COORDINATION_EXECUTION",
+   "GENERAL_DECISION_PROCESS",
+   "YES",
+   "NO",
+   "ENRICHED",
+   ""
+  ],
+  [
+   "HUMAN_AUGMENTATION",
+   "RISK_ASSESSMENT",
+   "NO",
+   "YES",
+   "",
+   "DEPLETED"
+  ]
+ ],
+ "sens_obs_changed": 24,
+ "sens_main_dir_changed": 3,
+ "sens_main_q05": [
+  47,
+  47
+ ],
+ "v9_1_output_manifest": {
+  "MATCH": 18
+ },
+ "v9_1_output_manifest_bad": []
+}
+epoch2_current_hash_reproduced 5 / 5
+sens_core_direction_changed 0
+model_vs_first50 {'relation': 14, 'ai_family': 19, 'decision_family': 9, 'inclusion_pairs': {('True', 'INCLUDE'): 33, ('True', 'UNCERTAIN'): 8, ('True', 'EXCLUDE'): 9}, 'strata': {'A': 50}}
+model_vs_reconciled20 {'relation': 3, 'ai_family': 7, 'decision_family': 7, 'final_c5': {'INCLUDE': 10, 'EXCLUDE': 8, 'UNCERTAIN': 2}}

@@ -1,0 +1,9 @@
+{
+ "inventory_rows": 1295,
+ "files_on_disk": 1295,
+ "match": 1295,
+ "mismatch": 0,
+ "missing_on_disk": 0,
+ "on_disk_not_in_inventory": [],
+ "problems": []
+}

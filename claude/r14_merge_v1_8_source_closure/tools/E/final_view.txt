@@ -1,0 +1,169 @@
+128 L14 CLOSED_SOURCE_VERIFIED | | `20260929_V9_HUMAN_VALIDATION.zip` | **
+128 L14 CLOSED_SOURCE_VERIFIED | | `20260929_V9_HUMAN_VALIDATION.zip` | **ABSENT** | 人工標籤替換的局部敏感度結果（+人機
+128 L15 OPEN_SOURCE_NOT_FOUND | | `完整資料來源.zip` | **ABSENT** | V5 Manuscript Data Pack 本
+128 L16 OPEN_SOURCE_NOT_FOUND | df`、`投稿範例.pdf`、`全文投稿樣板 windows (2).docx` | **ABSENT** | 格式差距只能以既有投稿稿（R
+128 L29 KEEP_AS_LIMITATION | V1_HUMAN_BLIND_CODING_PENDING
+128 L29 CLOSED_SOURCE_VERIFIED | 0／.048／.140／.316）。(b) 人工標籤替換局部敏感度與稽核狀態：V9 套件（2026-09-29）——**artifact 不
+128 L29 CLOSED_SOURCE_VERIFIED | 標籤替換局部敏感度與稽核狀態：V9 套件（2026-09-29）——**artifact 不在環境中，僅使用者陳述**。(c) 企業 G→M
+128 L29 CLOSED_SOURCE_VERIFIED | 感度與稽核狀態：V9 套件（2026-09-29）——**artifact 不在環境中，僅使用者陳述**。(c) 企業 G→M 構念的人類 
+128 L29 CLOSED_SOURCE_VERIFIED | CODING_PENDING`。 | (a) VERIFIED vs R14；(b) **USER-REPORTED, ARTIFACT P
+128 L29 CLOSED_SOURCE_VERIFIED | ERIFIED vs R14；(b) **USER-REPORTED, ARTIFACT PENDING**；(c) PENDING | R
+128 L29 CLOSED_SOURCE_VERIFIED | ；(b) **USER-REPORTED, ARTIFACT PENDING**；(c) PENDING | R14 02:218, 361
+128 L34 KEEP_AS_LIMITATION | 1、EA-X 內容效度、ORG-V1–V5 結果。 | ALL UNIDENTIFIED／PENDING | 134 |
+128 L44 CLOSED_SOURCE_VERIFIED | 要統計結果；人工調和標籤「不傳播至未稽核記錄」，未報告標籤替換重算 | 使用者指示（V9，2026-09-29）：目標式人工標籤替換後核心仍
+128 L44 CLOSED_SOURCE_VERIFIED | B 的數字加 `[SOURCE: V9 human-validation state, 2026-09-29 — artifact not 
+128 L44 CLOSED_SOURCE_VERIFIED | | B 是新增的敏感度層，不推翻 A 的凍結推論基準；但 B 的原始 artifact 不在環境中 | v1.7 以「凍結核心＝官方推論基準
+128 L46 OPEN_SOURCE_NOT_FOUND | 0260909 等）可作為 130 §3.8.3 的出處，並註明 Data Pack 原檔待核。 |
+128 L53 CLOSED_SOURCE_VERIFIED | 分設定中「人工調和標籤不傳播至未稽核記錄」→ 受稽核記錄可能已用人工標籤 | 不適用（缺 2026-09-29 原始紀錄） | 若受稽核記錄
+128 L53 CLOSED_SOURCE_VERIFIED | 分重疊，「互相獨立」的說法不成立 | v1.7 改寫為「不同的測量操作；範圍可能部分重疊，待核」（E49） |
+128 L64 CLOSED_SOURCE_VERIFIED | human audit artifact 不一致 | **未觸發，但 artifact 缺件** | κ、50／20／19 與 R14 一致
+128 L73 CLOSED_SOURCE_VERIFIED | 觸發必須整輪停止的核心衝突（計數、核心、方程、比較量定義皆一致）。觸發的兩項（CF-01 缺件、CF-02 證據不足）已以「不猜、加出處旗標
+129 L8 NOT_A_FLAG | HUMAN CONSTRUCT VALIDATION PENDING
+129 L24 NOT_A_FLAG | | 題目、關鍵詞 | 與使用者陳述的整體研究主題不同 | 128 CF-04 | 保留題目；研
+129 L49 NOT_A_FLAG | `[VERIFY]`
+129 L50 NOT_A_FLAG | `[VERIFY]`
+129 L62 NOT_A_FLAG | [AUTHOR TO CONFIRM]
+129 L64 NOT_A_FLAG | 使用者指示 §5；禁止以 29 組取代 32 組的規則 | 新增 L2′ 列（標 V9 待核）；表註改為「不以 L3 取代 L2」 | YE
+129 L67 NOT_A_FLAG | `[VERIFY]`
+129 L67 NOT_A_FLAG | | 3.9.3 | 門檻「出處待核 `[VERIFY]`」 | 已核 | 135 | 依 Kr
+129 L74 NOT_A_FLAG | NO_EVALUABLE、求解 0）並新增「資料尚未識別不等於模型失敗」段；術語更新、格數待確認 | YES（格數 AUTHOR） | 4.
+129 L75 NOT_A_FLAG | `[VERIFY]`
+129 L82 NOT_A_FLAG | EMPIRICAL RESULT PENDING
+129 L92 NOT_A_FLAG | [EMPIRICAL RESULT PENDING]
+129 L93 NOT_A_FLAG | HUMAN RESULT PENDING
+129 L94 NOT_A_FLAG | | 4.11 表 4-33 | REAL、SIMULATED、PENDING 在同一欄位混列 | 使用者指示 §16 | — | 「證據
+129 L105 NOT_A_FLAG | | 缺「工程驗證 ≠ 實證驗證」專段 | 使用者指示 §17(9) | 新增專段；兩段加 PENDING 標記 | YES | 4.8.2、
+129 L125 NOT_A_FLAG | `[VERIFY]`
+129 L132 NOT_A_FLAG | 只列稽核與調和 | 缺標籤替換的補充資料 | S8 須收錄替換清單與重算矩陣（標 V9 待核） | YES-FLAG | A_S8 |
+129 L133 NOT_A_FLAG | | B | N34 UNVERIFIED；N36 ABSTRACT_ONLY | 已有新核對結果 |
+129 L135 NOT_A_FLAG | 「本稿」 | v1.7 新增文件未列 | 127 改為 checkpoint；新增 V9（缺件）、128–137 | YES | D_127
+129 L150 NOT_A_FLAG | | 3.7.4 的程序細節 | V9 原始檔案不在環境中，不能補造 | E48 |
+129 L175 NOT_A_FLAG | 31），且未標明「若無其他未回報的變動」 | 改為「凍結核心其餘 31 組不變」並加條件與待核標記（130 表 4-9A 註、E39；131
+129 L177 NOT_A_FLAG | [AUTHOR TO CONFIRM]
+129 L177 NOT_A_FLAG | 蓋範圍改為 `[AUTHOR TO CONFIRM]`；表 3-3 L2′ 判準改為「判準待核」 |
+129 L178 NOT_A_FLAG | ：替換涵蓋 50 筆或 20 筆不明 | 改為「人工標籤（研究者審閱或調和後）」，涵蓋範圍待核；移除依賴 n = 50 的論證 |
+129 L180 NOT_A_FLAG | 被加強 | 4.5.1 恢復 R14 的「可能性」語氣；四類來源一律寫成「可能來自」並標 2026-09-29 紀錄待核；註明 19 筆分歧
+129 L180 NOT_A_FLAG | 復 R14 的「可能性」語氣；四類來源一律寫成「可能來自」並標 2026-09-29 紀錄待核；註明 19 筆分歧尚未逐筆歸類；5.4.2 
+129 L181 NOT_A_FLAG | 3 的出處錯置 | 模型摘要值標為「依專案紀錄的 V5 Data Pack 模型資訊，原檔待核」；執行參數標為「依 V5 camera-re
+129 L183 NOT_A_FLAG | 「互相獨立」可能與 R14:258 衝突 | 改為「不同的測量操作；處理範圍可能部分重疊，待核」；新增 E49、128 CF-11 |
+129 L185 NOT_A_FLAG | 條件與 §3.9.3 對齊；4.7／4.8／4.9 標題的證據類別標記統一；「V9」改稱「2026-09-29 人工驗證狀態紀錄」並註明不是
+130 L5 CLOSED_SOURCE_VERIFIED | 〔來源：2026-09-29 人工驗證狀態紀錄（檔名 20260929_V9_HUMAN_VALIDATION；V9 是檔案版本名，不是驗證
+130 L5 CLOSED_SOURCE_VERIFIED | (claim under V9 flag) 第一位編碼者 50/50、盲式第二編碼 20/20、分歧調和 19/19
+130 L13 CLOSED_SOURCE_VERIFIED | 〔2026-09-29 紀錄，待核〕
+130 L15 CLOSED_SOURCE_VERIFIED | 〔2026-09-29 紀錄，待核〕
+130 L29 CLOSED_SOURCE_VERIFIED | as reported in the 2026-09-29 validation record, pending verification
+130 L29 KEEP_AS_LIMITATION | ferential baseline, and a full reanalysis is pending.
+130 L31 KEEP_AS_LIMITATION | ergence complete; human construct validation pending) (an AI blind-cod
+130 L31 KEEP_AS_LIMITATION | nterprise empirical calibration (V7) remains pending.
+130 L158 CLOSED_SOURCE_VERIFIED | 〔來源：2026-09-29 人工驗證狀態紀錄（檔名 20260929_V9_HUMAN_VALIDATION；V9 是檔案版本名，不是驗證
+130 L168 NOT_A_FLAG | [HUMAN RESULT PENDING]
+130 L591 OPEN_VALUE_MISMATCH | 〔2026-09-29 紀錄，待核〕
+130 L591 OPEN_VALUE_MISMATCH | 、盲式第二編碼 20/20、分歧調和 19/19 均已完成（人工稽核已收斂；狀態紀錄日期 2026-09-29）。依該紀錄的整理，分歧可能來
+130 L605 OPEN_NEEDS_PHASE4 | [AUTHOR TO CONFIRM：2026-09-29 人工驗證紀錄；附錄 E48]
+130 L605 OPEN_NEEDS_PHASE4 | 項目標式敏感度檢查回答：若以人工判定的標籤取代受稽核記錄的模型標籤，主要穩健集合是否改變。依作者回報，此檢查以人工標籤（研究者審閱或調和後的
+130 L607 CLOSED_SOURCE_VERIFIED | 傳播至未稽核記錄」，受稽核記錄在重切分設定中是否已使用人工標籤，須以補充資料 S10 與 2026-09-29 紀錄核對（附錄 E49）。
+130 L609 CLOSED_SOURCE_VERIFIED | 〔來源：2026-09-29 人工驗證狀態紀錄（檔名 20260929_V9_HUMAN_VALIDATION；V9 是檔案版本名，不是驗證
+130 L609 CLOSED_SOURCE_VERIFIED | 本節所述替換檢查的結果狀態（人工稽核已收斂、局部成員變動、須完整重分析）來自 2026-09-29 的人工驗證狀態紀錄〔來源：2026-09
+130 L619 CLOSED_SOURCE_VERIFIED | 判定（表 3-3）。L0–L3 的配對數均來自第四章的已完成結果；L2′ 依作者回報推得，待核。
+130 L619 CLOSED_SOURCE_VERIFIED | 的「通過／失敗」判定（表 3-3）。L0–L3 的配對數均來自第四章的已完成結果；L2′ 依作者回報推得，待核。
+130 L630 CLOSED_SOURCE_VERIFIED | 〔2026-09-29 紀錄，待核〕
+130 L630 CLOSED_SOURCE_VERIFIED | ′ 目標式人工標籤替換（敏感度） | 以人工標籤替換受稽核記錄後重新判定（依作者回報；判準待核） | 32（若無其他未回報的變動，推得 15
+130 L630 CLOSED_SOURCE_VERIFIED | | L2′ 目標式人工標籤替換（敏感度） | 以人工標籤替換受稽核記錄後重新判定（依作者回報；判準待核） | 32（若無其他未回報的變動，推
+130 L645 CLOSED_SOURCE_VERIFIED | 〔2026-09-29 紀錄，待核〕
+130 L651 OPEN_SOURCE_NOT_FOUND | 紀錄的 V5 Manuscript Data Pack 模型資訊；Data Pack 原檔不在本稿工作環境中，投稿前須以原檔核對）。依 V5
+130 L716 CLOSED_SOURCE_VERIFIED | 〔2026-09-29 紀錄，待核〕
+130 L954 KEEP_AS_LIMITATION | 不能說組織 archetype 已經實證驗證。目前 ORG-V1 至 ORG-V5 皆為 PENDING；分析程式的工程煙霧測試以合成資料執
+130 L1372 NOT_A_FLAG | HUMAN RESULT PENDING
+130 L1559 OPEN_VALUE_MISMATCH | 〔2026-09-29 紀錄，待核〕
+130 L1559 OPEN_VALUE_MISMATCH | 顯下降。這個型態不能直接歸因於模型錯誤；它同時指向分類架構邊界與證據單元過寬的可能性。依 2026-09-29 紀錄的整理，分歧可能來自四類
+130 L1629 CLOSED_SOURCE_VERIFIED | 〔來源：2026-09-29 人工驗證狀態紀錄（檔名 20260929_V9_HUMAN_VALIDATION；V9 是檔案版本名，不是驗證
+130 L1629 OPEN_VALUE_MISMATCH | (unflagged wording) 以人工調和後的標籤替換受稽核記錄的模型標籤
+130 L1638 CLOSED_SOURCE_VERIFIED | 〔2026-09-29 紀錄，待核〕
+130 L1640 CLOSED_SOURCE_VERIFIED | 沒有報告這兩格在文獻內部結構保持零模型下的 p_BH，因此本稿不推論它們距離判定門檻多近。依作者回報的變動（若無其他未回報的變動），穩健集合
+130 L2183 CLOSED_SOURCE_VERIFIED | 〔2026-09-29 紀錄，待核〕
+130 L2206 CLOSED_SOURCE_VERIFIED | 〔2026-09-29 紀錄，待核〕
+130 L2262 OPEN_VALUE_MISMATCH | 〔2026-09-29 紀錄，待核〕
+130 L2262 OPEN_VALUE_MISMATCH | 本研究的目標式診斷範圍內（n = 20），這個型態提示：編碼分歧並不只發生在模型判斷。依 2026-09-29 紀錄的整理，分歧可能來自四個
+130 L2268 CLOSED_SOURCE_VERIFIED | 〔變動依 2026-09-29 紀錄，待核〕
+130 L2268 OPEN_VALUE_MISMATCH | (unflagged wording) 以人工調和標籤替換受稽核記錄後
+130 L2308 NOT_A_FLAG | 工智慧是否具備某項能力」推進到「人工智慧能力在什麼條件下成為組織決策能力」。本研究提出兩個待驗證的中介機制：流程耦合處理輸出如何進入工作流程
+130 L2362 CLOSED_SOURCE_VERIFIED | 〔2026-09-29 紀錄，待核〕
+130 L2362 CLOSED_SOURCE_VERIFIED | -29 紀錄，待核〕，顯示兩種操作可能對同一配對給出不同結果；兩者的處理範圍是否部分重疊，待核（附錄 E49）。
+130 L2378 CLOSED_SOURCE_VERIFIED | 〔2026-09-29 紀錄，待核〕
+130 L2594 OPEN_SOURCE_NOT_FOUND | [VERIFY：完整官方標題與《官方公報》刊登日期僅經 EUR-Lex 中繼資料與第二手追蹤頁確認]
+130 L2664 CLOSED_SOURCE_VERIFIED | 全語料準確率；S8 另須收錄目標式人工標籤替換的替換清單、替換後矩陣與穩健集合比較（V9，2026-09-29；待以原始檔案核對，附錄 E3
+130 L2668 NOT_A_FLAG | UPPORT`、`PARTIAL_SUPPORT`、`BACKGROUND_ONLY`、`UNVERIFIED`，v1.3 另用 `METH
+130 L2683 OPEN_SOURCE_NOT_FOUND | | N6 | Weill & Ross (2004) | METADATA_ONLY；UNVERIFIED | [SOURCE TEXT N
+130 L2712 OPEN_SOURCE_NOT_FOUND | | N35 | J. Cohen (1960) | METADATA_ONLY；UNVERIFIED | — | κ 統計量 | — | V
+130 L2743 OPEN_SOURCE_NOT_FOUND | | N66 | Vial (2019) | UNVERIFIED（v1.4：v1.3 所讀作者接受稿託管於非作者所屬機構的網
+130 L3008 CLOSED_SOURCE_VERIFIED | | V9 | — | `20260929_V9_HUMAN_VALIDATION.zip`（不在本稿
+130 L3008 CLOSED_SOURCE_VERIFIED | 標式人工標籤替換的局部敏感度 | 第 3.7.4、4.5.5、5.4.2、5.8.9 節；待核對（附錄 E39） |
+130 L3008 CLOSED_SOURCE_VERIFIED | V9 | — | `20260929_V9_HUMAN_VALIDATION.zip`（不在本稿工作環境中） | 文獻層人工驗證狀態紀錄：稽
+130 L3045 OPEN_SOURCE_NOT_FOUND | AI 導入以 Berente et al.（2021）作背景（Vial, 2019 的內容待核對，見 E36）；集中／分散／聯邦式治理、IT
+130 L3060 OPEN_SOURCE_NOT_FOUND | 非作者所屬機構的網站，依 v1.4 的來源規則不計全文也不作支持，附錄 B N66 改為 UNVERIFIED，第 2.14 節的句子收窄為
+130 L3062 KEEP_AS_LIMITATION | 企業資料；延伸模型另行定義；`ENTERPRISE_EMPIRICAL_STATUS = PENDING` |
+130 L3063 CLOSED_SOURCE_VERIFIED | | E39 | V9 人工驗證狀態紀錄（`20260929_V9_HUMAN_VALIDATION.zip`）不在本稿
+130 L3063 CLOSED_SOURCE_VERIFIED | 人工驗證狀態紀錄（`20260929_V9_HUMAN_VALIDATION.zip`）不在本稿工作環境中。本稿中「19/19 調和完成」以
+130 L3063 CLOSED_SOURCE_VERIFIED | ED、FULL_REANALYSIS_REQUIRED）與目標式人工標籤替換的結果，只來自作者 2026-10-13 的陳述；κ 值與 50
+130 L3064 KEEP_AS_LIMITATION | E40 完整重分析（FULL_REANALYSIS_REQUIRED）的時點與範圍
+130 L3068 CLOSED_SOURCE_VERIFIED | | E44 | `SUBMISSION_READY = NO`：2026-09-29 人工驗證原始檔案待核（E39）、完整重分析待決（E40
+130 L3068 KEEP_AS_LIMITATION | | `SUBMISSION_READY = NO`：2026-09-29 人工驗證原始檔案待核（E39）、完整重分析待決（E40）、人類構念
+130 L3072 OPEN_NEEDS_PHASE4 | [AUTHOR TO CONFIRM]
+130 L3072 OPEN_NEEDS_PHASE4 | 中列出；三項判讀規則於 v1.7 撰寫時訂定，非事前登記 | 第 3.7.4 節 | 依 2026-09-29 原始紀錄逐項填入 `[AUT
+130 L3073 CLOSED_SOURCE_VERIFIED | 敏感度的處理範圍部分重疊 | 第 3.7.4、5.8.9 節 | 以補充資料 S10 與 2026-09-29 紀錄核對後改寫兩節的比較語句
+130 L3080 NOT_A_FLAG | [HUMAN RESULT PENDING]
+131 L16 KEEP_AS_LIMITATION | HUMAN BLIND CODING PENDING
+131 L17 KEEP_AS_LIMITATION | | 組織編碼驗證（ORG-V1–V5） | PENDING |
+131 L29 KEEP_AS_LIMITATION | 現 | 53B 協定、54A/B 封包、54C AI pilot、60 分析器；人類結果 PENDING | AI pilot 完成；人類待
+131 L30 KEEP_AS_LIMITATION | ） | 組織決策權與資源結構的編碼與正式模型映射能否被重現 | 107–117 | 全部 PENDING | 3.10.7、表 4-32F 
+131 L40 CLOSED_SOURCE_VERIFIED | | 研究者目標稽核筆數 | 50 | R14 02:218、357 | ✔ 與使用者陳述一致 |
+131 L44 CLOSED_SOURCE_VERIFIED | 61／.180／.048／.140／.316 | R14 表 5、02:361 | ✔ 與使用者陳述一致 |
+131 L51 CLOSED_SOURCE_VERIFIED | YSIS_REQUIRED；SUBMISSION_READY=NO | 使用者陳述（V9，2026-09-29） | ✖ 原始檔案不在環境中
+131 L51 CLOSED_SOURCE_VERIFIED | LL_REANALYSIS_REQUIRED；SUBMISSION_READY=NO | 使用者陳述（V9，2026-09-29） | ✖ 
+131 L51 CLOSED_SOURCE_VERIFIED | SION_READY=NO | 使用者陳述（V9，2026-09-29） | ✖ 原始檔案不在環境中 |
+131 L52 CLOSED_SOURCE_VERIFIED | +人機增能 × 風險評估（不足）；−協調與執行 × 一般決策流程（過度）；格數 32 | 使用者陳述（V9） | ✖ 原始檔案不在環境中；兩
+131 L52 CLOSED_SOURCE_VERIFIED | 協調與執行 × 一般決策流程（過度）；格數 32 | 使用者陳述（V9） | ✖ 原始檔案不在環境中；兩個配對在 R14 中的位置已核（下節
+131 L53 OPEN_VALUE_MISMATCH | ；127:594） | △ 四類皆可在 R14 文字中找到對應現象；作為四分類的整理來自 2026-09-29 紀錄；19 筆分歧尚未逐筆依
+131 L53 OPEN_VALUE_MISMATCH | | 四類分歧來源 | 模型映射、分類邊界、證據切分、PDF／擷取品質 | 使用者陳述；R14 02:361（分類邊界、證據單元過寬）、02:
+131 L97 CLOSED_SOURCE_VERIFIED | ；新增的不足呈現不屬 G01–G16。稿件以「依回報的變動推得」標示，並列入附錄 E39 待核。
+131 L104 CLOSED_SOURCE_VERIFIED | 註明重切分設定中「人工調和標籤不傳播至未稽核記錄」，受稽核記錄在重切分中是否已使用人工標籤待核（E49），因此兩者的處理範圍可能部分重疊。
+131 L115 KEEP_AS_LIMITATION | V1_HUMAN_BLIND_CODING_PENDING
+131 L117 KEEP_AS_LIMITATION | HUMAN CONSTRUCT VALIDATION PENDING
+131 L129 OPEN_NEEDS_PHASE4 | [AUTHOR TO CONFIRM]
+131 L145 CLOSED_SOURCE_VERIFIED | ：替換清單、替換後矩陣、變動配對、是否有其他未回報的變動、「凍結核心其餘 31 組不變」皆待核（E39）。
+131 L145 CLOSED_SOURCE_VERIFIED | 1. **V9 原始檔案缺件**：替換清單、替換後矩陣、變動配對、是否有其他未回報的變動
+132 L2 CLOSED_SOURCE_VERIFIED | 〔2026-09-29 紀錄，待核〕
+132 L3 CLOSED_SOURCE_VERIFIED | 〔2026-09-29 紀錄，待核〕
+132 L4 CLOSED_SOURCE_VERIFIED | 〔2026-09-29 紀錄，待核〕
+132 L5 CLOSED_SOURCE_VERIFIED | 〔2026-09-29 紀錄，待核〕
+132 L6 CLOSED_SOURCE_VERIFIED | 〔2026-09-29 紀錄，待核〕
+132 L7 CLOSED_SOURCE_VERIFIED | 〔2026-09-29 紀錄，待核〕
+132 L8 CLOSED_SOURCE_VERIFIED | 〔2026-09-29 紀錄，待核〕
+132 L9 CLOSED_SOURCE_VERIFIED | 〔2026-09-29 紀錄，待核〕
+132 L10 CLOSED_SOURCE_VERIFIED | 〔2026-09-29 紀錄，待核〕
+132 L11 CLOSED_SOURCE_VERIFIED | 〔2026-09-29 紀錄，待核〕
+132 L12 CLOSED_SOURCE_VERIFIED | 〔2026-09-29 紀錄，待核〕
+132 L13 CLOSED_SOURCE_VERIFIED | 〔2026-09-29 紀錄，待核〕
+132 L14 CLOSED_SOURCE_VERIFIED | 〔2026-09-29 紀錄，待核〕
+132 L15 CLOSED_SOURCE_VERIFIED | 〔2026-09-29 紀錄，待核〕
+132 L16 CLOSED_SOURCE_VERIFIED | 〔2026-09-29 紀錄，待核〕
+132 L17 CLOSED_SOURCE_VERIFIED | 〔2026-09-29 紀錄，待核〕
+133 L13 KEEP_AS_LIMITATION | HUMAN BLIND CODING PENDING
+133 L13 KEEP_AS_LIMITATION | V1_HUMAN_BLIND_CODING_PENDING
+133 L34 CLOSED_SOURCE_VERIFIED | NSITIVITY_CHANGED；FULL_REANALYSIS_REQUIRED | 2026-09-29 人工驗證紀錄（檔名含 V9；
+133 L34 CLOSED_SOURCE_VERIFIED | S_REQUIRED | 2026-09-29 人工驗證紀錄（檔名含 V9；不是驗證閘門；原始檔案缺件） | 格數 32；±1 成員（依作者
+133 L34 CLOSED_SOURCE_VERIFIED | 9 人工驗證紀錄（檔名含 V9；不是驗證閘門；原始檔案缺件） | 格數 32；±1 成員（依作者回報） |
+133 L37 KEEP_AS_LIMITATION | 規則（候選） | 規則檢查 PASS（SIMULATED_ONLY）；ORG-V1–V5 PENDING | 85A／85B；107–117
+133 L48 NOT_A_FLAG | HUMAN BLIND CODING PENDING
+133 L48 NOT_A_FLAG | V1_HUMAN_BLIND_CODING_PENDING
+133 L51 NOT_A_FLAG | HUMAN CONSTRUCT VALIDATION PENDING
+134 L138 NOT_A_FLAG | 關係揭露 | 外部評估者（董事端、合作商、投資端）的治理／投資／交易關係揭露，未查證者標 UNVERIFIED |
+134 L144 KEEP_AS_LIMITATION | [EMPIRICAL RESULT PENDING]
+135 L15 NOT_A_FLAG | `[VERIFY]`
+135 L44 NOT_A_FLAG | | 「V9，2026-09-29」 | 2664 | 解析器誤判；是資料版本標記，不是引用
+136 L53 OPEN_NEEDS_PHASE4 | [AUTHOR TO CONFIRM]
+136 L62 NOT_A_FLAG | EMPIRICAL RESULT PENDING
+137 L10 CLOSED_SOURCE_VERIFIED | *canonical source conflict：取得 V9 人工驗證原始檔案**（`20260929_V9_HUMAN_VALIDAT
+137 L10 OPEN_SOURCE_NOT_FOUND | P0-1 (second half) 確認 Drive 上沒有比 R14／V9 更新的版本
+137 L22 OPEN_SOURCE_NOT_FOUND | P2-1 | P2 | **submission formatting** | 格式檔案不在環境中；投稿稿範圍未決 | 作者決定投稿範圍（1
+137 L35 CLOSED_SOURCE_VERIFIED | P0-1 只需要作者把 `20260929_V9_HUMAN_VALIDATION.zip`（以及若有

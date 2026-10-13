@@ -1,0 +1,1604 @@
+{
+ "core_hash_reproduced": "NOT_REPRODUCED_WITH_TRIED_SERIALISATIONS",
+ "label_change_summary": {
+  "records": 50,
+  "records_with_any_change": 46,
+  "by_source": {
+   "RECONCILED_FINAL": 17,
+   "FIRST_CODER": 29
+  },
+  "field_changes": 91
+ },
+ "label_changes": [
+  {
+   "record_id": "REC-A51A4D85E6A1A0AF",
+   "validation_id": "V5HV-0001",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "PREDICTION_RISK_ESTIMATION",
+   "model_dec": "PREDICTION_DIAGNOSIS",
+   "human_C1": "VALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "GENERAL_REASONING_SYSTEMS",
+   "human_dec": "GENERAL_DECISION_PROCESS",
+   "changes": [
+    [
+     "ai_family",
+     "PREDICTION_RISK_ESTIMATION",
+     "GENERAL_REASONING_SYSTEMS"
+    ],
+    [
+     "decision_family",
+     "PREDICTION_DIAGNOSIS",
+     "GENERAL_DECISION_PROCESS"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-1C9D71BB7E968457",
+   "validation_id": "V5HV-0002",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "GENERATION_SYNTHESIS",
+   "model_dec": "INFORMATION_ACQUISITION",
+   "human_C1": "VALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "RECOMMENDATION_OPTIMIZATION",
+   "human_dec": "INFORMATION_SYNTHESIS",
+   "changes": [
+    [
+     "ai_family",
+     "GENERATION_SYNTHESIS",
+     "RECOMMENDATION_OPTIMIZATION"
+    ],
+    [
+     "decision_family",
+     "INFORMATION_ACQUISITION",
+     "INFORMATION_SYNTHESIS"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-3C503D6C847A0DD0",
+   "validation_id": "V5HV-0003",
+   "source": "RECONCILED_FINAL",
+   "model_eligible": "True",
+   "model_ai": "HUMAN_AUGMENTATION",
+   "model_dec": "HUMAN_REVIEW_ACCOUNTABILITY",
+   "human_C1": "INVALID",
+   "human_C5": "EXCLUDE",
+   "human_ai": "UNMAPPED",
+   "human_dec": "UNMAPPED",
+   "changes": [
+    [
+     "inclusion",
+     "ELIGIBLE",
+     "EXCLUDE"
+    ],
+    [
+     "ai_family",
+     "HUMAN_AUGMENTATION",
+     "UNMAPPED"
+    ],
+    [
+     "decision_family",
+     "HUMAN_REVIEW_ACCOUNTABILITY",
+     "UNMAPPED"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-9A32A2E4E36852A5",
+   "validation_id": "V5HV-0004",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "COORDINATION_EXECUTION",
+   "model_dec": "ALLOCATION_PLANNING",
+   "human_C1": "UNCERTAIN",
+   "human_C5": "UNCERTAIN",
+   "human_ai": "GENERAL_REASONING_SYSTEMS",
+   "human_dec": "ALLOCATION_PLANNING",
+   "changes": [
+    [
+     "inclusion",
+     "ELIGIBLE",
+     "UNCERTAIN"
+    ],
+    [
+     "ai_family",
+     "COORDINATION_EXECUTION",
+     "GENERAL_REASONING_SYSTEMS"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-B3CDA030F0C9A616",
+   "validation_id": "V5HV-0005",
+   "source": "RECONCILED_FINAL",
+   "model_eligible": "True",
+   "model_ai": "PREDICTION_RISK_ESTIMATION",
+   "model_dec": "RISK_ASSESSMENT",
+   "human_C1": "VALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "PREDICTION_RISK_ESTIMATION",
+   "human_dec": "RISK_ASSESSMENT",
+   "changes": []
+  },
+  {
+   "record_id": "REC-B7630B94D9F15A51",
+   "validation_id": "V5HV-0006",
+   "source": "RECONCILED_FINAL",
+   "model_eligible": "True",
+   "model_ai": "RECOMMENDATION_OPTIMIZATION",
+   "model_dec": "ALLOCATION_PLANNING",
+   "human_C1": "VALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "PREDICTION_RISK_ESTIMATION",
+   "human_dec": "ALLOCATION_PLANNING",
+   "changes": [
+    [
+     "ai_family",
+     "RECOMMENDATION_OPTIMIZATION",
+     "PREDICTION_RISK_ESTIMATION"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-B8D55C37D31125C1",
+   "validation_id": "V5HV-0007",
+   "source": "RECONCILED_FINAL",
+   "model_eligible": "True",
+   "model_ai": "EVALUATION_ASSESSMENT",
+   "model_dec": "GOVERNANCE_OVERSIGHT",
+   "human_C1": "VALID",
+   "human_C5": "EXCLUDE",
+   "human_ai": "GENERATION_SYNTHESIS",
+   "human_dec": "GOVERNANCE_OVERSIGHT",
+   "changes": [
+    [
+     "inclusion",
+     "ELIGIBLE",
+     "EXCLUDE"
+    ],
+    [
+     "ai_family",
+     "EVALUATION_ASSESSMENT",
+     "GENERATION_SYNTHESIS"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-7693BA4D088450A6",
+   "validation_id": "V5HV-0008",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "EXPLANATION_ASSURANCE",
+   "model_dec": "HUMAN_REVIEW_ACCOUNTABILITY",
+   "human_C1": "VALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "EXPLANATION_ASSURANCE",
+   "human_dec": "HUMAN_REVIEW_ACCOUNTABILITY",
+   "changes": []
+  },
+  {
+   "record_id": "REC-CD936FA07B55A64A",
+   "validation_id": "V5HV-0009",
+   "source": "RECONCILED_FINAL",
+   "model_eligible": "True",
+   "model_ai": "PREDICTION_RISK_ESTIMATION",
+   "model_dec": "PREDICTION_DIAGNOSIS",
+   "human_C1": "UNCERTAIN",
+   "human_C5": "UNCERTAIN",
+   "human_ai": "PREDICTION_RISK_ESTIMATION",
+   "human_dec": "AMBIGUOUS",
+   "changes": [
+    [
+     "inclusion",
+     "ELIGIBLE",
+     "UNCERTAIN"
+    ],
+    [
+     "decision_family",
+     "PREDICTION_DIAGNOSIS",
+     "AMBIGUOUS"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-2A911B2E56CEDE77",
+   "validation_id": "V5HV-0010",
+   "source": "RECONCILED_FINAL",
+   "model_eligible": "True",
+   "model_ai": "PREDICTION_RISK_ESTIMATION",
+   "model_dec": "PREDICTION_DIAGNOSIS",
+   "human_C1": "VALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "PREDICTION_RISK_ESTIMATION",
+   "human_dec": "ALLOCATION_PLANNING",
+   "changes": [
+    [
+     "decision_family",
+     "PREDICTION_DIAGNOSIS",
+     "ALLOCATION_PLANNING"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-8EDDBB84B724E332",
+   "validation_id": "V5HV-0011",
+   "source": "RECONCILED_FINAL",
+   "model_eligible": "True",
+   "model_ai": "PREDICTION_RISK_ESTIMATION",
+   "model_dec": "RISK_ASSESSMENT",
+   "human_C1": "VALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "PREDICTION_RISK_ESTIMATION",
+   "human_dec": "RISK_ASSESSMENT",
+   "changes": []
+  },
+  {
+   "record_id": "REC-BCAAD1A4EAF15072",
+   "validation_id": "V5HV-0012",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "PREDICTION_RISK_ESTIMATION",
+   "model_dec": "PREDICTION_DIAGNOSIS",
+   "human_C1": "UNCERTAIN",
+   "human_C5": "UNCERTAIN",
+   "human_ai": "PREDICTION_RISK_ESTIMATION",
+   "human_dec": "AMBIGUOUS",
+   "changes": [
+    [
+     "inclusion",
+     "ELIGIBLE",
+     "UNCERTAIN"
+    ],
+    [
+     "decision_family",
+     "PREDICTION_DIAGNOSIS",
+     "AMBIGUOUS"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-4956C4EEA1C34263",
+   "validation_id": "V5HV-0013",
+   "source": "RECONCILED_FINAL",
+   "model_eligible": "True",
+   "model_ai": "PREDICTION_RISK_ESTIMATION",
+   "model_dec": "PREDICTION_DIAGNOSIS",
+   "human_C1": "INVALID",
+   "human_C5": "EXCLUDE",
+   "human_ai": "UNMAPPED",
+   "human_dec": "PREDICTION_DIAGNOSIS",
+   "changes": [
+    [
+     "inclusion",
+     "ELIGIBLE",
+     "EXCLUDE"
+    ],
+    [
+     "ai_family",
+     "PREDICTION_RISK_ESTIMATION",
+     "UNMAPPED"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-5A018A194F5F6FE7",
+   "validation_id": "V5HV-0014",
+   "source": "RECONCILED_FINAL",
+   "model_eligible": "True",
+   "model_ai": "PREDICTION_RISK_ESTIMATION",
+   "model_dec": "PREDICTION_DIAGNOSIS",
+   "human_C1": "VALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "HUMAN_AUGMENTATION",
+   "human_dec": "GENERAL_DECISION_PROCESS",
+   "changes": [
+    [
+     "ai_family",
+     "PREDICTION_RISK_ESTIMATION",
+     "HUMAN_AUGMENTATION"
+    ],
+    [
+     "decision_family",
+     "PREDICTION_DIAGNOSIS",
+     "GENERAL_DECISION_PROCESS"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-2DA085E8689DA4D7",
+   "validation_id": "V5HV-0015",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "EXPLANATION_ASSURANCE",
+   "model_dec": "PREDICTION_DIAGNOSIS",
+   "human_C1": "VALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "EXPLANATION_ASSURANCE",
+   "human_dec": "EXECUTION_COORDINATION",
+   "changes": [
+    [
+     "decision_family",
+     "PREDICTION_DIAGNOSIS",
+     "EXECUTION_COORDINATION"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-F4F9FD42810BB264",
+   "validation_id": "V5HV-0016",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "EVALUATION_ASSESSMENT",
+   "model_dec": "ALLOCATION_PLANNING",
+   "human_C1": "INVALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "UNMAPPED",
+   "human_dec": "GENERAL_DECISION_PROCESS",
+   "changes": [
+    [
+     "ai_family",
+     "EVALUATION_ASSESSMENT",
+     "UNMAPPED"
+    ],
+    [
+     "decision_family",
+     "ALLOCATION_PLANNING",
+     "GENERAL_DECISION_PROCESS"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-20D02FC45BA3EBC9",
+   "validation_id": "V5HV-0017",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "PREDICTION_RISK_ESTIMATION",
+   "model_dec": "PREDICTION_DIAGNOSIS",
+   "human_C1": "VALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "RETRIEVAL_SYNTHESIS",
+   "human_dec": "INFORMATION_SYNTHESIS",
+   "changes": [
+    [
+     "ai_family",
+     "PREDICTION_RISK_ESTIMATION",
+     "RETRIEVAL_SYNTHESIS"
+    ],
+    [
+     "decision_family",
+     "PREDICTION_DIAGNOSIS",
+     "INFORMATION_SYNTHESIS"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-B01E29C3AE62CF49",
+   "validation_id": "V5HV-0018",
+   "source": "RECONCILED_FINAL",
+   "model_eligible": "True",
+   "model_ai": "EXPLANATION_ASSURANCE",
+   "model_dec": "HUMAN_REVIEW_ACCOUNTABILITY",
+   "human_C1": "INVALID",
+   "human_C5": "EXCLUDE",
+   "human_ai": "UNMAPPED",
+   "human_dec": "GOVERNANCE_OVERSIGHT",
+   "changes": [
+    [
+     "inclusion",
+     "ELIGIBLE",
+     "EXCLUDE"
+    ],
+    [
+     "ai_family",
+     "EXPLANATION_ASSURANCE",
+     "UNMAPPED"
+    ],
+    [
+     "decision_family",
+     "HUMAN_REVIEW_ACCOUNTABILITY",
+     "GOVERNANCE_OVERSIGHT"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-B669CF799DCF5071",
+   "validation_id": "V5HV-0019",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "EXPLANATION_ASSURANCE",
+   "model_dec": "HUMAN_REVIEW_ACCOUNTABILITY",
+   "human_C1": "UNCERTAIN",
+   "human_C5": "INCLUDE",
+   "human_ai": "AMBIGUOUS",
+   "human_dec": "UNMAPPED",
+   "changes": [
+    [
+     "ai_family",
+     "EXPLANATION_ASSURANCE",
+     "AMBIGUOUS"
+    ],
+    [
+     "decision_family",
+     "HUMAN_REVIEW_ACCOUNTABILITY",
+     "UNMAPPED"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-28FFF07C96F00DC6",
+   "validation_id": "V5HV-0020",
+   "source": "RECONCILED_FINAL",
+   "model_eligible": "True",
+   "model_ai": "RECOMMENDATION_OPTIMIZATION",
+   "model_dec": "GENERAL_DECISION_PROCESS",
+   "human_C1": "UNCERTAIN",
+   "human_C5": "EXCLUDE",
+   "human_ai": "UNMAPPED",
+   "human_dec": "UNMAPPED",
+   "changes": [
+    [
+     "inclusion",
+     "ELIGIBLE",
+     "EXCLUDE"
+    ],
+    [
+     "ai_family",
+     "RECOMMENDATION_OPTIMIZATION",
+     "UNMAPPED"
+    ],
+    [
+     "decision_family",
+     "GENERAL_DECISION_PROCESS",
+     "UNMAPPED"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-7A57BDABC8CFAAB0",
+   "validation_id": "V5HV-0021",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "PREDICTION_RISK_ESTIMATION",
+   "model_dec": "RISK_ASSESSMENT",
+   "human_C1": "VALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "EVALUATION_ASSESSMENT",
+   "human_dec": "PREDICTION_DIAGNOSIS",
+   "changes": [
+    [
+     "ai_family",
+     "PREDICTION_RISK_ESTIMATION",
+     "EVALUATION_ASSESSMENT"
+    ],
+    [
+     "decision_family",
+     "RISK_ASSESSMENT",
+     "PREDICTION_DIAGNOSIS"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-D1918AC31B4298B7",
+   "validation_id": "V5HV-0022",
+   "source": "RECONCILED_FINAL",
+   "model_eligible": "True",
+   "model_ai": "PREDICTION_RISK_ESTIMATION",
+   "model_dec": "PREDICTION_DIAGNOSIS",
+   "human_C1": "UNCERTAIN",
+   "human_C5": "UNCERTAIN",
+   "human_ai": "PREDICTION_RISK_ESTIMATION",
+   "human_dec": "UNMAPPED",
+   "changes": [
+    [
+     "inclusion",
+     "ELIGIBLE",
+     "UNCERTAIN"
+    ],
+    [
+     "decision_family",
+     "PREDICTION_DIAGNOSIS",
+     "UNMAPPED"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-1117261404B32531",
+   "validation_id": "V5HV-0023",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "EVALUATION_ASSESSMENT",
+   "model_dec": "GOVERNANCE_OVERSIGHT",
+   "human_C1": "VALID",
+   "human_C5": "EXCLUDE",
+   "human_ai": "AMBIGUOUS",
+   "human_dec": "AMBIGUOUS",
+   "changes": [
+    [
+     "inclusion",
+     "ELIGIBLE",
+     "EXCLUDE"
+    ],
+    [
+     "ai_family",
+     "EVALUATION_ASSESSMENT",
+     "AMBIGUOUS"
+    ],
+    [
+     "decision_family",
+     "GOVERNANCE_OVERSIGHT",
+     "AMBIGUOUS"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-E1CB08ED16F39BDA",
+   "validation_id": "V5HV-0024",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "EXPLANATION_ASSURANCE",
+   "model_dec": "GOVERNANCE_OVERSIGHT",
+   "human_C1": "VALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "GENERAL_REASONING_SYSTEMS",
+   "human_dec": "EVALUATION_SELECTION",
+   "changes": [
+    [
+     "ai_family",
+     "EXPLANATION_ASSURANCE",
+     "GENERAL_REASONING_SYSTEMS"
+    ],
+    [
+     "decision_family",
+     "GOVERNANCE_OVERSIGHT",
+     "EVALUATION_SELECTION"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-ED4E3AF2744C2487",
+   "validation_id": "V5HV-0025",
+   "source": "RECONCILED_FINAL",
+   "model_eligible": "True",
+   "model_ai": "PREDICTION_RISK_ESTIMATION",
+   "model_dec": "PREDICTION_DIAGNOSIS",
+   "human_C1": "VALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "PREDICTION_RISK_ESTIMATION",
+   "human_dec": "ALLOCATION_PLANNING",
+   "changes": [
+    [
+     "decision_family",
+     "PREDICTION_DIAGNOSIS",
+     "ALLOCATION_PLANNING"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-CF2D5A712BD003B8",
+   "validation_id": "V5HV-0026",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "PREDICTION_RISK_ESTIMATION",
+   "model_dec": "RISK_ASSESSMENT",
+   "human_C1": "VALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "PREDICTION_RISK_ESTIMATION",
+   "human_dec": "PREDICTION_DIAGNOSIS",
+   "changes": [
+    [
+     "decision_family",
+     "RISK_ASSESSMENT",
+     "PREDICTION_DIAGNOSIS"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-55077784A7EF8572",
+   "validation_id": "V5HV-0027",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "EXPLANATION_ASSURANCE",
+   "model_dec": "GOVERNANCE_OVERSIGHT",
+   "human_C1": "VALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "EXPLANATION_ASSURANCE",
+   "human_dec": "AMBIGUOUS",
+   "changes": [
+    [
+     "decision_family",
+     "GOVERNANCE_OVERSIGHT",
+     "AMBIGUOUS"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-ADEE530821FA395F",
+   "validation_id": "V5HV-0028",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "PREDICTION_RISK_ESTIMATION",
+   "model_dec": "PREDICTION_DIAGNOSIS",
+   "human_C1": "VALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "COORDINATION_EXECUTION",
+   "human_dec": "INFORMATION_SYNTHESIS",
+   "changes": [
+    [
+     "ai_family",
+     "PREDICTION_RISK_ESTIMATION",
+     "COORDINATION_EXECUTION"
+    ],
+    [
+     "decision_family",
+     "PREDICTION_DIAGNOSIS",
+     "INFORMATION_SYNTHESIS"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-707582C33C994C97",
+   "validation_id": "V5HV-0029",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "COORDINATION_EXECUTION",
+   "model_dec": "HUMAN_REVIEW_ACCOUNTABILITY",
+   "human_C1": "VALID",
+   "human_C5": "UNCERTAIN",
+   "human_ai": "UNMAPPED",
+   "human_dec": "EXECUTION_COORDINATION",
+   "changes": [
+    [
+     "inclusion",
+     "ELIGIBLE",
+     "UNCERTAIN"
+    ],
+    [
+     "ai_family",
+     "COORDINATION_EXECUTION",
+     "UNMAPPED"
+    ],
+    [
+     "decision_family",
+     "HUMAN_REVIEW_ACCOUNTABILITY",
+     "EXECUTION_COORDINATION"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-76C34BE83FB2B462",
+   "validation_id": "V5HV-0030",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "GENERATION_SYNTHESIS",
+   "model_dec": "INFORMATION_ACQUISITION",
+   "human_C1": "INVALID",
+   "human_C5": "EXCLUDE",
+   "human_ai": "UNMAPPED",
+   "human_dec": "AMBIGUOUS",
+   "changes": [
+    [
+     "inclusion",
+     "ELIGIBLE",
+     "EXCLUDE"
+    ],
+    [
+     "ai_family",
+     "GENERATION_SYNTHESIS",
+     "UNMAPPED"
+    ],
+    [
+     "decision_family",
+     "INFORMATION_ACQUISITION",
+     "AMBIGUOUS"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-96129FE2C2F7AD3C",
+   "validation_id": "V5HV-0031",
+   "source": "RECONCILED_FINAL",
+   "model_eligible": "True",
+   "model_ai": "PREDICTION_RISK_ESTIMATION",
+   "model_dec": "GOVERNANCE_OVERSIGHT",
+   "human_C1": "INVALID",
+   "human_C5": "EXCLUDE",
+   "human_ai": "UNMAPPED",
+   "human_dec": "GOVERNANCE_OVERSIGHT",
+   "changes": [
+    [
+     "inclusion",
+     "ELIGIBLE",
+     "EXCLUDE"
+    ],
+    [
+     "ai_family",
+     "PREDICTION_RISK_ESTIMATION",
+     "UNMAPPED"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-35EE38A942604940",
+   "validation_id": "V5HV-0032",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "EVALUATION_ASSESSMENT",
+   "model_dec": "EVALUATION_SELECTION",
+   "human_C1": "UNCERTAIN",
+   "human_C5": "UNCERTAIN",
+   "human_ai": "AMBIGUOUS",
+   "human_dec": "INFORMATION_SYNTHESIS",
+   "changes": [
+    [
+     "inclusion",
+     "ELIGIBLE",
+     "UNCERTAIN"
+    ],
+    [
+     "ai_family",
+     "EVALUATION_ASSESSMENT",
+     "AMBIGUOUS"
+    ],
+    [
+     "decision_family",
+     "EVALUATION_SELECTION",
+     "INFORMATION_SYNTHESIS"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-5DDC840F2BFCA0E1",
+   "validation_id": "V5HV-0033",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "PREDICTION_RISK_ESTIMATION",
+   "model_dec": "PREDICTION_DIAGNOSIS",
+   "human_C1": "VALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "PREDICTION_RISK_ESTIMATION",
+   "human_dec": "GENERAL_DECISION_PROCESS",
+   "changes": [
+    [
+     "decision_family",
+     "PREDICTION_DIAGNOSIS",
+     "GENERAL_DECISION_PROCESS"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-E646563D0E26CAEB",
+   "validation_id": "V5HV-0034",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "PREDICTION_RISK_ESTIMATION",
+   "model_dec": "INFORMATION_ACQUISITION",
+   "human_C1": "VALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "PREDICTION_RISK_ESTIMATION",
+   "human_dec": "GENERAL_DECISION_PROCESS",
+   "changes": [
+    [
+     "decision_family",
+     "INFORMATION_ACQUISITION",
+     "GENERAL_DECISION_PROCESS"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-9760E2C3ABFFA5E2",
+   "validation_id": "V5HV-0035",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "PREDICTION_RISK_ESTIMATION",
+   "model_dec": "PREDICTION_DIAGNOSIS",
+   "human_C1": "VALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "AMBIGUOUS",
+   "human_dec": "GENERAL_DECISION_PROCESS",
+   "changes": [
+    [
+     "ai_family",
+     "PREDICTION_RISK_ESTIMATION",
+     "AMBIGUOUS"
+    ],
+    [
+     "decision_family",
+     "PREDICTION_DIAGNOSIS",
+     "GENERAL_DECISION_PROCESS"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-86FBD6BDB51BF4AE",
+   "validation_id": "V5HV-0036",
+   "source": "RECONCILED_FINAL",
+   "model_eligible": "True",
+   "model_ai": "EXPLANATION_ASSURANCE",
+   "model_dec": "GOVERNANCE_OVERSIGHT",
+   "human_C1": "INVALID",
+   "human_C5": "EXCLUDE",
+   "human_ai": "UNMAPPED",
+   "human_dec": "UNMAPPED",
+   "changes": [
+    [
+     "inclusion",
+     "ELIGIBLE",
+     "EXCLUDE"
+    ],
+    [
+     "ai_family",
+     "EXPLANATION_ASSURANCE",
+     "UNMAPPED"
+    ],
+    [
+     "decision_family",
+     "GOVERNANCE_OVERSIGHT",
+     "UNMAPPED"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-40D604B0C4354B6E",
+   "validation_id": "V5HV-0037",
+   "source": "RECONCILED_FINAL",
+   "model_eligible": "True",
+   "model_ai": "PREDICTION_RISK_ESTIMATION",
+   "model_dec": "PREDICTION_DIAGNOSIS",
+   "human_C1": "VALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "AMBIGUOUS",
+   "human_dec": "EVALUATION_SELECTION",
+   "changes": [
+    [
+     "ai_family",
+     "PREDICTION_RISK_ESTIMATION",
+     "AMBIGUOUS"
+    ],
+    [
+     "decision_family",
+     "PREDICTION_DIAGNOSIS",
+     "EVALUATION_SELECTION"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-4CAE4F76C91DA9B9",
+   "validation_id": "V5HV-0038",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "EXPLANATION_ASSURANCE",
+   "model_dec": "GOVERNANCE_OVERSIGHT",
+   "human_C1": "INVALID",
+   "human_C5": "EXCLUDE",
+   "human_ai": "EXPLANATION_ASSURANCE",
+   "human_dec": "AMBIGUOUS",
+   "changes": [
+    [
+     "inclusion",
+     "ELIGIBLE",
+     "EXCLUDE"
+    ],
+    [
+     "decision_family",
+     "GOVERNANCE_OVERSIGHT",
+     "AMBIGUOUS"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-3722D0E89E3133AA",
+   "validation_id": "V5HV-0039",
+   "source": "RECONCILED_FINAL",
+   "model_eligible": "True",
+   "model_ai": "PREDICTION_RISK_ESTIMATION",
+   "model_dec": "PREDICTION_DIAGNOSIS",
+   "human_C1": "VALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "GENERATION_SYNTHESIS",
+   "human_dec": "OPTION_GENERATION",
+   "changes": [
+    [
+     "ai_family",
+     "PREDICTION_RISK_ESTIMATION",
+     "GENERATION_SYNTHESIS"
+    ],
+    [
+     "decision_family",
+     "PREDICTION_DIAGNOSIS",
+     "OPTION_GENERATION"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-AFE822A05CB7DA08",
+   "validation_id": "V5HV-0040",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "PREDICTION_RISK_ESTIMATION",
+   "model_dec": "PREDICTION_DIAGNOSIS",
+   "human_C1": "VALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "PREDICTION_RISK_ESTIMATION",
+   "human_dec": "EVALUATION_SELECTION",
+   "changes": [
+    [
+     "decision_family",
+     "PREDICTION_DIAGNOSIS",
+     "EVALUATION_SELECTION"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-750CB326F2DF2F99",
+   "validation_id": "V5HV-0041",
+   "source": "RECONCILED_FINAL",
+   "model_eligible": "True",
+   "model_ai": "PREDICTION_RISK_ESTIMATION",
+   "model_dec": "PREDICTION_DIAGNOSIS",
+   "human_C1": "VALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "RECOMMENDATION_OPTIMIZATION",
+   "human_dec": "ALLOCATION_PLANNING",
+   "changes": [
+    [
+     "ai_family",
+     "PREDICTION_RISK_ESTIMATION",
+     "RECOMMENDATION_OPTIMIZATION"
+    ],
+    [
+     "decision_family",
+     "PREDICTION_DIAGNOSIS",
+     "ALLOCATION_PLANNING"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-747EC11D1298B80F",
+   "validation_id": "V5HV-0042",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "EVALUATION_ASSESSMENT",
+   "model_dec": "GOVERNANCE_OVERSIGHT",
+   "human_C1": "VALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "AMBIGUOUS",
+   "human_dec": "GOVERNANCE_OVERSIGHT",
+   "changes": [
+    [
+     "ai_family",
+     "EVALUATION_ASSESSMENT",
+     "AMBIGUOUS"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-0D720884574345B4",
+   "validation_id": "V5HV-0043",
+   "source": "RECONCILED_FINAL",
+   "model_eligible": "True",
+   "model_ai": "PREDICTION_RISK_ESTIMATION",
+   "model_dec": "RISK_ASSESSMENT",
+   "human_C1": "VALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "PREDICTION_RISK_ESTIMATION",
+   "human_dec": "RISK_ASSESSMENT",
+   "changes": []
+  },
+  {
+   "record_id": "REC-F5E7A89410E348AC",
+   "validation_id": "V5HV-0044",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "HUMAN_AUGMENTATION",
+   "model_dec": "HUMAN_REVIEW_ACCOUNTABILITY",
+   "human_C1": "VALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "HUMAN_AUGMENTATION",
+   "human_dec": "AMBIGUOUS",
+   "changes": [
+    [
+     "decision_family",
+     "HUMAN_REVIEW_ACCOUNTABILITY",
+     "AMBIGUOUS"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-FA66625E3CADA17E",
+   "validation_id": "V5HV-0045",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "PREDICTION_RISK_ESTIMATION",
+   "model_dec": "PREDICTION_DIAGNOSIS",
+   "human_C1": "VALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "PREDICTION_RISK_ESTIMATION",
+   "human_dec": "HUMAN_REVIEW_ACCOUNTABILITY",
+   "changes": [
+    [
+     "decision_family",
+     "PREDICTION_DIAGNOSIS",
+     "HUMAN_REVIEW_ACCOUNTABILITY"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-E113A499A73FE8E7",
+   "validation_id": "V5HV-0046",
+   "source": "RECONCILED_FINAL",
+   "model_eligible": "True",
+   "model_ai": "EVALUATION_ASSESSMENT",
+   "model_dec": "EVALUATION_SELECTION",
+   "human_C1": "INVALID",
+   "human_C5": "EXCLUDE",
+   "human_ai": "PERCEPTION_EXTRACTION",
+   "human_dec": "UNMAPPED",
+   "changes": [
+    [
+     "inclusion",
+     "ELIGIBLE",
+     "EXCLUDE"
+    ],
+    [
+     "ai_family",
+     "EVALUATION_ASSESSMENT",
+     "PERCEPTION_EXTRACTION"
+    ],
+    [
+     "decision_family",
+     "EVALUATION_SELECTION",
+     "UNMAPPED"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-E2F91EEBD91DE5B9",
+   "validation_id": "V5HV-0047",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "EXPLANATION_ASSURANCE",
+   "model_dec": "GOVERNANCE_OVERSIGHT",
+   "human_C1": "UNCERTAIN",
+   "human_C5": "UNCERTAIN",
+   "human_ai": "COORDINATION_EXECUTION",
+   "human_dec": "GENERAL_DECISION_PROCESS",
+   "changes": [
+    [
+     "inclusion",
+     "ELIGIBLE",
+     "UNCERTAIN"
+    ],
+    [
+     "ai_family",
+     "EXPLANATION_ASSURANCE",
+     "COORDINATION_EXECUTION"
+    ],
+    [
+     "decision_family",
+     "GOVERNANCE_OVERSIGHT",
+     "GENERAL_DECISION_PROCESS"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-623C537A0844C12C",
+   "validation_id": "V5HV-0048",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "COORDINATION_EXECUTION",
+   "model_dec": "ALLOCATION_PLANNING",
+   "human_C1": "VALID",
+   "human_C5": "INCLUDE",
+   "human_ai": "COORDINATION_EXECUTION",
+   "human_dec": "EXECUTION_COORDINATION",
+   "changes": [
+    [
+     "decision_family",
+     "ALLOCATION_PLANNING",
+     "EXECUTION_COORDINATION"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-05E380076B764F4D",
+   "validation_id": "V5HV-0049",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "PREDICTION_RISK_ESTIMATION",
+   "model_dec": "PREDICTION_DIAGNOSIS",
+   "human_C1": "VALID",
+   "human_C5": "EXCLUDE",
+   "human_ai": "AMBIGUOUS",
+   "human_dec": "AMBIGUOUS",
+   "changes": [
+    [
+     "inclusion",
+     "ELIGIBLE",
+     "EXCLUDE"
+    ],
+    [
+     "ai_family",
+     "PREDICTION_RISK_ESTIMATION",
+     "AMBIGUOUS"
+    ],
+    [
+     "decision_family",
+     "PREDICTION_DIAGNOSIS",
+     "AMBIGUOUS"
+    ]
+   ]
+  },
+  {
+   "record_id": "REC-F08FD98EECDCDCC2",
+   "validation_id": "V5HV-0050",
+   "source": "FIRST_CODER",
+   "model_eligible": "True",
+   "model_ai": "RECOMMENDATION_OPTIMIZATION",
+   "model_dec": "ALLOCATION_PLANNING",
+   "human_C1": "INVALID",
+   "human_C5": "EXCLUDE",
+   "human_ai": "AMBIGUOUS",
+   "human_dec": "AMBIGUOUS",
+   "changes": [
+    [
+     "inclusion",
+     "ELIGIBLE",
+     "EXCLUDE"
+    ],
+    [
+     "ai_family",
+     "RECOMMENDATION_OPTIMIZATION",
+     "AMBIGUOUS"
+    ],
+    [
+     "decision_family",
+     "ALLOCATION_PLANNING",
+     "AMBIGUOUS"
+    ]
+   ]
+  }
+ ],
+ "impact_screen_categories": {
+  "POTENTIAL_FAMILY_REASSIGNMENT": 19,
+  "UNDETERMINED": 14,
+  "NO_IMPACT": 6,
+  "POTENTIAL_EXCLUSION": 11
+ },
+ "reanalysis_candidates_n": 44,
+ "reanalysis_candidates_unique": 44,
+ "reconciled_vs_first": [
+  {
+   "record_id": "REC-0D720884574345B4",
+   "basis": "UNANIMOUS_PRE_ADJUDICATION",
+   "ts": "",
+   "first_coder_frozen_vs_final": [],
+   "frozen_first_vs_reconciled_FIRST_cols": []
+  },
+  {
+   "record_id": "REC-28FFF07C96F00DC6",
+   "basis": "HUMAN_ADJUDICATION",
+   "ts": "2026-10-03T07:45:24.075240+00:00",
+   "first_coder_frozen_vs_final": [
+    [
+     "C3_ai",
+     "AMBIGUOUS",
+     "UNMAPPED"
+    ],
+    [
+     "C4_dec",
+     "AMBIGUOUS",
+     "UNMAPPED"
+    ]
+   ],
+   "frozen_first_vs_reconciled_FIRST_cols": []
+  },
+  {
+   "record_id": "REC-2A911B2E56CEDE77",
+   "basis": "HUMAN_ADJUDICATION",
+   "ts": "2026-10-03T07:51:28.237980+00:00",
+   "first_coder_frozen_vs_final": [
+    [
+     "C4_dec",
+     "PREDICTION_DIAGNOSIS",
+     "ALLOCATION_PLANNING"
+    ]
+   ],
+   "frozen_first_vs_reconciled_FIRST_cols": []
+  },
+  {
+   "record_id": "REC-3722D0E89E3133AA",
+   "basis": "HUMAN_ADJUDICATION",
+   "ts": "2026-10-03T07:52:43.108609+00:00",
+   "first_coder_frozen_vs_final": [
+    [
+     "C3_ai",
+     "EVALUATION_ASSESSMENT",
+     "GENERATION_SYNTHESIS"
+    ],
+    [
+     "C4_dec",
+     "EXECUTION_COORDINATION",
+     "OPTION_GENERATION"
+    ]
+   ],
+   "frozen_first_vs_reconciled_FIRST_cols": []
+  },
+  {
+   "record_id": "REC-3C503D6C847A0DD0",
+   "basis": "HUMAN_ADJUDICATION",
+   "ts": "2026-10-03T08:00:50.087250+00:00",
+   "first_coder_frozen_vs_final": [
+    [
+     "C1",
+     "VALID",
+     "INVALID"
+    ],
+    [
+     "C3_ai",
+     "COORDINATION_EXECUTION",
+     "UNMAPPED"
+    ],
+    [
+     "C4_dec",
+     "GENERAL_DECISION_PROCESS",
+     "UNMAPPED"
+    ],
+    [
+     "C5_incl",
+     "INCLUDE",
+     "EXCLUDE"
+    ]
+   ],
+   "frozen_first_vs_reconciled_FIRST_cols": []
+  },
+  {
+   "record_id": "REC-40D604B0C4354B6E",
+   "basis": "HUMAN_ADJUDICATION",
+   "ts": "2026-10-03T08:03:46.878164+00:00",
+   "first_coder_frozen_vs_final": [
+    [
+     "C4_dec",
+     "GENERAL_DECISION_PROCESS",
+     "EVALUATION_SELECTION"
+    ]
+   ],
+   "frozen_first_vs_reconciled_FIRST_cols": []
+  },
+  {
+   "record_id": "REC-4956C4EEA1C34263",
+   "basis": "HUMAN_ADJUDICATION",
+   "ts": "2026-10-03T08:07:18.754861+00:00",
+   "first_coder_frozen_vs_final": [
+    [
+     "C1",
+     "UNCERTAIN",
+     "INVALID"
+    ],
+    [
+     "C3_ai",
+     "EVALUATION_ASSESSMENT",
+     "UNMAPPED"
+    ],
+    [
+     "C4_dec",
+     "INFORMATION_SYNTHESIS",
+     "PREDICTION_DIAGNOSIS"
+    ],
+    [
+     "C5_incl",
+     "UNCERTAIN",
+     "EXCLUDE"
+    ]
+   ],
+   "frozen_first_vs_reconciled_FIRST_cols": []
+  },
+  {
+   "record_id": "REC-5A018A194F5F6FE7",
+   "basis": "HUMAN_ADJUDICATION",
+   "ts": "2026-10-03T08:10:10.152653+00:00",
+   "first_coder_frozen_vs_final": [
+    [
+     "C3_ai",
+     "PREDICTION_RISK_ESTIMATION",
+     "HUMAN_AUGMENTATION"
+    ],
+    [
+     "C4_dec",
+     "PREDICTION_DIAGNOSIS",
+     "GENERAL_DECISION_PROCESS"
+    ]
+   ],
+   "frozen_first_vs_reconciled_FIRST_cols": []
+  },
+  {
+   "record_id": "REC-750CB326F2DF2F99",
+   "basis": "HUMAN_ADJUDICATION",
+   "ts": "2026-10-03T08:11:54.541326+00:00",
+   "first_coder_frozen_vs_final": [
+    [
+     "C3_ai",
+     "PREDICTION_RISK_ESTIMATION",
+     "RECOMMENDATION_OPTIMIZATION"
+    ],
+    [
+     "C4_dec",
+     "AMBIGUOUS",
+     "ALLOCATION_PLANNING"
+    ],
+    [
+     "C5_incl",
+     "UNCERTAIN",
+     "INCLUDE"
+    ]
+   ],
+   "frozen_first_vs_reconciled_FIRST_cols": []
+  },
+  {
+   "record_id": "REC-86FBD6BDB51BF4AE",
+   "basis": "HUMAN_ADJUDICATION",
+   "ts": "2026-10-03T08:12:49.509217+00:00",
+   "first_coder_frozen_vs_final": [
+    [
+     "C3_ai",
+     "AMBIGUOUS",
+     "UNMAPPED"
+    ],
+    [
+     "C4_dec",
+     "AMBIGUOUS",
+     "UNMAPPED"
+    ]
+   ],
+   "frozen_first_vs_reconciled_FIRST_cols": []
+  },
+  {
+   "record_id": "REC-8EDDBB84B724E332",
+   "basis": "HUMAN_ADJUDICATION",
+   "ts": "2026-10-03T08:14:20.488476+00:00",
+   "first_coder_frozen_vs_final": [],
+   "frozen_first_vs_reconciled_FIRST_cols": []
+  },
+  {
+   "record_id": "REC-96129FE2C2F7AD3C",
+   "basis": "HUMAN_ADJUDICATION",
+   "ts": "2026-10-03T08:16:29.746133+00:00",
+   "first_coder_frozen_vs_final": [
+    [
+     "C1",
+     "VALID",
+     "INVALID"
+    ],
+    [
+     "C3_ai",
+     "AMBIGUOUS",
+     "UNMAPPED"
+    ],
+    [
+     "C5_incl",
+     "INCLUDE",
+     "EXCLUDE"
+    ]
+   ],
+   "frozen_first_vs_reconciled_FIRST_cols": []
+  },
+  {
+   "record_id": "REC-B01E29C3AE62CF49",
+   "basis": "HUMAN_ADJUDICATION",
+   "ts": "2026-10-03T11:01:38.807529+00:00",
+   "first_coder_frozen_vs_final": [
+    [
+     "C4_dec",
+     "AMBIGUOUS",
+     "GOVERNANCE_OVERSIGHT"
+    ]
+   ],
+   "frozen_first_vs_reconciled_FIRST_cols": []
+  },
+  {
+   "record_id": "REC-B3CDA030F0C9A616",
+   "basis": "HUMAN_ADJUDICATION",
+   "ts": "2026-10-03T11:02:36.723773+00:00",
+   "first_coder_frozen_vs_final": [
+    [
+     "C4_dec",
+     "PREDICTION_DIAGNOSIS",
+     "RISK_ASSESSMENT"
+    ]
+   ],
+   "frozen_first_vs_reconciled_FIRST_cols": []
+  },
+  {
+   "record_id": "REC-B7630B94D9F15A51",
+   "basis": "HUMAN_ADJUDICATION",
+   "ts": "2026-10-03T11:03:52.856596+00:00",
+   "first_coder_frozen_vs_final": [
+    [
+     "C3_ai",
+     "RECOMMENDATION_OPTIMIZATION",
+     "PREDICTION_RISK_ESTIMATION"
+    ]
+   ],
+   "frozen_first_vs_reconciled_FIRST_cols": []
+  },
+  {
+   "record_id": "REC-B8D55C37D31125C1",
+   "basis": "HUMAN_ADJUDICATION",
+   "ts": "2026-10-03T11:04:51.606680+00:00",
+   "first_coder_frozen_vs_final": [
+    [
+     "C1",
+     "INVALID",
+     "VALID"
+    ],
+    [
+     "C3_ai",
+     "EXPLANATION_ASSURANCE",
+     "GENERATION_SYNTHESIS"
+    ],
+    [
+     "C4_dec",
+     "AMBIGUOUS",
+     "GOVERNANCE_OVERSIGHT"
+    ],
+    [
+     "C5_incl",
+     "UNCERTAIN",
+     "EXCLUDE"
+    ]
+   ],
+   "frozen_first_vs_reconciled_FIRST_cols": []
+  },
+  {
+   "record_id": "REC-CD936FA07B55A64A",
+   "basis": "HUMAN_ADJUDICATION",
+   "ts": "2026-10-03T11:06:02.168805+00:00",
+   "first_coder_frozen_vs_final": [
+    [
+     "C1",
+     "VALID",
+     "UNCERTAIN"
+    ],
+    [
+     "C3_ai",
+     "COORDINATION_EXECUTION",
+     "PREDICTION_RISK_ESTIMATION"
+    ],
+    [
+     "C4_dec",
+     "EXECUTION_COORDINATION",
+     "AMBIGUOUS"
+    ],
+    [
+     "C5_incl",
+     "INCLUDE",
+     "UNCERTAIN"
+    ]
+   ],
+   "frozen_first_vs_reconciled_FIRST_cols": []
+  },
+  {
+   "record_id": "REC-D1918AC31B4298B7",
+   "basis": "HUMAN_ADJUDICATION",
+   "ts": "2026-10-03T11:06:59.427196+00:00",
+   "first_coder_frozen_vs_final": [
+    [
+     "C1",
+     "VALID",
+     "UNCERTAIN"
+    ],
+    [
+     "C3_ai",
+     "HUMAN_AUGMENTATION",
+     "PREDICTION_RISK_ESTIMATION"
+    ],
+    [
+     "C4_dec",
+     "INFORMATION_ACQUISITION",
+     "UNMAPPED"
+    ],
+    [
+     "C5_incl",
+     "INCLUDE",
+     "UNCERTAIN"
+    ]
+   ],
+   "frozen_first_vs_reconciled_FIRST_cols": []
+  },
+  {
+   "record_id": "REC-E113A499A73FE8E7",
+   "basis": "HUMAN_ADJUDICATION",
+   "ts": "2026-10-03T11:07:54.476288+00:00",
+   "first_coder_frozen_vs_final": [
+    [
+     "C3_ai",
+     "AMBIGUOUS",
+     "PERCEPTION_EXTRACTION"
+    ],
+    [
+     "C4_dec",
+     "AMBIGUOUS",
+     "UNMAPPED"
+    ]
+   ],
+   "frozen_first_vs_reconciled_FIRST_cols": []
+  },
+  {
+   "record_id": "REC-ED4E3AF2744C2487",
+   "basis": "HUMAN_ADJUDICATION",
+   "ts": "2026-10-03T11:09:05.968909+00:00",
+   "first_coder_frozen_vs_final": [
+    [
+     "C3_ai",
+     "COORDINATION_EXECUTION",
+     "PREDICTION_RISK_ESTIMATION"
+    ],
+    [
+     "C4_dec",
+     "GENERAL_DECISION_PROCESS",
+     "ALLOCATION_PLANNING"
+    ]
+   ],
+   "frozen_first_vs_reconciled_FIRST_cols": []
+  }
+ ],
+ "reconciliation_ts_range": [
+  "2026-10-03T07:45:24.075240+00:00",
+  "2026-10-03T11:09:05.968909+00:00"
+ ],
+ "seg_manifest_rows": 6499,
+ "seg_candidates_total": 3112,
+ "audited_in_manifest": 50,
+ "audited_selected_as_candidates": [
+  "REC-05E380076B764F4D",
+  "REC-0D720884574345B4",
+  "REC-1117261404B32531",
+  "REC-1C9D71BB7E968457",
+  "REC-2A911B2E56CEDE77",
+  "REC-2DA085E8689DA4D7",
+  "REC-35EE38A942604940",
+  "REC-3722D0E89E3133AA",
+  "REC-55077784A7EF8572",
+  "REC-5A018A194F5F6FE7",
+  "REC-5DDC840F2BFCA0E1",
+  "REC-750CB326F2DF2F99",
+  "REC-7693BA4D088450A6",
+  "REC-8EDDBB84B724E332",
+  "REC-96129FE2C2F7AD3C",
+  "REC-A51A4D85E6A1A0AF",
+  "REC-ADEE530821FA395F",
+  "REC-B3CDA030F0C9A616",
+  "REC-B669CF799DCF5071",
+  "REC-B7630B94D9F15A51",
+  "REC-CD936FA07B55A64A",
+  "REC-D1918AC31B4298B7",
+  "REC-E113A499A73FE8E7",
+  "REC-E1CB08ED16F39BDA",
+  "REC-E646563D0E26CAEB",
+  "REC-ED4E3AF2744C2487",
+  "REC-F08FD98EECDCDCC2",
+  "REC-F4F9FD42810BB264"
+ ],
+ "audited_selected_via_human_tag": [
+  "REC-05E380076B764F4D",
+  "REC-2A911B2E56CEDE77",
+  "REC-2DA085E8689DA4D7",
+  "REC-5A018A194F5F6FE7",
+  "REC-750CB326F2DF2F99",
+  "REC-A51A4D85E6A1A0AF",
+  "REC-B669CF799DCF5071",
+  "REC-B7630B94D9F15A51",
+  "REC-CD936FA07B55A64A",
+  "REC-ED4E3AF2744C2487",
+  "REC-F08FD98EECDCDCC2"
+ ],
+ "S1_noncandidate_audited_rows": 22,
+ "S1_noncandidate_audited_match_model_families": 22,
+ "S1_noncandidate_audited_match_human_only": 0,
+ "S2_noncandidate_audited_rows": 22,
+ "S2_noncandidate_audited_match_model_families": 22,
+ "S2_noncandidate_audited_match_human_only": 0
+}

@@ -1,0 +1,1491 @@
+{
+ "files": [
+  {
+   "rel": "README_完整資料來源.md",
+   "sha256": "613c3532b5ec87823b927fb71564e9fd82616f87e78be21509c303d40466a53c",
+   "sha16": "613c3532b5ec8782",
+   "ext": ".md",
+   "size": 742,
+   "name_date": "",
+   "zip_mtime": "2026-04-22T17:09:16",
+   "inventory_sha_match": true,
+   "family": "Package README"
+  },
+  {
+   "rel": "可視化/ablation_sensitivity_2026-04-22.png",
+   "sha256": "37b52621866e09356ed74514a62430ccc77976327b6cf97ec46ef2ae4fa774d5",
+   "sha16": "37b52621866e0935",
+   "ext": ".png",
+   "size": 55904,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T17:13:34",
+   "inventory_sha_match": true,
+   "family": "Ablation sensitivity of gap_priority"
+  },
+  {
+   "rel": "可視化/external_validation_metrics_2026-04-22.png",
+   "sha256": "e36eac701cadf7408292c2a7e6beab1d0dd67c077d8a04e0962f49ba6eb638eb",
+   "sha16": "e36eac701cadf740",
+   "ext": ".png",
+   "size": 31963,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T17:13:34",
+   "inventory_sha_match": true,
+   "family": "External validation (OpenAlex/temporal holdout)"
+  },
+  {
+   "rel": "可視化/main_path_definition_2026-04-22.md",
+   "sha256": "3fe76d8b670ffb82ed926b196ec343c85633a0b9b21b9f6159b68c5407872b45",
+   "sha16": "3fe76d8b670ffb82",
+   "ext": ".md",
+   "size": 636,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T17:13:34",
+   "inventory_sha_match": true,
+   "family": "Citation network / main path (SPLC/SPNP)"
+  },
+  {
+   "rel": "可視化/main_path_steps_2026-04-22.csv",
+   "sha256": "cfff5a2649c7f527bea5520dd8d3c01937f2b38b81700e2b768b9ef4c641332a",
+   "sha16": "cfff5a2649c7f527",
+   "ext": ".csv",
+   "size": 1828,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T17:13:34",
+   "inventory_sha_match": true,
+   "family": "Citation network / main path (SPLC/SPNP)"
+  },
+  {
+   "rel": "可視化/main_path_visualization_2026-04-22.png",
+   "sha256": "153a902f469c94dfa44e7b3c959a8530ca4428893d374d12fa5c42640279994f",
+   "sha16": "153a902f469c94df",
+   "ext": ".png",
+   "size": 17505,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T17:13:34",
+   "inventory_sha_match": true,
+   "family": "Citation network / main path (SPLC/SPNP)"
+  },
+  {
+   "rel": "可視化/multi_path_robustness_2026-04-22.csv",
+   "sha256": "5f102be8af8d8df2ee5747258007215409b8eccd7c2dc0fc2d6cc16936522467",
+   "sha16": "5f102be8af8d8df2",
+   "ext": ".csv",
+   "size": 646,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T17:13:36",
+   "inventory_sha_match": true,
+   "family": "Citation network / main path (SPLC/SPNP)"
+  },
+  {
+   "rel": "可視化/multi_path_robustness_2026-04-22.png",
+   "sha256": "376ca86804472d4b85cae7cd1b2a234dd2eec5a3f46d6ad056e0d523e1a0a049",
+   "sha16": "376ca86804472d4b",
+   "ext": ".png",
+   "size": 74549,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T17:13:36",
+   "inventory_sha_match": true,
+   "family": "Citation network / main path (SPLC/SPNP)"
+  },
+  {
+   "rel": "可視化/tier_migration_heatmap_2026-04-22.png",
+   "sha256": "0e728f2e7f9cc70adf3fbae053f9f255f1f2827f62ac4c3e2c4ced3958f4514d",
+   "sha16": "0e728f2e7f9cc70a",
+   "ext": ".png",
+   "size": 42178,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T17:13:34",
+   "inventory_sha_match": true,
+   "family": "Structural-hole tier ranking + Monte Carlo"
+  },
+  {
+   "rel": "可視化/tier_migration_matrix_2026-04-22.csv",
+   "sha256": "d74434ac05e8a8508520814fa53d6103e82c320ee5075caddc87ec47b8cb0c97",
+   "sha16": "d74434ac05e8a850",
+   "ext": ".csv",
+   "size": 141,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T17:13:34",
+   "inventory_sha_match": true,
+   "family": "Structural-hole tier ranking + Monte Carlo"
+  },
+  {
+   "rel": "可視化/tier_stability_retention_jaccard_2026-04-22.png",
+   "sha256": "787e2a7358632c7a2aebcf040818c672dcb27220832e6fb05a7d862c3f0482d9",
+   "sha16": "787e2a7358632c7a",
+   "ext": ".png",
+   "size": 27855,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T17:13:34",
+   "inventory_sha_match": true,
+   "family": "Structural-hole tier ranking + Monte Carlo"
+  },
+  {
+   "rel": "可視化/top15_gap_priority_2026-04-22.png",
+   "sha256": "cd61a2e3041792afba1ac32814bf7a13f4718e514652c014ae1500a35c57ea6a",
+   "sha16": "cd61a2e3041792af",
+   "ext": ".png",
+   "size": 77384,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T17:13:34",
+   "inventory_sha_match": true,
+   "family": "Structural-hole tier ranking + Monte Carlo"
+  },
+  {
+   "rel": "可視化/visualization_dashboard_metrics_2026-04-22.csv",
+   "sha256": "0e72233cc5edb9bcee2112aec9714fc7b4b0bd7d210452262ab4c730dcf8f33b",
+   "sha16": "0e72233cc5edb9bc",
+   "ext": ".csv",
+   "size": 519,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T17:13:36",
+   "inventory_sha_match": true,
+   "family": "QA / closeout / manifest"
+  },
+  {
+   "rel": "圖片/pca_cumulative_explained_2026-04-12.png",
+   "sha256": "d86a3cf9436c33a5f450fdb8aae7c0180be501139d7d22153dff5e4e6f1d1c62",
+   "sha16": "d86a3cf9436c33a5",
+   "ext": ".png",
+   "size": 73835,
+   "name_date": "2026-04-12",
+   "zip_mtime": "2026-04-22T13:59:30",
+   "inventory_sha_match": true,
+   "family": "PCA/FA (yearly temporal features)"
+  },
+  {
+   "rel": "圖片/pca_loadings_heatmap_2026-04-12.png",
+   "sha256": "bf5e0a9f90de86eb37ec86c02929d3f84bf31144ce815c8f1c749c48391c56fb",
+   "sha16": "bf5e0a9f90de86eb",
+   "ext": ".png",
+   "size": 79192,
+   "name_date": "2026-04-12",
+   "zip_mtime": "2026-04-22T13:59:32",
+   "inventory_sha_match": true,
+   "family": "PCA/FA (yearly temporal features)"
+  },
+  {
+   "rel": "圖片/pca_pc1_pc2_phase_scatter_2026-04-12.png",
+   "sha256": "2f9cba7ccdca7ffb94b8510febf12933c253ac338dc332d794bc6ef8404751d4",
+   "sha16": "2f9cba7ccdca7ffb",
+   "ext": ".png",
+   "size": 81361,
+   "name_date": "2026-04-12",
+   "zip_mtime": "2026-04-22T13:59:32",
+   "inventory_sha_match": true,
+   "family": "PCA/FA (yearly temporal features)"
+  },
+  {
+   "rel": "圖片/pca_scree_plot_2026-04-12.png",
+   "sha256": "364e954868d2b786a057bc11c260378209ada3d639cc6a5c8e53052abefa891c",
+   "sha16": "364e954868d2b786",
+   "ext": ".png",
+   "size": 67413,
+   "name_date": "2026-04-12",
+   "zip_mtime": "2026-04-22T13:59:30",
+   "inventory_sha_match": true,
+   "family": "PCA/FA (yearly temporal features)"
+  },
+  {
+   "rel": "論文/figures/AI_Governance_Concept_Network_Enhanced_2026-05-06.png",
+   "sha256": "2c599dcee8bbce4e2a79b53b8ef50372ffab6d85f5dbfdbe8a0e6a9f92fc53ff",
+   "sha16": "2c599dcee8bbce4e",
+   "ext": ".png",
+   "size": 3001462,
+   "name_date": "2026-05-06",
+   "zip_mtime": "2026-05-06T13:58:46",
+   "inventory_sha_match": true,
+   "family": "Concept co-occurrence backbone network"
+  },
+  {
+   "rel": "論文/figures/backbone_multibranch_structure_report_2026-05-06.md",
+   "sha256": "63ac6174e168e8f79512f10323f688c80d965f37f7d4e66c5e4c62e36b0a1d73",
+   "sha16": "63ac6174e168e8f7",
+   "ext": ".md",
+   "size": 1190,
+   "name_date": "2026-05-06",
+   "zip_mtime": "2026-05-06T13:31:34",
+   "inventory_sha_match": true,
+   "family": "Concept co-occurrence backbone network"
+  },
+  {
+   "rel": "論文/figures/backbone_multibranch_structure_top90_2026-04-17.png",
+   "sha256": "b28de6400f62e4f7e6e4868a7cbcf3f5e420eae2e5c0f17078cf7507b6a1bda1",
+   "sha16": "b28de6400f62e4f7",
+   "ext": ".png",
+   "size": 2238233,
+   "name_date": "2026-04-17",
+   "zip_mtime": "2026-05-06T13:31:34",
+   "inventory_sha_match": true,
+   "family": "Concept co-occurrence backbone network"
+  },
+  {
+   "rel": "論文/figures/Enhanced_Concept_Statistics_2026-05-06.csv",
+   "sha256": "a8c35bfa75180ef84aa679f1bf7032bb02d94c5713c45eff8598132576ca4916",
+   "sha16": "a8c35bfa75180ef8",
+   "ext": ".csv",
+   "size": 962,
+   "name_date": "2026-05-06",
+   "zip_mtime": "2026-05-06T13:58:46",
+   "inventory_sha_match": true,
+   "family": "Concept co-occurrence backbone network"
+  },
+  {
+   "rel": "論文/figures/structural_hole_tier_mc_migration_heatmap_2026-04-22.png",
+   "sha256": "b0f9fa650cb654bbd3a5f4a50351a1174aa1b2853eee32e7fa2c9adf789972cc",
+   "sha16": "b0f9fa650cb654bb",
+   "ext": ".png",
+   "size": 51995,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T20:55:02",
+   "inventory_sha_match": true,
+   "family": "Structural-hole tier ranking + Monte Carlo"
+  },
+  {
+   "rel": "論文/figures/structural_hole_tier_mc_retention_2026-04-22.png",
+   "sha256": "cb9422fa17bf7fae32cfd98f0b5b87a7943aa19dad50e0b153257e4170456e40",
+   "sha16": "cb9422fa17bf7fae",
+   "ext": ".png",
+   "size": 35868,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T20:55:02",
+   "inventory_sha_match": true,
+   "family": "Structural-hole tier ranking + Monte Carlo"
+  },
+  {
+   "rel": "論文/figures/structural_hole_tier_mc_top_concepts_2026-04-22.png",
+   "sha256": "0d254d5471006c0f81c0119ad5774e2c2de8e11d31293116c1a47e9a42a52343",
+   "sha16": "0d254d5471006c0f",
+   "ext": ".png",
+   "size": 85995,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T20:55:02",
+   "inventory_sha_match": true,
+   "family": "Structural-hole tier ranking + Monte Carlo"
+  },
+  {
+   "rel": "論文/FINAL_THESIS_FORMAL_VERSION_2026-04-12.md",
+   "sha256": "6928e3d3db943a3925c38bdf3452a2cd18664d5b657cbfbc975a771f0a76ba47",
+   "sha16": "6928e3d3db943a39",
+   "ext": ".md",
+   "size": 133665,
+   "name_date": "2026-04-12",
+   "zip_mtime": "2026-05-06T15:10:12",
+   "inventory_sha_match": true,
+   "family": "Old thesis draft / revision plans"
+  },
+  {
+   "rel": "論文/FINAL_THESIS_Q1_CLEAN_VERSION.md",
+   "sha256": "edf0b45ccd52b4bce9c1b9e7ead4680fae3048d6752798b6f852aaa0b8e0373f",
+   "sha16": "edf0b45ccd52b4bc",
+   "ext": ".md",
+   "size": 10288,
+   "name_date": "",
+   "zip_mtime": "2026-05-05T04:08:08",
+   "inventory_sha_match": true,
+   "family": "Old thesis draft / revision plans"
+  },
+  {
+   "rel": "論文/FINAL_THESIS_WITH_DELETION_MARKS.md",
+   "sha256": "c2e04a33c18e0b28fe5806ad688ad9ca06d74c2c02f140dd02324ac884bca97b",
+   "sha16": "c2e04a33c18e0b28",
+   "ext": ".md",
+   "size": 16039,
+   "name_date": "",
+   "zip_mtime": "2026-05-05T04:08:08",
+   "inventory_sha_match": true,
+   "family": "Old thesis draft / revision plans"
+  },
+  {
+   "rel": "論文/Q1_IMPROVEMENT_CHECKLIST.md",
+   "sha256": "02b804fdf16b91504f97e0fdc6fe7f12502c8ae4487a6616a26269d8586a62a6",
+   "sha16": "02b804fdf16b9150",
+   "ext": ".md",
+   "size": 9447,
+   "name_date": "",
+   "zip_mtime": "2026-05-05T04:08:08",
+   "inventory_sha_match": true,
+   "family": "Old thesis draft / revision plans"
+  },
+  {
+   "rel": "論文/TASK1_CLASSICAL_METRICS_REPORT.md",
+   "sha256": "e5d0a2e5bdc36d07b06a0a74e530eb05b8724cdf508987b8aa5b85babcfa1bae",
+   "sha16": "e5d0a2e5bdc36d07",
+   "ext": ".md",
+   "size": 6779,
+   "name_date": "",
+   "zip_mtime": "2026-05-05T04:30:46",
+   "inventory_sha_match": true,
+   "family": "Classical network metrics (betweenness/Burt constraint) vs gap_priority"
+  },
+  {
+   "rel": "論文/TASK1_EXECUTION_SUMMARY.md",
+   "sha256": "f651d72f54f72ffb4fb0a1f6d5274c4fca098ec0684cd740c9f8dcdd5e3d2040",
+   "sha16": "f651d72f54f72ffb",
+   "ext": ".md",
+   "size": 6593,
+   "name_date": "",
+   "zip_mtime": "2026-05-05T04:30:46",
+   "inventory_sha_match": true,
+   "family": "Old thesis draft / revision plans"
+  },
+  {
+   "rel": "論文/TASK2_INTERNAL_VALIDATION.md",
+   "sha256": "b682deaf26d20f67ca71c8e4db64a2fa486a547d627b5abd73efa5e104bd1d08",
+   "sha16": "b682deaf26d20f67",
+   "ext": ".md",
+   "size": 1657,
+   "name_date": "",
+   "zip_mtime": "2026-05-05T04:33:30",
+   "inventory_sha_match": true,
+   "family": "Old thesis draft / revision plans"
+  },
+  {
+   "rel": "論文/TASK2_PLAN.md",
+   "sha256": "93704fc77e1ba68470c6e878b1ef8ba503dacf013e394d9a2a0b7cab06e10053",
+   "sha16": "93704fc77e1ba684",
+   "ext": ".md",
+   "size": 8871,
+   "name_date": "",
+   "zip_mtime": "2026-05-05T04:54:42",
+   "inventory_sha_match": true,
+   "family": "Old thesis draft / revision plans"
+  },
+  {
+   "rel": "論文/TASK2_PROGRESS_REPORT.md",
+   "sha256": "44c873c925e4213ef5ce8986639241208715a539919da17ff841da4c507267aa",
+   "sha16": "44c873c925e4213e",
+   "ext": ".md",
+   "size": 6392,
+   "name_date": "",
+   "zip_mtime": "2026-05-05T04:54:42",
+   "inventory_sha_match": true,
+   "family": "Old thesis draft / revision plans"
+  },
+  {
+   "rel": "論文/TASK2_QUICK_PLAN.md",
+   "sha256": "e9d09d5c9bff567c718c754db247935861acc87b4b790b5aaa3f4056fd3b1c53",
+   "sha16": "e9d09d5c9bff567c",
+   "ext": ".md",
+   "size": 2363,
+   "name_date": "",
+   "zip_mtime": "2026-05-05T04:54:42",
+   "inventory_sha_match": true,
+   "family": "Old thesis draft / revision plans"
+  },
+  {
+   "rel": "輸出/expert_question_bank_2026-04-11.csv",
+   "sha256": "235548c4b48545731761e12bd645f63e8e46921aab953d91bc6475e969bac018",
+   "sha16": "235548c4b4854573",
+   "ext": ".csv",
+   "size": 9007,
+   "name_date": "2026-04-11",
+   "zip_mtime": "2026-04-22T16:56:46",
+   "inventory_sha_match": true,
+   "family": "Info-gap / structural-hole priority + expert question bank"
+  },
+  {
+   "rel": "輸出/fa_communalities_2026-04-12.csv",
+   "sha256": "64c76e7e32c082241c296a9273018a8aa4c739b9187b22e476fc4a8838b2b879",
+   "sha16": "64c76e7e32c08224",
+   "ext": ".csv",
+   "size": 435,
+   "name_date": "2026-04-12",
+   "zip_mtime": "2026-04-22T14:01:02",
+   "inventory_sha_match": true,
+   "family": "PCA/FA (yearly temporal features)"
+  },
+  {
+   "rel": "輸出/fa_varimax_loadings_2026-04-12.csv",
+   "sha256": "23a3a84181df666a775ab5f61f4a51e0c6fbd98eceabac1caff3eef87d484baf",
+   "sha16": "23a3a84181df666a",
+   "ext": ".csv",
+   "size": 591,
+   "name_date": "2026-04-12",
+   "zip_mtime": "2026-04-22T14:01:02",
+   "inventory_sha_match": true,
+   "family": "PCA/FA (yearly temporal features)"
+  },
+  {
+   "rel": "輸出/FINAL_CLOSEOUT_SUMMARY_2026-04-22.md",
+   "sha256": "386a811cd3cdc28f07ab87678fa8338fd01c4a641e2ad56b6513c4912574ad27",
+   "sha16": "386a811cd3cdc28f",
+   "ext": ".md",
+   "size": 2830,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T16:46:58",
+   "inventory_sha_match": true,
+   "family": "QA / closeout / manifest"
+  },
+  {
+   "rel": "輸出/Info_Gap_and_Expert_Plan_2026-04-11.md",
+   "sha256": "9ebbf416b7ae9329db583fbf867fe33d3d79eb5ffe1ef30517eb08c4205822ef",
+   "sha16": "9ebbf416b7ae9329",
+   "ext": ".md",
+   "size": 1729,
+   "name_date": "2026-04-11",
+   "zip_mtime": "2026-04-22T16:56:46",
+   "inventory_sha_match": true,
+   "family": "Info-gap / structural-hole priority + expert question bank"
+  },
+  {
+   "rel": "輸出/info_gap_matrix_2026-04-11.csv",
+   "sha256": "f193a08a1e3b559ae09f9c74f6d39c5f94c4140cd881991b926af32d2a9ad18a",
+   "sha16": "f193a08a1e3b559a",
+   "ext": ".csv",
+   "size": 4870,
+   "name_date": "2026-04-11",
+   "zip_mtime": "2026-04-22T16:56:46",
+   "inventory_sha_match": true,
+   "family": "Info-gap / structural-hole priority + expert question bank"
+  },
+  {
+   "rel": "輸出/pca_components_full_2026-04-12.csv",
+   "sha256": "ab699d517218ffd662ec523b918d0e1992ecae1c070e16239241acbeb580609e",
+   "sha16": "ab699d517218ffd6",
+   "ext": ".csv",
+   "size": 476,
+   "name_date": "2026-04-12",
+   "zip_mtime": "2026-04-22T14:01:02",
+   "inventory_sha_match": true,
+   "family": "PCA/FA (yearly temporal features)"
+  },
+  {
+   "rel": "輸出/pca_fa_summary_2026-04-12.md",
+   "sha256": "938f5d943c5fbb2fc8638d1c200871c2a72458ea235b873afbae7046ea21ef27",
+   "sha16": "938f5d943c5fbb2f",
+   "ext": ".md",
+   "size": 1331,
+   "name_date": "2026-04-12",
+   "zip_mtime": "2026-04-22T14:01:02",
+   "inventory_sha_match": true,
+   "family": "PCA/FA (yearly temporal features)"
+  },
+  {
+   "rel": "輸出/pca_loadings_full_2026-04-12.csv",
+   "sha256": "c1e34fe4a95a9c294668698bf71e5c232ff3210890bc4014783707796ed0f3ab",
+   "sha16": "c1e34fe4a95a9c29",
+   "ext": ".csv",
+   "size": 1157,
+   "name_date": "2026-04-12",
+   "zip_mtime": "2026-04-22T14:01:02",
+   "inventory_sha_match": true,
+   "family": "PCA/FA (yearly temporal features)"
+  },
+  {
+   "rel": "輸出/pca_table_for_thesis_2026-04-12.md",
+   "sha256": "81ca45750494dbd8a9554523921dcdeac81bd136dfe8468dd785b7c53e475617",
+   "sha16": "81ca45750494dbd8",
+   "ext": ".md",
+   "size": 683,
+   "name_date": "2026-04-12",
+   "zip_mtime": "2026-04-22T13:59:32",
+   "inventory_sha_match": true,
+   "family": "PCA/FA (yearly temporal features)"
+  },
+  {
+   "rel": "輸出/q1_upgrade_ablation_report.md",
+   "sha256": "2e7c05b009e78d842465cfae2fc2783f03bed3574a3324a4f5ced6596ecf8498",
+   "sha16": "2e7c05b009e78d84",
+   "ext": ".md",
+   "size": 895,
+   "name_date": "",
+   "zip_mtime": "2026-04-22T16:59:08",
+   "inventory_sha_match": true,
+   "family": "Ablation sensitivity of gap_priority"
+  },
+  {
+   "rel": "輸出/q1_upgrade_ablation_results.csv",
+   "sha256": "54b67918fb4cec4f3e08493c10b9037efaa5f6f2873966a13d3b79fcef66f770",
+   "sha16": "54b67918fb4cec4f",
+   "ext": ".csv",
+   "size": 528,
+   "name_date": "",
+   "zip_mtime": "2026-04-22T16:59:08",
+   "inventory_sha_match": true,
+   "family": "Ablation sensitivity of gap_priority"
+  },
+  {
+   "rel": "輸出/q1_upgrade_citation_edges_in_corpus_2026-04-22.csv",
+   "sha256": "d16ada5e845cd24a592c4396f8a9b5a137caed2798ef1f835cd8bd1fdd9f50e4",
+   "sha16": "d16ada5e845cd24a",
+   "ext": ".csv",
+   "size": 82244,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T05:45:40",
+   "inventory_sha_match": true,
+   "family": "Citation network / main path (SPLC/SPNP)"
+  },
+  {
+   "rel": "輸出/q1_upgrade_citation_multisource_mapping_2026-04-22.csv",
+   "sha256": "487fc8f41cbb05e2c2614251975ae445ac5de00a87c47ac72da75b4f2a84986e",
+   "sha16": "487fc8f41cbb05e2",
+   "ext": ".csv",
+   "size": 11647873,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T05:45:40",
+   "inventory_sha_match": true,
+   "family": "Citation network / main path (SPLC/SPNP)"
+  },
+  {
+   "rel": "輸出/q1_upgrade_citation_multisource_mapping_phase2_2026-04-22.csv",
+   "sha256": "f295e19d10bb67d7f92946d8d7c246aeab7f40f3fe9559ad6f8eebde72173155",
+   "sha16": "f295e19d10bb67d7",
+   "ext": ".csv",
+   "size": 11647523,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T13:32:02",
+   "inventory_sha_match": true,
+   "family": "Citation network / main path (SPLC/SPNP)"
+  },
+  {
+   "rel": "輸出/q1_upgrade_citation_splc_spnp_report_2026-04-22.md",
+   "sha256": "70e1f282a63d289e4cde8819dde3e2bb1f136e6471f7ee8a162348d9c03f19e6",
+   "sha16": "70e1f282a63d289e",
+   "ext": ".md",
+   "size": 1574,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T05:45:40",
+   "inventory_sha_match": true,
+   "family": "Citation network / main path (SPLC/SPNP)"
+  },
+  {
+   "rel": "輸出/q1_upgrade_citation_splc_spnp_summary_2026-04-22.json",
+   "sha256": "8bef6b61ffcbe00a647f040fbb4e7630b2df35906eb4533493fc2998c6941f85",
+   "sha16": "8bef6b61ffcbe00a",
+   "ext": ".json",
+   "size": 1558,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T05:45:40",
+   "inventory_sha_match": true,
+   "family": "Citation network / main path (SPLC/SPNP)"
+  },
+  {
+   "rel": "輸出/q1_upgrade_error_taxonomy.md",
+   "sha256": "01cd75ef3021d043cba0a6f9fb37801dee1f5773c5d37d0555e22bdf562ebcb2",
+   "sha16": "01cd75ef3021d043",
+   "ext": ".md",
+   "size": 1632,
+   "name_date": "",
+   "zip_mtime": "2026-04-22T15:39:40",
+   "inventory_sha_match": true,
+   "family": "QA / closeout / manifest"
+  },
+  {
+   "rel": "輸出/q1_upgrade_external_independent_openalex_2026-04-22.csv",
+   "sha256": "90a96d187eee7ae3994fc7c8b99e106fa0a18972a068aa25d55aac052c17c6a7",
+   "sha16": "90a96d187eee7ae3",
+   "ext": ".csv",
+   "size": 1549,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T16:59:46",
+   "inventory_sha_match": true,
+   "family": "External validation (OpenAlex/temporal holdout)"
+  },
+  {
+   "rel": "輸出/q1_upgrade_external_independent_openalex_raw_2026-04-22.json",
+   "sha256": "992dc3b39ac013363d613bc75e07a10e9760e311035539fbbdf5145c582ad12b",
+   "sha16": "992dc3b39ac01336",
+   "ext": ".json",
+   "size": 595,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T16:59:46",
+   "inventory_sha_match": true,
+   "family": "External validation (OpenAlex/temporal holdout)"
+  },
+  {
+   "rel": "輸出/q1_upgrade_external_independent_openalex_report_2026-04-22.md",
+   "sha256": "d8a7680a4b4ddee1a385cc502a5e722ded69f8e8482266e4bcbeb3952d9da244",
+   "sha16": "d8a7680a4b4ddee1",
+   "ext": ".md",
+   "size": 1127,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T16:59:46",
+   "inventory_sha_match": true,
+   "family": "External validation (OpenAlex/temporal holdout)"
+  },
+  {
+   "rel": "輸出/q1_upgrade_external_validation_all_sources.csv",
+   "sha256": "66859f85e3d2146bfac0c332dabe0b6eb00a811b7be45379bae28415128cd731",
+   "sha16": "66859f85e3d2146b",
+   "ext": ".csv",
+   "size": 2155,
+   "name_date": "",
+   "zip_mtime": "2026-04-22T16:59:08",
+   "inventory_sha_match": true,
+   "family": "External validation (OpenAlex/temporal holdout)"
+  },
+  {
+   "rel": "輸出/q1_upgrade_external_validation_all_sources_report.md",
+   "sha256": "b67c3d760002e0260ac11a43f8a2c68a4c6c6977add5c3b3a3bfbc38bdac5f79",
+   "sha16": "b67c3d760002e026",
+   "ext": ".md",
+   "size": 1476,
+   "name_date": "",
+   "zip_mtime": "2026-04-22T16:59:08",
+   "inventory_sha_match": true,
+   "family": "External validation (OpenAlex/temporal holdout)"
+  },
+  {
+   "rel": "輸出/q1_upgrade_external_validation_report_independent_openalex.md",
+   "sha256": "a46496dd5d1d7346cdfbbef669b7fa17ec2c240a71ff6fee5b3d2fe0288b2da4",
+   "sha16": "a46496dd5d1d7346",
+   "ext": ".md",
+   "size": 764,
+   "name_date": "",
+   "zip_mtime": "2026-04-22T16:59:48",
+   "inventory_sha_match": true,
+   "family": "External validation (OpenAlex/temporal holdout)"
+  },
+  {
+   "rel": "輸出/q1_upgrade_external_validation_temporal_holdout_input.csv",
+   "sha256": "d7c19917c25134fbf21e47fe6cfed349a3a9c42aefdedfa61ccaef96b460ac3a",
+   "sha16": "d7c19917c25134fb",
+   "ext": ".csv",
+   "size": 1161,
+   "name_date": "",
+   "zip_mtime": "2026-04-22T15:39:14",
+   "inventory_sha_match": true,
+   "family": "External validation (OpenAlex/temporal holdout)"
+  },
+  {
+   "rel": "輸出/q1_upgrade_network_baseline_comparison.csv",
+   "sha256": "334156852fac1c20d947859a0f0886dd006698d5e604720fff1f9611881251fb",
+   "sha16": "334156852fac1c20",
+   "ext": ".csv",
+   "size": 3971,
+   "name_date": "",
+   "zip_mtime": "2026-04-22T16:59:06",
+   "inventory_sha_match": true,
+   "family": "Classical network metrics (betweenness/Burt constraint) vs gap_priority"
+  },
+  {
+   "rel": "輸出/q1_upgrade_network_baseline_report.md",
+   "sha256": "b1f8206c40036a5468d930772b833c4c2a11597b64970d2076f5d33a62c1ba7d",
+   "sha16": "b1f8206c40036a54",
+   "ext": ".md",
+   "size": 989,
+   "name_date": "",
+   "zip_mtime": "2026-04-22T16:59:06",
+   "inventory_sha_match": true,
+   "family": "Classical network metrics (betweenness/Burt constraint) vs gap_priority"
+  },
+  {
+   "rel": "輸出/q1_upgrade_reproducibility_manifest.md",
+   "sha256": "34940fbd86d84af1b4593b70b4bce44cfc71ca9096cddfbc05a29f9ae7ae840c",
+   "sha16": "34940fbd86d84af1",
+   "ext": ".md",
+   "size": 1619,
+   "name_date": "",
+   "zip_mtime": "2026-04-22T15:39:42",
+   "inventory_sha_match": true,
+   "family": "QA / closeout / manifest"
+  },
+  {
+   "rel": "輸出/q1_upgrade_uncertainty_report.md",
+   "sha256": "cacfdf8c8519e428aeadec79ea403ba214172964703d96a65707d3cc29f53b8b",
+   "sha16": "cacfdf8c8519e428",
+   "ext": ".md",
+   "size": 904,
+   "name_date": "",
+   "zip_mtime": "2026-04-22T16:59:26",
+   "inventory_sha_match": true,
+   "family": "Classical network metrics (betweenness/Burt constraint) vs gap_priority"
+  },
+  {
+   "rel": "輸出/structural_hole_marked_list_2026-04-22.md",
+   "sha256": "8448a207bc1407c4dbd3d356c91d7828e2a157d5989031d67d8b977ea6b68468",
+   "sha16": "8448a207bc1407c4",
+   "ext": ".md",
+   "size": 2682,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T16:57:32",
+   "inventory_sha_match": true,
+   "family": "Structural-hole tier ranking + Monte Carlo"
+  },
+  {
+   "rel": "輸出/structural_hole_tier_mc_concept_probs_2026-04-22.csv",
+   "sha256": "f0dcc07a4b77305e2b576e795584babcfee8387f6af9aca5b0279a2a419e5f1d",
+   "sha16": "f0dcc07a4b77305e",
+   "ext": ".csv",
+   "size": 2269,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T16:56:48",
+   "inventory_sha_match": true,
+   "family": "Structural-hole tier ranking + Monte Carlo"
+  },
+  {
+   "rel": "輸出/structural_hole_tier_mc_migration_2026-04-22.csv",
+   "sha256": "8f86a792c88ff0e7da9f4c22b85cdd67954a18d2718675c3eb9e8ae0ed51a54b",
+   "sha16": "8f86a792c88ff0e7",
+   "ext": ".csv",
+   "size": 254,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T16:56:48",
+   "inventory_sha_match": true,
+   "family": "Structural-hole tier ranking + Monte Carlo"
+  },
+  {
+   "rel": "輸出/structural_hole_tier_mc_tier_summary_2026-04-22.csv",
+   "sha256": "38afd81b85ca65d0e21d0ec518c3eeb1c786fee042bd08cee1abe1011d376c4d",
+   "sha16": "38afd81b85ca65d0",
+   "ext": ".csv",
+   "size": 353,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T16:56:48",
+   "inventory_sha_match": true,
+   "family": "Structural-hole tier ranking + Monte Carlo"
+  },
+  {
+   "rel": "輸出/structural_hole_tier_monte_carlo_summary_2026-04-22.md",
+   "sha256": "3b92084a862b835644c7a2eeee508d5799647523a01f601bdcc7cf21ca77d4d3",
+   "sha16": "3b92084a862b8356",
+   "ext": ".md",
+   "size": 2070,
+   "name_date": "2026-04-22",
+   "zip_mtime": "2026-04-22T16:56:48",
+   "inventory_sha_match": true,
+   "family": "Structural-hole tier ranking + Monte Carlo"
+  },
+  {
+   "rel": "輸出/temporal_phase_yearly_pca_2026-04-12.csv",
+   "sha256": "6574b025246b6e383d6e74695215b6b18e6321e89411741dc1d8d7ddb92f1eed",
+   "sha16": "6574b025246b6e38",
+   "ext": ".csv",
+   "size": 9091,
+   "name_date": "2026-04-12",
+   "zip_mtime": "2026-04-22T13:59:26",
+   "inventory_sha_match": true,
+   "family": "PCA/FA (yearly temporal features)"
+  }
+ ],
+ "term_hits": {
+  "130": {
+   "structural hole": [
+    {
+     "line": 37,
+     "ctx": "The integrated claim is that functional under-integration in the literature is not automatically a Burt-type structural hole, and neither is automatically an enterprise problem. A literature interface becomes an enterpri"
+    },
+    {
+     "line": 2396,
+     "ctx": "Ahuja, G. (2000). Collaboration networks, structural holes, and innovation: A longitudinal study. *Administrative Science Quarterly, 45*(3), 425–455. https://doi.org/10.2307/2667105"
+    },
+    {
+     "line": 2436,
+     "ctx": "Burt, R. S. (1992). *Structural holes: The social structure of competition*. Harvard University Press."
+    },
+    {
+     "line": 2438,
+     "ctx": "Burt, R. S. (2004). Structural holes and good ideas. *American Journal of Sociology, 110*(2), 349–399. https://doi.org/10.1086/421787"
+    }
+   ],
+   "結構洞": [
+    {
+     "line": 21,
+     "ctx": "本論文的整合主張是：文獻中的功能低整合不自動等於 Burt 型結構洞，兩者也都不自動等於企業問題。一個文獻接口只有在轉譯後的機制於企業證據下改變可行性、成為綁住的限制、改變被選定的 portfolio，或改變授權損失、共享能力價值、治理價值或實現價值時，才成為企業決策議題。"
+    },
+    {
+     "line": 83,
+     "ctx": "最後要分開的是連結不足與結構洞。Burt（1992, 2004）所討論的結構洞，核心在於非冗餘的網路位置與跨群體仲介，與單一關係的數量多寡並不等同。一個功能配對即使顯著低於期望，仍可能位在替代路徑很多、整體高度連通的網路中。這兩件事必須分開檢驗。"
+    },
+    {
+     "line": 174,
+     "ctx": "本研究的貢獻集中在三處。第一，實證上，本研究不以原始文獻量直接判斷哪些功能「熱門」或「冷門」，而是在控制兩側功能家族的邊際規模、同篇重複與文獻內部共同涵蓋後，辨識哪些人工智慧—決策接口在指定的檢查下仍高於或低於適當基準。第二，方法上，本研究把候選建立、模型輔助語意編碼、功能家族映射、文獻層級去重與網路推論拆成可追溯階段，並分別檢查全域邊際與計數方式、文獻內部共同涵蓋、證據單元界定，以及功能分類與人工標籤四種不同來源的不確定性；分析單位因"
+    },
+    {
+     "line": 186,
+     "ctx": "兩層合起來，本論文的核心貢獻是一組三重區分：**功能低整合 ≠ 結構洞 ≠ 企業問題。** 第一個區分來自文獻分析本身：穩健的直接接口低整合，不等於需要行動者層級非冗餘依賴證據的 Burt 型結構洞（第 2.5 節、第 4.6.2 節）。第二個區分是本論文新增的：即使某一接口經四項統計／計數分析判定為穩健低整合、也被轉譯為企業決策介面，它仍只有在企業證據下改變可行性、成為綁住的限制、改變被選定的 portfolio，或改變授權損失、共享"
+    },
+    {
+     "line": 190,
+     "ctx": "第二章回顧人工智慧與決策研究、決策功能、科學計量與語意關係分析、功能低整合與結構洞、零模型推論、內容分析與證據單元信度，以及人機決策結構、組織採用與有效使用、人工智慧治理、流程整合、評估保證、共享能力與 portfolio、多層與雙層決策等文獻，並提出整合研究架構。第三章依序說明語料建置、候選證據與語意編碼、功能分類與映射、文獻層級網路、零模型與穩健性檢驗、人工稽核與證據單元敏感度、文獻結果分層與 G01–G16 交接、缺口—機制轉譯與"
+    },
+    {
+     "line": 196,
+     "ctx": "本章依論文的證據鏈排列。第 2.1–2.7 節處理文獻層的問題：人工智慧與決策研究的傳統、決策功能、共現與功能關係、語意關係抽取與功能正規化、功能低整合與結構洞、零模型推論，以及內容分析與證據單元信度。第 2.8–2.13 節處理企業層的問題：人機決策結構與組織採用（含使用與有效使用）、治理與決策權、流程整合、評估保證、共享能力與 portfolio，以及多層與雙層決策。企業層各節依相同順序撰寫：文獻主張 → 支持什麼 → 不支持什麼 "
+    },
+    {
+     "line": 234,
+     "ctx": "## 2.5 結構洞、功能低整合與知識仲介"
+    },
+    {
+     "line": 236,
+     "ctx": "Burt（1992）所稱的結構洞，指的是不同資訊或資源來源之間缺乏冗餘連結；關鍵在連結的冗餘性，而非某一條關係的數量。跨越這類間隙的行動者，可能較早接觸異質資訊，並取得轉譯、比較與重新組合的機會。Burt（2004）進一步指出，群體內部往往較同質，而群體之間的差異使跨群體連結具有潛在價值。"
+    },
+    {
+     "line": 238,
+     "ctx": "不過，結構洞的效果並不是單向正面的。Ahuja（2000）顯示，當合作與信任是知識交換的必要條件時，網路凝聚也可能比稀疏連結更重要；Fleming 等人（2007）則發現，仲介位置可能有利於創意生成，卻不一定有利於後續擴散。Rodan 與 Galunic（2004）同樣指出，網路位置必須和可取得的知識異質性一起看。結構洞較適合被理解為一個潛在的仲介位置，其效益並不自動成立。"
+    },
+    {
+     "line": 240,
+     "ctx": "把這個概念帶進文獻知識網路，需要分清三個層次。第一層是本研究可檢驗的「功能低整合」：某個人工智慧 × 決策配對在控制邊際結構與文獻內部共同涵蓋後仍低於期望。第二層是探索性的：若另以一組高於期望的穩健關係定義操作性整合骨架，可以觀察哪些低整合配對跨越骨架分量，但這個標記依賴骨架定義，只能作為網路診斷。第三層是經典 Burt 型結構洞，它要求可識別的仲介者與非冗餘依賴關係；本研究的節點是功能家族，不是行動者，因此探索性跨模組標記不等同於 B"
+    },
+    {
+     "line": 244,
+     "ctx": "本論文在上述三個層次之外，再加入第四個層次：企業問題。即使某一配對被判定為穩健的功能低整合，它描述的仍是文獻如何討論人工智慧功能與決策功能；它不表示任何企業的流程中缺少這個接口，也不表示補上這個接口一定能創造價值。文獻低整合要成為企業決策問題，還需要兩個額外步驟：第一，把低整合接口轉譯為企業必須做出的配置決策（第 3.9 節）；第二，在企業證據下檢驗該決策是否真的改變可行集合、成為綁住的限制、改變被選定的配置，或改變授權損失、共享能力價"
+    },
+    {
+     "line": 354,
+     "ctx": "綜合第 2.1–2.14 節（含第 2.8 節的採用、使用與有效使用文獻，以及第 2.14 節的組織導入架構），既有研究分別處理了三組問題，而三者之間的連接正是本論文的研究缺口。第一組是文獻結構：科學計量與語意關係研究可以描繪概念如何共同出現，也可以抽取明示關係，但較少在控制家族規模、同篇重複與文獻內部共同涵蓋之後，檢驗哪些人工智慧功能與決策功能之間的直接接口特別集中或特別稀疏（第 2.3–2.7 節）。第二組是轉譯：結構洞與知識網路研"
+    },
+    {
+     "line": 579,
+     "ctx": "本節是加在正式 32 格統計封版之後的探索性分析，不改變任何文本分類、矩陣或顯著性結果。操作上先以 16 組最終穩健過度呈現作為一種操作性整合骨架，再觀察 16 組穩健不足呈現的兩端是否位於不同骨架連通分量。這個骨架定義是探索性診斷工具，而不是事先註冊的 Burt 結構洞演算法。"
+    },
+    {
+     "line": 583,
+     "ctx": "本研究沒有把 Burt 制約指標直接套到功能家族網路，也不把跨骨架位置稱為經典結構洞。Burt 指標原本描述行動者自我中心網路的冗餘與制約，本研究的節點卻是功能家族；直接移植會混淆「功能接口」與「行動者仲介」。結構洞理論在本研究中的角色，是幫助區分低整合、橋接可能性與真正的非冗餘仲介，不是把探索性骨架標記升格為確認性結果。"
+    },
+    {
+     "line": 641,
+     "ctx": "2. **不足呈現不等於企業缺口。** G01–G16 不表示任何企業中存在 16 個問題，也不表示相應功能無效、不相容、不重要、具因果性缺陷，或構成 Burt 型結構洞。它們只決定「哪些企業決策元素必須存在於模型中」，不決定任何參數值。"
+    },
+    {
+     "line": 716,
+     "ctx": "表註：網路狀態欄的 O、E、O/E 只是文獻證據，不進入企業模型的任何權重、係數、先驗或門檻（第 3.8.2 節）；四套分析的 p_BH 見附件 132（取自 G01–G16 凍結資料表）。全部 16 格的四項分析皆 p_BH ≤ .05 且方向為不足呈現；目標式人工標籤替換未移除其中任何一格〔2026-09-29 紀錄，待核〕。「文獻解讀」只描述文獻中直接配對相對於零模型基準較少，不表示企業中存在問題、功能無效、不相容或具因果缺陷，也"
+    },
+    {
+     "line": 1677,
+     "ctx": "這個跨分量標記對骨架門檻並不完全穩健。若骨架改成主要零模型 p_BH ≤ .05 的 22 條過度呈現邊，有效骨架會連成單一分量，因此 16 組不足呈現中沒有任何一組仍屬跨分量；若採主要零模型 p_BH ≤ .01 則為 14 組。精確檢定、文獻內部零模型與未去重記錄在 p_BH ≤ .05 下的骨架都得到 10 組。這項敏感度檢查表明，「10」只能依附於指定的穩健過度呈現骨架，不應被寫成一個獨立、穩健的結構洞計數。"
+    },
+    {
+     "line": 1679,
+     "ctx": "完整的 104 邊觀察網路則顯示高度冗餘：逐一移除 16 組不足呈現的直接邊後，兩端仍然可達，最短替代路徑均為 3，並有 7–9 條點不相交與邊不相交的替代路徑。這支持一個較窄的解讀：統計上穩健的是『直接功能接口低整合』；是否跨越骨架分量則是探索性位置資訊，而不是 Burt 型結構洞的確認。"
+    },
+    {
+     "line": 1685,
+     "ctx": "圖註：先以 16 組主要穩健過度呈現建立操作性整合骨架，再觀察連通分量，最後定位 16 組主要穩健不足呈現的跨分量／分量內位置。以目前骨架定義得到 10 組跨分量、6 組分量內；替代骨架下跨分量數量介於 0–14，因此本圖只說明探索性診斷流程與位置，不構成額外的確認性結果或 Burt 型結構洞判定。"
+    },
+    {
+     "line": 2184,
+     "ctx": "| 探索性問題 | 以 16 組穩健過度呈現作為骨架時，16 組不足呈現中 10 組跨分量、6 組位於同一分量；替代骨架下跨分量數介於 0–14；在完整觀察網路中逐一移除不足呈現的直接邊後，兩端仍可達，最短替代路徑均為 3，並有 7–9 條不相交的替代路徑。跨分量標記依附於骨架定義，不構成 Burt 型結構洞的確認 | 已完成，探索性（第 4.6.2 節）〔REAL EVIDENCE〕 |"
+    },
+    {
+     "line": 2218,
+     "ctx": "## 5.3 功能低整合、結構洞與企業問題"
+    },
+    {
+     "line": 2228,
+     "ctx": "結構洞理論在這裡的價值，在於提供一個「為什麼要關心低整合接口」的理論視角，而非替這 10 組位置提供既成的結構洞身分。資料可以直接支持的是：這些配對在四種統計分析下都低於期望，其中一部分在穩健過度呈現骨架下位於不同分量。要進一步主張仲介作用、知識重組或創新優勢，仍需要行動者層級的非冗餘依賴與結果資料（Ahuja, 2000；Burt, 2004；Fleming et al., 2007；Rodan & Galunic, 2004）。完整"
+    },
+    {
+     "line": 2232,
+     "ctx": "第 5.3.1 節把「功能低整合」與「Burt 型結構洞」分開；本論文的整合貢獻在於再分開第三個概念：企業問題。這三者以及其間的兩個中間步驟，各自需要不同的證據（表 5-1）。"
+    },
+    {
+     "line": 2234,
+     "ctx": "**表 5-1：功能低整合、結構洞與企業問題的證據要求**"
+    },
+    {
+     "line": 2240,
+     "ctx": "| Burt 型結構洞 | 可識別的行動者、非冗餘依賴關係與仲介結果 | 未檢驗；本研究的節點是功能家族，不是行動者 |"
+    },
+    {
+     "line": 2304,
+     "ctx": "理論上，本研究最重要的區分是把「少」拆成不同層次：家族本身低頻、控制邊際與文獻內部結構後仍低於期望的直接接口，以及需要額外網路與行動者條件才能成立的結構洞。主要分析辨識出 16 組跨四種統計／計數分析都穩健的不足呈現；證據單元敏感度再把這 16 組分成 14 組跨三種證據單元設定持續的不足呈現，以及 2 組邊界敏感的不足呈現。對過度呈現亦相同：16 組主要穩健過度中有 15 組跨三種設定持續、1 組邊界敏感。因而，敏感度分析後仍可維持的"
+    },
+    {
+     "line": 2338,
+     "ctx": "結構洞解釋仍有明確邊界。本研究在主要統計分析中沒有預先指定一套 Burt 結構洞演算法；跨骨架分量與完整網路替代路徑檢查屬探索性診斷，而且跨分量數量會隨骨架定義改變。節點本身又是功能家族，不是人、組織或可識別的仲介者，因此後續若要檢驗仲介作用、知識重組或創新績效，仍需加入作者合作、引用、專利、組織流程或實際導入等行動者層級資料。"
+    },
+    {
+     "line": 2380,
+     "ctx": "探索性的骨架診斷進一步提供可能的跨功能接口位置，但其結果會依骨架定義改變，因此不應升格為確認性的結構洞計數。本研究把結構洞理論用來界定推論邊界：可由本研究直接支持的是功能低整合與其網路位置；仲介作用、非冗餘依賴與創新效果仍需要其他行動者層級資料檢驗。"
+    },
+    {
+     "line": 2386,
+     "ctx": "因此，本論文目前可以宣稱的是：一個穩健且分層報告的文獻功能結構、一條可追溯且尚待人類驗證的缺口—機制轉譯，以及一個具明確參數識別規格、可求解，且在受測合成實例上與方程一致的企業多層決策模型；其資料契約已可執行，但 620 個企業參數格目前全為未識別。本論文不能宣稱任何企業已達成特定投資報酬、已找到最適的企業人工智慧架構、人工智慧已因果地改善績效、某一部門是最佳導入點，或結果可外推至其他企業。本論文最核心的結論是一項推論紀律：文獻中的功能"
+    }
+   ],
+   "Burt": [
+    {
+     "line": 21,
+     "ctx": "本論文的整合主張是：文獻中的功能低整合不自動等於 Burt 型結構洞，兩者也都不自動等於企業問題。一個文獻接口只有在轉譯後的機制於企業證據下改變可行性、成為綁住的限制、改變被選定的 portfolio，或改變授權損失、共享能力價值、治理價值或實現價值時，才成為企業決策議題。"
+    },
+    {
+     "line": 37,
+     "ctx": "The integrated claim is that functional under-integration in the literature is not automatically a Burt-type structural hole, and neither is automatically an enterprise problem. A literature interface becomes an enterpri"
+    },
+    {
+     "line": 57,
+     "ctx": "組織反應之前還有一個更基本的落差：部署不等於使用。企業可以為員工開通一套 AI 助手，或在既有企業資訊系統中嵌入 AI 功能，但員工是否使用、在多少比例的工作事件中使用、使用時是否真的改善結果，是三個不同的問題。資訊系統研究以知覺有用性與易用性解釋使用者的接受與使用（Davis, 1989），也區分使用與有效使用（Burton-Jones & Grange, 2013），並指出組織常未充分利用已導入資訊科技的功能潛力（Jasperson"
+    },
+    {
+     "line": 83,
+     "ctx": "最後要分開的是連結不足與結構洞。Burt（1992, 2004）所討論的結構洞，核心在於非冗餘的網路位置與跨群體仲介，與單一關係的數量多寡並不等同。一個功能配對即使顯著低於期望，仍可能位在替代路徑很多、整體高度連通的網路中。這兩件事必須分開檢驗。"
+    },
+    {
+     "line": 174,
+     "ctx": "本研究的貢獻集中在三處。第一，實證上，本研究不以原始文獻量直接判斷哪些功能「熱門」或「冷門」，而是在控制兩側功能家族的邊際規模、同篇重複與文獻內部共同涵蓋後，辨識哪些人工智慧—決策接口在指定的檢查下仍高於或低於適當基準。第二，方法上，本研究把候選建立、模型輔助語意編碼、功能家族映射、文獻層級去重與網路推論拆成可追溯階段，並分別檢查全域邊際與計數方式、文獻內部共同涵蓋、證據單元界定，以及功能分類與人工標籤四種不同來源的不確定性；分析單位因"
+    },
+    {
+     "line": 186,
+     "ctx": "兩層合起來，本論文的核心貢獻是一組三重區分：**功能低整合 ≠ 結構洞 ≠ 企業問題。** 第一個區分來自文獻分析本身：穩健的直接接口低整合，不等於需要行動者層級非冗餘依賴證據的 Burt 型結構洞（第 2.5 節、第 4.6.2 節）。第二個區分是本論文新增的：即使某一接口經四項統計／計數分析判定為穩健低整合、也被轉譯為企業決策介面，它仍只有在企業證據下改變可行性、成為綁住的限制、改變被選定的 portfolio，或改變授權損失、共享"
+    },
+    {
+     "line": 236,
+     "ctx": "Burt（1992）所稱的結構洞，指的是不同資訊或資源來源之間缺乏冗餘連結；關鍵在連結的冗餘性，而非某一條關係的數量。跨越這類間隙的行動者，可能較早接觸異質資訊，並取得轉譯、比較與重新組合的機會。Burt（2004）進一步指出，群體內部往往較同質，而群體之間的差異使跨群體連結具有潛在價值。"
+    },
+    {
+     "line": 240,
+     "ctx": "把這個概念帶進文獻知識網路，需要分清三個層次。第一層是本研究可檢驗的「功能低整合」：某個人工智慧 × 決策配對在控制邊際結構與文獻內部共同涵蓋後仍低於期望。第二層是探索性的：若另以一組高於期望的穩健關係定義操作性整合骨架，可以觀察哪些低整合配對跨越骨架分量，但這個標記依賴骨架定義，只能作為網路診斷。第三層是經典 Burt 型結構洞，它要求可識別的仲介者與非冗餘依賴關係；本研究的節點是功能家族，不是行動者，因此探索性跨模組標記不等同於 B"
+    },
+    {
+     "line": 270,
+     "ctx": "**文獻主張。** 技術接受研究以知覺有用性與知覺易用性解釋使用者對資訊系統的接受與使用（Davis, 1989）；Venkatesh 等人（2003）整合八個接受模型，提出解釋使用意圖與使用行為的統一模型。這一脈絡的被解釋變數是接受與使用，而不是實際工作績效的改善——後者不是這些模型所衡量的結果（此一區辨為本研究的說明）。Goodhue 與 Thompson（1995）主張，資訊科技要對個人績效產生正面影響，必須被使用，且必須與其支援"
+    },
+    {
+     "line": 579,
+     "ctx": "本節是加在正式 32 格統計封版之後的探索性分析，不改變任何文本分類、矩陣或顯著性結果。操作上先以 16 組最終穩健過度呈現作為一種操作性整合骨架，再觀察 16 組穩健不足呈現的兩端是否位於不同骨架連通分量。這個骨架定義是探索性診斷工具，而不是事先註冊的 Burt 結構洞演算法。"
+    },
+    {
+     "line": 583,
+     "ctx": "本研究沒有把 Burt 制約指標直接套到功能家族網路，也不把跨骨架位置稱為經典結構洞。Burt 指標原本描述行動者自我中心網路的冗餘與制約，本研究的節點卻是功能家族；直接移植會混淆「功能接口」與「行動者仲介」。結構洞理論在本研究中的角色，是幫助區分低整合、橋接可能性與真正的非冗餘仲介，不是把探索性骨架標記升格為確認性結果。"
+    },
+    {
+     "line": 641,
+     "ctx": "2. **不足呈現不等於企業缺口。** G01–G16 不表示任何企業中存在 16 個問題，也不表示相應功能無效、不相容、不重要、具因果性缺陷，或構成 Burt 型結構洞。它們只決定「哪些企業決策元素必須存在於模型中」，不決定任何參數值。"
+    },
+    {
+     "line": 716,
+     "ctx": "表註：網路狀態欄的 O、E、O/E 只是文獻證據，不進入企業模型的任何權重、係數、先驗或門檻（第 3.8.2 節）；四套分析的 p_BH 見附件 132（取自 G01–G16 凍結資料表）。全部 16 格的四項分析皆 p_BH ≤ .05 且方向為不足呈現；目標式人工標籤替換未移除其中任何一格〔2026-09-29 紀錄，待核〕。「文獻解讀」只描述文獻中直接配對相對於零模型基準較少，不表示企業中存在問題、功能無效、不相容或具因果缺陷，也"
+    },
+    {
+     "line": 1679,
+     "ctx": "完整的 104 邊觀察網路則顯示高度冗餘：逐一移除 16 組不足呈現的直接邊後，兩端仍然可達，最短替代路徑均為 3，並有 7–9 條點不相交與邊不相交的替代路徑。這支持一個較窄的解讀：統計上穩健的是『直接功能接口低整合』；是否跨越骨架分量則是探索性位置資訊，而不是 Burt 型結構洞的確認。"
+    },
+    {
+     "line": 1685,
+     "ctx": "圖註：先以 16 組主要穩健過度呈現建立操作性整合骨架，再觀察連通分量，最後定位 16 組主要穩健不足呈現的跨分量／分量內位置。以目前骨架定義得到 10 組跨分量、6 組分量內；替代骨架下跨分量數量介於 0–14，因此本圖只說明探索性診斷流程與位置，不構成額外的確認性結果或 Burt 型結構洞判定。"
+    },
+    {
+     "line": 2184,
+     "ctx": "| 探索性問題 | 以 16 組穩健過度呈現作為骨架時，16 組不足呈現中 10 組跨分量、6 組位於同一分量；替代骨架下跨分量數介於 0–14；在完整觀察網路中逐一移除不足呈現的直接邊後，兩端仍可達，最短替代路徑均為 3，並有 7–9 條不相交的替代路徑。跨分量標記依附於骨架定義，不構成 Burt 型結構洞的確認 | 已完成，探索性（第 4.6.2 節）〔REAL EVIDENCE〕 |"
+    },
+    {
+     "line": 2228,
+     "ctx": "結構洞理論在這裡的價值，在於提供一個「為什麼要關心低整合接口」的理論視角，而非替這 10 組位置提供既成的結構洞身分。資料可以直接支持的是：這些配對在四種統計分析下都低於期望，其中一部分在穩健過度呈現骨架下位於不同分量。要進一步主張仲介作用、知識重組或創新優勢，仍需要行動者層級的非冗餘依賴與結果資料（Ahuja, 2000；Burt, 2004；Fleming et al., 2007；Rodan & Galunic, 2004）。完整"
+    },
+    {
+     "line": 2232,
+     "ctx": "第 5.3.1 節把「功能低整合」與「Burt 型結構洞」分開；本論文的整合貢獻在於再分開第三個概念：企業問題。這三者以及其間的兩個中間步驟，各自需要不同的證據（表 5-1）。"
+    },
+    {
+     "line": 2240,
+     "ctx": "| Burt 型結構洞 | 可識別的行動者、非冗餘依賴關係與仲介結果 | 未檢驗；本研究的節點是功能家族，不是行動者 |"
+    },
+    {
+     "line": 2338,
+     "ctx": "結構洞解釋仍有明確邊界。本研究在主要統計分析中沒有預先指定一套 Burt 結構洞演算法；跨骨架分量與完整網路替代路徑檢查屬探索性診斷，而且跨分量數量會隨骨架定義改變。節點本身又是功能家族，不是人、組織或可識別的仲介者，因此後續若要檢驗仲介作用、知識重組或創新績效，仍需加入作者合作、引用、專利、組織流程或實際導入等行動者層級資料。"
+    },
+    {
+     "line": 2358,
+     "ctx": "組織導入架構層（第 3.10.5、3.10.6 節）有五項限制。第一，五種 archetype 是研究者提出的分析性分類，可重疊、不窮盡，尚未經第二位編碼者與裁決檢驗；它們不是文獻公認的分類，本研究也沒有找到已核對的文獻支持其作為類型學（附件 88）。第二，決策權的編碼依賴文件與訪談；正式權威與實質控制可能不一致，文件可能落後於實務，受訪者也可能以理想狀態描述現況，因此兩者不一致時必須報告兩種映射。第三，映射有數處只能以假設或界處理：I"
+    },
+    {
+     "line": 2436,
+     "ctx": "Burt, R. S. (1992). *Structural holes: The social structure of competition*. Harvard University Press."
+    },
+    {
+     "line": 2438,
+     "ctx": "Burt, R. S. (2004). Structural holes and good ideas. *American Journal of Sociology, 110*(2), 349–399. https://doi.org/10.1086/421787"
+    },
+    {
+     "line": 2440,
+     "ctx": "Burton-Jones, A., & Grange, C. (2013). From use to effective use: A representation theory perspective. *Information Systems Research, 24*(3), 632–658. https://doi.org/10.1287/isre.1120.0444"
+    },
+    {
+     "line": 2442,
+     "ctx": "Burton-Jones, A., & Straub, D. W., Jr. (2006). Reconceptualizing system usage: An approach and empirical test. *Information Systems Research, 17*(3), 228–246. https://doi.org/10.1287/isre.1060.0096"
+    },
+    {
+     "line": 2630,
+     "ctx": "Trieu, V.-H., Burton-Jones, A., Green, P., & Cockcroft, S. (2022). Applying and extending the theory of effective use in a business intelligence context. *MIS Quarterly, 46*(1), 645–678. https://doi.org/10.25300/MISQ/202"
+    },
+    {
+     "line": 2719,
+     "ctx": "| N42 | Burton-Jones & Straub (2006) | ABSTRACT_ONLY；DIRECT_SUPPORT | \"a tripartite, comprising a user, system, and task ... should choose measures for each element (i.e., user, system, and/or task)\"（Abstract） | 使用構念缺乏公認"
+    },
+    {
+     "line": 2720,
+     "ctx": "| N43 | Burton-Jones & Grange (2013) | ABSTRACT_ONLY；PARTIAL_SUPPORT | \"Information systems must be used effectively to obtain maximum benefits from them.\"（Abstract） | 使用與有效使用不同；須有效使用才有最大效益 | 有效使用的原文定義（未核對） | `ATT` 作為有效使"
+    },
+    {
+     "line": 3041,
+     "ctx": "| E17 | Klein 與 Sorra（1996）「創新有效性」的定義、Venkatesh 等人（2003）四個決定因子的名稱、Burton-Jones 與 Grange（2013）的有效使用定義 | 第 2.8 節只寫摘要可支持的內容 | 取得全文並核對頁碼後才可加入 |"
+    },
+    {
+     "line": 3049,
+     "ctx": "| E25 | 高優先主張的奠基文獻多數只核對到摘要層級：Goodhue & Thompson（1995）、Burton-Jones & Grange（2013）、Burton-Jones & Straub（2006）、Klein & Sorra（1996）、Klein et al.（2001）、Holahan et al.（2004）、Sharma & Yetton（2007）、Fichman & Kemerer（1999）、Samb"
+    },
+    {
+     "line": 3058,
+     "ctx": "| E34 | v1.4 高優先全文回收：下列文獻以合法公開途徑（出版者 OA、作者手稿、機構典藏、官方典藏、可驗證來源的副本）皆未取得全文，標為 ABSTRACT_ONLY; FULLTEXT_ACCESS_BLOCKED：Sambamurthy & Zmud（1999）、Goodhue & Thompson（1995）、Venkatesh et al.（2008）、Burton-Jones & Straub（2006）、Sharma"
+    }
+   ],
+   "constraint": [
+    {
+     "line": 31,
+     "ctx": "The sixteen robust depletions (G01–G16; G07 and G15 are evidence-unit boundary-sensitive; none was removed by the targeted human-label substitution) were treated as research leads rather than as enterprise facts or model"
+    },
+    {
+     "line": 381,
+     "ctx": "Hard constraints: Legal, incident tolerance ē (not monetized)"
+    },
+    {
+     "line": 722,
+     "ctx": "G08 ─┤                                  └─ ē_j^γ（severe-incident tolerance）     [hard constraint]"
+    }
+   ],
+   "約束": [
+    {
+     "line": 51,
+     "ctx": "這與一般的概念共現不同。共現矩陣是科學計量分析的常用工具（Leydesdorff & Vaughan, 2006）；但本研究認為，共現只能顯示兩個概念曾在同一篇文獻中出現，無法說明兩者之間的關係內容，更不能判斷一項人工智慧功能究竟是在支持、約束、治理或改變哪一項決策活動。本研究把分析單位放在文獻中可被直接辨識的「人工智慧功能—決策功能」關係；共同出現本身並不算整合。"
+    },
+    {
+     "line": 254,
+     "ctx": "自動文本分析的效度取決於類別定義、分析單元、編碼程序與不確定結果的處理（Grimmer & Stewart, 2013；Krippendorff, 2019；Neuendorf, 2017）。內容分析研究亦把文字連續體的切分（unitizing）本身視為需要信度評估的測量問題（Krippendorff et al., 2016）；本研究據此推論，分析單元若過寬或邊界不一致，可能影響後續類別判定。大型語言模型可協助文本標註（Gilardi"
+    },
+    {
+     "line": 284,
+     "ctx": "**支持什麼。** (i) 治理是決策權的配置，其型態取決於多重情境因素；(ii) 名義上的權限與實際上的控制能力可能不一致；在公部門演算法的情境中，要求人類監督也不等於有效監督；(iii) 部分 AI 使用受外部法規與標準的硬性約束。"
+    },
+    {
+     "line": 474,
+     "ctx": "每一個候選片段再交由本地 qwen2.5:14b 進行語意編碼。輸入包含候選文字、章節、兩側被詞彙掃描命中的詞，以及可取得時的文件脈絡；輸出固定為人工智慧概念、決策概念、關係類型、信心值與是否需要人工複核等欄位。正式流程將關係限制為支持、治理、轉換、約束、告知、賦能與關聯七類；若文字只同時提到兩側主題、概念未清楚命名、方向不清或模型本身不確定，則標記為「模糊」並要求複核。完整關係標籤與正式流程範例列於補充表 S7。"
+    },
+    {
+     "line": 484,
+     "ctx": "若語意輸出在設定的嘗試次數內仍無法解析，系統不刪除該候選，而是保留為「模糊」、信心值為 0、需要人工複核且端點為空的記錄。結構化輸出的格式修復只處理多餘文字、尾逗號或未閉合括號等語法問題，不補造缺失的語意欄位。這使 26,501 個候選都有對應的語意記錄，也讓技術性失敗保持可見。保留的 6,499 筆記錄中，賦能占 37.70%、支持 34.33%、約束 11.29%、告知 7.82%、治理 6.60%、轉換 2.18%、關聯 0.08"
+    },
+    {
+     "line": 2204,
+     "ctx": "人類監督與保證的 4 組配對呈現不同的關係語氣。「人機增能 × 人工複核與問責」有 58 筆邊、O/E = 3.59；「解釋與保證 × 人工複核與問責」為 75、2.76；「解釋與保證 × 治理與監督」為 101、1.88；「評估與審核 × 治理與監督」為 93、1.64。這些格中的約束與治理關係比例明顯較高，例如「人機增能 × 人工複核與問責」約 59% 為約束，「評估與審核 × 治理與監督」約 37% 為約束、18% 為治理。監督型"
+    },
+    {
+     "line": 2912,
+     "ctx": "| D9 | 預算包含增量每事件營運支出 | 預算只含導入成本 | A 需 `c` 的帳務歸屬 | A 使 envelope 能約束高營運支出的配置 | 同 | 同 | **A** | B 只在 `B̄` 依制度明確只涵蓋導入時 |"
+    }
+   ],
+   "制約": [
+    {
+     "line": 583,
+     "ctx": "本研究沒有把 Burt 制約指標直接套到功能家族網路，也不把跨骨架位置稱為經典結構洞。Burt 指標原本描述行動者自我中心網路的冗餘與制約，本研究的節點卻是功能家族；直接移植會混淆「功能接口」與「行動者仲介」。結構洞理論在本研究中的角色，是幫助區分低整合、橋接可能性與真正的非冗餘仲介，不是把探索性骨架標記升格為確認性結果。"
+    }
+   ],
+   "main path": [],
+   "主路徑": [],
+   "SPLC": [],
+   "SPNP": [],
+   "SPC": [],
+   "PCA": [],
+   "主成分": [],
+   "factor analysis": [],
+   "因素分析": [],
+   "varimax": [],
+   "Kaiser": [],
+   "citation network": [],
+   "引用網路": [],
+   "citation edge": [],
+   "OpenAlex": [
+    {
+     "line": 2668,
+     "ctx": "驗證狀態（v1.1，依隨稿附件 76 的逐筆核對；v1.3 依附件 94 更新 N6、N7、N8、N14、N17、N31、N46、N47、N48 並新增 N49–N75；v1.4 依附件 103 改標版本並新增 N76–N83）：第一欄為存取狀態——`FULL_TEXT_VERIFIED`（讀到全文）、`ABSTRACT_ONLY`（只讀到摘要或出版者摘要）、`METADATA_ONLY`（只核對書目）；第二欄為支持程度——`DIREC"
+    },
+    {
+     "line": 2684,
+     "ctx": "| N7 | Papagiannidis et al. (2025) | ABSTRACT_ONLY；DIRECT_SUPPORT | \"defined through structural, relational, and procedural practices\"〔OpenAlex 摘要索引重組〕（Abstract） | 負責任 AI 治理的結構性、關係性、程序性實務 | 任何治理實務的效果大小 | `γ` 的組成（Allow、要求"
+    },
+    {
+     "line": 2750,
+     "ctx": "| N73 | Angrist et al. (1996) | ABSTRACT_ONLY；METHOD_SUPPORT | \"easily interpretable assumptions, the IV estimand is the average causal effect for a subgroup of units, the compliers.\"〔OpenAlex 摘要索引重組〕（Abstract） | 鼓勵設計的 I"
+    },
+    {
+     "line": 3054,
+     "ctx": "| E30 | Sambamurthy & Zmud（1999）：v1.2 註記其摘要未列出三種模式；v1.3 的核對紀錄顯示摘要列出三種主要的 IT 治理模式；另一句「These modes vary…」的引語由 OpenAlex 摘要索引重組，缺一個詞 | 第 2.14 節 | 以原文摘要人工核對後，再確認此修正 |"
+    },
+    {
+     "line": 3056,
+     "ctx": "| E32 | Angrist et al.（1996）、Sambamurthy & Zmud（1999）的「These modes vary…」一句、Papagiannidis et al.（2025）（附錄 B N7）的引語是由 OpenAlex 摘要索引依詞序重組，未見原文排版 | 附錄 B；附件 94 | 以出版者頁面的摘要人工核對 |"
+    },
+    {
+     "line": 3059,
+     "ctx": "| E35 | Sambamurthy & Zmud（1999）：定義句與三種模式句另由第三方圖書館頁轉載的摘要取得（非 OpenAlex 索引重組，但仍待以原文核對）；「These modes vary…」一句仍為索引重組，E30、E32 維持開放；全文仍未取得 | 第 2.14 節；附錄 B | 取得全文後核對引語與頁碼 |"
+    }
+   ],
+   "Monte Carlo": [],
+   "gap_priority": [],
+   "Tier-A": [],
+   "Tier-B": [],
+   "info_gap": [],
+   "完整資料來源": [],
+   "2,003": [],
+   "1,981": [],
+   "98.90": [],
+   "AI 治理": [
+    {
+     "line": 282,
+     "ctx": "**文獻主張。** Sambamurthy 與 Zmud（1999）將 IT 治理安排界定為企業中關鍵 IT 活動的權威配置模式，並主張其型態受多重情境因素共同決定。A. E. Brown 與 Grant（2005）的文獻回顧把 IT 治理界定為決策權與問責的框架，並整理了以六種組織結構（archetype）對應五個關鍵 IT 決策領域的分析（Weill & Ross, 2004，引自 A. E. Brown & Grant, 2005"
+    },
+    {
+     "line": 332,
+     "ctx": "**文獻主張。** Sambamurthy 與 Zmud（1999）將 IT 治理安排界定為企業中關鍵 IT 活動的權威配置模式，並主張其型態受多重情境因素共同決定；A. E. Brown 與 Grant（2005）把 IT 治理界定為決策權與問責的框架（第 2.9 節）。Aghion 與 Tirole（1997）區分正式權威（決定的權利）與實質權威（有效控制），並指出實質權威由資訊結構決定，而資訊結構又取決於正式權威的配置。Alons"
+    },
+    {
+     "line": 940,
+     "ctx": "**ORG-V1 內容效度。** 邀請 3–5 位至少具備下列一項資格的專家：企業 AI 導入實務、IT 治理或數位轉型、AI 計畫或 AI 專責單位或 IT 主管、組織設計或技術導入研究、企業架構或資訊系統研究、AI 治理或數位治理；只有 2 位時標示為 `LIMITED_CONTENT_VALIDITY_PANEL`。專家對 D01–D12 各以四點量表（各準則共用的符合程度錨點：1 = 完全不符合至 4 = 完全符合）評估相關性、"
+    },
+    {
+     "line": 2682,
+     "ctx": "| N5 | Sambamurthy & Zmud (1999) | ABSTRACT_ONLY；DIRECT_SUPPORT | \"IT governance arrangements refers to the patterns of authority for key IT activities in business firms\"（Abstract） | 治理為權威配置模式，依多重情境 | 特定 AI 治理方案的價值 | `Γ`"
+    },
+    {
+     "line": 2684,
+     "ctx": "| N7 | Papagiannidis et al. (2025) | ABSTRACT_ONLY；DIRECT_SUPPORT | \"defined through structural, relational, and procedural practices\"〔OpenAlex 摘要索引重組〕（Abstract） | 負責任 AI 治理的結構性、關係性、程序性實務 | 任何治理實務的效果大小 | `γ` 的組成（Allow、要求"
+    },
+    {
+     "line": 2734,
+     "ctx": "| N57 | A. E. Brown & Grant (2005) | FULL_TEXT_VERIFIED（出版版本；文獻回顧）；DIRECT_SUPPORT | \"A strict centralized governance design places all decision-making authority in a central IS organizational body\"（p. 701, Section III 'S"
+    }
+   ],
+   "AI governance": [],
+   "bridging": [],
+   "betweenness": [],
+   "Jaccard": [
+    {
+     "line": 640,
+     "ctx": "1. **只交接方向與證據標記。** 交接的內容是「此一功能接口在文獻中穩健地低於邊際基準」以及其證據單元持續性標記。O、E、O/E、p_BH、觀察計數、Jaccard 係數與零模型平均值都只屬文獻證據，永遠不進入企業模型的目標、權重、係數、先驗、門檻或效果量。"
+    },
+    {
+     "line": 749,
+     "ctx": "研究者裁決必須由獨立編碼者檢驗，本研究稱為 V1（構念效度）。V1 的協定在任何編碼輸出產生之前凍結並記錄雜湊值，內容如下。(1) **編碼材料。** 編碼者只收到協定、一份盲編封包（16 個個案，每個個案只列一個人工智慧功能家族與一個決策功能家族的定義；兩份封包的列序不同）與空白回答表。編碼者在其編碼凍結前不得看到缺口編號、研究者的機制與狀態裁決、任何論文文字，也不得看到 O/E、觀察計數或 p 值，以免以效果強度定錨；人類編碼者須簽"
+    },
+    {
+     "line": 1439,
+     "ctx": "| **分析層次**             | **設定**                                                 | **p_BH ≤ .05 顯著格數** | **方向一致格數** | **Jaccard 相似係數** |"
+    },
+    {
+     "line": 1447,
+     "ctx": "表註：方向一致格數與 Jaccard 係數均以主要固定度數零模型為比較基準。本表比較同一套證據單元下的四種分析；文獻內部結構保持零模型的 32 個顯著配對與主要穩健集合完全相同。證據單元界定屬另一個測量層次，結果另見第 4.5 節。"
+    },
+    {
+     "line": 1589,
+     "ctx": "表註：括號內依序表示過度呈現／不足呈現。不同設定的分析單元數不可直接互相換算；表中重點在於可配對文獻、文獻層級邊與穩健集合如何隨證據單元界定改變。主要設定與句層級、句與子句層級重切分的 Jaccard 係數分別為 .853 與 .909；兩種重切分設定彼此為 .938。"
+    },
+    {
+     "line": 1593,
+     "ctx": "依原四套檢定重新計算後，兩種重切分設定的穩健集合皆為 31 格，均包含 15 格過度呈現與 16 格不足呈現。句層級重切分保留主要設定 32 格中的 29 格（Jaccard = .853），句與子句層級重切分保留 30 格（Jaccard = .909）；其中 29 格在三種設定中同時存在且方向一致，所有被保留的穩健配對都沒有方向反轉。原 16 格過度呈現在兩種替代設定下都保留 15 格；原 16 格不足呈現則分別保留 14 與 15"
+    },
+    {
+     "line": 1742,
+     "ctx": "| 次機制 Jaccard（平均） | — | `[HUMAN RESULT PENDING]` | | | |"
+    },
+    {
+     "line": 1746,
+     "ctx": "- 輸出變數：`reliability.fields.{primary_code,status}.{alpha, alpha_ci95, c1_c3_class, pairs[].{agreements, kappa, kappa_ci95}}`、`secondary_jaccard_mean`。"
+    }
+   ],
+   "backbone": [],
+   "骨幹": []
+  },
+  "128": {
+   "structural hole": [],
+   "結構洞": [
+    {
+     "line": 80,
+     "ctx": "- V4 稿件（`MANUSCRIPT_SUBMISSION_V4(2).docx`）與 V4 結構洞層（不得恢復）。"
+    }
+   ],
+   "Burt": [],
+   "constraint": [],
+   "約束": [],
+   "制約": [],
+   "main path": [],
+   "主路徑": [],
+   "SPLC": [],
+   "SPNP": [],
+   "SPC": [],
+   "PCA": [],
+   "主成分": [],
+   "factor analysis": [],
+   "因素分析": [],
+   "varimax": [],
+   "Kaiser": [],
+   "citation network": [],
+   "引用網路": [],
+   "citation edge": [],
+   "OpenAlex": [],
+   "Monte Carlo": [],
+   "gap_priority": [],
+   "Tier-A": [],
+   "Tier-B": [],
+   "info_gap": [],
+   "完整資料來源": [
+    {
+     "line": 15,
+     "ctx": "| `完整資料來源.zip` | **ABSENT** | V5 Manuscript Data Pack 本體未在環境中；本輪以 R14 定稿 + `04_G01_G16_FROZEN.csv` + 專案指示所列 V5 數字交叉核對（全部一致，見 §3）。 |"
+    }
+   ],
+   "2,003": [],
+   "1,981": [],
+   "98.90": [],
+   "AI 治理": [],
+   "AI governance": [],
+   "bridging": [],
+   "betweenness": [],
+   "Jaccard": [],
+   "backbone": [],
+   "骨幹": []
+  }
+ },
+ "token_hits": {
+  "130": {
+   "1.000": {
+    "legacy_files": [
+     "論文/FINAL_THESIS_FORMAL_VERSION_2026-04-12.md",
+     "論文/FINAL_THESIS_Q1_CLEAN_VERSION.md",
+     "論文/FINAL_THESIS_WITH_DELETION_MARKS.md",
+     "輸出/Info_Gap_and_Expert_Plan_2026-04-11.md"
+    ],
+    "hits": [
+     {
+      "line": 1728,
+      "ctx": "| AI A 對 AI B 一致 | 16／16（κ = α = 1.000） | 16／16（κ = α = 1.000） |"
+     }
+    ]
+   },
+   "0.000": {
+    "legacy_files": [
+     "論文/FINAL_THESIS_FORMAL_VERSION_2026-04-12.md"
+    ],
+    "hits": [
+     {
+      "line": 1908,
+      "ctx": "| (A-INV) 不成立時的頂點 MaxRegret（構造反例） | 可能低估（頂點 0.0000；網格 0.2812），須以網格或抽樣檢查 |"
+     },
+     {
+      "line": 2746,
+      "ctx": "| N69 | Kawamoto et al. (2005) | FULL_TEXT_VERIFIED（出版版本）；DIRECT_SUPPORT | \"automatic provision of decision support as part of clinician workflow (P < 0.00001)\"（Abstract, Results (listed among four independent predictors"
+     }
+    ]
+   },
+   "20,000": {
+    "legacy_files": [
+     "論文/FINAL_THESIS_FORMAL_VERSION_2026-04-12.md"
+    ],
+    "hits": [
+     {
+      "line": 1561,
+      "ctx": "補充三角檢查的 60 筆人工智慧端點中，原始人工判定與獨立模型預編碼有 41 筆完全一致，一致率為 68.3%，Cohen’s κ = .647；以記錄為單位進行 20,000 次成對自助法後，κ 的 95% 信賴區間為 \\[.511, .773\\]。分歧並非平均分散：感知與擷取、預測與風險估計及推薦與最佳化在這個樣本中高度一致，而一般推理系統、人機增能與檢索與統整較常被另一程序判為模糊、未映射或相鄰功能家族。這項結果顯示功能分類的可判"
+     },
+     {
+      "line": 1573,
+      "ctx": "表註：n = 20，均為人工調和前之探索性編碼者間一致度。κ 信賴區間採 20,000 次以記錄為單位的成對自助法；各欄分開報告，不計算單一總體 κ，也不據此推估全語料或全部 22 個家族之分類效能。這些是本研究的程序選擇，不是所引方法文獻的規定；信度報告的一般原則見 Krippendorff（2019）與 Neuendorf（2017）。"
+     }
+    ]
+   },
+   "0.1186": {
+    "legacy_files": [
+     "論文/FINAL_THESIS_FORMAL_VERSION_2026-04-12.md"
+    ],
+    "hits": [
+     {
+      "line": 2504,
+      "ctx": "Jacobs, S. R., Weiner, B. J., Reeve, B. B., Hofmann, D. A., Christian, M., & Weinberger, M. (2015). Determining the predictors of innovation implementation in healthcare: A quantitative analysis of implementation effecti"
+     },
+     {
+      "line": 2652,
+      "ctx": "Williams, N. J., Ehrhart, M. G., Aarons, G. A., Marcus, S. C., & Beidas, R. S. (2018). Linking molar organizational climate and strategic implementation climate to clinicians' use of evidence-based psychotherapy techniqu"
+     }
+    ]
+   },
+   "10.6028": {
+    "legacy_files": [
+     "論文/FINAL_THESIS_FORMAL_VERSION_2026-04-12.md"
+    ],
+    "hits": [
+     {
+      "line": 2564,
+      "ctx": "National Institute of Standards and Technology. (2023). *Artificial intelligence risk management framework (AI RMF 1.0)* (NIST AI 100-1). U.S. Department of Commerce. https://doi.org/10.6028/NIST.AI.100-1"
+     },
+     {
+      "line": 2566,
+      "ctx": "National Institute of Standards and Technology. (2024). *Artificial intelligence risk management framework: Generative artificial intelligence profile* (NIST AI 600-1). U.S. Department of Commerce. https://doi.org/10.602"
+     }
+    ]
+   },
+   "10.1016": {
+    "legacy_files": [
+     "論文/FINAL_THESIS_FORMAL_VERSION_2026-04-12.md"
+    ],
+    "hits": [
+     {
+      "line": 2404,
+      "ctx": "Archer, N. P., & Ghasemzadeh, F. (1999). An integrated framework for project portfolio selection. *International Journal of Project Management, 17*(4), 207–216. https://doi.org/10.1016/S0263-7863(98)00032-5"
+     },
+     {
+      "line": 2412,
+      "ctx": "Barredo Arrieta, A., Díaz-Rodríguez, N., Del Ser, J., Bennetot, A., Tabik, S., Barbado, A., Garcia, S., Gil-Lopez, S., Molina, D., Benjamins, R., Chatila, R., & Herrera, F. (2020). Explainable artificial intelligence (XA"
+     },
+     {
+      "line": 2444,
+      "ctx": "Callaway, B., & Sant'Anna, P. H. C. (2021). Difference-in-differences with multiple time periods. *Journal of Econometrics, 225*(2), 200–230. https://doi.org/10.1016/j.jeconom.2020.12.001"
+     },
+     {
+      "line": 2466,
+      "ctx": "Donthu, N., Kumar, S., Mukherjee, D., Pandey, N., & Lim, W. M. (2021). How to conduct a bibliometric analysis: An overview and guidelines. *Journal of Business Research, 133*, 285–296. https://doi.org/10.1016/j.jbusres.2"
+     },
+     {
+      "line": 2490,
+      "ctx": "Green, B. (2022). The flaws of policies requiring human oversight of government algorithms. *Computer Law & Security Review, 45*, Article 105681. https://doi.org/10.1016/j.clsr.2022.105681"
+     },
+     {
+      "line": 2498,
+      "ctx": "Holahan, P. J., Aronson, Z. H., Jurkat, M. P., & Schoorman, F. D. (2004). Implementing computer technology: A multiorganizational test of Klein and Sorra's model. *Journal of Engineering and Technology Management, 21*(1–"
+     },
+     {
+      "line": 2506,
+      "ctx": "Jarrahi, M. H. (2018). Artificial intelligence and the future of work: Human-AI symbiosis in organizational decision making. *Business Horizons, 61*(4), 577–586. https://doi.org/10.1016/j.bushor.2018.03.007"
+     },
+     {
+      "line": 2528,
+      "ctx": "Kleinert, T., Labbé, M., Ljubić, I., & Schmidt, M. (2021). A survey on mixed-integer programming techniques in bilevel optimization. *EURO Journal on Computational Optimization, 9*, Article 100007. https://doi.org/10.101"
+     },
+     {
+      "line": 2550,
+      "ctx": "Logg, J. M., Minson, J. A., & Moore, D. A. (2019). Algorithm appreciation: People prefer algorithmic to human judgment. *Organizational Behavior and Human Decision Processes, 151*, 90–103. https://doi.org/10.1016/j.obhdp"
+     },
+     {
+      "line": 2556,
+      "ctx": "Mikalef, P., & Gupta, M. (2021). Artificial intelligence capability: Conceptualization, measurement calibration, and empirical study on its impact on organizational creativity and firm performance. *Information & Managem"
+     },
+     {
+      "line": 2574,
+      "ctx": "Papagiannidis, E., Mikalef, P., & Conboy, K. (2025). Responsible artificial intelligence governance: A review and research framework. *Journal of Strategic Information Systems, 34*(2), Article 101885. https://doi.org/10."
+     },
+     {
+      "line": 2596,
+      "ctx": "Rindflesch, T. C., & Fiszman, M. (2003). The interaction of domain knowledge and linguistic structure in natural language processing: Interpreting hypernymic propositions in biomedical text. *Journal of Biomedical Inform"
+     },
+     {
+      "line": 2626,
+      "ctx": "Teece, D. J. (1986). Profiting from technological innovation: Implications for integration, collaboration, licensing and public policy. *Research Policy, 15*(6), 285–305. https://doi.org/10.1016/0048-7333(86)90027-2"
+     },
+     {
+      "line": 2644,
+      "ctx": "Vial, G. (2019). Understanding digital transformation: A review and a research agenda. *Journal of Strategic Information Systems, 28*(2), 118–144. https://doi.org/10.1016/j.jsis.2019.01.003"
+     }
+    ]
+   },
+   "5,000": {
+    "legacy_files": [
+     "輸出/FINAL_CLOSEOUT_SUMMARY_2026-04-22.md"
+    ],
+    "hits": [
+     {
+      "line": 573,
+      "ctx": "文獻內部結構保持零模型把每篇文獻視為一個簡單二分功能圖，並固定該文獻原有的人工智慧家族、決策家族、兩側度數與邊數；隨機化時只嘗試在同一篇文獻內交換兩條邊的決策端點。例如，同一篇文獻若原本含有 A1–D1 與 A2–D2，只有在不形成重複邊的前提下，才可改配為 A1–D2 與 A2–D1；如此四個功能端點與每個端點的連結數都不變，改變的只有文獻內的直接配對方式。若某次交換會形成重複邊或不合法配對，就拒絕該次提議並維持原狀，再繼續下一次提議"
+     },
+     {
+      "line": 749,
+      "ctx": "研究者裁決必須由獨立編碼者檢驗，本研究稱為 V1（構念效度）。V1 的協定在任何編碼輸出產生之前凍結並記錄雜湊值，內容如下。(1) **編碼材料。** 編碼者只收到協定、一份盲編封包（16 個個案，每個個案只列一個人工智慧功能家族與一個決策功能家族的定義；兩份封包的列序不同）與空白回答表。編碼者在其編碼凍結前不得看到缺口編號、研究者的機制與狀態裁決、任何論文文字，也不得看到 O/E、觀察計數或 p 值，以免以效果強度定錨；人類編碼者須簽"
+     },
+     {
+      "line": 1336,
+      "ctx": "| V1 Construct Validity | G→M 雙人盲編；錨點內容效度 | 預先登記判準（第 3.9.3 節）：Krippendorff's α（名目；Krippendorff, 2004）與 Cohen's κ（J. Cohen, 1960）、5,000 次 bootstrap 區間；α ≥ .800 為 RELIABLE、.667 ≤ α < .800 為 TENTATIVE（預先登記的研究慣例門檻，依 Krippend"
+     },
+     {
+      "line": 1443,
+      "ctx": "| 文獻內部結構保持零模型   | 文獻內二分雙邊交換，5,000 個保留狀態；53.1% 交換提議有效 | 32                      | 108 / 120        | .6809                |"
+     }
+    ]
+   },
+   "0.125": {
+    "legacy_files": [
+     "輸出/info_gap_matrix_2026-04-11.csv",
+     "輸出/temporal_phase_yearly_pca_2026-04-12.csv"
+    ],
+    "hits": [
+     {
+      "line": 2398,
+      "ctx": "Alonso, R., Dessein, W., & Matouschek, N. (2008). When does coordination require centralization? *American Economic Review, 98*(1), 145–179. https://doi.org/10.1257/aer.98.1.145"
+     },
+     {
+      "line": 2434,
+      "ctx": "Brynjolfsson, E., Rock, D., & Syverson, C. (2021). The productivity J-curve: How intangibles complement general purpose technologies. *American Economic Journal: Macroeconomics, 13*(1), 333–372. https://doi.org/10.1257/m"
+     }
+    ]
+   },
+   "0.0000": {
+    "legacy_files": [
+     "輸出/pca_fa_summary_2026-04-12.md"
+    ],
+    "hits": [
+     {
+      "line": 1908,
+      "ctx": "| (A-INV) 不成立時的頂點 MaxRegret（構造反例） | 可能低估（頂點 0.0000；網格 0.2812），須以網格或抽樣檢查 |"
+     },
+     {
+      "line": 2746,
+      "ctx": "| N69 | Kawamoto et al. (2005) | FULL_TEXT_VERIFIED（出版版本）；DIRECT_SUPPORT | \"automatic provision of decision support as part of clinician workflow (P < 0.00001)\"（Abstract, Results (listed among four independent predictors"
+     }
+    ]
+   },
+   "10.125": {
+    "legacy_files": [
+     "輸出/temporal_phase_yearly_pca_2026-04-12.csv"
+    ],
+    "hits": [
+     {
+      "line": 2398,
+      "ctx": "Alonso, R., Dessein, W., & Matouschek, N. (2008). When does coordination require centralization? *American Economic Review, 98*(1), 145–179. https://doi.org/10.1257/aer.98.1.145"
+     },
+     {
+      "line": 2434,
+      "ctx": "Brynjolfsson, E., Rock, D., & Syverson, C. (2021). The productivity J-curve: How intangibles complement general purpose technologies. *American Economic Journal: Macroeconomics, 13*(1), 333–372. https://doi.org/10.1257/m"
+     }
+    ]
+   }
+  },
+  "128": {}
+ },
+ "concept_hits": {
+  "130": {
+   "Accountability": [
+    {
+     "line": 2590,
+     "ctx": "Raji, I. D., Smart, A., White, R. N., Mitchell, M., Gebru, T., Hutchinson, B., Smith-Loud, J., Theron, D., & Barnes, P. (2020). Closing the AI accountability gap: Defining an end-to-end framework for internal algorithmic"
+    }
+   ],
+   "Fairness": [
+    {
+     "line": 2590,
+     "ctx": "Raji, I. D., Smart, A., White, R. N., Mitchell, M., Gebru, T., Hutchinson, B., Smith-Loud, J., Theron, D., & Barnes, P. (2020). Closing the AI accountability gap: Defining an end-to-end framework for internal algorithmic"
+    }
+   ],
+   "Ethics": [
+    {
+     "line": 2560,
+     "ctx": "Mökander, J., Morley, J., Taddeo, M., & Floridi, L. (2021). Ethics-based auditing of automated decision-making systems: Nature, scope, and limitations. *Science and Engineering Ethics, 27*(4), Article 44. https://doi.org"
+    }
+   ],
+   "Governance": [
+    {
+     "line": 63,
+     "ctx": "在這個問題中，企業層決定共享能力、治理方案與資源 envelope，事業單位在其限制下自主選擇各 initiative 的配置，角色別使用者的反應決定配置能實現多少價值（第 3.11 節）。本論文的整體研究主題因此可概括為：企業人工智慧導入作為多層級決策系統——治理、能力配置、組織採用與價值實現（Enterprise AI Adoption as a Multilevel Decision System: Governance, Cap"
+    },
+    {
+     "line": 2734,
+     "ctx": "| N57 | A. E. Brown & Grant (2005) | FULL_TEXT_VERIFIED（出版版本；文獻回顧）；DIRECT_SUPPORT | \"A strict centralized governance design places all decision-making authority in a central IS organizational body\"（p. 701, Section III 'S"
+    },
+    {
+     "line": 2752,
+     "ctx": "| N75 | A. E. Brown & Grant (2005) | FULL_TEXT_VERIFIED（出版版本；文獻回顧）；DIRECT_SUPPORT | \"IT governance represents the framework for decision rights and accountabilities\"（p. 698, Section II 'What is IT Governance?'） | IT 治理是決"
+    }
+   ]
+  },
+  "128": {}
+ },
+ "n_tokens": 1403
+}

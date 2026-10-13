@@ -1,0 +1,42 @@
+5,000 573 文獻內部結構保持零模型把每篇文獻視為一個簡單二分功能圖，並固定該文獻原有的人工智慧家族、決策家族、兩側度數與邊數；隨機化時只嘗試在同一篇文獻內交換兩條邊的決策端點。例如，同一篇文獻若原本含有 A1–D1 與 A2–D2，只有在不形成重複邊的前提下，才可改配為 A1–D2 與 A2–D1；如此四個功能端點與每個端點的連結數都不變，改變的只有文獻內的直接配對方式。若某次交換會形成重複邊或不合法配對，就拒絕該次提議並維持原狀，再繼續下一次提議
+5,000 749 研究者裁決必須由獨立編碼者檢驗，本研究稱為 V1（構念效度）。V1 的協定在任何編碼輸出產生之前凍結並記錄雜湊值，內容如下。(1) **編碼材料。** 編碼者只收到協定、一份盲編封包（16 個個案，每個個案只列一個人工智慧功能家族與一個決策功能家族的定義；兩份封包的列序不同）與空白回答表。編碼者在其編碼凍結前不得看到缺口編號、研究者的機制與狀態裁決、任何論文文字，也不得看到 O/E、觀察計數或 p 值，以免以效果強度定錨；人類編碼者須簽
+5,000 1336 | V1 Construct Validity | G→M 雙人盲編；錨點內容效度 | 預先登記判準（第 3.9.3 節）：Krippendorff's α（名目；Krippendorff, 2004）與 Cohen's κ（J. Cohen, 1960）、5,000 次 bootstrap 區間；α ≥ .800 為 RELIABLE、.667 ≤ α < .800 為 TENTATIVE（預先登記的研究慣例門檻，依 Krippend
+5,000 1443 | 文獻內部結構保持零模型   | 文獻內二分雙邊交換，5,000 個保留狀態；53.1% 交換提議有效 | 32                      | 108 / 120        | .6809                |
+  legacy src: ['輸出/FINAL_CLOSEOUT_SUMMARY_2026-04-22.md']
+20,000 1561 補充三角檢查的 60 筆人工智慧端點中，原始人工判定與獨立模型預編碼有 41 筆完全一致，一致率為 68.3%，Cohen’s κ = .647；以記錄為單位進行 20,000 次成對自助法後，κ 的 95% 信賴區間為 \[.511, .773\]。分歧並非平均分散：感知與擷取、預測與風險估計及推薦與最佳化在這個樣本中高度一致，而一般推理系統、人機增能與檢索與統整較常被另一程序判為模糊、未映射或相鄰功能家族。這項結果顯示功能分類的可判
+20,000 1573 表註：n = 20，均為人工調和前之探索性編碼者間一致度。κ 信賴區間採 20,000 次以記錄為單位的成對自助法；各欄分開報告，不計算單一總體 κ，也不據此推估全語料或全部 22 個家族之分類效能。這些是本研究的程序選擇，不是所引方法文獻的規定；信度報告的一般原則見 Krippendorff（2019）與 Neuendorf（2017）。
+  legacy src: ['論文/FINAL_THESIS_FORMAL_VERSION_2026-04-12.md']
+1.000 1728 | AI A 對 AI B 一致 | 16／16（κ = α = 1.000） | 16／16（κ = α = 1.000） |
+  legacy src: ['論文/FINAL_THESIS_FORMAL_VERSION_2026-04-12.md', '論文/FINAL_THESIS_Q1_CLEAN_VERSION.md', '論文/FINAL_THESIS_WITH_DELETION_MARKS.md', '輸出/Info_Gap_and_Expert_Plan_2026-04-11.md']
+0.000 1908 | (A-INV) 不成立時的頂點 MaxRegret（構造反例） | 可能低估（頂點 0.0000；網格 0.2812），須以網格或抽樣檢查 |
+0.000 2746 | N69 | Kawamoto et al. (2005) | FULL_TEXT_VERIFIED（出版版本）；DIRECT_SUPPORT | "automatic provision of decision support as part of clinician workflow (P < 0.00001)"（Abstract, Results (listed among four independent predictors
+  legacy src: ['論文/FINAL_THESIS_FORMAL_VERSION_2026-04-12.md']
+Accountability 2590 Raji, I. D., Smart, A., White, R. N., Mitchell, M., Gebru, T., Hutchinson, B., Smith-Loud, J., Theron, D., & Barnes, P. (2020). Closing the AI accountability ga
+Fairness 2590 Raji, I. D., Smart, A., White, R. N., Mitchell, M., Gebru, T., Hutchinson, B., Smith-Loud, J., Theron, D., & Barnes, P. (2020). Closing the AI accountability ga
+Ethics 2560 Mökander, J., Morley, J., Taddeo, M., & Floridi, L. (2021). Ethics-based auditing of automated decision-making systems: Nature, scope, and limitations. *Science
+Governance 63 在這個問題中，企業層決定共享能力、治理方案與資源 envelope，事業單位在其限制下自主選擇各 initiative 的配置，角色別使用者的反應決定配置能實現多少價值（第 3.11 節）。本論文的整體研究主題因此可概括為：企業人工智慧導入作為多層級決策系統——治理、能力配置、組織採用與價值實現（Enterprise 
+Governance 2734 | N57 | A. E. Brown & Grant (2005) | FULL_TEXT_VERIFIED（出版版本；文獻回顧）；DIRECT_SUPPORT | "A strict centralized governance design places all decision-making authority
+Governance 2752 | N75 | A. E. Brown & Grant (2005) | FULL_TEXT_VERIFIED（出版版本；文獻回顧）；DIRECT_SUPPORT | "IT governance represents the framework for decision rights and accountabili
+約束 51 這與一般的概念共現不同。共現矩陣是科學計量分析的常用工具（Leydesdorff & Vaughan, 2006）；但本研究認為，共現只能顯示兩個概念曾在同一篇文獻中出現，無法說明兩者之間的關係內容，更不能判斷一項人工智慧功能究竟是在支持、約束、治理或改變哪一項決策活動。本研究把分析單位放在文獻中可被直接辨識的「人工智慧功能—決策功能」關係；共同出現本身並不算整合。
+約束 254 自動文本分析的效度取決於類別定義、分析單元、編碼程序與不確定結果的處理（Grimmer & Stewart, 2013；Krippendorff, 2019；Neuendorf, 2017）。內容分析研究亦把文字連續體的切分（unitizing）本身視為需要信度評估的測量問題（Krippendorff et al., 2016）；本研究據此推論，分析單元若過寬或邊界不一致，可能影響後續類別判定。大
+約束 284 **支持什麼。** (i) 治理是決策權的配置，其型態取決於多重情境因素；(ii) 名義上的權限與實際上的控制能力可能不一致；在公部門演算法的情境中，要求人類監督也不等於有效監督；(iii) 部分 AI 使用受外部法規與標準的硬性約束。
+約束 474 每一個候選片段再交由本地 qwen2.5:14b 進行語意編碼。輸入包含候選文字、章節、兩側被詞彙掃描命中的詞，以及可取得時的文件脈絡；輸出固定為人工智慧概念、決策概念、關係類型、信心值與是否需要人工複核等欄位。正式流程將關係限制為支持、治理、轉換、約束、告知、賦能與關聯七類；若文字只同時提到兩側主題、概念未清楚命名、方向不清或模型本身不確定，則標記為「模糊」並要求複核。完整關係標籤與正式流程範例
+約束 484 若語意輸出在設定的嘗試次數內仍無法解析，系統不刪除該候選，而是保留為「模糊」、信心值為 0、需要人工複核且端點為空的記錄。結構化輸出的格式修復只處理多餘文字、尾逗號或未閉合括號等語法問題，不補造缺失的語意欄位。這使 26,501 個候選都有對應的語意記錄，也讓技術性失敗保持可見。保留的 6,499 筆記錄中，賦能占 37.70%、支持 34.33%、約束 11.29%、告知 7.82%、治理 6.
+約束 2204 人類監督與保證的 4 組配對呈現不同的關係語氣。「人機增能 × 人工複核與問責」有 58 筆邊、O/E = 3.59；「解釋與保證 × 人工複核與問責」為 75、2.76；「解釋與保證 × 治理與監督」為 101、1.88；「評估與審核 × 治理與監督」為 93、1.64。這些格中的約束與治理關係比例明顯較高，例如「人機增能 × 人工複核與問責」約 59% 為約束，「評估與審核 × 治理與監督」約
+約束 2912 | D9 | 預算包含增量每事件營運支出 | 預算只含導入成本 | A 需 `c` 的帳務歸屬 | A 使 envelope 能約束高營運支出的配置 | 同 | 同 | **A** | B 只在 `B̄` 依制度明確只涵蓋導入時 |
+制約 583 本研究沒有把 Burt 制約指標直接套到功能家族網路，也不把跨骨架位置稱為經典結構洞。Burt 指標原本描述行動者自我中心網路的冗餘與制約，本研究的節點卻是功能家族；直接移植會混淆「功能接口」與「行動者仲介」。結構洞理論在本研究中的角色，是幫助區分低整合、橋接可能性與真正的非冗餘仲介，不是把探索性骨架標記升格為確認性結果。
+AI 治理 282 **文獻主張。** Sambamurthy 與 Zmud（1999）將 IT 治理安排界定為企業中關鍵 IT 活動的權威配置模式，並主張其型態受多重情境因素共同決定。A. E. Brown 與 Grant（2005）的文獻回顧把 IT 治理界定為決策權與問責的框架，並整理了以六種組織結構（archetype）對應五個關鍵 IT 決策領域的分析（Weill & Ross, 2004，引自 A. E.
+AI 治理 332 **文獻主張。** Sambamurthy 與 Zmud（1999）將 IT 治理安排界定為企業中關鍵 IT 活動的權威配置模式，並主張其型態受多重情境因素共同決定；A. E. Brown 與 Grant（2005）把 IT 治理界定為決策權與問責的框架（第 2.9 節）。Aghion 與 Tirole（1997）區分正式權威（決定的權利）與實質權威（有效控制），並指出實質權威由資訊結構決定，而資
+AI 治理 940 **ORG-V1 內容效度。** 邀請 3–5 位至少具備下列一項資格的專家：企業 AI 導入實務、IT 治理或數位轉型、AI 計畫或 AI 專責單位或 IT 主管、組織設計或技術導入研究、企業架構或資訊系統研究、AI 治理或數位治理；只有 2 位時標示為 `LIMITED_CONTENT_VALIDITY_PANEL`。專家對 D01–D12 各以四點量表（各準則共用的符合程度錨點：1 = 完全
+AI 治理 2682 | N5 | Sambamurthy & Zmud (1999) | ABSTRACT_ONLY；DIRECT_SUPPORT | "IT governance arrangements refers to the patterns of authority for key IT activities in business firms"（Abstract） | 治理為權威配置模式，依多重情境 |
+AI 治理 2684 | N7 | Papagiannidis et al. (2025) | ABSTRACT_ONLY；DIRECT_SUPPORT | "defined through structural, relational, and procedural practices"〔OpenAlex 摘要索引重組〕（Abstract） | 負責任 AI 治理的結構性、關係性、程序性實務 | 任何治理實務的效果大
+AI 治理 2734 | N57 | A. E. Brown & Grant (2005) | FULL_TEXT_VERIFIED（出版版本；文獻回顧）；DIRECT_SUPPORT | "A strict centralized governance design places all decision-making authority in a central IS organizational body"（p.
+constraint 31 The sixteen robust depletions (G01–G16; G07 and G15 are evidence-unit boundary-sensitive; none was removed by the targeted human-label substitution) were treated as research leads rather than as enter
+constraint 381 Hard constraints: Legal, incident tolerance ē (not monetized)
+constraint 722 G08 ─┤                                  └─ ē_j^γ（severe-incident tolerance）     [hard constraint]
+OpenAlex 2668 驗證狀態（v1.1，依隨稿附件 76 的逐筆核對；v1.3 依附件 94 更新 N6、N7、N8、N14、N17、N31、N46、N47、N48 並新增 N49–N75；v1.4 依附件 103 改標版本並新增 N76–N83）：第一欄為存取狀態——`FULL_TEXT_VERIFIED`（讀到全文）、`ABSTRACT_ONLY`（只讀到摘要或出版者摘要）、`METADATA_ONLY`（只核對
+OpenAlex 2684 | N7 | Papagiannidis et al. (2025) | ABSTRACT_ONLY；DIRECT_SUPPORT | "defined through structural, relational, and procedural practices"〔OpenAlex 摘要索引重組〕（Abstract） | 負責任 AI 治理的結構性、關係性、程序性實務 | 任何治理實務的效果大
+OpenAlex 2750 | N73 | Angrist et al. (1996) | ABSTRACT_ONLY；METHOD_SUPPORT | "easily interpretable assumptions, the IV estimand is the average causal effect for a subgroup of units, the compliers."〔OpenAlex 摘要索引重組〕
+OpenAlex 3054 | E30 | Sambamurthy & Zmud（1999）：v1.2 註記其摘要未列出三種模式；v1.3 的核對紀錄顯示摘要列出三種主要的 IT 治理模式；另一句「These modes vary…」的引語由 OpenAlex 摘要索引重組，缺一個詞 | 第 2.14 節 | 以原文摘要人工核對後，再確認此修正 |
+OpenAlex 3056 | E32 | Angrist et al.（1996）、Sambamurthy & Zmud（1999）的「These modes vary…」一句、Papagiannidis et al.（2025）（附錄 B N7）的引語是由 OpenAlex 摘要索引依詞序重組，未見原文排版 | 附錄 B；附件 94 | 以出版者頁面的摘要人工核對 |
+OpenAlex 3059 | E35 | Sambamurthy & Zmud（1999）：定義句與三種模式句另由第三方圖書館頁轉載的摘要取得（非 OpenAlex 索引重組，但仍待以原文核對）；「These modes vary…」一句仍為索引重組，E30、E32 維持開放；全文仍未取得 | 第 2.14 節；附錄 B | 取得全文後核對引語與頁碼 |

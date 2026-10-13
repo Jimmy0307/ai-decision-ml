@@ -1,0 +1,1102 @@
+{
+ "crosswalk_sha256": "E589864E8ABA9DECF5DC8ABFDF45F6310E5CB4F22A443B4F285449DF892FB31D",
+ "hashes": {
+  "FIRST_CODER_50_FINAL_FROZEN.csv": "DD332DD8CFECF7DDE9A29D32BCA654B7C04C49F499C3E6213CD4D9A2ED157400",
+  "FIRST_CODER_50_FROZEN.csv": "DD332DD8CFECF7DDE9A29D32BCA654B7C04C49F499C3E6213CD4D9A2ED157400",
+  "HUMAN_VALIDATION_400_WORKING.csv": "C4C7F4FE0B2102D9B18548F84721AA5E6BCAE83D6A54908C56F0B816D7235315",
+  "HUMAN_AUDIT_APPEND_ONLY_LOG.csv": "151CF3D0CB6FBA4930FBEFBDE290396872E90FED4CBAE9C6999FD29C5127A817",
+  "HUMAN_AUDIT_EPOCH2_LOG.csv": "9EF14DC0AEA628CD207CD590BD89AFA5D6614D5AC81E1381EFD9C8923B617AF5",
+  "HUMAN_AUDIT_EPOCH2_GENESIS.md": "E5DB33E886EF784FB112FAFB6D38EB1C2BC5FC3BAFD533786232E9DD5B43919D",
+  "SECOND_CODER_BLIND_20.csv": "6AFC8D7A2C2BB5F1E507F50B2F6664FE4D80216CF7F2FCB36C4E94B813BFF797",
+  "BLIND_REPEAT_20_FINAL_FROZEN.csv": "6AFC8D7A2C2BB5F1E507F50B2F6664FE4D80216CF7F2FCB36C4E94B813BFF797",
+  "SECOND_CODER_BLIND_20_AUDIT_LOG.csv": "1FB0905A9E02BA5D0843046FC922E9343F9157DCCAF378DD4AC99F4009454E72",
+  "SECOND_CODER_120_WORKING.csv": "A0860BA7C9C445174829174FD3D37F636E10447BCE03B3D77FFDFBA4CEBDEC40",
+  "SECOND_CODER_BLIND_20_ALLOCATION.csv": "ED0218CC589F8BFA293796E2C9CFAA6AA041539C4CB846876E9C749A61223E80",
+  "SECOND_CODER_BLIND_20_MANIFEST.csv": "CE9D4C4EEDD422FC25953A4280C2DA9CA7DF94006DE9CEC1FD67388366D8E5E0",
+  "SECOND_CODER_BUG_PRESTATE.csv": "C55FF2C8DB43E998B5EB803BE7E9B44D469F5DB4C864C0ED1A78C26D9D06ECAC",
+  "HUMAN_DISAGREEMENT_QUEUE_20.csv": "58D02370AAB70BAFC2DE7F644DAD904AAB0BFD862BF47DBB9B11F6E645DD682F",
+  "DISAGREEMENT_QUEUE.csv": "DE973C10D5A7251D5C517EB66415937E54D2C3D8A2F0B65C86E9C59FDB89732D",
+  "HUMAN_RECONCILED_20.csv": "4B7CEAC2C8C8BF2912EA542D88A1B887A42ED450AA248DCE371525C25BB5BDA0",
+  "HUMAN_RECONCILIATION_EVENTS.jsonl": "9270ACCC7657006C32D3965A01FF3DAE95B0EC25AB5BF5F52D2B1DCB6AF2CC2D",
+  "ADJUDICATION_LOG.csv": "2A7449EA564F504516BF638CFFDDF03FB83D8BB4A3ED51C0108E52AC0DFB541B",
+  "FIRST_CODER_50_MANIFEST.csv": "DE1C1D5CD1E83473E71BFAF75745BF6D3A3E35E363B6DF7D6A25509B2748522E",
+  "LEGACY_AUDIT_LOG_FORENSIC_SNAPSHOT.csv": "151CF3D0CB6FBA4930FBEFBDE290396872E90FED4CBAE9C6999FD29C5127A817",
+  "HUMAN_RELIABILITY_FINAL.csv": "EF7E554496866DED471498DEAFDBF3B6D24E617CF884D24DBDEDC4749533D2DE",
+  "HUMAN_RELIABILITY_20.csv": "239AABF1F8BD9CBEDC842015061C5A32FBE2178052E0C2C2BBD603E413525A02",
+  "MODEL_FAMILY_CODEBOOK_CROSSWALK.csv": "E589864E8ABA9DECF5DC8ABFDF45F6310E5CB4F22A443B4F285449DF892FB31D"
+ },
+ "sidecars": [
+  {
+   "sidecar": "BLIND_REPEAT_20_FINAL_FROZEN.sha256",
+   "target": "BLIND_REPEAT_20_FINAL_FROZEN.csv",
+   "recorded": "6AFC8D7A2C2BB5F1E507F50B2F6664FE4D80216CF7F2FCB36C4E94B813BFF797",
+   "actual": "6AFC8D7A2C2BB5F1E507F50B2F6664FE4D80216CF7F2FCB36C4E94B813BFF797",
+   "match": true
+  },
+  {
+   "sidecar": "FIRST_CODER_50_FINAL_FROZEN.sha256",
+   "target": "FIRST_CODER_50_FINAL_FROZEN.csv",
+   "recorded": "DD332DD8CFECF7DDE9A29D32BCA654B7C04C49F499C3E6213CD4D9A2ED157400",
+   "actual": "DD332DD8CFECF7DDE9A29D32BCA654B7C04C49F499C3E6213CD4D9A2ED157400",
+   "match": true
+  },
+  {
+   "sidecar": "HUMAN_AUDIT_EPOCH2_GENESIS.sha256",
+   "target": "HUMAN_AUDIT_EPOCH2_GENESIS.md",
+   "recorded": "E5DB33E886EF784FB112FAFB6D38EB1C2BC5FC3BAFD533786232E9DD5B43919D",
+   "actual": "E5DB33E886EF784FB112FAFB6D38EB1C2BC5FC3BAFD533786232E9DD5B43919D",
+   "match": true
+  },
+  {
+   "sidecar": "HUMAN_AUDIT_EPOCH2_LOG.sha256",
+   "target": "HUMAN_AUDIT_EPOCH2_LOG.csv",
+   "recorded": "9EF14DC0AEA628CD207CD590BD89AFA5D6614D5AC81E1381EFD9C8923B617AF5",
+   "actual": "9EF14DC0AEA628CD207CD590BD89AFA5D6614D5AC81E1381EFD9C8923B617AF5",
+   "match": true
+  },
+  {
+   "sidecar": "HUMAN_RECONCILIATION_FINAL.sha256",
+   "target": "HUMAN_RECONCILED_20.csv",
+   "recorded": "4B7CEAC2C8C8BF2912EA542D88A1B887A42ED450AA248DCE371525C25BB5BDA0",
+   "actual": "4B7CEAC2C8C8BF2912EA542D88A1B887A42ED450AA248DCE371525C25BB5BDA0",
+   "match": true
+  },
+  {
+   "sidecar": "LEGACY_AUDIT_LOG_FORENSIC_SNAPSHOT.sha256",
+   "kv": "SNAPSHOT",
+   "value": "LEGACY_AUDIT_LOG_FORENSIC_SNAPSHOT.csv"
+  },
+  {
+   "sidecar": "LEGACY_AUDIT_LOG_FORENSIC_SNAPSHOT.sha256",
+   "kv": "SNAPSHOT_SHA256",
+   "value": "151CF3D0CB6FBA4930FBEFBDE290396872E90FED4CBAE9C6999FD29C5127A817"
+  },
+  {
+   "sidecar": "LEGACY_AUDIT_LOG_FORENSIC_SNAPSHOT.sha256",
+   "kv": "SOURCE_CURRENT_SHA256",
+   "value": "151CF3D0CB6FBA4930FBEFBDE290396872E90FED4CBAE9C6999FD29C5127A817"
+  },
+  {
+   "sidecar": "FIRST_CODER_50_SHA256.txt",
+   "kv": "SNAPSHOT",
+   "value": "FIRST_CODER_50_FROZEN.csv"
+  },
+  {
+   "sidecar": "FIRST_CODER_50_SHA256.txt",
+   "kv": "SNAPSHOT_SHA256",
+   "value": "DD332DD8CFECF7DDE9A29D32BCA654B7C04C49F499C3E6213CD4D9A2ED157400",
+   "target": "FIRST_CODER_50_FROZEN.csv",
+   "actual": "DD332DD8CFECF7DDE9A29D32BCA654B7C04C49F499C3E6213CD4D9A2ED157400",
+   "match": true
+  },
+  {
+   "sidecar": "FIRST_CODER_50_SHA256.txt",
+   "kv": "SOURCE_FIRST_CODER_400_WORKING_SHA256",
+   "value": "C4C7F4FE0B2102D9B18548F84721AA5E6BCAE83D6A54908C56F0B816D7235315",
+   "target": "HUMAN_VALIDATION_400_WORKING.csv",
+   "actual": "C4C7F4FE0B2102D9B18548F84721AA5E6BCAE83D6A54908C56F0B816D7235315",
+   "match": true
+  },
+  {
+   "sidecar": "FIRST_CODER_50_SHA256.txt",
+   "kv": "ORIGINAL_SAMPLING_HUMAN_VALIDATION_400_SHA256",
+   "value": "DC242F8D6D00E1DFBD6BD42228FC5667E73B281FCB8AF2E552309E7C06C2B1D5"
+  },
+  {
+   "sidecar": "FIRST_CODER_50_SHA256.txt",
+   "kv": "FROZEN_RECORD_COUNT",
+   "value": "50"
+  },
+  {
+   "sidecar": "FIRST_CODER_50_SHA256.txt",
+   "kv": "UNIQUE_RECORD_IDS",
+   "value": "50"
+  },
+  {
+   "sidecar": "FIRST_CODER_50_SHA256.txt",
+   "kv": "VALID_COMPLETE_ROWS",
+   "value": "50"
+  },
+  {
+   "sidecar": "FIRST_CODER_50_SHA256.txt",
+   "kv": "FREEZE_TIMESTAMP_UTC",
+   "value": "2026-10-02T19:49:38+00:00"
+  },
+  {
+   "sidecar": "SECOND_CODER_BLIND_20_SHA256.txt",
+   "kv": "VERIFIED_AT_UTC",
+   "value": "2026-10-02T20:57:02+00:00"
+  },
+  {
+   "sidecar": "SECOND_CODER_BLIND_20_SHA256.txt",
+   "kv": "SEED",
+   "value": "20261003"
+  },
+  {
+   "sidecar": "SECOND_CODER_BLIND_20_SHA256.txt",
+   "kv": "FROZEN_FIRST_CODER_SNAPSHOT_SHA256",
+   "value": "DD332DD8CFECF7DDE9A29D32BCA654B7C04C49F499C3E6213CD4D9A2ED157400",
+   "target": "FIRST_CODER_50_FROZEN.csv",
+   "actual": "DD332DD8CFECF7DDE9A29D32BCA654B7C04C49F499C3E6213CD4D9A2ED157400",
+   "match": true
+  },
+  {
+   "sidecar": "SECOND_CODER_BLIND_20_SHA256.txt",
+   "kv": "QUEUE",
+   "value": "SECOND_CODER_BLIND_20.csv"
+  },
+  {
+   "sidecar": "SECOND_CODER_BLIND_20_SHA256.txt",
+   "kv": "QUEUE_SHA256",
+   "value": "0100E52409608F26DE0DB772AC08D8FD03CCD81DC307A56EF79A0D9C3792101B",
+   "target": "SECOND_CODER_BLIND_20.csv",
+   "actual": "6AFC8D7A2C2BB5F1E507F50B2F6664FE4D80216CF7F2FCB36C4E94B813BFF797",
+   "match": false
+  },
+  {
+   "sidecar": "SECOND_CODER_BLIND_20_SHA256.txt",
+   "kv": "MANIFEST",
+   "value": "SECOND_CODER_BLIND_20_MANIFEST.csv"
+  },
+  {
+   "sidecar": "SECOND_CODER_BLIND_20_SHA256.txt",
+   "kv": "MANIFEST_SHA256",
+   "value": "CE9D4C4EEDD422FC25953A4280C2DA9CA7DF94006DE9CEC1FD67388366D8E5E0",
+   "target": "SECOND_CODER_BLIND_20_MANIFEST.csv",
+   "actual": "CE9D4C4EEDD422FC25953A4280C2DA9CA7DF94006DE9CEC1FD67388366D8E5E0",
+   "match": true
+  },
+  {
+   "sidecar": "SECOND_CODER_BLIND_20_SHA256.txt",
+   "kv": "ALLOCATION",
+   "value": "SECOND_CODER_BLIND_20_ALLOCATION.csv"
+  },
+  {
+   "sidecar": "SECOND_CODER_BLIND_20_SHA256.txt",
+   "kv": "ALLOCATION_SHA256",
+   "value": "ED0218CC589F8BFA293796E2C9CFAA6AA041539C4CB846876E9C749A61223E80",
+   "target": "SECOND_CODER_BLIND_20_ALLOCATION.csv",
+   "actual": "ED0218CC589F8BFA293796E2C9CFAA6AA041539C4CB846876E9C749A61223E80",
+   "match": true
+  },
+  {
+   "sidecar": "SECOND_CODER_BLIND_20_SHA256.txt",
+   "kv": "REPRODUCED_ID_COUNT",
+   "value": "20"
+  },
+  {
+   "sidecar": "SECOND_CODER_BLIND_20_SHA256.txt",
+   "kv": "REPRODUCED_UNIQUE_ID_COUNT",
+   "value": "20"
+  },
+  {
+   "sidecar": "SECOND_CODER_BLIND_20_SHA256.txt",
+   "kv": "QUEUE_ROWS_MATCH_REPRODUCTION",
+   "value": "PASS"
+  },
+  {
+   "sidecar": "SECOND_CODER_BLIND_20_SHA256.txt",
+   "kv": "MANIFEST_MATCHES_REPRODUCTION",
+   "value": "PASS"
+  },
+  {
+   "sidecar": "SECOND_CODER_BLIND_20_SHA256.txt",
+   "kv": "ALLOCATION_MATCHES_REPRODUCTION",
+   "value": "PASS"
+  },
+  {
+   "sidecar": "HUMAN_RECONCILIATION_INTERFACE_SHA256.txt",
+   "target": "human_reconciliation_server.py",
+   "recorded": "C935B7CC228EDEA8B0011AE2278F24C7B2B11100D04DC769936349886BFF4813",
+   "actual": "C935B7CC228EDEA8B0011AE2278F24C7B2B11100D04DC769936349886BFF4813",
+   "match": true
+  },
+  {
+   "sidecar": "HUMAN_RECONCILIATION_INTERFACE_SHA256.txt",
+   "target": "human_reconciliation.html",
+   "recorded": "117672CF7B1FB3DD6382A90E7B1C19939913678570D2C138ED54B40A00797E34",
+   "actual": "117672CF7B1FB3DD6382A90E7B1C19939913678570D2C138ED54B40A00797E34",
+   "match": true
+  },
+  {
+   "sidecar": "HUMAN_RECONCILIATION_INTERFACE_SHA256.txt",
+   "target": "human_reconciliation.js",
+   "recorded": "52EB7FFB162F9FFB9AE16A8DF9E403DC10AD32502D67E5E58159C6A34012B65F",
+   "actual": "52EB7FFB162F9FFB9AE16A8DF9E403DC10AD32502D67E5E58159C6A34012B65F",
+   "match": true
+  },
+  {
+   "sidecar": "HUMAN_RECONCILIATION_INTERFACE_SHA256.txt",
+   "target": "test_human_reconciliation_interface.py",
+   "recorded": "C692847B7BDC5E705E685514101D7D77EC825A83752739E5EC361F9980C18B77",
+   "actual": "C692847B7BDC5E705E685514101D7D77EC825A83752739E5EC361F9980C18B77",
+   "match": true
+  },
+  {
+   "sidecar": "HUMAN_RECONCILIATION_INTERFACE_SHA256.txt",
+   "target": "HUMAN_RECONCILIATION_INTERFACE_CHECK.md",
+   "recorded": "B5A1CC80546DF3C5742356030307C54A874BBD2006396160D2B42F98AFF05AA7",
+   "actual": "B5A1CC80546DF3C5742356030307C54A874BBD2006396160D2B42F98AFF05AA7",
+   "match": true
+  },
+  {
+   "sidecar": "HUMAN_RECONCILIATION_INTERFACE_SHA256.txt",
+   "target": "HUMAN_RECONCILIATION_GATE_STATUS.json",
+   "recorded": "68559B6F34AEE901910B5F4A560EAF1C3449FE941616D30D6AA72C76F7C44569",
+   "actual": "68559B6F34AEE901910B5F4A560EAF1C3449FE941616D30D6AA72C76F7C44569",
+   "match": true
+  },
+  {
+   "sidecar": "HUMAN_RECONCILIATION_INTERFACE_SHA256.txt",
+   "target": "FINAL_HUMAN_AUDIT_DECISION.md",
+   "recorded": "5FAAE2ABB05966749301A875C6EF62772151A2B5BD0B3A815A3CBB7A0DEDB009",
+   "actual": "5FAAE2ABB05966749301A875C6EF62772151A2B5BD0B3A815A3CBB7A0DEDB009",
+   "match": true
+  }
+ ],
+ "first_final_vs_frozen_bytes_identical": true,
+ "FIRST_CODER_TOTAL": 50,
+ "FIRST_CODER_UNIQUE_IDS": 50,
+ "FIRST_CODER_COMPLETE": 50,
+ "first_incomplete_problems": {},
+ "first_coder_ids": {
+  "1": 50
+ },
+ "first_strata": {
+  "Robust A": 50
+ },
+ "first_alias_labels_present": {
+  "human_ai_family": [],
+  "human_decision_family": []
+ },
+ "w400_rows": 400,
+ "w400_status": {
+  "COMPLETE": 50,
+  "NOT_STARTED": 345,
+  "DRAFT": 5
+ },
+ "w400_complete_valid": 50,
+ "first_vs_400_mismatches": [],
+ "w400_complete_ids_eq_first50": true,
+ "first_manifest_rows": 50,
+ "first_manifest_ids_eq": true,
+ "second_live_vs_frozen_bytes_identical": true,
+ "SECOND_CODER_TOTAL": 20,
+ "SECOND_CODER_UNIQUE_IDS": 20,
+ "SECOND_CODER_COMPLETE": 20,
+ "second_incomplete_problems": {},
+ "second_coder_ids": {
+  "2": 20
+ },
+ "second_columns": [
+  "record_id",
+  "evidence_text",
+  "human_evidence_valid",
+  "human_relation_type",
+  "human_ai_family",
+  "human_decision_family",
+  "human_include",
+  "coder_confidence",
+  "coder_notes",
+  "coder_id",
+  "coder_timestamp",
+  "review_status"
+ ],
+ "second_subset_of_first": true,
+ "second_evidence_text_matches_first": true,
+ "coder_id_overlap": [],
+ "second_file_leak_columns": [],
+ "second_alias_labels_present": {
+  "human_ai_family": [],
+  "human_decision_family": []
+ },
+ "second_manifest_rows": 20,
+ "second_manifest_ids_eq_second": true,
+ "selection_reproduced_from_seed": true,
+ "allocation": [
+  {
+   "sampling_stratum": "Robust A",
+   "available_n": "50",
+   "selected_n": "20",
+   "allocation_rule": "proportional deterministic SHA-256 ranking within observed stratum; min one per observed stratum",
+   "seed": "20261003"
+  }
+ ],
+ "second_audit_log_rows": 21,
+ "second_audit_log_status": {
+  "second|DRAFT": 1,
+  "second|COMPLETE": 20
+ },
+ "second_audit_log_complete_ids": 20,
+ "second_vs_auditlog_last_complete_mismatch": [],
+ "second120_rows": 120,
+ "second120_status": {
+  "NOT_STARTED": 120
+ },
+ "second120_nonblank_answers": 0,
+ "disagree_any5_raw": {
+  "REC-28FFF07C96F00DC6": [
+   "C2",
+   "C3",
+   "C4",
+   "C5"
+  ],
+  "REC-2A911B2E56CEDE77": [
+   "C2",
+   "C4"
+  ],
+  "REC-3722D0E89E3133AA": [
+   "C2",
+   "C3",
+   "C4"
+  ],
+  "REC-3C503D6C847A0DD0": [
+   "C1",
+   "C2",
+   "C3",
+   "C4",
+   "C5"
+  ],
+  "REC-40D604B0C4354B6E": [
+   "C3",
+   "C4"
+  ],
+  "REC-4956C4EEA1C34263": [
+   "C1",
+   "C2",
+   "C3",
+   "C4",
+   "C5"
+  ],
+  "REC-5A018A194F5F6FE7": [
+   "C3",
+   "C4"
+  ],
+  "REC-750CB326F2DF2F99": [
+   "C3",
+   "C4",
+   "C5"
+  ],
+  "REC-86FBD6BDB51BF4AE": [
+   "C3",
+   "C4"
+  ],
+  "REC-8EDDBB84B724E332": [
+   "C2"
+  ],
+  "REC-96129FE2C2F7AD3C": [
+   "C1",
+   "C2",
+   "C3",
+   "C5"
+  ],
+  "REC-B01E29C3AE62CF49": [
+   "C3",
+   "C4"
+  ],
+  "REC-B3CDA030F0C9A616": [
+   "C2",
+   "C4"
+  ],
+  "REC-B7630B94D9F15A51": [
+   "C2",
+   "C3"
+  ],
+  "REC-B8D55C37D31125C1": [
+   "C2",
+   "C3",
+   "C4",
+   "C5"
+  ],
+  "REC-CD936FA07B55A64A": [
+   "C1",
+   "C2",
+   "C3",
+   "C4",
+   "C5"
+  ],
+  "REC-D1918AC31B4298B7": [
+   "C1",
+   "C2",
+   "C3",
+   "C4",
+   "C5"
+  ],
+  "REC-E113A499A73FE8E7": [
+   "C3",
+   "C4"
+  ],
+  "REC-ED4E3AF2744C2487": [
+   "C2",
+   "C3",
+   "C4"
+  ]
+ },
+ "disagree_any5_canonical": {
+  "REC-28FFF07C96F00DC6": [
+   "C2",
+   "C3",
+   "C4",
+   "C5"
+  ],
+  "REC-2A911B2E56CEDE77": [
+   "C2",
+   "C4"
+  ],
+  "REC-3722D0E89E3133AA": [
+   "C2",
+   "C3",
+   "C4"
+  ],
+  "REC-3C503D6C847A0DD0": [
+   "C1",
+   "C2",
+   "C3",
+   "C4",
+   "C5"
+  ],
+  "REC-40D604B0C4354B6E": [
+   "C3",
+   "C4"
+  ],
+  "REC-4956C4EEA1C34263": [
+   "C1",
+   "C2",
+   "C3",
+   "C4",
+   "C5"
+  ],
+  "REC-5A018A194F5F6FE7": [
+   "C3",
+   "C4"
+  ],
+  "REC-750CB326F2DF2F99": [
+   "C3",
+   "C4",
+   "C5"
+  ],
+  "REC-86FBD6BDB51BF4AE": [
+   "C3",
+   "C4"
+  ],
+  "REC-8EDDBB84B724E332": [
+   "C2"
+  ],
+  "REC-96129FE2C2F7AD3C": [
+   "C1",
+   "C2",
+   "C3",
+   "C5"
+  ],
+  "REC-B01E29C3AE62CF49": [
+   "C3",
+   "C4"
+  ],
+  "REC-B3CDA030F0C9A616": [
+   "C2",
+   "C4"
+  ],
+  "REC-B7630B94D9F15A51": [
+   "C2",
+   "C3"
+  ],
+  "REC-B8D55C37D31125C1": [
+   "C2",
+   "C3",
+   "C4",
+   "C5"
+  ],
+  "REC-CD936FA07B55A64A": [
+   "C1",
+   "C2",
+   "C3",
+   "C4",
+   "C5"
+  ],
+  "REC-D1918AC31B4298B7": [
+   "C1",
+   "C2",
+   "C3",
+   "C4",
+   "C5"
+  ],
+  "REC-E113A499A73FE8E7": [
+   "C3",
+   "C4"
+  ],
+  "REC-ED4E3AF2744C2487": [
+   "C2",
+   "C3",
+   "C4"
+  ]
+ },
+ "disagree_rule_counts": {
+  "any_of_5_raw": 19,
+  "any_of_5_canonical": 19,
+  "any_of_C1_C2_C5_only": 14,
+  "any_of_C3_C4_only": 18,
+  "all_5_disagree": 4,
+  "C1_only_rule": 5
+ },
+ "field_level_disagreements": 58,
+ "full_agreement_ids": [
+  "REC-0D720884574345B4"
+ ],
+ "queue20_rows": 19,
+ "queue20_eq_derived": true,
+ "queue20_value_mismatches": [],
+ "legacy_DISAGREEMENT_QUEUE_rows": 0,
+ "legacy_ADJUDICATION_LOG_rows": 0,
+ "reconciled_rows": 20,
+ "reconciled_unique": 20,
+ "events_n": 19,
+ "events_types": {
+  "COMPLETE": 19
+ },
+ "events_unique_records": 19,
+ "events_researchers": {
+  "3": 19
+ },
+ "events_link_chain_ok": true,
+ "events_selfhash_notes": [],
+ "events_selfhash_unverified_n": 0,
+ "RECONCILIATION_COMPLETE": 19,
+ "reconciliation_problems": {
+  "REC-0D720884574345B4": [
+   "blank RESOLUTION_REASON",
+   "no COMPLETE event"
+  ]
+ },
+ "reconciled_ids_eq_queue": false,
+ "reconciled_ids_in_full_agree": [
+  "REC-0D720884574345B4"
+ ],
+ "resolution_basis_counts": {
+  "UNANIMOUS_PRE_ADJUDICATION": 1,
+  "HUMAN_ADJUDICATION": 19
+ },
+ "first_coder_ids_in_reconciled": {
+  "1": 20
+ },
+ "blind_coder_ids_in_reconciled": {
+  "2": 20
+ },
+ "DISAGREEMENT_TOTAL": 19,
+ "kappa": {
+  "C1": {
+   "name": "Evidence validity",
+   "field": "human_evidence_valid",
+   "raw": {
+    "n": 20,
+    "agree": 15,
+    "Po": 0.75,
+    "Pe": 0.43,
+    "kappa": 0.5614035087719298,
+    "labels": [
+     "INVALID",
+     "UNCERTAIN",
+     "VALID"
+    ],
+    "marg_A": {
+     "VALID": 14,
+     "UNCERTAIN": 2,
+     "INVALID": 4
+    },
+    "marg_B": {
+     "VALID": 10,
+     "UNCERTAIN": 4,
+     "INVALID": 6
+    }
+   },
+   "canonical": {
+    "n": 20,
+    "agree": 15,
+    "Po": 0.75,
+    "Pe": 0.43,
+    "kappa": 0.5614035087719298,
+    "labels": [
+     "INVALID",
+     "UNCERTAIN",
+     "VALID"
+    ],
+    "marg_A": {
+     "VALID": 14,
+     "UNCERTAIN": 2,
+     "INVALID": 4
+    },
+    "marg_B": {
+     "VALID": 10,
+     "UNCERTAIN": 4,
+     "INVALID": 6
+    }
+   }
+  },
+  "C2": {
+   "name": "Relation type",
+   "field": "human_relation_type",
+   "raw": {
+    "n": 20,
+    "agree": 7,
+    "Po": 0.35,
+    "Pe": 0.2075,
+    "kappa": 0.17981072555205047,
+    "labels": [
+     "AMBIGUOUS",
+     "ASSOCIATED_WITH",
+     "CONSTRAINS",
+     "ENABLES",
+     "GOVERNS",
+     "INFORMS",
+     "NOT_APPLICABLE",
+     "SUPPORTS",
+     "TRANSFORMS"
+    ],
+    "marg_A": {
+     "SUPPORTS": 6,
+     "NOT_APPLICABLE": 4,
+     "INFORMS": 2,
+     "ENABLES": 3,
+     "GOVERNS": 2,
+     "TRANSFORMS": 2,
+     "CONSTRAINS": 1
+    },
+    "marg_B": {
+     "SUPPORTS": 9,
+     "NOT_APPLICABLE": 6,
+     "ENABLES": 1,
+     "INFORMS": 1,
+     "AMBIGUOUS": 2,
+     "ASSOCIATED_WITH": 1
+    }
+   },
+   "canonical": {
+    "n": 20,
+    "agree": 7,
+    "Po": 0.35,
+    "Pe": 0.2075,
+    "kappa": 0.17981072555205047,
+    "labels": [
+     "AMBIGUOUS",
+     "ASSOCIATED_WITH",
+     "CONSTRAINS",
+     "ENABLES",
+     "GOVERNS",
+     "INFORMS",
+     "NOT_APPLICABLE",
+     "SUPPORTS",
+     "TRANSFORMS"
+    ],
+    "marg_A": {
+     "SUPPORTS": 6,
+     "NOT_APPLICABLE": 4,
+     "INFORMS": 2,
+     "ENABLES": 3,
+     "GOVERNS": 2,
+     "TRANSFORMS": 2,
+     "CONSTRAINS": 1
+    },
+    "marg_B": {
+     "SUPPORTS": 9,
+     "NOT_APPLICABLE": 6,
+     "ENABLES": 1,
+     "INFORMS": 1,
+     "AMBIGUOUS": 2,
+     "ASSOCIATED_WITH": 1
+    }
+   }
+  },
+  "C3": {
+   "name": "AI functional family",
+   "field": "human_ai_family",
+   "raw": {
+    "n": 20,
+    "agree": 4,
+    "Po": 0.2,
+    "Pe": 0.16,
+    "kappa": 0.04761904761904763,
+    "labels": [
+     "AMBIGUOUS",
+     "COORDINATION_EXECUTION",
+     "EVALUATION_ASSESSMENT",
+     "EXPLANATION_ASSURANCE",
+     "GENERAL_REASONING_SYSTEMS",
+     "GENERATION_SYNTHESIS",
+     "HUMAN_AUGMENTATION",
+     "PERCEPTION_EXTRACTION",
+     "PREDICTION_RISK_ESTIMATION",
+     "RECOMMENDATION_OPTIMIZATION",
+     "UNMAPPED"
+    ],
+    "marg_A": {
+     "PREDICTION_RISK_ESTIMATION": 6,
+     "AMBIGUOUS": 5,
+     "EVALUATION_ASSESSMENT": 2,
+     "COORDINATION_EXECUTION": 3,
+     "UNMAPPED": 1,
+     "RECOMMENDATION_OPTIMIZATION": 1,
+     "EXPLANATION_ASSURANCE": 1,
+     "HUMAN_AUGMENTATION": 1
+    },
+    "marg_B": {
+     "PREDICTION_RISK_ESTIMATION": 9,
+     "GENERAL_REASONING_SYSTEMS": 2,
+     "GENERATION_SYNTHESIS": 2,
+     "HUMAN_AUGMENTATION": 2,
+     "AMBIGUOUS": 1,
+     "RECOMMENDATION_OPTIMIZATION": 1,
+     "EXPLANATION_ASSURANCE": 2,
+     "PERCEPTION_EXTRACTION": 1
+    }
+   },
+   "canonical": {
+    "n": 20,
+    "agree": 4,
+    "Po": 0.2,
+    "Pe": 0.16,
+    "kappa": 0.04761904761904763,
+    "labels": [
+     "AMBIGUOUS",
+     "COORDINATION_EXECUTION",
+     "EVALUATION_ASSESSMENT",
+     "EXPLANATION_ASSURANCE",
+     "GENERAL_REASONING_SYSTEMS",
+     "GENERATION_SYNTHESIS",
+     "HUMAN_AUGMENTATION",
+     "PERCEPTION_EXTRACTION",
+     "PREDICTION_RISK_ESTIMATION",
+     "RECOMMENDATION_OPTIMIZATION",
+     "UNMAPPED"
+    ],
+    "marg_A": {
+     "PREDICTION_RISK_ESTIMATION": 6,
+     "AMBIGUOUS": 5,
+     "EVALUATION_ASSESSMENT": 2,
+     "COORDINATION_EXECUTION": 3,
+     "UNMAPPED": 1,
+     "RECOMMENDATION_OPTIMIZATION": 1,
+     "EXPLANATION_ASSURANCE": 1,
+     "HUMAN_AUGMENTATION": 1
+    },
+    "marg_B": {
+     "PREDICTION_RISK_ESTIMATION": 9,
+     "GENERAL_REASONING_SYSTEMS": 2,
+     "GENERATION_SYNTHESIS": 2,
+     "HUMAN_AUGMENTATION": 2,
+     "AMBIGUOUS": 1,
+     "RECOMMENDATION_OPTIMIZATION": 1,
+     "EXPLANATION_ASSURANCE": 2,
+     "PERCEPTION_EXTRACTION": 1
+    }
+   }
+  },
+  "C4": {
+   "name": "Decision functional family",
+   "field": "human_decision_family",
+   "raw": {
+    "n": 20,
+    "agree": 4,
+    "Po": 0.2,
+    "Pe": 0.07,
+    "kappa": 0.13978494623655915,
+    "labels": [
+     "ALLOCATION_PLANNING",
+     "AMBIGUOUS",
+     "EVALUATION_SELECTION",
+     "EXECUTION_COORDINATION",
+     "GENERAL_DECISION_PROCESS",
+     "GOVERNANCE_OVERSIGHT",
+     "INFORMATION_ACQUISITION",
+     "INFORMATION_SYNTHESIS",
+     "OPTION_GENERATION",
+     "PREDICTION_DIAGNOSIS",
+     "RISK_ASSESSMENT",
+     "UNMAPPED"
+    ],
+    "marg_A": {
+     "RISK_ASSESSMENT": 2,
+     "AMBIGUOUS": 6,
+     "PREDICTION_DIAGNOSIS": 3,
+     "EXECUTION_COORDINATION": 2,
+     "GENERAL_DECISION_PROCESS": 3,
+     "INFORMATION_SYNTHESIS": 1,
+     "GOVERNANCE_OVERSIGHT": 1,
+     "ALLOCATION_PLANNING": 1,
+     "INFORMATION_ACQUISITION": 1
+    },
+    "marg_B": {
+     "RISK_ASSESSMENT": 3,
+     "GENERAL_DECISION_PROCESS": 5,
+     "ALLOCATION_PLANNING": 4,
+     "OPTION_GENERATION": 1,
+     "UNMAPPED": 3,
+     "EVALUATION_SELECTION": 1,
+     "GOVERNANCE_OVERSIGHT": 3
+    }
+   },
+   "canonical": {
+    "n": 20,
+    "agree": 4,
+    "Po": 0.2,
+    "Pe": 0.07,
+    "kappa": 0.13978494623655915,
+    "labels": [
+     "ALLOCATION_PLANNING",
+     "AMBIGUOUS",
+     "EVALUATION_SELECTION",
+     "EXECUTION_COORDINATION",
+     "GENERAL_DECISION_PROCESS",
+     "GOVERNANCE_OVERSIGHT",
+     "INFORMATION_ACQUISITION",
+     "INFORMATION_SYNTHESIS",
+     "OPTION_GENERATION",
+     "PREDICTION_DIAGNOSIS",
+     "RISK_ASSESSMENT",
+     "UNMAPPED"
+    ],
+    "marg_A": {
+     "RISK_ASSESSMENT": 2,
+     "AMBIGUOUS": 6,
+     "PREDICTION_DIAGNOSIS": 3,
+     "EXECUTION_COORDINATION": 2,
+     "GENERAL_DECISION_PROCESS": 3,
+     "INFORMATION_SYNTHESIS": 1,
+     "GOVERNANCE_OVERSIGHT": 1,
+     "ALLOCATION_PLANNING": 1,
+     "INFORMATION_ACQUISITION": 1
+    },
+    "marg_B": {
+     "RISK_ASSESSMENT": 3,
+     "GENERAL_DECISION_PROCESS": 5,
+     "ALLOCATION_PLANNING": 4,
+     "OPTION_GENERATION": 1,
+     "UNMAPPED": 3,
+     "EVALUATION_SELECTION": 1,
+     "GOVERNANCE_OVERSIGHT": 3
+    }
+   }
+  },
+  "C5": {
+   "name": "Analytical inclusion",
+   "field": "human_include",
+   "raw": {
+    "n": 20,
+    "agree": 12,
+    "Po": 0.6,
+    "Pe": 0.415,
+    "kappa": 0.3162393162393163,
+    "labels": [
+     "EXCLUDE",
+     "INCLUDE",
+     "UNCERTAIN"
+    ],
+    "marg_A": {
+     "INCLUDE": 13,
+     "EXCLUDE": 4,
+     "UNCERTAIN": 3
+    },
+    "marg_B": {
+     "INCLUDE": 10,
+     "UNCERTAIN": 4,
+     "EXCLUDE": 6
+    }
+   },
+   "canonical": {
+    "n": 20,
+    "agree": 12,
+    "Po": 0.6,
+    "Pe": 0.415,
+    "kappa": 0.3162393162393163,
+    "labels": [
+     "EXCLUDE",
+     "INCLUDE",
+     "UNCERTAIN"
+    ],
+    "marg_A": {
+     "INCLUDE": 13,
+     "EXCLUDE": 4,
+     "UNCERTAIN": 3
+    },
+    "marg_B": {
+     "INCLUDE": 10,
+     "UNCERTAIN": 4,
+     "EXCLUDE": 6
+    }
+   }
+  }
+ },
+ "kappa_note_live_vs_frozen_second_identical": true,
+ "HUMAN_RELIABILITY_FINAL_csv": [
+  {
+   "dimension": "C1 Evidence validity",
+   "field": "human_evidence_valid",
+   "n": "20",
+   "exact_agreement_count": "15",
+   "exact_agreement_percent": "75.0",
+   "disagreement_count": "5",
+   "raw_agreement_95ci_wilson_lower_percent": "53.13",
+   "raw_agreement_95ci_wilson_upper_percent": "88.81",
+   "cohens_kappa": "0.5614",
+   "kappa_95ci_paired_bootstrap_lower": "0.2424",
+   "kappa_95ci_paired_bootstrap_upper": "0.8413",
+   "kappa_valid_bootstrap_replicates": "20000",
+   "kappa_metric_status": "EXPLORATORY_RELIABILITY_METRIC",
+   "kappa_na_reason": "",
+   "designation": "PRE_ADJUDICATION_INTER_RATER"
+  },
+  {
+   "dimension": "C2 Relation type",
+   "field": "human_relation_type",
+   "n": "20",
+   "exact_agreement_count": "7",
+   "exact_agreement_percent": "35.0",
+   "disagreement_count": "13",
+   "raw_agreement_95ci_wilson_lower_percent": "18.12",
+   "raw_agreement_95ci_wilson_upper_percent": "56.71",
+   "cohens_kappa": "0.1798",
+   "kappa_95ci_paired_bootstrap_lower": "-0.0811",
+   "kappa_95ci_paired_bootstrap_upper": "0.4286",
+   "kappa_valid_bootstrap_replicates": "20000",
+   "kappa_metric_status": "EXPLORATORY_RELIABILITY_METRIC",
+   "kappa_na_reason": "",
+   "designation": "PRE_ADJUDICATION_INTER_RATER"
+  },
+  {
+   "dimension": "C3 AI functional family",
+   "field": "human_ai_family",
+   "n": "20",
+   "exact_agreement_count": "4",
+   "exact_agreement_percent": "20.0",
+   "disagreement_count": "16",
+   "raw_agreement_95ci_wilson_lower_percent": "8.07",
+   "raw_agreement_95ci_wilson_upper_percent": "41.6",
+   "cohens_kappa": "0.0476",
+   "kappa_95ci_paired_bootstrap_lower": "-0.0811",
+   "kappa_95ci_paired_bootstrap_upper": "0.1758",
+   "kappa_valid_bootstrap_replicates": "20000",
+   "kappa_metric_status": "EXPLORATORY_RELIABILITY_METRIC",
+   "kappa_na_reason": "",
+   "designation": "PRE_ADJUDICATION_INTER_RATER"
+  },
+  {
+   "dimension": "C4 Decision functional family",
+   "field": "human_decision_family",
+   "n": "20",
+   "exact_agreement_count": "4",
+   "exact_agreement_percent": "20.0",
+   "disagreement_count": "16",
+   "raw_agreement_95ci_wilson_lower_percent": "8.07",
+   "raw_agreement_95ci_wilson_upper_percent": "41.6",
+   "cohens_kappa": "0.1398",
+   "kappa_95ci_paired_bootstrap_lower": "-0.027",
+   "kappa_95ci_paired_bootstrap_upper": "0.3143",
+   "kappa_valid_bootstrap_replicates": "20000",
+   "kappa_metric_status": "EXPLORATORY_RELIABILITY_METRIC",
+   "kappa_na_reason": "",
+   "designation": "PRE_ADJUDICATION_INTER_RATER"
+  },
+  {
+   "dimension": "C5 Analytical inclusion",
+   "field": "human_include",
+   "n": "20",
+   "exact_agreement_count": "12",
+   "exact_agreement_percent": "60.0",
+   "disagreement_count": "8",
+   "raw_agreement_95ci_wilson_lower_percent": "38.66",
+   "raw_agreement_95ci_wilson_upper_percent": "78.12",
+   "cohens_kappa": "0.3162",
+   "kappa_95ci_paired_bootstrap_lower": "0.0148",
+   "kappa_95ci_paired_bootstrap_upper": "0.6227",
+   "kappa_valid_bootstrap_replicates": "20000",
+   "kappa_metric_status": "EXPLORATORY_RELIABILITY_METRIC",
+   "kappa_na_reason": "",
+   "designation": "PRE_ADJUDICATION_INTER_RATER"
+  }
+ ],
+ "HUMAN_RELIABILITY_20_csv": [
+  {
+   "dimension": "C1 Evidence validity",
+   "field": "human_evidence_valid",
+   "n": "20",
+   "exact_agreement_count": "15",
+   "exact_agreement_percent": "75.0",
+   "disagreement_count": "5",
+   "raw_agreement_95ci_wilson_lower_percent": "53.13",
+   "raw_agreement_95ci_wilson_upper_percent": "88.81",
+   "cohens_kappa": "0.5614",
+   "kappa_95ci_paired_bootstrap_lower": "0.2424",
+   "kappa_95ci_paired_bootstrap_upper": "0.8413",
+   "kappa_valid_bootstrap_replicates": "20000",
+   "kappa_metric_status": "EXPLORATORY_RELIABILITY_METRIC",
+   "kappa_na_reason": "",
+   "designation": "EXPLORATORY_RELIABILITY_METRIC"
+  },
+  {
+   "dimension": "C2 Relation type",
+   "field": "human_relation_type",
+   "n": "20",
+   "exact_agreement_count": "7",
+   "exact_agreement_percent": "35.0",
+   "disagreement_count": "13",
+   "raw_agreement_95ci_wilson_lower_percent": "18.12",
+   "raw_agreement_95ci_wilson_upper_percent": "56.71",
+   "cohens_kappa": "0.1798",
+   "kappa_95ci_paired_bootstrap_lower": "-0.0791",
+   "kappa_95ci_paired_bootstrap_upper": "0.4231",
+   "kappa_valid_bootstrap_replicates": "20000",
+   "kappa_metric_status": "EXPLORATORY_RELIABILITY_METRIC",
+   "kappa_na_reason": "",
+   "designation": "EXPLORATORY_RELIABILITY_METRIC"
+  },
+  {
+   "dimension": "C3 AI functional family",
+   "field": "human_ai_family",
+   "n": "20",
+   "exact_agreement_count": "4",
+   "exact_agreement_percent": "20.0",
+   "disagreement_count": "16",
+   "raw_agreement_95ci_wilson_lower_percent": "8.07",
+   "raw_agreement_95ci_wilson_upper_percent": "41.6",
+   "cohens_kappa": "0.0476",
+   "kappa_95ci_paired_bootstrap_lower": "-0.0778",
+   "kappa_95ci_paired_bootstrap_upper": "0.1753",
+   "kappa_valid_bootstrap_replicates": "20000",
+   "kappa_metric_status": "EXPLORATORY_RELIABILITY_METRIC",
+   "kappa_na_reason": "",
+   "designation": "EXPLORATORY_RELIABILITY_METRIC"
+  },
+  {
+   "dimension": "C4 Decision functional family",
+   "field": "human_decision_family",
+   "n": "20",
+   "exact_agreement_count": "4",
+   "exact_agreement_percent": "20.0",
+   "disagreement_count": "16",
+   "raw_agreement_95ci_wilson_lower_percent": "8.07",
+   "raw_agreement_95ci_wilson_upper_percent": "41.6",
+   "cohens_kappa": "0.1398",
+   "kappa_95ci_paired_bootstrap_lower": "-0.0298",
+   "kappa_95ci_paired_bootstrap_upper": "0.3162",
+   "kappa_valid_bootstrap_replicates": "20000",
+   "kappa_metric_status": "EXPLORATORY_RELIABILITY_METRIC",
+   "kappa_na_reason": "",
+   "designation": "EXPLORATORY_RELIABILITY_METRIC"
+  },
+  {
+   "dimension": "C5 Analytical inclusion",
+   "field": "human_include",
+   "n": "20",
+   "exact_agreement_count": "12",
+   "exact_agreement_percent": "60.0",
+   "disagreement_count": "8",
+   "raw_agreement_95ci_wilson_lower_percent": "38.66",
+   "raw_agreement_95ci_wilson_upper_percent": "78.12",
+   "cohens_kappa": "0.3162",
+   "kappa_95ci_paired_bootstrap_lower": "0.0141",
+   "kappa_95ci_paired_bootstrap_upper": "0.6172",
+   "kappa_valid_bootstrap_replicates": "20000",
+   "kappa_metric_status": "EXPLORATORY_RELIABILITY_METRIC",
+   "kappa_na_reason": "",
+   "designation": "EXPLORATORY_RELIABILITY_METRIC"
+  }
+ ]
+}
