@@ -1,0 +1,10 @@
+initiative_id,unit_id,parameter,capability_id,value,unit,provenance_type,source_id,period,uncertainty,lower,upper,identification_status,assumption_note
+INI1,BU1,kappa,,,ordinal_level,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI1,BU1,relevant_capabilities,,,list,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI1,BU1,tau,CAP1,,TWD/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI2,BU1,kappa,,,ordinal_level,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI2,BU1,relevant_capabilities,,,list,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI2,BU1,tau,CAP1,,TWD/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI3,BU2,kappa,,,ordinal_level,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI3,BU2,relevant_capabilities,,,list,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI3,BU2,tau,CAP1,,TWD/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,

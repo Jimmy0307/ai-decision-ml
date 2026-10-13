@@ -1,0 +1,13 @@
+initiative_id,config_id,role,parameter,value,unit,provenance_type,source_id,period,uncertainty,lower,upper,identification_status,assumption_note
+INI1,SQ,ROLE1,pi,,probability,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI1,SQ,ROLE2,pi,,probability,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI1,AI1,ROLE1,pi,,probability,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI1,AI1,ROLE2,pi,,probability,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI2,SQ,ROLE1,pi,,probability,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI2,SQ,ROLE2,pi,,probability,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI2,AI1,ROLE1,pi,,probability,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI2,AI1,ROLE2,pi,,probability,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI3,SQ,ROLE1,pi,,probability,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI3,SQ,ROLE2,pi,,probability,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI3,AI1,ROLE1,pi,,probability,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI3,AI1,ROLE2,pi,,probability,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,

@@ -1,0 +1,5 @@
+# EA-X human CVI (61_EAX_HUMAN_CVI_ANALYZER_v2_3)
+
+EA-X status: **CONDITIONAL_CANDIDATE**
+
+All result cells: [HUMAN RESULT PENDING]

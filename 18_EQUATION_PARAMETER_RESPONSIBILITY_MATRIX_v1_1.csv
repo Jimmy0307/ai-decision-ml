@@ -1,0 +1,50 @@
+Block,Equation_or_Object,Parameter_or_Input,Role,Primary_Source,Secondary_Source,Collection_Method,Identification_Status,Recommended_Treatment
+STATUS,SUPERSEDED_BY_21_22_23,REVIEW_CANDIDATE,Historical matrix only,Claude F1-F3,See corrected v1.2 candidate,Do not calibrate from legacy rows,FAIL,Not frozen
+Evidence,"O/E = Observed / (k_a*k_d/M)",O/E,Evidence descriptor,Frozen Priority_Gaps,None,Direct calculation,C1,Do not use as optimization weight
+Industry,"Z_t=(ID,TP,CP,SC,SP)",ID_t,Exogenous context,Public industry data,Spokesperson; Fullon executive,Time-series/public coding,C1/C2,Scenario/index
+Industry,"Z_t=(ID,TP,CP,SC,SP)",TP_t,Exogenous context,Public technology/industry sources,Fullon executive,Structured coding,C1/C2,Scenario/index
+Industry,"Z_t=(ID,TP,CP,SC,SP)",CP_t,Exogenous context,Public industry/cost evidence,Procurement; finance,Public series + elicitation,C1/C4,Scenario/index
+Industry,"Z_t=(ID,TP,CP,SC,SP)",SC_t,Exogenous context,Public supply evidence,Procurement; Fullon executive,Structured coding,C2/C4,Scenario/index
+Industry,"Z_t=(ID,TP,CP,SC,SP)",SP_t,Exogenous context,Public standards/regulatory/customer-qualification sources,QA/plant manager; IT,Structured coding,C1/C2,Scenario/lower-bound evidence
+Firm public,"F_t=(Revenue,Margin,OCF,Cash,R&D,CapEx,Leverage,...)",Firm financials,Exogenous firm context,JPC public filings,Finance leader,Direct extraction,C1,Public observed
+L1,"sum c_i^r b_i^r <= Btot",Btot,Calibrated resource constraint,Public financials + finance,Chairman; GM; Mega VC,Low/Base/High scenario elicitation,C4,Scenario envelope; never equal a single financial line
+L1,"sum c_i^r b_i^r <= Btot",c_i^r,Calibrated cost parameter,Finance + IT/MIS,Procurement; public cost evidence,Interval elicitation,C4/C5,Interval/fuzzy
+L1,"Dbar=phi_D(D0,bD)",D_i^0,Observed baseline,IT/MIS leader + engineers,Process owner,Anchored 0-3 coding,C2,Ordinal observed
+L1,"Abar=phi_A(A0,bA)",A_i^0,Observed baseline,IT/MIS,Process owner,Anchored 0-3 coding,C2,Ordinal observed
+L1,"Rbar=phi_R(R0,bR)",R_i^0,Observed baseline,IT/MIS,Process owner,Anchored 0-3 coding,C2,Ordinal observed
+L1,"Gbar=phi_G(G0,bG)",G_i^0,Observed baseline,IT/MIS + QA/plant manager,COO,Anchored 0-3 coding,C2,Ordinal observed
+L1,"Xbar=phi_X(X0,bX)",phi_X,Capability transition function,IT/MIS leader + engineers,COO; RDPM,Transition-table elicitation,C5,Monotone interval/scenario; no causal point estimate
+L1,"b_i^r in {0,1,2,3}",b_i^r,Endogenous decision,Solver,None,Optimization,Decision,Do not survey as target value
+L1,"F1=w_RV*RealizedValue+w_AI*AIAdoptions-w_RU*ResourceUse-w_RR*ResidualRisk",w_F1,Preference weights,Chairman + GM + finance,Mega VC,BWM/fuzzy-BWM,C4,Normalized weights + sensitivity
+L1,"RealizedValue=sum max(0,Gain_i*)",v_i,Value-at-stake parameter,Public firm/industry exposure + Chairman/GM,RDPM; spokesperson; Fullon; Mega VC,Public proxy + elicitation,C1/C4,Normalized or interval
+Context,"use-case coding",u_i,Use type,Process owner,RDPM; engineer; procurement,Structured coding,C2,Nominal
+Context,"decision-task coding",t_i,Task type,Process owner,RDPM; engineer; procurement,Structured coding,C2,Nominal
+Context,"execution flag",exec_i,Execution authority,Process owner + IT,COO,Structured coding,C2,Binary
+Context,"risk class",kappa_i,Wrong-decision consequence,Process owner + QA/plant manager,Executives,Anchored Low/Medium/High,C2,Ordinal class; cardinal risk map separate
+L2,"Dbar>=D_req(A)",D_req(A),Digital prerequisite threshold,IT/MIS leader + engineers,COO,Scenario threshold elicitation,C3,Ordinal threshold
+L2,"Rbar>=R_req(A)",R_req(A),Data prerequisite threshold,IT/MIS leader + engineers,Process owner,Scenario threshold elicitation,C3,Ordinal threshold
+L2,"H>=H_req(A,kappa,u)",H_req,Human-oversight threshold,QA/plant manager + process expert,Chairman/GM; Fullon,Scenario threshold elicitation,C3,Ordinal threshold + interval on disagreement
+L2,"EA>=EA_req(A,kappa,t)",EA_req,Evaluation/assurance threshold,QA/plant manager + IT,Process expert; Fullon,Scenario threshold elicitation,C3,Ordinal threshold + interval on disagreement
+L2,"WI>=WI_req(A,kappa,exec)",WI_req,Workflow-integration threshold,COO + IT,Process owner; frontline; Fullon,Scenario threshold elicitation,C3,Ordinal threshold
+L2,"A,H,WI,EA in {0,1,2,3}",A/H/WI/EA,Endogenous architecture decisions,Solver,None,Optimization,Decision,Observed current states stored separately as *_obs
+L2,"sum CapUse_i<=K_Gamma",K_Gamma,Shared transformation capacity,COO + IT,Chairman/GM,Low/Base/High capacity scenario,C4,Scenario envelope
+L2,"CapUse=.42A+.24H+.24EA+.20WI",CapUse weights,Capacity-consumption weights,COO + IT,Process experts,BWM/relative burden elicitation,C4/C5,Recalibrate or sensitivity
+L2,"Feas/Rel/Scalability/IntegrationCost/GovRisk",component coefficients,Derived-score coefficients,IT + COO + QA,Process experts,Structured elicitation + robustness,C4/C5,Intervals/sensitivity unless strongly identified
+L2,"F2=sum[wF*Feas+wR*Rel+wS*Scalability-wC*Cost-wG*GovRisk+wU*U+]",w_F2,Architecture objective weights,COO + IT + QA,RDPM; engineer; Fullon,BWM/fuzzy-BWM,C4,Normalized weights + sensitivity
+Governance,"Gamma",Gamma,Governance scenario,Chairman/GM + IT/QA,COO,Scenario definition,C2/C4,Categorical scenario
+Governance,"q_im<=Allow_mGamma",Allow_mGamma,Configuration permission,QA/plant manager + IT,Chairman/GM,Policy/scenario matrix,C3/C4,Binary per scenario; preserve disagreement
+L3,"sum_m q_im=1",q_im,Endogenous Human-AI configuration,Solver,None,Optimization,Decision,Observed current configuration stored as q_obs
+L3,"Gain=g_im*v_i*psi_i*flex_Gamma",g_im,Relative configuration gain,Process experts,Frontline; Fullon,Pairwise/anchored relative elicitation,C5,Interval/fuzzy; no causal point claim
+L3,"Gain=g_im*v_i*psi_i*flex_Gamma",flex_Gamma,Governance flexibility factor,Executives + IT,COO,Scenario elicitation,C4/C5,Scenario/sensitivity
+L3,"Burden=beta_m+.03H+.02EA+.02WI",beta_m,Configuration baseline burden,Frontline users + process experts,COO,Observed workflow burden + interval,C2/C5,Interval/fuzzy
+L3,"Burden=beta_m+a_H H+a_E EA+a_W WI",a_H/a_E/a_W,Burden-effect coefficients,Frontline + process experts,COO,Relative-burden elicitation,C5,Sensitivity unless observational data supports
+L3,"ResidualRisk=kappa*autonomy_m*risk_Gamma/(1+.45H+.45EA)",autonomy_m,Configuration autonomy factor,IT + QA/plant manager,Fullon,Anchored configuration coding,C2/C4,Ordered/normalized
+L3,"ResidualRisk=...",risk_Gamma,Governance risk factor,QA/plant manager + executives,IT,Scenario elicitation,C4/C5,Scenario/sensitivity
+L3,"ResidualRisk=.../(1+a_HR H+a_ER EA)",risk-mitigation coefficients,Effect of H/EA on risk,QA/plant manager + IT,Process experts,Relative judgment,C5,Sensitivity/interval
+L3,"U=Gain-w_B Burden-w_R ResidualRisk",w_U,User/process utility weights,Process owners + frontline,Fullon,Best-worst/pairwise elicitation,C4,Normalized weights + sensitivity
+G10,"d=1[s>=tau]",s_i,AI model score,Public/consented benchmark if available,IT,Model output,C1 only if benchmark exists,Otherwise sensitivity only
+G10,"d=1[s>=tau]",tau_i,Decision threshold,Policy owner + process owner,IT/QA,Policy choice or sensitivity,C4,Scenario threshold
+G10,"V(d,truth)",truth_i,Outcome label,Public/consented labeled data,None,Observed outcome,C1 only if labeled data exists,No empirical accuracy claim otherwise
+Observed validation,"current workflow",H_obs/WI_obs/EA_obs,Observed current state,Frontline users + process owners,IT/QA,Anchored workflow measurement,C2,Use for calibration/validation only
+External validation,"industry challenge",External_Fullon,Challenge evidence,Fullon senior R&D/Marketing/Sales executive,None,Semi-structured expert validation,Validation,Do not pool as JPC firm-specific respondent
+External validation,"capital/value challenge",External_MegaVC,Challenge evidence,Mega VC investment evaluator,None,Semi-structured expert validation,Validation,No confidential investment records

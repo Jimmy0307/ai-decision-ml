@@ -1,0 +1,6 @@
+{
+ "analyzer": "60_v1_human_validation_analyzer_v2_3",
+ "decision": "V1_HUMAN_BLIND_CODING_PENDING",
+ "note": "no human response sheets supplied; AI pilot (54C) is never used as V1 evidence",
+ "reasons": []
+}

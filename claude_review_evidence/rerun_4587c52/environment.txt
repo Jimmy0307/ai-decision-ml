@@ -1,0 +1,4 @@
+Python 3.12.3
+repo_HEAD=4587c523e9d100e3bc1fbb5b974e34a6e37ba70b
+run_date=2026-10-09
+inputs: 04_solver_v1_0.py, 05_solver_results_v1_0.json (unchanged since e9137d4)

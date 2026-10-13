@@ -1,0 +1,153 @@
+{
+ "stats": [
+  {
+   "field": "primary_code",
+   "alpha": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "boot_valid": 5000,
+   "class": "RELIABLE",
+   "kappa": 1.0,
+   "raw_agreement": 1.0,
+   "expected_agreement": 0.2578125
+  },
+  {
+   "field": "status",
+   "alpha": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "boot_valid": 3183,
+   "class": "RELIABLE",
+   "kappa": 1.0,
+   "raw_agreement": 1.0,
+   "expected_agreement": 0.8828125
+  }
+ ],
+ "jaccard_mean": 0.84375,
+ "disagreements_incl_secondary": [
+  [
+   "C03",
+   [
+    [
+     "M4",
+     "M3",
+     "static"
+    ],
+    [
+     "M4",
+     "",
+     "static"
+    ]
+   ]
+  ],
+  [
+   "C07",
+   [
+    [
+     "M4",
+     "M1",
+     "static"
+    ],
+    [
+     "M4",
+     "M3",
+     "static"
+    ]
+   ]
+  ],
+  [
+   "C11",
+   [
+    [
+     "M3",
+     "M1",
+     "static"
+    ],
+    [
+     "M3",
+     "M4",
+     "static"
+    ]
+   ]
+  ],
+  [
+   "C12",
+   [
+    [
+     "M2",
+     "M1",
+     "static"
+    ],
+    [
+     "M2",
+     "M4",
+     "static"
+    ]
+   ]
+  ]
+ ],
+ "median_confidence": [
+  65,
+  65
+ ],
+ "vs_researcher_key": [
+  [
+   "C01",
+   "G11",
+   "coder1",
+   "M4",
+   "static",
+   "M5",
+   "dynamic"
+  ],
+  [
+   "C01",
+   "G11",
+   "coder2",
+   "M4",
+   "static",
+   "M5",
+   "dynamic"
+  ],
+  [
+   "C03",
+   "G04",
+   "coder1",
+   "M4",
+   "static",
+   "EVIDENCE_ONLY",
+   "evidence-only"
+  ],
+  [
+   "C03",
+   "G04",
+   "coder2",
+   "M4",
+   "static",
+   "EVIDENCE_ONLY",
+   "evidence-only"
+  ],
+  [
+   "C11",
+   "G10",
+   "coder1",
+   "M3",
+   "static",
+   "M3",
+   "optional"
+  ],
+  [
+   "C11",
+   "G10",
+   "coder2",
+   "M3",
+   "static",
+   "M3",
+   "optional"
+  ]
+ ]
+}

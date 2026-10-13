@@ -1,0 +1,7 @@
+initiative_id,config_id,parameter,value,unit,provenance_type,source_id,period,uncertainty,lower,upper,identification_status,assumption_note
+INI1,SQ,N,,events/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI1,AI1,N,,events/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI2,SQ,N,,events/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI2,AI1,N,,events/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI3,SQ,N,,events/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
+INI3,AI1,N,,events/period,UNIDENTIFIED,,,NONE,,,UNIDENTIFIED,
