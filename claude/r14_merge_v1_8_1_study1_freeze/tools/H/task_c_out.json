@@ -1,0 +1,821 @@
+{
+ "W01": [
+  {
+   "file": "AI_DECISION_THESIS_ALL_OUTPUTS\\r14_merge\\69_MERGED_THESIS_FORENSIC_AUDIT_v1_0.md",
+   "line": 106,
+   "text": "| `V5` 作為語料或研究名稱（`V5 網絡`、`V5 Data Pack`、`V5 語料`、`V5 會議稿`） | 0；「V5」只出現在驗證流程閘門名稱「V5 Portfolio Solver」與附錄 D 的歷史檔名 |"
+  },
+  {
+   "file": "AI_DECISION_THESIS_ALL_OUTPUTS\\r14_merge\\tools\\audit69.py",
+   "line": 85,
+   "text": "'Study/Paper A-B': r'Study [AB]|Paper [AB]|研究[一二]（Study|子研究', 'V5 naming (corpus)': r'V5 (網絡|網路|Data Pack|語料|會議稿)',"
+  },
+  {
+   "file": "AI_DECISION_THESIS_ALL_OUTPUTS\\r14_merge_v1_3\\tools\\build94.py",
+   "line": 294,
+   "text": "\"Verification: v1.1 records (work/verify/verify_all.json) + this round's external checks by 10 verification passes (work/e94/agents/E1–E9b_out.json), corrected after an independent adversarial review (work/e94/review_v13_fixlog.json). No local PDFs exist; '完整資料來源' = files in this environment.\","
+  },
+  {
+   "file": "AI_DECISION_THESIS_ALL_OUTPUTS\\r14_merge_v1_7\\128_CANONICAL_STATE.md",
+   "line": 15,
+   "text": "| `完整資料來源.zip` | **ABSENT** | V5 Manuscript Data Pack 本體未在環境中；本輪以 R14 定稿 + `04_G01_G16_FROZEN.csv` + 專案指示所列 V5 數字交叉核對（全部一致，見 §3）。 |"
+  },
+  {
+   "file": "AI_DECISION_THESIS_ALL_OUTPUTS\\r14_merge_v1_7\\128_CANONICAL_STATE.md",
+   "line": 28,
+   "text": "| 2 | **Authoritative corpus/network result** | R14 定稿 §3–§4（表 1–11）＋ `r14/04_G01_G16_FROZEN.csv`（ace53a780434c309…）。數字與專案指示所列 V5 Data Pack 數字逐項一致。 | FROZEN | r14/00 第 1–2 位；專案指示 SOURCE PRIORITY |"
+  },
+  {
+   "file": "AI_DECISION_THESIS_ALL_OUTPUTS\\r14_merge_v1_7\\128_CANONICAL_STATE.md",
+   "line": 46,
+   "text": "| CF-03 | 文獻層定稿版本 | 專案文件 `V5_CONFERENCE_FINAL_CAMERA_READY_…_20260921.docx` | `r14/01_R14_…CANONICAL.docx`（docx 中繼資料修改時間 2026-09-20） | **B（內容較新）**，雖然檔案時間戳較早 | V5 camera-ready 寫「400 筆／120 筆人工驗證尚未完成」；R14 已含 50／20／19 稽核與證據單元重切分。時間戳不可靠，以內容判定 | V5 camera-ready 降為歷史出處；不得用其覆寫 R14。其中未被 R14 取代或改變的正式執行設定紀錄（第 3.13 節：Q4_K_M、num_ctx 8192、temperature 0、seed 20260909 等）可作為 130 §3.8.3 的出處，並註明 Data Pack 原檔待核。 |"
+  },
+  {
+   "file": "AI_DECISION_THESIS_ALL_OUTPUTS\\r14_merge_v1_7\\129_MANUSCRIPT_FORENSIC_DELTA.md",
+   "line": 60,
+   "text": "| 3.4.3／3.8.3 | 無模型摘要值；執行參數「保留於補充資料」 | 再現性資訊缺（E12） | 專案指示 V5 Data Pack；V5 camera-ready §3.13 | 3.8.3 列出 qwen2.5:14b 摘要值與正式設定檔參數；Ollama 版本未保存 | YES | E12 | 3.4.3_digest；3.8.3_digest |"
+  },
+  {
+   "file": "AI_DECISION_THESIS_ALL_OUTPUTS\\r14_merge_v1_7\\129_MANUSCRIPT_FORENSIC_DELTA.md",
+   "line": 181,
+   "text": "| MEDIUM：3.8.3 的出處錯置 | 模型摘要值標為「依專案紀錄的 V5 Data Pack 模型資訊，原檔待核」；執行參數標為「依 V5 camera-ready 第 3.13 節的正式設定檔」；128 CF-03 補註 |"
+  },
+  {
+   "file": "AI_DECISION_THESIS_ALL_OUTPUTS\\r14_merge_v1_7\\130_MERGED_MASTER_THESIS_R14_TO_ENTERPRISE_v1_7_EVIDENCE_CONVERGED_CANDIDATE.docx::word/document.xml",
+   "line": 0,
+   "text": "析矩陣與統計結果皆保存固定版本，並記錄各階段輸入與筆數。第二階段功能家族映射的正式模型為 qwen2.5:14b，模型摘要值為 7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6（依專案紀錄的 V5 Manuscript Data Pack 模型資訊；Data Pack 原檔不在本稿工作環境中，投稿前須以原檔核對）。依 V5 camera-ready 稿（2026-09-21）第 3.13 節所記載的正式設定檔，量化版本為 Q4_K_M、上下文長度 8,192、temperature = 0、固定 seed = 20260909、最大"
+  },
+  {
+   "file": "AI_DECISION_THESIS_ALL_OUTPUTS\\r14_merge_v1_7\\130_MERGED_MASTER_THESIS_R14_TO_ENTERPRISE_v1_7_EVIDENCE_CONVERGED_CANDIDATE.docx::word/document.xml",
+   "line": 0,
+   "text": "，並記錄各階段輸入與筆數。第二階段功能家族映射的正式模型為 qwen2.5:14b，模型摘要值為 7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6（依專案紀錄的 V5 Manuscript Data Pack 模型資訊；Data Pack 原檔不在本稿工作環境中，投稿前須以原檔核對）。依 V5 camera-ready 稿（2026-09-21）第 3.13 節所記載的正式設定檔，量化版本為 Q4_K_M、上下文長度 8,192、temperature = 0、固定 seed = 20260909、最大輸出 512 tokens、單"
+  },
+  {
+   "file": "AI_DECISION_THESIS_ALL_OUTPUTS\\r14_merge_v1_7\\130_MERGED_MASTER_THESIS_R14_TO_ENTERPRISE_v1_7_EVIDENCE_CONVERGED_CANDIDATE.docx::word/document.xml",
+   "line": 0,
+   "text": "張其適用E11論文格式本稿為單一碩士論文 candidate由作者決定章節編號、表號格式（本稿採章別編號）與參考文獻格式；投稿格式差距見附件 136E12文獻分析的模型版本與執行參數已解決（v1.7）：第 3.8.3 節列出 qwen2.5:14b 的模型摘要值與正式設定檔參數模型摘要值取自 V5 Data Pack 的模型紀錄；Ollama 版本未保存，維持為再現性限制E13第 4.5.1 節以 Krippendorff（2019）支持 κ 的報告程序；Krippendorff 傾向以 α 評估信度（一般背景，未於本次核對）引用是否恰當作者以原書核對；若不適用，改為只引 Neuendorf（2017）或改寫為"
+  },
+  {
+   "file": "AI_DECISION_THESIS_ALL_OUTPUTS\\r14_merge_v1_7\\130_MERGED_MASTER_THESIS_R14_TO_ENTERPRISE_v1_7_EVIDENCE_CONVERGED_CANDIDATE.md",
+   "line": 651,
+   "text": "來源資料、分類定義、分析矩陣與統計結果皆保存固定版本，並記錄各階段輸入與筆數。第二階段功能家族映射的正式模型為 qwen2.5:14b，模型摘要值為 `7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6`（依專案紀錄的 V5 Manuscript Data Pack 模型資訊；Data Pack 原檔不在本稿工作環境中，投稿前須以原檔核對）。依 V5 camera-ready 稿（2026-09-21）第 3.13 節所記載的正式設定檔，量化版本為 Q4_K_M、上下文長度 8,192、temperature = 0、固定 seed = 20260909、最大輸出 512 tokens、單次 timeout 300 秒、最多重試 2 次；正式 V5 artifact 沒有保存當時 Ollama 的精確版本。這些執"
+  },
+  {
+   "file": "AI_DECISION_THESIS_ALL_OUTPUTS\\r14_merge_v1_7\\130_MERGED_MASTER_THESIS_R14_TO_ENTERPRISE_v1_7_EVIDENCE_CONVERGED_CANDIDATE.md",
+   "line": 3036,
+   "text": "| E12 | 文獻分析的模型版本與執行參數 | 已解決（v1.7）：第 3.8.3 節列出 qwen2.5:14b 的模型摘要值與正式設定檔參數 | 模型摘要值取自 V5 Data Pack 的模型紀錄；Ollama 版本未保存，維持為再現性限制 |"
+  },
+  {
+   "file": "AI_DECISION_THESIS_ALL_OUTPUTS\\r14_merge_v1_7\\tools_v17\\build130.py",
+   "line": 165,
+   "text": "\"第二階段功能家族映射的正式模型為 qwen2.5:14b，模型摘要值為 `7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6`（依專案紀錄的 V5 Manuscript Data Pack 模型資訊；Data Pack 原檔不在本稿工作環境中，投稿前須以原檔核對）。依 V5 camera-ready 稿（2026-09-21）第 3.13 節所記載的正式設定檔，量化版本為 Q4_K_M、上下文長度 8,192、temperature = 0、固定 seed = 20260909、最大輸出 512 tokens、單次 timeout 300 秒、最多重試 2 次；正式 V5 artifact 沒有保存當時 Ollama 的精確版本。這些執行設定未被 R14 定稿取代或改變（R14 只註明「完整執行參數另列於補充資"
+  },
+  {
+   "file": "AI_DECISION_THESIS_ALL_OUTPUTS\\r14_merge_v1_7\\tools_v17\\build130.py",
+   "line": 403,
+   "text": "\"| E12 | 文獻分析的模型版本與執行參數 | 已解決（v1.7）：第 3.8.3 節列出 qwen2.5:14b 的模型摘要值與正式設定檔參數 | 模型摘要值取自 V5 Data Pack 的模型紀錄；Ollama 版本未保存，維持為再現性限制 |\")"
+  },
+  {
+   "file": "AI_DECISION_THESIS_ALL_OUTPUTS\\r14_merge_v1_7\\tools_v17\\fix_v17_review.py",
+   "line": 36,
+   "text": "r(\"（取自 V5 Manuscript Data Pack 的模型紀錄）。正式設定檔記錄量化版本 Q4_K_M、上下文長度 8,192、temperature = 0、固定 seed = 20260909、最大輸出 512 tokens、單次 timeout 300 秒、最多重試 2 次；正式 V5 artifact 沒有保存當時 Ollama 的精確版本。\","
+  },
+  {
+   "file": "AI_DECISION_THESIS_ALL_OUTPUTS\\r14_merge_v1_7\\tools_v17\\fix_v17_review.py",
+   "line": 37,
+   "text": "\"（依專案紀錄的 V5 Manuscript Data Pack 模型資訊；Data Pack 原檔不在本稿工作環境中，投稿前須以原檔核對）。依 V5 camera-ready 稿（2026-09-21）第 3.13 節所記載的正式設定檔，量化版本為 Q4_K_M、上下文長度 8,192、temperature = 0、固定 seed = 20260909、最大輸出 512 tokens、單次 timeout 300 秒、最多重試 2 次；正式 V5 artifact 沒有保存當時 Ollama 的精確版本。這些執行設定未被 R14 定稿取代或改變（R14 只註明「完整執行參數另列於補充資料」）。\")"
+  },
+  {
+   "file": "AI_DECISION_THESIS_ALL_OUTPUTS\\r14_merge_v1_7\\work_v17\\adversarial_review_v17.md",
+   "line": 83,
+   "text": "- **QUOTE:** \"模型摘要值為 `7cdf…22f6`（取自 V5 Manuscript Data Pack 的模型紀錄）。正式設定檔記錄量化版本 Q4_K_M、上下文長度 8,192、temperature = 0、固定 seed = 20260909……\""
+  },
+  {
+   "file": "AI_DECISION_THESIS_ALL_OUTPUTS\\r14_merge_v1_7\\work_v17\\adversarial_review_v17.md",
+   "line": 85,
+   "text": "- 128 §0 records the V5 Data Pack (`完整資料來源.zip`) as **ABSENT**. The digest's only available sources are the project instructions and FACTS_BRIEF."
+  },
+  {
+   "file": "AI_DECISION_THESIS_ALL_OUTPUTS\\r14_merge_v1_7\\work_v17\\adversarial_review_v17.md",
+   "line": 90,
+   "text": "- **SUGGESTED FIX:** Cite the actual source (\"V5 camera-ready §3.7／§3.13 所列 production profile；Data Pack 原始設定檔待核\"). Reopen E12 as \"待以正式設定檔逐字核對\", or tag the passage `[待核：production profile 原檔]`."
+  },
+  {
+   "file": "AI_DECISION_THESIS_ALL_OUTPUTS\\v2_1\\44_MANUSCRIPT_ENTERPRISE_AI_DECISION_v2_1.md",
+   "line": 41,
+   "text": "`[AUTHOR DECISION REQUIRED：handoff bundle 01 §3 所列的 two-track corpus lineage（例如 404 篇最終文獻、2,425 筆 strict records、GPT-5.6 Sol 語意編碼）與 V5 Data Pack 的計數與模型描述（M = 2,180、qwen2.5:14b 雙 pass 映射）未調和。本稿暫依 V5 Data Pack 與 G01–G16 frozen export（皆為 M = 2,180）撰寫；語料規模與 parity 數字需作者確認後再寫入正文。]`"
+  },
+  {
+   "file": "AI_DECISION_THESIS_ALL_OUTPUTS\\v2_1\\44_MANUSCRIPT_ENTERPRISE_AI_DECISION_v2_1.md",
+   "line": 880,
+   "text": "| B1 | handoff 01 §3 的 two-track corpus lineage 與 V5 Data Pack 計數不一致 | 1.2、5.10 不能寫語料規模與 parity 數字 | 以 V5 Data Pack 為準重新核對；若 lineage 為另一輪重建，需在正文說明兩者關係 |"
+  },
+  {
+   "file": "AI_DECISION_THESIS_ALL_OUTPUTS\\v2_1\\48_FORENSIC_AUDIT_AND_V2_1_FREEZE_STATUS.md",
+   "line": 35,
+   "text": "| 語料 lineage（handoff 01 §3） | 與 V5 Data Pack 不一致 | **未寫入正文**；44 1.2 與附錄 B1、B2 標 `[AUTHOR DECISION REQUIRED]` |"
+  }
+ ],
+ "REPO": [
+  {
+   "file": "01_CANONICAL_MODEL_v1_0.md",
+   "line": 19,
+   "text": "A separate file-level derivation from an independent V5 Data Pack export is not established here. Priority_Gaps governs v1.0. Any future conflict must be explicitly reconciled before publication."
+  },
+  {
+   "file": "08_16Depletion_Quantification_v1_0.xlsx::xl/worksheets/sheet12.xml",
+   "line": 0,
+   "text": "nition paragraph still openAdded explicit definition and non-inference boundaries in Summary/canonical textFIXEDC-2Pair_Code strings unverified vs V5 Data PackAll 16 AI_Family/Decision_Family codes cross-checked against authoritative Priority_Gaps Google SheetFIXEDD2=\"FIXED\""
+  },
+  {
+   "file": "08_16Depletion_Quantification_v1_0.xlsx::xl/worksheets/sheet14.xml",
+   "line": 0,
+   "text": "ditFrozen exportThe v1.0 pack includes a self-contained 16-row export with analytic expectation inputs and all four manuscript q-values/directions.V5 Data Pack lineageA separate file-level derivation from an independent V5 Data Pack export is still not established in this pack. Priority_Gaps governs v1.0; an"
+  },
+  {
+   "file": "08_16Depletion_Quantification_v1_0.xlsx::xl/worksheets/sheet14.xml",
+   "line": 0,
+   "text": "h analytic expectation inputs and all four manuscript q-values/directions.V5 Data Pack lineageA separate file-level derivation from an independent V5 Data Pack export is still not established in this pack. Priority_Gaps governs v1.0; any future conflict must be reconciled explicitly before publication.Robust"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/00_INPUT_HASHES.txt",
+   "line": 3,
+   "text": "138dbeac661fb39a0ab7f3fe84f312e332a9d8b64b5b47c399034bffd4c0d283  C:\\NTUST_PAPER\\read\\generated_v2\\完整資料來源.zip"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/00_INPUT_MANIFEST.csv",
+   "line": 4,
+   "text": "03_LEGACY_FULL_SOURCE,C:\\NTUST_PAPER\\read\\generated_v2\\完整資料來源.zip,13143635,138dbeac661fb39a0ab7f3fe84f312e332a9d8b64b5b47c399034bffd4c0d283,2026-05-06T15:11:55"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1228,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/README_完整資料來源.md,.md,742,2026-04-22T17:09:16,613c3532b5ec87823b927fb71564e9fd82616f87e78be21509c303d40466a53c"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1229,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/可視化/ablation_sensitivity_2026-04-22.png,.png,55904,2026-04-22T17:13:34,37b52621866e09356ed74514a62430ccc77976327b6cf97ec46ef2ae4fa774d5"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1230,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/可視化/external_validation_metrics_2026-04-22.png,.png,31963,2026-04-22T17:13:34,e36eac701cadf7408292c2a7e6beab1d0dd67c077d8a04e0962f49ba6eb638eb"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1231,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/可視化/main_path_definition_2026-04-22.md,.md,636,2026-04-22T17:13:34,3fe76d8b670ffb82ed926b196ec343c85633a0b9b21b9f6159b68c5407872b45"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1232,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/可視化/main_path_steps_2026-04-22.csv,.csv,1828,2026-04-22T17:13:34,cfff5a2649c7f527bea5520dd8d3c01937f2b38b81700e2b768b9ef4c641332a"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1233,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/可視化/main_path_visualization_2026-04-22.png,.png,17505,2026-04-22T17:13:34,153a902f469c94dfa44e7b3c959a8530ca4428893d374d12fa5c42640279994f"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1234,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/可視化/multi_path_robustness_2026-04-22.csv,.csv,646,2026-04-22T17:13:36,5f102be8af8d8df2ee5747258007215409b8eccd7c2dc0fc2d6cc16936522467"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1235,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/可視化/multi_path_robustness_2026-04-22.png,.png,74549,2026-04-22T17:13:36,376ca86804472d4b85cae7cd1b2a234dd2eec5a3f46d6ad056e0d523e1a0a049"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1236,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/可視化/tier_migration_heatmap_2026-04-22.png,.png,42178,2026-04-22T17:13:34,0e728f2e7f9cc70adf3fbae053f9f255f1f2827f62ac4c3e2c4ced3958f4514d"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1237,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/可視化/tier_migration_matrix_2026-04-22.csv,.csv,141,2026-04-22T17:13:34,d74434ac05e8a8508520814fa53d6103e82c320ee5075caddc87ec47b8cb0c97"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1238,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/可視化/tier_stability_retention_jaccard_2026-04-22.png,.png,27855,2026-04-22T17:13:34,787e2a7358632c7a2aebcf040818c672dcb27220832e6fb05a7d862c3f0482d9"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1239,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/可視化/top15_gap_priority_2026-04-22.png,.png,77384,2026-04-22T17:13:34,cd61a2e3041792afba1ac32814bf7a13f4718e514652c014ae1500a35c57ea6a"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1240,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/可視化/visualization_dashboard_metrics_2026-04-22.csv,.csv,519,2026-04-22T17:13:36,0e72233cc5edb9bcee2112aec9714fc7b4b0bd7d210452262ab4c730dcf8f33b"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1241,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/圖片/pca_cumulative_explained_2026-04-12.png,.png,73835,2026-04-22T13:59:30,d86a3cf9436c33a5f450fdb8aae7c0180be501139d7d22153dff5e4e6f1d1c62"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1242,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/圖片/pca_loadings_heatmap_2026-04-12.png,.png,79192,2026-04-22T13:59:32,bf5e0a9f90de86eb37ec86c02929d3f84bf31144ce815c8f1c749c48391c56fb"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1243,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/圖片/pca_pc1_pc2_phase_scatter_2026-04-12.png,.png,81361,2026-04-22T13:59:32,2f9cba7ccdca7ffb94b8510febf12933c253ac338dc332d794bc6ef8404751d4"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1244,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/圖片/pca_scree_plot_2026-04-12.png,.png,67413,2026-04-22T13:59:30,364e954868d2b786a057bc11c260378209ada3d639cc6a5c8e53052abefa891c"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1245,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/論文/figures/AI_Governance_Concept_Network_Enhanced_2026-05-06.png,.png,3001462,2026-05-06T13:58:46,2c599dcee8bbce4e2a79b53b8ef50372ffab6d85f5dbfdbe8a0e6a9f92fc53ff"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1246,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/論文/figures/backbone_multibranch_structure_report_2026-05-06.md,.md,1190,2026-05-06T13:31:34,63ac6174e168e8f79512f10323f688c80d965f37f7d4e66c5e4c62e36b0a1d73"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1247,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/論文/figures/backbone_multibranch_structure_top90_2026-04-17.png,.png,2238233,2026-05-06T13:31:34,b28de6400f62e4f7e6e4868a7cbcf3f5e420eae2e5c0f17078cf7507b6a1bda1"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1248,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/論文/figures/Enhanced_Concept_Statistics_2026-05-06.csv,.csv,962,2026-05-06T13:58:46,a8c35bfa75180ef84aa679f1bf7032bb02d94c5713c45eff8598132576ca4916"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1249,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/論文/figures/structural_hole_tier_mc_migration_heatmap_2026-04-22.png,.png,51995,2026-04-22T20:55:02,b0f9fa650cb654bbd3a5f4a50351a1174aa1b2853eee32e7fa2c9adf789972cc"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1250,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/論文/figures/structural_hole_tier_mc_retention_2026-04-22.png,.png,35868,2026-04-22T20:55:02,cb9422fa17bf7fae32cfd98f0b5b87a7943aa19dad50e0b153257e4170456e40"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1251,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/論文/figures/structural_hole_tier_mc_top_concepts_2026-04-22.png,.png,85995,2026-04-22T20:55:02,0d254d5471006c0f81c0119ad5774e2c2de8e11d31293116c1a47e9a42a52343"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1252,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/論文/FINAL_THESIS_FORMAL_VERSION_2026-04-12.md,.md,133665,2026-05-06T15:10:12,6928e3d3db943a3925c38bdf3452a2cd18664d5b657cbfbc975a771f0a76ba47"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1253,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/論文/FINAL_THESIS_Q1_CLEAN_VERSION.md,.md,10288,2026-05-05T04:08:08,edf0b45ccd52b4bce9c1b9e7ead4680fae3048d6752798b6f852aaa0b8e0373f"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1254,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/論文/FINAL_THESIS_WITH_DELETION_MARKS.md,.md,16039,2026-05-05T04:08:08,c2e04a33c18e0b28fe5806ad688ad9ca06d74c2c02f140dd02324ac884bca97b"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1255,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/論文/Q1_IMPROVEMENT_CHECKLIST.md,.md,9447,2026-05-05T04:08:08,02b804fdf16b91504f97e0fdc6fe7f12502c8ae4487a6616a26269d8586a62a6"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1256,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/論文/TASK1_CLASSICAL_METRICS_REPORT.md,.md,6779,2026-05-05T04:30:46,e5d0a2e5bdc36d07b06a0a74e530eb05b8724cdf508987b8aa5b85babcfa1bae"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1257,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/論文/TASK1_EXECUTION_SUMMARY.md,.md,6593,2026-05-05T04:30:46,f651d72f54f72ffb4fb0a1f6d5274c4fca098ec0684cd740c9f8dcdd5e3d2040"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1258,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/論文/TASK2_INTERNAL_VALIDATION.md,.md,1657,2026-05-05T04:33:30,b682deaf26d20f67ca71c8e4db64a2fa486a547d627b5abd73efa5e104bd1d08"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1259,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/論文/TASK2_PLAN.md,.md,8871,2026-05-05T04:54:42,93704fc77e1ba68470c6e878b1ef8ba503dacf013e394d9a2a0b7cab06e10053"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1260,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/論文/TASK2_PROGRESS_REPORT.md,.md,6392,2026-05-05T04:54:42,44c873c925e4213ef5ce8986639241208715a539919da17ff841da4c507267aa"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1261,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/論文/TASK2_QUICK_PLAN.md,.md,2363,2026-05-05T04:54:42,e9d09d5c9bff567c718c754db247935861acc87b4b790b5aaa3f4056fd3b1c53"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1262,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/expert_question_bank_2026-04-11.csv,.csv,9007,2026-04-22T16:56:46,235548c4b48545731761e12bd645f63e8e46921aab953d91bc6475e969bac018"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1263,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/fa_communalities_2026-04-12.csv,.csv,435,2026-04-22T14:01:02,64c76e7e32c082241c296a9273018a8aa4c739b9187b22e476fc4a8838b2b879"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1264,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/fa_varimax_loadings_2026-04-12.csv,.csv,591,2026-04-22T14:01:02,23a3a84181df666a775ab5f61f4a51e0c6fbd98eceabac1caff3eef87d484baf"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1265,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/FINAL_CLOSEOUT_SUMMARY_2026-04-22.md,.md,2830,2026-04-22T16:46:58,386a811cd3cdc28f07ab87678fa8338fd01c4a641e2ad56b6513c4912574ad27"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1266,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/Info_Gap_and_Expert_Plan_2026-04-11.md,.md,1729,2026-04-22T16:56:46,9ebbf416b7ae9329db583fbf867fe33d3d79eb5ffe1ef30517eb08c4205822ef"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1267,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/info_gap_matrix_2026-04-11.csv,.csv,4870,2026-04-22T16:56:46,f193a08a1e3b559ae09f9c74f6d39c5f94c4140cd881991b926af32d2a9ad18a"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1268,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/pca_components_full_2026-04-12.csv,.csv,476,2026-04-22T14:01:02,ab699d517218ffd662ec523b918d0e1992ecae1c070e16239241acbeb580609e"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1269,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/pca_fa_summary_2026-04-12.md,.md,1331,2026-04-22T14:01:02,938f5d943c5fbb2fc8638d1c200871c2a72458ea235b873afbae7046ea21ef27"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1270,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/pca_loadings_full_2026-04-12.csv,.csv,1157,2026-04-22T14:01:02,c1e34fe4a95a9c294668698bf71e5c232ff3210890bc4014783707796ed0f3ab"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1271,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/pca_table_for_thesis_2026-04-12.md,.md,683,2026-04-22T13:59:32,81ca45750494dbd8a9554523921dcdeac81bd136dfe8468dd785b7c53e475617"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1272,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/q1_upgrade_ablation_report.md,.md,895,2026-04-22T16:59:08,2e7c05b009e78d842465cfae2fc2783f03bed3574a3324a4f5ced6596ecf8498"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1273,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/q1_upgrade_ablation_results.csv,.csv,528,2026-04-22T16:59:08,54b67918fb4cec4f3e08493c10b9037efaa5f6f2873966a13d3b79fcef66f770"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1274,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/q1_upgrade_citation_edges_in_corpus_2026-04-22.csv,.csv,82244,2026-04-22T05:45:40,d16ada5e845cd24a592c4396f8a9b5a137caed2798ef1f835cd8bd1fdd9f50e4"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1275,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/q1_upgrade_citation_multisource_mapping_2026-04-22.csv,.csv,11647873,2026-04-22T05:45:40,487fc8f41cbb05e2c2614251975ae445ac5de00a87c47ac72da75b4f2a84986e"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1276,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/q1_upgrade_citation_multisource_mapping_phase2_2026-04-22.csv,.csv,11647523,2026-04-22T13:32:02,f295e19d10bb67d7f92946d8d7c246aeab7f40f3fe9559ad6f8eebde72173155"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1277,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/q1_upgrade_citation_splc_spnp_report_2026-04-22.md,.md,1574,2026-04-22T05:45:40,70e1f282a63d289e4cde8819dde3e2bb1f136e6471f7ee8a162348d9c03f19e6"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1278,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/q1_upgrade_citation_splc_spnp_summary_2026-04-22.json,.json,1558,2026-04-22T05:45:40,8bef6b61ffcbe00a647f040fbb4e7630b2df35906eb4533493fc2998c6941f85"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1279,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/q1_upgrade_error_taxonomy.md,.md,1632,2026-04-22T15:39:40,01cd75ef3021d043cba0a6f9fb37801dee1f5773c5d37d0555e22bdf562ebcb2"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1280,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/q1_upgrade_external_independent_openalex_2026-04-22.csv,.csv,1549,2026-04-22T16:59:46,90a96d187eee7ae3994fc7c8b99e106fa0a18972a068aa25d55aac052c17c6a7"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1281,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/q1_upgrade_external_independent_openalex_raw_2026-04-22.json,.json,595,2026-04-22T16:59:46,992dc3b39ac013363d613bc75e07a10e9760e311035539fbbdf5145c582ad12b"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1282,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/q1_upgrade_external_independent_openalex_report_2026-04-22.md,.md,1127,2026-04-22T16:59:46,d8a7680a4b4ddee1a385cc502a5e722ded69f8e8482266e4bcbeb3952d9da244"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1283,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/q1_upgrade_external_validation_all_sources.csv,.csv,2155,2026-04-22T16:59:08,66859f85e3d2146bfac0c332dabe0b6eb00a811b7be45379bae28415128cd731"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1284,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/q1_upgrade_external_validation_all_sources_report.md,.md,1476,2026-04-22T16:59:08,b67c3d760002e0260ac11a43f8a2c68a4c6c6977add5c3b3a3bfbc38bdac5f79"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1285,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/q1_upgrade_external_validation_report_independent_openalex.md,.md,764,2026-04-22T16:59:48,a46496dd5d1d7346cdfbbef669b7fa17ec2c240a71ff6fee5b3d2fe0288b2da4"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1286,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/q1_upgrade_external_validation_temporal_holdout_input.csv,.csv,1161,2026-04-22T15:39:14,d7c19917c25134fbf21e47fe6cfed349a3a9c42aefdedfa61ccaef96b460ac3a"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1287,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/q1_upgrade_network_baseline_comparison.csv,.csv,3971,2026-04-22T16:59:06,334156852fac1c20d947859a0f0886dd006698d5e604720fff1f9611881251fb"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1288,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/q1_upgrade_network_baseline_report.md,.md,989,2026-04-22T16:59:06,b1f8206c40036a5468d930772b833c4c2a11597b64970d2076f5d33a62c1ba7d"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1289,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/q1_upgrade_reproducibility_manifest.md,.md,1619,2026-04-22T15:39:42,34940fbd86d84af1b4593b70b4bce44cfc71ca9096cddfbc05a29f9ae7ae840c"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1290,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/q1_upgrade_uncertainty_report.md,.md,904,2026-04-22T16:59:26,cacfdf8c8519e428aeadec79ea403ba214172964703d96a65707d3cc29f53b8b"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1291,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/structural_hole_marked_list_2026-04-22.md,.md,2682,2026-04-22T16:57:32,8448a207bc1407c4dbd3d356c91d7828e2a157d5989031d67d8b977ea6b68468"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1292,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/structural_hole_tier_mc_concept_probs_2026-04-22.csv,.csv,2269,2026-04-22T16:56:48,f0dcc07a4b77305e2b576e795584babcfee8387f6af9aca5b0279a2a419e5f1d"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1293,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/structural_hole_tier_mc_migration_2026-04-22.csv,.csv,254,2026-04-22T16:56:48,8f86a792c88ff0e7da9f4c22b85cdd67954a18d2718675c3eb9e8ae0ed51a54b"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1294,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/structural_hole_tier_mc_tier_summary_2026-04-22.csv,.csv,353,2026-04-22T16:56:48,38afd81b85ca65d0e21d0ec518c3eeb1c786fee042bd08cee1abe1011d376c4d"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1295,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/structural_hole_tier_monte_carlo_summary_2026-04-22.md,.md,2070,2026-04-22T16:56:48,3b92084a862b835644c7a2eeee508d5799647523a01f601bdcc7cf21ca77d4d3"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/01_FILE_INVENTORY.csv",
+   "line": 1296,
+   "text": "03_LEGACY_FULL_SOURCE,完整資料來源/輸出/temporal_phase_yearly_pca_2026-04-12.csv,.csv,9091,2026-04-22T13:59:26,6574b025246b6e383d6e74695215b6b18e6321e89411741dc1d8d7ddb92f1eed"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/05_LEGACY_SOURCE_BOUNDARY.md",
+   "line": 1,
+   "text": "# 05 — LEGACY SOURCE BOUNDARY (`完整資料來源.zip`)"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/05_LEGACY_SOURCE_BOUNDARY.md",
+   "line": 4,
+   "text": "Scope: read-only audit of `W\\03_LEGACY_FULL_SOURCE\\完整資料來源\\` (69 files) against the v1.7 candidate manuscript"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/05_LEGACY_SOURCE_BOUNDARY.md",
+   "line": 12,
+   "text": "Source zip: `C:\\NTUST_PAPER\\read\\generated_v2\\完整資料來源.zip`, sha256 `138dbeac661fb39a0ab7f3fe84f312e332a9d8b64b5b47c399034bffd4c0d283`, 13,143,635 B, mtime 2026-05-06T15:11:55 (`00_INPUT_MANIFEST.csv`). All 69 extracted files re-hashed: 69/69 match `01_FILE_INVENTORY.csv`."
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/05_LEGACY_SOURCE_BOUNDARY.md",
+   "line": 65,
+   "text": "| # | Relative path (under 完整資料來源/) | sha256[:16] | Type | Size (B) | Analysis family | Filename date | Zip entry mtime | Inventory sha match |"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/05_LEGACY_SOURCE_BOUNDARY.md",
+   "line": 67,
+   "text": "| 1 | `README_完整資料來源.md` | `613c3532b5ec8782` | Markdown text | 742 | Package README | — | 2026-04-22T17:09:16 | YES |"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/05_LEGACY_SOURCE_BOUNDARY.md",
+   "line": 176,
+   "text": "| 15 | `完整資料來源.zip` listed as **ABSENT** and described as \"V5 Manuscript Data Pack 本體\". | **CONFLICT (labeling, non-blocking):** the zip now present (`C:\\NTUST_PAPER\\read\\generated_v2\\完整資料來源.zip`, sha256 138dbeac…) is *not* a V5 data pack; it is the April–May 2026 legacy structural-hole / citation / PCA-FA package. 128 §3's V5 cross-check was done against R14 + `04_G01_G16_FROZEN.csv`, not this zi"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/05_LEGACY_SOURCE_BOUNDARY.md",
+   "line": 184,
+   "text": "- v1.7 never names `完整資料來源`; 128 names it once (line 15) with a wrong description (§3.4)."
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/05_LEGACY_SOURCE_BOUNDARY.md",
+   "line": 204,
+   "text": "- Required follow-up (outside this phase): correct 128 line 15's description of `完整資料來源.zip`."
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/06_SOURCE_FLAG_CLOSURE.csv",
+   "line": 4,
+   "text": "128_CANONICAL_STATE.md,## 0. 本輪可取得與不可取得的來源,| `完整資料來源.zip` | **ABSENT** | V5 Manuscript Data Pack 本,PARTIAL,NO,W/03_LEGACY_FULL_SOURCE/完整資料來源 (zip sha 138dbeac..),OPEN_SOURCE_NOT_FOUND,15,V5 Manuscript Data Pack,Legacy package is now extracted in W/03 but its content is outside Phase 7 (V9) scope; not checked by E."
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/06_SOURCE_FLAG_CLOSURE.csv",
+   "line": 17,
+   "text": "128_CANONICAL_STATE.md,## 2. 衝突清單（不得靜默調和）,0260909 等）可作為 130 §3.8.3 的出處，並註明 Data Pack 原檔待核。 |,PARTIAL,PARTIAL,V9=W/02_V9_HUMAN_VALIDATION/20260929_V9_HUMAN_VALIDATION/V9_1_SEGMENTATION_SENSITIVITY/SEGMENT_STAGE2_MODEL_VERIFICATION.json(feb1ae6a..),OPEN_SOURCE_NOT_FOUND,46,V5 Data Pack model record,\"Same digest 7cdf5a01.., Q4_K_M, temperature 0, seed 20260909, num_ctx 8192 found in the V9.1 frozen S"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/06_SOURCE_FLAG_CLOSURE.csv",
+   "line": 48,
+   "text": "129_MANUSCRIPT_FORENSIC_DELTA.md,## 4. 對抗式審查後的修正（同一輪內完成）,3 的出處錯置 | 模型摘要值標為「依專案紀錄的 V5 Data Pack 模型資訊，原檔待核」；執行參數標為「依 V5 camera-ready 第 3,N/A,N/A,,NOT_A_FLAG,181,,Historical change-log / rule text describing a flag that lives in 130; no claim to close here (live flag tracked on its 130 line)."
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/06_SOURCE_FLAG_CLOSURE.csv",
+   "line": 78,
+   "text": "130_MERGED_MASTER_THESIS_R14_TO_ENTERPRISE_v1_7_EVIDENCE_CONVERGED_CANDIDATE.md,### 3.8.3 文獻分析的再現性與資料版本管理,紀錄的 V5 Manuscript Data Pack 模型資訊；Data Pack 原檔不在本稿工作環境中，投稿前須以原檔核對）。依 V5 camera-ready,PARTIAL,PARTIAL,V9=W/02_V9_HUMAN_VALIDATION/20260929_V9_HUMAN_VALIDATION/V9_1_SEGMENTATION_SENSITIVITY/SEGMENT_STAGE2_MODEL_VERIFICATION.json(feb1ae6a..),OPEN_SOURCE_NOT_FOUND,651,V5 Data Pack model record,\"Sam"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/06_SOURCE_FLAG_CLOSURE_NOTES.md",
+   "line": 43,
+   "text": "| OPEN_SOURCE_NOT_FOUND | 12 | 7 | 3 (Data Pack digest, Drive) |"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/06_SOURCE_FLAG_CLOSURE_NOTES.md",
+   "line": 53,
+   "text": "- Legacy 完整資料來源 at 128 L15. It now exists in W/03 but was not examined by E."
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/06_SOURCE_FLAG_CLOSURE_NOTES.md",
+   "line": 97,
+   "text": "| 651 (non-V9) | 3.8.3 | Optional: 「（同一摘要值、Q4_K_M、temperature 0、seed 20260909、num_ctx 8192 亦見於 V9.1 重切分 Stage-2 模型驗證紀錄；主分析 Data Pack 原檔仍待核）」 |"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/08_MERGED_MASTER_THESIS_v1_8_SOURCE_VERIFIED.md",
+   "line": 651,
+   "text": "來源資料、分類定義、分析矩陣與統計結果皆保存固定版本，並記錄各階段輸入與筆數。第二階段功能家族映射的正式模型為 qwen2.5:14b，模型摘要值為 `7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6`（依專案紀錄的 V5 Manuscript Data Pack 模型資訊；Data Pack 原檔不在本稿工作環境中，投稿前須以原檔核對）。依 V5 camera-ready 稿（2026-09-21）第 3.13 節所記載的正式設定檔，量化版本為 Q4_K_M、上下文長度 8,192、temperature = 0、固定 seed = 20260909、最大輸出 512 tokens、單次 timeout 300 秒、最多重試 2 次；正式 V5 artifact 沒有保存當時 Ollama 的精確版本。這些執"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/08_MERGED_MASTER_THESIS_v1_8_SOURCE_VERIFIED.md",
+   "line": 3036,
+   "text": "| E12 | 文獻分析的模型版本與執行參數 | 已解決（v1.7）：第 3.8.3 節列出 qwen2.5:14b 的模型摘要值與正式設定檔參數 | 模型摘要值取自 V5 Data Pack 的模型紀錄；Ollama 版本未保存，維持為再現性限制 |"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/08_PATCH_LOG.md",
+   "line": 388,
+   "text": "- **`工作環境中` at L651 (V5 Data Pack original not in workspace):** OPEN_SOURCE_NOT_FOUND. The V9.1 Stage-2 verification corroborates the digest and settings, but it is not the main-run Data Pack. Left open; see §4."
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/08_PATCH_LOG.md",
+   "line": 409,
+   "text": "- v1.7 never names `完整資料來源`."
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/08_PATCH_LOG.md",
+   "line": 441,
+   "text": "4. **L651, the V5 Data Pack provenance.** It stays OPEN_SOURCE_NOT_FOUND. The optional corroboration sentence from 06 (V9.1 Stage-2 verification with the same digest, Q4_K_M, temperature 0, seed 20260909 and num_ctx 8192) was not added. It would add numeric tokens, and it corroborates the settings but does not close the original-file gap."
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/08_PATCH_LOG.md",
+   "line": 462,
+   "text": "- L651: Data Pack."
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/10_FINAL_STATUS.md",
+   "line": 80,
+   "text": "- Still open: 12 non-V9 sources not found (references, EUR-Lex, format templates, the V5 Data Pack, Drive) and 124 KEEP_AS_LIMITATION rows (enterprise data, V1 human coding and similar)."
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/10_FINAL_STATUS.md",
+   "line": 93,
+   "text": "1. 128 L15 mislabels `完整資料來源.zip` as the \"V5 Data Pack\". It is actually the legacy structural-hole study (05). The real V5 Data Pack is NOT_RECOVERED."
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/README_V1_8_SOURCE_CLOSURE.md",
+   "line": 12,
+   "text": "| 03_LEGACY_FULL_SOURCE | 完整資料來源.zip | 13,143,635 | 138dbeac661fb39a0ab7f3fe84f312e332a9d8b64b5b47c399034bffd4c0d283 | C:\\NTUST_PAPER\\read\\generated_v2\\ | 2026-05-06T15:11:55 |"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/D/assemble.py",
+   "line": 9,
+   "text": "rows = [\"| # | Relative path (under 完整資料來源/) | sha256[:16] | Type | Size (B) | Analysis family | Filename date | Zip entry mtime | Inventory sha match |\","
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/D/footer.md",
+   "line": 40,
+   "text": "| 15 | `完整資料來源.zip` listed as **ABSENT** and described as \"V5 Manuscript Data Pack 本體\". | **CONFLICT (labeling, non-blocking):** the zip now present (`C:\\NTUST_PAPER\\read\\generated_v2\\完整資料來源.zip`, sha256 138dbeac…) is *not* a V5 data pack; it is the April–May 2026 legacy structural-hole / citation / PCA-FA package. 128 §3's V5 cross-check was done against R14 + `04_G01_G16_FROZEN.csv`, not this zi"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/D/footer.md",
+   "line": 48,
+   "text": "- v1.7 never names `完整資料來源`; 128 names it once (line 15) with a wrong description (§3.4)."
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/D/footer.md",
+   "line": 68,
+   "text": "- Required follow-up (outside this phase): correct 128 line 15's description of `完整資料來源.zip`."
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/D/header.md",
+   "line": 1,
+   "text": "# 05 — LEGACY SOURCE BOUNDARY (`完整資料來源.zip`)"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/D/header.md",
+   "line": 4,
+   "text": "Scope: read-only audit of `W\\03_LEGACY_FULL_SOURCE\\完整資料來源\\` (69 files) against the v1.7 candidate manuscript"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/D/header.md",
+   "line": 12,
+   "text": "Source zip: `C:\\NTUST_PAPER\\read\\generated_v2\\完整資料來源.zip`, sha256 `138dbeac661fb39a0ab7f3fe84f312e332a9d8b64b5b47c399034bffd4c0d283`, 13,143,635 B, mtime 2026-05-06T15:11:55 (`00_INPUT_MANIFEST.csv`). All 69 extracted files re-hashed: 69/69 match `01_FILE_INVENTORY.csv`."
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/D/legacy_audit.py",
+   "line": 9,
+   "text": "LEG = W / \"03_LEGACY_FULL_SOURCE\" / \"完整資料來源\""
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/D/legacy_audit.py",
+   "line": 37,
+   "text": "inv[row[\"relative_path\"].replace(\"完整資料來源/\", \"\", 1)] = row"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/D/legacy_audit.py",
+   "line": 68,
+   "text": "\"citation edge\", \"OpenAlex\", \"Monte Carlo\", \"gap_priority\", \"Tier-A\", \"Tier-B\", \"info_gap\", \"完整資料來源\","
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/D/legacy_audit_result.json",
+   "line": 4,
+   "text": "\"rel\": \"README_完整資料來源.md\","
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/D/legacy_audit_result.json",
+   "line": 1122,
+   "text": "\"完整資料來源\": [],"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/D/legacy_audit_result.json",
+   "line": 1224,
+   "text": "\"完整資料來源\": ["
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/D/legacy_audit_result.json",
+   "line": 1227,
+   "text": "\"ctx\": \"| `完整資料來源.zip` | **ABSENT** | V5 Manuscript Data Pack 本體未在環境中；本輪以 R14 定稿 + `04_G01_G16_FROZEN.csv` + 專案指示所列 V5 數字交叉核對（全部一致，見 §3）。 |\""
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/E/build.py",
+   "line": 65,
+   "text": "put(\"128\", 15, \"SRC_MISSING\", (NF, \"PARTIAL\", \"NO\", \"W/03_LEGACY_FULL_SOURCE/完整資料來源 (zip sha 138dbeac..)\", \"V5 Manuscript Data Pack\","
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/E/build.py",
+   "line": 71,
+   "text": "put(\"128\", 46, \"ZH_PENDING\", (NF, \"PARTIAL\", \"PARTIAL\", V + \"V9_1_SEGMENTATION_SENSITIVITY/SEGMENT_STAGE2_MODEL_VERIFICATION.json(feb1ae6a..)\", \"V5 Data Pack model record\","
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/E/build.py",
+   "line": 72,
+   "text": "\"Same digest 7cdf5a01.., Q4_K_M, temperature 0, seed 20260909, num_ctx 8192 found in the V9.1 frozen Stage-2 contract verification (2026-10-03), which corroborates but is not the original main-run Data Pack.\"))"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/E/final_view.txt",
+   "line": 3,
+   "text": "128 L15 OPEN_SOURCE_NOT_FOUND | | `完整資料來源.zip` | **ABSENT** | V5 Manuscript Data Pack 本"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/E/final_view.txt",
+   "line": 16,
+   "text": "128 L46 OPEN_SOURCE_NOT_FOUND | 0260909 等）可作為 130 §3.8.3 的出處，並註明 Data Pack 原檔待核。 |"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/E/final_view.txt",
+   "line": 47,
+   "text": "129 L181 NOT_A_FLAG | 3 的出處錯置 | 模型摘要值標為「依專案紀錄的 V5 Data Pack 模型資訊，原檔待核」；執行參數標為「依 V5 camera-re"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/E/final_view.txt",
+   "line": 73,
+   "text": "130 L651 OPEN_SOURCE_NOT_FOUND | 紀錄的 V5 Manuscript Data Pack 模型資訊；Data Pack 原檔不在本稿工作環境中，投稿前須以原檔核對）。依 V5"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/E/flags.csv",
+   "line": 4,
+   "text": "128_CANONICAL_STATE.md,15,## 0. 本輪可取得與不可取得的來源,SRC_MISSING,| `完整資料來源.zip` | **ABSENT** | V5 Manuscript Data Pack 本"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/E/flags.csv",
+   "line": 17,
+   "text": "128_CANONICAL_STATE.md,46,## 2. 衝突清單（不得靜默調和）,ZH_PENDING,0260909 等）可作為 130 §3.8.3 的出處，並註明 Data Pack 原檔待核。 |"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/E/flags.csv",
+   "line": 48,
+   "text": "129_MANUSCRIPT_FORENSIC_DELTA.md,181,## 4. 對抗式審查後的修正（同一輪內完成）,ZH_PENDING,3 的出處錯置 | 模型摘要值標為「依專案紀錄的 V5 Data Pack 模型資訊，原檔待核」；執行參數標為「依 V5 camera-ready 第 3"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/E/flags.csv",
+   "line": 77,
+   "text": "130_MERGED_MASTER_THESIS_R14_TO_ENTERPRISE_v1_7_EVIDENCE_CONVERGED_CANDIDATE.md,651,### 3.8.3 文獻分析的再現性與資料版本管理,SRC_MISSING,紀錄的 V5 Manuscript Data Pack 模型資訊；Data Pack 原檔不在本稿工作環境中，投稿前須以原檔核對）。依 V5 camera-ready"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/E/flags_view.txt",
+   "line": 3,
+   "text": "128 L15 SRC_MISSING | | `完整資料來源.zip` | **ABSENT** | V5 Manuscript Data Pack 本"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/E/flags_view.txt",
+   "line": 16,
+   "text": "128 L46 ZH_PENDING | 0260909 等）可作為 130 §3.8.3 的出處，並註明 Data Pack 原檔待核。 |"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/E/flags_view.txt",
+   "line": 45,
+   "text": "129 L181 ZH_PENDING | 3 的出處錯置 | 模型摘要值標為「依專案紀錄的 V5 Data Pack 模型資訊，原檔待核」；執行參數標為「依 V5 camera-ready 第 3"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/E/flags_view.txt",
+   "line": 72,
+   "text": "130 L651 SRC_MISSING | 紀錄的 V5 Manuscript Data Pack 模型資訊；Data Pack 原檔不在本稿工作環境中，投稿前須以原檔核對）。依 V5 camera-ready"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/E/hits_raw.csv",
+   "line": 11,
+   "text": "128_CANONICAL_STATE.md,46,## 2. 衝突清單（不得靜默調和）,待核,以內容判定 | V5 camera-ready 降為歷史出處；不得用其覆寫 R14。其中未被 R14 取代或改變的正式執行設定紀錄（第 3.13 節：Q4_K_M、num_ctx 8192、temperature 0、seed 20260909 等）可作為 130 §3.8.3 的出處，並註明 Data Pack 原檔待核。 |"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/E/hits_raw.csv",
+   "line": 39,
+   "text": "129_MANUSCRIPT_FORENSIC_DELTA.md,181,## 4. 對抗式審查後的修正（同一輪內完成）,待核,| MEDIUM：3.8.3 的出處錯置 | 模型摘要值標為「依專案紀錄的 V5 Data Pack 模型資訊，原檔待核」；執行參數標為「依 V5 camera-ready 第 3.13 節的正式設定檔」；128 CF-03 補註 |"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/E/hits_view.txt",
+   "line": 26,
+   "text": "129_ L181 | ## 4. 對抗式審查後的修正（同一輪內完成） | | MEDIUM：3.8.3 的出處錯置 | 模型摘要值標為「依專案紀錄的 V5 Data Pack 模型資訊，原檔待核」；執行參數標為「依 V5 camera-ready 第 3.13 節的正式設定檔」；128 CF-03 補註 |"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/F/build_log.py",
+   "line": 73,
+   "text": "w(\"- **`工作環境中` at L651 (V5 Data Pack original not in workspace):** OPEN_SOURCE_NOT_FOUND. The V9.1 Stage-2 verification corroborates the digest and settings, but it is not the main-run Data Pack. Left open; see §4.\")"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/F/build_log.py",
+   "line": 94,
+   "text": "w(\"- v1.7 never names `完整資料來源`.\")"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/F/build_log.py",
+   "line": 123,
+   "text": "w(\"4. **L651, the V5 Data Pack provenance.** It stays OPEN_SOURCE_NOT_FOUND. The optional corroboration sentence from 06 (V9.1 Stage-2 verification with the same digest, Q4_K_M, temperature 0, seed 20260909 and num_ctx 8192) was not added. It would add numeric tokens, and it corroborates the settings but does not close the original-file gap.\")"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/F/build_log.py",
+   "line": 144,
+   "text": "w(\"  - L651: Data Pack.\")"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/F/d1.txt",
+   "line": 47,
+   "text": "來源資料、分類定義、分析矩陣與統計結果皆保存固定版本，並記錄各階段輸入與筆數。第二階段功能家族映射的正式模型為 qwen2.5:14b，模型摘要值為 `7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6`（依專案紀錄的 V5 Manuscript Data Pack 模型資訊；Data Pack 原檔不在本稿工作環境中，投稿前須以原檔核對）。依 V5 camera-ready 稿（2026-09-21）第 3.13 節所記載的正式設定檔，量化版本為 Q4_K_M、上下文長度 8,192、temperature = 0、固定 seed = 20260909、最大輸出 512 tokens、單次 timeout 300 秒、最多重試 2 次；正式 V5 artifact 沒有保存當時 Ollama 的精確版本。這些執"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/F/rows.txt",
+   "line": 9,
+   "text": "{'file': '130_MERGED_MASTER_THESIS_R14_TO_ENTERPRISE_v1_7_EVIDENCE_CONVERGED_CANDIDATE.md', 'section': '### 3.8.3 文獻分析的再現性與資料版本管理', 'old_flag': '紀錄的 V5 Manuscript Data Pack 模型資訊；Data Pack 原檔不在本稿工作環境中，投稿前須以原檔核對）。依 V5 camera-ready', 'source_found': 'PARTIAL', 'verified': 'PARTIAL', 'source_artifact': 'V9=W/02_V9_HUMAN_VALIDATION/20260929_V9_HUMAN_VALIDATION/V9_1_SEGMENTATION_SENSITIVITY/SEGMENT_STAG"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/F/verify_out.json",
+   "line": 440,
+   "text": "\"5b22f6`（依專案紀錄的 V5 Manuscript Data Pack 模型資訊；Data Pack 原檔不在本稿工作環境中，投稿前須以原檔核對）。依 V5 camera-ready 稿（2026-09-21）第 3.13 節所記載的正式設定檔，量化版本為 Q4_K_M、上\""
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/common.txt",
+   "line": 6,
+   "text": "- W\\03_LEGACY_FULL_SOURCE\\完整資料來源\\  (older legacy package)"
+  },
+  {
+   "file": "claude/r14_merge_v1_8_source_closure/tools/p01.py",
+   "line": 5,
+   "text": "(\"03_LEGACY_FULL_SOURCE\", r\"C:\\NTUST_PAPER\\read\\generated_v2\\完整資料來源.zip\")]"
+  }
+ ]
+}

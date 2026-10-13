@@ -1,0 +1,29 @@
+{
+ "analyzer": "v1_construct_analyzer_v1_8_1",
+ "seed": 20261011,
+ "bootstrap_reps": 5000,
+ "thresholds": {
+  "alpha_reliable": 0.8,
+  "alpha_tentative": 0.667,
+  "ci_lower_imprecise": 0.667,
+  "provenance": "RESEARCH_CONVENTION (53B C1/C2)"
+ },
+ "inputs": [
+  {
+   "path": "C:/NTUST_PAPER/outputs/20261014_V1_8_1_STUDY1_FREEZE/repo/claude/r14_merge_v1_8_1_study1_freeze/20_V1_HUMAN_CONSTRUCT_VALIDATION_PACKET_CODER_1.xlsx",
+   "sheet": "CODER_1",
+   "sha256": "99eb27aff52054fa0f9e81a1d98630e631d20a340b997617fb528630e01b96c3"
+  },
+  {
+   "path": "C:/NTUST_PAPER/outputs/20261014_V1_8_1_STUDY1_FREEZE/repo/claude/r14_merge_v1_8_1_study1_freeze/20_V1_HUMAN_CONSTRUCT_VALIDATION_PACKET_CODER_2.xlsx",
+   "sheet": "CODER_2",
+   "sha256": "7529b83e9dd1df8df865056b3259eba308b41b85262177fa36daf2c3b93dbad0"
+  },
+  {
+   "path": "C:/NTUST_PAPER/outputs/20261014_V1_8_1_STUDY1_FREEZE/repo/claude/r14_merge_v1_8_1_study1_freeze/20_V1_HUMAN_CONSTRUCT_VALIDATION_PACKET_CODER_3_OPTIONAL.xlsx",
+   "sheet": "CODER_3_OPTIONAL",
+   "sha256": "2fa5b15d8f72e53e35a93b41099f9197face5145ec84393ff238f76f375302c2"
+  }
+ ],
+ "status": "NO_HUMAN_DATA"
+}

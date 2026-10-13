@@ -1,0 +1,257 @@
+{
+ "checker": "leakage_check_v1_packet.py",
+ "files": {
+  "20_V1_HUMAN_CONSTRUCT_VALIDATION_PACKET.xlsx": {
+   "sha256": "4a79b66be262f7b553e9ecf04507857ae494f036bdb73afeb0746b6d4f921f2c",
+   "sheets": [
+    "README_INSTRUCTIONS",
+    "CATEGORY_DEFINITIONS",
+    "ITEM_INFO",
+    "CODER_1",
+    "CODER_2",
+    "CODER_3_OPTIONAL",
+    "ATTESTATION",
+    "ADJUDICATION_EMPTY"
+   ],
+   "coder_facing": true,
+   "distributed_to_coders": false,
+   "nonempty_response_cells": 0
+  },
+  "20_V1_HUMAN_CONSTRUCT_VALIDATION_PACKET_CODER_1.xlsx": {
+   "sha256": "99eb27aff52054fa0f9e81a1d98630e631d20a340b997617fb528630e01b96c3",
+   "sheets": [
+    "README_INSTRUCTIONS",
+    "CATEGORY_DEFINITIONS",
+    "ITEM_INFO",
+    "CODER_1",
+    "ATTESTATION"
+   ],
+   "coder_facing": true,
+   "distributed_to_coders": true,
+   "nonempty_response_cells": 0
+  },
+  "20_V1_HUMAN_CONSTRUCT_VALIDATION_PACKET_CODER_2.xlsx": {
+   "sha256": "7529b83e9dd1df8df865056b3259eba308b41b85262177fa36daf2c3b93dbad0",
+   "sheets": [
+    "README_INSTRUCTIONS",
+    "CATEGORY_DEFINITIONS",
+    "ITEM_INFO",
+    "CODER_2",
+    "ATTESTATION"
+   ],
+   "coder_facing": true,
+   "distributed_to_coders": true,
+   "nonempty_response_cells": 0
+  },
+  "20_V1_HUMAN_CONSTRUCT_VALIDATION_PACKET_CODER_3_OPTIONAL.xlsx": {
+   "sha256": "2fa5b15d8f72e53e35a93b41099f9197face5145ec84393ff238f76f375302c2",
+   "sheets": [
+    "README_INSTRUCTIONS",
+    "CATEGORY_DEFINITIONS",
+    "ITEM_INFO",
+    "CODER_3_OPTIONAL",
+    "ATTESTATION"
+   ],
+   "coder_facing": true,
+   "distributed_to_coders": true,
+   "nonempty_response_cells": 0
+  }
+ },
+ "ai_pilot_sources": [
+  {
+   "path": "v1_blind/ai_coder_A_output.csv",
+   "sha256": "81d7dbb8d5732091e9ee47b2eadaed2e12f5c050abc51159f41f762fed639e81"
+  },
+  {
+   "path": "v1_blind/ai_coder_B_output.csv",
+   "sha256": "8ed9115c65a8cd556b784bf129ff443efdda2d7dec212a6f18f27288d8d39c2a"
+  }
+ ],
+ "ai_pilot_shingles_checked": 1161,
+ "ai_pilot_shingles_excluded_as_53B_codebook_text": 1,
+ "network_numbers_checked": 85,
+ "sealed_key_sha256": "d1702188359e2efa872ae3d5a3ebdae8b75bb220b49931af4f2f59e524936734",
+ "packet_mapping_equals_sealed_case_map": true,
+ "findings": [],
+ "lexical_overlap_family_vs_category_names": [
+  {
+   "family": "Evaluation and Audit",
+   "shared_words": [
+    "evaluation"
+   ]
+  },
+  {
+   "family": "Human Review and Accountability",
+   "shared_words": [
+    "accountability"
+   ]
+  },
+  {
+   "family": "Explanation and Assurance",
+   "shared_words": [
+    "assurance"
+   ]
+  },
+  {
+   "family": "Evaluation and Selection",
+   "shared_words": [
+    "evaluation"
+   ]
+  }
+ ],
+ "screen_132_literature_interpretation": [
+  {
+   "gap": "G01",
+   "encoding": "utf-8-sig",
+   "hint_terms": [
+    "分工"
+   ],
+   "hint_terms_only_from_family_name": [],
+   "verdict": "LEAKS_MECHANISM_HINT"
+  },
+  {
+   "gap": "G02",
+   "encoding": "utf-8-sig",
+   "hint_terms": [
+    "誰",
+    "負責",
+    "問責",
+    "審"
+   ],
+   "hint_terms_only_from_family_name": [],
+   "verdict": "LEAKS_MECHANISM_HINT"
+  },
+  {
+   "gap": "G03",
+   "encoding": "utf-8-sig",
+   "hint_terms": [
+    "回復",
+    "例外",
+    "流程"
+   ],
+   "hint_terms_only_from_family_name": [],
+   "verdict": "LEAKS_MECHANISM_HINT"
+  },
+  {
+   "gap": "G04",
+   "encoding": "utf-8-sig",
+   "hint_terms": [
+    "配置決策",
+    "組織配置",
+    "技術應用前沿"
+   ],
+   "hint_terms_only_from_family_name": [],
+   "verdict": "LEAKS_MECHANISM_HINT"
+  },
+  {
+   "gap": "G05",
+   "encoding": "utf-8-sig",
+   "hint_terms": [],
+   "hint_terms_only_from_family_name": [],
+   "verdict": "NO_HINT_TERM_FOUND"
+  },
+  {
+   "gap": "G06",
+   "encoding": "utf-8-sig",
+   "hint_terms": [
+    "審"
+   ],
+   "hint_terms_only_from_family_name": [
+    "審"
+   ],
+   "verdict": "FAMILY_NAME_OVERLAP_ONLY"
+  },
+  {
+   "gap": "G07",
+   "encoding": "utf-8-sig",
+   "hint_terms": [],
+   "hint_terms_only_from_family_name": [],
+   "verdict": "NO_HINT_TERM_FOUND"
+  },
+  {
+   "gap": "G08",
+   "encoding": "utf-8-sig",
+   "hint_terms": [
+    "誰",
+    "問責",
+    "簽核"
+   ],
+   "hint_terms_only_from_family_name": [],
+   "verdict": "LEAKS_MECHANISM_HINT"
+  },
+  {
+   "gap": "G09",
+   "encoding": "utf-8-sig",
+   "hint_terms": [],
+   "hint_terms_only_from_family_name": [],
+   "verdict": "NO_HINT_TERM_FOUND"
+  },
+  {
+   "gap": "G10",
+   "encoding": "utf-8-sig",
+   "hint_terms": [
+    "門檻"
+   ],
+   "hint_terms_only_from_family_name": [],
+   "verdict": "LEAKS_MECHANISM_HINT"
+  },
+  {
+   "gap": "G11",
+   "encoding": "utf-8-sig",
+   "hint_terms": [
+    "回饋",
+    "下一期",
+    "審"
+   ],
+   "hint_terms_only_from_family_name": [],
+   "verdict": "LEAKS_MECHANISM_HINT"
+  },
+  {
+   "gap": "G12",
+   "encoding": "utf-8-sig",
+   "hint_terms": [
+    "試點"
+   ],
+   "hint_terms_only_from_family_name": [],
+   "verdict": "LEAKS_MECHANISM_HINT"
+  },
+  {
+   "gap": "G13",
+   "encoding": "utf-8-sig",
+   "hint_terms": [],
+   "hint_terms_only_from_family_name": [],
+   "verdict": "NO_HINT_TERM_FOUND"
+  },
+  {
+   "gap": "G14",
+   "encoding": "utf-8-sig",
+   "hint_terms": [
+    "流程",
+    "嵌入"
+   ],
+   "hint_terms_only_from_family_name": [],
+   "verdict": "LEAKS_MECHANISM_HINT"
+  },
+  {
+   "gap": "G15",
+   "encoding": "utf-8-sig",
+   "hint_terms": [],
+   "hint_terms_only_from_family_name": [],
+   "verdict": "NO_HINT_TERM_FOUND"
+  },
+  {
+   "gap": "G16",
+   "encoding": "utf-8-sig",
+   "hint_terms": [
+    "誰",
+    "負責",
+    "問責",
+    "停止"
+   ],
+   "hint_terms_only_from_family_name": [],
+   "verdict": "LEAKS_MECHANISM_HINT"
+  }
+ ],
+ "w132_sha256": "7f7d06c4c7d91777dfc2baf7c959a7538780a6a88ffbeec0e891c0d0e7b5aef3",
+ "verdict": "PASS"
+}

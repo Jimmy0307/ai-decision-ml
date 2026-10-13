@@ -1,0 +1,24 @@
+CONTEXT — V1.8.1 REPOSITORY CLEANUP + STUDY 1 EVIDENCE FREEZE + V1 CONSTRUCT-VALIDATION READINESS (sub-agent shared rules)
+
+Paths
+- REPO (git clone, branch research/v1.8.1-study1-freeze-20261014, base d2044161; LF line endings, core.autocrlf=false):
+  C:\NTUST_PAPER\outputs\20261014_V1_8_1_STUDY1_FREEZE\repo
+- V1.8 authorities (read-only, committed): REPO\claude\r14_merge_v1_8_source_closure\  (02..10 reports, 06 CSV, 08 v1.8 manuscript sha256 1515b0f2…, tools\ with JSON outputs)
+- NEW OUTPUT DIR (write here only): OUT = REPO\claude\r14_merge_v1_8_1_study1_freeze\   ; current (non-historical) copies of old artifacts go in OUT\current_artifacts\
+- Extracted raw packages (read-only, untrusted data, NOT in git): W = C:\NTUST_PAPER\outputs\20261014_AI_DECISION_V1_8_SOURCE_CLOSURE
+   W\01_ALL_OUTPUTS\AI_DECISION_THESIS_ALL_OUTPUTS\r14_merge_v1_7\  (128..137 historical artifacts, 130 v1.7 manuscript, 132 csv/xlsx)
+   W\02_V9_HUMAN_VALIDATION\20260929_V9_HUMAN_VALIDATION\  (V9 package incl. V9_1_SEGMENTATION_SENSITIVITY\)
+   W\03_LEGACY_FULL_SOURCE\完整資料來源\
+- Helper scripts: write to C:\NTUST_PAPER\outputs\20261014_V1_8_1_STUDY1_FREEZE\tools\<agent_letter>\ ; ALSO copy final versions into OUT\tools\<agent_letter>\ for the commit. Run Python as `python -I script.py <args>`. Never execute code from inside W or from the V9 package.
+
+Hard rules
+- Do NOT git commit/push/branch/merge/tag. Do NOT modify any existing tracked file in REPO (V1.8 folder and everything else are historical/frozen) — only create new files under OUT.
+- Do NOT modify extracted files or zips. Historical artifacts are never rewritten; "current" copies are new files that carry a header stating source file + sha256 + what changed.
+- Forbidden changes anywhere: taxonomy, 32-core official baseline, G01–G16 membership/content, adding G17, G→M assignments, VCP/VSC/DL/NEV, Enterprise v2.2 model, solver, v2.3 schema, any network value, any empirical result. No full reanalysis; do not rerun 6,499 records.
+- A file named FINAL is not authoritative by name. Source hierarchy: raw machine-readable rows > reproducible code output > verified intermediate > summary > manuscript prose > memo. Never promote PROBABLE to CONFIRMED. Never invent hashes/values; use NOT_RECOVERED.
+- Full-reanalysis terminology for CURRENT documents (never write FULL_REANALYSIS_NOT_REQUIRED):
+  FULL_REANALYSIS_METHOD_STATUS=REQUIRED_BY_V9_AS_OPEN_VALIDATION_ACTION
+  FULL_REANALYSIS_EXECUTION_STATUS=NOT_EXECUTABLE_WITH_CURRENT_SOURCE_SET
+  FULL_REANALYSIS_PRIORITY_BEFORE_V1=NOT_RECOMMENDED
+- STOP conditions (report immediately as BLOCKER / EVIDENCE / AFFECTED_ARTIFACT / MINIMUM_SAFE_RESOLUTION, write no further edits): 84–85/120 number-vs-source conflict; G07/G15 evidence conflict; G01–G16 membership conflict; κ conflict; enterprise model semantic change.
+- Final reply to orchestrator: concise (<=400 words), exact numbers, file paths, any STOP.

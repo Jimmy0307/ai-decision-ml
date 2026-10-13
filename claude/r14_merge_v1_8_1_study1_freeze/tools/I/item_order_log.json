@@ -1,0 +1,71 @@
+{
+ "base_seed": 20261014,
+ "rule": "random.Random(BASE_SEED + k).shuffle(['G01'..'G16']) for coder k (Python stdlib)",
+ "orders": {
+  "CODER_1": [
+   "G03",
+   "G10",
+   "G06",
+   "G02",
+   "G13",
+   "G05",
+   "G09",
+   "G16",
+   "G15",
+   "G11",
+   "G12",
+   "G01",
+   "G14",
+   "G08",
+   "G04",
+   "G07"
+  ],
+  "CODER_2": [
+   "G08",
+   "G10",
+   "G03",
+   "G06",
+   "G01",
+   "G02",
+   "G04",
+   "G16",
+   "G13",
+   "G07",
+   "G15",
+   "G11",
+   "G14",
+   "G09",
+   "G12",
+   "G05"
+  ],
+  "CODER_3_OPTIONAL": [
+   "G10",
+   "G15",
+   "G13",
+   "G07",
+   "G04",
+   "G12",
+   "G05",
+   "G06",
+   "G16",
+   "G14",
+   "G02",
+   "G11",
+   "G03",
+   "G08",
+   "G01",
+   "G09"
+  ]
+ },
+ "item_sources": [
+  "54A_V1_BLIND_PACKET_A_v2_2.csv (family definitions, neutral pair text)",
+  "11_Priority_Gaps_Frozen_Export_G01_G16_v1_0_20261009.csv (G ID <-> family pair)"
+ ],
+ "mask_gid": false,
+ "outputs": [
+  "claude/r14_merge_v1_8_1_study1_freeze/20_V1_HUMAN_CONSTRUCT_VALIDATION_PACKET.xlsx",
+  "claude/r14_merge_v1_8_1_study1_freeze/20_V1_HUMAN_CONSTRUCT_VALIDATION_PACKET_CODER_1.xlsx",
+  "claude/r14_merge_v1_8_1_study1_freeze/20_V1_HUMAN_CONSTRUCT_VALIDATION_PACKET_CODER_2.xlsx",
+  "claude/r14_merge_v1_8_1_study1_freeze/20_V1_HUMAN_CONSTRUCT_VALIDATION_PACKET_CODER_3_OPTIONAL.xlsx"
+ ]
+}

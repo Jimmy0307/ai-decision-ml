@@ -1,0 +1,418 @@
+[
+ {
+  "file": "128_CANONICAL_STATE.md",
+  "current_copy": "128_CANONICAL_STATE_v1_8_1.md",
+  "line": 10,
+  "old": "使用者列出的優先來源中，以下 **不在本工作環境中**（uploads 目錄為空，全檔系統搜尋無結果）：",
+  "new": "使用者列出的優先來源中，以下 **不在本工作環境中**（uploads 目錄為空，全檔系統搜尋無結果）：〔SUPERSEDED_BY_V1_8_SOURCE_CLOSURE：V9 source package recovered and partially verified in V1.8〕",
+  "classification": "HISTORICAL_ENV"
+ },
+ {
+  "file": "128_CANONICAL_STATE.md",
+  "current_copy": "128_CANONICAL_STATE_v1_8_1.md",
+  "line": 14,
+  "old": "| `20260929_V9_HUMAN_VALIDATION.zip` | **ABSENT** |",
+  "new": "| `20260929_V9_HUMAN_VALIDATION.zip` | **RECOVERED；V9_SOURCE_VERIFIED=PARTIAL（V1.8）**（v1.7 時記為 ABSENT） |",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "128_CANONICAL_STATE.md",
+  "current_copy": "128_CANONICAL_STATE_v1_8_1.md",
+  "line": 14,
+  "old": "人工標籤替換的局部敏感度結果（+人機增能 × 風險評估；−協調與執行 × 一般決策流程）與 `HUMAN_AUDIT_CONVERGED / LOCAL_SENSITIVITY_CHANGED / FULL_REANALYSIS_REQUIRED` 狀態，在本環境中**唯一來源是使用者 2026-10-13 的指示文字**。",
+  "new": "人工標籤替換的局部敏感度結果（+人機增能 × 風險評估；−協調與執行 × 一般決策流程）與 `HUMAN_AUDIT_CONVERGED / LOCAL_SENSITIVITY_CHANGED / FULL_REANALYSIS_REQUIRED` 狀態，在本環境中**唯一來源是使用者 2026-10-13 的指示文字**。〔SUPERSEDED_BY_V1_8_SOURCE_CLOSURE：V9 source package recovered and partially verified in V1.8〕",
+  "classification": "HISTORICAL_ENV"
+ },
+ {
+  "file": "128_CANONICAL_STATE.md",
+  "current_copy": "128_CANONICAL_STATE_v1_8_1.md",
+  "line": 14,
+  "old": "κ 值、50/20/19 筆數可由 R14 定稿獨立核對（相符）。",
+  "new": "κ 值、50/20/19 筆數可由 R14 定稿獨立核對（相符）。現況：V9 source package recovered and partially verified in V1.8——zip sha256 `8f63e88e…`；替換結果與狀態旗標已由 `ROBUST_CORE_LOCAL_SENSITIVITY.csv`（`e3166ee1…`）與 `FINAL_STATUS.json`（`d9226d31…`，verified_at 2026-10-03T12:23:44Z）逐列核對（`02_V9_AUTHORITY_MAP.md`、`04_LOCAL_SENSITIVITY_REPRODUCTION.md`）；12/37 受保護輸入仍未尋回。完整重分析現行狀態：FULL_REANALYSIS_METHOD_STATUS=REQUIRED_BY_V9_AS_OPEN_VALIDATION_ACTION；FULL_REANALYSIS_EXECUTION_STATUS=NOT_EXECUTABLE_WITH_CURRENT_SOURCE_SET；FULL_REANALYSIS_PRIORITY_BEFORE_V1=NOT_RECOMMENDED（`07_FULL_REANALYSIS_DECISION_MEMO.md` §8）。",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "128_CANONICAL_STATE.md",
+  "current_copy": "128_CANONICAL_STATE_v1_8_1.md",
+  "line": 15,
+  "old": "| `完整資料來源.zip` | **ABSENT** |",
+  "new": "| `完整資料來源.zip` | **PRESENT IN V1.8 INPUTS（sha256 `138dbeac…`）— LEGACY_HISTORICAL_PROVENANCE**（v1.7 時記為 ABSENT） |",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "128_CANONICAL_STATE.md",
+  "current_copy": "128_CANONICAL_STATE_v1_8_1.md",
+  "line": 15,
+  "old": "V5 Manuscript Data Pack 本體未在環境中；",
+  "new": "`LEGACY_HISTORICAL_PROVENANCE — STRUCTURAL-HOLE / CITATION-NETWORK STUDY PACKAGE (NOT THE V5 DATA PACK); REAL_V5_DATA_PACK=NOT_RECOVERED`（`05_LEGACY_SOURCE_BOUNDARY.md` §1、§3.4，sha256 `03205f44…`；v1.7 誤稱為「V5 Manuscript Data Pack 本體」）；",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "128_CANONICAL_STATE.md",
+  "current_copy": "128_CANONICAL_STATE_v1_8_1.md",
+  "line": 16,
+  "old": "| `投稿格式.pdf`、`投稿範例.pdf`、`全文投稿樣板 windows (2).docx` | **ABSENT** |",
+  "new": "| `投稿格式.pdf`、`投稿範例.pdf`、`全文投稿樣板 windows (2).docx` | **ABSENT**（V1.8 仍為 OPEN_SOURCE_NOT_FOUND：`06_SOURCE_FLAG_CLOSURE.csv` 128 L16） |",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "128_CANONICAL_STATE.md",
+  "current_copy": "128_CANONICAL_STATE_v1_8_1.md",
+  "line": 17,
+  "old": "| Google Drive 版本 | **無法存取**（本工作階段無 Drive 連接器） |",
+  "new": "| Google Drive 版本 | **無法存取**（本工作階段無 Drive 連接器；V1.8 仍未核對：`06_SOURCE_FLAG_CLOSURE.csv` 137 L10 OPEN_SOURCE_NOT_FOUND） |",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "128_CANONICAL_STATE.md",
+  "current_copy": "128_CANONICAL_STATE_v1_8_1.md",
+  "line": 29,
+  "old": "(b) 人工標籤替換局部敏感度與稽核狀態：V9 套件（2026-09-29）——**artifact 不在環境中，僅使用者陳述**。",
+  "new": "(b) 人工標籤替換局部敏感度與稽核狀態：V9 套件（資料夾 `20260929_V9_HUMAN_VALIDATION`；`FINAL_STATUS.json` 驗證時間 2026-10-03T12:23:44Z）——**V9 source package recovered and partially verified in V1.8**（`02_V9_AUTHORITY_MAP.md` §7 權威檔案集；`04_LOCAL_SENSITIVITY_REPRODUCTION.md`）。",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "128_CANONICAL_STATE.md",
+  "current_copy": "128_CANONICAL_STATE_v1_8_1.md",
+  "line": 29,
+  "old": "(b) **USER-REPORTED, ARTIFACT PENDING**",
+  "new": "(b) **V9_SOURCE_VERIFIED=PARTIAL（V1.8；50/20/19、κ、局部敏感度成員由原始列重現）**",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "128_CANONICAL_STATE.md",
+  "current_copy": "128_CANONICAL_STATE_v1_8_1.md",
+  "line": 29,
+  "old": "R14 02:218, 361, 365–375；使用者指示 §4–5 |",
+  "new": "R14 02:218, 361, 365–375；使用者指示 §4–5；V1.8 `02`／`03`／`04` |",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "128_CANONICAL_STATE.md",
+  "current_copy": "128_CANONICAL_STATE_v1_8_1.md",
+  "line": 44,
+  "old": "目標式人工標籤替換後核心仍為 32 格，但 +人機增能 × 風險評估（不足）、−協調與執行 × 一般決策流程（過度）；`FULL_REANALYSIS_REQUIRED`",
+  "new": "目標式人工標籤替換後核心仍為 32 格，但 +人機增能 × 風險評估（不足）、−協調與執行 × 一般決策流程（過度）；`FULL_REANALYSIS_REQUIRED`〔SUPERSEDED_BY_V1_8_SOURCE_CLOSURE：V9 source package recovered and partially verified in V1.8〕",
+  "classification": "HISTORICAL_ENV"
+ },
+ {
+  "file": "128_CANONICAL_STATE.md",
+  "current_copy": "128_CANONICAL_STATE_v1_8_1.md",
+  "line": 44,
+  "old": "B 較新（09-29 > R14 docx 09-20）",
+  "new": "B 較新（V9 `FINAL_STATUS.json` 2026-10-03 > R14 docx 09-20；v1.7 原記 09-29）",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "128_CANONICAL_STATE.md",
+  "current_copy": "128_CANONICAL_STATE_v1_8_1.md",
+  "line": 44,
+  "old": "但 B 的原始 artifact 不在環境中",
+  "new": "但 B 的原始 artifact 不在環境中〔SUPERSEDED_BY_V1_8_SOURCE_CLOSURE：V9 source package recovered and partially verified in V1.8〕",
+  "classification": "HISTORICAL_ENV"
+ },
+ {
+  "file": "128_CANONICAL_STATE.md",
+  "current_copy": "128_CANONICAL_STATE_v1_8_1.md",
+  "line": 44,
+  "old": "所有 B 的數字加 `[SOURCE: V9 human-validation state, 2026-09-29 — artifact not in workspace; verify before submission]`。",
+  "new": "所有 B 的數字加 `[SOURCE: V9 human-validation state, 2026-09-29 — artifact not in workspace; verify before submission]`。〔SUPERSEDED_BY_V1_8_SOURCE_CLOSURE：V9 source package recovered and partially verified in V1.8〕",
+  "classification": "HISTORICAL_ENV"
+ },
+ {
+  "file": "128_CANONICAL_STATE.md",
+  "current_copy": "128_CANONICAL_STATE_v1_8_1.md",
+  "line": 44,
+  "old": "**作者須提供 V9 套件以核對**（137 P0-1）。",
+  "new": "**V9 套件已取得並於 V1.8 逐列核對**：32 = 15／17、+1／−1、其餘 31 組不變、G01–G16 未移除（`04_LOCAL_SENSITIVITY_REPRODUCTION.md` T1–T3）；v1.8 稿件已將 V9 出處旗標改為來源引用（`06_SOURCE_FLAG_CLOSURE_NOTES.md` §3；`08_PATCH_LOG.md`）；137 P0-1 = PARTIALLY DONE。",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "128_CANONICAL_STATE.md",
+  "current_copy": "128_CANONICAL_STATE_v1_8_1.md",
+  "line": 46,
+  "old": "並註明 Data Pack 原檔待核。",
+  "new": "並註明 Data Pack 原檔待核（V1.8：REAL_V5_DATA_PACK=NOT_RECOVERED；`完整資料來源.zip` 不是 Data Pack，見 `05_LEGACY_SOURCE_BOUNDARY.md` §3.4；同一模型摘要值另見 V9.1 `SEGMENT_STAGE2_MODEL_VERIFICATION.json`，`06_SOURCE_FLAG_CLOSURE.csv` 128 L46）。",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "128_CANONICAL_STATE.md",
+  "current_copy": "128_CANONICAL_STATE_v1_8_1.md",
+  "line": 53,
+  "old": "不適用（缺 2026-09-29 原始紀錄）",
+  "new": "不適用（缺 2026-09-29 原始紀錄）〔SUPERSEDED_BY_V1_8_SOURCE_CLOSURE：V9 source package recovered and partially verified in V1.8〕",
+  "classification": "HISTORICAL_ENV"
+ },
+ {
+  "file": "128_CANONICAL_STATE.md",
+  "current_copy": "128_CANONICAL_STATE_v1_8_1.md",
+  "line": 53,
+  "old": "v1.7 改寫為「不同的測量操作；範圍可能部分重疊，待核」（E49）",
+  "new": "v1.7 改寫為「不同的測量操作；範圍可能部分重疊，待核」（E49）；V1.8 已核（`04_LOCAL_SENSITIVITY_REPRODUCTION.md` §3b）：標籤處理不重疊（V9.1 重切分未傳播任何人工標籤），記錄樣本部分重疊（50 筆受稽核記錄中 28 筆亦被重切分；其中 11 筆因人工錯誤標記被強制納入候選）",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "128_CANONICAL_STATE.md",
+  "current_copy": "128_CANONICAL_STATE_v1_8_1.md",
+  "line": 64,
+  "old": "**未觸發，但 artifact 缺件**",
+  "new": "**未觸發**（v1.7 時 artifact 缺件；V1.8 已取得並核對）",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "128_CANONICAL_STATE.md",
+  "current_copy": "128_CANONICAL_STATE_v1_8_1.md",
+  "line": 64,
+  "old": "替換結果只見於使用者指示（CF-01）。",
+  "new": "替換結果只見於使用者指示（CF-01）。〔SUPERSEDED_BY_V1_8_SOURCE_CLOSURE：V9 source package recovered and partially verified in V1.8〕",
+  "classification": "HISTORICAL_ENV"
+ },
+ {
+  "file": "128_CANONICAL_STATE.md",
+  "current_copy": "128_CANONICAL_STATE_v1_8_1.md",
+  "line": 64,
+  "old": "替換結果只見於使用者指示（CF-01）。〔SUPERSEDED_BY_V1_8_SOURCE_CLOSURE：V9 source package recovered and partially verified in V1.8〕",
+  "new": "替換結果只見於使用者指示（CF-01）。〔SUPERSEDED_BY_V1_8_SOURCE_CLOSURE：V9 source package recovered and partially verified in V1.8〕 V1.8：50/20/19 與 κ 由原始列重現（`03_HUMAN_AUDIT_REPRODUCTION.md`；無 HUMAN_RELIABILITY_CONFLICT），替換結果由 `ROBUST_CORE_LOCAL_SENSITIVITY.csv` 逐列重現（`04`）。",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "128_CANONICAL_STATE.md",
+  "current_copy": "128_CANONICAL_STATE_v1_8_1.md",
+  "line": 73,
+  "old": "觸發的兩項（CF-01 缺件、CF-02 證據不足）已以「不猜、加出處旗標、改寫為可支持表述」處理，並列入 OPEN BLOCKERS。",
+  "new": "觸發的兩項（CF-01 缺件、CF-02 證據不足）已以「不猜、加出處旗標、改寫為可支持表述」處理，並列入 OPEN BLOCKERS。〔SUPERSEDED_BY_V1_8_SOURCE_CLOSURE：V9 source package recovered and partially verified in V1.8〕",
+  "classification": "HISTORICAL_ENV"
+ },
+ {
+  "file": "131_HUMAN_VALIDATION_INTEGRATION_REPORT.md",
+  "current_copy": "131_HUMAN_VALIDATION_INTEGRATION_REPORT_v1_8_1.md",
+  "line": 14,
+  "old": "| 後續要求 | `FULL_REANALYSIS_REQUIRED` |",
+  "new": "| 後續要求 | V9 套件狀態標籤 `FULL_REANALYSIS_REQUIRED`（`FINAL_STATUS.json`；需研究者核准）；現行：FULL_REANALYSIS_METHOD_STATUS=REQUIRED_BY_V9_AS_OPEN_VALIDATION_ACTION；FULL_REANALYSIS_EXECUTION_STATUS=NOT_EXECUTABLE_WITH_CURRENT_SOURCE_SET；FULL_REANALYSIS_PRIORITY_BEFORE_V1=NOT_RECOMMENDED（`07_FULL_REANALYSIS_DECISION_MEMO.md` §8） |",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "131_HUMAN_VALIDATION_INTEGRATION_REPORT.md",
+  "current_copy": "131_HUMAN_VALIDATION_INTEGRATION_REPORT_v1_8_1.md",
+  "line": 28,
+  "old": "| R14 定稿 §3.7.1、§4.6.1、表 5；V9 狀態紀錄 | 收斂；局部敏感；須完整重分析 |",
+  "new": "| R14 定稿 §3.7.1、§4.6.1、表 5；V9 人工驗證套件（V1.8 已取得並部分核對：`02_V9_AUTHORITY_MAP.md`） | 收斂；局部敏感；完整重分析：FULL_REANALYSIS_METHOD_STATUS=REQUIRED_BY_V9_AS_OPEN_VALIDATION_ACTION；FULL_REANALYSIS_EXECUTION_STATUS=NOT_EXECUTABLE_WITH_CURRENT_SOURCE_SET；FULL_REANALYSIS_PRIORITY_BEFORE_V1=NOT_RECOMMENDED |",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "131_HUMAN_VALIDATION_INTEGRATION_REPORT.md",
+  "current_copy": "131_HUMAN_VALIDATION_INTEGRATION_REPORT_v1_8_1.md",
+  "line": 40,
+  "old": "| R14 02:218、357 | ✔ 與使用者陳述一致 |",
+  "new": "| R14 02:218、357；V9 `FIRST_CODER_50_FINAL_FROZEN.csv`（`dd332dd8…`） | ✔ 與 V9 原始列一致（V1.8 `03_HUMAN_AUDIT_REPRODUCTION.md`） |",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "131_HUMAN_VALIDATION_INTEGRATION_REPORT.md",
+  "current_copy": "131_HUMAN_VALIDATION_INTEGRATION_REPORT_v1_8_1.md",
+  "line": 42,
+  "old": "✔（使用者稱 19/19 reconciliation）",
+  "new": "✔（V9 `HUMAN_RECONCILED_20.csv`（`4b7ceac2…`）＋調和事件雜湊鏈 19/19；V1.8 `02` §2、`03` 重現）",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "131_HUMAN_VALIDATION_INTEGRATION_REPORT.md",
+  "current_copy": "131_HUMAN_VALIDATION_INTEGRATION_REPORT_v1_8_1.md",
+  "line": 44,
+  "old": "| R14 表 5、02:361 | ✔ 與使用者陳述一致 |",
+  "new": "| R14 表 5、02:361；V9 `HUMAN_RELIABILITY_FINAL.csv`（`ef7e5544…`） | ✔ 與 V9 原始列重算一致（V1.8 `03`：.5614／.1798／.0476／.1398／.3162） |",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "131_HUMAN_VALIDATION_INTEGRATION_REPORT.md",
+  "current_copy": "131_HUMAN_VALIDATION_INTEGRATION_REPORT_v1_8_1.md",
+  "line": 51,
+  "old": "| 使用者陳述（V9，2026-09-29） | ✖ 原始檔案不在環境中 |",
+  "new": "| V9 `FINAL_STATUS.json`（`d9226d31…`；verified_at 2026-10-03T12:23:44Z）；完整重分析現行三元組：FULL_REANALYSIS_METHOD_STATUS=REQUIRED_BY_V9_AS_OPEN_VALIDATION_ACTION；FULL_REANALYSIS_EXECUTION_STATUS=NOT_EXECUTABLE_WITH_CURRENT_SOURCE_SET；FULL_REANALYSIS_PRIORITY_BEFORE_V1=NOT_RECOMMENDED | ✔ V1.8 已核（`02_V9_AUTHORITY_MAP.md` §4、§7）；V9_SOURCE_VERIFIED=PARTIAL |",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "131_HUMAN_VALIDATION_INTEGRATION_REPORT.md",
+  "current_copy": "131_HUMAN_VALIDATION_INTEGRATION_REPORT_v1_8_1.md",
+  "line": 52,
+  "old": "| 使用者陳述（V9） | ✖ 原始檔案不在環境中；兩個配對在 R14 中的位置已核（下節） |",
+  "new": "| V9 `ROBUST_CORE_LOCAL_SENSITIVITY.csv`（`e3166ee1…`）／`_DIFF.csv`（`f6607aae…`） | ✔ V1.8 逐列核對（`04_LOCAL_SENSITIVITY_REPRODUCTION.md` T1、T3）；兩個配對在 R14 中的位置已核（下節） |",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "131_HUMAN_VALIDATION_INTEGRATION_REPORT.md",
+  "current_copy": "131_HUMAN_VALIDATION_INTEGRATION_REPORT_v1_8_1.md",
+  "line": 53,
+  "old": "| 使用者陳述；R14 02:361",
+  "new": "| V9 `FINAL_ERROR_TAXONOMY.csv`（`68e97c01…`）／`.md`（`33044106…`）；R14 02:361",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "131_HUMAN_VALIDATION_INTEGRATION_REPORT.md",
+  "current_copy": "131_HUMAN_VALIDATION_INTEGRATION_REPORT_v1_8_1.md",
+  "line": 53,
+  "old": "作為四分類的整理來自 2026-09-29 紀錄；",
+  "new": "作為四分類的整理來自 V9 錯誤型態表（V1.8 部分核對，`06_SOURCE_FLAG_CLOSURE_NOTES.md` §4）：V9 將其列為模型標籤與人工標籤差異的詮釋性假說（非裁決），並另列第五類 `TRUE_CONCEPTUAL_AMBIGUITY`，不是對 19 筆編碼者間分歧的歸類；",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "131_HUMAN_VALIDATION_INTEGRATION_REPORT.md",
+  "current_copy": "131_HUMAN_VALIDATION_INTEGRATION_REPORT_v1_8_1.md",
+  "line": 90,
+  "old": "**表 H-2：成員變動（V9；待以原始檔案核對）**",
+  "new": "**表 H-2：成員變動（V9 `ROBUST_CORE_LOCAL_SENSITIVITY.csv`；V1.8 已逐列核對，`04` T1）**",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "131_HUMAN_VALIDATION_INTEGRATION_REPORT.md",
+  "current_copy": "131_HUMAN_VALIDATION_INTEGRATION_REPORT_v1_8_1.md",
+  "line": 97,
+  "old": "推得（不是新的觀察）：若無其他未回報的變動，凍結核心其餘 31 組不變，替換後集合為 15 過度／17 不足；G01–G16 全部保留；新增的不足呈現不屬 G01–G16。稿件以「依回報的變動推得」標示，並列入附錄 E39 待核。",
+  "new": "V1.8 逐列核對（`04_LOCAL_SENSITIVITY_REPRODUCTION.md` Q1–Q3、T1–T3）：核心成員沒有其他變動，凍結核心其餘 31 組成員與方向不變，替換後集合為 15 過度／17 不足；G01–G16 全部保留；新增的不足呈現不屬 G01–G16。核心以外，120 格中共 33 格有計數或非核心方向差異（不影響核心成員）。v1.7 原以「依回報的變動推得」標示並列入附錄 E39 待核；v1.8 已改以 V9 逐列結果表述（E39 已核）。",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "131_HUMAN_VALIDATION_INTEGRATION_REPORT.md",
+  "current_copy": "131_HUMAN_VALIDATION_INTEGRATION_REPORT_v1_8_1.md",
+  "line": 103,
+  "old": "3. 成員有變 → 須完整重分析；不以替換後集合取代凍結結果。",
+  "new": "3. 成員有變 → 完整重分析列為 V9 的開放驗證行動（FULL_REANALYSIS_METHOD_STATUS=REQUIRED_BY_V9_AS_OPEN_VALIDATION_ACTION；FULL_REANALYSIS_EXECUTION_STATUS=NOT_EXECUTABLE_WITH_CURRENT_SOURCE_SET；FULL_REANALYSIS_PRIORITY_BEFORE_V1=NOT_RECOMMENDED；`07` §8）；不以替換後集合取代凍結結果。",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "131_HUMAN_VALIDATION_INTEGRATION_REPORT.md",
+  "current_copy": "131_HUMAN_VALIDATION_INTEGRATION_REPORT_v1_8_1.md",
+  "line": 104,
+  "old": "R14 註明重切分設定中「人工調和標籤不傳播至未稽核記錄」，受稽核記錄在重切分中是否已使用人工標籤待核（E49），因此兩者的處理範圍可能部分重疊。",
+  "new": "R14 註明重切分設定中「人工調和標籤不傳播至未稽核記錄」；V1.8 已核（`04` §3b，E49）：重切分未傳播任何人工標籤（受稽核但未被重切分的 22 筆在 S1／S2 中 22/22 保留模型家族），因此標籤處理不重疊；但記錄樣本部分重疊（50 筆中 28 筆亦被重切分，其中 11 筆因人工錯誤標記被強制納入候選）。",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "131_HUMAN_VALIDATION_INTEGRATION_REPORT.md",
+  "current_copy": "131_HUMAN_VALIDATION_INTEGRATION_REPORT_v1_8_1.md",
+  "line": 145,
+  "old": "1. **V9 原始檔案缺件**：替換清單、替換後矩陣、變動配對、是否有其他未回報的變動、「凍結核心其餘 31 組不變」皆待核（E39）。",
+  "new": "1. **V9 原始檔案：已取得並於 V1.8 部分核對**：替換清單（`04` T4）、變動配對、無其他核心成員變動、「凍結核心其餘 31 組不變」皆已逐列核對（E39）。殘留：替換後 q 值的產生腳本與 sidecar 核心檔 NOT_RECOVERED（只重現成員與判準，未重跑零模型）；12/37 受保護輸入未尋回；`HUMAN_AUDIT_APPEND_ONLY_LOG.csv` 受保護雜湊不符（UNVERIFIED，無竄改證據）（`02` §5）。",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "131_HUMAN_VALIDATION_INTEGRATION_REPORT.md",
+  "current_copy": "131_HUMAN_VALIDATION_INTEGRATION_REPORT_v1_8_1.md",
+  "line": 146,
+  "old": "2. **完整重分析的時點與範圍**，",
+  "new": "2. **完整重分析的時點與範圍**（現行：FULL_REANALYSIS_METHOD_STATUS=REQUIRED_BY_V9_AS_OPEN_VALIDATION_ACTION；FULL_REANALYSIS_EXECUTION_STATUS=NOT_EXECUTABLE_WITH_CURRENT_SOURCE_SET；FULL_REANALYSIS_PRIORITY_BEFORE_V1=NOT_RECOMMENDED；`07` §8；是否重跑仍屬研究者決定），",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "131_HUMAN_VALIDATION_INTEGRATION_REPORT.md",
+  "current_copy": "131_HUMAN_VALIDATION_INTEGRATION_REPORT_v1_8_1.md",
+  "line": 147,
+  "old": "矩陣重建方式、檢定組合、隨機種子。",
+  "new": "矩陣重建方式、檢定組合、隨機種子。V1.8 部分解答：50 筆皆替換（20 筆用調和 FINAL 標籤、30 筆用第一位編碼者標籤；未稽核記錄不變，`04` Q4）；依 V9 `ROBUST_CORE_LOCAL_SENSITIVITY.md` 摘要（未逐列重現）：主零模型 10,000 次、seed 20260918；文獻內部結構保持零模型 5,000 次、seed 20260919；產生腳本 NOT_RECOVERED，標籤→納入資格的傳播規則 UNRESOLVED。",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "131_HUMAN_VALIDATION_INTEGRATION_REPORT.md",
+  "current_copy": "131_HUMAN_VALIDATION_INTEGRATION_REPORT_v1_8_1.md",
+  "line": 148,
+  "old": "4. **兩種敏感度的處理範圍是否重疊**（E49）。",
+  "new": "4. **兩種敏感度的處理範圍是否重疊**（E49）。V1.8 已核：標籤處理不重疊；記錄樣本 28/50 重疊（`04` §3b）。",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "133_V0_V7_VALIDATION_LEDGER.md",
+  "current_copy": "133_V0_V7_VALIDATION_LEDGER_v1_8_1.md",
+  "line": 34,
+  "old": "| LOCAL_SENSITIVITY_CHANGED；FULL_REANALYSIS_REQUIRED |",
+  "new": "| LOCAL_SENSITIVITY_CHANGED；V9 標籤 FULL_REANALYSIS_REQUIRED → 現行 FULL_REANALYSIS_METHOD_STATUS=REQUIRED_BY_V9_AS_OPEN_VALIDATION_ACTION；FULL_REANALYSIS_EXECUTION_STATUS=NOT_EXECUTABLE_WITH_CURRENT_SOURCE_SET；FULL_REANALYSIS_PRIORITY_BEFORE_V1=NOT_RECOMMENDED |",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "133_V0_V7_VALIDATION_LEDGER.md",
+  "current_copy": "133_V0_V7_VALIDATION_LEDGER_v1_8_1.md",
+  "line": 34,
+  "old": "| 2026-09-29 人工驗證紀錄（檔名含 V9；不是驗證閘門；原始檔案缺件） |",
+  "new": "| V9 人工驗證套件（資料夾 20260929_V9_HUMAN_VALIDATION；V9 是檔案版本名，不是驗證閘門）之 `FINAL_STATUS.json`（2026-10-03）與 `ROBUST_CORE_LOCAL_SENSITIVITY.csv`（`e3166ee1…`）；V9 source package recovered and partially verified in V1.8（`02`、`04`） |",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "133_V0_V7_VALIDATION_LEDGER.md",
+  "current_copy": "133_V0_V7_VALIDATION_LEDGER_v1_8_1.md",
+  "line": 34,
+  "old": "| 格數 32；±1 成員（依作者回報） |",
+  "new": "| 格數 32（15／17）；±1 成員（V1.8 逐列核對，`04` T1）；G01–G16 未移除 |",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "137_NEXT_ACTIONS.md",
+  "current_copy": "137_NEXT_ACTIONS_v1_8_1.md",
+  "line": 10,
+  "old": "| P0-1 | P0 | **canonical source conflict：取得 V9 人工驗證原始檔案**（`20260929_V9_HUMAN_VALIDATION.zip`），並確認 Drive 上沒有比 R14／V9 更新的版本 |",
+  "new": "| P0-1 | P0 | **[PARTIALLY DONE — V1.8]** **canonical source conflict：取得 V9 人工驗證原始檔案**（`20260929_V9_HUMAN_VALIDATION.zip`）＝**DONE**（已取得，zip sha256 `8f63e88e…`；於 V1.8 部分核對：`02_V9_AUTHORITY_MAP.md` V9_SOURCE_VERIFIED=PARTIAL），並確認 Drive 上沒有比 R14／V9 更新的版本＝**OPEN**（作者確認；`06_SOURCE_FLAG_CLOSURE.csv` 137 L10） |",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "137_NEXT_ACTIONS.md",
+  "current_copy": "137_NEXT_ACTIONS_v1_8_1.md",
+  "line": 10,
+  "old": "稽核狀態旗標與標籤替換結果在本環境只有作者陳述；",
+  "new": "稽核狀態旗標與標籤替換結果在本環境只有作者陳述；〔SUPERSEDED_BY_V1_8_SOURCE_CLOSURE：V9 source package recovered and partially verified in V1.8〕",
+  "classification": "HISTORICAL_ENV"
+ },
+ {
+  "file": "137_NEXT_ACTIONS.md",
+  "current_copy": "137_NEXT_ACTIONS_v1_8_1.md",
+  "line": 10,
+  "old": "以原始檔案核對：替換清單、替換後矩陣、兩個變動配對、凍結核心其餘 31 組不變、是否有其他未回報的變動、15／17；不一致時以原始檔案重寫各處；移除 V9 旗標",
+  "new": "以原始檔案核對——V1.8 結果：✔ 替換清單（50 筆，`04` T4）；✔ 兩個變動配對；✔ 凍結核心其餘 31 組不變；✔ 無其他核心成員變動（另有 33/120 格計數或非核心方向差異）；✔ 15／17；✔ 無數值不一致，無須重寫數值；✔ v1.8 稿件移除 V9 旗標（`08_PATCH_LOG.md`）；✔ 132 於 V1.8.1 重新產生（`11_ARTIFACT132_SOURCE_CLOSURE_REPORT.md`）。殘留：替換後矩陣的產生腳本與 sidecar 核心檔 NOT_RECOVERED（q 值未重算）；12/37 受保護輸入 NOT_RECOVERED",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "137_NEXT_ACTIONS.md",
+  "current_copy": "137_NEXT_ACTIONS_v1_8_1.md",
+  "line": 12,
+  "old": "**文獻層完整重分析的決策**（FULL_REANALYSIS_REQUIRED；含 E49：兩種敏感度的處理範圍是否重疊）",
+  "new": "**文獻層完整重分析的決策**（V9 標籤 FULL_REANALYSIS_REQUIRED；現行：FULL_REANALYSIS_METHOD_STATUS=REQUIRED_BY_V9_AS_OPEN_VALIDATION_ACTION；FULL_REANALYSIS_EXECUTION_STATUS=NOT_EXECUTABLE_WITH_CURRENT_SOURCE_SET；FULL_REANALYSIS_PRIORITY_BEFORE_V1=NOT_RECOMMENDED；E49 已於 V1.8 核定：標籤處理不重疊、記錄樣本 28/50 重疊）",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "137_NEXT_ACTIONS.md",
+  "current_copy": "137_NEXT_ACTIONS_v1_8_1.md",
+  "line": 12,
+  "old": "作者決定「投稿前重分析」或「投稿稿明載凍結基準＋局部敏感度」；",
+  "new": "作者決定「投稿前重分析」或「投稿稿明載凍結基準＋局部敏感度」；V1.8 建議為後者（`07_FULL_REANALYSIS_DECISION_MEMO.md` §8），但仍屬研究者決定；若選擇重跑，須先通過 `07` §4 閘門（受保護輸入回復並雜湊比對），標籤輸入只能用 `04` T4，傳播規則須事前宣告（`15_REANALYSIS_INPUT_GOVERNANCE.md`）；",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "137_NEXT_ACTIONS.md",
+  "current_copy": "137_NEXT_ACTIONS_v1_8_1.md",
+  "line": 12,
+  "old": "| 作者；重分析需 V5 pipeline | P0-1 |",
+  "new": "| 作者；重分析需 V5 pipeline | P0-1（V9 部分已完成） |",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "137_NEXT_ACTIONS.md",
+  "current_copy": "137_NEXT_ACTIONS_v1_8_1.md",
+  "line": 22,
+  "old": "格式檔案不在環境中；",
+  "new": "格式檔案不在環境中（V1.8 仍為 OPEN_SOURCE_NOT_FOUND，`06_SOURCE_FLAG_CLOSURE.csv` 137 L22）；",
+  "classification": "CURRENT_STATUS"
+ },
+ {
+  "file": "137_NEXT_ACTIONS.md",
+  "current_copy": "137_NEXT_ACTIONS_v1_8_1.md",
+  "line": 35,
+  "old": "P0-1 只需要作者把 `20260929_V9_HUMAN_VALIDATION.zip`（以及若有更新的 R14／Drive 版本）放進這個工作階段；核對與重寫可在同一輪完成。",
+  "new": "P0-1 只需要作者把 `20260929_V9_HUMAN_VALIDATION.zip`（以及若有更新的 R14／Drive 版本）放進這個工作階段；核對與重寫可在同一輪完成。〔SUPERSEDED_BY_V1_8_SOURCE_CLOSURE：V9 source package recovered and partially verified in V1.8〕",
+  "classification": "HISTORICAL_ENV"
+ },
+ {
+  "file": "137_NEXT_ACTIONS.md",
+  "current_copy": "137_NEXT_ACTIONS_v1_8_1.md",
+  "line": 35,
+  "old": "核對與重寫可在同一輪完成。〔SUPERSEDED_BY_V1_8_SOURCE_CLOSURE：V9 source package recovered and partially verified in V1.8〕",
+  "new": "核對與重寫可在同一輪完成。〔SUPERSEDED_BY_V1_8_SOURCE_CLOSURE：V9 source package recovered and partially verified in V1.8〕 現況：V9 部分已於 V1.8 完成；P0-1 只剩 Drive 對帳（作者確認）。不需要外部資料的下一步：依 `15_REANALYSIS_INPUT_GOVERNANCE.md` 事前宣告 UNCERTAIN／AMBIGUOUS／UNMAPPED 的傳播規則（P0-3 的前置條件；不執行重分析）。",
+  "classification": "CURRENT_STATUS"
+ }
+]

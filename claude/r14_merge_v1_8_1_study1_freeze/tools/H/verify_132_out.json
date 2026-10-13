@@ -1,0 +1,53 @@
+{
+ "csv_bom_same": true,
+ "csv_cr_count_same": true,
+ "csv_trailing_newline_same": true,
+ "csv_shape_same": true,
+ "csv_changed_cells": 16,
+ "csv_changed_eq_planned": true,
+ "csv_header_same": true,
+ "sheetnames_same": true,
+ "sheetnames": [
+  "README",
+  "G_to_M_matrix",
+  "Summary"
+ ],
+ "dimensions": {
+  "README": [
+   "A1:A10",
+   "A1:A10"
+  ],
+  "G_to_M_matrix": [
+   "A1:AA17",
+   "A1:AA17"
+  ],
+  "Summary": [
+   "A1:D14",
+   "A1:D14"
+  ]
+ },
+ "dimensions_same": true,
+ "formulas_checked": 22,
+ "xlsx_changed_cells": [
+  "G_to_M_matrix!M10",
+  "G_to_M_matrix!M11",
+  "G_to_M_matrix!M12",
+  "G_to_M_matrix!M13",
+  "G_to_M_matrix!M14",
+  "G_to_M_matrix!M15",
+  "G_to_M_matrix!M16",
+  "G_to_M_matrix!M17",
+  "G_to_M_matrix!M2",
+  "G_to_M_matrix!M3",
+  "G_to_M_matrix!M4",
+  "G_to_M_matrix!M5",
+  "G_to_M_matrix!M6",
+  "G_to_M_matrix!M7",
+  "G_to_M_matrix!M8",
+  "G_to_M_matrix!M9",
+  "README!A8"
+ ],
+ "xlsx_changed_eq_planned": true,
+ "problems": [],
+ "PASS": true
+}
