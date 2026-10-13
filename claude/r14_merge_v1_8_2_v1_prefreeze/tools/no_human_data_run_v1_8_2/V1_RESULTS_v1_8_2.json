@@ -1,0 +1,32 @@
+{
+ "analyzer": "v1_construct_analyzer_v1_8_2",
+ "primary_reliability": "KRIPPENDORFF_ALPHA_Q2_3_CODERS",
+ "pairwise_kappa": "SECONDARY",
+ "threshold_provenance": "RESEARCH_CONVENTION",
+ "n_human_coders_design": 3,
+ "seed": 20261011,
+ "bootstrap_reps": 5000,
+ "thresholds": {
+  "reliable": 0.8,
+  "tentative": 0.667,
+  "imprecise_ci_lower": 0.667
+ },
+ "inputs": [
+  {
+   "sheet": "CODER_1",
+   "file": "CODER_1.xlsx",
+   "sha256": "840addf9978ee30b725d4e190b940adfa13f0c1683c7ab2b3bde60a0ff4ce301"
+  },
+  {
+   "sheet": "CODER_2",
+   "file": "CODER_2.xlsx",
+   "sha256": "74d72705876681e3dcae411f83e144d2c846fc94068114f172a47d8c3368bc86"
+  },
+  {
+   "sheet": "CODER_3",
+   "file": "CODER_3.xlsx",
+   "sha256": "01b292791111a89b7d86e595d6cbde15c2305222bb8a72399def2e69bd8669fc"
+  }
+ ],
+ "status": "NO_HUMAN_DATA"
+}

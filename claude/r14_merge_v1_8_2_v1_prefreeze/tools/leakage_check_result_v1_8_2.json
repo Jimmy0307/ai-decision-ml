@@ -1,0 +1,57 @@
+{
+ "checker": "leakage_check_v182.py",
+ "files": {
+  "coder_distribution/CODER_1.xlsx": {
+   "sha256": "840addf9978ee30b725d4e190b940adfa13f0c1683c7ab2b3bde60a0ff4ce301",
+   "xml_parts_scanned": 13,
+   "distributed_to_coders": true,
+   "nonempty": {
+    "response": 0,
+    "attestation": 0,
+    "adjudication": 0
+   }
+  },
+  "coder_distribution/CODER_2.xlsx": {
+   "sha256": "74d72705876681e3dcae411f83e144d2c846fc94068114f172a47d8c3368bc86",
+   "xml_parts_scanned": 13,
+   "distributed_to_coders": true,
+   "nonempty": {
+    "response": 0,
+    "attestation": 0,
+    "adjudication": 0
+   }
+  },
+  "coder_distribution/CODER_3.xlsx": {
+   "sha256": "01b292791111a89b7d86e595d6cbde15c2305222bb8a72399def2e69bd8669fc",
+   "xml_parts_scanned": 13,
+   "distributed_to_coders": true,
+   "nonempty": {
+    "response": 0,
+    "attestation": 0,
+    "adjudication": 0
+   }
+  },
+  "20_MASTER_PACKET_v1_8_2.xlsx": {
+   "sha256": "38614e60aadb4974d4c1fc2b1dc5bce297746f0bd664d1ab51d5aa96be4afa48",
+   "xml_parts_scanned": 16,
+   "distributed_to_coders": false,
+   "nonempty": {
+    "response": 0,
+    "attestation": 0,
+    "adjudication": 0
+   }
+  }
+ },
+ "text_files_scanned": 19,
+ "ai_pilot_shingles_checked": 1161,
+ "network_numbers_checked": 95,
+ "sensitivity_rows_checked_for_uniformity": 3,
+ "coder_distribution_files": [
+  "CODER_1.xlsx",
+  "CODER_2.xlsx",
+  "CODER_3.xlsx"
+ ],
+ "findings": [],
+ "n_findings": 0,
+ "verdict": "PASS"
+}

@@ -1,0 +1,388 @@
+{
+ "line_count": [
+  3086,
+  3095
+ ],
+ "changed_lines_v181": [
+  5,
+  15,
+  749,
+  757,
+  1336,
+  1344,
+  1693,
+  1699,
+  1738,
+  1740,
+  1741,
+  1742,
+  1744,
+  1745,
+  1746,
+  1747,
+  1748,
+  1752,
+  1753,
+  1754,
+  1756,
+  1757,
+  1758,
+  1772,
+  1775,
+  1778,
+  3022,
+  3024,
+  3035
+ ],
+ "changed_lines_v182": [
+  5,
+  15,
+  749,
+  757,
+  1336,
+  1344,
+  1693,
+  1699,
+  1738,
+  1740,
+  1741,
+  1742,
+  1743,
+  1744,
+  1746,
+  1747,
+  1748,
+  1749,
+  1750,
+  1754,
+  1755,
+  1756,
+  1758,
+  1759,
+  1760,
+  1774,
+  1777,
+  1780,
+  3024,
+  3026,
+  3027,
+  3028,
+  3029,
+  3030,
+  3031,
+  3032,
+  3033,
+  3044
+ ],
+ "math_counts_v181": {
+  "$$": 18,
+  "$inline": 31,
+  "\\[\\]": 7,
+  "begin_env": 0
+ },
+ "math_counts_v182": {
+  "$$": 18,
+  "$inline": 31,
+  "\\[\\]": 7,
+  "begin_env": 0
+ },
+ "math_identical_ordered": {
+  "$$": true,
+  "$inline": true,
+  "\\[\\]": true,
+  "begin_env": true
+ },
+ "fenced_blocks_identical": true,
+ "equation_tags_identical": true,
+ "changed_lines_with_math_markers": [],
+ "patch_text_math_markers": [],
+ "headings": {
+  "v181": 182,
+  "v182": 182,
+  "identical": true
+ },
+ "table_figure_captions_identical": true,
+ "G_table_rows": {
+  "v181": 36,
+  "v182": 36,
+  "identical_ordered": true
+ },
+ "section_3_9_2_tables_3_4_and_3_4A_identical": true,
+ "section_3_9_2_line_count": 74,
+ "section_4_7_1_table_4_11_identical": true,
+ "section_4_7_2_table_4_12_identical": true,
+ "section_4_7_4_EAX_identical": true,
+ "section_3_9_5_identical": true,
+ "EAX_paragraph_3_9_3_unchanged": true,
+ "G_token_counts": [
+  288,
+  291
+ ],
+ "G_tokens_per_patch": {
+  "K04": [
+   3,
+   3
+  ],
+  "K06": [
+   0,
+   3
+  ],
+  "K19": [
+   3,
+   3
+  ]
+ },
+ "GM_arrow_tokens_identical": true,
+ "count_VCP": [
+  28,
+  28
+ ],
+ "count_VSC": [
+  26,
+  26
+ ],
+ "count_DL": [
+  59,
+  59
+ ],
+ "count_NEV": [
+  28,
+  28
+ ],
+ "count_Enterprise": [
+  10,
+  10
+ ],
+ "count_Study 1": [
+  2,
+  2
+ ],
+ "count_SIMULATED_ONLY": [
+  31,
+  31
+ ],
+ "count_EMPIRICAL RESULT PENDING": [
+  69,
+  69
+ ],
+ "count_SUBMISSION_READY": [
+  3,
+  3
+ ],
+ "count_FULL_REANALYSIS_REQUIRED": [
+  5,
+  5
+ ],
+ "count_UNIDENTIFIED": [
+  44,
+  44
+ ],
+ "count_M5": [
+  43,
+  41
+ ],
+ "count_HUMAN_RESULT_PENDING": [
+  41,
+  44
+ ],
+ "numeric_added_doc": {
+  "1": 3,
+  "13": 1,
+  "16": 3,
+  "19": 1,
+  "2": 4,
+  "20": 1,
+  "21": 1,
+  "24": 5,
+  "25": 4,
+  "256": 1,
+  "26": 3,
+  "27": 2,
+  "28": 2,
+  "29": 4,
+  "3": 3,
+  "3.9.3": 5,
+  "3.9.4": 1,
+  "30": 4,
+  "32": 3,
+  "4-13": 1,
+  "4.7.3": 3,
+  "53": 10,
+  "6": 1,
+  "7": 1,
+  "8": 1,
+  "95": 1
+ },
+ "numeric_removed_doc": {
+  ".800": 1,
+  "2004": 2,
+  "4": 1,
+  "60": 3
+ },
+ "numeric_per_patch": {
+  "K02": {
+   "added": {
+    "19": 1,
+    "21": 1,
+    "24": 1,
+    "25": 1,
+    "30": 1
+   },
+   "removed": {}
+  },
+  "K05": {
+   "added": {
+    "256": 1,
+    "24": 1,
+    "29": 1,
+    "32": 1,
+    "6": 1,
+    "53": 5,
+    "7": 1,
+    "3.9.4": 1,
+    "8": 1
+   },
+   "removed": {
+    "2004": 1,
+    ".800": 1,
+    ".667": 1
+   }
+  },
+  "K06": {
+   "added": {
+    "16": 2,
+    "13": 1
+   },
+   "removed": {}
+  },
+  "K07": {
+   "added": {
+    "16": 1,
+    "95": 1,
+    ".667": 1
+   },
+   "removed": {
+    "2004": 1
+   }
+  },
+  "K12": {
+   "added": {
+    "1": 2,
+    "2": 2,
+    "3": 1,
+    "53": 2
+   },
+   "removed": {
+    "60": 1
+   }
+  },
+  "K13": {
+   "added": {
+    "1": 1,
+    "2": 1,
+    "3": 1
+   },
+   "removed": {
+    "4": 1,
+    "60": 1
+   }
+  },
+  "K14": {
+   "added": {},
+   "removed": {
+    "60": 1
+   }
+  },
+  "K15": {
+   "added": {
+    "53": 3,
+    "4-13": 1
+   },
+   "removed": {}
+  },
+  "K18": {
+   "added": {
+    "24": 3,
+    "30": 3,
+    "4.7.3": 3,
+    "2": 1,
+    "3": 1,
+    "3.9.3": 5,
+    "25": 2,
+    "26": 2,
+    "27": 2,
+    "28": 2,
+    "29": 2,
+    "20": 1,
+    "32": 2
+   },
+   "removed": {}
+  },
+  "K19": {
+   "added": {
+    "25": 1,
+    "26": 1,
+    "29": 1
+   },
+   "removed": {}
+  }
+ },
+ "numeric_patch_sum_matches_doc": true,
+ "numeric_added_not_in_allowlist": {},
+ "result_like_tokens_added": {},
+ "oa2_sentence_count_v182": 2,
+ "count_v182_CURRENT_INSTRUMENT_RELIABILITY": 2,
+ "count_v182_53B_CONTINUITY_RELIABILITY": 3,
+ "count_v182_UNRESOLVED/NOT_ACCEPTABLE": 3,
+ "count_v182_IMPRECISE": 5,
+ "count_v182_研究慣例": 6,
+ "count_v182_不主張完美的盲性": 1,
+ "count_v182_不檢驗 32 格的成員資格": 1,
+ "leak_item_ids_v182": 0,
+ "leak_seed_like_v182": false,
+ "two_coder_mentions_v182": {
+  "兩位編碼者": [
+   [
+    591,
+    "NAL_ERROR_TAXONOMY.csv，已核對〕；因此本研究不把分歧單獨歸因於語言模型不準確。這項整理針對模型與人工標籤的差異，不是對兩位編碼者 19 筆分歧的分類；19 筆分歧尚未逐筆依這四類來源歸類。V9 套件的完整性紀錄另顯示，早期稽核日誌 HUMAN_AUDIT_A"
+   ],
+   [
+    946,
+    "果不得用來支持參考答案。順序固定為「證據 → D 編碼 → 裁決 → 映射」：裁決者在完成裁決前不看 archetype 或正式模型的結果，兩位編碼者的原值保留，不一致依九類理由記錄（定義模糊、值重疊、缺證據、證據衝突、編碼者錯誤、編碼手冊缺口、附屬碼規則錯誤、映射規則模糊、其他"
+   ],
+   [
+    948,
+    "**ORG-V4 與 ORG-V5。** 以兩位編碼者各自與裁決後的編碼，分別執行既有的 archetype 判定與正式模型映射規則（`org_schema.py`，不修改）。ORG-"
+   ],
+   [
+    1559,
+    "均由研究者逐筆調和；首輪部分困難邊界案例曾使用外部 AI 討論編碼規則，因此這組一致度屬目標式診斷，不是完全 AI 盲的外部驗證。也就是說，兩位編碼者較常能同意『這段是否真正支持一個人工智慧 × 決策功能關係』，但把同一段文字壓成單一關係類型與單一家族時，一致度明顯下降。這個型態"
+   ],
+   [
+    2264,
+    "人工稽核補上了另一個測量面向：證據是否有效與『應被壓成哪一個單一功能家族』並不是同一問題。兩位編碼者在調和前對證據有效性的一致度（κ = .561）明顯高於對關係類型（.180）、人工智慧家族（.048）與決策家族（.140）的一"
+   ],
+   [
+    2326,
+    "訂為 50 筆研究者目標稽核與 20 筆盲式第二編碼，且 50 筆集中於穩健核心相關分層，因此只能作為目標式診斷，不能推廣成全語料效能估計。兩位編碼者在 20 筆上的人工智慧家族與決策家族一致率均為 20%（κ = .048 與 .140），19 筆分歧經研究者人工調和；首輪部分"
+   ]
+  ],
+  "雙人盲編": [],
+  "人類雙人": [],
+  "至少兩位": [
+   [
+    1777,
+    "  - `V1_PASS_HUMAN_C6` 只在 B. 53B_CONTINUITY_RELIABILITY 中報告，屬次要的延續性標籤：至少兩位未曝露的人類編碼者、C1 ≥ TENTATIVE 且非 IMPRECISE、C3 ≥ TENTATIVE、沒有未解的 model-s"
+   ]
+  ],
+  "兩位人類": [],
+  "兩份封包": [],
+  "A vs B": [],
+  "編碼者 A": [
+   [
+    2995,
+    "_CODER_A_TEMPLATE_v1_0.xlsx`、`113_ORG_V_CODER_B_TEMPLATE_v1_0.xlsx` | 編碼者 A／B 的空白編碼表 | 第 3.10.7 節 |"
+   ]
+  ]
+ }
+}
