@@ -1,0 +1,51 @@
+{
+ "global": {
+  "strict_records": 6499,
+  "pair_eligible_flag": 3107,
+  "pair_eligible_file": 3107,
+  "unique_documents": 781,
+  "document_edges_recomputed": 2181,
+  "edge_set_equals_file": true
+ },
+ "cells": {
+  "cells": 120,
+  "ai_families": 10,
+  "decision_families": 12,
+  "observed_mismatch": 0,
+  "degree_mismatch": 0,
+  "E_max_rel_diff": 0.0,
+  "raw_observed_mismatch": 0,
+  "exact_p_max_rel_diff": 5.3482363903803146e-12,
+  "raw_p_max_rel_diff": 7.607728441680341e-12,
+  "main_bh_max_abs_diff": 0.0,
+  "exact_bh_max_abs_diff": 0.0,
+  "document_null_bh_max_abs_diff": 0.0,
+  "raw_bh_max_abs_diff": 0.0
+ },
+ "counts": {
+  "primary_q05": 47,
+  "primary_q01": 32
+ },
+ "robust": {
+  "predicate_core": 32,
+  "enriched": 15,
+  "depleted": 17,
+  "predicate_eq_core_file": true,
+  "predicate_eq_status_matrix": true
+ },
+ "G01_G16": {
+  "members": 16,
+  "depleted": 16,
+  "removed": 0,
+  "direction_changed": 0
+ },
+ "applications": {
+  "targets": 50,
+  "matched": 50,
+  "final_values_applied": 50,
+  "field_changing": 37,
+  "non_target_rows_changed": 0,
+  "record_sets_equal": true
+ },
+ "INDEPENDENT_VERIFICATION": "PASS"
+}

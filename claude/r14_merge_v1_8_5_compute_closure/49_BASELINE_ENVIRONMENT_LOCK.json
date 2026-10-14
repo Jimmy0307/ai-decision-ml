@@ -1,0 +1,117 @@
+{
+ "artifact": "V1_8_5_BASELINE_ENVIRONMENT_LOCK",
+ "run_ts": "20261014T041645Z",
+ "python": {
+  "executable": "C:\\Program Files\\Python314\\python.exe",
+  "version": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "implementation": "CPython",
+  "invocation": "python -I -B -X utf8 <patched script>; cwd=<run_dir>; env PYTHONDONTWRITEBYTECODE=1 (ignored under -I; -B used)",
+  "visible_distributions_under_-I": [
+   "pip==25.3"
+  ],
+  "stage_script_imports": "stdlib only: csv, hashlib, json, math, random, collections, datetime, pathlib, __future__"
+ },
+ "os": {
+  "platform": "Windows-11-10.0.26200-SP0",
+  "machine": "AMD64",
+  "release": "11"
+ },
+ "seeds_reps_and_gate_constants_in_patched_code": {
+  "DOCUMENT_DEDUP_10X12_MATRIX_ACCEPTED.py": {},
+  "FINAL_RESULTS_FREEZE_ACCEPTED.py": {
+   "EXPECTED_ROBUST_CORE": "32",
+   "EXPECTED_CELLS": "120"
+  },
+  "NULL_MODEL_NETWORK_ANALYSIS_ACCEPTED.py": {
+   "EXPECTED_M": "2180",
+   "EXPECTED_CELLS": "120",
+   "SEED": "20260918",
+   "N_NULL": "10000"
+  },
+  "ROBUSTNESS_SENSITIVITY_ACCEPTED.py": {
+   "DOCUMENT_NULL_REPLICATES": "5000",
+   "DOCUMENT_NULL_SEED": "20260919",
+   "BURN_IN_ATTEMPTS_PER_EDGE": "20",
+   "BETWEEN_SAMPLE_ATTEMPTS_PER_EDGE": "2"
+  }
+ },
+ "freeze_reference_document_null_chain": {
+  "path": "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\06_COMPUTE_CLOSURE_V1_8_5\\work\\inputs_S_20261014T040934Z\\FREEZE\\08_STATISTICAL_ANALYSIS\\DOCUMENT_NULL_CHAIN_PARAMETERS.json",
+  "sha256": "94d7364a88a3e2cde73d13890086c9720e3f828bec592f628bec4062fa82b9fb"
+ },
+ "input_hashes_stage10_freeze_copy": {
+  "ANALYTICAL_FREEZE_RECORD_LEVEL.csv": "fbb5f59286d308771d5db77b176abebab8ef851a896652a3807ebf6a4b335a8f",
+  "ANALYTICAL_PAIR_ELIGIBLE_RECORDS.csv": "9ee5fd537fed2819c0ac7998d6a786cc8f90dd008ebc1758bb92c8e7487c2e92",
+  "ANALYTICAL_FREEZE_CANONICAL.json": "9a4e8fc2ca2a49642ac801888e571b44c157a6bd5b06fe5c1cbd9ff1a891867a",
+  "ANALYTICAL_FREEZE_MANIFEST_V2.json": "69c7a7dfaabd54081b8278945a9c50f74afe89961e60813e99a5b78106385e79",
+  "ANALYTICAL_FREEZE_SIDE_LEVEL.csv": "7704e743610492961ee5e7342595096cc8bfaa500dbd1d9684e70c72a4d8574a",
+  "ANALYTICAL_PAIR_EXCLUDED_RECORDS.csv": "d53c5e955f4dec1e23a21250542a3879cd8a5fa1bb5109bfdedc12df615161f4",
+  "ANALYTICAL_FREEZE_SUMMARY_V2.md": "e4d0a638d1e4193238835bcd0120ac25b56dc37c71eddbd52a644e53ca5a951f"
+ },
+ "freeze_input_root": "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\06_COMPUTE_CLOSURE_V1_8_5\\work\\run_inputs_baseline_20261014T041645Z\\09_ANALYTICAL_FREEZE",
+ "post_run_freeze_input_hashes_ok": true,
+ "code_hashes": {
+  "DOCUMENT_DEDUP_10X12_MATRIX_ACCEPTED.py": {
+   "stage": "10",
+   "original_sha256": "a3892528ecac135839681429916d8d6607f1ef4685456d9663373b49a1175cd7",
+   "patched_sha256": "7452c31ae1d6783719c9a778da37250b0f450c8dce483573c69768821d5526db"
+  },
+  "NULL_MODEL_NETWORK_ANALYSIS_ACCEPTED.py": {
+   "stage": "11",
+   "original_sha256": "cd96c48d685fe05d23d526638bf3d0ab7201a115f3c9cab0d908277c1d0b12e3",
+   "patched_sha256": "a85b8dde93a6f8b2c35722418f843710ee7f0d014d3b4ac15f6fee3908b52017"
+  },
+  "ROBUSTNESS_SENSITIVITY_ACCEPTED.py": {
+   "stage": "12",
+   "original_sha256": "7700d98c934db95ff28dc7aba19be1ce6558fff2957bc79bff54f63a63087c19",
+   "patched_sha256": "ba248d82a64a562607390a308c7a88401bcc7bf7f2ad93e30b9baeaebfbb23b6"
+  },
+  "FINAL_RESULTS_FREEZE_ACCEPTED.py": {
+   "stage": "13",
+   "original_sha256": "9af8c4393fec761d0104562d6de0086a4d577e395cdcb965e3f5a2d4495fc303",
+   "patched_sha256": "6b2364ece2f029af87ad6e3137ad9b84f0924d419776caabd8d47442a8a62617"
+  }
+ },
+ "run_dir": "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\06_COMPUTE_CLOSURE_V1_8_5\\compute_closure\\baseline_reproduction\\20261014T041645Z",
+ "code_dir": "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\06_COMPUTE_CLOSURE_V1_8_5\\work\\code_baseline_20261014T041645Z",
+ "stages": [
+  {
+   "stage": "10",
+   "script": "DOCUMENT_DEDUP_10X12_MATRIX_ACCEPTED.py",
+   "exit": 0,
+   "elapsed_s": 0.4,
+   "log": "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\06_COMPUTE_CLOSURE_V1_8_5\\work\\logs\\baseline_20261014T041645Z_stage10.log"
+  },
+  {
+   "stage": "11",
+   "script": "NULL_MODEL_NETWORK_ANALYSIS_ACCEPTED.py",
+   "exit": 0,
+   "elapsed_s": 10.6,
+   "log": "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\06_COMPUTE_CLOSURE_V1_8_5\\work\\logs\\baseline_20261014T041645Z_stage11.log"
+  },
+  {
+   "stage": "12",
+   "script": "ROBUSTNESS_SENSITIVITY_ACCEPTED.py",
+   "exit": 0,
+   "elapsed_s": 60.3,
+   "log": "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\06_COMPUTE_CLOSURE_V1_8_5\\work\\logs\\baseline_20261014T041645Z_stage12.log"
+  },
+  {
+   "stage": "13",
+   "script": "FINAL_RESULTS_FREEZE_ACCEPTED.py",
+   "exit": 0,
+   "elapsed_s": 0.1,
+   "log": "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\06_COMPUTE_CLOSURE_V1_8_5\\work\\logs\\baseline_20261014T041645Z_stage13.log"
+  }
+ ],
+ "run_record": {
+  "path": "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\06_COMPUTE_CLOSURE_V1_8_5\\work\\baseline_20261014T041645Z_RUN_RECORD.json",
+  "sha256": "1f010a7266b4a6ed90457d080141a26b7a970b039256619e5f7e8313b240fecb"
+ },
+ "runner_scripts": {
+  "s_phase3_run_baseline.py": "31401ebab88fc427f1bc86730a4e7b5368f3494fd4ddab8483d8c4e7ea82c8b9",
+  "s_phase3_compare.py": "323d7e7fe30f8652f4882f8d0b178e4277fc1a223be8402d8353bb47b253b9ef",
+  "s_phase3_env_lock.py": "e3dae1368d00e06b848a5d556498c616d965eba11006aadde98e88202b8bf14d",
+  "s_v5_untouched_check.py": "456b957a365b24a47921cbd4a514f55627243721013e2e5de1509675a91eeb77"
+ }
+}

@@ -1,0 +1,1193 @@
+{
+ "sha256": [
+  "0da8cec1521dbeff900ffa1fa9a1de0a31b0cdfa34b82c03531eba2111d7f740",
+  "1812da36c8f045b8d5645a4241f8db138a00fc0b9a77522ac7f3c5c6fed01c35"
+ ],
+ "line_count": [
+  3100,
+  3136
+ ],
+ "patch_count": 37,
+ "changed_lines_v183": [
+  5,
+  13,
+  29,
+  122,
+  147,
+  158,
+  168,
+  405,
+  412,
+  605,
+  609,
+  619,
+  630,
+  645,
+  653,
+  1374,
+  1629,
+  1638,
+  1640,
+  2185,
+  2192,
+  2240,
+  2270,
+  2364,
+  2368,
+  2380,
+  3038,
+  3082,
+  3083,
+  3087,
+  3091
+ ],
+ "changed_lines_v185": [
+  5,
+  13,
+  29,
+  122,
+  147,
+  158,
+  168,
+  405,
+  412,
+  605,
+  606,
+  607,
+  611,
+  621,
+  632,
+  647,
+  655,
+  1376,
+  1631,
+  1640,
+  1642,
+  1643,
+  1644,
+  1645,
+  1646,
+  1647,
+  1648,
+  1649,
+  1650,
+  1651,
+  1652,
+  1653,
+  1654,
+  1655,
+  1656,
+  1657,
+  1658,
+  1659,
+  1660,
+  1661,
+  1662,
+  1663,
+  1664,
+  1665,
+  1666,
+  1667,
+  2212,
+  2219,
+  2267,
+  2297,
+  2391,
+  2395,
+  2407,
+  3065,
+  3066,
+  3067,
+  3068,
+  3069,
+  3070,
+  3071,
+  3072,
+  3073,
+  3074,
+  3118,
+  3119,
+  3123,
+  3127
+ ],
+ "diff_opcodes": [
+  [
+   "replace",
+   5,
+   5,
+   5,
+   5
+  ],
+  [
+   "replace",
+   13,
+   13,
+   13,
+   13
+  ],
+  [
+   "replace",
+   29,
+   29,
+   29,
+   29
+  ],
+  [
+   "replace",
+   122,
+   122,
+   122,
+   122
+  ],
+  [
+   "replace",
+   147,
+   147,
+   147,
+   147
+  ],
+  [
+   "replace",
+   158,
+   158,
+   158,
+   158
+  ],
+  [
+   "replace",
+   168,
+   168,
+   168,
+   168
+  ],
+  [
+   "replace",
+   405,
+   405,
+   405,
+   405
+  ],
+  [
+   "replace",
+   412,
+   412,
+   412,
+   412
+  ],
+  [
+   "replace",
+   605,
+   605,
+   605,
+   607
+  ],
+  [
+   "replace",
+   609,
+   609,
+   611,
+   611
+  ],
+  [
+   "replace",
+   619,
+   619,
+   621,
+   621
+  ],
+  [
+   "replace",
+   630,
+   630,
+   632,
+   632
+  ],
+  [
+   "replace",
+   645,
+   645,
+   647,
+   647
+  ],
+  [
+   "replace",
+   653,
+   653,
+   655,
+   655
+  ],
+  [
+   "replace",
+   1374,
+   1374,
+   1376,
+   1376
+  ],
+  [
+   "replace",
+   1629,
+   1629,
+   1631,
+   1631
+  ],
+  [
+   "replace",
+   1638,
+   1638,
+   1640,
+   1640
+  ],
+  [
+   "replace",
+   1640,
+   1640,
+   1642,
+   1667
+  ],
+  [
+   "replace",
+   2185,
+   2185,
+   2212,
+   2212
+  ],
+  [
+   "replace",
+   2192,
+   2192,
+   2219,
+   2219
+  ],
+  [
+   "replace",
+   2240,
+   2240,
+   2267,
+   2267
+  ],
+  [
+   "replace",
+   2270,
+   2270,
+   2297,
+   2297
+  ],
+  [
+   "replace",
+   2364,
+   2364,
+   2391,
+   2391
+  ],
+  [
+   "replace",
+   2368,
+   2368,
+   2395,
+   2395
+  ],
+  [
+   "replace",
+   2380,
+   2380,
+   2407,
+   2407
+  ],
+  [
+   "replace",
+   3038,
+   3038,
+   3065,
+   3074
+  ],
+  [
+   "replace",
+   3082,
+   3083,
+   3118,
+   3119
+  ],
+  [
+   "replace",
+   3087,
+   3087,
+   3123,
+   3123
+  ],
+  [
+   "replace",
+   3091,
+   3091,
+   3127,
+   3127
+  ]
+ ],
+ "patched_lines_v183": [
+  5,
+  13,
+  29,
+  122,
+  147,
+  158,
+  168,
+  405,
+  412,
+  605,
+  609,
+  619,
+  630,
+  645,
+  653,
+  1374,
+  1629,
+  1638,
+  1640,
+  2185,
+  2192,
+  2240,
+  2270,
+  2364,
+  2368,
+  2380,
+  3038,
+  3082,
+  3083,
+  3087,
+  3091
+ ],
+ "math_counts": {
+  "$$": [
+   18,
+   18
+  ],
+  "$inline": [
+   31,
+   31
+  ],
+  "\\[\\]": [
+   7,
+   7
+  ],
+  "begin_env": [
+   0,
+   0
+  ]
+ },
+ "fenced_patches": [
+  "U13"
+ ],
+ "headings": [
+  182,
+  182
+ ],
+ "captions_added": [
+  "**表 4-9B：主要分析（凍結基準）與稽核標籤替代敏感度分析的比較**"
+ ],
+ "captions_removed": [],
+ "G_table_rows": [
+  36,
+  36
+ ],
+ "G_token_counts_v183_v185": [
+  291,
+  324
+ ],
+ "G_tokens_added_by_patch": {
+  "U04": 2,
+  "U05": 2,
+  "U06": 2,
+  "U07": 2,
+  "U11": 2,
+  "U12": 2,
+  "U18": 2,
+  "U24": 7,
+  "U26": 2,
+  "U28": 2,
+  "U25": 4,
+  "U34": 4
+ },
+ "section_3_9_1_lines": 14,
+ "section_3_9_2_tables_3_4_3_4A_lines": 74,
+ "section_3_9_3_V1_design_lines": 6,
+ "section_3_9_4_lines": 6,
+ "section_3_9_5_lines": 8,
+ "section_3_10_to_3_14_enterprise_lines": 603,
+ "section_4_1_to_4_4_primary_results_lines": 177,
+ "section_4_5_1_to_4_5_4_lines": 72,
+ "section_4_6_G_handoff_lines": 49,
+ "section_4_7_to_4_10_V1_enterprise_lines": 485,
+ "section_appendix_C_math_lines": 171,
+ "count_VCP": [
+  28,
+  28
+ ],
+ "count_VSC": [
+  26,
+  26
+ ],
+ "count_DL": [
+  59,
+  59
+ ],
+ "count_NEV": [
+  28,
+  28
+ ],
+ "count_Enterprise": [
+  10,
+  10
+ ],
+ "count_SIMULATED_ONLY": [
+  31,
+  31
+ ],
+ "count_EMPIRICAL RESULT PENDING": [
+  69,
+  69
+ ],
+ "count_SUBMISSION_READY": [
+  3,
+  3
+ ],
+ "count_UNIDENTIFIED": [
+  44,
+  44
+ ],
+ "count_M1": [
+  28,
+  28
+ ],
+ "count_M2": [
+  16,
+  16
+ ],
+ "count_M3": [
+  27,
+  27
+ ],
+ "count_M4": [
+  38,
+  38
+ ],
+ "count_M5": [
+  41,
+  41
+ ],
+ "count_REAL EVIDENCE": [
+  16,
+  16
+ ],
+ "count_HUMAN_RESULT_PENDING": [
+  44,
+  44
+ ],
+ "term_執行條件尚待滿足": [
+  8,
+  0
+ ],
+ "term_執行條件待滿足": [
+  8,
+  0
+ ],
+ "term_EXECUTABLE_PENDING_PROPAGATION_RULE_AND_BASELINE_REPRODUCTION": [
+  4,
+  0
+ ],
+ "term_REQUIRED_BY_V9_AS_OPEN_VALIDATION_ACTION": [
+  4,
+  0
+ ],
+ "term_日後是否重跑": [
+  7,
+  0
+ ],
+ "term_日後是否及何時重跑": [
+  2,
+  0
+ ],
+ "term_PRIORITY_RATIONALE_REVIEW_REQUESTED": [
+  1,
+  0
+ ],
+ "term_開放驗證行動": [
+  10,
+  0
+ ],
+ "term_開放的驗證行動": [
+  6,
+  0
+ ],
+ "term_NOT_EXECUTABLE_WITH_CURRENT_SOURCE_SET": [
+  0,
+  0
+ ],
+ "term_以目前來源集無法執行": [
+  0,
+  0
+ ],
+ "term_v1.8.5 COMPUTE CLOSURE CANDIDATE": [
+  0,
+  1
+ ],
+ "term_COMPUTATIONAL_VALIDATION_STATUS = CLOSED_WITH_BOUNDED_HUMAN_VALIDITY": [
+  0,
+  1
+ ],
+ "term_SATISFIED_AS_AUDITED_LABEL_SENSITIVITY_ANALYSIS": [
+  0,
+  4
+ ],
+ "term_FULL_REANALYSIS_EXECUTED = YES": [
+  0,
+  5
+ ],
+ "term_AUDITED_LABEL_SENSITIVITY_ANALYSIS": [
+  0,
+  9
+ ],
+ "term_PRIMARY_BASELINE_REPLACED = NO": [
+  0,
+  6
+ ],
+ "term_CORPUS_WIDE_HUMAN_VALIDITY = NOT_ESTABLISHED": [
+  0,
+  5
+ ],
+ "term_BOUNDED_AUDITED_LABEL_SUBSTITUTION_V1": [
+  0,
+  5
+ ],
+ "term_STABLE_UNDER_FULL_AUDITED_LABEL_REANALYSIS": [
+  0,
+  2
+ ],
+ "term_13/13 逐位元組相同": [
+  0,
+  6
+ ],
+ "term_主要分析維持預先凍結之 V5/R14 基準；另以 50 筆目標人工稽核標籤進行有界替代，完整重跑所有標籤相依分析，以評估結論對語意標籤修訂的敏感性": [
+  0,
+  5
+ ],
+ "term_FULL_REANALYSIS_REQUIRED": [
+  5,
+  5
+ ],
+ "term_NOT_RECOMMENDED": [
+  4,
+  1
+ ],
+ "term_AUTHOR TO CONFIRM": [
+  2,
+  1
+ ],
+ "term_SUBMISSION_READY = NO": [
+  3,
+  3
+ ],
+ "forbidden_hits": {
+  "human validation confirmed corpus taxonomy": 0,
+  "full reanalysis solved low kappa": 0,
+  "human labels validated all 6,499 records": 0,
+  "human labels validated all 6499 records": 0,
+  "FULLY_VALIDATED": 0,
+  "人類驗證確認了語料分類": 0,
+  "人工驗證確認全語料": 0,
+  "完整重分析解決了低": 0,
+  "人工標籤驗證了全部 6,499": 0
+ },
+ "primary_phrase_counts": {
+  "保留 6,499 筆分析記錄": [
+   1,
+   1
+  ],
+  "其中 3,125 筆的人工智慧端與決策端皆完成分類": [
+   2,
+   2
+  ],
+  "形成 2,180 筆功能配對邊": [
+   1,
+   1
+  ],
+  "辨識出 47 個": [
+   2,
+   2
+  ],
+  "32 個配對在四種分析下皆顯著且方向一致，其中 16 個高於期望、16 個低於期望": [
+   1,
+   1
+  ],
+  "主要分析最後留下 3,125 筆兩端皆完成分類的證據記錄，涵蓋 783 篇文獻；去除同篇文獻內的重複配對後，形成 2,180 筆文獻層級邊": [
+   1,
+   1
+  ],
+  "凍結的 32 組（16 過度、16 不足）仍為正式推論基準": [
+   1,
+   1
+  ],
+  "| L2 主要穩健集合 |": [
+   1,
+   1
+  ],
+  "| L1 主要零模型顯著 |": [
+   1,
+   1
+  ],
+  "6,499 strict analytical records; 3,125 were fully mapped": [
+   1,
+   1
+  ],
+  "yielding 2,180 document-level": [
+   1,
+   1
+  ],
+  "identified 47 cells": [
+   1,
+   1
+  ],
+  "comprising 16 enrichments and 16 depletions": [
+   1,
+   1
+  ]
+ },
+ "primary_token_counts": {
+  "6,499": [
+   12,
+   14
+  ],
+  "3,125": [
+   17,
+   18
+  ],
+  "783": [
+   16,
+   17
+  ],
+  "2,180": [
+   20,
+   21
+  ]
+ },
+ "sensitivity_token_outside_labelled_context": [],
+ "numeric_added_doc": {
+  ".0223": 1,
+  ".0298": 1,
+  ".0325": 1,
+  ".0405": 1,
+  ".0434": 1,
+  ".05": 6,
+  ".0567": 1,
+  ".0610": 1,
+  "0": 16,
+  "10": 5,
+  "10,000": 1,
+  "12": 1,
+  "120": 4,
+  "13": 7,
+  "13/13": 7,
+  "15": 2,
+  "16": 6,
+  "17": 3,
+  "19": 1,
+  "2,180": 1,
+  "2,181": 2,
+  "20": 3,
+  "24": 1,
+  "28": 1,
+  "3": 1,
+  "3,107": 2,
+  "3,125": 1,
+  "3.7.4": 5,
+  "3.8.2": 1,
+  "3.8.3": 1,
+  "30": 3,
+  "31": 1,
+  "32": 7,
+  "4": 1,
+  "4-10": 2,
+  "4-4": 1,
+  "4-9": 8,
+  "4.1": 1,
+  "4.4": 2,
+  "4.5.1": 1,
+  "4.5.5": 10,
+  "43": 6,
+  "44": 2,
+  "45": 6,
+  "46": 7,
+  "47": 6,
+  "48": 1,
+  "49": 3,
+  "5,000": 1,
+  "5.9": 1,
+  "50": 29,
+  "51": 5,
+  "52": 2,
+  "53": 7,
+  "54": 4,
+  "55": 7,
+  "56": 1,
+  "57": 5,
+  "58": 8,
+  "59": 4,
+  "6,499": 2,
+  "60": 1,
+  "61": 1,
+  "781": 2,
+  "783": 1
+ },
+ "numeric_removed_doc": {
+  "04": 1,
+  "07": 1,
+  "2": 1,
+  "256": 4,
+  "37": 4,
+  "38": 1,
+  "5": 1,
+  "8": 1
+ },
+ "numeric_per_patch": {
+  "U03": {
+   "added": {
+    "10": 1,
+    "13": 2,
+    "13/13": 1,
+    "46": 1,
+    "50": 2,
+    "43": 1,
+    "45": 1,
+    "51": 1,
+    "58": 1,
+    "3.7.4": 1,
+    "4.5.5": 1
+   },
+   "removed": {}
+  },
+  "U04": {
+   "added": {
+    "50": 1,
+    "0": 2,
+    "4.5.5": 1
+   },
+   "removed": {
+    "37": 1,
+    "256": 1,
+    "13": 1
+   }
+  },
+  "U05": {
+   "added": {
+    "50": 2,
+    "32": 1,
+    "20": 1,
+    "30": 1,
+    "13/13": 1,
+    "15": 1,
+    "17": 1
+   },
+   "removed": {}
+  },
+  "U06": {
+   "added": {
+    "50": 2,
+    "32": 1,
+    "20": 1,
+    "30": 1,
+    "13": 2,
+    "15": 1,
+    "17": 1
+   },
+   "removed": {
+    "37": 1
+   }
+  },
+  "U07": {
+   "added": {
+    "50": 1
+   },
+   "removed": {}
+  },
+  "U11": {
+   "added": {
+    "50": 1
+   },
+   "removed": {}
+  },
+  "U12": {
+   "added": {
+    "50": 1
+   },
+   "removed": {}
+  },
+  "U14": {
+   "added": {
+    "43": 2,
+    "45": 2,
+    "50": 3,
+    "20": 1,
+    "30": 1,
+    "10": 2,
+    "13": 2,
+    "13/13": 1,
+    "46": 1,
+    "12": 1,
+    "120": 1,
+    "57": 1,
+    "4.5.5": 1
+   },
+   "removed": {}
+  },
+  "U15": {
+   "added": {
+    "50": 1
+   },
+   "removed": {
+    "37": 1,
+    "256": 1
+   }
+  },
+  "U16": {
+   "added": {
+    "4.5.5": 1
+   },
+   "removed": {}
+  },
+  "U17": {
+   "added": {
+    "4-9": 1,
+    "53": 1,
+    "58": 1
+   },
+   "removed": {}
+  },
+  "U18": {
+   "added": {
+    "0": 2
+   },
+   "removed": {}
+  },
+  "U19": {
+   "added": {
+    "10": 1,
+    "13": 2,
+    "13/13": 1,
+    "46": 1,
+    "50": 1
+   },
+   "removed": {}
+  },
+  "U20": {
+   "added": {
+    "4.5.5": 1
+   },
+   "removed": {}
+  },
+  "U21": {
+   "added": {
+    "4-9": 2
+   },
+   "removed": {
+    "37": 1,
+    "256": 1
+   }
+  },
+  "U24": {
+   "added": {
+    "32": 4,
+    "50": 5,
+    "3.7.4": 1,
+    "0": 6,
+    "37": 1,
+    "44": 1,
+    "51": 1,
+    "4-9": 3,
+    "4.4": 2,
+    "4-10": 2,
+    "6,499": 2,
+    "3,125": 1,
+    "3,107": 1,
+    "783": 1,
+    "781": 1,
+    "2,180": 1,
+    "2,181": 1,
+    ".05": 5,
+    "47": 4,
+    "46": 1,
+    "54": 2,
+    "55": 3,
+    "16": 6,
+    "15": 1,
+    "17": 1,
+    "4.1": 1,
+    "13/13": 1,
+    "53": 3,
+    "57": 1,
+    "10,000": 1,
+    "5,000": 1,
+    "120": 2,
+    "24": 1,
+    "28": 1,
+    "3": 1,
+    "52": 1,
+    "31": 1,
+    ".0567": 1,
+    ".0325": 1,
+    "1": 1,
+    ".0434": 1,
+    ".0610": 1,
+    "19": 1,
+    "4": 1,
+    "58": 1,
+    ".0405": 1,
+    ".0298": 1,
+    ".0223": 1,
+    "4-4": 1,
+    "4.5.1": 1
+   },
+   "removed": {}
+  },
+  "U26": {
+   "added": {
+    "53": 1,
+    "55": 1,
+    "58": 1
+   },
+   "removed": {}
+  },
+  "U28": {
+   "added": {
+    "0": 2
+   },
+   "removed": {}
+  },
+  "U29": {
+   "added": {
+    "4.5.5": 1,
+    "4-9": 1,
+    "50": 1
+   },
+   "removed": {}
+  },
+  "U30": {
+   "added": {
+    "50": 2,
+    "4.5.5": 1
+   },
+   "removed": {}
+  },
+  "U31": {
+   "added": {
+    "50": 1
+   },
+   "removed": {}
+  },
+  "U32": {
+   "added": {
+    "50": 1
+   },
+   "removed": {}
+  },
+  "U25": {
+   "added": {
+    "43": 2,
+    "45": 2,
+    "44": 1,
+    "50": 3,
+    "3.7.4": 3,
+    "46": 2,
+    "47": 1,
+    "48": 1,
+    "49": 3,
+    "13/13": 1,
+    "3.8.3": 1,
+    "51": 2,
+    "54": 2,
+    "52": 1,
+    "53": 1,
+    "120": 1,
+    "4.5.5": 3,
+    "4-9": 1,
+    "55": 2,
+    "0": 2,
+    "3.8.2": 1,
+    "56": 1,
+    "57": 2,
+    "58": 2,
+    "59": 4,
+    "60": 1,
+    "61": 1
+   },
+   "removed": {}
+  },
+  "U33": {
+   "added": {
+    "58": 1
+   },
+   "removed": {}
+  },
+  "U34": {
+   "added": {
+    "13/13": 1,
+    "46": 1,
+    "50": 1,
+    "10": 1,
+    "51": 1,
+    "57": 1,
+    "3,107": 1,
+    "781": 1,
+    "2,181": 1,
+    ".05": 1,
+    "47": 1,
+    "32": 1,
+    "53": 1,
+    "58": 1,
+    "0": 2,
+    "55": 1,
+    "5.9": 1
+   },
+   "removed": {
+    "37": 1,
+    "256": 1,
+    "38": 1,
+    "07": 1,
+    "8": 1,
+    "15": 1,
+    "1": 1,
+    "2": 1,
+    "5": 1,
+    "04": 1
+   }
+  },
+  "U36": {
+   "added": {
+    "43": 1,
+    "45": 1
+   },
+   "removed": {}
+  }
+ },
+ "numeric_added_unmapped": {},
+ "numeric_sources": {
+  ".0223": "sensitivity: G16 revised document-null q — OUT 55 row G16",
+  ".0298": "sensitivity: G14 revised document-null q — OUT 55 row G14",
+  ".0325": "sensitivity: HUMAN_AUGMENTATION×RISK_ASSESSMENT revised document-null q — OUT 53 'GAINED'; OUT 54",
+  ".0405": "sensitivity: G07 revised document-null q — OUT 55 row G07 / boundary list",
+  ".0434": "primary (reproduced baseline): COORDINATION_EXECUTION×GENERAL_DECISION_PROCESS baseline document-null q — OUT 53 'LOST'; OUT 54 (0.04349)",
+  ".05": "BH threshold label p_BH ≤ .05 — OUT 53 table rows; robust predicate (OUT 57)",
+  ".0567": "primary (reproduced baseline): HUMAN_AUGMENTATION×RISK_ASSESSMENT baseline document-null q — OUT 53 'GAINED'; OUT 54",
+  ".0610": "sensitivity: COORDINATION_EXECUTION×GENERAL_DECISION_PROCESS revised document-null q — OUT 53 'LOST'; OUT 54 (0.06108)",
+  "0": "removed 0 / direction changed 0 (OUT 55); unauthorized replacements 0 (OUT 51/53); max abs diff 0 (OUT 58 §2)",
+  "10": "stage 10 of stages 10–13 (OUT 47 §2; OUT 53); 10 × 12 taxonomy (OUT 43 §2; REVISED_GUARD_POLICY STRUCTURAL_INVARIANT)",
+  "10,000": "main-null replicates 10,000 (OUT 47 §2; OUT 53)",
+  "12": "10 × 12 taxonomy (REVISED_GUARD_POLICY STRUCTURAL_INVARIANT)",
+  "120": "120 cells (10 × 12) — OUT 53; 120 × 4 methods (OUT 58 §2)",
+  "13": "stage 13 / 13 official outputs (OUT 47 §2–§3)",
+  "13/13": "BYTE_IDENTICAL=13/13 (OUT 47 §5)",
+  "15": "revised enriched 15 (OUT 53 Enriched row)",
+  "16": "baseline enriched/depleted 16/16 (OUT 53) and G01–G16 16/16 robust (OUT 55)",
+  "17": "revised depleted 17 (OUT 53 Depleted row)",
+  "19": "lost cell O = 19 unchanged (OUT 53)",
+  "2,180": "primary baseline document edges (OUT 53 Baseline column = frozen primary value, unchanged)",
+  "2,181": "sensitivity document edges (OUT 53)",
+  "20": "20 reconciled final labels (OUT 43 §1 clause A, §4)",
+  "24": "cells with changed main observed count 24/120 (OUT 53)",
+  "28": "cells with changed raw-record count 28/120 (OUT 53)",
+  "3": "main-null direction flips 3/120, all non-core (OUT 53)",
+  "3,107": "sensitivity pair-eligible records (OUT 53)",
+  "3,125": "primary baseline pair-eligible (OUT 53 Baseline column = frozen primary value, unchanged)",
+  "3.7.4": "section reference",
+  "3.8.2": "section reference",
+  "3.8.3": "section reference",
+  "30": "30 first-coder labels (OUT 43 §1 clause B, §4)",
+  "31": "core members unchanged 31 (OUT 53)",
+  "32": "robust core 32→32; document-null q≤.05 32→32 (OUT 53)",
+  "4": "4 methods × 120 cells (OUT 58 §2, §4)",
+  "4-10": "table reference 表 4-10",
+  "4-4": "table reference 表 4-4",
+  "4-9": "table label 表 4-9B (new) / 4-9A",
+  "4.1": "section reference",
+  "4.4": "section reference",
+  "4.5.1": "section reference",
+  "4.5.5": "section reference",
+  "43": "file number (RPT 43)",
+  "44": "file number (RPT 44)",
+  "45": "file number (RPT 45)",
+  "46": "exact q≤.05 baseline 46 (OUT 53; = Table 4-2) and file number 46",
+  "47": "main q≤.05 47→47, exact revised 47 (OUT 53) and file number 47",
+  "48": "file number (RPT 48)",
+  "49": "file number (RPT 49 / 49b)",
+  "5,000": "document-null replicates 5,000 (OUT 47 §2; OUT 53)",
+  "5.9": "section reference",
+  "50": "50 targeted audit records (OUT 43 §4; OUT 44; OUT 51) and file number 50",
+  "51": "file number (RPT 51)",
+  "52": "file number (RPT 52)",
+  "53": "file number (RPT 53)",
+  "54": "raw-record q≤.05 baseline 54 (OUT 53; = Table 4-2) and file number 54",
+  "55": "raw-record q≤.05 revised 55 (OUT 53) and file number 55",
+  "56": "file number (RPT 56, not written per OUT 55)",
+  "57": "file number (RPT 57)",
+  "58": "file number (RPT 58)",
+  "59": "file number (this manuscript, RPT 59)",
+  "6,499": "strict records 6,499→6,499 (OUT 53)",
+  "60": "file number reserved (RPT 60)",
+  "61": "file number reserved (RPT 61)",
+  "781": "sensitivity unique documents (OUT 53)",
+  "783": "primary baseline unique documents (OUT 53 Baseline column = frozen primary value, unchanged)"
+ },
+ "numeric_removed_unexpected": {},
+ "hard_checks": {
+  "source_sha_expected": true,
+  "changed_lines_subset_of_patched_lines": true,
+  "reverse_replay_reproduces_v183": true,
+  "math_identical_ordered": true,
+  "equation_tags_identical": true,
+  "no_math_markers_in_patch_text": true,
+  "fenced_blocks_identical_except_listed_status_patches": true,
+  "headings_identical_in_order_none_added": true,
+  "captions_only_4_9B_added": true,
+  "G_rows_identical_ordered": true,
+  "GM_arrow_tokens_identical": true,
+  "no_G17_or_new_G_code": true,
+  "section_3_9_1_identical": true,
+  "section_3_9_2_tables_3_4_3_4A_identical": true,
+  "section_3_9_3_V1_design_identical": true,
+  "section_3_9_4_identical": true,
+  "section_3_9_5_identical": true,
+  "section_3_10_to_3_14_enterprise_identical": true,
+  "section_4_1_to_4_4_primary_results_identical": true,
+  "section_4_5_1_to_4_5_4_identical": true,
+  "section_4_6_G_handoff_identical": true,
+  "section_4_7_to_4_10_V1_enterprise_identical": true,
+  "section_appendix_C_math_identical": true,
+  "count_unchanged_VCP": true,
+  "count_unchanged_VSC": true,
+  "count_unchanged_DL": true,
+  "count_unchanged_NEV": true,
+  "count_unchanged_Enterprise": true,
+  "count_unchanged_SIMULATED_ONLY": true,
+  "count_unchanged_EMPIRICAL RESULT PENDING": true,
+  "count_unchanged_SUBMISSION_READY": true,
+  "count_unchanged_UNIDENTIFIED": true,
+  "count_unchanged_M1": true,
+  "count_unchanged_M2": true,
+  "count_unchanged_M3": true,
+  "count_unchanged_M4": true,
+  "count_unchanged_M5": true,
+  "count_unchanged_REAL EVIDENCE": true,
+  "count_unchanged_HUMAN_RESULT_PENDING": true,
+  "SUBMISSION_READY_NO_kept": true,
+  "no_stale_pending_wording": true,
+  "status_line_L5_v185": true,
+  "corpus_wide_limitation_present": true,
+  "primary_baseline_replaced_NO_present": true,
+  "no_forbidden_claims": true,
+  "primary_phrases_unchanged": true,
+  "primary_tokens_not_removed": true,
+  "sensitivity_numbers_labelled": true,
+  "table_4_9B_columns_separate_primary_vs_sensitivity": true,
+  "numeric_patch_sum_matches_doc": true,
+  "numeric_added_all_traceable": true,
+  "numeric_removed_only_status_wording_tokens": true
+ },
+ "ALL_HARD_CHECKS_PASS": true
+}

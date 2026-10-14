@@ -1,0 +1,419 @@
+{
+ "baseline": {
+  "strict_records": 6499,
+  "pair_eligible": 3125,
+  "unique_documents": 783,
+  "document_edges": 2180,
+  "primary_q05": 47,
+  "primary_q01": 34,
+  "exact_q05": 46,
+  "document_null_q05": 32,
+  "raw_q05": 54,
+  "robust_core": 32,
+  "enriched": 16,
+  "depleted": 16
+ },
+ "revised": {
+  "strict_records": 6499,
+  "pair_eligible": 3107,
+  "unique_documents": 781,
+  "document_edges": 2181,
+  "primary_q05": 47,
+  "primary_q01": 32,
+  "exact_q05": 47,
+  "document_null_q05": 32,
+  "raw_q05": 55,
+  "robust_core": 32,
+  "enriched": 15,
+  "depleted": 17
+ },
+ "baseline_hashes": {
+  "core": "a43b4b5897bb8b1dabfe251aa52b95da8f35b6951c98ada7c92663291770bd50",
+  "results_canonical": "b1d8b5ee325e72441fb2a4dcab24cd42137be8a9092d7796e3438ebf92dd74d0",
+  "matrix_canonical": "d816f34aef49b893ab7583662ac2db65640ea4cf2916fca583b1350aa04371b5",
+  "null_canonical": "682a58f71595836cf4a297357e49c863625e38424d690a298105c792fd789b66",
+  "robust_canonical": "8c0441cee3777dc9284e106579b5a1a8d9811c7aaa7c9c770ede8cb6ab639993",
+  "dirs": [
+   "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\06_COMPUTE_CLOSURE_V1_8_5\\compute_closure\\baseline_reproduction\\20261014T041645Z\\10_DOCUMENT_DEDUP_MATRIX\\matrix_v1_20261014T041645Z",
+   "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\06_COMPUTE_CLOSURE_V1_8_5\\compute_closure\\baseline_reproduction\\20261014T041645Z\\11_NULL_MODEL_NETWORK\\null_model_v1_20261014T041645Z",
+   "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\06_COMPUTE_CLOSURE_V1_8_5\\compute_closure\\baseline_reproduction\\20261014T041645Z\\12_ROBUSTNESS_SENSITIVITY\\robustness_v1_20261014T041656Z",
+   "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\06_COMPUTE_CLOSURE_V1_8_5\\compute_closure\\baseline_reproduction\\20261014T041645Z\\13_RESULTS_FREEZE\\results_freeze_v1_20261014T041756Z"
+  ]
+ },
+ "revised_hashes": {
+  "core": "4e412a07af1f5c9e2f304408875fc1fc47018c9ff501a17dee437bea880e95a0",
+  "results_canonical": "eafa9c7efbde222f057bffa10e1f676081bf9fdef64e2d3a4cc0723211654dc4",
+  "matrix_canonical": "692f8702c8179aff7a6994ebab8251d90a064a2cbb9539cf418fbd6612a10b28",
+  "null_canonical": "2f1cafe21e52d2e473288e2096414e83522275585e5f3dd2c76e6590fa8d57ba",
+  "robust_canonical": "32b15da0ffd4a879cef060c4b913dd7fe366fa7b58e804c441ecaea92fca2e52",
+  "dirs": [
+   "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\06_COMPUTE_CLOSURE_V1_8_5\\compute_closure\\revised_audited_label_analysis\\20261014T042729Z\\10_DOCUMENT_DEDUP_MATRIX\\matrix_v1_20261014T043015Z",
+   "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\06_COMPUTE_CLOSURE_V1_8_5\\compute_closure\\revised_audited_label_analysis\\20261014T042729Z\\11_NULL_MODEL_NETWORK\\null_model_v1_20261014T043016Z",
+   "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\06_COMPUTE_CLOSURE_V1_8_5\\compute_closure\\revised_audited_label_analysis\\20261014T042729Z\\12_ROBUSTNESS_SENSITIVITY\\robustness_v1_20261014T043028Z",
+   "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\06_COMPUTE_CLOSURE_V1_8_5\\compute_closure\\revised_audited_label_analysis\\20261014T042729Z\\13_RESULTS_FREEZE\\results_freeze_v1_20261014T043128Z"
+  ]
+ },
+ "membership": {
+  "UNCHANGED_MEMBER": 31,
+  "GAINED": 1,
+  "LOST": 1,
+  "UNCHANGED_NONMEMBER": 87
+ },
+ "gained": [
+  "HUMAN_AUGMENTATION x RISK_ASSESSMENT (DEPLETED)"
+ ],
+ "lost": [
+  "COORDINATION_EXECUTION x GENERAL_DECISION_PROCESS (ENRICHED)"
+ ],
+ "core_direction_changes": 0,
+ "main_direction_changes": 3,
+ "observed_changed_cells": 24,
+ "raw_changed_cells": 28,
+ "G": [
+  {
+   "G": "G01",
+   "cell": "HUMAN_AUGMENTATION x PREDICTION_DIAGNOSIS",
+   "baseline_robust": true,
+   "revised_robust": true,
+   "baseline_direction": "DEPLETED",
+   "revised_direction": "DEPLETED",
+   "baseline_O": "3",
+   "revised_O": "3",
+   "baseline_doc_q": "0.0023995200959808036",
+   "revised_doc_q": "0.0021813819054370943",
+   "revised_main_q": "0.0008888000088880002",
+   "revised_exact_q": "3.183068175246335e-08",
+   "revised_raw_q": "9.54380516313158e-15"
+  },
+  {
+   "G": "G02",
+   "cell": "PREDICTION_RISK_ESTIMATION x HUMAN_REVIEW_ACCOUNTABILITY",
+   "baseline_robust": true,
+   "revised_robust": true,
+   "baseline_direction": "DEPLETED",
+   "revised_direction": "DEPLETED",
+   "baseline_O": "6",
+   "revised_O": "7",
+   "baseline_doc_q": "0.0023995200959808036",
+   "revised_doc_q": "0.0021813819054370943",
+   "revised_main_q": "0.0008888000088880002",
+   "revised_exact_q": "2.8828335351003306e-13",
+   "revised_raw_q": "2.9152503868715943e-26"
+  },
+  {
+   "G": "G03",
+   "cell": "COORDINATION_EXECUTION x RISK_ASSESSMENT",
+   "baseline_robust": true,
+   "revised_robust": true,
+   "baseline_direction": "DEPLETED",
+   "revised_direction": "DEPLETED",
+   "baseline_O": "3",
+   "revised_O": "3",
+   "baseline_doc_q": "0.0023995200959808036",
+   "revised_doc_q": "0.0021813819054370943",
+   "revised_main_q": "0.0008888000088880002",
+   "revised_exact_q": "0.00013117888371231662",
+   "revised_raw_q": "2.473641036611329e-07"
+  },
+  {
+   "G": "G04",
+   "cell": "GENERATION_SYNTHESIS x PREDICTION_DIAGNOSIS",
+   "baseline_robust": true,
+   "revised_robust": true,
+   "baseline_direction": "DEPLETED",
+   "revised_direction": "DEPLETED",
+   "baseline_O": "7",
+   "revised_O": "7",
+   "baseline_doc_q": "0.004173078427792702",
+   "revised_doc_q": "0.0021813819054370943",
+   "revised_main_q": "0.0008888000088880002",
+   "revised_exact_q": "4.899592401782209e-10",
+   "revised_raw_q": "3.830288963919819e-27"
+  },
+  {
+   "G": "G05",
+   "cell": "EXPLANATION_ASSURANCE x ALLOCATION_PLANNING",
+   "baseline_robust": true,
+   "revised_robust": true,
+   "baseline_direction": "DEPLETED",
+   "revised_direction": "DEPLETED",
+   "baseline_O": "7",
+   "revised_O": "7",
+   "baseline_doc_q": "0.0023995200959808036",
+   "revised_doc_q": "0.0021813819054370943",
+   "revised_main_q": "0.0008888000088880002",
+   "revised_exact_q": "4.5971426628090607e-10",
+   "revised_raw_q": "3.889602303709939e-15"
+  },
+  {
+   "G": "G06",
+   "cell": "EVALUATION_ASSESSMENT x PREDICTION_DIAGNOSIS",
+   "baseline_robust": true,
+   "revised_robust": true,
+   "baseline_direction": "DEPLETED",
+   "revised_direction": "DEPLETED",
+   "baseline_O": "9",
+   "revised_O": "10",
+   "baseline_doc_q": "0.0023995200959808036",
+   "revised_doc_q": "0.0021813819054370943",
+   "revised_main_q": "0.0008888000088880002",
+   "revised_exact_q": "1.0027632687728917e-10",
+   "revised_raw_q": "2.138833054822564e-27"
+  },
+  {
+   "G": "G07",
+   "cell": "HUMAN_AUGMENTATION x EVALUATION_SELECTION",
+   "baseline_robust": true,
+   "revised_robust": true,
+   "baseline_direction": "DEPLETED",
+   "revised_direction": "DEPLETED",
+   "baseline_O": "2",
+   "revised_O": "2",
+   "baseline_doc_q": "0.030393921215756847",
+   "revised_doc_q": "0.040491901619676064",
+   "revised_main_q": "0.015271200152712001",
+   "revised_exact_q": "0.01462666466016549",
+   "revised_raw_q": "0.02750060782311496"
+  },
+  {
+   "G": "G08",
+   "cell": "RECOMMENDATION_OPTIMIZATION x HUMAN_REVIEW_ACCOUNTABILITY",
+   "baseline_robust": true,
+   "revised_robust": true,
+   "baseline_direction": "DEPLETED",
+   "revised_direction": "DEPLETED",
+   "baseline_O": "8",
+   "revised_O": "8",
+   "baseline_doc_q": "0.0023995200959808036",
+   "revised_doc_q": "0.0021813819054370943",
+   "revised_main_q": "0.0008888000088880002",
+   "revised_exact_q": "9.569383649236122e-09",
+   "revised_raw_q": "3.2805449574985662e-09"
+  },
+  {
+   "G": "G09",
+   "cell": "PREDICTION_RISK_ESTIMATION x GOVERNANCE_OVERSIGHT",
+   "baseline_robust": true,
+   "revised_robust": true,
+   "baseline_direction": "DEPLETED",
+   "revised_direction": "DEPLETED",
+   "baseline_O": "26",
+   "revised_O": "25",
+   "baseline_doc_q": "0.0023995200959808036",
+   "revised_doc_q": "0.0021813819054370943",
+   "revised_main_q": "0.0008888000088880002",
+   "revised_exact_q": "1.1574976223917293e-18",
+   "revised_raw_q": "7.073756438833127e-61"
+  },
+  {
+   "G": "G10",
+   "cell": "PREDICTION_RISK_ESTIMATION x EVALUATION_SELECTION",
+   "baseline_robust": true,
+   "revised_robust": true,
+   "baseline_direction": "DEPLETED",
+   "revised_direction": "DEPLETED",
+   "baseline_O": "8",
+   "revised_O": "9",
+   "baseline_doc_q": "0.005758848230353929",
+   "revised_doc_q": "0.004173078427792702",
+   "revised_main_q": "0.0008888000088880002",
+   "revised_exact_q": "6.0314365763866574e-05",
+   "revised_raw_q": "6.267332791608135e-12"
+  },
+  {
+   "G": "G11",
+   "cell": "EVALUATION_ASSESSMENT x ALLOCATION_PLANNING",
+   "baseline_robust": true,
+   "revised_robust": true,
+   "baseline_direction": "DEPLETED",
+   "revised_direction": "DEPLETED",
+   "baseline_O": "12",
+   "revised_O": "12",
+   "baseline_doc_q": "0.0023995200959808036",
+   "revised_doc_q": "0.0021813819054370943",
+   "revised_main_q": "0.0008888000088880002",
+   "revised_exact_q": "1.5328561417940511e-07",
+   "revised_raw_q": "2.2544273244513373e-07"
+  },
+  {
+   "G": "G12",
+   "cell": "PREDICTION_RISK_ESTIMATION x INFORMATION_ACQUISITION",
+   "baseline_robust": true,
+   "revised_robust": true,
+   "baseline_direction": "DEPLETED",
+   "revised_direction": "DEPLETED",
+   "baseline_O": "21",
+   "revised_O": "21",
+   "baseline_doc_q": "0.0023995200959808036",
+   "revised_doc_q": "0.0021813819054370943",
+   "revised_main_q": "0.0008888000088880002",
+   "revised_exact_q": "4.245301070055959e-13",
+   "revised_raw_q": "1.0155083336520847e-26"
+  },
+  {
+   "G": "G13",
+   "cell": "EXPLANATION_ASSURANCE x PREDICTION_DIAGNOSIS",
+   "baseline_robust": true,
+   "revised_robust": true,
+   "baseline_direction": "DEPLETED",
+   "revised_direction": "DEPLETED",
+   "baseline_O": "15",
+   "revised_O": "14",
+   "baseline_doc_q": "0.0023995200959808036",
+   "revised_doc_q": "0.0021813819054370943",
+   "revised_main_q": "0.0008888000088880002",
+   "revised_exact_q": "2.0573612872081905e-07",
+   "revised_raw_q": "7.164679142541723e-22"
+  },
+  {
+   "G": "G14",
+   "cell": "PREDICTION_RISK_ESTIMATION x GENERAL_DECISION_PROCESS",
+   "baseline_robust": true,
+   "revised_robust": true,
+   "baseline_direction": "DEPLETED",
+   "revised_direction": "DEPLETED",
+   "baseline_O": "8",
+   "revised_O": "10",
+   "baseline_doc_q": "0.008887111466595569",
+   "revised_doc_q": "0.02978714601907205",
+   "revised_main_q": "0.017682442282087582",
+   "revised_exact_q": "0.014890100206954856",
+   "revised_raw_q": "8.219808142919695e-05"
+  },
+  {
+   "G": "G15",
+   "cell": "EXPLANATION_ASSURANCE x EVALUATION_SELECTION",
+   "baseline_robust": true,
+   "revised_robust": true,
+   "baseline_direction": "DEPLETED",
+   "revised_direction": "DEPLETED",
+   "baseline_O": "7",
+   "revised_O": "7",
+   "baseline_doc_q": "0.03870193703194844",
+   "revised_doc_q": "0.017774222933191138",
+   "revised_main_q": "0.026664000266640005",
+   "revised_exact_q": "0.023724852681434906",
+   "revised_raw_q": "0.014516139744956661"
+  },
+  {
+   "G": "G16",
+   "cell": "COORDINATION_EXECUTION x HUMAN_REVIEW_ACCOUNTABILITY",
+   "baseline_robust": true,
+   "revised_robust": true,
+   "baseline_direction": "DEPLETED",
+   "revised_direction": "DEPLETED",
+   "baseline_O": "10",
+   "revised_O": "10",
+   "baseline_doc_q": "0.013711543405604593",
+   "revised_doc_q": "0.022281258034107465",
+   "revised_main_q": "0.021597840215978402",
+   "revised_exact_q": "0.015873325775839428",
+   "revised_raw_q": "0.00861419015511276"
+  }
+ ],
+ "G01_G16_REMOVED": 0,
+ "G01_G16_DIRECTION_CHANGED": 0,
+ "sidecar_columns_vs_revised": {
+  "sidecar_observed": {
+   "mismatches": 0,
+   "max_abs_diff": 0.0
+  },
+  "sidecar_main_direction": {
+   "mismatches": 0,
+   "max_abs_diff": 0.0
+  },
+  "sidecar_main_q": {
+   "mismatches": 0,
+   "max_abs_diff": 0.0
+  },
+  "sidecar_exact_q": {
+   "mismatches": 0,
+   "max_abs_diff": 0.0
+  },
+  "sidecar_exact_direction": {
+   "mismatches": 0,
+   "max_abs_diff": 0.0
+  },
+  "sidecar_document_q": {
+   "mismatches": 0,
+   "max_abs_diff": 0.0
+  },
+  "sidecar_document_direction": {
+   "mismatches": 0,
+   "max_abs_diff": 0.0
+  },
+  "sidecar_raw_q": {
+   "mismatches": 0,
+   "max_abs_diff": 0.0
+  },
+  "sidecar_raw_direction": {
+   "mismatches": 0,
+   "max_abs_diff": 0.0
+  },
+  "sidecar_raw_observed": {
+   "mismatches": 0,
+   "max_abs_diff": 0.0
+  },
+  "sidecar_document_observed": {
+   "mismatches": 0,
+   "max_abs_diff": 0.0
+  },
+  "sidecar_exact_observed": {
+   "mismatches": 0,
+   "max_abs_diff": 0.0
+  }
+ },
+ "sidecar_core_member_mismatch": 0,
+ "sidecar_core_direction_mismatch": 0,
+ "official_core_member_vs_baseline_mismatch": 0,
+ "sidecar_V5_CORRECTED_byte_equal": {
+  "09/ANALYTICAL_FREEZE_CANONICAL.json": false,
+  "09/ANALYTICAL_FREEZE_MANIFEST_V2.json": false,
+  "09/ANALYTICAL_FREEZE_RECORD_LEVEL.csv": true,
+  "09/ANALYTICAL_FREEZE_SIDE_LEVEL.csv": true,
+  "09/ANALYTICAL_FREEZE_SUMMARY_V2.md": true,
+  "09/ANALYTICAL_PAIR_ELIGIBLE_RECORDS.csv": true,
+  "09/ANALYTICAL_PAIR_EXCLUDED_RECORDS.csv": true,
+  "10/AI_FAMILY_MARGINALS.csv": true,
+  "10/DECISION_FAMILY_MARGINALS.csv": true,
+  "10/DOCUMENT_DEDUP_MATRIX_CANONICAL.json": false,
+  "10/DOCUMENT_DEDUP_MATRIX_MANIFEST.json": false,
+  "10/DOCUMENT_DEDUP_MATRIX_SUMMARY.md": false,
+  "10/DOCUMENT_DISTINCT_PAIR_DISTRIBUTION.csv": true,
+  "10/DOCUMENT_PAIR_EDGES_DEDUP.csv": true,
+  "10/MATRIX_10X12_LONG.csv": true,
+  "10/MATRIX_DOCUMENT_DEDUP_COUNTS_10X12.csv": true,
+  "10/MATRIX_RAW_RECORD_COUNTS_10X12.csv": true,
+  "11/AI_WEIGHTED_DEGREES.csv": true,
+  "11/CELL_NULL_MODEL_RESULTS_120.csv": true,
+  "11/DECISION_WEIGHTED_DEGREES.csv": true,
+  "11/INDEPENDENCE_EXPECTED_MATRIX_10X12.csv": true,
+  "11/NULL_MEAN_MATRIX_10X12.csv": true,
+  "11/NULL_MODEL_NETWORK_CANONICAL.json": false,
+  "11/NULL_MODEL_NETWORK_MANIFEST.json": false,
+  "11/NULL_MODEL_NETWORK_SUMMARY.md": false,
+  "11/NULL_Z_SCORE_MATRIX_10X12.csv": true,
+  "11/OBSERVED_EXPECTED_RATIO_MATRIX_10X12.csv": true,
+  "11/OBSERVED_MATRIX_10X12.csv": true,
+  "12/DOCUMENT_PRESERVING_NULL_RESULTS_120.csv": true,
+  "12/EXACT_HYPERGEOMETRIC_RESULTS_120.csv": true,
+  "12/FULL_SENSITIVITY_ROBUST_CELLS.csv": true,
+  "12/RAW_RECORD_EXACT_SENSITIVITY_120.csv": true,
+  "12/ROBUSTNESS_COMPARISON_120.csv": true,
+  "12/ROBUSTNESS_SENSITIVITY_CANONICAL.json": false,
+  "12/ROBUSTNESS_SENSITIVITY_MANIFEST.json": false,
+  "12/ROBUSTNESS_SENSITIVITY_SUMMARY.md": false,
+  "12/STRUCTURALLY_ROBUST_CELLS.csv": true,
+  "13/FINAL_RESULTS_FREEZE_CANONICAL.json": false,
+  "13/FINAL_RESULTS_FREEZE_MANIFEST.json": false,
+  "13/FINAL_RESULTS_FREEZE_SUMMARY.md": false,
+  "13/FINAL_ROBUST_CORE_32.csv": true,
+  "13/FINAL_ROBUST_DEPLETED.csv": true,
+  "13/FINAL_ROBUST_ENRICHED.csv": true,
+  "13/FINAL_ROBUST_STATUS_MATRIX_10X12.csv": true,
+  "13/MANUSCRIPT_TABLE_ROBUST_CORE.csv": true,
+  "13/ROBUST_AI_FAMILY_PARTICIPATION.csv": true,
+  "13/ROBUST_DECISION_FAMILY_PARTICIPATION.csv": true
+ },
+ "sidecar_csv_sha256": "e3166ee183e18f340c539b983108e2c972d18b916672a62510a25638db8b5b59"
+}

@@ -1,0 +1,169 @@
+{
+ "official_outputs": 13,
+ "byte_identical": 13,
+ "non_pinned_side_files": [
+  {
+   "file": "10_DOCUMENT_DEDUP_MATRIX\\matrix_v1_20260918T132505Z\\AI_FAMILY_MARGINALS.csv",
+   "official_sha256": "67f31f9fa709a45fec02a74bd054e862e5870b7e40fd7c98ff13ff7491c181d4",
+   "repro_sha256": "67f31f9fa709a45fec02a74bd054e862e5870b7e40fd7c98ff13ff7491c181d4",
+   "byte_identical": true
+  },
+  {
+   "file": "10_DOCUMENT_DEDUP_MATRIX\\matrix_v1_20260918T132505Z\\DECISION_FAMILY_MARGINALS.csv",
+   "official_sha256": "6efe2c9862dbcd5c180aef63c6eaed6b4e545b52a3bea677ad6d85d0cbd47149",
+   "repro_sha256": "6efe2c9862dbcd5c180aef63c6eaed6b4e545b52a3bea677ad6d85d0cbd47149",
+   "byte_identical": true
+  },
+  {
+   "file": "10_DOCUMENT_DEDUP_MATRIX\\matrix_v1_20260918T132505Z\\DOCUMENT_DEDUP_MATRIX_MANIFEST.json",
+   "official_sha256": "37cc9cef29025e129e1a60745e0908333b30f5fd6feb42bf6c264d7d728137d6",
+   "repro_sha256": "e385a39a41255545289acb0aebfb455a001297ecbdf040e41a6cba41737465de",
+   "byte_identical": false
+  },
+  {
+   "file": "10_DOCUMENT_DEDUP_MATRIX\\matrix_v1_20260918T132505Z\\DOCUMENT_DEDUP_MATRIX_SUMMARY.md",
+   "official_sha256": "d91fcb5d303ef53d793834b4e81e120341c93ea6be68a742e31da78973d3111a",
+   "repro_sha256": "d91fcb5d303ef53d793834b4e81e120341c93ea6be68a742e31da78973d3111a",
+   "byte_identical": true
+  },
+  {
+   "file": "10_DOCUMENT_DEDUP_MATRIX\\matrix_v1_20260918T132505Z\\DOCUMENT_DISTINCT_PAIR_DISTRIBUTION.csv",
+   "official_sha256": "e35c27d0d0fad0942dfe4b9411eca0b15f535bb17784cb61bef1af2a5d62b820",
+   "repro_sha256": "e35c27d0d0fad0942dfe4b9411eca0b15f535bb17784cb61bef1af2a5d62b820",
+   "byte_identical": true
+  },
+  {
+   "file": "10_DOCUMENT_DEDUP_MATRIX\\matrix_v1_20260918T132505Z\\MATRIX_10X12_LONG.csv",
+   "official_sha256": "1dd198ac02da439b1d6dbfbb54d51412d12b961e1d5803647779bf8952b503ab",
+   "repro_sha256": "1dd198ac02da439b1d6dbfbb54d51412d12b961e1d5803647779bf8952b503ab",
+   "byte_identical": true
+  },
+  {
+   "file": "11_NULL_MODEL_NETWORK\\null_model_v1_20260918T132933Z\\AI_WEIGHTED_DEGREES.csv",
+   "official_sha256": "7c9dd14f07c98e5316701dcf2ca5d369ddaa6932bbb77fac348769fdae6d52e2",
+   "repro_sha256": "7c9dd14f07c98e5316701dcf2ca5d369ddaa6932bbb77fac348769fdae6d52e2",
+   "byte_identical": true
+  },
+  {
+   "file": "11_NULL_MODEL_NETWORK\\null_model_v1_20260918T132933Z\\DECISION_WEIGHTED_DEGREES.csv",
+   "official_sha256": "b18f11b9ab102a2f9c5ecb58c39f9ee57e188bdc73478e00072de117dd48d2cb",
+   "repro_sha256": "b18f11b9ab102a2f9c5ecb58c39f9ee57e188bdc73478e00072de117dd48d2cb",
+   "byte_identical": true
+  },
+  {
+   "file": "11_NULL_MODEL_NETWORK\\null_model_v1_20260918T132933Z\\INDEPENDENCE_EXPECTED_MATRIX_10X12.csv",
+   "official_sha256": "fdbbb078e2c8f04ab3fdb6b3cf27bddb1936a63df3b20c053721f19f526608de",
+   "repro_sha256": "fdbbb078e2c8f04ab3fdb6b3cf27bddb1936a63df3b20c053721f19f526608de",
+   "byte_identical": true
+  },
+  {
+   "file": "11_NULL_MODEL_NETWORK\\null_model_v1_20260918T132933Z\\NULL_MEAN_MATRIX_10X12.csv",
+   "official_sha256": "cad5d550090ab5f2aa488b98876f6c06724f0969ead3cd329704fcfd8ad84f61",
+   "repro_sha256": "cad5d550090ab5f2aa488b98876f6c06724f0969ead3cd329704fcfd8ad84f61",
+   "byte_identical": true
+  },
+  {
+   "file": "11_NULL_MODEL_NETWORK\\null_model_v1_20260918T132933Z\\NULL_MODEL_NETWORK_MANIFEST.json",
+   "official_sha256": "087c3f69f481ef1f06ee4b355425068cdb334e4abeedf88388989947cb9af5b2",
+   "repro_sha256": "e7c5317ee92ed29d0c91fb714dffd9a3db0d3f3a226694a88cdf99e7178a1e3d",
+   "byte_identical": false
+  },
+  {
+   "file": "11_NULL_MODEL_NETWORK\\null_model_v1_20260918T132933Z\\NULL_MODEL_NETWORK_SUMMARY.md",
+   "official_sha256": "f52cdd5dd78d9f882e748add663d154abf69dee70ef3e20ddd17bc86275aa9d1",
+   "repro_sha256": "f52cdd5dd78d9f882e748add663d154abf69dee70ef3e20ddd17bc86275aa9d1",
+   "byte_identical": true
+  },
+  {
+   "file": "11_NULL_MODEL_NETWORK\\null_model_v1_20260918T132933Z\\NULL_Z_SCORE_MATRIX_10X12.csv",
+   "official_sha256": "12f3f3d4fe2e2bb00185dd1f175fd62ac36e603126d09c167791d88cfff9e1de",
+   "repro_sha256": "12f3f3d4fe2e2bb00185dd1f175fd62ac36e603126d09c167791d88cfff9e1de",
+   "byte_identical": true
+  },
+  {
+   "file": "11_NULL_MODEL_NETWORK\\null_model_v1_20260918T132933Z\\OBSERVED_EXPECTED_RATIO_MATRIX_10X12.csv",
+   "official_sha256": "74e48c12eb27faaa5d88404ccf10689a58d21396aff078988845559708734a52",
+   "repro_sha256": "74e48c12eb27faaa5d88404ccf10689a58d21396aff078988845559708734a52",
+   "byte_identical": true
+  },
+  {
+   "file": "11_NULL_MODEL_NETWORK\\null_model_v1_20260918T132933Z\\OBSERVED_MATRIX_10X12.csv",
+   "official_sha256": "8d71118e9aa32ee94c023019e04992b8f6ba28350961afc95febfb9c76a79b7a",
+   "repro_sha256": "8d71118e9aa32ee94c023019e04992b8f6ba28350961afc95febfb9c76a79b7a",
+   "byte_identical": true
+  },
+  {
+   "file": "12_ROBUSTNESS_SENSITIVITY\\robustness_v1_20260918T133618Z\\FULL_SENSITIVITY_ROBUST_CELLS.csv",
+   "official_sha256": "6b325920667944462c93a084c611cb383ccfa988c3da0f2891f0393bfe086255",
+   "repro_sha256": "6b325920667944462c93a084c611cb383ccfa988c3da0f2891f0393bfe086255",
+   "byte_identical": true
+  },
+  {
+   "file": "12_ROBUSTNESS_SENSITIVITY\\robustness_v1_20260918T133618Z\\ROBUSTNESS_SENSITIVITY_MANIFEST.json",
+   "official_sha256": "06375d84d02b65ec6e2dba08b7f29b2a5ce57c34eab64c74523163bc159a2580",
+   "repro_sha256": "cfc5dbab0d8e3628e863ef8ecfe99a1c2a0ca4667bd0876fce40e3b433c03663",
+   "byte_identical": false
+  },
+  {
+   "file": "12_ROBUSTNESS_SENSITIVITY\\robustness_v1_20260918T133618Z\\ROBUSTNESS_SENSITIVITY_SUMMARY.md",
+   "official_sha256": "2132bc3606fcae3fa9b79c69f8f504881c67184b1402fc6e40ab94dbc496c2aa",
+   "repro_sha256": "2132bc3606fcae3fa9b79c69f8f504881c67184b1402fc6e40ab94dbc496c2aa",
+   "byte_identical": true
+  },
+  {
+   "file": "12_ROBUSTNESS_SENSITIVITY\\robustness_v1_20260918T133618Z\\STRUCTURALLY_ROBUST_CELLS.csv",
+   "official_sha256": "6b325920667944462c93a084c611cb383ccfa988c3da0f2891f0393bfe086255",
+   "repro_sha256": "6b325920667944462c93a084c611cb383ccfa988c3da0f2891f0393bfe086255",
+   "byte_identical": true
+  },
+  {
+   "file": "13_RESULTS_FREEZE\\results_freeze_v1_20260919T080120Z\\FINAL_RESULTS_FREEZE_MANIFEST.json",
+   "official_sha256": "f156f7752dd3e0c4146c572f7ddcacb3d155807fd5aaeb54a0058916c8725eb6",
+   "repro_sha256": "79af8233f9d551d6e94ac79180b06810055aad20741f41e7f884d748ffa2bc3d",
+   "byte_identical": false
+  },
+  {
+   "file": "13_RESULTS_FREEZE\\results_freeze_v1_20260919T080120Z\\FINAL_RESULTS_FREEZE_SUMMARY.md",
+   "official_sha256": "dd24f6367157e81813bddce53d902bc9bf96f0f03838ded31106b7e81a28e4b1",
+   "repro_sha256": "dd24f6367157e81813bddce53d902bc9bf96f0f03838ded31106b7e81a28e4b1",
+   "byte_identical": true
+  },
+  {
+   "file": "13_RESULTS_FREEZE\\results_freeze_v1_20260919T080120Z\\FINAL_ROBUST_DEPLETED.csv",
+   "official_sha256": "6e25d75c0504547e41871aad6b1927f6165856d5cb7ccb22321294e17ac10e6a",
+   "repro_sha256": "6e25d75c0504547e41871aad6b1927f6165856d5cb7ccb22321294e17ac10e6a",
+   "byte_identical": true
+  },
+  {
+   "file": "13_RESULTS_FREEZE\\results_freeze_v1_20260919T080120Z\\FINAL_ROBUST_ENRICHED.csv",
+   "official_sha256": "35be0dfb4cb5d936f0499bbc57a312567d22a4b83a5f376de15486178aee1349",
+   "repro_sha256": "35be0dfb4cb5d936f0499bbc57a312567d22a4b83a5f376de15486178aee1349",
+   "byte_identical": true
+  },
+  {
+   "file": "13_RESULTS_FREEZE\\results_freeze_v1_20260919T080120Z\\FINAL_ROBUST_STATUS_MATRIX_10X12.csv",
+   "official_sha256": "87febed538abc5dda6bccbdb7ea239ff8c8676cfc3620c082c0b4db1cf12ad84",
+   "repro_sha256": "87febed538abc5dda6bccbdb7ea239ff8c8676cfc3620c082c0b4db1cf12ad84",
+   "byte_identical": true
+  },
+  {
+   "file": "13_RESULTS_FREEZE\\results_freeze_v1_20260919T080120Z\\MANUSCRIPT_TABLE_ROBUST_CORE.csv",
+   "official_sha256": "9ea2dc017a5ee0c8c1a2cfbc7c529ca3095edff8189d19c2d7eeb4ad5d2809eb",
+   "repro_sha256": "9ea2dc017a5ee0c8c1a2cfbc7c529ca3095edff8189d19c2d7eeb4ad5d2809eb",
+   "byte_identical": true
+  },
+  {
+   "file": "13_RESULTS_FREEZE\\results_freeze_v1_20260919T080120Z\\ROBUST_AI_FAMILY_PARTICIPATION.csv",
+   "official_sha256": "c3675e883d08d460680d31644a5c1b14410d605097fecc9a6be495ea75a1f324",
+   "repro_sha256": "c3675e883d08d460680d31644a5c1b14410d605097fecc9a6be495ea75a1f324",
+   "byte_identical": true
+  },
+  {
+   "file": "13_RESULTS_FREEZE\\results_freeze_v1_20260919T080120Z\\ROBUST_DECISION_FAMILY_PARTICIPATION.csv",
+   "official_sha256": "19954e56b5822d6266be6f67f524d98f729278e436f840a049bd5d6d9863407b",
+   "repro_sha256": "19954e56b5822d6266be6f67f524d98f729278e436f840a049bd5d6d9863407b",
+   "byte_identical": true
+  }
+ ],
+ "BASELINE_REPRODUCTION": "PASS"
+}

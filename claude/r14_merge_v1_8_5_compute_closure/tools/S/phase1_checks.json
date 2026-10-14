@@ -1,0 +1,79 @@
+{
+ "first_coder_rows": 50,
+ "first_coder_unique_ids": 50,
+ "reconciled_rows": 20,
+ "reconciled_unique_ids": 20,
+ "reconciled_subset_of_first": true,
+ "v5_record_rows": 6499,
+ "v5_unique_record_ids": 6499,
+ "reconciled_basis": {
+  "UNANIMOUS_PRE_ADJUDICATION": 1,
+  "HUMAN_ADJUDICATION": 19
+ },
+ "event_chain": {
+  "events": 19,
+  "event_hash_recomputed_ok": 19,
+  "prev_links_ok": 18,
+  "adjudicated_rows": 19,
+  "row_to_event_final_label_match": 19,
+  "row_event_mismatches": [],
+  "unique_event_records": 19
+ },
+ "taxonomy_ai": [
+  "COORDINATION_EXECUTION",
+  "EVALUATION_ASSESSMENT",
+  "EXPLANATION_ASSURANCE",
+  "GENERAL_REASONING_SYSTEMS",
+  "GENERATION_SYNTHESIS",
+  "HUMAN_AUGMENTATION",
+  "PERCEPTION_EXTRACTION",
+  "PREDICTION_RISK_ESTIMATION",
+  "RECOMMENDATION_OPTIMIZATION",
+  "RETRIEVAL_SYNTHESIS"
+ ],
+ "taxonomy_decision": [
+  "ALLOCATION_PLANNING",
+  "EVALUATION_SELECTION",
+  "EXECUTION_COORDINATION",
+  "GENERAL_DECISION_PROCESS",
+  "GOVERNANCE_OVERSIGHT",
+  "HUMAN_REVIEW_ACCOUNTABILITY",
+  "INFORMATION_ACQUISITION",
+  "INFORMATION_SYNTHESIS",
+  "OPTION_GENERATION",
+  "PREDICTION_DIAGNOSIS",
+  "PROBLEM_FRAMING",
+  "RISK_ASSESSMENT"
+ ],
+ "unanimous_row_final_eq_first_eq_blind": true,
+ "input_sha256": {
+  "FIRST_CODER_50_FINAL_FROZEN.csv": "dd332dd8cfecf7dde9a29d32bca654b7c04c49f499c3e6213cd4d9a2ed157400",
+  "HUMAN_RECONCILED_20.csv": "4b7ceac2c8c8bf2912ea542d88a1b887a42ed450aa248dce371525c25bb5bda0",
+  "HUMAN_RECONCILIATION_EVENTS.jsonl": "9270accc7657006c32d3965a01ff3dae95b0ec25ab5bf5f52d2b1dcb6af2cc2d",
+  "ANALYTICAL_FREEZE_RECORD_LEVEL.csv": "fbb5f59286d308771d5db77b176abebab8ef851a896652a3807ebf6a4b335a8f",
+  "ANALYTICAL_PAIR_ELIGIBLE_RECORDS.csv": "9ee5fd537fed2819c0ac7998d6a786cc8f90dd008ebc1758bb92c8e7487c2e92",
+  "DOCUMENT_DEDUP_MATRIX_CANONICAL.json": "d816f34aef49b893ab7583662ac2db65640ea4cf2916fca583b1350aa04371b5",
+  "HUMAN_AUDIT_LOCAL_CORRECTION_MAP.csv": "d09db24472c060e723f52acf6ef7ea26918368d9189f288efb6b8ce94d493313"
+ },
+ "manifest_rows": 50,
+ "unique_manifest_records": 50,
+ "precedence_class_counts": {
+  "FIRST_CODER": 30,
+  "RECONCILED_FINAL": 20
+ },
+ "join_problems": [],
+ "all_50_in_v5_pair_eligible": true,
+ "v9_model_labels_vs_v5_mismatches": [],
+ "translation_vs_sidecar_map_mismatches": [],
+ "translation_action_counts": {
+  "APPLY_HUMAN_FAMILY_PAIR": 23,
+  "REMOVE_HUMAN_EXCLUDED_PAIR": 13,
+  "LEAVE_OFFICIAL_PAIR_UNCHANGED": 9,
+  "REMOVE_UNMAPPED_HUMAN_FAMILY_PAIR": 5
+ },
+ "pair_eligible_delta": -18,
+ "pair_eligible_after": 3107,
+ "records_with_any_pipeline_field_change": 37,
+ "conflicting_final_labels": 0,
+ "PHASE1_GATE": "PASS"
+}
