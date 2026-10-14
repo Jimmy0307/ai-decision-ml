@@ -1,0 +1,19 @@
+{
+ "schema": "S1B_LABEL_MAP_ZH_TW",
+ "description": "Deterministic map: Traditional Chinese display label (as shown in the S1b drop-down lists) -> canonical code. Order of each list = order shown in the drop-down.",
+ "normalization": [
+  "unicodedata.normalize('NFKC', s)",
+  "bar variants U+007C U+FF5C U+2502 U+2503 U+01C0 U+FFE8 -> U+007C",
+  "remove every whitespace character (str.isspace)"
+ ],
+ "fields": {
+  "Q1": [["是", "YES"], ["否", "NO"], ["無法確定", "UNCERTAIN"]],
+  "Q2": [["M1｜權責與問責", "M1"], ["M2｜流程路由與異常復原", "M2"], ["M3｜人機配置與回應", "M3"],
+         ["M4｜評估與保證", "M4"], ["跨時間學習與適應", "LONGITUDINAL"], ["資料條件限制", "DATA_GATED"],
+         ["僅屬證據層", "EVIDENCE_ONLY"], ["無適用機制", "NONE"], ["無法明確判定", "AMBIGUOUS"]],
+  "Q3": [["高", "HIGH"], ["中", "MEDIUM"], ["低", "LOW"]],
+  "Q4": [["M1｜權責與問責", "M1"], ["M2｜流程路由與異常復原", "M2"], ["M3｜人機配置與回應", "M3"],
+         ["M4｜評估與保證", "M4"], ["跨時間學習與適應", "LONGITUDINAL"], ["資料條件限制", "DATA_GATED"]],
+  "ATTESTATION": [["符合", "COMPLIES"], ["不符合", "DOES_NOT_COMPLY"]]
+ }
+}

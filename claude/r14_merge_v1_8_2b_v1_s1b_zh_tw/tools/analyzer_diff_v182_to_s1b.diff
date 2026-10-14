@@ -1,0 +1,137 @@
+--- tools/v1_construct_analyzer_v182.py
++++ tools/v1_construct_analyzer_s1b.py
+@@ -1,4 +1,14 @@
+-"""V1 human construct-validation analyzer, v1.8.2 (masked item IDs, 3 human coders; analysis plan 29).
++"""V1 human construct-validation analyzer, S1b (ZH_TW instrument). Derived from v1_construct_analyzer_v182.py.
++
++S1b CHANGES INPUT PARSING ONLY (see S1B_ANALYZER_COMPATIBILITY_TEST.md for the diff): the coder sheet is
++"作答_編碼者k" (-> canonical CODER_k), the item-ID column is "題目編號", response columns are found by their
++"Q1 ".."Q5 " header prefix, Chinese drop-down labels are mapped to canonical codes by s1b_label_map (NFKC,
++bar variants, whitespace), and the attestation sheet "作答聲明" uses 符合/不符合 -> COMPLIES/DOES_NOT_COMPLY;
++any DOES_NOT_COMPLY -> CODER_STATUS=EXPOSED. Statistics, thresholds, phases and unseal gating are unchanged;
++the S3-gated item map and the key are still verified against the UNCHANGED S1 commitments (OUT_REL below).
++Labelling only: VERSION string and result file names (V1_RESULTS_S1B.*).
++
++Analysis plan: 29_V1_ANALYSIS_PLAN_FROZEN.md (unchanged).
+ 
+ Primary question: do independent human coders agree (inter-rater reliability)? NOT agreement with the researcher key.
+ 
+@@ -20,7 +30,7 @@
+ Thresholds .800/.667 = RESEARCH_CONVENTION (53B C1/C2); no Landis & Koch labels.
+ 
+ Usage:
+-  python -E -P v1_construct_analyzer_v182.py CODER_1.xlsx CODER_2.xlsx CODER_3.xlsx --out DIR [--repo REPO]
++  python -E -P v1_construct_analyzer_s1b.py CODER_1_ZH_TW.xlsx CODER_2_ZH_TW.xlsx CODER_3_ZH_TW.xlsx --out DIR [--repo REPO]
+          [--s2-manifest M2] [--exposed CODER_k ...] [--adjudication ADJ.csv --s3-manifest M3]
+          [--item-map ITEM_ID_TO_GID_MAP.json] [--unseal --key sealed_key.json] [--classes C.csv --c-manifest MC]
+ """
+@@ -41,7 +51,10 @@
+ from openpyxl import load_workbook
+ 
+ sys.dont_write_bytecode = True
+-VERSION = "v1_construct_analyzer_v1_8_2"
++sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
++import s1b_label_map as LM  # noqa: E402  (S1b parsing)
++
++VERSION = "v1_construct_analyzer_s1b"
+ PRIMARY_RELIABILITY = "KRIPPENDORFF_ALPHA_Q2_3_CODERS"
+ PAIRWISE_KAPPA = "SECONDARY"
+ THRESHOLD_PROVENANCE = "RESEARCH_CONVENTION"
+@@ -59,7 +72,15 @@
+ LO, HI = 0.667, 0.800
+ C6_SENTENCE = ("V1_PASS_HUMAN_C6 is a continuity label under the earlier 53B protocol, not evidence that the amended "
+                "Q1–Q5 instrument is identical to 53B.")
++# S1b: commitments unchanged from S1 -> still read from the S1 V1_SEALED folder (key + item map).
+ OUT_REL = os.path.join("claude", "r14_merge_v1_8_2_v1_prefreeze")
++# S1b parsing constants
++S1B_CODER_PREFIX = "作答_編碼者"
++S1B_ITEM_COL = "題目編號"
++S1B_ATTEST_SHEET = "作答聲明"
++S1B_ATTEST_FREE = ("姓名", "日期", "簽名")
++S1B_RESP_PREFIX = {"Q1 ": RESP[0], "Q2 ": RESP[1], "Q3 ": RESP[2], "Q4 ": RESP[3], "Q5 ": RESP[4]}
++S1B_FIELD = {RESP[0]: "Q1", RESP[1]: "Q2", RESP[2]: "Q3", RESP[3]: "Q4"}
+ KEY_COMMIT = os.path.join(OUT_REL, "V1_SEALED", "RESEARCHER_ASSIGNMENT_COMMITMENT.md")
+ MAP_COMMIT = os.path.join(OUT_REL, "V1_SEALED", "ITEM_ID_TO_GID_MAP.COMMITMENT.md")
+ 
+@@ -116,17 +137,29 @@
+     return "" if v is None else str(v).strip()
+ 
+ 
++def _code(field, raw):
++    """S1b: Chinese display label -> canonical code; unknown non-empty values are kept raw (validate() flags them)."""
++    c = LM.to_code(field, raw)
++    return raw if c is None else c
++
++
+ def read_sheet(path):
+     wb = load_workbook(path, read_only=True, data_only=True)
+-    names = [s for s in wb.sheetnames if s.startswith("CODER_")]
++    names = [s for s in wb.sheetnames if s.startswith(S1B_CODER_PREFIX)]
+     if len(names) != 1:
+-        raise InputInvalid(f"{os.path.basename(path)}: expected exactly one CODER_* sheet, found {names}")
++        raise InputInvalid(f"{os.path.basename(path)}: expected exactly one {S1B_CODER_PREFIX}* sheet, found {names}")
++    canon = "CODER_" + names[0][len(S1B_CODER_PREFIX):]
+     rows = list(wb[names[0]].iter_rows(values_only=True))
+     head = [_cell(h) for h in rows[0]]
+-    need = ["Item_ID"] + RESP
+-    if any(h not in head for h in need):
++    ix = {}
++    if S1B_ITEM_COL in head:
++        ix["Item_ID"] = head.index(S1B_ITEM_COL)
++    for pre, key in S1B_RESP_PREFIX.items():
++        hits = [j for j, h in enumerate(head) if h.startswith(pre)]
++        if len(hits) == 1:
++            ix[key] = hits[0]
++    if len(ix) != 1 + len(RESP):
+         raise InputInvalid(f"{os.path.basename(path)}: missing columns")
+-    ix = {h: head.index(h) for h in need}
+     data = {}
+     for r in rows[1:]:
+         if r is None or all(v is None for v in r):
+@@ -134,13 +167,20 @@
+         i = _cell(r[ix["Item_ID"]])
+         if i in data:
+             raise InputInvalid(f"{os.path.basename(path)}: duplicate {i}")
+-        data[i] = {h: _cell(r[ix[h]]) for h in RESP}
++        data[i] = {h: (_code(S1B_FIELD[h], _cell(r[ix[h]])) if h in S1B_FIELD else _cell(r[ix[h]])) for h in RESP}
+     att = []
+-    if "ATTESTATION" in wb.sheetnames:
+-        for r in list(wb["ATTESTATION"].iter_rows(values_only=True))[2:]:
++    if S1B_ATTEST_SHEET in wb.sheetnames:
++        for r in list(wb[S1B_ATTEST_SHEET].iter_rows(values_only=True))[2:]:
+             if r and r[0]:
+-                att.append((_cell(r[1]), _cell(r[2])))
+-    return dict(path=path, sheet=names[0], sha256=sha(path), rows=data, attestation=att)
++                st, raw = _cell(r[1]), _cell(r[2])
++                if st in S1B_ATTEST_FREE:
++                    att.append((st, raw))
++                    continue
++                code = LM.to_code("ATTESTATION", raw)
++                if code is None:
++                    raise InputInvalid(f"{os.path.basename(path)}: attestation answer '{raw}' is not 符合/不符合")
++                att.append((st, code))
++    return dict(path=path, sheet=canon, sha256=sha(path), rows=data, attestation=att)
+ 
+ 
+ def is_empty(s):
+@@ -177,7 +217,7 @@
+ 
+ 
+ def attestation_exposed(s):
+-    return [st for st, a in s["attestation"] if a == "NO" and st not in ("Name", "Date", "Signature")]
++    return [st for st, a in s["attestation"] if a == "DOES_NOT_COMPLY" and st not in S1B_ATTEST_FREE]
+ 
+ 
+ # ------------------------------------------------------------------------------------------------ metrics
+@@ -502,9 +542,9 @@
+         res["status"], res["errors"], code = "INPUT_INVALID", str(e).split("\n"), 2
+     except Refused as e:
+         res["status"], res["errors"], code = "REFUSED", [str(e)], 3
+-    with open(os.path.join(a.out, "V1_RESULTS_v1_8_2.json"), "w", encoding="utf-8", newline="\n") as f:
++    with open(os.path.join(a.out, "V1_RESULTS_S1B.json"), "w", encoding="utf-8", newline="\n") as f:
+         json.dump(res, f, indent=1, ensure_ascii=False, default=str)
+-    with open(os.path.join(a.out, "V1_RESULTS_v1_8_2.md"), "w", encoding="utf-8", newline="\n") as f:
++    with open(os.path.join(a.out, "V1_RESULTS_S1B.md"), "w", encoding="utf-8", newline="\n") as f:
+         f.write(render_md(res))
+     print(res["status"])
+     return code
