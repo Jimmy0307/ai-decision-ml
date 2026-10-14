@@ -81,3 +81,36 @@ After all three completed XLSX files are returned:
 `SUBMISSION_READY=NO`
 
 This file supersedes only the **distribution-gate status** and the **readability-check provenance wording** in earlier S1d status notes. It does not supersede the frozen instrument, freeze manifest, protocol, codebook, recruitment eligibility rules, or analysis plan.
+
+## 7. 54A stimulus clarification
+
+Added 2026-10-14. This section is documentation only: no workbook bytes, hashes, semantics, item order, Q1–Q5, analyzer, analysis plan or recruitment rules changed, and S1e was not created. Full record: `S1D_54A_STIMULUS_CLARIFICATION.md`.
+
+**Finding**
+- Canonical 54A is uniquely identified: `54A_V1_BLIND_PACKET_A_v2_2.csv`, SHA-256 `517675e7491212c4630d190c5b082ff3f7a6904a1f5d84047be79d8b84d07f4d`.
+- Its "neutral evidence description" is a generic template, repeated across all 16 items with only the family names substituted. It contains no item-specific empirical evidence.
+- The template column was dropped during S1b. That removed redundant wording only, and S1d remains substantively equivalent to the intended pair-level conceptual stimulus.
+
+**Claim boundary**
+- V1 is a pair-level conceptual construct-interpretation reliability study. It is not a human re-review of underlying literature excerpts.
+- Coders judge whether each AI-function × decision-function pairing implies an identifiable enterprise decision interface, under the provided general-enterprise framing.
+- Coders do not validate individual source papers or empirical enterprise cases.
+
+**Manuscript wording**
+- **APPROVED:** "V1 evaluated whether independent coders could consistently translate the 16 AI-function × decision-function pairings into enterprise decision mechanisms."
+- **NOT APPROVED:**
+  - "Experts validated the literature evidence for the 16 gaps."
+  - "Human coders confirmed that each depleted cell represents an enterprise problem."
+  - "Coders independently reviewed the underlying literature supporting each G."
+
+**Status after this clarification**
+`S1D_STATUS=FINAL`
+`CODER_INSTRUMENT=APPROVED`
+`54A_RECOVERY=CONFIRMED`
+`54A_ITEM_SPECIFIC_EMPIRICAL_EVIDENCE=NO`
+`54A_TEMPLATE_OMISSION_SUBSTANTIVE_EFFECT=NONE`
+`PAIR_LEVEL_CONCEPTUAL_VALIDATION=YES`
+`LITERATURE_EVIDENCE_REVALIDATION=NO`
+`V1_HUMAN_RESULTS=NONE`
+`READY_TO_DISTRIBUTE=YES`
+`SUBMISSION_READY=NO`
