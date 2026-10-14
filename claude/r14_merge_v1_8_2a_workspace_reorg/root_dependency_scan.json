@@ -1,0 +1,316 @@
+{
+ "AGENTS.md": [
+  "PIPELINE_CORE_EXTRACTION.md",
+  "docs\\ecc-workflow-adoption.md",
+  "scripts\\build_research_core.py"
+ ],
+ "AI_DECISION_V1_8_REQUIRED_INPUTS_BUNDLE_20261014.zip": [],
+ "analyze_remaining.py": [],
+ "analyze_unclassified.py": [],
+ "audit_sqlite_db.py": [
+  "C_WORKSPACE_GUIDE.md",
+  "PIPELINE_CORE_EXTRACTION.md",
+  "PROJECT_HANDOFF.md",
+  "paper_kb_software\\run_workspace_refresh.py",
+  "run_workspace_refresh.py"
+ ],
+ "backfill_content_hash.py": [
+  "CONTENT_HASH_USAGE_GUIDE.md",
+  "SESSION_SUMMARY.md"
+ ],
+ "backfill_content_hash_quiet.py": [
+  "SESSION_SUMMARY.md"
+ ],
+ "CHAPTER_3_METHODOLOGY_COMPLETE.md": [],
+ "check2.py": [],
+ "check_db.py": [],
+ "check_db_status.py": [],
+ "check_schema.py": [],
+ "CLASSIFICATION_COMPLETE.md": [],
+ "compare_papers.py": [
+  "PIPELINE_CORE_EXTRACTION.md",
+  "PROJECT_HANDOFF.md",
+  "paper_kb_software\\run_workspace_refresh.py",
+  "run_workspace_refresh.py"
+ ],
+ "complete_thesis_sections_4_2_4_3.md": [],
+ "COMPLETION_REPORT_2026-05-06.md": [
+  "PRE_SUBMISSION_VERIFICATION_2026-05-06.md"
+ ],
+ "CONTENT_HASH_IMPLEMENTATION.md": [
+  "CONTENT_HASH_USAGE_GUIDE.md",
+  "SESSION_SUMMARY.md"
+ ],
+ "CONTENT_HASH_USAGE_GUIDE.md": [],
+ "C_WORKSPACE_GUIDE.md": [],
+ "deep_analyze_tags.py": [],
+ "discover_and_download_extensions.py": [],
+ "dry_run_test.py": [
+  "CONTENT_HASH_USAGE_GUIDE.md"
+ ],
+ "Enterprise_AI_Decision_100_Papers_2021_2026.xlsx": [],
+ "evaluate_pipeline_against_golden.py": [
+  "PIPELINE_CORE_EXTRACTION.md",
+  "paper_kb_software\\run_workspace_refresh.py",
+  "run_workspace_refresh.py"
+ ],
+ "FINAL_COMPLETION_REPORT_2026-05-06.md": [
+  "PRE_SUBMISSION_VERIFICATION_2026-05-06.md"
+ ],
+ "final_readiness.py": [],
+ "FINAL_VALIDATION_SUMMARY_2026-05-06.md": [
+  "TASK_B_AND_C_COMPLETION_REPORT.md"
+ ],
+ "final_workflow_verification.py": [],
+ "generate_enhanced_obsidian_visualization.py": [
+  "FINAL_COMPLETION_REPORT_2026-05-06.md",
+  "PRE_SUBMISSION_VERIFICATION_2026-05-06.md"
+ ],
+ "generate_full_index.py": [
+  "scripts\\crawler_expand_enhanced.py"
+ ],
+ "generate_obsidian_vault.py": [
+  "COMPLETION_REPORT_2026-05-06.md",
+  "FINAL_COMPLETION_REPORT_2026-05-06.md",
+  "PRE_SUBMISSION_VERIFICATION_2026-05-06.md"
+ ],
+ "generate_research_gap_report.py": [
+  "PIPELINE_CORE_EXTRACTION.md",
+  "paper_kb_software\\run_workspace_refresh.py",
+  "run_workspace_refresh.py"
+ ],
+ "generate_topic_notes_from_sqlite.py": [
+  "C_WORKSPACE_GUIDE.md",
+  "PIPELINE_CORE_EXTRACTION.md",
+  "PROJECT_HANDOFF.md",
+  "paper_kb_software\\run_workspace_refresh.py",
+  "run_workspace_refresh.py"
+ ],
+ "GPU_STATUS_REPORT.md": [],
+ "import_analysis_to_sqlite.py": [
+  "PIPELINE_CORE_EXTRACTION.md",
+  "PROJECT_HANDOFF.md",
+  "docs\\commercialization_full_proposal_2026-05-09.md",
+  "docs\\commercialization_technical_spec_2026-05-09.md",
+  "paper_kb_software\\README.md",
+  "paper_kb_software\\debug_crawled_loop.py",
+  "paper_kb_software\\run_workspace_refresh.py",
+  "run_workspace_refresh.py",
+  "scripts\\debug_crawled_loop.py",
+  "tests\\test_import_analysis_to_sqlite.py"
+ ],
+ "integration_test.py": [
+  "CONTENT_HASH_USAGE_GUIDE.md"
+ ],
+ "LEGACY_PAPERS_FOR_UPLOAD.zip": [
+  "scripts\\audit_legacy_paper_package.py"
+ ],
+ "legacy_pdf_path_audit.csv": [],
+ "migrate_add_content_hash.py": [
+  "CONTENT_HASH_USAGE_GUIDE.md",
+  "SESSION_SUMMARY.md"
+ ],
+ "paper_analysis_queries.sql": [
+  "scripts\\build_progress_sheets.py"
+ ],
+ "paper_analysis_table.sql": [
+  "CONTENT_HASH_IMPLEMENTATION.md",
+  "CONTENT_HASH_USAGE_GUIDE.md",
+  "PIPELINE_CORE_EXTRACTION.md",
+  "SESSION_SUMMARY.md"
+ ],
+ "paper_kb_software (2).zip": [],
+ "paper_kb_software.zip": [],
+ "PIPELINE_CORE_EXTRACTION.md": [],
+ "pipeline_output.txt": [],
+ "PIPELINE_USAGE_GUIDE.md": [
+  "PIPELINE_CORE_EXTRACTION.md"
+ ],
+ "postgres_closed_loop_pipeline.sql": [
+  "PIPELINE_USAGE_GUIDE.md",
+  "run_closed_loop_research.bat",
+  "run_postgres_closed_loop_sql.bat"
+ ],
+ "PRE_SUBMISSION_VERIFICATION_2026-05-06.md": [],
+ "PROJECT_HANDOFF.md": [
+  "PIPELINE_CORE_EXTRACTION.md"
+ ],
+ "refine_normalized_db.py": [],
+ "regenerate_backbone_visualization.py": [
+  "COMPLETION_REPORT_2026-05-06.md",
+  "FINAL_COMPLETION_REPORT_2026-05-06.md",
+  "PRE_SUBMISSION_VERIFICATION_2026-05-06.md",
+  "complete_thesis_sections_4_2_4_3.md"
+ ],
+ "rescue_paper_pdfs.py": [
+  "PROJECT_HANDOFF.md",
+  "generate_full_index.py"
+ ],
+ "run.bat": [
+  "GPU_STATUS_REPORT.md",
+  "PIPELINE_CORE_EXTRACTION.md",
+  "SESSION_SUMMARY.md",
+  "paper_kb_software\\README.md",
+  "paper_kb_software\\docs\\HERMES_AGENT_IO.md"
+ ],
+ "run_build_expert_blind_template.bat": [],
+ "run_clean_consensus_noise.bat": [],
+ "run_closed_loop_research.bat": [
+  "PIPELINE_USAGE_GUIDE.md"
+ ],
+ "run_crawled_debug_loop.bat": [
+  "paper_kb_software\\run.bat",
+  "run.bat",
+  "run_build_expert_blind_template.bat",
+  "run_clean_consensus_noise.bat",
+  "run_closed_loop_research.bat",
+  "run_download_balanced_topic_papers.bat",
+  "run_postgres_closed_loop_sql.bat",
+  "run_progress_sheet.bat",
+  "run_sfs_magdm_compare.bat",
+  "run_underprocess_classify.bat",
+  "run_underprocess_naming_rule.bat"
+ ],
+ "run_crawled_monitor.bat": [
+  "run.bat"
+ ],
+ "run_download_balanced_topic_papers.bat": [],
+ "run_local_pipeline.py": [
+  "AGENTS.md",
+  "CONTENT_HASH_IMPLEMENTATION.md",
+  "CONTENT_HASH_USAGE_GUIDE.md",
+  "PIPELINE_CORE_EXTRACTION.md",
+  "PROJECT_HANDOFF.md",
+  "SESSION_SUMMARY.md",
+  "docs\\commercialization_full_proposal_2026-05-09.md",
+  "docs\\commercialization_technical_spec_2026-05-09.md",
+  "docs\\ecc-workflow-adoption.md",
+  "dry_run_test.py",
+  "final_readiness.py",
+  "final_workflow_verification.py",
+  "integration_test.py",
+  "paper_kb_software\\README.md",
+  "paper_kb_software\\debug_crawled_loop.py",
+  "paper_kb_software\\run.bat",
+  "rules\\python.md",
+  "run.bat",
+  "scripts\\benchmark_local_models.py",
+  "scripts\\debug_crawled_loop.py",
+  "scripts\\monitor_crawled_progress.py",
+  "scripts\\upgrade_crawled_to_metadata_only.py",
+  "test_deduplication.py",
+  "test_single_pdf.py",
+  "tests\\test_run_local_pipeline_summary.py",
+  "verify_content_hash_system.py"
+ ],
+ "run_postgres_closed_loop_sql.bat": [],
+ "run_progress_sheet.bat": [
+  "CLASSIFICATION_COMPLETE.md",
+  "GPU_STATUS_REPORT.md"
+ ],
+ "run_sfs_magdm_compare.bat": [],
+ "run_underprocess_classify.bat": [],
+ "run_underprocess_naming_rule.bat": [],
+ "run_upgrade_crawled_metadata.bat": [],
+ "run_workspace_refresh.py": [
+  "AGENTS.md",
+  "PIPELINE_CORE_EXTRACTION.md",
+  "PROJECT_HANDOFF.md",
+  "SESSION_SUMMARY.md",
+  "docs\\commercialization_full_proposal_2026-05-09.md",
+  "docs\\commercialization_technical_spec_2026-05-09.md",
+  "docs\\ecc-workflow-adoption.md",
+  "paper_kb_software\\README.md",
+  "paper_kb_software\\run_local_pipeline.py",
+  "run_local_pipeline.py"
+ ],
+ "SESSION_SUMMARY.md": [],
+ "simple_task1.py": [],
+ "task1_analysis.py": [],
+ "task2b_arxiv_external_validation.py": [
+  "TASK_B_AND_C_COMPLETION_REPORT.md",
+  "complete_thesis_sections_4_2_4_3.md"
+ ],
+ "TASK2B_EXTERNAL_VALIDATION.md": [
+  "FINAL_VALIDATION_SUMMARY_2026-05-06.md",
+  "TASK_B_AND_C_COMPLETION_REPORT.md",
+  "task2b_arxiv_external_validation.py"
+ ],
+ "TASK2B_EXTERNAL_VALIDATION_RESULTS.csv": [
+  "COMPLETION_REPORT_2026-05-06.md",
+  "FINAL_COMPLETION_REPORT_2026-05-06.md",
+  "FINAL_VALIDATION_SUMMARY_2026-05-06.md",
+  "PRE_SUBMISSION_VERIFICATION_2026-05-06.md",
+  "TASK_B_AND_C_COMPLETION_REPORT.md",
+  "complete_thesis_sections_4_2_4_3.md",
+  "task2b_arxiv_external_validation.py"
+ ],
+ "TASK2B_SUMMARY.json": [
+  "FINAL_COMPLETION_REPORT_2026-05-06.md",
+  "FINAL_VALIDATION_SUMMARY_2026-05-06.md",
+  "TASK_B_AND_C_COMPLETION_REPORT.md",
+  "task2b_arxiv_external_validation.py"
+ ],
+ "task2_arxiv_collection.py": [],
+ "task2_internal_validation.py": [],
+ "TASK3_RANK_COMPARISON.csv": [
+  "COMPLETION_REPORT_2026-05-06.md",
+  "FINAL_COMPLETION_REPORT_2026-05-06.md",
+  "FINAL_VALIDATION_SUMMARY_2026-05-06.md",
+  "TASK_B_AND_C_COMPLETION_REPORT.md",
+  "complete_thesis_sections_4_2_4_3.md",
+  "task3_temporal_prediction.py"
+ ],
+ "TASK3_SUMMARY.json": [
+  "FINAL_COMPLETION_REPORT_2026-05-06.md",
+  "FINAL_VALIDATION_SUMMARY_2026-05-06.md",
+  "TASK_B_AND_C_COMPLETION_REPORT.md",
+  "task3_temporal_prediction.py"
+ ],
+ "TASK3_TEMPORAL_PREDICTION.md": [
+  "FINAL_VALIDATION_SUMMARY_2026-05-06.md",
+  "TASK_B_AND_C_COMPLETION_REPORT.md",
+  "task3_temporal_prediction.py"
+ ],
+ "task3_temporal_prediction.py": [
+  "TASK_B_AND_C_COMPLETION_REPORT.md",
+  "complete_thesis_sections_4_2_4_3.md"
+ ],
+ "TASK3_TEMPORAL_PREDICTION_RESULTS.csv": [
+  "COMPLETION_REPORT_2026-05-06.md",
+  "FINAL_COMPLETION_REPORT_2026-05-06.md",
+  "FINAL_VALIDATION_SUMMARY_2026-05-06.md",
+  "PRE_SUBMISSION_VERIFICATION_2026-05-06.md",
+  "TASK_B_AND_C_COMPLETION_REPORT.md",
+  "complete_thesis_sections_4_2_4_3.md",
+  "task3_temporal_prediction.py"
+ ],
+ "TASK_B_AND_C_COMPLETION_REPORT.md": [],
+ "test_deduplication.py": [
+  "CONTENT_HASH_USAGE_GUIDE.md"
+ ],
+ "test_single_pdf.py": [
+  "CONTENT_HASH_USAGE_GUIDE.md"
+ ],
+ "upgrade_round2.log": [],
+ "V7_CONFERENCE_CAMERA_READY_DECISION_ORCHESTRATION_PROSE_REVISED_20260921.docx": [],
+ "V9_CONFERENCE_CAMERA_READY_FULL_CHINESE_BODY_20260921.docx": [],
+ "V9_FINAL_PATCH_REPORT_20261004.md": [],
+ "V9_FINAL_SUBMISSION_AUDIT_20261004.md": [],
+ "V9_FINAL_SUBMISSION_CANDIDATE_20261004.docx": [
+  "V9_FINAL_PATCH_REPORT_20261004.md",
+  "V9_FINAL_SUBMISSION_AUDIT_20261004.md"
+ ],
+ "V9_FINAL_SUBMISSION_CANDIDATE_20261005_R7_VERIFIED.docx": [],
+ "V9_FINAL_SUBMISSION_CANDIDATE_20261005_R8_VERIFIED.docx": [],
+ "V9_FINAL_SUBMISSION_CANDIDATE_20261005_R9_VERIFIED.docx": [],
+ "V9_R3_FIGURES_TABLES_CHANGELOG_20261004.md": [],
+ "V9_RESULTS_SENSITIVITY_R2_CHANGELOG_20261004.md": [],
+ "verify_content_hash_system.py": [
+  "CONTENT_HASH_USAGE_GUIDE.md",
+  "SESSION_SUMMARY.md"
+ ],
+ "verify_schema.py": [
+  "SESSION_SUMMARY.md"
+ ]
+}

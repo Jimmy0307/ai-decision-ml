@@ -1,0 +1,144 @@
+{
+ "A_copies_vs_repo": {
+  "rows": 108,
+  "ok": 92,
+  "other": [
+   [
+    "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\02_STUDY1_FREEZE\\02_STUDY1_FREEZE_V1_8_1\\tools\\G\\hits.tsv",
+    "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\02_STUDY1_FREEZE\\02_STUDY1_FREEZE_V1_8_1\\repo\\claude\\r14_merge_v1_8_1_study1_freeze\\tools\\G\\hits.tsv",
+    "DIFFERS_FROM_REPO"
+   ],
+   [
+    "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\02_STUDY1_FREEZE\\02_STUDY1_FREEZE_V1_8_1\\tools\\G\\recompute_seg_out.json",
+    "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\02_STUDY1_FREEZE\\02_STUDY1_FREEZE_V1_8_1\\repo\\claude\\r14_merge_v1_8_1_study1_freeze\\tools\\G\\recompute_seg_out.json",
+    "DIFFERS_FROM_REPO"
+   ],
+   [
+    "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\02_STUDY1_FREEZE\\02_STUDY1_FREEZE_V1_8_1\\tools\\I\\__pycache__\\leakage_check_v1_packet.cpython-314.pyc",
+    "NO_REPO_COUNTERPART",
+    "INFO"
+   ],
+   [
+    "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\02_STUDY1_FREEZE\\02_STUDY1_FREEZE_V1_8_1\\tools\\I\\__pycache__\\v1_construct_analyzer.cpython-314.pyc",
+    "NO_REPO_COUNTERPART",
+    "INFO"
+   ],
+   [
+    "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\02_STUDY1_FREEZE\\02_STUDY1_FREEZE_V1_8_1\\tools\\J\\ctx1.txt",
+    "NO_REPO_COUNTERPART",
+    "INFO"
+   ],
+   [
+    "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\02_STUDY1_FREEZE\\02_STUDY1_FREEZE_V1_8_1\\tools\\J\\ctx2.txt",
+    "NO_REPO_COUNTERPART",
+    "INFO"
+   ],
+   [
+    "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\02_STUDY1_FREEZE\\02_STUDY1_FREEZE_V1_8_1\\tools\\J\\rem.txt",
+    "NO_REPO_COUNTERPART",
+    "INFO"
+   ],
+   [
+    "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\02_STUDY1_FREEZE\\02_STUDY1_FREEZE_V1_8_1\\tools\\J\\typo.txt",
+    "NO_REPO_COUNTERPART",
+    "INFO"
+   ],
+   [
+    "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\02_STUDY1_FREEZE\\02_STUDY1_FREEZE_V1_8_1\\tools\\J\\verify_stdout.txt",
+    "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\02_STUDY1_FREEZE\\02_STUDY1_FREEZE_V1_8_1\\repo\\claude\\r14_merge_v1_8_source_closure\\tools\\F\\verify_stdout.txt",
+    "DIFFERS_FROM_REPO"
+   ],
+   [
+    "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\02_STUDY1_FREEZE\\02_STUDY1_FREEZE_V1_8_1\\tools\\O\\qa_v181.pdf",
+    "NO_REPO_COUNTERPART",
+    "INFO"
+   ],
+   [
+    "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\02_STUDY1_FREEZE\\02_STUDY1_FREEZE_V1_8_1\\tools\\O\\trial_v18.docx",
+    "NO_REPO_COUNTERPART",
+    "INFO"
+   ],
+   [
+    "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\02_STUDY1_FREEZE\\02_STUDY1_FREEZE_V1_8_1\\tools\\O\\trial_v18.json",
+    "NO_REPO_COUNTERPART",
+    "INFO"
+   ],
+   [
+    "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\02_STUDY1_FREEZE\\02_STUDY1_FREEZE_V1_8_1\\tools\\O\\_l90.txt",
+    "NO_REPO_COUNTERPART",
+    "INFO"
+   ],
+   [
+    "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\03_V1_HUMAN_VALIDATION\\03_V1_HUMAN_VALIDATION_PREFREEZE_V1_8_2\\tools\\common_v182.txt",
+    "NO_REPO_COUNTERPART",
+    "INFO"
+   ],
+   [
+    "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\03_V1_HUMAN_VALIDATION\\03_V1_HUMAN_VALIDATION_PREFREEZE_V1_8_2\\tools\\K\\v.txt",
+    "NO_REPO_COUNTERPART",
+    "INFO"
+   ],
+   [
+    "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\04_CURRENT_STATUS\\00_INDEX｜GitHub ↔ Google Drive 進度同步｜2026-10-14.gdoc",
+    "NO_REPO_COUNTERPART",
+    "INFO"
+   ]
+  ]
+ },
+ "B_s1_manifest": {
+  "rows": 23,
+  "ok": 23,
+  "other": []
+ },
+ "C_ledger18": {
+  "rows": 49,
+  "ok": 43,
+  "other": [
+   [
+    "Official final core file (R14/V9 freeze)",
+    "NOT_RECOVERED",
+    "SKIP_NOT_RECOVERED"
+   ],
+   [
+    "r14/04_G01_G16_FROZEN.csv",
+    "NOT_RECOVERED",
+    "SKIP_NOT_RECOVERED"
+   ],
+   [
+    "R14 canonical docx r14/01_R14_..._CANONICAL.docx",
+    "NOT_RECOVERED",
+    "SKIP_NOT_RECOVERED"
+   ],
+   [
+    "Frozen strict-record database / freeze manifests (12/37 protected inputs)",
+    "NOT_RECOVERED",
+    "SKIP_NOT_RECOVERED"
+   ],
+   [
+    "Sidecar core file",
+    "NOT_RECOVERED",
+    "SKIP_NOT_RECOVERED"
+   ],
+   [
+    "Sidecar generator script",
+    "NOT_RECOVERED",
+    "SKIP_NOT_RECOVERED"
+   ]
+  ]
+ },
+ "D_v18_inventory": {
+  "rows": 1295,
+  "ok": 1295,
+  "other": []
+ },
+ "E_input_zips": {
+  "rows": 3,
+  "ok": 3,
+  "other": []
+ },
+ "F_move_manifest": {
+  "rows": 71,
+  "ok": 71,
+  "other": []
+ }
+}
