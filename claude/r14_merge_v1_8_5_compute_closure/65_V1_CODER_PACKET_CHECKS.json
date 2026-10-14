@@ -1,0 +1,869 @@
+{
+  "summary": {
+    "S1_MANIFEST_COMMITTED_ENTRIES_REHASH_EQUAL": true,
+    "S1_HASH_CHANGED": "NO",
+    "LOCAL_COPIES_BYTE_IDENTICAL": false,
+    "CODER_COUNT": 3,
+    "ITEMS_PER_CODER": [
+      16,
+      16,
+      16
+    ],
+    "ITEM_IDS_NEUTRAL": true,
+    "SAME_ITEM_SET_ALL_CODERS": true,
+    "ORDERS_DIFFER_ACROSS_CODERS": true,
+    "G_ID_VISIBLE": "NO",
+    "RESEARCHER_MAPPING_VISIBLE": "NO",
+    "AI_PILOT_VISIBLE": "NO",
+    "SENSITIVITY_TARGET_VISIBLE": "NO",
+    "REVISED_ANALYSIS_GAIN_LOSS_VISIBLE": "NO",
+    "GITHUB_URL_VISIBLE": "NO",
+    "OTHER_CODER_CONTENT_VISIBLE": "NO",
+    "RESPONSE_CELLS": "EMPTY",
+    "ATTESTATION_CELLS": "EMPTY",
+    "ATTESTATION_YESNO_ITEMS": [
+      7,
+      7,
+      7
+    ],
+    "HIDDEN_SHEETS": false,
+    "DEFINED_NAMES": false,
+    "COMMENTS_CUSTOMXML_EXTLINKS_VBA": false,
+    "LOCAL_COPY_MISMATCH": {
+      "CODER_1": {
+        "repo": "840addf9978ee30b725d4e190b940adfa13f0c1683c7ab2b3bde60a0ff4ce301",
+        "local": "a59107292dc39496f90215b28455036e3a22170149e4d911d01c07f1b344c1a6"
+      }
+    },
+    "GITHUB_WORD_ONLY_IN_ATTESTATION_PROHIBITION": true,
+    "TASK1_S1_REPO_PACKETS_VERDICT": "PASS",
+    "TASK1_LOCAL_DISTRIBUTION_COPIES_VERDICT": "STOP_DO_NOT_SEND_MISMATCHED_LOCAL_COPY",
+    "TASK1_VERDICT": "STOP"
+  },
+  "manifest": {
+    "entries_checked": 21,
+    "all_match": true,
+    "mismatches": [],
+    "skipped_sealed_local": [
+      "SEALED_LOCAL:ITEM_ID_TO_GID_MAP.json",
+      "SEALED_LOCAL:ITEM_ORDER_LOG.json"
+    ]
+  },
+  "workbooks": {
+    "CODER_1": {
+      "file": "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\02_STUDY1_FREEZE\\02_STUDY1_FREEZE_V1_8_1\\repo\\claude\\r14_merge_v1_8_2_v1_prefreeze\\coder_distribution\\CODER_1.xlsx",
+      "sha256": "840addf9978ee30b725d4e190b940adfa13f0c1683c7ab2b3bde60a0ff4ce301",
+      "local_copy_sha256": "a59107292dc39496f90215b28455036e3a22170149e4d911d01c07f1b344c1a6",
+      "local_copy_identical": false,
+      "zip_parts": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "docProps/app.xml",
+        "docProps/core.xml",
+        "xl/_rels/workbook.xml.rels",
+        "xl/styles.xml",
+        "xl/theme/theme1.xml",
+        "xl/workbook.xml",
+        "xl/worksheets/sheet1.xml",
+        "xl/worksheets/sheet2.xml",
+        "xl/worksheets/sheet3.xml",
+        "xl/worksheets/sheet4.xml",
+        "xl/worksheets/sheet5.xml"
+      ],
+      "has_comments": false,
+      "has_customxml": false,
+      "has_external_links": false,
+      "has_vba": false,
+      "has_formulas": false,
+      "hidden_sheets_xml": [],
+      "defined_names_xml": [],
+      "docProps_core": [
+        "study",
+        "coordinator",
+        "V1",
+        "coding",
+        "packet",
+        "2026-10-13T19:35:29Z",
+        "2026-10-13T19:35:29Z",
+        "study",
+        "coordinator"
+      ],
+      "docProps_app_text": "Microsoft Excel Compatible / Openpyxl 3.1.5 3.1",
+      "forbidden_hits": [],
+      "sheets": [
+        [
+          "README_INSTRUCTIONS",
+          "visible"
+        ],
+        [
+          "CATEGORY_DEFINITIONS",
+          "visible"
+        ],
+        [
+          "ITEM_INFO",
+          "visible"
+        ],
+        [
+          "CODER_1",
+          "visible"
+        ],
+        [
+          "ATTESTATION",
+          "visible"
+        ]
+      ],
+      "item_ids": [
+        "ITEM-A05",
+        "ITEM-A15",
+        "ITEM-A09",
+        "ITEM-A14",
+        "ITEM-A10",
+        "ITEM-A11",
+        "ITEM-A08",
+        "ITEM-A07",
+        "ITEM-A03",
+        "ITEM-A06",
+        "ITEM-A01",
+        "ITEM-A13",
+        "ITEM-A04",
+        "ITEM-A12",
+        "ITEM-A16",
+        "ITEM-A02"
+      ],
+      "items_count": 16,
+      "item_ids_neutral": true,
+      "item_ids_unique": true,
+      "coder_sheet_header": [
+        "Item_order",
+        "Item_ID",
+        "AI_family",
+        "Decision_family",
+        "AI_family_definition",
+        "Decision_family_definition",
+        "Literature_pattern",
+        "Q1_identifiable_interface",
+        "Q2_best_category",
+        "Q3_confidence",
+        "Q4_secondary_category_optional",
+        "Q5_rationale"
+      ],
+      "response_cells_filled": [],
+      "row_format_uniform": {
+        "CODER_1": {
+          "distinct_row_signatures": 1
+        },
+        "ITEM_INFO": {
+          "distinct_row_signatures": 1
+        }
+      },
+      "conditional_formatting": {
+        "README_INSTRUCTIONS": 0,
+        "CATEGORY_DEFINITIONS": 0,
+        "ITEM_INFO": 0,
+        "CODER_1": 0,
+        "ATTESTATION": 0
+      },
+      "attestation_statements": [
+        "I have not read the public code repository (e.g. on GitHub) for this project.",
+        "I have not read the thesis or any manuscript or report of this project.",
+        "I have not seen the researcher's assignments of these items to categories.",
+        "I have not seen any AI-generated coding output for these items.",
+        "I did not consult another coder.",
+        "I did not use ChatGPT, Claude, Gemini, Copilot or any other AI tool to answer.",
+        "I coded every item independently.",
+        "Name",
+        "Date",
+        "Signature"
+      ],
+      "attestation_filled": [],
+      "data_validations": {
+        "README_INSTRUCTIONS": [],
+        "CATEGORY_DEFINITIONS": [],
+        "ITEM_INFO": [],
+        "CODER_1": [
+          [
+            "list",
+            null,
+            "\"YES,NO,UNCERTAIN\"",
+            "H2:H17",
+            true
+          ],
+          [
+            "list",
+            null,
+            "\"M1,M2,M3,M4,LONGITUDINAL,DATA_GATED,EVIDENCE_ONLY,NONE,AMBIGUOUS\"",
+            "I2:I17",
+            true
+          ],
+          [
+            "list",
+            null,
+            "\"HIGH,MEDIUM,LOW\"",
+            "J2:J17",
+            true
+          ],
+          [
+            "list",
+            null,
+            "\"M1,M2,M3,M4,LONGITUDINAL,DATA_GATED\"",
+            "K2:K17",
+            true
+          ],
+          [
+            "textLength",
+            "lessThanOrEqual",
+            "600",
+            "L2:L17",
+            true
+          ]
+        ],
+        "ATTESTATION": [
+          [
+            "list",
+            null,
+            "\"YES,NO\"",
+            "C3 C4 C5 C6 C7 C8 C9",
+            false
+          ]
+        ]
+      },
+      "english_word_counts": {
+        "README_INSTRUCTIONS": 269,
+        "CATEGORY_DEFINITIONS": 765,
+        "ITEM_INFO": 2610,
+        "CODER_1": 1876,
+        "ATTESTATION": 124
+      },
+      "coder_sheet_words_per_item": [
+        110,
+        111,
+        112,
+        121,
+        119,
+        111,
+        121,
+        112,
+        113,
+        119,
+        119,
+        120,
+        105,
+        114,
+        110,
+        113
+      ]
+    },
+    "CODER_2": {
+      "file": "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\02_STUDY1_FREEZE\\02_STUDY1_FREEZE_V1_8_1\\repo\\claude\\r14_merge_v1_8_2_v1_prefreeze\\coder_distribution\\CODER_2.xlsx",
+      "sha256": "74d72705876681e3dcae411f83e144d2c846fc94068114f172a47d8c3368bc86",
+      "local_copy_sha256": "74d72705876681e3dcae411f83e144d2c846fc94068114f172a47d8c3368bc86",
+      "local_copy_identical": true,
+      "zip_parts": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "docProps/app.xml",
+        "docProps/core.xml",
+        "xl/_rels/workbook.xml.rels",
+        "xl/styles.xml",
+        "xl/theme/theme1.xml",
+        "xl/workbook.xml",
+        "xl/worksheets/sheet1.xml",
+        "xl/worksheets/sheet2.xml",
+        "xl/worksheets/sheet3.xml",
+        "xl/worksheets/sheet4.xml",
+        "xl/worksheets/sheet5.xml"
+      ],
+      "has_comments": false,
+      "has_customxml": false,
+      "has_external_links": false,
+      "has_vba": false,
+      "has_formulas": false,
+      "hidden_sheets_xml": [],
+      "defined_names_xml": [],
+      "docProps_core": [
+        "study",
+        "coordinator",
+        "V1",
+        "coding",
+        "packet",
+        "2026-10-13T19:35:29Z",
+        "2026-10-13T19:35:29Z",
+        "study",
+        "coordinator"
+      ],
+      "docProps_app_text": "Microsoft Excel Compatible / Openpyxl 3.1.5 3.1",
+      "forbidden_hits": [],
+      "sheets": [
+        [
+          "README_INSTRUCTIONS",
+          "visible"
+        ],
+        [
+          "CATEGORY_DEFINITIONS",
+          "visible"
+        ],
+        [
+          "ITEM_INFO",
+          "visible"
+        ],
+        [
+          "CODER_2",
+          "visible"
+        ],
+        [
+          "ATTESTATION",
+          "visible"
+        ]
+      ],
+      "item_ids": [
+        "ITEM-A06",
+        "ITEM-A11",
+        "ITEM-A14",
+        "ITEM-A01",
+        "ITEM-A13",
+        "ITEM-A15",
+        "ITEM-A09",
+        "ITEM-A10",
+        "ITEM-A16",
+        "ITEM-A07",
+        "ITEM-A04",
+        "ITEM-A03",
+        "ITEM-A02",
+        "ITEM-A05",
+        "ITEM-A08",
+        "ITEM-A12"
+      ],
+      "items_count": 16,
+      "item_ids_neutral": true,
+      "item_ids_unique": true,
+      "coder_sheet_header": [
+        "Item_order",
+        "Item_ID",
+        "AI_family",
+        "Decision_family",
+        "AI_family_definition",
+        "Decision_family_definition",
+        "Literature_pattern",
+        "Q1_identifiable_interface",
+        "Q2_best_category",
+        "Q3_confidence",
+        "Q4_secondary_category_optional",
+        "Q5_rationale"
+      ],
+      "response_cells_filled": [],
+      "row_format_uniform": {
+        "CODER_2": {
+          "distinct_row_signatures": 1
+        },
+        "ITEM_INFO": {
+          "distinct_row_signatures": 1
+        }
+      },
+      "conditional_formatting": {
+        "README_INSTRUCTIONS": 0,
+        "CATEGORY_DEFINITIONS": 0,
+        "ITEM_INFO": 0,
+        "CODER_2": 0,
+        "ATTESTATION": 0
+      },
+      "attestation_statements": [
+        "I have not read the public code repository (e.g. on GitHub) for this project.",
+        "I have not read the thesis or any manuscript or report of this project.",
+        "I have not seen the researcher's assignments of these items to categories.",
+        "I have not seen any AI-generated coding output for these items.",
+        "I did not consult another coder.",
+        "I did not use ChatGPT, Claude, Gemini, Copilot or any other AI tool to answer.",
+        "I coded every item independently.",
+        "Name",
+        "Date",
+        "Signature"
+      ],
+      "attestation_filled": [],
+      "data_validations": {
+        "README_INSTRUCTIONS": [],
+        "CATEGORY_DEFINITIONS": [],
+        "ITEM_INFO": [],
+        "CODER_2": [
+          [
+            "list",
+            null,
+            "\"YES,NO,UNCERTAIN\"",
+            "H2:H17",
+            true
+          ],
+          [
+            "list",
+            null,
+            "\"M1,M2,M3,M4,LONGITUDINAL,DATA_GATED,EVIDENCE_ONLY,NONE,AMBIGUOUS\"",
+            "I2:I17",
+            true
+          ],
+          [
+            "list",
+            null,
+            "\"HIGH,MEDIUM,LOW\"",
+            "J2:J17",
+            true
+          ],
+          [
+            "list",
+            null,
+            "\"M1,M2,M3,M4,LONGITUDINAL,DATA_GATED\"",
+            "K2:K17",
+            true
+          ],
+          [
+            "textLength",
+            "lessThanOrEqual",
+            "600",
+            "L2:L17",
+            true
+          ]
+        ],
+        "ATTESTATION": [
+          [
+            "list",
+            null,
+            "\"YES,NO\"",
+            "C3 C4 C5 C6 C7 C8 C9",
+            false
+          ]
+        ]
+      },
+      "english_word_counts": {
+        "README_INSTRUCTIONS": 269,
+        "CATEGORY_DEFINITIONS": 765,
+        "ITEM_INFO": 2610,
+        "CODER_2": 1876,
+        "ATTESTATION": 124
+      },
+      "coder_sheet_words_per_item": [
+        119,
+        111,
+        121,
+        119,
+        120,
+        111,
+        112,
+        119,
+        110,
+        112,
+        105,
+        113,
+        113,
+        110,
+        121,
+        114
+      ]
+    },
+    "CODER_3": {
+      "file": "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\02_STUDY1_FREEZE\\02_STUDY1_FREEZE_V1_8_1\\repo\\claude\\r14_merge_v1_8_2_v1_prefreeze\\coder_distribution\\CODER_3.xlsx",
+      "sha256": "01b292791111a89b7d86e595d6cbde15c2305222bb8a72399def2e69bd8669fc",
+      "local_copy_sha256": "01b292791111a89b7d86e595d6cbde15c2305222bb8a72399def2e69bd8669fc",
+      "local_copy_identical": true,
+      "zip_parts": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "docProps/app.xml",
+        "docProps/core.xml",
+        "xl/_rels/workbook.xml.rels",
+        "xl/styles.xml",
+        "xl/theme/theme1.xml",
+        "xl/workbook.xml",
+        "xl/worksheets/sheet1.xml",
+        "xl/worksheets/sheet2.xml",
+        "xl/worksheets/sheet3.xml",
+        "xl/worksheets/sheet4.xml",
+        "xl/worksheets/sheet5.xml"
+      ],
+      "has_comments": false,
+      "has_customxml": false,
+      "has_external_links": false,
+      "has_vba": false,
+      "has_formulas": false,
+      "hidden_sheets_xml": [],
+      "defined_names_xml": [],
+      "docProps_core": [
+        "study",
+        "coordinator",
+        "V1",
+        "coding",
+        "packet",
+        "2026-10-13T19:35:29Z",
+        "2026-10-13T19:35:29Z",
+        "study",
+        "coordinator"
+      ],
+      "docProps_app_text": "Microsoft Excel Compatible / Openpyxl 3.1.5 3.1",
+      "forbidden_hits": [],
+      "sheets": [
+        [
+          "README_INSTRUCTIONS",
+          "visible"
+        ],
+        [
+          "CATEGORY_DEFINITIONS",
+          "visible"
+        ],
+        [
+          "ITEM_INFO",
+          "visible"
+        ],
+        [
+          "CODER_3",
+          "visible"
+        ],
+        [
+          "ATTESTATION",
+          "visible"
+        ]
+      ],
+      "item_ids": [
+        "ITEM-A12",
+        "ITEM-A15",
+        "ITEM-A01",
+        "ITEM-A05",
+        "ITEM-A08",
+        "ITEM-A06",
+        "ITEM-A04",
+        "ITEM-A13",
+        "ITEM-A16",
+        "ITEM-A14",
+        "ITEM-A02",
+        "ITEM-A11",
+        "ITEM-A09",
+        "ITEM-A07",
+        "ITEM-A10",
+        "ITEM-A03"
+      ],
+      "items_count": 16,
+      "item_ids_neutral": true,
+      "item_ids_unique": true,
+      "coder_sheet_header": [
+        "Item_order",
+        "Item_ID",
+        "AI_family",
+        "Decision_family",
+        "AI_family_definition",
+        "Decision_family_definition",
+        "Literature_pattern",
+        "Q1_identifiable_interface",
+        "Q2_best_category",
+        "Q3_confidence",
+        "Q4_secondary_category_optional",
+        "Q5_rationale"
+      ],
+      "response_cells_filled": [],
+      "row_format_uniform": {
+        "CODER_3": {
+          "distinct_row_signatures": 1
+        },
+        "ITEM_INFO": {
+          "distinct_row_signatures": 1
+        }
+      },
+      "conditional_formatting": {
+        "README_INSTRUCTIONS": 0,
+        "CATEGORY_DEFINITIONS": 0,
+        "ITEM_INFO": 0,
+        "CODER_3": 0,
+        "ATTESTATION": 0
+      },
+      "attestation_statements": [
+        "I have not read the public code repository (e.g. on GitHub) for this project.",
+        "I have not read the thesis or any manuscript or report of this project.",
+        "I have not seen the researcher's assignments of these items to categories.",
+        "I have not seen any AI-generated coding output for these items.",
+        "I did not consult another coder.",
+        "I did not use ChatGPT, Claude, Gemini, Copilot or any other AI tool to answer.",
+        "I coded every item independently.",
+        "Name",
+        "Date",
+        "Signature"
+      ],
+      "attestation_filled": [],
+      "data_validations": {
+        "README_INSTRUCTIONS": [],
+        "CATEGORY_DEFINITIONS": [],
+        "ITEM_INFO": [],
+        "CODER_3": [
+          [
+            "list",
+            null,
+            "\"YES,NO,UNCERTAIN\"",
+            "H2:H17",
+            true
+          ],
+          [
+            "list",
+            null,
+            "\"M1,M2,M3,M4,LONGITUDINAL,DATA_GATED,EVIDENCE_ONLY,NONE,AMBIGUOUS\"",
+            "I2:I17",
+            true
+          ],
+          [
+            "list",
+            null,
+            "\"HIGH,MEDIUM,LOW\"",
+            "J2:J17",
+            true
+          ],
+          [
+            "list",
+            null,
+            "\"M1,M2,M3,M4,LONGITUDINAL,DATA_GATED\"",
+            "K2:K17",
+            true
+          ],
+          [
+            "textLength",
+            "lessThanOrEqual",
+            "600",
+            "L2:L17",
+            true
+          ]
+        ],
+        "ATTESTATION": [
+          [
+            "list",
+            null,
+            "\"YES,NO\"",
+            "C3 C4 C5 C6 C7 C8 C9",
+            false
+          ]
+        ]
+      },
+      "english_word_counts": {
+        "README_INSTRUCTIONS": 269,
+        "CATEGORY_DEFINITIONS": 765,
+        "ITEM_INFO": 2610,
+        "CODER_3": 1876,
+        "ATTESTATION": 124
+      },
+      "coder_sheet_words_per_item": [
+        114,
+        111,
+        119,
+        110,
+        121,
+        119,
+        105,
+        120,
+        110,
+        121,
+        113,
+        111,
+        112,
+        112,
+        119,
+        113
+      ]
+    }
+  },
+  "local_copy_diff_CODER_1": {
+    "repo_sha256": "840addf9978ee30b725d4e190b940adfa13f0c1683c7ab2b3bde60a0ff4ce301",
+    "local_sha256": "a59107292dc39496f90215b28455036e3a22170149e4d911d01c07f1b344c1a6",
+    "repo_sheets": [
+      [
+        "README_INSTRUCTIONS",
+        "visible"
+      ],
+      [
+        "CATEGORY_DEFINITIONS",
+        "visible"
+      ],
+      [
+        "ITEM_INFO",
+        "visible"
+      ],
+      [
+        "CODER_1",
+        "visible"
+      ],
+      [
+        "ATTESTATION",
+        "visible"
+      ]
+    ],
+    "local_sheets": [
+      [
+        "README_INSTRUCTIONS",
+        "visible"
+      ],
+      [
+        "CATEGORY_DEFINITIONS",
+        "visible"
+      ],
+      [
+        "ITEM_INFO",
+        "visible"
+      ],
+      [
+        "CODER_1",
+        "visible"
+      ],
+      [
+        "ATTESTATION",
+        "visible"
+      ]
+    ],
+    "cells_only_in_local": {},
+    "cells_only_in_repo": {},
+    "cells_changed": {
+      "ITEM_INFO!A2": [
+        "1",
+        "1.0"
+      ],
+      "ITEM_INFO!A3": [
+        "2",
+        "2.0"
+      ],
+      "ITEM_INFO!A4": [
+        "3",
+        "3.0"
+      ],
+      "ITEM_INFO!A5": [
+        "4",
+        "4.0"
+      ],
+      "ITEM_INFO!A6": [
+        "5",
+        "5.0"
+      ],
+      "ITEM_INFO!A7": [
+        "6",
+        "6.0"
+      ],
+      "ITEM_INFO!A8": [
+        "7",
+        "7.0"
+      ],
+      "ITEM_INFO!A9": [
+        "8",
+        "8.0"
+      ],
+      "ITEM_INFO!A10": [
+        "9",
+        "9.0"
+      ],
+      "ITEM_INFO!A11": [
+        "10",
+        "10.0"
+      ],
+      "ITEM_INFO!A12": [
+        "11",
+        "11.0"
+      ],
+      "ITEM_INFO!A13": [
+        "12",
+        "12.0"
+      ],
+      "ITEM_INFO!A14": [
+        "13",
+        "13.0"
+      ],
+      "ITEM_INFO!A15": [
+        "14",
+        "14.0"
+      ],
+      "ITEM_INFO!A16": [
+        "15",
+        "15.0"
+      ],
+      "ITEM_INFO!A17": [
+        "16",
+        "16.0"
+      ],
+      "CODER_1!A2": [
+        "1",
+        "1.0"
+      ],
+      "CODER_1!A3": [
+        "2",
+        "2.0"
+      ],
+      "CODER_1!A4": [
+        "3",
+        "3.0"
+      ],
+      "CODER_1!A5": [
+        "4",
+        "4.0"
+      ],
+      "CODER_1!A6": [
+        "5",
+        "5.0"
+      ],
+      "CODER_1!A7": [
+        "6",
+        "6.0"
+      ],
+      "CODER_1!A8": [
+        "7",
+        "7.0"
+      ],
+      "CODER_1!A9": [
+        "8",
+        "8.0"
+      ],
+      "CODER_1!A10": [
+        "9",
+        "9.0"
+      ],
+      "CODER_1!A11": [
+        "10",
+        "10.0"
+      ],
+      "CODER_1!A12": [
+        "11",
+        "11.0"
+      ],
+      "CODER_1!A13": [
+        "12",
+        "12.0"
+      ],
+      "CODER_1!A14": [
+        "13",
+        "13.0"
+      ],
+      "CODER_1!A15": [
+        "14",
+        "14.0"
+      ],
+      "CODER_1!A16": [
+        "15",
+        "15.0"
+      ],
+      "CODER_1!A17": [
+        "16",
+        "16.0"
+      ]
+    },
+    "zip_parts_only_in_local": [
+      "xl/drawings/drawing1.xml",
+      "xl/drawings/drawing2.xml",
+      "xl/drawings/drawing3.xml",
+      "xl/drawings/drawing4.xml",
+      "xl/drawings/drawing5.xml",
+      "xl/metadata",
+      "xl/sharedStrings.xml",
+      "xl/worksheets/_rels/sheet1.xml.rels",
+      "xl/worksheets/_rels/sheet2.xml.rels",
+      "xl/worksheets/_rels/sheet3.xml.rels",
+      "xl/worksheets/_rels/sheet4.xml.rels",
+      "xl/worksheets/_rels/sheet5.xml.rels"
+    ],
+    "zip_parts_only_in_repo": [
+      "docProps/app.xml"
+    ],
+    "local_core_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\r<cp:coreProperties xmlns:cp=\"http://schemas.openxmlformats.org/package/2006/metadata/core-properties\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:dcterms=\"http://purl.org/dc/terms/\" xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><dcterms:created xsi:type=\"dcterms:W3CDTF\">2026-10-13T19:35:29Z</dcterms:created><dc:creator>study coordinator</dc:creator></cp:coreProperties>",
+    "diagnosis": "Round-tripped through Google Sheets: workbook.xml extLst GoogleSheetsCustomDataVersion2; xl/metadata (zh_TW, America/Los_Angeles); 5 empty drawing parts; docProps/app.xml dropped; Item_order ints became floats; Q5 textLength DV became custom LTE(LEN(L2),600); DV prompts set to Invalid value text with showInputMessage=1. No cell text added/removed; response and attestation cells empty."
+  },
+  "reviewer": "sub-agent V (read-only); sealed folder not opened; SEALED_LOCAL manifest lines skipped",
+  "final_lines": {
+    "V1_PACKET_REVIEW": "REVISION_RECOMMENDED",
+    "V1_PACKET_REVISION_REQUIRED": "NO",
+    "S1_REFREEZE_REQUIRED": "NO",
+    "V1_S1_HASH_CHANGED": "NO"
+  }
+}
