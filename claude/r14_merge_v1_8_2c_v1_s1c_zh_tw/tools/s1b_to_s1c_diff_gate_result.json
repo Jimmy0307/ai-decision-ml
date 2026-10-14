@@ -1,0 +1,567 @@
+{
+ "verdict": "PASS",
+ "n_differences": 70,
+ "n_disallowed": 0,
+ "differences": [
+  {
+   "file": "CODER_1_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "B2",
+   "old": "核心在誰有決策權、誰負責、誰可核准、否決或停止。",
+   "new": "此組合的主要議題是：誰可以核准、拒絕、停止，或改變 AI 輸出被允許作出的決策。包括正式控制與實際控制、問責，以及企業政策所設定的權限邊界。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "CODER_1_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "C2",
+   "old": "與 M3 的差別：M1＝誰有權、誰負責；M3＝人與 AI 怎麼分工與互動。若核心是 AI 輸出如何轉交、升級或復原，請選 M2；若核心是驗證或監控，請選 M4。",
+   "new": "若主要議題是 AI 輸出如何進入後續流程，選 M2。若主要議題是人與 AI 如何分工或回應，選 M3。若主要議題是如何確認 AI 輸出是否適合用於該項決策，選 M4。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "CODER_1_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "B3",
+   "old": "AI 輸出如何進入流程，以及失敗、異常或不確定時如何轉交、升級或復原。",
+   "new": "此組合的主要議題是：AI 輸出如何進入下一個決策或行動步驟。包括跨系統或單位的交接、例外處理、回復與復原。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "CODER_1_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "C3",
+   "old": "若核心是誰有權核准、否決或停止，請選 M1；若核心是人與 AI 如何分工與互動，請選 M3。",
+   "new": "若主要議題是誰具有正式決策權限，選 M1。若主要議題是人與 AI 的工作分工與互動，選 M3。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "CODER_1_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "B4",
+   "old": "人與 AI 如何分工、互動、採納、修正與接手。",
+   "new": "此組合的主要議題是：人與 AI 的工作順序與分工，以及使用者如何回應 AI 輸出。例如：誰提出建議、誰做最後決定、如何委派或覆寫，以及使用者是否使用、驗證、修改、升級處理、拒絕或繞過 AI 輸出。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "CODER_1_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "C4",
+   "old": "與 M1 的差別：M1＝誰有權、誰負責；M3＝人與 AI 怎麼分工與互動。若核心是驗證或監控，請選 M4。",
+   "new": "若主要議題是正式決策權限與問責，選 M1。若主要議題是流程如何轉交、升級或復原，選 M2。若主要議題是 AI 是否經過充分驗證、監控或保證，選 M4。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "CODER_1_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "B5",
+   "old": "驗證、評測、監控、稽核、安全、風險與合規。",
+   "new": "此組合的主要議題是：如何確認 AI 輸出適合被用於該項決策。包括：部署前驗證、持續監控、重新驗證、可稽核性、解釋是否足以供決策使用、漂移監測，以及其他能證明 AI 輸出適用於該決策的證據。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "CODER_1_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "C5",
+   "old": "若核心是誰有權決定或誰負責，請選 M1；若核心是人與 AI 如何分工與互動，請選 M3。",
+   "new": "若主要議題是誰有權決定或誰負責，選 M1。若主要議題是人與 AI 如何分工與回應，選 M3。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "CODER_1_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "B8",
+   "old": "只提供資訊或證據，但尚未形成可辨識的企業決策介面。",
+   "new": "這個配對只呈現研究、技術、資訊或證據上的關係，但沒有形成這個配對所特有的企業決策介面。如果你能想到的問題，是幾乎任何 AI 功能進入這類決策功能時都會同樣遇到的一般性問題，也屬於此類。",
+   "category": "EVIDENCE_ONLY_DEFINITION"
+  },
+  {
+   "file": "CODER_1_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "B19",
+   "old": "請判斷企業決策本身，而不是技術、文獻主題，或功能類型名稱與類別名稱之間碰巧相同的字詞。部分功能類型名稱與類別名稱有相同的字詞（例如：問責、流程、人機、配置、評估、保證、風險），相同字詞不是選擇該類別的理由。",
+   "new": "請判斷企業決策本身，而不是技術、文獻主題，或功能類型名稱與類別名稱之間碰巧相同的字詞。部分功能類型名稱與類別名稱有相同的字詞（例如：問責、流程、人機、配置、評估、保證）。功能類型名稱與機制類別有相同或相近字詞時，不得只因字詞相同就選擇該類別。",
+   "category": "SHARED_WORD_REMINDER_ADDED (FLAG)"
+  },
+  {
+   "file": "CODER_1_ZH_TW.xlsx",
+   "sheet": "作答聲明",
+   "cell": "A1",
+   "old": "作答聲明：請逐條閱讀下列敘述，並從下拉選單選擇「符合」（這句敘述與你的實際情況相符）或「不符合」（這句敘述與你的實際情況不符）。請如實回答；選擇「不符合」會被記錄並另行分析，你的作答仍會被使用。",
+   "new": "作答聲明：請逐條閱讀下列敘述，並從下拉選單選擇「符合」（這句敘述與你的實際情況相符）或「不符合」（這句敘述與你的實際情況不符）。請如實回答。若有任何一項選擇『不符合』，研究團隊會依預先設定的規則將該份作答標記並分開分析，不會在未標示的情況下與其他編碼者的主要信度分析合併。",
+   "category": "ATTESTATION_HEADER"
+  },
+  {
+   "file": "CODER_1_ZH_TW.xlsx",
+   "sheet": "作答聲明",
+   "cell": "B3",
+   "old": "我對本研究的了解全部來自本問卷，作答前與作答期間都未查閱與本研究相關的線上資料。",
+   "new": "在作答前與作答期間，我沒有另外查閱與本研究內容相關的外部資料；我的判斷只依據本問卷提供的內容。",
+   "category": "ATTESTATION_ITEM_1"
+  },
+  {
+   "file": "CODER_1_ZH_TW.xlsx",
+   "sheet": "docProps",
+   "cell": "created",
+   "old": "2026-10-14 06:11:51",
+   "new": "2026-10-14 06:53:27",
+   "category": "METADATA"
+  },
+  {
+   "file": "CODER_1_ZH_TW.xlsx",
+   "sheet": "docProps",
+   "cell": "modified",
+   "old": "2026-10-14 06:11:51",
+   "new": "2026-10-14 06:53:27",
+   "category": "METADATA"
+  },
+  {
+   "file": "CODER_1_ZH_TW.xlsx",
+   "sheet": "zip",
+   "cell": "docProps/core.xml (raw bytes)",
+   "old": "",
+   "new": "",
+   "category": "METADATA (raw part carrying the allowed changes)"
+  },
+  {
+   "file": "CODER_1_ZH_TW.xlsx",
+   "sheet": "zip",
+   "cell": "xl/worksheets/sheet2.xml (raw bytes)",
+   "old": "",
+   "new": "",
+   "category": "METADATA (raw part carrying the allowed changes)"
+  },
+  {
+   "file": "CODER_1_ZH_TW.xlsx",
+   "sheet": "zip",
+   "cell": "xl/worksheets/sheet5.xml (raw bytes)",
+   "old": "",
+   "new": "",
+   "category": "METADATA (raw part carrying the allowed changes)"
+  },
+  {
+   "file": "CODER_2_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "B2",
+   "old": "核心在誰有決策權、誰負責、誰可核准、否決或停止。",
+   "new": "此組合的主要議題是：誰可以核准、拒絕、停止，或改變 AI 輸出被允許作出的決策。包括正式控制與實際控制、問責，以及企業政策所設定的權限邊界。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "CODER_2_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "C2",
+   "old": "與 M3 的差別：M1＝誰有權、誰負責；M3＝人與 AI 怎麼分工與互動。若核心是 AI 輸出如何轉交、升級或復原，請選 M2；若核心是驗證或監控，請選 M4。",
+   "new": "若主要議題是 AI 輸出如何進入後續流程，選 M2。若主要議題是人與 AI 如何分工或回應，選 M3。若主要議題是如何確認 AI 輸出是否適合用於該項決策，選 M4。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "CODER_2_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "B3",
+   "old": "AI 輸出如何進入流程，以及失敗、異常或不確定時如何轉交、升級或復原。",
+   "new": "此組合的主要議題是：AI 輸出如何進入下一個決策或行動步驟。包括跨系統或單位的交接、例外處理、回復與復原。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "CODER_2_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "C3",
+   "old": "若核心是誰有權核准、否決或停止，請選 M1；若核心是人與 AI 如何分工與互動，請選 M3。",
+   "new": "若主要議題是誰具有正式決策權限，選 M1。若主要議題是人與 AI 的工作分工與互動，選 M3。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "CODER_2_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "B4",
+   "old": "人與 AI 如何分工、互動、採納、修正與接手。",
+   "new": "此組合的主要議題是：人與 AI 的工作順序與分工，以及使用者如何回應 AI 輸出。例如：誰提出建議、誰做最後決定、如何委派或覆寫，以及使用者是否使用、驗證、修改、升級處理、拒絕或繞過 AI 輸出。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "CODER_2_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "C4",
+   "old": "與 M1 的差別：M1＝誰有權、誰負責；M3＝人與 AI 怎麼分工與互動。若核心是驗證或監控，請選 M4。",
+   "new": "若主要議題是正式決策權限與問責，選 M1。若主要議題是流程如何轉交、升級或復原，選 M2。若主要議題是 AI 是否經過充分驗證、監控或保證，選 M4。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "CODER_2_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "B5",
+   "old": "驗證、評測、監控、稽核、安全、風險與合規。",
+   "new": "此組合的主要議題是：如何確認 AI 輸出適合被用於該項決策。包括：部署前驗證、持續監控、重新驗證、可稽核性、解釋是否足以供決策使用、漂移監測，以及其他能證明 AI 輸出適用於該決策的證據。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "CODER_2_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "C5",
+   "old": "若核心是誰有權決定或誰負責，請選 M1；若核心是人與 AI 如何分工與互動，請選 M3。",
+   "new": "若主要議題是誰有權決定或誰負責，選 M1。若主要議題是人與 AI 如何分工與回應，選 M3。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "CODER_2_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "B8",
+   "old": "只提供資訊或證據，但尚未形成可辨識的企業決策介面。",
+   "new": "這個配對只呈現研究、技術、資訊或證據上的關係，但沒有形成這個配對所特有的企業決策介面。如果你能想到的問題，是幾乎任何 AI 功能進入這類決策功能時都會同樣遇到的一般性問題，也屬於此類。",
+   "category": "EVIDENCE_ONLY_DEFINITION"
+  },
+  {
+   "file": "CODER_2_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "B19",
+   "old": "請判斷企業決策本身，而不是技術、文獻主題，或功能類型名稱與類別名稱之間碰巧相同的字詞。部分功能類型名稱與類別名稱有相同的字詞（例如：問責、流程、人機、配置、評估、保證、風險），相同字詞不是選擇該類別的理由。",
+   "new": "請判斷企業決策本身，而不是技術、文獻主題，或功能類型名稱與類別名稱之間碰巧相同的字詞。部分功能類型名稱與類別名稱有相同的字詞（例如：問責、流程、人機、配置、評估、保證）。功能類型名稱與機制類別有相同或相近字詞時，不得只因字詞相同就選擇該類別。",
+   "category": "SHARED_WORD_REMINDER_ADDED (FLAG)"
+  },
+  {
+   "file": "CODER_2_ZH_TW.xlsx",
+   "sheet": "作答聲明",
+   "cell": "A1",
+   "old": "作答聲明：請逐條閱讀下列敘述，並從下拉選單選擇「符合」（這句敘述與你的實際情況相符）或「不符合」（這句敘述與你的實際情況不符）。請如實回答；選擇「不符合」會被記錄並另行分析，你的作答仍會被使用。",
+   "new": "作答聲明：請逐條閱讀下列敘述，並從下拉選單選擇「符合」（這句敘述與你的實際情況相符）或「不符合」（這句敘述與你的實際情況不符）。請如實回答。若有任何一項選擇『不符合』，研究團隊會依預先設定的規則將該份作答標記並分開分析，不會在未標示的情況下與其他編碼者的主要信度分析合併。",
+   "category": "ATTESTATION_HEADER"
+  },
+  {
+   "file": "CODER_2_ZH_TW.xlsx",
+   "sheet": "作答聲明",
+   "cell": "B3",
+   "old": "我對本研究的了解全部來自本問卷，作答前與作答期間都未查閱與本研究相關的線上資料。",
+   "new": "在作答前與作答期間，我沒有另外查閱與本研究內容相關的外部資料；我的判斷只依據本問卷提供的內容。",
+   "category": "ATTESTATION_ITEM_1"
+  },
+  {
+   "file": "CODER_2_ZH_TW.xlsx",
+   "sheet": "docProps",
+   "cell": "created",
+   "old": "2026-10-14 06:11:51",
+   "new": "2026-10-14 06:53:27",
+   "category": "METADATA"
+  },
+  {
+   "file": "CODER_2_ZH_TW.xlsx",
+   "sheet": "docProps",
+   "cell": "modified",
+   "old": "2026-10-14 06:11:51",
+   "new": "2026-10-14 06:53:27",
+   "category": "METADATA"
+  },
+  {
+   "file": "CODER_2_ZH_TW.xlsx",
+   "sheet": "zip",
+   "cell": "docProps/core.xml (raw bytes)",
+   "old": "",
+   "new": "",
+   "category": "METADATA (raw part carrying the allowed changes)"
+  },
+  {
+   "file": "CODER_2_ZH_TW.xlsx",
+   "sheet": "zip",
+   "cell": "xl/worksheets/sheet2.xml (raw bytes)",
+   "old": "",
+   "new": "",
+   "category": "METADATA (raw part carrying the allowed changes)"
+  },
+  {
+   "file": "CODER_2_ZH_TW.xlsx",
+   "sheet": "zip",
+   "cell": "xl/worksheets/sheet5.xml (raw bytes)",
+   "old": "",
+   "new": "",
+   "category": "METADATA (raw part carrying the allowed changes)"
+  },
+  {
+   "file": "CODER_3_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "B2",
+   "old": "核心在誰有決策權、誰負責、誰可核准、否決或停止。",
+   "new": "此組合的主要議題是：誰可以核准、拒絕、停止，或改變 AI 輸出被允許作出的決策。包括正式控制與實際控制、問責，以及企業政策所設定的權限邊界。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "CODER_3_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "C2",
+   "old": "與 M3 的差別：M1＝誰有權、誰負責；M3＝人與 AI 怎麼分工與互動。若核心是 AI 輸出如何轉交、升級或復原，請選 M2；若核心是驗證或監控，請選 M4。",
+   "new": "若主要議題是 AI 輸出如何進入後續流程，選 M2。若主要議題是人與 AI 如何分工或回應，選 M3。若主要議題是如何確認 AI 輸出是否適合用於該項決策，選 M4。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "CODER_3_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "B3",
+   "old": "AI 輸出如何進入流程，以及失敗、異常或不確定時如何轉交、升級或復原。",
+   "new": "此組合的主要議題是：AI 輸出如何進入下一個決策或行動步驟。包括跨系統或單位的交接、例外處理、回復與復原。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "CODER_3_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "C3",
+   "old": "若核心是誰有權核准、否決或停止，請選 M1；若核心是人與 AI 如何分工與互動，請選 M3。",
+   "new": "若主要議題是誰具有正式決策權限，選 M1。若主要議題是人與 AI 的工作分工與互動，選 M3。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "CODER_3_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "B4",
+   "old": "人與 AI 如何分工、互動、採納、修正與接手。",
+   "new": "此組合的主要議題是：人與 AI 的工作順序與分工，以及使用者如何回應 AI 輸出。例如：誰提出建議、誰做最後決定、如何委派或覆寫，以及使用者是否使用、驗證、修改、升級處理、拒絕或繞過 AI 輸出。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "CODER_3_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "C4",
+   "old": "與 M1 的差別：M1＝誰有權、誰負責；M3＝人與 AI 怎麼分工與互動。若核心是驗證或監控，請選 M4。",
+   "new": "若主要議題是正式決策權限與問責，選 M1。若主要議題是流程如何轉交、升級或復原，選 M2。若主要議題是 AI 是否經過充分驗證、監控或保證，選 M4。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "CODER_3_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "B5",
+   "old": "驗證、評測、監控、稽核、安全、風險與合規。",
+   "new": "此組合的主要議題是：如何確認 AI 輸出適合被用於該項決策。包括：部署前驗證、持續監控、重新驗證、可稽核性、解釋是否足以供決策使用、漂移監測，以及其他能證明 AI 輸出適用於該決策的證據。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "CODER_3_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "C5",
+   "old": "若核心是誰有權決定或誰負責，請選 M1；若核心是人與 AI 如何分工與互動，請選 M3。",
+   "new": "若主要議題是誰有權決定或誰負責，選 M1。若主要議題是人與 AI 如何分工與回應，選 M3。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "CODER_3_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "B8",
+   "old": "只提供資訊或證據，但尚未形成可辨識的企業決策介面。",
+   "new": "這個配對只呈現研究、技術、資訊或證據上的關係，但沒有形成這個配對所特有的企業決策介面。如果你能想到的問題，是幾乎任何 AI 功能進入這類決策功能時都會同樣遇到的一般性問題，也屬於此類。",
+   "category": "EVIDENCE_ONLY_DEFINITION"
+  },
+  {
+   "file": "CODER_3_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "B19",
+   "old": "請判斷企業決策本身，而不是技術、文獻主題，或功能類型名稱與類別名稱之間碰巧相同的字詞。部分功能類型名稱與類別名稱有相同的字詞（例如：問責、流程、人機、配置、評估、保證、風險），相同字詞不是選擇該類別的理由。",
+   "new": "請判斷企業決策本身，而不是技術、文獻主題，或功能類型名稱與類別名稱之間碰巧相同的字詞。部分功能類型名稱與類別名稱有相同的字詞（例如：問責、流程、人機、配置、評估、保證）。功能類型名稱與機制類別有相同或相近字詞時，不得只因字詞相同就選擇該類別。",
+   "category": "SHARED_WORD_REMINDER_ADDED (FLAG)"
+  },
+  {
+   "file": "CODER_3_ZH_TW.xlsx",
+   "sheet": "作答聲明",
+   "cell": "A1",
+   "old": "作答聲明：請逐條閱讀下列敘述，並從下拉選單選擇「符合」（這句敘述與你的實際情況相符）或「不符合」（這句敘述與你的實際情況不符）。請如實回答；選擇「不符合」會被記錄並另行分析，你的作答仍會被使用。",
+   "new": "作答聲明：請逐條閱讀下列敘述，並從下拉選單選擇「符合」（這句敘述與你的實際情況相符）或「不符合」（這句敘述與你的實際情況不符）。請如實回答。若有任何一項選擇『不符合』，研究團隊會依預先設定的規則將該份作答標記並分開分析，不會在未標示的情況下與其他編碼者的主要信度分析合併。",
+   "category": "ATTESTATION_HEADER"
+  },
+  {
+   "file": "CODER_3_ZH_TW.xlsx",
+   "sheet": "作答聲明",
+   "cell": "B3",
+   "old": "我對本研究的了解全部來自本問卷，作答前與作答期間都未查閱與本研究相關的線上資料。",
+   "new": "在作答前與作答期間，我沒有另外查閱與本研究內容相關的外部資料；我的判斷只依據本問卷提供的內容。",
+   "category": "ATTESTATION_ITEM_1"
+  },
+  {
+   "file": "CODER_3_ZH_TW.xlsx",
+   "sheet": "docProps",
+   "cell": "created",
+   "old": "2026-10-14 06:11:51",
+   "new": "2026-10-14 06:53:27",
+   "category": "METADATA"
+  },
+  {
+   "file": "CODER_3_ZH_TW.xlsx",
+   "sheet": "docProps",
+   "cell": "modified",
+   "old": "2026-10-14 06:11:51",
+   "new": "2026-10-14 06:53:27",
+   "category": "METADATA"
+  },
+  {
+   "file": "CODER_3_ZH_TW.xlsx",
+   "sheet": "zip",
+   "cell": "docProps/core.xml (raw bytes)",
+   "old": "",
+   "new": "",
+   "category": "METADATA (raw part carrying the allowed changes)"
+  },
+  {
+   "file": "CODER_3_ZH_TW.xlsx",
+   "sheet": "zip",
+   "cell": "xl/worksheets/sheet2.xml (raw bytes)",
+   "old": "",
+   "new": "",
+   "category": "METADATA (raw part carrying the allowed changes)"
+  },
+  {
+   "file": "CODER_3_ZH_TW.xlsx",
+   "sheet": "zip",
+   "cell": "xl/worksheets/sheet5.xml (raw bytes)",
+   "old": "",
+   "new": "",
+   "category": "METADATA (raw part carrying the allowed changes)"
+  },
+  {
+   "file": "20_MASTER_PACKET_S1C_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "B2",
+   "old": "核心在誰有決策權、誰負責、誰可核准、否決或停止。",
+   "new": "此組合的主要議題是：誰可以核准、拒絕、停止，或改變 AI 輸出被允許作出的決策。包括正式控制與實際控制、問責，以及企業政策所設定的權限邊界。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "20_MASTER_PACKET_S1C_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "C2",
+   "old": "與 M3 的差別：M1＝誰有權、誰負責；M3＝人與 AI 怎麼分工與互動。若核心是 AI 輸出如何轉交、升級或復原，請選 M2；若核心是驗證或監控，請選 M4。",
+   "new": "若主要議題是 AI 輸出如何進入後續流程，選 M2。若主要議題是人與 AI 如何分工或回應，選 M3。若主要議題是如何確認 AI 輸出是否適合用於該項決策，選 M4。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "20_MASTER_PACKET_S1C_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "B3",
+   "old": "AI 輸出如何進入流程，以及失敗、異常或不確定時如何轉交、升級或復原。",
+   "new": "此組合的主要議題是：AI 輸出如何進入下一個決策或行動步驟。包括跨系統或單位的交接、例外處理、回復與復原。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "20_MASTER_PACKET_S1C_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "C3",
+   "old": "若核心是誰有權核准、否決或停止，請選 M1；若核心是人與 AI 如何分工與互動，請選 M3。",
+   "new": "若主要議題是誰具有正式決策權限，選 M1。若主要議題是人與 AI 的工作分工與互動，選 M3。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "20_MASTER_PACKET_S1C_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "B4",
+   "old": "人與 AI 如何分工、互動、採納、修正與接手。",
+   "new": "此組合的主要議題是：人與 AI 的工作順序與分工，以及使用者如何回應 AI 輸出。例如：誰提出建議、誰做最後決定、如何委派或覆寫，以及使用者是否使用、驗證、修改、升級處理、拒絕或繞過 AI 輸出。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "20_MASTER_PACKET_S1C_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "C4",
+   "old": "與 M1 的差別：M1＝誰有權、誰負責；M3＝人與 AI 怎麼分工與互動。若核心是驗證或監控，請選 M4。",
+   "new": "若主要議題是正式決策權限與問責，選 M1。若主要議題是流程如何轉交、升級或復原，選 M2。若主要議題是 AI 是否經過充分驗證、監控或保證，選 M4。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "20_MASTER_PACKET_S1C_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "B5",
+   "old": "驗證、評測、監控、稽核、安全、風險與合規。",
+   "new": "此組合的主要議題是：如何確認 AI 輸出適合被用於該項決策。包括：部署前驗證、持續監控、重新驗證、可稽核性、解釋是否足以供決策使用、漂移監測，以及其他能證明 AI 輸出適用於該決策的證據。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "20_MASTER_PACKET_S1C_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "C5",
+   "old": "若核心是誰有權決定或誰負責，請選 M1；若核心是人與 AI 如何分工與互動，請選 M3。",
+   "new": "若主要議題是誰有權決定或誰負責，選 M1。若主要議題是人與 AI 如何分工與回應，選 M3。",
+   "category": "M1_M4_DEFINITION_OR_DISTINCTION"
+  },
+  {
+   "file": "20_MASTER_PACKET_S1C_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "B8",
+   "old": "只提供資訊或證據，但尚未形成可辨識的企業決策介面。",
+   "new": "這個配對只呈現研究、技術、資訊或證據上的關係，但沒有形成這個配對所特有的企業決策介面。如果你能想到的問題，是幾乎任何 AI 功能進入這類決策功能時都會同樣遇到的一般性問題，也屬於此類。",
+   "category": "EVIDENCE_ONLY_DEFINITION"
+  },
+  {
+   "file": "20_MASTER_PACKET_S1C_ZH_TW.xlsx",
+   "sheet": "類別定義",
+   "cell": "B19",
+   "old": "請判斷企業決策本身，而不是技術、文獻主題，或功能類型名稱與類別名稱之間碰巧相同的字詞。部分功能類型名稱與類別名稱有相同的字詞（例如：問責、流程、人機、配置、評估、保證、風險），相同字詞不是選擇該類別的理由。",
+   "new": "請判斷企業決策本身，而不是技術、文獻主題，或功能類型名稱與類別名稱之間碰巧相同的字詞。部分功能類型名稱與類別名稱有相同的字詞（例如：問責、流程、人機、配置、評估、保證）。功能類型名稱與機制類別有相同或相近字詞時，不得只因字詞相同就選擇該類別。",
+   "category": "SHARED_WORD_REMINDER_ADDED (FLAG)"
+  },
+  {
+   "file": "20_MASTER_PACKET_S1C_ZH_TW.xlsx",
+   "sheet": "作答聲明",
+   "cell": "A1",
+   "old": "作答聲明：請逐條閱讀下列敘述，並從下拉選單選擇「符合」（這句敘述與你的實際情況相符）或「不符合」（這句敘述與你的實際情況不符）。請如實回答；選擇「不符合」會被記錄並另行分析，你的作答仍會被使用。",
+   "new": "作答聲明：請逐條閱讀下列敘述，並從下拉選單選擇「符合」（這句敘述與你的實際情況相符）或「不符合」（這句敘述與你的實際情況不符）。請如實回答。若有任何一項選擇『不符合』，研究團隊會依預先設定的規則將該份作答標記並分開分析，不會在未標示的情況下與其他編碼者的主要信度分析合併。",
+   "category": "ATTESTATION_HEADER"
+  },
+  {
+   "file": "20_MASTER_PACKET_S1C_ZH_TW.xlsx",
+   "sheet": "作答聲明",
+   "cell": "B3",
+   "old": "我對本研究的了解全部來自本問卷，作答前與作答期間都未查閱與本研究相關的線上資料。",
+   "new": "在作答前與作答期間，我沒有另外查閱與本研究內容相關的外部資料；我的判斷只依據本問卷提供的內容。",
+   "category": "ATTESTATION_ITEM_1"
+  },
+  {
+   "file": "20_MASTER_PACKET_S1C_ZH_TW.xlsx",
+   "sheet": "作答聲明",
+   "cell": "B13",
+   "old": "我對本研究的了解全部來自本問卷，作答前與作答期間都未查閱與本研究相關的線上資料。",
+   "new": "在作答前與作答期間，我沒有另外查閱與本研究內容相關的外部資料；我的判斷只依據本問卷提供的內容。",
+   "category": "ATTESTATION_ITEM_1"
+  },
+  {
+   "file": "20_MASTER_PACKET_S1C_ZH_TW.xlsx",
+   "sheet": "作答聲明",
+   "cell": "B23",
+   "old": "我對本研究的了解全部來自本問卷，作答前與作答期間都未查閱與本研究相關的線上資料。",
+   "new": "在作答前與作答期間，我沒有另外查閱與本研究內容相關的外部資料；我的判斷只依據本問卷提供的內容。",
+   "category": "ATTESTATION_ITEM_1"
+  },
+  {
+   "file": "20_MASTER_PACKET_S1C_ZH_TW.xlsx",
+   "sheet": "docProps",
+   "cell": "created",
+   "old": "2026-10-14 06:11:51",
+   "new": "2026-10-14 06:53:27",
+   "category": "METADATA"
+  },
+  {
+   "file": "20_MASTER_PACKET_S1C_ZH_TW.xlsx",
+   "sheet": "docProps",
+   "cell": "modified",
+   "old": "2026-10-14 06:11:51",
+   "new": "2026-10-14 06:53:27",
+   "category": "METADATA"
+  },
+  {
+   "file": "20_MASTER_PACKET_S1C_ZH_TW.xlsx",
+   "sheet": "zip",
+   "cell": "docProps/core.xml (raw bytes)",
+   "old": "",
+   "new": "",
+   "category": "METADATA (raw part carrying the allowed changes)"
+  },
+  {
+   "file": "20_MASTER_PACKET_S1C_ZH_TW.xlsx",
+   "sheet": "zip",
+   "cell": "xl/worksheets/sheet2.xml (raw bytes)",
+   "old": "",
+   "new": "",
+   "category": "METADATA (raw part carrying the allowed changes)"
+  },
+  {
+   "file": "20_MASTER_PACKET_S1C_ZH_TW.xlsx",
+   "sheet": "zip",
+   "cell": "xl/worksheets/sheet7.xml (raw bytes)",
+   "old": "",
+   "new": "",
+   "category": "METADATA (raw part carrying the allowed changes)"
+  }
+ ]
+}

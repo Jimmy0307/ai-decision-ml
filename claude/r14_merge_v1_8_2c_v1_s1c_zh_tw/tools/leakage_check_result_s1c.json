@@ -1,0 +1,390 @@
+{
+ "checker": "leakage_check_s1c.py",
+ "files": {
+  "coder_distribution/CODER_1_ZH_TW.xlsx": {
+   "sha256": "93f053fe3a5a8eac6d1c8ac0a439908de5b4800414f2c48a9ab9552acb38634a",
+   "bytes": 20073,
+   "xml_parts_scanned": 13,
+   "distributed_to_coders": true
+  },
+  "coder_distribution/CODER_2_ZH_TW.xlsx": {
+   "sha256": "722cbe48abfd6937ac7c6246cc8ca7e4273348ca91641154e81f5642ff0f7a11",
+   "bytes": 20102,
+   "xml_parts_scanned": 13,
+   "distributed_to_coders": true
+  },
+  "coder_distribution/CODER_3_ZH_TW.xlsx": {
+   "sha256": "7f55a6bce00402fb9bd84bc691db3e8f173d4494b18d939065f890e50f778089",
+   "bytes": 20100,
+   "xml_parts_scanned": 13,
+   "distributed_to_coders": true
+  },
+  "20_MASTER_PACKET_S1C_ZH_TW.xlsx": {
+   "sha256": "bdd5e6cef950920d2b7913380ab466bd0f2b3bcb97309775cc2244265d5c6ff3",
+   "bytes": 32278,
+   "xml_parts_scanned": 17,
+   "distributed_to_coders": false
+  }
+ },
+ "text_files_scanned": 27,
+ "network_numbers_checked": 95,
+ "forbidden_terms_en": [
+  "enrich",
+  "deplet",
+  "robust",
+  "q[\\s_-]*value",
+  "\\bq\\s*=",
+  "signific",
+  "sensitiv",
+  "\\bV9\\b",
+  "v1[._]8",
+  "\\b1\\.8\\.\\d",
+  "researcher",
+  "mapping",
+  "(?<!co)pilot",
+  "\\bgain\\b",
+  "\\bloss\\b",
+  "null model",
+  "github",
+  "\\brepo(sitory)?\\b",
+  "manuscript",
+  "\\bthesis\\b",
+  "\\bsearch\\b",
+  "\\bexternal\\b",
+  "\\b53[AB]\\b",
+  "\\b54[ABC]\\b",
+  "sealed",
+  "\\bkey\\b",
+  "\\bO/E\\b",
+  "p_BH",
+  "Gap_ID",
+  "G_ID",
+  "over-?represent",
+  "under-?represent",
+  "\\bcore\\b"
+ ],
+ "forbidden_terms_zh": [
+  "過度呈現",
+  "不足呈現",
+  "穩健",
+  "顯著",
+  "敏感度",
+  "敏感性",
+  "研究者",
+  "對應表",
+  "映射",
+  "試點",
+  "試行",
+  "前導",
+  "先導",
+  "增益",
+  "損失",
+  "版本",
+  "程式",
+  "儲存庫",
+  "資料庫",
+  "原始碼",
+  "公開",
+  "網址",
+  "連結",
+  "外部",
+  "上網",
+  "網路搜尋",
+  "手稿",
+  "論文",
+  "虛無",
+  "零模型",
+  "四種",
+  "預先設定",
+  "統計",
+  "檢定",
+  "裁決",
+  "答案",
+  "爭議",
+  "核心集合",
+  "q值",
+  "Ｑ值"
+ ],
+ "latin_whitelist": [
+  "AI",
+  "M1",
+  "M2",
+  "M3",
+  "M4",
+  "Q1",
+  "Q2",
+  "Q3",
+  "Q4",
+  "Q5",
+  "ITEM-Axx IDs",
+  "AI tool names in attestation statement 6 only"
+ ],
+ "whitelisted_exact_sentences": {
+  "請只依據本問卷提供的內容作答，不需要也請不要另外搜尋外部資料。": [
+   "外部"
+  ],
+  "我未曾閱讀本研究的論文或任何研究報告。": [
+   "論文"
+  ],
+  "我不知道、也未曾看過研究者對這些題目所做的歸類。": [
+   "研究者"
+  ],
+  "作答聲明：請逐條閱讀下列敘述，並從下拉選單選擇「符合」（這句敘述與你的實際情況相符）或「不符合」（這句敘述與你的實際情況不符）。請如實回答。若有任何一項選擇『不符合』，研究團隊會依預先設定的規則將該份作答標記並分開分析，不會在未標示的情況下與其他編碼者的主要信度分析合併。": [
+   "預先設定"
+  ],
+  "在作答前與作答期間，我沒有另外查閱與本研究內容相關的外部資料；我的判斷只依據本問卷提供的內容。": [
+   "外部"
+  ]
+ },
+ "orders": {
+  "pairwise_distinct": true,
+  "differ_from_every_S1_order": true,
+  "same_position_counts_between_coders": {
+   "CODER_1-CODER_2": 2,
+   "CODER_1-CODER_3": 3,
+   "CODER_2-CODER_3": 1
+  },
+  "same_position_counts_vs_same_coder_S1": {
+   "CODER_1": 1,
+   "CODER_2": 2,
+   "CODER_3": 3
+  }
+ },
+ "coder_distribution_files": [
+  "CODER_1_ZH_TW.xlsx",
+  "CODER_2_ZH_TW.xlsx",
+  "CODER_3_ZH_TW.xlsx"
+ ],
+ "priming_report": {
+  "note": "RECORD ONLY (never a finding). CJK bigrams shared between Chinese family labels and Chinese category labels / definitions as shown to coders.",
+  "label_to_label": [
+   {
+    "family": "人機增能",
+    "category": "M3｜人機配置與回應",
+    "shared": [
+     "人機"
+    ]
+   },
+   {
+    "family": "解釋與保證",
+    "category": "M4｜評估與保證",
+    "shared": [
+     "保證"
+    ]
+   },
+   {
+    "family": "評估與審核",
+    "category": "M4｜評估與保證",
+    "shared": [
+     "評估"
+    ]
+   },
+   {
+    "family": "人工複核與問責",
+    "category": "M1｜權責與問責",
+    "shared": [
+     "問責"
+    ]
+   },
+   {
+    "family": "風險評估",
+    "category": "M4｜評估與保證",
+    "shared": [
+     "評估"
+    ]
+   },
+   {
+    "family": "配置與規劃",
+    "category": "M3｜人機配置與回應",
+    "shared": [
+     "配置"
+    ]
+   },
+   {
+    "family": "評估與選擇",
+    "category": "M4｜評估與保證",
+    "shared": [
+     "評估"
+    ]
+   },
+   {
+    "family": "一般決策流程",
+    "category": "M2｜流程路由與異常復原",
+    "shared": [
+     "流程"
+    ]
+   }
+  ],
+  "label_to_definition": [
+   {
+    "family": "協調與執行",
+    "category": "M2｜流程路由與異常復原",
+    "family_label_in_category_definition": [],
+    "category_label_in_family_definition": [
+     "流程"
+    ]
+   },
+   {
+    "family": "解釋與保證",
+    "category": "M4｜評估與保證",
+    "family_label_in_category_definition": [
+     "解釋"
+    ],
+    "category_label_in_family_definition": [
+     "評估"
+    ]
+   },
+   {
+    "family": "評估與審核",
+    "category": "M4｜評估與保證",
+    "family_label_in_category_definition": [],
+    "category_label_in_family_definition": [
+     "評估"
+    ]
+   },
+   {
+    "family": "評估與審核",
+    "category": "資料條件限制",
+    "family_label_in_category_definition": [],
+    "category_label_in_family_definition": [
+     "資料"
+    ]
+   },
+   {
+    "family": "推薦與最佳化",
+    "category": "M3｜人機配置與回應",
+    "family_label_in_category_definition": [],
+    "category_label_in_family_definition": [
+     "配置"
+    ]
+   },
+   {
+    "family": "預測與診斷",
+    "category": "無法明確判定",
+    "family_label_in_category_definition": [],
+    "category_label_in_family_definition": [
+     "判定"
+    ]
+   },
+   {
+    "family": "人工複核與問責",
+    "category": "M1｜權責與問責",
+    "family_label_in_category_definition": [
+     "問責"
+    ],
+    "category_label_in_family_definition": [
+     "問責"
+    ]
+   },
+   {
+    "family": "人工複核與問責",
+    "category": "無法明確判定",
+    "family_label_in_category_definition": [],
+    "category_label_in_family_definition": [
+     "明確"
+    ]
+   },
+   {
+    "family": "風險評估",
+    "category": "M4｜評估與保證",
+    "family_label_in_category_definition": [],
+    "category_label_in_family_definition": [
+     "評估"
+    ]
+   },
+   {
+    "family": "配置與規劃",
+    "category": "M3｜人機配置與回應",
+    "family_label_in_category_definition": [],
+    "category_label_in_family_definition": [
+     "配置"
+    ]
+   },
+   {
+    "family": "配置與規劃",
+    "category": "跨時間學習與適應",
+    "family_label_in_category_definition": [
+     "配置"
+    ],
+    "category_label_in_family_definition": []
+   },
+   {
+    "family": "評估與選擇",
+    "category": "M4｜評估與保證",
+    "family_label_in_category_definition": [],
+    "category_label_in_family_definition": [
+     "評估"
+    ]
+   },
+   {
+    "family": "治理與監督",
+    "category": "無適用機制",
+    "family_label_in_category_definition": [],
+    "category_label_in_family_definition": [
+     "機制"
+    ]
+   },
+   {
+    "family": "資訊取得",
+    "category": "資料條件限制",
+    "family_label_in_category_definition": [
+     "取得"
+    ],
+    "category_label_in_family_definition": []
+   },
+   {
+    "family": "資訊取得",
+    "category": "僅屬證據層",
+    "family_label_in_category_definition": [
+     "資訊"
+    ],
+    "category_label_in_family_definition": []
+   },
+   {
+    "family": "一般決策流程",
+    "category": "M2｜流程路由與異常復原",
+    "family_label_in_category_definition": [],
+    "category_label_in_family_definition": [
+     "流程"
+    ]
+   },
+   {
+    "family": "一般決策流程",
+    "category": "僅屬證據層",
+    "family_label_in_category_definition": [
+     "一般"
+    ],
+    "category_label_in_family_definition": []
+   },
+   {
+    "family": "一般決策流程",
+    "category": "無法明確判定",
+    "family_label_in_category_definition": [],
+    "category_label_in_family_definition": [
+     "明確",
+     "無法"
+    ]
+   }
+  ],
+  "shared_label_words": [
+   "人機",
+   "保證",
+   "問責",
+   "流程",
+   "評估",
+   "配置"
+  ],
+  "shared_label_words_named_in_coder_rule": [
+   "人機",
+   "保證",
+   "問責",
+   "流程",
+   "評估",
+   "配置"
+  ],
+  "shared_label_words_not_named_in_coder_rule": []
+ },
+ "findings": [],
+ "n_findings": 0,
+ "verdict": "PASS"
+}

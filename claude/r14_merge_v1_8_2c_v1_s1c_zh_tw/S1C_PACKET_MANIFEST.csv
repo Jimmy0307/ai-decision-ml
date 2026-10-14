@@ -1,0 +1,5 @@
+file,sha256,bytes,coder,order_seed,sheet_list,distributed_to_coder
+coder_distribution/CODER_1_ZH_TW.xlsx,93f053fe3a5a8eac6d1c8ac0a439908de5b4800414f2c48a9ab9552acb38634a,20073,CODER_1,S1B_ZH_TW_20261014_CODER_1_ORDER (S1b seed reused; order identical to S1b),填答說明;類別定義;題目資訊;作答_編碼者1;作答聲明,YES
+coder_distribution/CODER_2_ZH_TW.xlsx,722cbe48abfd6937ac7c6246cc8ca7e4273348ca91641154e81f5642ff0f7a11,20102,CODER_2,S1B_ZH_TW_20261014_CODER_2_ORDER (S1b seed reused; order identical to S1b),填答說明;類別定義;題目資訊;作答_編碼者2;作答聲明,YES
+coder_distribution/CODER_3_ZH_TW.xlsx,7f55a6bce00402fb9bd84bc691db3e8f173d4494b18d939065f890e50f778089,20100,CODER_3,S1B_ZH_TW_20261014_CODER_3_ORDER (S1b seed reused; order identical to S1b),填答說明;類別定義;題目資訊;作答_編碼者3;作答聲明,YES
+20_MASTER_PACKET_S1C_ZH_TW.xlsx,bdd5e6cef950920d2b7913380ab466bd0f2b3bcb97309775cc2244265d5c6ff3,32278,STUDY_TEAM_MASTER,CODER_1=S1B_ZH_TW_20261014_CODER_1_ORDER;CODER_2=S1B_ZH_TW_20261014_CODER_2_ORDER;CODER_3=S1B_ZH_TW_20261014_CODER_3_ORDER,填答說明;類別定義;題目資訊;作答_編碼者1;作答_編碼者2;作答_編碼者3;作答聲明;ADJUDICATION_EMPTY;STUDY_TEAM_CODE_MAP,NO
