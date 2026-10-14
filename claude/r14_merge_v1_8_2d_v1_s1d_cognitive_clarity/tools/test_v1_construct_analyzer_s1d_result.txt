@@ -1,0 +1,2 @@
+PASS (a)reliability_core=PASS kappa_vs_sklearn_max_abs_diff=2.498e-16 (n=300) alpha_vs_krippendorff_max_abs_diff=4.441e-16 (n=300) classification_rule=PASS oa3_none_validation=PASS s1b_parse_semantics_on_s1d=PASS | (b)label_map=PASS | (c)blank_run_NO_HUMAN_DATA=PASS | (d)structure=PASS
+(b) PASS M1_M2_bijection_and_canonical_sets=PASS M3_workbook_dropdowns_map=PASS M4_variants_normalize_to_one_code=PASS M5_unknown_labels_unmapped=PASS dropdown_options_checked=134 variants_checked=173

@@ -1,0 +1,449 @@
+{
+ "verdict": "PASS",
+ "errors": [],
+ "consistency_mismatches": [],
+ "files": {
+  "coder_distribution\\CODER_1_ZH_TW.xlsx": {
+   "result": {
+    "A_company_need_is_not_Q1_NO": {
+     "VIEWPOINT": [
+      "填答說明!A9"
+     ],
+     "WARNING": [
+      "填答說明!A19"
+     ]
+    },
+    "B_interface_is_not_UI_or_API": {
+     "INTERFACE": [
+      "填答說明!A11"
+     ]
+    },
+    "C_enterprise_decision_not_only_strategic": {
+     "SCOPE": [
+      "填答說明!A12"
+     ]
+    },
+    "D_pairing_specific_not_globally_unique": {
+     "SPECIFIC": [
+      "填答說明!A13"
+     ]
+    },
+    "E_Q2_required_no_conflict": {
+     "Q2_README": [
+      "填答說明!A20"
+     ]
+    },
+    "F_Q1_uncertain_vs_Q2_ambiguous": {
+     "Q1_VS_Q2": [
+      "填答說明!A25"
+     ],
+     "QUICK": [
+      "填答說明!A26"
+     ]
+    },
+    "Q1_option_explanations": {
+     "Q1_YES": [
+      "填答說明!A16"
+     ],
+     "Q1_NO": [
+      "填答說明!A17"
+     ],
+     "Q1_UNC": [
+      "填答說明!A18"
+     ]
+    },
+    "E_no_如果有_anywhere": [],
+    "E_Q2_headers": [
+     "作答_編碼者1!I1"
+    ],
+    "depletion_cells_with_final_sentence": "32/32 (distinct texts: 1)",
+    "attestation_header_A1_contains_social_desirability_sentence": true,
+    "rule_rows": {
+     "　　Q1＝是：Q2 可選「僅屬證據層」以外的任一類別。": [
+      "填答說明!A22"
+     ],
+     "　　Q1＝否：Q2 請選「僅屬證據層」。": [
+      "填答說明!A23"
+     ],
+     "　　Q1＝無法確定：Q2 可選「無適用機制」以外的任一類別（包括「僅屬證據層」與「無法明確判定」）。": [
+      "填答說明!A24"
+     ]
+    }
+   },
+   "errors": []
+  },
+  "coder_distribution\\CODER_2_ZH_TW.xlsx": {
+   "result": {
+    "A_company_need_is_not_Q1_NO": {
+     "VIEWPOINT": [
+      "填答說明!A9"
+     ],
+     "WARNING": [
+      "填答說明!A19"
+     ]
+    },
+    "B_interface_is_not_UI_or_API": {
+     "INTERFACE": [
+      "填答說明!A11"
+     ]
+    },
+    "C_enterprise_decision_not_only_strategic": {
+     "SCOPE": [
+      "填答說明!A12"
+     ]
+    },
+    "D_pairing_specific_not_globally_unique": {
+     "SPECIFIC": [
+      "填答說明!A13"
+     ]
+    },
+    "E_Q2_required_no_conflict": {
+     "Q2_README": [
+      "填答說明!A20"
+     ]
+    },
+    "F_Q1_uncertain_vs_Q2_ambiguous": {
+     "Q1_VS_Q2": [
+      "填答說明!A25"
+     ],
+     "QUICK": [
+      "填答說明!A26"
+     ]
+    },
+    "Q1_option_explanations": {
+     "Q1_YES": [
+      "填答說明!A16"
+     ],
+     "Q1_NO": [
+      "填答說明!A17"
+     ],
+     "Q1_UNC": [
+      "填答說明!A18"
+     ]
+    },
+    "E_no_如果有_anywhere": [],
+    "E_Q2_headers": [
+     "作答_編碼者2!I1"
+    ],
+    "depletion_cells_with_final_sentence": "32/32 (distinct texts: 1)",
+    "attestation_header_A1_contains_social_desirability_sentence": true,
+    "rule_rows": {
+     "　　Q1＝是：Q2 可選「僅屬證據層」以外的任一類別。": [
+      "填答說明!A22"
+     ],
+     "　　Q1＝否：Q2 請選「僅屬證據層」。": [
+      "填答說明!A23"
+     ],
+     "　　Q1＝無法確定：Q2 可選「無適用機制」以外的任一類別（包括「僅屬證據層」與「無法明確判定」）。": [
+      "填答說明!A24"
+     ]
+    }
+   },
+   "errors": []
+  },
+  "coder_distribution\\CODER_3_ZH_TW.xlsx": {
+   "result": {
+    "A_company_need_is_not_Q1_NO": {
+     "VIEWPOINT": [
+      "填答說明!A9"
+     ],
+     "WARNING": [
+      "填答說明!A19"
+     ]
+    },
+    "B_interface_is_not_UI_or_API": {
+     "INTERFACE": [
+      "填答說明!A11"
+     ]
+    },
+    "C_enterprise_decision_not_only_strategic": {
+     "SCOPE": [
+      "填答說明!A12"
+     ]
+    },
+    "D_pairing_specific_not_globally_unique": {
+     "SPECIFIC": [
+      "填答說明!A13"
+     ]
+    },
+    "E_Q2_required_no_conflict": {
+     "Q2_README": [
+      "填答說明!A20"
+     ]
+    },
+    "F_Q1_uncertain_vs_Q2_ambiguous": {
+     "Q1_VS_Q2": [
+      "填答說明!A25"
+     ],
+     "QUICK": [
+      "填答說明!A26"
+     ]
+    },
+    "Q1_option_explanations": {
+     "Q1_YES": [
+      "填答說明!A16"
+     ],
+     "Q1_NO": [
+      "填答說明!A17"
+     ],
+     "Q1_UNC": [
+      "填答說明!A18"
+     ]
+    },
+    "E_no_如果有_anywhere": [],
+    "E_Q2_headers": [
+     "作答_編碼者3!I1"
+    ],
+    "depletion_cells_with_final_sentence": "32/32 (distinct texts: 1)",
+    "attestation_header_A1_contains_social_desirability_sentence": true,
+    "rule_rows": {
+     "　　Q1＝是：Q2 可選「僅屬證據層」以外的任一類別。": [
+      "填答說明!A22"
+     ],
+     "　　Q1＝否：Q2 請選「僅屬證據層」。": [
+      "填答說明!A23"
+     ],
+     "　　Q1＝無法確定：Q2 可選「無適用機制」以外的任一類別（包括「僅屬證據層」與「無法明確判定」）。": [
+      "填答說明!A24"
+     ]
+    }
+   },
+   "errors": []
+  },
+  "20_MASTER_PACKET_S1D_ZH_TW.xlsx": {
+   "result": {
+    "A_company_need_is_not_Q1_NO": {
+     "VIEWPOINT": [
+      "填答說明!A9"
+     ],
+     "WARNING": [
+      "填答說明!A19"
+     ]
+    },
+    "B_interface_is_not_UI_or_API": {
+     "INTERFACE": [
+      "填答說明!A11"
+     ]
+    },
+    "C_enterprise_decision_not_only_strategic": {
+     "SCOPE": [
+      "填答說明!A12"
+     ]
+    },
+    "D_pairing_specific_not_globally_unique": {
+     "SPECIFIC": [
+      "填答說明!A13"
+     ]
+    },
+    "E_Q2_required_no_conflict": {
+     "Q2_README": [
+      "填答說明!A20"
+     ]
+    },
+    "F_Q1_uncertain_vs_Q2_ambiguous": {
+     "Q1_VS_Q2": [
+      "填答說明!A25"
+     ],
+     "QUICK": [
+      "填答說明!A26"
+     ]
+    },
+    "Q1_option_explanations": {
+     "Q1_YES": [
+      "填答說明!A16"
+     ],
+     "Q1_NO": [
+      "填答說明!A17"
+     ],
+     "Q1_UNC": [
+      "填答說明!A18"
+     ]
+    },
+    "E_no_如果有_anywhere": [],
+    "E_Q2_headers": [
+     "作答_編碼者1!I1",
+     "作答_編碼者2!I1",
+     "作答_編碼者3!I1"
+    ],
+    "depletion_cells_with_final_sentence": "64/64 (distinct texts: 1)",
+    "attestation_header_A1_contains_social_desirability_sentence": true,
+    "rule_rows": {
+     "　　Q1＝是：Q2 可選「僅屬證據層」以外的任一類別。": [
+      "填答說明!A22"
+     ],
+     "　　Q1＝否：Q2 請選「僅屬證據層」。": [
+      "填答說明!A23"
+     ],
+     "　　Q1＝無法確定：Q2 可選「無適用機制」以外的任一類別（包括「僅屬證據層」與「無法明確判定」）。": [
+      "填答說明!A24"
+     ]
+    }
+   },
+   "errors": []
+  }
+ },
+ "q1_q2_combinations": [
+  {
+   "Q1": "NO",
+   "Q2": "AMBIGUOUS",
+   "analyzer_accepts": false,
+   "codebook26_allows": false
+  },
+  {
+   "Q1": "NO",
+   "Q2": "DATA_GATED",
+   "analyzer_accepts": false,
+   "codebook26_allows": false
+  },
+  {
+   "Q1": "NO",
+   "Q2": "EVIDENCE_ONLY",
+   "analyzer_accepts": true,
+   "codebook26_allows": true
+  },
+  {
+   "Q1": "NO",
+   "Q2": "LONGITUDINAL",
+   "analyzer_accepts": false,
+   "codebook26_allows": false
+  },
+  {
+   "Q1": "NO",
+   "Q2": "M1",
+   "analyzer_accepts": false,
+   "codebook26_allows": false
+  },
+  {
+   "Q1": "NO",
+   "Q2": "M2",
+   "analyzer_accepts": false,
+   "codebook26_allows": false
+  },
+  {
+   "Q1": "NO",
+   "Q2": "M3",
+   "analyzer_accepts": false,
+   "codebook26_allows": false
+  },
+  {
+   "Q1": "NO",
+   "Q2": "M4",
+   "analyzer_accepts": false,
+   "codebook26_allows": false
+  },
+  {
+   "Q1": "NO",
+   "Q2": "NONE",
+   "analyzer_accepts": false,
+   "codebook26_allows": false
+  },
+  {
+   "Q1": "UNCERTAIN",
+   "Q2": "AMBIGUOUS",
+   "analyzer_accepts": true,
+   "codebook26_allows": true
+  },
+  {
+   "Q1": "UNCERTAIN",
+   "Q2": "DATA_GATED",
+   "analyzer_accepts": true,
+   "codebook26_allows": true
+  },
+  {
+   "Q1": "UNCERTAIN",
+   "Q2": "EVIDENCE_ONLY",
+   "analyzer_accepts": true,
+   "codebook26_allows": true
+  },
+  {
+   "Q1": "UNCERTAIN",
+   "Q2": "LONGITUDINAL",
+   "analyzer_accepts": true,
+   "codebook26_allows": true
+  },
+  {
+   "Q1": "UNCERTAIN",
+   "Q2": "M1",
+   "analyzer_accepts": true,
+   "codebook26_allows": true
+  },
+  {
+   "Q1": "UNCERTAIN",
+   "Q2": "M2",
+   "analyzer_accepts": true,
+   "codebook26_allows": true
+  },
+  {
+   "Q1": "UNCERTAIN",
+   "Q2": "M3",
+   "analyzer_accepts": true,
+   "codebook26_allows": true
+  },
+  {
+   "Q1": "UNCERTAIN",
+   "Q2": "M4",
+   "analyzer_accepts": true,
+   "codebook26_allows": true
+  },
+  {
+   "Q1": "UNCERTAIN",
+   "Q2": "NONE",
+   "analyzer_accepts": false,
+   "codebook26_allows": false
+  },
+  {
+   "Q1": "YES",
+   "Q2": "AMBIGUOUS",
+   "analyzer_accepts": true,
+   "codebook26_allows": true
+  },
+  {
+   "Q1": "YES",
+   "Q2": "DATA_GATED",
+   "analyzer_accepts": true,
+   "codebook26_allows": true
+  },
+  {
+   "Q1": "YES",
+   "Q2": "EVIDENCE_ONLY",
+   "analyzer_accepts": false,
+   "codebook26_allows": false
+  },
+  {
+   "Q1": "YES",
+   "Q2": "LONGITUDINAL",
+   "analyzer_accepts": true,
+   "codebook26_allows": true
+  },
+  {
+   "Q1": "YES",
+   "Q2": "M1",
+   "analyzer_accepts": true,
+   "codebook26_allows": true
+  },
+  {
+   "Q1": "YES",
+   "Q2": "M2",
+   "analyzer_accepts": true,
+   "codebook26_allows": true
+  },
+  {
+   "Q1": "YES",
+   "Q2": "M3",
+   "analyzer_accepts": true,
+   "codebook26_allows": true
+  },
+  {
+   "Q1": "YES",
+   "Q2": "M4",
+   "analyzer_accepts": true,
+   "codebook26_allows": true
+  },
+  {
+   "Q1": "YES",
+   "Q2": "NONE",
+   "analyzer_accepts": true,
+   "codebook26_allows": true
+  }
+ ]
+}
