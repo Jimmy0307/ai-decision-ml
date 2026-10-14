@@ -1,0 +1,25 @@
+{
+ "rows": 98,
+ "carried_from_18": 43,
+ "replaced_not_recovered": 6,
+ "mismatches": [],
+ "status_counts": {
+  "CONFIRMED": 34,
+  "NOT_RECOVERED": 2,
+  "PRESENT": 46,
+  "PRESENT_OUTSIDE_GIT": 14,
+  "PROBABLE": 2
+ },
+ "layer_counts": {
+  "CURRENT": 18,
+  "EXTERNAL_LOCAL": 1,
+  "FROZEN_UPSTREAM_IN_REPO": 4,
+  "RAW_SOURCE_NOT_IN_GIT": 13,
+  "UPSTREAM_CANONICAL": 3,
+  "V1_8_3_EVIDENCE": 17,
+  "V1_8_AUTHORITY": 7,
+  "V5_PRODUCTION_CHAIN": 18,
+  "V9_PROTECTED_INPUT": 13,
+  "V9_SIDECAR": 4
+ }
+}

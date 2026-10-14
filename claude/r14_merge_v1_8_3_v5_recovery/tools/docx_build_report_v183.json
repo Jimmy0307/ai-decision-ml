@@ -1,0 +1,21 @@
+{
+ "pandoc": "2.19.2",
+ "returncode": 0,
+ "warnings": [],
+ "render_wrapped_blocks": [
+  "VRA = F_E^{C0} - F_E^{A},\\quad DL0 = F_E^{A+} - F_E^{C0},\\quad VCP = F_E^{A+} - F_E^{A} = VRA + DL0,\\\\ VSC = F_E^{B} - F_E^{A+},\\quad DL = F_E^{B} - F_E^{C},\\qu"
+ ],
+ "md_display_math": 25,
+ "md_inline_math_est": 31,
+ "md_headings": 182,
+ "md_tables": 77,
+ "md_images": 3,
+ "docx_oMathPara": 25,
+ "docx_oMath_total": 56,
+ "docx_tables": 77,
+ "docx_headings": 182,
+ "docx_images": 3,
+ "docx_leftover_dollar_text_runs": 0,
+ "md_sha256": "0da8cec1521dbeff900ffa1fa9a1de0a31b0cdfa34b82c03531eba2111d7f740",
+ "docx_sha256": "4f061e21772f0e297fc11282c858aa821fef4d7f01bce088b033d89f8f3d4e8b"
+}

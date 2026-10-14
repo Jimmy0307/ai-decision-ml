@@ -1,0 +1,410 @@
+{
+"sha256": [
+"2d493edc2e1884f05e5b0617bc56f1f85cdab0fa33531ac566b61d343dd8f159",
+"0da8cec1521dbeff900ffa1fa9a1de0a31b0cdfa34b82c03531eba2111d7f740"
+],
+"line_count": [
+3095,
+3100
+],
+"patch_count": 34,
+"patched_lines_v182": [
+5,
+13,
+29,
+122,
+147,
+158,
+168,
+405,
+412,
+591,
+605,
+609,
+630,
+651,
+1629,
+2185,
+2192,
+2240,
+2364,
+2368,
+2380,
+3033,
+3050,
+3077,
+3078,
+3082,
+3086
+],
+"math_counts": {
+"$$": [
+18,
+18
+],
+"$inline": [
+31,
+31
+],
+"\\[\\]": [
+7,
+7
+],
+"begin_env": [
+0,
+0
+]
+},
+"fenced_blocks_changed": [
+1
+],
+"fenced_patches": [
+"R11"
+],
+"headings": [
+182,
+182
+],
+"G_table_rows": [
+36,
+36
+],
+"G_token_counts": [
+291,
+291
+],
+"section_3_9_2_tables_3_4_3_4A_lines": 74,
+"section_3_9_3_V1_design_lines": 6,
+"section_3_9_4_lines": 6,
+"section_3_9_5_lines": 8,
+"section_3_12_enterprise_math_lines": 205,
+"section_4_4_results_lines": 120,
+"section_4_7_V1_results_lines": 116,
+"count_VCP": [
+28,
+28
+],
+"count_VSC": [
+26,
+26
+],
+"count_DL": [
+59,
+59
+],
+"count_NEV": [
+28,
+28
+],
+"count_Enterprise": [
+10,
+10
+],
+"count_SIMULATED_ONLY": [
+31,
+31
+],
+"count_EMPIRICAL RESULT PENDING": [
+69,
+69
+],
+"count_SUBMISSION_READY": [
+3,
+3
+],
+"count_FULL_REANALYSIS_REQUIRED": [
+5,
+5
+],
+"count_UNIDENTIFIED": [
+44,
+44
+],
+"count_M1": [
+28,
+28
+],
+"count_M2": [
+16,
+16
+],
+"count_M3": [
+27,
+27
+],
+"count_M4": [
+38,
+38
+],
+"count_M5": [
+41,
+41
+],
+"count_REAL EVIDENCE": [
+16,
+16
+],
+"count_HUMAN_RESULT_PENDING": [
+44,
+44
+],
+"term_NOT_EXECUTABLE_WITH_CURRENT_SOURCE_SET": [
+4,
+0
+],
+"term_EXECUTABLE_PENDING_PROPAGATION_RULE_AND_BASELINE_REPRODUCTION": [
+0,
+4
+],
+"term_REQUIRED_BY_V9_AS_OPEN_VALIDATION_ACTION": [
+4,
+4
+],
+"term_NOT_RECOMMENDED": [
+4,
+4
+],
+"term_PRIORITY_RATIONALE_REVIEW_REQUESTED": [
+0,
+1
+],
+"term_RECOVERED_FROM_SIDECAR_POLICY": [
+0,
+2
+],
+"term_以目前的來源集無法執行": [
+8,
+0
+],
+"term_以目前來源集無法執行": [
+7,
+0
+],
+"term_12 項未尋回": [
+4,
+0
+],
+"term_NOT_REQUIRED": [
+0,
+0
+],
+"term_AUTHOR TO CONFIRM": [
+2,
+2
+],
+"term_v1.8.3 V5 PROVENANCE CANDIDATE": [
+0,
+1
+],
+"numeric_added_doc": {
+"1": 2,
+"13": 2,
+"2": 1,
+"256": 11,
+"3.7.1": 1,
+"3.7.4": 2,
+"3.8.3": 1,
+"35": 7,
+"355": 2,
+"36": 3,
+"37": 9,
+"38": 6,
+"39": 4,
+"4.5.5": 1,
+"40": 3,
+"41": 2,
+"5": 1,
+"5.8.9": 1,
+"74": 1
+},
+"numeric_removed_doc": {
+"12": 5
+},
+"numeric_per_patch": {
+"R02": {
+"added": {
+"256": 2,
+"35": 1,
+"38": 1,
+"37": 1,
+"39": 1,
+"40": 1
+},
+"removed": {}
+},
+"R03": {
+"added": {
+"256": 1,
+"13": 1
+},
+"removed": {
+"12": 1
+}
+},
+"R05": {
+"added": {},
+"removed": {
+"12": 1
+}
+},
+"R12": {
+"added": {
+"355": 1,
+"256": 1,
+"37": 1
+},
+"removed": {}
+},
+"R13": {
+"added": {
+"37": 1,
+"38": 1,
+"256": 1
+},
+"removed": {}
+},
+"R14": {
+"added": {
+"256": 1
+},
+"removed": {
+"12": 1
+}
+},
+"R15": {
+"added": {
+"74": 1,
+"35": 1
+},
+"removed": {}
+},
+"R16": {
+"added": {
+"256": 1
+},
+"removed": {
+"12": 1
+}
+},
+"R24": {
+"added": {
+"35": 2,
+"36": 2,
+"3.8.3": 1,
+"37": 3,
+"3.7.1": 1,
+"3.7.4": 2,
+"38": 2,
+"4.5.5": 1,
+"5.8.9": 1,
+"39": 2,
+"40": 2,
+"1": 1,
+"41": 2
+},
+"removed": {}
+},
+"R25": {
+"added": {
+"35": 1
+},
+"removed": {}
+},
+"R26": {
+"added": {
+"355": 1,
+"256": 1,
+"37": 1
+},
+"removed": {}
+},
+"R27": {
+"added": {
+"37": 2,
+"256": 1,
+"35": 1,
+"36": 1
+},
+"removed": {}
+},
+"R28": {
+"added": {
+"256": 1
+},
+"removed": {}
+},
+"R29": {
+"added": {
+"35": 1,
+"39": 1
+},
+"removed": {}
+},
+"R30": {
+"added": {
+"256": 1,
+"13": 1,
+"38": 1,
+"1": 1,
+"2": 1,
+"5": 1
+},
+"removed": {
+"12": 1
+}
+},
+"R33": {
+"added": {
+"38": 1
+},
+"removed": {}
+}
+},
+"numeric_added_not_in_allowlist": {},
+"numeric_removed_not_expected": {},
+"result_like_tokens_added": {},
+"hard_checks": {
+"changed_lines_subset_of_patched_lines": true,
+"math_identical_ordered": true,
+"fenced_blocks_identical_except_listed_status_patches": true,
+"equation_tags_identical": true,
+"no_math_markers_in_patch_text": true,
+"headings_identical": true,
+"table_figure_captions_identical": true,
+"G_rows_identical_ordered": true,
+"G_token_count_unchanged": true,
+"GM_arrow_tokens_identical": true,
+"section_3_9_2_tables_3_4_3_4A_identical": true,
+"section_3_9_3_V1_design_identical": true,
+"section_3_9_4_identical": true,
+"section_3_9_5_identical": true,
+"section_3_12_enterprise_math_identical": true,
+"section_4_4_results_identical": true,
+"section_4_7_V1_results_identical": true,
+"count_unchanged_VCP": true,
+"count_unchanged_VSC": true,
+"count_unchanged_DL": true,
+"count_unchanged_NEV": true,
+"count_unchanged_Enterprise": true,
+"count_unchanged_SIMULATED_ONLY": true,
+"count_unchanged_EMPIRICAL RESULT PENDING": true,
+"count_unchanged_SUBMISSION_READY": true,
+"count_unchanged_UNIDENTIFIED": true,
+"count_unchanged_M1": true,
+"count_unchanged_M2": true,
+"count_unchanged_M3": true,
+"count_unchanged_M4": true,
+"count_unchanged_M5": true,
+"count_unchanged_REAL EVIDENCE": true,
+"count_unchanged_HUMAN_RESULT_PENDING": true,
+"no_stale_not_executable": true,
+"no_NOT_REQUIRED": true,
+"method_status_unchanged": true,
+"priority_status_unchanged_or_added": true,
+"numeric_patch_sum_matches_doc": true,
+"numeric_added_all_allowlisted": true,
+"numeric_removed_only_12": true,
+"no_result_like_tokens_added": true
+},
+"ALL_HARD_CHECKS_PASS": true
+}

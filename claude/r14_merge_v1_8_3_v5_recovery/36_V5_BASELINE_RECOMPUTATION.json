@@ -1,0 +1,1771 @@
+{
+ "results": [
+  {
+   "item": "strict_records (rows in RECORD_LEVEL.csv)",
+   "value": 6499,
+   "expected": 6499,
+   "status": "MATCH",
+   "method": "row count",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_RECORD_LEVEL.csv",
+     "sha256": "fbb5f59286d308771d5db77b176abebab8ef851a896652a3807ebf6a4b335a8f"
+    }
+   ]
+  },
+  {
+   "item": "strict_records unique record_id",
+   "value": 6499,
+   "expected": 6499,
+   "status": "MATCH",
+   "method": "distinct record_id",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_RECORD_LEVEL.csv",
+     "sha256": "fbb5f59286d308771d5db77b176abebab8ef851a896652a3807ebf6a4b335a8f"
+    }
+   ]
+  },
+  {
+   "item": "strict unique documents",
+   "value": 1104,
+   "expected": 1104,
+   "status": "MATCH",
+   "method": "distinct document_id",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_RECORD_LEVEL.csv",
+     "sha256": "fbb5f59286d308771d5db77b176abebab8ef851a896652a3807ebf6a4b335a8f"
+    }
+   ]
+  },
+  {
+   "item": "FULLY_MAPPED records",
+   "value": 3125,
+   "expected": 3125,
+   "status": "MATCH",
+   "method": "count mapping_completeness",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_RECORD_LEVEL.csv",
+     "sha256": "fbb5f59286d308771d5db77b176abebab8ef851a896652a3807ebf6a4b335a8f"
+    }
+   ]
+  },
+  {
+   "item": "PARTIALLY_MAPPED records",
+   "value": 2501,
+   "expected": 2501,
+   "status": "MATCH",
+   "method": "count mapping_completeness",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_RECORD_LEVEL.csv",
+     "sha256": "fbb5f59286d308771d5db77b176abebab8ef851a896652a3807ebf6a4b335a8f"
+    }
+   ]
+  },
+  {
+   "item": "FULLY_UNRESOLVED records",
+   "value": 873,
+   "expected": 873,
+   "status": "MATCH",
+   "method": "count mapping_completeness",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_RECORD_LEVEL.csv",
+     "sha256": "fbb5f59286d308771d5db77b176abebab8ef851a896652a3807ebf6a4b335a8f"
+    }
+   ]
+  },
+  {
+   "item": "pair_eligible_records (analytical_pair_eligible=True)",
+   "value": 3125,
+   "expected": 3125,
+   "status": "MATCH",
+   "method": "count flag",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_RECORD_LEVEL.csv",
+     "sha256": "fbb5f59286d308771d5db77b176abebab8ef851a896652a3807ebf6a4b335a8f"
+    }
+   ]
+  },
+  {
+   "item": "pair_excluded_records",
+   "value": 3374,
+   "expected": 3374,
+   "status": "MATCH",
+   "method": "6499 - eligible",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_RECORD_LEVEL.csv",
+     "sha256": "fbb5f59286d308771d5db77b176abebab8ef851a896652a3807ebf6a4b335a8f"
+    }
+   ]
+  },
+  {
+   "item": "pair-excluded share of strict (manuscript 51.9%)",
+   "value": 51.9,
+   "expected": 51.9,
+   "status": "MATCH",
+   "method": "3374/6499*100 rounded 1dp",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_RECORD_LEVEL.csv",
+     "sha256": "fbb5f59286d308771d5db77b176abebab8ef851a896652a3807ebf6a4b335a8f"
+    }
+   ]
+  },
+  {
+   "item": "every eligible record has both sides MAPPED",
+   "value": true,
+   "expected": true,
+   "status": "MATCH",
+   "method": "row check",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_RECORD_LEVEL.csv",
+     "sha256": "fbb5f59286d308771d5db77b176abebab8ef851a896652a3807ebf6a4b335a8f"
+    }
+   ]
+  },
+  {
+   "item": "eligible == FULLY_MAPPED set",
+   "value": true,
+   "expected": true,
+   "status": "MATCH",
+   "method": "set equality",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_RECORD_LEVEL.csv",
+     "sha256": "fbb5f59286d308771d5db77b176abebab8ef851a896652a3807ebf6a4b335a8f"
+    }
+   ]
+  },
+  {
+   "item": "unique documents among pair-eligible",
+   "value": 783,
+   "expected": 783,
+   "status": "MATCH",
+   "method": "distinct document_id over eligible rows",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_RECORD_LEVEL.csv",
+     "sha256": "fbb5f59286d308771d5db77b176abebab8ef851a896652a3807ebf6a4b335a8f"
+    }
+   ]
+  },
+  {
+   "item": "ANALYTICAL_PAIR_ELIGIBLE_RECORDS.csv rows / set == flagged eligible",
+   "value": [
+    3125,
+    true
+   ],
+   "expected": [
+    3125,
+    true
+   ],
+   "status": "MATCH",
+   "method": "rows + set eq",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_PAIR_ELIGIBLE_RECORDS.csv",
+     "sha256": "9ee5fd537fed2819c0ac7998d6a786cc8f90dd008ebc1758bb92c8e7487c2e92"
+    }
+   ]
+  },
+  {
+   "item": "ANALYTICAL_PAIR_EXCLUDED_RECORDS.csv rows / disjoint & union == strict",
+   "value": [
+    3374,
+    true,
+    true
+   ],
+   "expected": [
+    3374,
+    true,
+    true
+   ],
+   "status": "MATCH",
+   "method": "rows + partition",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_PAIR_EXCLUDED_RECORDS.csv",
+     "sha256": "d53c5e955f4dec1e23a21250542a3879cd8a5fa1bb5109bfdedc12df615161f4"
+    }
+   ]
+  },
+  {
+   "item": "canonical JSON records == CSV record set",
+   "value": [
+    6499,
+    true
+   ],
+   "expected": [
+    6499,
+    true
+   ],
+   "status": "MATCH",
+   "method": "set equality canonical vs CSV",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_CANONICAL.json",
+     "sha256": "9a4e8fc2ca2a49642ac801888e571b44c157a6bd5b06fe5c1cbd9ff1a891867a"
+    }
+   ]
+  },
+  {
+   "item": "canonical JSON pair-eligible set == CSV eligible set",
+   "value": true,
+   "expected": true,
+   "status": "MATCH",
+   "method": "set equality (canonical key pair_eligible)",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_CANONICAL.json",
+     "sha256": "9a4e8fc2ca2a49642ac801888e571b44c157a6bd5b06fe5c1cbd9ff1a891867a"
+    }
+   ]
+  },
+  {
+   "item": "canonical JSON per-record doc/families/statuses == CSV",
+   "value": true,
+   "expected": true,
+   "status": "MATCH",
+   "method": "per-record compare",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_CANONICAL.json",
+     "sha256": "9a4e8fc2ca2a49642ac801888e571b44c157a6bd5b06fe5c1cbd9ff1a891867a"
+    },
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_RECORD_LEVEL.csv",
+     "sha256": "fbb5f59286d308771d5db77b176abebab8ef851a896652a3807ebf6a4b335a8f"
+    }
+   ]
+  },
+  {
+   "item": "strict relation-type shares (manuscript 3.3.2)",
+   "value": true,
+   "expected": true,
+   "status": "MATCH",
+   "method": "count/6499*100 rounded 2dp",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_RECORD_LEVEL.csv",
+     "sha256": "fbb5f59286d308771d5db77b176abebab8ef851a896652a3807ebf6a4b335a8f"
+    }
+   ]
+  },
+  {
+   "item": "strict functional sides",
+   "value": 12998,
+   "expected": 12998,
+   "status": "MATCH",
+   "method": "row count",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_SIDE_LEVEL.csv",
+     "sha256": "7704e743610492961ee5e7342595096cc8bfaa500dbd1d9684e70c72a4d8574a"
+    }
+   ]
+  },
+  {
+   "item": "stage1 resolved sides",
+   "value": 4079,
+   "expected": 4079,
+   "status": "MATCH",
+   "method": "count resolution_stage",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_SIDE_LEVEL.csv",
+     "sha256": "7704e743610492961ee5e7342595096cc8bfaa500dbd1d9684e70c72a4d8574a"
+    }
+   ]
+  },
+  {
+   "item": "stage2-eligible sides (12998-4079)",
+   "value": 8919,
+   "expected": 8919,
+   "status": "MATCH",
+   "method": "difference",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_SIDE_LEVEL.csv",
+     "sha256": "7704e743610492961ee5e7342595096cc8bfaa500dbd1d9684e70c72a4d8574a"
+    }
+   ]
+  },
+  {
+   "item": "stage2 accepted sides",
+   "value": 4672,
+   "expected": 4672,
+   "status": "MATCH",
+   "method": "count resolution_stage",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_SIDE_LEVEL.csv",
+     "sha256": "7704e743610492961ee5e7342595096cc8bfaa500dbd1d9684e70c72a4d8574a"
+    }
+   ]
+  },
+  {
+   "item": "mapped sides",
+   "value": 8751,
+   "expected": 8751,
+   "status": "MATCH",
+   "method": "count final_status",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_SIDE_LEVEL.csv",
+     "sha256": "7704e743610492961ee5e7342595096cc8bfaa500dbd1d9684e70c72a4d8574a"
+    }
+   ]
+  },
+  {
+   "item": "unmapped sides",
+   "value": 4247,
+   "expected": 4247,
+   "status": "MATCH",
+   "method": "12998-8751",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_SIDE_LEVEL.csv",
+     "sha256": "7704e743610492961ee5e7342595096cc8bfaa500dbd1d9684e70c72a4d8574a"
+    }
+   ]
+  },
+  {
+   "item": "mapped share % (manuscript 67.3)",
+   "value": 67.3,
+   "expected": 67.3,
+   "status": "MATCH",
+   "method": "rounded 1dp",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_SIDE_LEVEL.csv",
+     "sha256": "7704e743610492961ee5e7342595096cc8bfaa500dbd1d9684e70c72a4d8574a"
+    }
+   ]
+  },
+  {
+   "item": "semantic review sides",
+   "value": 3862,
+   "expected": 3862,
+   "status": "MATCH",
+   "method": "count final_status",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_SIDE_LEVEL.csv",
+     "sha256": "7704e743610492961ee5e7342595096cc8bfaa500dbd1d9684e70c72a4d8574a"
+    }
+   ]
+  },
+  {
+   "item": "technical review sides",
+   "value": 164,
+   "expected": 164,
+   "status": "MATCH",
+   "method": "count final_status",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_SIDE_LEVEL.csv",
+     "sha256": "7704e743610492961ee5e7342595096cc8bfaa500dbd1d9684e70c72a4d8574a"
+    }
+   ]
+  },
+  {
+   "item": "insufficient-evidence sides",
+   "value": 221,
+   "expected": 221,
+   "status": "MATCH",
+   "method": "count final_status",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_SIDE_LEVEL.csv",
+     "sha256": "7704e743610492961ee5e7342595096cc8bfaa500dbd1d9684e70c72a4d8574a"
+    }
+   ]
+  },
+  {
+   "item": "eligible: left side in AI families, right side in Decision families",
+   "value": true,
+   "expected": true,
+   "status": "MATCH",
+   "method": "membership check",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_RECORD_LEVEL.csv",
+     "sha256": "fbb5f59286d308771d5db77b176abebab8ef851a896652a3807ebf6a4b335a8f"
+    },
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\10_DOCUMENT_DEDUP_MATRIX\\matrix_v1_20260918T132505Z\\AI_FAMILY_MARGINALS.csv",
+     "sha256": "67f31f9fa709a45fec02a74bd054e862e5870b7e40fd7c98ff13ff7491c181d4"
+    }
+   ]
+  },
+  {
+   "item": "AI families x Decision families",
+   "value": [
+    10,
+    12,
+    120
+   ],
+   "expected": [
+    10,
+    12,
+    120
+   ],
+   "status": "MATCH",
+   "method": "count",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\10_DOCUMENT_DEDUP_MATRIX\\matrix_v1_20260918T132505Z\\AI_FAMILY_MARGINALS.csv",
+     "sha256": "67f31f9fa709a45fec02a74bd054e862e5870b7e40fd7c98ff13ff7491c181d4"
+    },
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\10_DOCUMENT_DEDUP_MATRIX\\matrix_v1_20260918T132505Z\\DECISION_FAMILY_MARGINALS.csv",
+     "sha256": "6efe2c9862dbcd5c180aef63c6eaed6b4e545b52a3bea677ad6d85d0cbd47149"
+    }
+   ]
+  },
+  {
+   "item": "document-level dedup edges M (recomputed)",
+   "value": 2180,
+   "expected": 2180,
+   "status": "MATCH",
+   "method": "distinct (doc, AI fam, Dec fam)",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_RECORD_LEVEL.csv",
+     "sha256": "fbb5f59286d308771d5db77b176abebab8ef851a896652a3807ebf6a4b335a8f"
+    }
+   ]
+  },
+  {
+   "item": "collapsed duplicate records",
+   "value": 945,
+   "expected": 945,
+   "status": "MATCH",
+   "method": "3125 - 2180",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_RECORD_LEVEL.csv",
+     "sha256": "fbb5f59286d308771d5db77b176abebab8ef851a896652a3807ebf6a4b335a8f"
+    }
+   ]
+  },
+  {
+   "item": "frozen DOCUMENT_PAIR_EDGES_DEDUP.csv == recomputed edge set",
+   "value": [
+    2180,
+    true
+   ],
+   "expected": [
+    2180,
+    true
+   ],
+   "status": "MATCH",
+   "method": "set equality",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\10_DOCUMENT_DEDUP_MATRIX\\matrix_v1_20260918T132505Z\\DOCUMENT_PAIR_EDGES_DEDUP.csv",
+     "sha256": "3ba370c1804960ed35880f87172114e2c14af98e2691848f6306f5fe5b1715a2"
+    }
+   ]
+  },
+  {
+   "item": "frozen edge source_record_count sums to 3125",
+   "value": 3125,
+   "expected": 3125,
+   "status": "MATCH",
+   "method": "sum",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\10_DOCUMENT_DEDUP_MATRIX\\matrix_v1_20260918T132505Z\\DOCUMENT_PAIR_EDGES_DEDUP.csv",
+     "sha256": "3ba370c1804960ed35880f87172114e2c14af98e2691848f6306f5fe5b1715a2"
+    }
+   ]
+  },
+  {
+   "item": "11_CELL_RESULTS_ALL_120 rows",
+   "value": 120,
+   "expected": 120,
+   "status": "MATCH",
+   "method": "row count",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\14_MANUSCRIPT_DATA_PACK\\data_pack_v1_20260922T010012Z\\11_CELL_RESULTS_ALL_120.csv",
+     "sha256": "b1f54c5684cca0ad9c688343ff8d5ccaef845d1f28b340fb773e82de64aed7b2"
+    }
+   ]
+  },
+  {
+   "item": "120 cell observed == recomputed from edges",
+   "value": true,
+   "expected": true,
+   "status": "MATCH",
+   "method": "per-cell compare",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\14_MANUSCRIPT_DATA_PACK\\data_pack_v1_20260922T010012Z\\11_CELL_RESULTS_ALL_120.csv",
+     "sha256": "b1f54c5684cca0ad9c688343ff8d5ccaef845d1f28b340fb773e82de64aed7b2"
+    },
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_RECORD_LEVEL.csv",
+     "sha256": "fbb5f59286d308771d5db77b176abebab8ef851a896652a3807ebf6a4b335a8f"
+    }
+   ]
+  },
+  {
+   "item": "120 cell k_a, k_d, M == recomputed",
+   "value": true,
+   "expected": true,
+   "status": "MATCH",
+   "method": "per-cell compare",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\14_MANUSCRIPT_DATA_PACK\\data_pack_v1_20260922T010012Z\\11_CELL_RESULTS_ALL_120.csv",
+     "sha256": "b1f54c5684cca0ad9c688343ff8d5ccaef845d1f28b340fb773e82de64aed7b2"
+    }
+   ]
+  },
+  {
+   "item": "max |E_frozen - k_a*k_d/M|",
+   "value": true,
+   "expected": true,
+   "status": "MATCH",
+   "method": "max abs diff = 0.000e+00",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\14_MANUSCRIPT_DATA_PACK\\data_pack_v1_20260922T010012Z\\11_CELL_RESULTS_ALL_120.csv",
+     "sha256": "b1f54c5684cca0ad9c688343ff8d5ccaef845d1f28b340fb773e82de64aed7b2"
+    }
+   ]
+  },
+  {
+   "item": "max |O/E_frozen - O/E_recomputed|",
+   "value": true,
+   "expected": true,
+   "status": "MATCH",
+   "method": "max abs diff = 0.000e+00",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\14_MANUSCRIPT_DATA_PACK\\data_pack_v1_20260922T010012Z\\11_CELL_RESULTS_ALL_120.csv",
+     "sha256": "b1f54c5684cca0ad9c688343ff8d5ccaef845d1f28b340fb773e82de64aed7b2"
+    }
+   ]
+  },
+  {
+   "item": "11 OBSERVED_MATRIX_10X12 == recomputed",
+   "value": true,
+   "expected": true,
+   "status": "MATCH",
+   "method": "per-cell compare",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\11_NULL_MODEL_NETWORK\\null_model_v1_20260918T132933Z\\OBSERVED_MATRIX_10X12.csv",
+     "sha256": "8d71118e9aa32ee94c023019e04992b8f6ba28350961afc95febfb9c76a79b7a"
+    }
+   ]
+  },
+  {
+   "item": "primary q<=.05 cells",
+   "value": 47,
+   "expected": 47,
+   "status": "MATCH",
+   "method": "count q_bh_two_sided<=0.05",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\14_MANUSCRIPT_DATA_PACK\\data_pack_v1_20260922T010012Z\\11_CELL_RESULTS_ALL_120.csv",
+     "sha256": "b1f54c5684cca0ad9c688343ff8d5ccaef845d1f28b340fb773e82de64aed7b2"
+    }
+   ]
+  },
+  {
+   "item": "primary q<=.01 cells",
+   "value": 34,
+   "expected": 34,
+   "status": "MATCH",
+   "method": "count q_bh_two_sided<=0.01",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\14_MANUSCRIPT_DATA_PACK\\data_pack_v1_20260922T010012Z\\11_CELL_RESULTS_ALL_120.csv",
+     "sha256": "b1f54c5684cca0ad9c688343ff8d5ccaef845d1f28b340fb773e82de64aed7b2"
+    }
+   ]
+  },
+  {
+   "item": "BH(p_two_sided) re-adjustment == frozen q",
+   "value": true,
+   "expected": true,
+   "status": "MATCH",
+   "method": "max abs diff = 0.000e+00",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\14_MANUSCRIPT_DATA_PACK\\data_pack_v1_20260922T010012Z\\11_CELL_RESULTS_ALL_120.csv",
+     "sha256": "b1f54c5684cca0ad9c688343ff8d5ccaef845d1f28b340fb773e82de64aed7b2"
+    }
+   ]
+  },
+  {
+   "item": "robust core recomputed (4 q<=.05 + same direction)",
+   "value": [
+    32,
+    16,
+    16
+   ],
+   "expected": [
+    32,
+    16,
+    16
+   ],
+   "status": "MATCH",
+   "method": "rule applied to frozen per-method q/direction",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\12_ROBUSTNESS_SENSITIVITY\\robustness_v1_20260918T133618Z\\ROBUSTNESS_COMPARISON_120.csv",
+     "sha256": "1e30bf064887950ca9eef360b3c050c8d4db2b681dd163e607901872acdbfcb5"
+    }
+   ]
+  },
+  {
+   "item": "ROBUSTNESS_COMPARISON dedup_observed == recomputed",
+   "value": true,
+   "expected": true,
+   "status": "MATCH",
+   "method": "per-cell",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\12_ROBUSTNESS_SENSITIVITY\\robustness_v1_20260918T133618Z\\ROBUSTNESS_COMPARISON_120.csv",
+     "sha256": "1e30bf064887950ca9eef360b3c050c8d4db2b681dd163e607901872acdbfcb5"
+    }
+   ]
+  },
+  {
+   "item": "ROBUSTNESS_COMPARISON raw_observed == recomputed record counts",
+   "value": true,
+   "expected": true,
+   "status": "MATCH",
+   "method": "per-cell",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\12_ROBUSTNESS_SENSITIVITY\\robustness_v1_20260918T133618Z\\ROBUSTNESS_COMPARISON_120.csv",
+     "sha256": "1e30bf064887950ca9eef360b3c050c8d4db2b681dd163e607901872acdbfcb5"
+    },
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_RECORD_LEVEL.csv",
+     "sha256": "fbb5f59286d308771d5db77b176abebab8ef851a896652a3807ebf6a4b335a8f"
+    }
+   ]
+  },
+  {
+   "item": "FINAL_ROBUST_CORE_32 == recomputed robust set (with direction)",
+   "value": true,
+   "expected": true,
+   "status": "MATCH",
+   "method": "dict equality",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\13_RESULTS_FREEZE\\results_freeze_v1_20260919T080120Z\\FINAL_ROBUST_CORE_32.csv",
+     "sha256": "a43b4b5897bb8b1dabfe251aa52b95da8f35b6951c98ada7c92663291770bd50"
+    }
+   ]
+  },
+  {
+   "item": "FINAL_ROBUST_DEPLETED/ENRICHED partition",
+   "value": [
+    16,
+    16,
+    true,
+    true
+   ],
+   "expected": [
+    16,
+    16,
+    true,
+    true
+   ],
+   "status": "MATCH",
+   "method": "set ops",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\13_RESULTS_FREEZE\\results_freeze_v1_20260919T080120Z\\FINAL_ROBUST_DEPLETED.csv",
+     "sha256": "6e25d75c0504547e41871aad6b1927f6165856d5cb7ccb22321294e17ac10e6a"
+    },
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\13_RESULTS_FREEZE\\results_freeze_v1_20260919T080120Z\\FINAL_ROBUST_ENRICHED.csv",
+     "sha256": "35be0dfb4cb5d936f0499bbc57a312567d22a4b83a5f376de15486178aee1349"
+    }
+   ]
+  },
+  {
+   "item": "FINAL_ROBUST_STATUS_MATRIX == recomputed",
+   "value": true,
+   "expected": true,
+   "status": "MATCH",
+   "method": "per-cell",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\13_RESULTS_FREEZE\\results_freeze_v1_20260919T080120Z\\FINAL_ROBUST_STATUS_MATRIX_10X12.csv",
+     "sha256": "87febed538abc5dda6bccbdb7ea239ff8c8676cfc3620c082c0b4db1cf12ad84"
+    }
+   ]
+  },
+  {
+   "item": "11_CELL_RESULTS final_result_class == recomputed",
+   "value": true,
+   "expected": true,
+   "status": "MATCH",
+   "method": "per-cell",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\14_MANUSCRIPT_DATA_PACK\\data_pack_v1_20260922T010012Z\\11_CELL_RESULTS_ALL_120.csv",
+     "sha256": "b1f54c5684cca0ad9c688343ff8d5ccaef845d1f28b340fb773e82de64aed7b2"
+    }
+   ]
+  },
+  {
+   "item": "13 run 075633Z core rows == 080120Z on all shared columns",
+   "value": [
+    32,
+    true
+   ],
+   "expected": [
+    32,
+    true
+   ],
+   "status": "MATCH",
+   "method": "row/column compare; 080120Z adds observed_minus_expected",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\13_RESULTS_FREEZE\\results_freeze_v1_20260919T075633Z\\FINAL_ROBUST_CORE_32.csv",
+     "sha256": "5c0b22c401a77b65fd1c1311a7a83acd2ae4e64e5d38533be792e6273fbc718e"
+    },
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\13_RESULTS_FREEZE\\results_freeze_v1_20260919T080120Z\\FINAL_ROBUST_CORE_32.csv",
+     "sha256": "a43b4b5897bb8b1dabfe251aa52b95da8f35b6951c98ada7c92663291770bd50"
+    }
+   ]
+  },
+  {
+   "item": "G01-G16 set == V5 16 robust depleted",
+   "value": [
+    16,
+    true
+   ],
+   "expected": [
+    16,
+    true
+   ],
+   "status": "MATCH",
+   "method": "set equality",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\02_STUDY1_FREEZE\\02_STUDY1_FREEZE_V1_8_1\\repo\\11_Priority_Gaps_Frozen_Export_G01_G16_v1_0_20261009.csv",
+     "sha256": "76a2a00c078ee10168e1f6aece6c26b7507cede0019045528f1fd8695d29209d"
+    },
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\13_RESULTS_FREEZE\\results_freeze_v1_20260919T080120Z\\FINAL_ROBUST_DEPLETED.csv",
+     "sha256": "6e25d75c0504547e41871aad6b1927f6165856d5cb7ccb22321294e17ac10e6a"
+    }
+   ]
+  },
+  {
+   "item": "G01-G16 per-G O, k_a, k_d, E, O/E(4dp), null mean, 4 q (4dp / '<.0001') == V5",
+   "value": true,
+   "expected": true,
+   "status": "MATCH",
+   "method": "per-row compare",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\02_STUDY1_FREEZE\\02_STUDY1_FREEZE_V1_8_1\\repo\\11_Priority_Gaps_Frozen_Export_G01_G16_v1_0_20261009.csv",
+     "sha256": "76a2a00c078ee10168e1f6aece6c26b7507cede0019045528f1fd8695d29209d"
+    },
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\14_MANUSCRIPT_DATA_PACK\\data_pack_v1_20260922T010012Z\\11_CELL_RESULTS_ALL_120.csv",
+     "sha256": "b1f54c5684cca0ad9c688343ff8d5ccaef845d1f28b340fb773e82de64aed7b2"
+    }
+   ]
+  },
+  {
+   "item": "132 CSV G rows: O, E, O/E == V5 recomputed (and cell in V5 depleted set)",
+   "value": [
+    16,
+    true
+   ],
+   "expected": [
+    16,
+    true
+   ],
+   "status": "MATCH",
+   "method": "per-row compare",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\00_CURRENT\\02_STUDY1_FREEZE\\02_STUDY1_FREEZE_V1_8_1\\repo\\claude\\r14_merge_v1_8_1_study1_freeze\\current_artifacts\\132_GAP_TO_MECHANISM_TRACEABILITY_MATRIX_v1_8_1.csv",
+     "sha256": "6c7d350960a411be7e1e16d6f70c1ae25ea8f3af5c62035d3b2e2b7e4e35cf5c"
+    },
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_RECORD_LEVEL.csv",
+     "sha256": "fbb5f59286d308771d5db77b176abebab8ef851a896652a3807ebf6a4b335a8f"
+    }
+   ]
+  },
+  {
+   "item": "W ROBUST_CORE_LOCAL_SENSITIVITY official_* (120 rows): categorical/count mismatches",
+   "value": [
+    120,
+    0
+   ],
+   "expected": [
+    120,
+    0
+   ],
+   "status": "MATCH",
+   "method": "per-cell compare of 12 columns",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\03_R14_STUDY1\\01_SOURCE_CLOSURE_V1_8\\02_V9_HUMAN_VALIDATION\\20260929_V9_HUMAN_VALIDATION\\ROBUST_CORE_LOCAL_SENSITIVITY.csv",
+     "sha256": "e3166ee183e18f340c539b983108e2c972d18b916672a62510a25638db8b5b59"
+    },
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\12_ROBUSTNESS_SENSITIVITY\\robustness_v1_20260918T133618Z\\ROBUSTNESS_COMPARISON_120.csv",
+     "sha256": "1e30bf064887950ca9eef360b3c050c8d4db2b681dd163e607901872acdbfcb5"
+    },
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\14_MANUSCRIPT_DATA_PACK\\data_pack_v1_20260922T010012Z\\11_CELL_RESULTS_ALL_120.csv",
+     "sha256": "b1f54c5684cca0ad9c688343ff8d5ccaef845d1f28b340fb773e82de64aed7b2"
+    }
+   ]
+  },
+  {
+   "item": "W official q columns max abs diff vs V5",
+   "value": true,
+   "expected": true,
+   "status": "MATCH",
+   "method": "max abs diff: {\"official_main_q\": 0.0, \"official_exact_q\": 0.0, \"official_document_q\": 0.0, \"official_raw_q\": 0.0}",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\03_R14_STUDY1\\01_SOURCE_CLOSURE_V1_8\\02_V9_HUMAN_VALIDATION\\20260929_V9_HUMAN_VALIDATION\\ROBUST_CORE_LOCAL_SENSITIVITY.csv",
+     "sha256": "e3166ee183e18f340c539b983108e2c972d18b916672a62510a25638db8b5b59"
+    },
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\12_ROBUSTNESS_SENSITIVITY\\robustness_v1_20260918T133618Z\\ROBUSTNESS_COMPARISON_120.csv",
+     "sha256": "1e30bf064887950ca9eef360b3c050c8d4db2b681dd163e607901872acdbfcb5"
+    }
+   ]
+  },
+  {
+   "item": "W official_core_member YES count",
+   "value": 32,
+   "expected": 32,
+   "status": "MATCH",
+   "method": "count",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\03_R14_STUDY1\\01_SOURCE_CLOSURE_V1_8\\02_V9_HUMAN_VALIDATION\\20260929_V9_HUMAN_VALIDATION\\ROBUST_CORE_LOCAL_SENSITIVITY.csv",
+     "sha256": "e3166ee183e18f340c539b983108e2c972d18b916672a62510a25638db8b5b59"
+    }
+   ]
+  },
+  {
+   "item": "source documents",
+   "value": 2118,
+   "expected": 2118,
+   "status": "MATCH",
+   "method": "count documents",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\LocalCorpusWorkbench\\v5_production_app\\data\\workbench.sqlite",
+     "sha256": "367e588ccf5a407c5d3e5ded474377cf3e0aa0fba693ad60f178174473b13cee"
+    }
+   ]
+  },
+  {
+   "item": "source_group AI / DECISION",
+   "value": [
+    1199,
+    919
+   ],
+   "expected": [
+    1199,
+    919
+   ],
+   "status": "MATCH",
+   "method": "count",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\LocalCorpusWorkbench\\v5_production_app\\data\\workbench.sqlite",
+     "sha256": "367e588ccf5a407c5d3e5ded474377cf3e0aa0fba693ad60f178174473b13cee"
+    }
+   ]
+  },
+  {
+   "item": "documents status Done/Skipped/Failed",
+   "value": [
+    1729,
+    388,
+    1
+   ],
+   "expected": [
+    1729,
+    388,
+    1
+   ],
+   "status": "MATCH",
+   "method": "count",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\LocalCorpusWorkbench\\v5_production_app\\data\\workbench.sqlite",
+     "sha256": "367e588ccf5a407c5d3e5ded474377cf3e0aa0fba693ad60f178174473b13cee"
+    }
+   ]
+  },
+  {
+   "item": "pages",
+   "value": 47402,
+   "expected": 47402,
+   "status": "MATCH",
+   "method": "count",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\LocalCorpusWorkbench\\v5_production_app\\data\\workbench.sqlite",
+     "sha256": "367e588ccf5a407c5d3e5ded474377cf3e0aa0fba693ad60f178174473b13cee"
+    }
+   ]
+  },
+  {
+   "item": "section spans",
+   "value": 9984,
+   "expected": 9984,
+   "status": "MATCH",
+   "method": "count",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\LocalCorpusWorkbench\\v5_production_app\\data\\workbench.sqlite",
+     "sha256": "367e588ccf5a407c5d3e5ded474377cf3e0aa0fba693ad60f178174473b13cee"
+    }
+   ]
+  },
+  {
+   "item": "candidates",
+   "value": 26501,
+   "expected": 26501,
+   "status": "MATCH",
+   "method": "count",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\LocalCorpusWorkbench\\v5_production_app\\data\\workbench.sqlite",
+     "sha256": "367e588ccf5a407c5d3e5ded474377cf3e0aa0fba693ad60f178174473b13cee"
+    }
+   ]
+  },
+  {
+   "item": "semantic records",
+   "value": 26501,
+   "expected": 26501,
+   "status": "MATCH",
+   "method": "count",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\LocalCorpusWorkbench\\v5_production_app\\data\\workbench.sqlite",
+     "sha256": "367e588ccf5a407c5d3e5ded474377cf3e0aa0fba693ad60f178174473b13cee"
+    }
+   ]
+  },
+  {
+   "item": "documents with semantic records",
+   "value": 1729,
+   "expected": 1729,
+   "status": "MATCH",
+   "method": "distinct document_id",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\LocalCorpusWorkbench\\v5_production_app\\data\\workbench.sqlite",
+     "sha256": "367e588ccf5a407c5d3e5ded474377cf3e0aa0fba693ad60f178174473b13cee"
+    }
+   ]
+  },
+  {
+   "item": "strict retained (passed_strict_filter=1)",
+   "value": 6499,
+   "expected": 6499,
+   "status": "MATCH",
+   "method": "count",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\LocalCorpusWorkbench\\v5_production_app\\data\\workbench.sqlite",
+     "sha256": "367e588ccf5a407c5d3e5ded474377cf3e0aa0fba693ad60f178174473b13cee"
+    }
+   ]
+  },
+  {
+   "item": "strict excluded",
+   "value": 20002,
+   "expected": 20002,
+   "status": "MATCH",
+   "method": "count",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\LocalCorpusWorkbench\\v5_production_app\\data\\workbench.sqlite",
+     "sha256": "367e588ccf5a407c5d3e5ded474377cf3e0aa0fba693ad60f178174473b13cee"
+    }
+   ]
+  },
+  {
+   "item": "excluded: REQUIRES_HUMAN_REVIEW / RELATION_TYPE_AMBIGUOUS",
+   "value": [
+    19942,
+    60
+   ],
+   "expected": [
+    19942,
+    60
+   ],
+   "status": "MATCH",
+   "method": "count",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\LocalCorpusWorkbench\\v5_production_app\\data\\workbench.sqlite",
+     "sha256": "367e588ccf5a407c5d3e5ded474377cf3e0aa0fba693ad60f178174473b13cee"
+    }
+   ]
+  },
+  {
+   "item": "source-DB strict record_id set == V5 analytical freeze record set",
+   "value": true,
+   "expected": true,
+   "status": "MATCH",
+   "method": "set equality",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\LocalCorpusWorkbench\\v5_production_app\\data\\workbench.sqlite",
+     "sha256": "367e588ccf5a407c5d3e5ded474377cf3e0aa0fba693ad60f178174473b13cee"
+    },
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\09_ANALYTICAL_FREEZE\\analytical_freeze_v2_20260918T132206Z\\ANALYTICAL_FREEZE_RECORD_LEVEL.csv",
+     "sha256": "fbb5f59286d308771d5db77b176abebab8ef851a896652a3807ebf6a4b335a8f"
+    }
+   ]
+  },
+  {
+   "item": "reader (agent) outputs",
+   "value": 5858,
+   "expected": 5858,
+   "status": "MATCH",
+   "method": "count",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\LocalCorpusWorkbench\\v5_production_app\\data\\workbench.sqlite",
+     "sha256": "367e588ccf5a407c5d3e5ded474377cf3e0aa0fba693ad60f178174473b13cee"
+    }
+   ]
+  },
+  {
+   "item": "integrator (controller) outputs",
+   "value": 2117,
+   "expected": 2117,
+   "status": "MATCH",
+   "method": "count",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\LocalCorpusWorkbench\\v5_production_app\\data\\workbench.sqlite",
+     "sha256": "367e588ccf5a407c5d3e5ded474377cf3e0aa0fba693ad60f178174473b13cee"
+    }
+   ]
+  },
+  {
+   "item": "strict by source group AI k/n, DECISION k/n",
+   "value": [
+    5620,
+    20621,
+    879,
+    5880
+   ],
+   "expected": [
+    5620,
+    20621,
+    879,
+    5880
+   ],
+   "status": "MATCH",
+   "method": "join documents.source_group",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\LocalCorpusWorkbench\\v5_production_app\\data\\workbench.sqlite",
+     "sha256": "367e588ccf5a407c5d3e5ded474377cf3e0aa0fba693ad60f178174473b13cee"
+    }
+   ]
+  },
+  {
+   "item": "Stage2 grounding EXACT/NORM/UNGROUNDED/NOT_REQUIRED/SCHEMA_INVALID (data pack only)",
+   "value": [
+    6916,
+    6818,
+    2811,
+    1087,
+    349
+   ],
+   "expected": [
+    6916,
+    6818,
+    2811,
+    1087,
+    349
+   ],
+   "status": "MATCH",
+   "method": "read from hash-verified data pack; NOT recomputed from sidecar",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\14_MANUSCRIPT_DATA_PACK\\data_pack_v1_20260922T010012Z\\03_STAGE2_GROUNDING_DISTRIBUTION.csv",
+     "sha256": "14c593171d631ff3a6ff91e769dc5ff74539de3850227f01f7e26a1c31d94731"
+    }
+   ]
+  },
+  {
+   "item": "01_ATTRITION_AND_GATES core n values",
+   "value": [
+    26501,
+    6499,
+    12998,
+    4079,
+    8919,
+    4672,
+    3125,
+    1104,
+    783,
+    2180,
+    120,
+    47,
+    34,
+    32
+   ],
+   "expected": [
+    26501,
+    6499,
+    12998,
+    4079,
+    8919,
+    4672,
+    3125,
+    1104,
+    783,
+    2180,
+    120,
+    47,
+    34,
+    32
+   ],
+   "status": "MATCH",
+   "method": "read",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\14_MANUSCRIPT_DATA_PACK\\data_pack_v1_20260922T010012Z\\01_ATTRITION_AND_GATES.csv",
+     "sha256": "73a4391cc3def53080c3671ffeac90075c49fbbfac381bf50698a3387626a82b"
+    }
+   ]
+  },
+  {
+   "item": "14a 26_OBSERVED_EXPECTED_RATIO_MATRIX_10X12.csv value-equivalent to 14b/stage copy (<=1e-6 rel; spreadsheet re-save precision)",
+   "value": true,
+   "expected": true,
+   "status": "MATCH",
+   "method": "max rel diff = 0.000e+00; categorical equal = True",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\14_MANUSCRIPT_DATA_PACK\\data_pack_v1_20260919T081003Z\\26_OBSERVED_EXPECTED_RATIO_MATRIX_10X12.csv",
+     "sha256": "fa222c2e454e465f530fd293ca2e419cd7204baa6eef537e11a004a3a3178d77"
+    },
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\14_MANUSCRIPT_DATA_PACK\\data_pack_v1_20260922T010012Z\\26_OBSERVED_EXPECTED_RATIO_MATRIX_10X12.csv",
+     "sha256": "74e48c12eb27faaa5d88404ccf10689a58d21396aff078988845559708734a52"
+    }
+   ]
+  },
+  {
+   "item": "14a 33_EXACT_HYPERGEOMETRIC_RESULTS_120.csv value-equivalent to 14b/stage copy (<=1e-6 rel; spreadsheet re-save precision)",
+   "value": true,
+   "expected": true,
+   "status": "MATCH",
+   "method": "max rel diff = 4.995e-08; categorical equal = True",
+   "sources": [
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\14_MANUSCRIPT_DATA_PACK\\data_pack_v1_20260919T081003Z\\33_EXACT_HYPERGEOMETRIC_RESULTS_120.csv",
+     "sha256": "6e9b87536b8aea73088501c6d0675779119dd67b8de5b05ac23ec7647503a248"
+    },
+    {
+     "path": "C:\\NTUST_PAPER\\outputs\\10_CANONICAL_EVIDENCE\\04_V5_PRODUCTION_FREEZE\\20260911_AI_DECISION_V5_PRODUCTION\\14_MANUSCRIPT_DATA_PACK\\data_pack_v1_20260922T010012Z\\33_EXACT_HYPERGEOMETRIC_RESULTS_120.csv",
+     "sha256": "8538fc82447aaaed6d850954c5b1fb272a8f767183162e92a55a5327d66f2516"
+    }
+   ]
+  }
+ ],
+ "extra": {
+  "strict_relation_type_share_pct": {
+   "ENABLES": 37.7,
+   "SUPPORTS": 34.33,
+   "CONSTRAINS": 11.29,
+   "INFORMS": 7.82,
+   "GOVERNS": 6.6,
+   "TRANSFORMS": 2.18,
+   "ASSOCIATED_WITH": 0.08
+  },
+  "G_detail": [
+   {
+    "G": "G01",
+    "ai": "HUMAN_AUGMENTATION",
+    "dec": "PREDICTION_DIAGNOSIS",
+    "O_v5": 3,
+    "O_G": 3.0,
+    "ka_v5": 166,
+    "ka_G": 166.0,
+    "kd_v5": 340,
+    "kd_G": 340.0,
+    "E_v5": 25.889908256880734,
+    "E_G": 25.889908256880734,
+    "OE_v5": 0.1159,
+    "OE_G": 0.1159,
+    "null_mean_v5": 25.9316,
+    "null_mean_G": 25.9316,
+    "q_main_v5": 0.0009229846246144618,
+    "q_main_G": "0.0009",
+    "q_exact_v5": 1.897742180590278e-08,
+    "q_exact_G": "<0.0001",
+    "q_doc_v5": 0.0023995200959808036,
+    "q_doc_G": "0.0024",
+    "q_raw_v5": 3.661283072515831e-15,
+    "q_raw_G": "<0.0001",
+    "match": true
+   },
+   {
+    "G": "G02",
+    "ai": "PREDICTION_RISK_ESTIMATION",
+    "dec": "HUMAN_REVIEW_ACCOUNTABILITY",
+    "O_v5": 6,
+    "O_G": 6.0,
+    "ka_v5": 462,
+    "ka_G": 462.0,
+    "kd_v5": 212,
+    "kd_G": 212.0,
+    "E_v5": 44.928440366972474,
+    "E_G": 44.928440366972474,
+    "OE_v5": 0.1335,
+    "OE_G": 0.1335,
+    "null_mean_v5": 44.9377,
+    "null_mean_G": 44.9377,
+    "q_main_v5": 0.0009229846246144618,
+    "q_main_G": "0.0009",
+    "q_exact_v5": 2.4740396531941374e-14,
+    "q_exact_G": "<0.0001",
+    "q_doc_v5": 0.0023995200959808036,
+    "q_doc_G": "0.0024",
+    "q_raw_v5": 8.030310647637274e-28,
+    "q_raw_G": "<0.0001",
+    "match": true
+   },
+   {
+    "G": "G03",
+    "ai": "COORDINATION_EXECUTION",
+    "dec": "RISK_ASSESSMENT",
+    "O_v5": 3,
+    "O_G": 3.0,
+    "ka_v5": 219,
+    "ka_G": 219.0,
+    "kd_v5": 167,
+    "kd_G": 167.0,
+    "E_v5": 16.776605504587156,
+    "E_G": 16.776605504587156,
+    "OE_v5": 0.1788,
+    "OE_G": 0.1788,
+    "null_mean_v5": 16.7743,
+    "null_mean_G": 16.7743,
+    "q_main_v5": 0.0009229846246144618,
+    "q_main_G": "0.0009",
+    "q_exact_v5": 0.00015735408038876234,
+    "q_exact_G": "0.0002",
+    "q_doc_v5": 0.0023995200959808036,
+    "q_doc_G": "0.0024",
+    "q_raw_v5": 2.5721158815414057e-07,
+    "q_raw_G": "<0.0001",
+    "match": true
+   },
+   {
+    "G": "G04",
+    "ai": "GENERATION_SYNTHESIS",
+    "dec": "PREDICTION_DIAGNOSIS",
+    "O_v5": 7,
+    "O_G": 7.0,
+    "ka_v5": 245,
+    "ka_G": 245.0,
+    "kd_v5": 340,
+    "kd_G": 340.0,
+    "E_v5": 38.211009174311926,
+    "E_G": 38.211009174311926,
+    "OE_v5": 0.1832,
+    "OE_G": 0.1832,
+    "null_mean_v5": 38.2805,
+    "null_mean_G": 38.2805,
+    "q_main_v5": 0.0009229846246144618,
+    "q_main_G": "0.0009",
+    "q_exact_v5": 2.5862732525080917e-10,
+    "q_exact_G": "<0.0001",
+    "q_doc_v5": 0.004173078427792702,
+    "q_doc_G": "0.0042",
+    "q_raw_v5": 7.3284190339199835e-28,
+    "q_raw_G": "<0.0001",
+    "match": true
+   },
+   {
+    "G": "G05",
+    "ai": "EXPLANATION_ASSURANCE",
+    "dec": "ALLOCATION_PLANNING",
+    "O_v5": 7,
+    "O_G": 7.0,
+    "ka_v5": 279,
+    "ka_G": 279.0,
+    "kd_v5": 294,
+    "kd_G": 294.0,
+    "E_v5": 37.626605504587154,
+    "E_G": 37.626605504587154,
+    "OE_v5": 0.186,
+    "OE_G": 0.186,
+    "null_mean_v5": 37.6248,
+    "null_mean_G": 37.6248,
+    "q_main_v5": 0.0009229846246144618,
+    "q_main_G": "0.0009",
+    "q_exact_v5": 4.645452751363954e-10,
+    "q_exact_G": "<0.0001",
+    "q_doc_v5": 0.0023995200959808036,
+    "q_doc_G": "0.0024",
+    "q_raw_v5": 3.0968733534460662e-15,
+    "q_raw_G": "<0.0001",
+    "match": true
+   },
+   {
+    "G": "G06",
+    "ai": "EVALUATION_ASSESSMENT",
+    "dec": "PREDICTION_DIAGNOSIS",
+    "O_v5": 9,
+    "O_G": 9.0,
+    "ka_v5": 294,
+    "ka_G": 294.0,
+    "kd_v5": 340,
+    "kd_G": 340.0,
+    "E_v5": 45.85321100917431,
+    "E_G": 45.85321100917431,
+    "OE_v5": 0.1963,
+    "OE_G": 0.1963,
+    "null_mean_v5": 45.8768,
+    "null_mean_G": 45.8768,
+    "q_main_v5": 0.0009229846246144618,
+    "q_main_G": "0.0009",
+    "q_exact_v5": 5.7247697192593725e-12,
+    "q_exact_G": "<0.0001",
+    "q_doc_v5": 0.0023995200959808036,
+    "q_doc_G": "0.0024",
+    "q_raw_v5": 3.165702572285841e-29,
+    "q_raw_G": "<0.0001",
+    "match": true
+   },
+   {
+    "G": "G07",
+    "ai": "HUMAN_AUGMENTATION",
+    "dec": "EVALUATION_SELECTION",
+    "O_v5": 2,
+    "O_G": 2.0,
+    "ka_v5": 166,
+    "ka_G": 166.0,
+    "kd_v5": 128,
+    "kd_G": 128.0,
+    "E_v5": 9.746788990825689,
+    "E_G": 9.746788990825689,
+    "OE_v5": 0.2052,
+    "OE_G": 0.2052,
+    "null_mean_v5": 9.7418,
+    "null_mean_G": 9.7418,
+    "q_main_v5": 0.01969033865844185,
+    "q_main_G": "0.0197",
+    "q_exact_v5": 0.014715920458272708,
+    "q_exact_G": "0.0147",
+    "q_doc_v5": 0.030393921215756847,
+    "q_doc_G": "0.0304",
+    "q_raw_v5": 0.029002146512532304,
+    "q_raw_G": "0.0290",
+    "match": true
+   },
+   {
+    "G": "G08",
+    "ai": "RECOMMENDATION_OPTIMIZATION",
+    "dec": "HUMAN_REVIEW_ACCOUNTABILITY",
+    "O_v5": 8,
+    "O_G": 8.0,
+    "ka_v5": 373,
+    "ka_G": 373.0,
+    "kd_v5": 212,
+    "kd_G": 212.0,
+    "E_v5": 36.273394495412845,
+    "E_G": 36.273394495412845,
+    "OE_v5": 0.2205,
+    "OE_G": 0.2205,
+    "null_mean_v5": 36.2684,
+    "null_mean_G": 36.2684,
+    "q_main_v5": 0.0009229846246144618,
+    "q_main_G": "0.0009",
+    "q_exact_v5": 7.952359239558698e-09,
+    "q_exact_G": "<0.0001",
+    "q_doc_v5": 0.0023995200959808036,
+    "q_doc_G": "0.0024",
+    "q_raw_v5": 2.7182059233380525e-09,
+    "q_raw_G": "<0.0001",
+    "match": true
+   },
+   {
+    "G": "G09",
+    "ai": "PREDICTION_RISK_ESTIMATION",
+    "dec": "GOVERNANCE_OVERSIGHT",
+    "O_v5": 26,
+    "O_G": 26.0,
+    "ka_v5": 462,
+    "ka_G": 462.0,
+    "kd_v5": 420,
+    "kd_G": 420.0,
+    "E_v5": 89.0091743119266,
+    "E_G": 89.0091743119266,
+    "OE_v5": 0.2921,
+    "OE_G": 0.2921,
+    "null_mean_v5": 89.0183,
+    "null_mean_G": 89.0183,
+    "q_main_v5": 0.0009229846246144618,
+    "q_main_G": "0.0009",
+    "q_exact_v5": 1.5230493978340381e-18,
+    "q_exact_G": "<0.0001",
+    "q_doc_v5": 0.0023995200959808036,
+    "q_doc_G": "0.0024",
+    "q_raw_v5": 7.740920925309528e-62,
+    "q_raw_G": "<0.0001",
+    "match": true
+   },
+   {
+    "G": "G10",
+    "ai": "PREDICTION_RISK_ESTIMATION",
+    "dec": "EVALUATION_SELECTION",
+    "O_v5": 8,
+    "O_G": 8.0,
+    "ka_v5": 462,
+    "ka_G": 462.0,
+    "kd_v5": 128,
+    "kd_G": 128.0,
+    "E_v5": 27.126605504587157,
+    "E_G": 27.126605504587157,
+    "OE_v5": 0.2949,
+    "OE_G": 0.2949,
+    "null_mean_v5": 27.1753,
+    "null_mean_G": 27.1753,
+    "q_main_v5": 0.0009229846246144618,
+    "q_main_G": "0.0009",
+    "q_exact_v5": 1.811999163510789e-05,
+    "q_exact_G": "<0.0001",
+    "q_doc_v5": 0.005758848230353929,
+    "q_doc_G": "0.0058",
+    "q_raw_v5": 8.857636338709388e-13,
+    "q_raw_G": "<0.0001",
+    "match": true
+   },
+   {
+    "G": "G11",
+    "ai": "EVALUATION_ASSESSMENT",
+    "dec": "ALLOCATION_PLANNING",
+    "O_v5": 12,
+    "O_G": 12.0,
+    "ka_v5": 294,
+    "ka_G": 294.0,
+    "kd_v5": 294,
+    "kd_G": 294.0,
+    "E_v5": 39.64954128440367,
+    "E_G": 39.64954128440367,
+    "OE_v5": 0.3027,
+    "OE_G": 0.3027,
+    "null_mean_v5": 39.5883,
+    "null_mean_G": 39.5883,
+    "q_main_v5": 0.0009229846246144618,
+    "q_main_G": "0.0009",
+    "q_exact_v5": 1.5975549182884013e-07,
+    "q_exact_G": "<0.0001",
+    "q_doc_v5": 0.0023995200959808036,
+    "q_doc_G": "0.0024",
+    "q_raw_v5": 2.3118216958257678e-07,
+    "q_raw_G": "<0.0001",
+    "match": true
+   },
+   {
+    "G": "G12",
+    "ai": "PREDICTION_RISK_ESTIMATION",
+    "dec": "INFORMATION_ACQUISITION",
+    "O_v5": 21,
+    "O_G": 21.0,
+    "ka_v5": 462,
+    "ka_G": 462.0,
+    "kd_v5": 322,
+    "kd_G": 322.0,
+    "E_v5": 68.24036697247706,
+    "E_G": 68.24036697247706,
+    "OE_v5": 0.3077,
+    "OE_G": 0.3077,
+    "null_mean_v5": 68.2383,
+    "null_mean_G": 68.2383,
+    "q_main_v5": 0.0009229846246144618,
+    "q_main_G": "0.0009",
+    "q_exact_v5": 3.348693524253526e-13,
+    "q_exact_G": "<0.0001",
+    "q_doc_v5": 0.0023995200959808036,
+    "q_doc_G": "0.0024",
+    "q_raw_v5": 7.125311583199216e-27,
+    "q_raw_G": "<0.0001",
+    "match": true
+   },
+   {
+    "G": "G13",
+    "ai": "EXPLANATION_ASSURANCE",
+    "dec": "PREDICTION_DIAGNOSIS",
+    "O_v5": 15,
+    "O_G": 15.0,
+    "ka_v5": 279,
+    "ka_G": 279.0,
+    "kd_v5": 340,
+    "kd_G": 340.0,
+    "E_v5": 43.51376146788991,
+    "E_G": 43.51376146788991,
+    "OE_v5": 0.3447,
+    "OE_G": 0.3447,
+    "null_mean_v5": 43.4384,
+    "null_mean_G": 43.4384,
+    "q_main_v5": 0.0009229846246144618,
+    "q_main_G": "0.0009",
+    "q_exact_v5": 2.4861405302893463e-07,
+    "q_exact_G": "<0.0001",
+    "q_doc_v5": 0.0023995200959808036,
+    "q_doc_G": "0.0024",
+    "q_raw_v5": 3.8295881518280822e-22,
+    "q_raw_G": "<0.0001",
+    "match": true
+   },
+   {
+    "G": "G14",
+    "ai": "PREDICTION_RISK_ESTIMATION",
+    "dec": "GENERAL_DECISION_PROCESS",
+    "O_v5": 8,
+    "O_G": 8.0,
+    "ka_v5": 462,
+    "ka_G": 462.0,
+    "kd_v5": 97,
+    "kd_G": 97.0,
+    "E_v5": 20.556880733944954,
+    "E_G": 20.556880733944954,
+    "OE_v5": 0.3892,
+    "OE_G": 0.3892,
+    "null_mean_v5": 20.5363,
+    "null_mean_G": 20.5363,
+    "q_main_v5": 0.0044995500449955,
+    "q_main_G": "0.0045",
+    "q_exact_v5": 0.0032221725889042957,
+    "q_exact_G": "0.0032",
+    "q_doc_v5": 0.008887111466595569,
+    "q_doc_G": "0.0089",
+    "q_raw_v5": 1.2624525205763423e-05,
+    "q_raw_G": "<0.0001",
+    "match": true
+   },
+   {
+    "G": "G15",
+    "ai": "EXPLANATION_ASSURANCE",
+    "dec": "EVALUATION_SELECTION",
+    "O_v5": 7,
+    "O_G": 7.0,
+    "ka_v5": 279,
+    "ka_G": 279.0,
+    "kd_v5": 128,
+    "kd_G": 128.0,
+    "E_v5": 16.381651376146788,
+    "E_G": 16.381651376146788,
+    "OE_v5": 0.4273,
+    "OE_G": 0.4273,
+    "null_mean_v5": 16.4096,
+    "null_mean_G": 16.4096,
+    "q_main_v5": 0.020569371634265143,
+    "q_main_G": "0.0206",
+    "q_exact_v5": 0.023182888916409603,
+    "q_exact_G": "0.0232",
+    "q_doc_v5": 0.03870193703194844,
+    "q_doc_G": "0.0387",
+    "q_raw_v5": 0.014714891314166702,
+    "q_raw_G": "0.0147",
+    "match": true
+   },
+   {
+    "G": "G16",
+    "ai": "COORDINATION_EXECUTION",
+    "dec": "HUMAN_REVIEW_ACCOUNTABILITY",
+    "O_v5": 10,
+    "O_G": 10.0,
+    "ka_v5": 219,
+    "ka_G": 219.0,
+    "kd_v5": 212,
+    "kd_G": 212.0,
+    "E_v5": 21.29724770642202,
+    "E_G": 21.29724770642202,
+    "OE_v5": 0.4695,
+    "OE_G": 0.4695,
+    "null_mean_v5": 21.329,
+    "null_mean_G": 21.329,
+    "q_main_v5": 0.016863178547010162,
+    "q_main_G": "0.0169",
+    "q_exact_v5": 0.016783791950880877,
+    "q_exact_G": "0.0168",
+    "q_doc_v5": 0.013711543405604593,
+    "q_doc_G": "0.0137",
+    "q_raw_v5": 0.008631991735045147,
+    "q_raw_G": "0.0086",
+    "match": true
+   }
+  ],
+  "T132_detail": [
+   {
+    "G": "G01",
+    "O_132": 3.0,
+    "O_v5": 3,
+    "OE_132": 0.1159,
+    "OE_v5": 0.1159,
+    "match": true
+   },
+   {
+    "G": "G02",
+    "O_132": 6.0,
+    "O_v5": 6,
+    "OE_132": 0.1335,
+    "OE_v5": 0.1335,
+    "match": true
+   },
+   {
+    "G": "G03",
+    "O_132": 3.0,
+    "O_v5": 3,
+    "OE_132": 0.1788,
+    "OE_v5": 0.1788,
+    "match": true
+   },
+   {
+    "G": "G04",
+    "O_132": 7.0,
+    "O_v5": 7,
+    "OE_132": 0.1832,
+    "OE_v5": 0.1832,
+    "match": true
+   },
+   {
+    "G": "G05",
+    "O_132": 7.0,
+    "O_v5": 7,
+    "OE_132": 0.186,
+    "OE_v5": 0.186,
+    "match": true
+   },
+   {
+    "G": "G06",
+    "O_132": 9.0,
+    "O_v5": 9,
+    "OE_132": 0.1963,
+    "OE_v5": 0.1963,
+    "match": true
+   },
+   {
+    "G": "G07",
+    "O_132": 2.0,
+    "O_v5": 2,
+    "OE_132": 0.2052,
+    "OE_v5": 0.2052,
+    "match": true
+   },
+   {
+    "G": "G08",
+    "O_132": 8.0,
+    "O_v5": 8,
+    "OE_132": 0.2205,
+    "OE_v5": 0.2205,
+    "match": true
+   },
+   {
+    "G": "G09",
+    "O_132": 26.0,
+    "O_v5": 26,
+    "OE_132": 0.2921,
+    "OE_v5": 0.2921,
+    "match": true
+   },
+   {
+    "G": "G10",
+    "O_132": 8.0,
+    "O_v5": 8,
+    "OE_132": 0.2949,
+    "OE_v5": 0.2949,
+    "match": true
+   },
+   {
+    "G": "G11",
+    "O_132": 12.0,
+    "O_v5": 12,
+    "OE_132": 0.3027,
+    "OE_v5": 0.3027,
+    "match": true
+   },
+   {
+    "G": "G12",
+    "O_132": 21.0,
+    "O_v5": 21,
+    "OE_132": 0.3077,
+    "OE_v5": 0.3077,
+    "match": true
+   },
+   {
+    "G": "G13",
+    "O_132": 15.0,
+    "O_v5": 15,
+    "OE_132": 0.3447,
+    "OE_v5": 0.3447,
+    "match": true
+   },
+   {
+    "G": "G14",
+    "O_132": 8.0,
+    "O_v5": 8,
+    "OE_132": 0.3892,
+    "OE_v5": 0.3892,
+    "match": true
+   },
+   {
+    "G": "G15",
+    "O_132": 7.0,
+    "O_v5": 7,
+    "OE_132": 0.4273,
+    "OE_v5": 0.4273,
+    "match": true
+   },
+   {
+    "G": "G16",
+    "O_132": 10.0,
+    "O_v5": 10,
+    "OE_132": 0.4695,
+    "OE_v5": 0.4695,
+    "match": true
+   }
+  ],
+  "W_official_mismatch_counts": {},
+  "W_official_q_max_abs_diff": {
+   "official_main_q": 0,
+   "official_exact_q": 0,
+   "official_document_q": 0,
+   "official_raw_q": 0
+  }
+ },
+ "conflicts": []
+}
