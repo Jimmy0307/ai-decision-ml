@@ -1,0 +1,94 @@
+{
+  "label": "SIMULATED_ONLY",
+  "n_instances": 50,
+  "K_blocks": 4,
+  "N_candidates": 6,
+  "generator": "integer multilinear coefficients in [-5,5], theta* on 1/8 lattice, seeds 1000+s / 5000+s",
+  "candidate_set": "fixed (all robustly feasible); evidence reveals theta*_p exactly",
+  "summary": {
+    "eps_R=0.0*MMR0": {
+      "FULL": {
+        "mean_blocks": 4.0,
+        "mean_mmr_evals": 5.0,
+        "mean_final_mmr": 0.0,
+        "mean_realised_regret": 0.0,
+        "max_realised_regret": 0.0,
+        "decision_value_equals_full": 1.0
+      },
+      "VOI_VERTEX": {
+        "mean_blocks": 2.92,
+        "mean_mmr_evals": 20.72,
+        "mean_final_mmr": 0.0,
+        "mean_realised_regret": 0.0,
+        "max_realised_regret": 0.0,
+        "decision_value_equals_full": 1.0
+      },
+      "VOI_GRID8": {
+        "mean_blocks": 2.92,
+        "mean_mmr_evals": 79.52,
+        "mean_final_mmr": 0.0,
+        "mean_realised_regret": 0.0,
+        "max_realised_regret": 0.0,
+        "decision_value_equals_full": 1.0
+      },
+      "VOI_EXACT": {
+        "mean_blocks": 2.92,
+        "mean_mmr_evals": 2001.7,
+        "mean_final_mmr": 0.0,
+        "mean_realised_regret": 0.0,
+        "max_realised_regret": 0.0,
+        "decision_value_equals_full": 1.0
+      },
+      "RANDOM": {
+        "mean_blocks": 3.26,
+        "mean_mmr_evals": 4.26,
+        "mean_final_mmr": 0.0,
+        "mean_realised_regret": 0.0,
+        "max_realised_regret": 0.0,
+        "decision_value_equals_full": 1.0
+      }
+    },
+    "eps_R=0.1*MMR0": {
+      "FULL": {
+        "mean_blocks": 4.0,
+        "mean_mmr_evals": 5.0,
+        "mean_final_mmr": 0.0,
+        "mean_realised_regret": 0.0,
+        "max_realised_regret": 0.0,
+        "decision_value_equals_full": 1.0
+      },
+      "VOI_VERTEX": {
+        "mean_blocks": 2.58,
+        "mean_mmr_evals": 19.38,
+        "mean_final_mmr": 0.155,
+        "mean_realised_regret": 0.0184375,
+        "max_realised_regret": 0.5,
+        "decision_value_equals_full": 0.94
+      },
+      "VOI_GRID8": {
+        "mean_blocks": 2.56,
+        "mean_mmr_evals": 74.3,
+        "mean_final_mmr": 0.1825,
+        "mean_realised_regret": 0.0184375,
+        "max_realised_regret": 0.5,
+        "decision_value_equals_full": 0.94
+      },
+      "VOI_EXACT": {
+        "mean_blocks": 2.56,
+        "mean_mmr_evals": 1947.88,
+        "mean_final_mmr": 0.1825,
+        "mean_realised_regret": 0.0184375,
+        "max_realised_regret": 0.5,
+        "decision_value_equals_full": 0.94
+      },
+      "RANDOM": {
+        "mean_blocks": 3.0,
+        "mean_mmr_evals": 4.0,
+        "mean_final_mmr": 0.1271875,
+        "mean_realised_regret": 0.0009375,
+        "max_realised_regret": 0.046875,
+        "decision_value_equals_full": 0.98
+      }
+    }
+  }
+}
