@@ -1,0 +1,18 @@
+CONTEXT — V1.8.6 THEORY INTEGRATION + ERRATUM CLOSURE (sub-agent rules)
+
+Paths
+- REPO (git; branch research/v1.8.6-theory-integration-20261018 = theory pack e3d7040 + merged S1e 9d2d2bd; LF):
+  C:\NTUST_PAPER\outputs\00_CURRENT\02_STUDY1_FREEZE\02_STUDY1_FREEZE_V1_8_1\repo
+- Base manuscript (V1.8.5a canonical, READ-ONLY): REPO\claude\r14_merge_v1_8_5_compute_closure\59a_MERGED_MASTER_THESIS_v1_8_5a_CANONICAL.md (sha256 bf4379a4…)
+- Theory pack (READ-ONLY): REPO\claude\r14_merge_q1_theory_upgrade_v1\ (01–15; esp. 10 integration plan, 11 red team, 12 final status, 13 erratum candidate, 14 response log, 15 repair verification; 09 witnesses)
+- Canonical model 42 / solver 51 (READ-ONLY, never modify): REPO\42_ENTERPRISE_PORTFOLIO_MODEL_v2_2.md, REPO\51_enterprise_portfolio_solver_v2_2.py
+- S1e records: REPO\artifacts\v1.8.2e_s1e_process_wording_20261014\ ; S1e packets (teacher-approved, never open in a way that could resave; read-only via openpyxl/zipfile only): C:\NTUST_PAPER\outputs\00_CURRENT\03_V1_HUMAN_VALIDATION\04_CODER_PACKETS_S1E_ZH_TW_TEACHER_APPROVED_READY_TO_DISTRIBUTE\CODER_{1,2,3}_ZH_TW.xlsx (sha256 cbbbaa0a… / 5925ead5… / 50d8c818…)
+- Also read REPO\artifacts\gap_mechanism_math_traceability_20261014\README.md (researcher's gap–mechanism math traceability index).
+- OUT = C:\NTUST_PAPER\outputs\00_CURRENT\V1_8_6_THEORY_INTEGRATION_20261018\ (write only here; scratch in OUT\work\<letter>\)
+
+FIXED RESEARCHER DECISIONS (do not re-ask, do not change)
+- R-1 ACCEPT 42 proof-wording erratum per theory pack 13 (choose the F_u-maximal tie element consistent with 51's selection); no change to equations, objective, feasible set, numbers, statuses, P1–P8 results, solver. 42 FILE IS NOT EDITED (frozen canonical, hash referenced by ledgers): the erratum is applied as wording in the manuscript (wherever Lemma E′'s proof/characterization appears, e.g., Appendix C) and recorded as an erratum record. If the erratum would change any number → STOP.
+- R-2 fix all six manuscript findings (+ Ch1 l.113 claim boundary) at the positions in 10, located by meaning not line number.
+- R-3 no unverified (TO VERIFY / SECONDARY_ONLY / UNVERIFIED / ABSTRACT-only for detailed claims) citation may enter main text. Do not invent DOIs/pages/volumes.
+- R-4 PRIMARY = canonical W5 162/400 (±5% perturbation survival); W5_WIDE 367/400 = SENSITIVITY/EXPANDED WITNESS ONLY; PRIMARY_BASELINE_REPLACED=NO.
+Hard rules: no change to G01–G16, Study 1 baseline/numbers, v2.2 equation semantics, S1e coder packets or coder categories; no human/enterprise results; no V7 claim; theorem claims never exceed theory-pack scope (use 12/14/15 final labels, not earlier drafts); synthetic ≠ empirical. No git commit/push (orchestrator does it).

@@ -1,0 +1,21 @@
+jensen|Jensen Meckling 1976 Theory of the firm managerial behavior agency costs ownership structure
+alonso_matouschek|Alonso Matouschek 2008 Optimal delegation Review of Economic Studies
+laffont|Laffont Martimort 2002 The theory of incentives principal-agent model
+armstrong_vickers|Armstrong Vickers 2010 A model of delegated project choice Econometrica
+harris_raviv|Harris Raviv 1996 The capital budgeting process incentives and information Journal of Finance
+harris_raviv98|Harris Raviv 1998 Capital budgeting and delegation Journal of Financial Economics
+topkis|Topkis 1978 Minimizing a submodular function on a lattice Operations Research
+topkis98|Topkis 1998 Supermodularity and complementarity
+milgrom_shannon|Milgrom Shannon 1994 Monotone comparative statics Econometrica
+howard|Howard 1966 Information value theory IEEE Transactions on Systems Science and Cybernetics
+raiffa|Raiffa Schlaifer 1961 Applied statistical decision theory
+kouvelis|Kouvelis Yu 1997 Robust discrete optimization and its applications
+averbakh|Averbakh 2001 On the complexity of a class of combinatorial optimization problems with uncertainty Mathematical Programming
+averbakh_lebedev|Averbakh Lebedev 2004 Interval data minmax regret network optimization problems
+manski|Manski 2003 Partial identification of probability distributions
+manski_reg|Manski 2004 Statistical treatment rules for heterogeneous populations Econometrica
+chernoff|Chernoff 1954 Rational selection of decision functions Econometrica
+stoye|Stoye 2011 Axioms for minimax regret choice correspondences Journal of Economic Theory
+loridan|Loridan Morgan 1996 Weak via strong Stackelberg problem new results Journal of Global Optimization
+weill_ross|Weill Ross 2004 IT governance how top performers manage IT decision rights for superior results
+holmstrom|Holmstrom On the theory of delegation Bayesian models in economic theory

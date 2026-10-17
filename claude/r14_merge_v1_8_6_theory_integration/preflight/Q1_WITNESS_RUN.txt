@@ -1,0 +1,5029 @@
+==============================================================================================================
+Q1 THEORY WITNESSES -- consolidated computational witnesses (integrator T5)
+SIMULATED_ONLY. Constructive examples / computational witnesses on algebraic instances; NOT proofs of
+general theorems; no enterprise data, no human coder data, no V7 / empirical validity claim. Model: 42 v2.2.
+Fixed seed (declared): 20261014; only W5_WIDE draws random numbers, from a private Random(20261015 + stream)
+Hash = SHA-256 of canonical JSON (sorted keys, separators (',',':'), ASCII) of the full witness record.
+Bounded search inside W5: 3 exhaustive single-follower families (sizes printed in W5 outputs.search).
+==============================================================================================================
+
+--------------------------------------------------------------------------------------------------------------
+[W1] Aligned ledgers: B = C = 30, DL = 0 (opt = pess)   (CANONICAL; part T1, part id W1)
+--------------------------------------------------------------------------------------------------------------
+  demonstrates: aligned ledgers: B = C = 30, DL = 0 (T-ORC-8 aligned)
+  source test mapping: 51 t_orc8_independent_hand / hand_instance(5.0, 0.0) (read-only mapping)
+  inputs (algebraic):
+    {
+      "Abar(BUD,ENG)": [
+        100,
+        100
+      ],
+      "B0_u": [
+        50,
+        50
+      ],
+      "F_c": 10,
+      "Gamma": [
+        "g (no EA requirement, DeltaC_gov=0)"
+      ],
+      "N": 10,
+      "formulas": "phi_E=N(v_u-l_x)-impl; F_u=N v_u-impl; a=(impl,0); AI config needs y_c=1",
+      "units_configs": {
+        "U1": {
+          "k1": {
+            "EA": 1,
+            "impl": 5.0,
+            "l_x": 0.0,
+            "v_u": 3.0
+          }
+        },
+        "U2": {
+          "k1": {
+            "EA": 1,
+            "impl": 5.0,
+            "l_x": 0.0,
+            "v_u": 2.0
+          }
+        }
+      }
+    }
+  rankings:
+    {
+      "U1": {
+        "a(x)": {
+          "U1:k0": [
+            0.0,
+            0.0
+          ],
+          "U1:k1": [
+            5.0,
+            0.0
+          ]
+        },
+        "by_F_E": [
+          [
+            "U1:k1",
+            25.0
+          ],
+          [
+            "U1:k0",
+            0.0
+          ]
+        ],
+        "by_F_u": [
+          [
+            "U1:k1",
+            25.0
+          ],
+          [
+            "U1:k0",
+            0.0
+          ]
+        ]
+      },
+      "U2": {
+        "a(x)": {
+          "U2:k0": [
+            0.0,
+            0.0
+          ],
+          "U2:k1": [
+            5.0,
+            0.0
+          ]
+        },
+        "by_F_E": [
+          [
+            "U2:k1",
+            15.0
+          ],
+          [
+            "U2:k0",
+            0.0
+          ]
+        ],
+        "by_F_u": [
+          [
+            "U2:k1",
+            15.0
+          ],
+          [
+            "U2:k0",
+            0.0
+          ]
+        ]
+      }
+    }
+  choices:
+    {
+      "B_optima": [
+        {
+          "gamma": "g",
+          "plans": [
+            "U1:k1",
+            "U2:k1"
+          ],
+          "unblockable_deviations": {
+            "U1": [],
+            "U2": []
+          },
+          "y": [
+            "c"
+          ]
+        }
+      ],
+      "C": {
+        "opt": {
+          "F": 30.0,
+          "best_responses": {
+            "U1": [
+              "U1:k1"
+            ],
+            "U2": [
+              "U2:k1"
+            ]
+          },
+          "envelopes": {
+            "U1": [
+              5.0,
+              0.0
+            ],
+            "U2": [
+              5.0,
+              0.0
+            ]
+          },
+          "gamma": "g",
+          "y": [
+            "c"
+          ]
+        },
+        "pess": {
+          "F": 30.0,
+          "best_responses": {
+            "U1": [
+              "U1:k1"
+            ],
+            "U2": [
+              "U2:k1"
+            ]
+          },
+          "envelopes": {
+            "U1": [
+              5.0,
+              0.0
+            ],
+            "U2": [
+              5.0,
+              0.0
+            ]
+          },
+          "gamma": "g",
+          "y": [
+            "c"
+          ]
+        }
+      }
+    }
+  outputs:
+    {
+      "A_opt": 0.0,
+      "A_pess": 0.0,
+      "Aplus": 0.0,
+      "B": 30.0,
+      "C0_opt": 0.0,
+      "C0_pess": 0.0,
+      "C_opt": 30.0,
+      "C_pess": 30.0,
+      "DL_opt": 0.0,
+      "DL_pess": 0.0,
+      "NEV_opt": 30.0,
+      "NEV_pess": 30.0,
+      "VSC": 30.0,
+      "lemmaE_equals_product_envelopes": true,
+      "n_B_optima": 1,
+      "theorem_DL1_prediction_DLpos": {
+        "opt": false,
+        "pess": false
+      }
+    }
+  expected:
+    {
+      "A_opt": 0,
+      "A_pess": 0,
+      "Aplus": 0,
+      "B": 30,
+      "C0_opt": 0,
+      "C0_pess": 0,
+      "C_opt": 30,
+      "C_pess": 30,
+      "DL_opt": 0,
+      "DL_pess": 0,
+      "NEV_opt": 30,
+      "NEV_pess": 30,
+      "VSC": 30
+    }
+  minimality: Not minimal for 'DL=0' (any aligned instance has DL=0 by P2/Cor. DL-2). Kept with the T-ORC-8 dimensions (2 BUs, 1 capability, |Gamma|=1) so that W1-W3 differ only in U2's (impl, l_x).
+  result: PASS
+  witness_sha256: aeb8fec41bda59e4150f199984197d4611bc9dfd48696f0839708d353f2857b0
+
+--------------------------------------------------------------------------------------------------------------
+[W2] Misaligned but envelope-blockable: B = C = 15, DL = 0   (CANONICAL; part T1, part id W2)
+--------------------------------------------------------------------------------------------------------------
+  demonstrates: misaligned but envelope-blockable: B = C = 15, DL = 0
+  source test mapping: 51 t_orc8_independent_hand / hand_instance(5.0, 2.5) (read-only mapping)
+  inputs (algebraic):
+    {
+      "Abar(BUD,ENG)": [
+        100,
+        100
+      ],
+      "B0_u": [
+        50,
+        50
+      ],
+      "F_c": 10,
+      "Gamma": [
+        "g (no EA requirement, DeltaC_gov=0)"
+      ],
+      "N": 10,
+      "formulas": "phi_E=N(v_u-l_x)-impl; F_u=N v_u-impl; a=(impl,0); AI config needs y_c=1",
+      "units_configs": {
+        "U1": {
+          "k1": {
+            "EA": 1,
+            "impl": 5.0,
+            "l_x": 0.0,
+            "v_u": 3.0
+          }
+        },
+        "U2": {
+          "k1": {
+            "EA": 1,
+            "impl": 5.0,
+            "l_x": 2.5,
+            "v_u": 2.0
+          }
+        }
+      }
+    }
+  rankings:
+    {
+      "U1": {
+        "a(x)": {
+          "U1:k0": [
+            0.0,
+            0.0
+          ],
+          "U1:k1": [
+            5.0,
+            0.0
+          ]
+        },
+        "by_F_E": [
+          [
+            "U1:k1",
+            25.0
+          ],
+          [
+            "U1:k0",
+            0.0
+          ]
+        ],
+        "by_F_u": [
+          [
+            "U1:k1",
+            25.0
+          ],
+          [
+            "U1:k0",
+            0.0
+          ]
+        ]
+      },
+      "U2": {
+        "a(x)": {
+          "U2:k0": [
+            0.0,
+            0.0
+          ],
+          "U2:k1": [
+            5.0,
+            0.0
+          ]
+        },
+        "by_F_E": [
+          [
+            "U2:k0",
+            0.0
+          ],
+          [
+            "U2:k1",
+            -10.0
+          ]
+        ],
+        "by_F_u": [
+          [
+            "U2:k1",
+            15.0
+          ],
+          [
+            "U2:k0",
+            0.0
+          ]
+        ]
+      }
+    }
+  choices:
+    {
+      "B_optima": [
+        {
+          "gamma": "g",
+          "plans": [
+            "U1:k1",
+            "U2:k0"
+          ],
+          "unblockable_deviations": {
+            "U1": [],
+            "U2": []
+          },
+          "y": [
+            "c"
+          ]
+        }
+      ],
+      "C": {
+        "opt": {
+          "F": 15.0,
+          "best_responses": {
+            "U1": [
+              "U1:k1"
+            ],
+            "U2": [
+              "U2:k0"
+            ]
+          },
+          "envelopes": {
+            "U1": [
+              5.0,
+              0.0
+            ],
+            "U2": [
+              0.0,
+              0.0
+            ]
+          },
+          "gamma": "g",
+          "y": [
+            "c"
+          ]
+        },
+        "pess": {
+          "F": 15.0,
+          "best_responses": {
+            "U1": [
+              "U1:k1"
+            ],
+            "U2": [
+              "U2:k0"
+            ]
+          },
+          "envelopes": {
+            "U1": [
+              5.0,
+              0.0
+            ],
+            "U2": [
+              0.0,
+              0.0
+            ]
+          },
+          "gamma": "g",
+          "y": [
+            "c"
+          ]
+        }
+      }
+    }
+  outputs:
+    {
+      "A_opt": 0.0,
+      "A_pess": 0.0,
+      "Aplus": 0.0,
+      "B": 15.0,
+      "C0_opt": 0.0,
+      "C0_pess": 0.0,
+      "C_opt": 15.0,
+      "C_pess": 15.0,
+      "DL_opt": 0.0,
+      "DL_pess": 0.0,
+      "NEV_opt": 15.0,
+      "NEV_pess": 15.0,
+      "VSC": 15.0,
+      "lemmaE_equals_product_envelopes": true,
+      "n_B_optima": 1,
+      "theorem_DL1_prediction_DLpos": {
+        "opt": false,
+        "pess": false
+      }
+    }
+  expected:
+    {
+      "A_opt": 0,
+      "A_pess": 0,
+      "Aplus": 0,
+      "B": 15,
+      "C0_opt": 0,
+      "C0_pess": 0,
+      "C_opt": 15,
+      "C_pess": 15,
+      "DL_opt": 0,
+      "DL_pess": 0,
+      "NEV_opt": 15,
+      "NEV_pess": 15,
+      "VSC": 15
+    }
+  minimality: Refutes 'misalignment (even strict preference reversal) => DL>0'. Smallest form: 1 BU, 1 resource, plans x^G=(a=0,F_u=0,F_E=0), x^H=(a=1,F_u=1,F_E=-1): envelope e=0 blocks x^H. The capability layer here is inherited from T-ORC-8 and is not needed.
+  result: PASS
+  witness_sha256: ac899cce66774fc2b186801c47732d9ee14a082b08e85857ad179d1f5ff1368a
+
+--------------------------------------------------------------------------------------------------------------
+[W3] Misaligned and envelope-unblockable: B = 15, C = 10, DL = 5   (CANONICAL; part T1, part id W3)
+--------------------------------------------------------------------------------------------------------------
+  demonstrates: misaligned and envelope-unblockable: B = 15, C = 10, DL = 5
+  source test mapping: 51 t_orc8_independent_hand / hand_instance(0.0, 2.5) (read-only mapping)
+  inputs (algebraic):
+    {
+      "Abar(BUD,ENG)": [
+        100,
+        100
+      ],
+      "B0_u": [
+        50,
+        50
+      ],
+      "F_c": 10,
+      "Gamma": [
+        "g (no EA requirement, DeltaC_gov=0)"
+      ],
+      "N": 10,
+      "formulas": "phi_E=N(v_u-l_x)-impl; F_u=N v_u-impl; a=(impl,0); AI config needs y_c=1",
+      "units_configs": {
+        "U1": {
+          "k1": {
+            "EA": 1,
+            "impl": 5.0,
+            "l_x": 0.0,
+            "v_u": 3.0
+          }
+        },
+        "U2": {
+          "k1": {
+            "EA": 1,
+            "impl": 0.0,
+            "l_x": 2.5,
+            "v_u": 2.0
+          }
+        }
+      }
+    }
+  rankings:
+    {
+      "U1": {
+        "a(x)": {
+          "U1:k0": [
+            0.0,
+            0.0
+          ],
+          "U1:k1": [
+            5.0,
+            0.0
+          ]
+        },
+        "by_F_E": [
+          [
+            "U1:k1",
+            25.0
+          ],
+          [
+            "U1:k0",
+            0.0
+          ]
+        ],
+        "by_F_u": [
+          [
+            "U1:k1",
+            25.0
+          ],
+          [
+            "U1:k0",
+            0.0
+          ]
+        ]
+      },
+      "U2": {
+        "a(x)": {
+          "U2:k0": [
+            0.0,
+            0.0
+          ],
+          "U2:k1": [
+            0.0,
+            0.0
+          ]
+        },
+        "by_F_E": [
+          [
+            "U2:k0",
+            0.0
+          ],
+          [
+            "U2:k1",
+            -5.0
+          ]
+        ],
+        "by_F_u": [
+          [
+            "U2:k1",
+            20.0
+          ],
+          [
+            "U2:k0",
+            0.0
+          ]
+        ]
+      }
+    }
+  choices:
+    {
+      "B_optima": [
+        {
+          "gamma": "g",
+          "plans": [
+            "U1:k1",
+            "U2:k0"
+          ],
+          "unblockable_deviations": {
+            "U1": [],
+            "U2": [
+              {
+                "dFE": -5.0,
+                "dFU": 20.0,
+                "plan": "U2:k1",
+                "strict_pref": true
+              }
+            ]
+          },
+          "y": [
+            "c"
+          ]
+        }
+      ],
+      "C": {
+        "opt": {
+          "F": 10.0,
+          "best_responses": {
+            "U1": [
+              "U1:k1"
+            ],
+            "U2": [
+              "U2:k1"
+            ]
+          },
+          "envelopes": {
+            "U1": [
+              5.0,
+              0.0
+            ],
+            "U2": [
+              0.0,
+              0.0
+            ]
+          },
+          "gamma": "g",
+          "y": [
+            "c"
+          ]
+        },
+        "pess": {
+          "F": 10.0,
+          "best_responses": {
+            "U1": [
+              "U1:k1"
+            ],
+            "U2": [
+              "U2:k1"
+            ]
+          },
+          "envelopes": {
+            "U1": [
+              5.0,
+              0.0
+            ],
+            "U2": [
+              0.0,
+              0.0
+            ]
+          },
+          "gamma": "g",
+          "y": [
+            "c"
+          ]
+        }
+      }
+    }
+  outputs:
+    {
+      "A_opt": 0.0,
+      "A_pess": 0.0,
+      "Aplus": 0.0,
+      "B": 15.0,
+      "C0_opt": 0.0,
+      "C0_pess": 0.0,
+      "C_opt": 10.0,
+      "C_pess": 10.0,
+      "DL_opt": 5.0,
+      "DL_pess": 5.0,
+      "NEV_opt": 10.0,
+      "NEV_pess": 10.0,
+      "VSC": 15.0,
+      "lemmaE_equals_product_envelopes": true,
+      "n_B_optima": 1,
+      "theorem_DL1_prediction_DLpos": {
+        "opt": true,
+        "pess": true
+      }
+    }
+  expected:
+    {
+      "A_opt": 0,
+      "A_pess": 0,
+      "Aplus": 0,
+      "B": 15,
+      "C0_opt": 0,
+      "C0_pess": 0,
+      "C_opt": 10,
+      "C_pess": 10,
+      "DL_opt": 5,
+      "DL_pess": 5,
+      "NEV_opt": 10,
+      "NEV_pess": 10,
+      "VSC": 15
+    }
+  minimality: Unique first best (y_c=1, U1:k1, U2:k0); U2:k1 has a(x^H)=(0,0)<=a(x^G)=(0,0) and F_u 20>0 while F_E -5<0 -> Cor. DL-2 gives DL>0. The second BU and the capability are needed only for the T-ORC-8 'capability coupling' reading (blocking U2 via y_c=0 costs U1's 25); the minimal single-BU DL>0 instance is W3m.
+  result: PASS
+  witness_sha256: d6a662f462e6e90dc183cf4dc8a3eab546d6ee0e32eb55bcb8ce4b53ae83566f
+
+--------------------------------------------------------------------------------------------------------------
+[W4] P8 screening 10 -> 15 (GSV = DL_loose = 5, PR_B = 0)   (CANONICAL; part T1, part id W4)
+--------------------------------------------------------------------------------------------------------------
+  demonstrates: P8 governance screening 10 -> 15
+  source test mapping: 51 t_regression_v21: hand_instance(0.0, 2.5, ea_levels=(2,1), ea_req=2): C(g)=10, C(g_req)=15
+  inputs (algebraic):
+    {
+      "Abar": [
+        100,
+        100
+      ],
+      "DeltaC_gov": "0 in both (so Direct Governance Cost = 0, Net = Gross)",
+      "F_c": 10,
+      "N": 10,
+      "reading": "U2:k1 is the unblockable reversal of W3; strict EA removes exactly it and keeps U1:k1 (EA=2).",
+      "requirement": "EA_k >= EA_req for A>=1; loose EA_req=0, strict EA_req=2",
+      "units_configs": {
+        "U1": {
+          "k1": {
+            "EA": 2,
+            "impl": 5.0,
+            "l_x": 0.0,
+            "v_u": 3.0
+          }
+        },
+        "U2": {
+          "k1": {
+            "EA": 1,
+            "impl": 0.0,
+            "l_x": 2.5,
+            "v_u": 2.0
+          }
+        }
+      }
+    }
+  rankings:
+    {
+      "loose": {
+        "U1": {
+          "a(x)": {
+            "U1:k0": [
+              0.0,
+              0.0
+            ],
+            "U1:k1": [
+              5.0,
+              0.0
+            ]
+          },
+          "by_F_E": [
+            [
+              "U1:k1",
+              25.0
+            ],
+            [
+              "U1:k0",
+              0.0
+            ]
+          ],
+          "by_F_u": [
+            [
+              "U1:k1",
+              25.0
+            ],
+            [
+              "U1:k0",
+              0.0
+            ]
+          ]
+        },
+        "U2": {
+          "a(x)": {
+            "U2:k0": [
+              0.0,
+              0.0
+            ],
+            "U2:k1": [
+              0.0,
+              0.0
+            ]
+          },
+          "by_F_E": [
+            [
+              "U2:k0",
+              0.0
+            ],
+            [
+              "U2:k1",
+              -5.0
+            ]
+          ],
+          "by_F_u": [
+            [
+              "U2:k1",
+              20.0
+            ],
+            [
+              "U2:k0",
+              0.0
+            ]
+          ]
+        }
+      },
+      "strict": {
+        "U1": {
+          "a(x)": {
+            "U1:k0": [
+              0.0,
+              0.0
+            ],
+            "U1:k1": [
+              5.0,
+              0.0
+            ]
+          },
+          "by_F_E": [
+            [
+              "U1:k1",
+              25.0
+            ],
+            [
+              "U1:k0",
+              0.0
+            ]
+          ],
+          "by_F_u": [
+            [
+              "U1:k1",
+              25.0
+            ],
+            [
+              "U1:k0",
+              0.0
+            ]
+          ]
+        },
+        "U2": {
+          "a(x)": {
+            "U2:k0": [
+              0.0,
+              0.0
+            ]
+          },
+          "by_F_E": [
+            [
+              "U2:k0",
+              0.0
+            ]
+          ],
+          "by_F_u": [
+            [
+              "U2:k0",
+              0.0
+            ]
+          ]
+        }
+      }
+    }
+  choices:
+    {
+      "loose_B_optima": [
+        {
+          "gamma": "loose",
+          "plans": [
+            "U1:k1",
+            "U2:k0"
+          ],
+          "unblockable_deviations": {
+            "U1": [],
+            "U2": [
+              {
+                "dFE": -5.0,
+                "dFU": 20.0,
+                "plan": "U2:k1",
+                "strict_pref": true
+              }
+            ]
+          },
+          "y": [
+            "c"
+          ]
+        }
+      ],
+      "loose_C": {
+        "opt": {
+          "F": 10.0,
+          "best_responses": {
+            "U1": [
+              "U1:k1"
+            ],
+            "U2": [
+              "U2:k1"
+            ]
+          },
+          "envelopes": {
+            "U1": [
+              5.0,
+              0.0
+            ],
+            "U2": [
+              0.0,
+              0.0
+            ]
+          },
+          "gamma": "loose",
+          "y": [
+            "c"
+          ]
+        },
+        "pess": {
+          "F": 10.0,
+          "best_responses": {
+            "U1": [
+              "U1:k1"
+            ],
+            "U2": [
+              "U2:k1"
+            ]
+          },
+          "envelopes": {
+            "U1": [
+              5.0,
+              0.0
+            ],
+            "U2": [
+              0.0,
+              0.0
+            ]
+          },
+          "gamma": "loose",
+          "y": [
+            "c"
+          ]
+        }
+      },
+      "strict_B_optima": [
+        {
+          "gamma": "strict",
+          "plans": [
+            "U1:k1",
+            "U2:k0"
+          ],
+          "unblockable_deviations": {
+            "U1": [],
+            "U2": []
+          },
+          "y": [
+            "c"
+          ]
+        }
+      ],
+      "strict_C": {
+        "opt": {
+          "F": 15.0,
+          "best_responses": {
+            "U1": [
+              "U1:k1"
+            ],
+            "U2": [
+              "U2:k0"
+            ]
+          },
+          "envelopes": {
+            "U1": [
+              5.0,
+              0.0
+            ],
+            "U2": [
+              0.0,
+              0.0
+            ]
+          },
+          "gamma": "strict",
+          "y": [
+            "c"
+          ]
+        },
+        "pess": {
+          "F": 15.0,
+          "best_responses": {
+            "U1": [
+              "U1:k1"
+            ],
+            "U2": [
+              "U2:k0"
+            ]
+          },
+          "envelopes": {
+            "U1": [
+              5.0,
+              0.0
+            ],
+            "U2": [
+              0.0,
+              0.0
+            ]
+          },
+          "gamma": "strict",
+          "y": [
+            "c"
+          ]
+        }
+      }
+    }
+  outputs:
+    {
+      "B_loose": 15.0,
+      "B_strict": 15.0,
+      "C_opt_leader_chooses_policy": 15.0,
+      "C_opt_loose": 10.0,
+      "C_opt_strict": 15.0,
+      "C_pess_loose": 10.0,
+      "C_pess_strict": 15.0,
+      "DL_opt_loose": 5.0,
+      "DL_opt_strict": 0.0,
+      "DL_pess_loose": 5.0,
+      "DL_pess_strict": 0.0,
+      "GSV_opt": 5.0,
+      "GSV_pess": 5.0,
+      "PR_B": 0.0,
+      "chosen_policy_opt": "strict",
+      "identity_GSV_eq_dDL_minus_PR": true
+    }
+  expected:
+    {
+      "B_loose": 15,
+      "B_strict": 15,
+      "C_opt_leader_chooses_policy": 15,
+      "C_opt_loose": 10,
+      "C_opt_strict": 15,
+      "C_pess_loose": 10,
+      "C_pess_strict": 15,
+      "DL_opt_loose": 5,
+      "DL_opt_strict": 0,
+      "GSV_opt": 5,
+      "GSV_pess": 5,
+      "PR_B": 0
+    }
+  minimality: Minimal algebraic core: 1 BU, plans xG=(a=0,F_u=0,F_E=1,EA=2), xH=(a=0,F_u=1,F_E=0,EA=1); strict EA>=2 removes xH: C 0 -> 1 = B. The second BU and capability c reproduce P8's 10->15 and show the requirement acts where the capability instrument (y_c=0) is too blunt.
+  result: PASS
+  witness_sha256: 93d632600a9944a7c887e6ec9c4548e11669a7a60dd75fc96521c80e785b486b
+
+--------------------------------------------------------------------------------------------------------------
+[W5] Model C shared-capability build decision non-monotone in reuse delta (build -> no build -> build)   (CANONICAL; part T2, part id W5)
+--------------------------------------------------------------------------------------------------------------
+  demonstrates: Model C build decision non-monotone in reuse delta (1 -> 0 -> 1)
+  source test mapping: 51 T-SEN-8 (same algebraic instance, independently re-implemented); 42 ¡±15 P4 v2.2 counterexample
+  inputs (algebraic):
+    {
+      "U1": "aligned; options {0, 1}; phi^u_1 = phi_1 = 30 - C1(delta); C1(delta) = max(0, 5 - delta) (S-cell); Pre(1) = {c}",
+      "U2": "misaligned (l_x = 2.5/event); options {0, 1}; phi^u_1 = 20 - C2(delta); phi_1 = -5 - C2(delta); C2(delta) = max(0, 3 - delta)",
+      "W5_min": "single BU, options {0,a,b}: a: W=V=10, C_a=2 (no reuse effect); b: W=20, V=6, C_b=max(0, 6-delta); F_c=5; BUD=100",
+      "capability": "one shared c; F_c = 24; y_cur = {}; pooled BUD = 100 (ENG = 0 everywhere); no local version",
+      "delta_grid": [
+        0.0,
+        1.0,
+        2.0,
+        2.9,
+        3.0,
+        3.5,
+        4.0,
+        5.0
+      ],
+      "envelopes": "E'_u = {a(x)} = {0, C_u(delta)}; affordability a(x) <= e (weak)"
+    }
+  rankings:
+    {
+      "U1_follower": "k=1 strictly preferred for all delta (30 - C1 > 0)",
+      "U2_blockable": "iff C2(delta) > 0 iff delta < 3",
+      "U2_follower": "k=1 strictly preferred for all delta (20 - C2 > 0)"
+    }
+  choices:
+    [
+      {
+        "B": [
+          [
+            "U1",
+            1
+          ],
+          [
+            "U2",
+            0
+          ]
+        ],
+        "delta": 0.0,
+        "pess": [
+          [
+            "U1",
+            5.0,
+            1,
+            1
+          ],
+          [
+            "U2",
+            0.0,
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "B": [
+          [
+            "U1",
+            1
+          ],
+          [
+            "U2",
+            0
+          ]
+        ],
+        "delta": 1.0,
+        "pess": [
+          [
+            "U1",
+            4.0,
+            1,
+            1
+          ],
+          [
+            "U2",
+            0.0,
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "B": [
+          [
+            "U1",
+            1
+          ],
+          [
+            "U2",
+            0
+          ]
+        ],
+        "delta": 2.0,
+        "pess": [
+          [
+            "U1",
+            3.0,
+            1,
+            1
+          ],
+          [
+            "U2",
+            0.0,
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "B": [
+          [
+            "U1",
+            1
+          ],
+          [
+            "U2",
+            0
+          ]
+        ],
+        "delta": 2.9,
+        "pess": [
+          [
+            "U1",
+            2.1,
+            1,
+            1
+          ],
+          [
+            "U2",
+            0.0,
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "B": [
+          [
+            "U1",
+            1
+          ],
+          [
+            "U2",
+            0
+          ]
+        ],
+        "delta": 3.0,
+        "pess": [
+          [
+            "U1",
+            2.0,
+            1,
+            1
+          ],
+          [
+            "U2",
+            0.0,
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "B": [
+          [
+            "U1",
+            1
+          ],
+          [
+            "U2",
+            0
+          ]
+        ],
+        "delta": 3.5,
+        "pess": [
+          [
+            "U1",
+            1.5,
+            1,
+            1
+          ],
+          [
+            "U2",
+            0.0,
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "B": [
+          [
+            "U1",
+            1
+          ],
+          [
+            "U2",
+            0
+          ]
+        ],
+        "delta": 4.0,
+        "pess": [
+          [
+            "U1",
+            1.0,
+            1,
+            1
+          ],
+          [
+            "U2",
+            0.0,
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "B": [
+          [
+            "U1",
+            1
+          ],
+          [
+            "U2",
+            0
+          ]
+        ],
+        "delta": 5.0,
+        "pess": [
+          [
+            "U1",
+            0.0,
+            1,
+            1
+          ],
+          [
+            "U2",
+            0.0,
+            1,
+            1
+          ]
+        ]
+      }
+    ]
+  outputs:
+    {
+      "D_opt": [
+        1.0,
+        2.0,
+        3.0,
+        3.9,
+        -1.0,
+        -0.5,
+        0.0,
+        1.0
+      ],
+      "D_pess": [
+        1.0,
+        2.0,
+        3.0,
+        3.9,
+        -1.0,
+        -0.5,
+        0.0,
+        1.0
+      ],
+      "W5_min_D": [
+        3.0,
+        3.0,
+        3.0,
+        -1.0,
+        0.0,
+        0.5,
+        1.0,
+        1.0
+      ],
+      "W5_min_region_strict": "[0,4) U (5,inf)",
+      "W5_min_seq": [
+        "1",
+        "1",
+        "1",
+        "0",
+        "0",
+        "1",
+        "1",
+        "1"
+      ],
+      "build_region_strict": "[0,3) U (4,inf)",
+      "build_region_tiebuild": "[0,3) U [4,inf)",
+      "edge_points": [
+        [
+          2.999999,
+          3.999999,
+          true,
+          true
+        ],
+        [
+          3.0,
+          -1.0,
+          false,
+          false
+        ],
+        [
+          3.999999,
+          -1e-06,
+          false,
+          false
+        ],
+        [
+          4.0,
+          0.0,
+          false,
+          true
+        ],
+        [
+          4.000001,
+          1e-06,
+          true,
+          true
+        ]
+      ],
+      "search": [
+        {
+          "found_101": 0,
+          "instances": 288,
+          "n_options": 1,
+          "weighted_reuse": true
+        },
+        {
+          "found_101": 0,
+          "instances": 6912,
+          "n_options": 2,
+          "weighted_reuse": false
+        },
+        {
+          "found_101": 24,
+          "instances": 27648,
+          "n_options": 2,
+          "weighted_reuse": true
+        }
+      ],
+      "seq_opt_strict": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "seq_pess_strict": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "seq_pess_tiebuild": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "0",
+        "0",
+        "1",
+        "1"
+      ]
+    }
+  expected:
+    {
+      "D_pess": [
+        1.0,
+        2.0,
+        3.0,
+        3.9,
+        -1.0,
+        -0.5,
+        0.0,
+        1.0
+      ],
+      "seq_min": [
+        "1",
+        "1",
+        "1",
+        "0",
+        "0",
+        "1",
+        "1",
+        "1"
+      ],
+      "seq_strict": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "seq_tiebuild": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "0",
+        "0",
+        "1",
+        "1"
+      ]
+    }
+  minimality: (i) T-SEN-8 analog: 1 capability, 2 BUs x 1 initiative x 2 options, 1 binding-free resource, no follower ties; (ii) W5-min: 1 BU x 1 initiative x 3 options with an option-specific reuse path. Lemma M (doc 04 ¡±4.2, proved): a single follower with 2 options cannot produce 1-0-1 -- confirmed by bounded search (0 found). Bounded search with 3 options and UNIFORM reuse found 0 (supports, does not prove, Conjecture M2: uniform reuse needs >= 2 follower decision units); with option-specific reuse it found instances (W5-min family).
+  result: PASS
+  witness_sha256: 4a6988ccd445b7f2d00ea88fde342df4229fde67485850dee8c9f6f7902a73ae
+
+--------------------------------------------------------------------------------------------------------------
+[W6] Vertex-conditioned VOI overstates the v2.2 VOI (T-SEN-7 analytic oracle)   (CANONICAL; part T3, part id W6)
+--------------------------------------------------------------------------------------------------------------
+  demonstrates: vertex-conditioned VOI overstatement (vertex 1, true 1/2)
+  source test mapping: 51 t_sen7_regret_voi part (1); 42 ¡±13.5 vertex/grid VOI; 59a ¡±3.13 VOI paragraph
+  inputs (algebraic):
+    {
+      "V": "vertex {0,1}; grid {0,1/4,1/2,3/4,1}; exact = [0,1] via line-arrangement breakpoints",
+      "VOI": "VOI_v = MMR(Theta) - sup_{v' in V} MMR(Theta | v = v')",
+      "blocks": "v in [0,1], q in [0,1] (scale blocks, product box Theta)",
+      "candidates": "F_A = 1 - v, F_B = v, F_D = q, F_E = 1 - q (fixed candidate set)"
+    }
+  rankings:
+    {
+      "MMR(v) closed form": "min(v, 1 - v), maximised at v = 1/2"
+    }
+  choices:
+    {
+      "exact sup attained at": "1/2",
+      "vertex sup attained at": "v in {0,1} (MMR 0)"
+    }
+  outputs:
+    {
+      "MMR after observing v = 1/2": "1/2",
+      "MMR(Theta)": "1",
+      "VOI_q exact": "1/2",
+      "VOI_v exact": "1/2",
+      "VOI_v grid4": "1/2",
+      "VOI_v vertex": "1",
+      "breakpoints evaluated": 5,
+      "minimal (X=v, Y=q): vertex/exact": [
+        "1",
+        "1/2"
+      ],
+      "one-block (A=1-v,B=v): vertex/exact": [
+        "1",
+        "1"
+      ],
+      "promised by vertex VOI": "0"
+    }
+  expected:
+    {
+      "MMR after v=1/2": "1/2 (vertex VOI's implied guarantee 0 is violated)",
+      "MMR(Theta)": "1",
+      "VOI_v exact": "1/2",
+      "VOI_v grid4": "1/2",
+      "VOI_v vertex": "1"
+    }
+  minimality: Minimal size is 2 candidates x 2 scale blocks: (X = v, Y = q) gives vertex VOI_v = 1 vs exact 1/2. One candidate: MMR = 0 identically. One block: conditioning on theta_p = v makes Theta a point, MMR(point) = 0 for every v, so vertex and exact VOI coincide (= MMR(Theta)); checked for A=1-v, B=v.
+  result: PASS
+  witness_sha256: 6c55fa3662d9c9039f625ce7043644fd60c93c502809bbf140f4b8433b71c077
+
+--------------------------------------------------------------------------------------------------------------
+[W7] Element-level robustness counterexample (vertex-only ROBUST, interior FRAGILE) and Model C failure of vertex exactness   (CANONICAL; part T2, part id W7)
+--------------------------------------------------------------------------------------------------------------
+  demonstrates: element-level robustness counterexample (vertex ROBUST, interior FRAGILE)
+  source test mapping: 51 T-SEN-3 (element-level counterexample; ScopeError for Model C / element scope); 42 ¡±13.3 items 1-2
+  inputs (algebraic):
+    {
+      "B_portfolios": "F(y1_a)=theta, F(y1_b)=1-theta, F(y0)=0.6; element d = y_c, d0 = 1",
+      "C_aligned": "leader: build (F_c=0.6) or not (value 0); follower options a,b need c; u = Psi: a=theta, b=1-theta",
+      "C_misaligned": "leader: build (F_c=0.5) or not (0); options a,m,b need c, cost 0; u_a=1-theta, u_m=0.6, u_b=theta; Psi_a=Psi_b=1, Psi_m=0",
+      "Theta": "one block theta in [0,1] (two-vertex probability mixture; affine in every value)"
+    }
+  rankings:
+    {
+      "B": "y1_b best on [0,0.4), y0 best on (0.4,0.6), y1_a best on (0.6,1]",
+      "C_misaligned": "follower picks a on [0,0.4), m on (0.4,0.6), b on (0.6,1]; ties at 0.4 and 0.6"
+    }
+  choices:
+    {
+      "C_misaligned_ties": [
+        [
+          0.4,
+          [
+            0.5,
+            "a"
+          ],
+          [
+            -0.5,
+            "m"
+          ]
+        ],
+        [
+          0.6,
+          [
+            0.5,
+            "b"
+          ],
+          [
+            -0.5,
+            "m"
+          ]
+        ]
+      ]
+    }
+  outputs:
+    {
+      "B_element_grid_class": "FRAGILE",
+      "B_element_vertex_class": "ROBUST",
+      "B_failure_interval_on_grid": [
+        0.41,
+        0.59
+      ],
+      "B_lemma_r_whole_portfolio_exact": true,
+      "B_maxregret_vertex_exact": true,
+      "B_single_portfolio_certificates": {
+        "y1_a": false,
+        "y1_b": false
+      },
+      "C_aligned_failure": [
+        0.41,
+        0.59
+      ],
+      "C_aligned_vertex_ok": true,
+      "C_misaligned_failure": [
+        0.4,
+        0.6
+      ],
+      "C_misaligned_jumps": [
+        [
+          0.4,
+          0.5,
+          -0.5
+        ],
+        [
+          0.6,
+          -0.5,
+          0.5
+        ]
+      ],
+      "C_misaligned_vertex_ok": true
+    }
+  expected:
+    {
+      "B_element": "vertex ROBUST, grid FRAGILE on (0.4,0.6)",
+      "C_aligned": "build optimal at both vertices, not on (0.4,0.6)",
+      "C_misaligned": "build optimal at both vertices, leader value jumps 0.5 -> -0.5 -> 0.5",
+      "whole_portfolio": "exact at vertices"
+    }
+  minimality: Element level: >= 3 portfolios are necessary (with one portfolio containing d0 the element test IS the whole-portfolio test, exact by Lemma R; with none lacking d0 it is trivial) and 1 scalar block suffices, so the T-SEN-3 instance (3 portfolios, 1 block) is minimal in both counts. Model C misaligned: a follower with 3 options is needed for a 1-0-1 pattern along one affine theta (two affine follower utilities cross once).
+  result: PASS
+  witness_sha256: e29ce9e4829cdc3baed473f71449170939ecb5823494e2270d56799f023bd2de
+
+--------------------------------------------------------------------------------------------------------------
+[W3m] Minimal DL>0: one BU, one resource, two plans (under-adoption)   (SUPPLEMENTARY; part T1, part id W3m)
+--------------------------------------------------------------------------------------------------------------
+  demonstrates: minimal DL > 0 (1 BU, 1 resource, 2 plans)
+  source test mapping: none in 51 (new constructive example); reading of 42 P2 remark
+  inputs (algebraic):
+    {
+      "Abar": 1,
+      "Gamma": [
+        "g"
+      ],
+      "capabilities": "none",
+      "plans": {
+        "U": [
+          {
+            "FE": 2.0,
+            "FU": 0.0,
+            "a": [
+              1.0
+            ],
+            "name": "U:xG"
+          },
+          {
+            "FE": 0.0,
+            "FU": 1.0,
+            "a": [
+              0.0
+            ],
+            "name": "U:xH"
+          }
+        ]
+      },
+      "v2.2 reading": "x^G = AI config with external value v^x>0 the unit does not book (AL1 fails); x^H = status quo. Envelopes cap but never compel adoption."
+    }
+  rankings:
+    {
+      "U": {
+        "by_F_E": [
+          "xG(2)",
+          "xH(0)"
+        ],
+        "by_F_u": [
+          "xH(1)",
+          "xG(0)"
+        ]
+      }
+    }
+  choices:
+    {
+      "B_optima": [
+        {
+          "gamma": "g",
+          "plans": [
+            "U:xG"
+          ],
+          "unblockable_deviations": {
+            "U": [
+              {
+                "dFE": -2.0,
+                "dFU": 1.0,
+                "plan": "U:xH",
+                "strict_pref": true
+              }
+            ]
+          },
+          "y": []
+        }
+      ],
+      "C": {
+        "opt": {
+          "F": 0.0,
+          "best_responses": {
+            "U": [
+              "U:xH"
+            ]
+          },
+          "envelopes": {
+            "U": [
+              0.0
+            ]
+          },
+          "gamma": "g",
+          "y": []
+        },
+        "pess": {
+          "F": 0.0,
+          "best_responses": {
+            "U": [
+              "U:xH"
+            ]
+          },
+          "envelopes": {
+            "U": [
+              0.0
+            ]
+          },
+          "gamma": "g",
+          "y": []
+        }
+      }
+    }
+  outputs:
+    {
+      "B": 2.0,
+      "C_opt": 0.0,
+      "C_pess": 0.0,
+      "DL_opt": 2.0,
+      "DL_pess": 2.0,
+      "theorem_DL1_prediction_DLpos": {
+        "opt": true,
+        "pess": true
+      }
+    }
+  expected:
+    {
+      "B": 2.0,
+      "C_opt": 0.0,
+      "C_pess": 0.0,
+      "DL_opt": 2.0,
+      "DL_pess": 2.0
+    }
+  minimality: Minimal: with one plan the best response is unique and equals the first best; with one BU, 0 capabilities, |Gamma|=1 and 1 resource every dimension is at its floor. Shows that neither capability coupling nor cross-BU resource coupling is necessary for DL>0.
+  result: PASS
+  witness_sha256: 2f8701b659c2c8891f7920a3d677c992c8491affb61c477755fd4fc49921c4dd
+
+--------------------------------------------------------------------------------------------------------------
+[W3b] DL_opt = 0 < DL_pess = 1 (follower tie, no strict reversal)   (SUPPLEMENTARY; part T1, part id W3b)
+--------------------------------------------------------------------------------------------------------------
+  demonstrates: DL_opt = 0 < DL_pess = 1 from a follower tie
+  source test mapping: none in 51 directly; related: T-ORC-9 tie_instance (C_opt > C_pess)
+  inputs (algebraic):
+    {
+      "Abar": 0,
+      "Gamma": [
+        "g"
+      ],
+      "plans": {
+        "U": [
+          {
+            "FE": 1.0,
+            "FU": 0.0,
+            "a": [
+              0.0
+            ],
+            "name": "U:xG"
+          },
+          {
+            "FE": 0.0,
+            "FU": 0.0,
+            "a": [
+              0.0
+            ],
+            "name": "U:xH"
+          }
+        ]
+      },
+      "v2.2 reading": "two configs with equal unit ledger value; x^G carries enterprise-only value (v^x or avoided l^x) -> AL1 fails only through a tie"
+    }
+  rankings:
+    {
+      "U": {
+        "by_F_E": [
+          "xG(1)",
+          "xH(0)"
+        ],
+        "by_F_u": [
+          "xG(0) = xH(0)"
+        ]
+      }
+    }
+  choices:
+    {
+      "B_optima": [
+        {
+          "gamma": "g",
+          "plans": [
+            "U:xG"
+          ],
+          "unblockable_deviations": {
+            "U": [
+              {
+                "dFE": -1.0,
+                "dFU": 0.0,
+                "plan": "U:xH",
+                "strict_pref": false
+              }
+            ]
+          },
+          "y": []
+        }
+      ],
+      "C": {
+        "opt": {
+          "F": 1.0,
+          "best_responses": {
+            "U": [
+              "U:xG",
+              "U:xH"
+            ]
+          },
+          "envelopes": {
+            "U": [
+              0.0
+            ]
+          },
+          "gamma": "g",
+          "y": []
+        },
+        "pess": {
+          "F": 0.0,
+          "best_responses": {
+            "U": [
+              "U:xG",
+              "U:xH"
+            ]
+          },
+          "envelopes": {
+            "U": [
+              0.0
+            ]
+          },
+          "gamma": "g",
+          "y": []
+        }
+      }
+    }
+  outputs:
+    {
+      "B": 1.0,
+      "C_opt": 1.0,
+      "C_pess": 0.0,
+      "DL_opt": 0.0,
+      "DL_pess": 1.0,
+      "theorem_DL1_prediction_DLpos": {
+        "opt": false,
+        "pess": true
+      }
+    }
+  expected:
+    {
+      "B": 1.0,
+      "C_opt": 1.0,
+      "C_pess": 0.0,
+      "DL_opt": 0.0,
+      "DL_pess": 1.0
+    }
+  minimality: Minimal: a tie needs >=2 plans; 1 BU, 0 capabilities, |Gamma|=1, 1 resource. Shows strict preference reversal is NOT necessary for DL_pess>0 (Lemma DL-1p, first-best-relative characterization).
+  result: PASS
+  witness_sha256: 8d4230c798af26948c633431f442451bc640965cbb236d8511f1950d8fb2afcf
+
+--------------------------------------------------------------------------------------------------------------
+[W3c] Same reversing, envelope-non-separable pair (xH,xG); DL=2 vs DL=0   (SUPPLEMENTARY; part T1, part id W3c)
+--------------------------------------------------------------------------------------------------------------
+  demonstrates: pairwise primitives do not determine the sign of DL
+  source test mapping: none in 51 (new constructive counterexample)
+  inputs (algebraic):
+    {
+      "Abar": 1,
+      "I1": [
+        {
+          "FE": 2.0,
+          "FU": 0.0,
+          "a": [
+            1.0
+          ],
+          "name": "U:xG"
+        },
+        {
+          "FE": 0.0,
+          "FU": 1.0,
+          "a": [
+            0.0
+          ],
+          "name": "U:xH"
+        }
+      ],
+      "I2": [
+        {
+          "FE": 2.0,
+          "FU": 0.0,
+          "a": [
+            1.0
+          ],
+          "name": "U:xG"
+        },
+        {
+          "FE": 0.0,
+          "FU": 1.0,
+          "a": [
+            0.0
+          ],
+          "name": "U:xH"
+        },
+        {
+          "FE": 2.0,
+          "FU": 2.0,
+          "a": [
+            1.0
+          ],
+          "name": "U:xM"
+        }
+      ]
+    }
+  rankings:
+    {
+      "I2": {
+        "by_F_E": [
+          "xG(2)=xM(2)",
+          "xH(0)"
+        ],
+        "by_F_u": [
+          "xM(2)",
+          "xH(1)",
+          "xG(0)"
+        ]
+      }
+    }
+  choices:
+    {
+      "I1": {
+        "opt": {
+          "F": 0.0,
+          "best_responses": {
+            "U": [
+              "U:xH"
+            ]
+          },
+          "envelopes": {
+            "U": [
+              0.0
+            ]
+          },
+          "gamma": "g",
+          "y": []
+        },
+        "pess": {
+          "F": 0.0,
+          "best_responses": {
+            "U": [
+              "U:xH"
+            ]
+          },
+          "envelopes": {
+            "U": [
+              0.0
+            ]
+          },
+          "gamma": "g",
+          "y": []
+        }
+      },
+      "I2": {
+        "opt": {
+          "F": 2.0,
+          "best_responses": {
+            "U": [
+              "U:xM"
+            ]
+          },
+          "envelopes": {
+            "U": [
+              1.0
+            ]
+          },
+          "gamma": "g",
+          "y": []
+        },
+        "pess": {
+          "F": 2.0,
+          "best_responses": {
+            "U": [
+              "U:xM"
+            ]
+          },
+          "envelopes": {
+            "U": [
+              1.0
+            ]
+          },
+          "gamma": "g",
+          "y": []
+        }
+      }
+    }
+  outputs:
+    {
+      "I1_DL_opt": 2.0,
+      "I1_DL_pess": 2.0,
+      "I2_DL_opt": 0.0,
+      "I2_DL_pess": 0.0,
+      "I2_n_B_optima": 2
+    }
+  expected:
+    {
+      "I1_DL_opt": 2.0,
+      "I1_DL_pess": 2.0,
+      "I2_DL_opt": 0.0,
+      "I2_DL_pess": 0.0,
+      "I2_n_B_optima": 2
+    }
+  minimality: I2 adds one plan to W3m. Any pairwise primitive that holds for (xH,xG) holds in both instances, yet DL differs: an iff for DL in pairwise primitives (A)-(F) alone is impossible; the correct iff (Lemma DL-1, first-best-relative characterization) quantifies over all first-best solutions.
+  result: PASS
+  witness_sha256: d32f24dcf6ad6f499256bd917d5e442c8454a28d09eddee3f588137699a3427b
+
+--------------------------------------------------------------------------------------------------------------
+[W4b] Opposite direction 15 -> 10: strict requirement excludes x^H AND the better x^G   (SUPPLEMENTARY; part T1, part id W4b)
+--------------------------------------------------------------------------------------------------------------
+  demonstrates: screening in the opposite direction 15 -> 10
+  source test mapping: constructed variant of the REG/T-ORC-8 fixture (not in 51): U2 blockable (impl 5), U1 gets EA=2 alternative k2 worth 20
+  inputs (algebraic):
+    {
+      "Abar": [
+        100,
+        100
+      ],
+      "DeltaC_gov": "0 in both (so Direct Governance Cost = 0, Net = Gross)",
+      "F_c": 10,
+      "N": 10,
+      "reading": "Screening is worthless when the envelope already separates; the requirement only prices U1 out of k1.",
+      "requirement": "EA_k >= EA_req for A>=1; loose EA_req=0, strict EA_req=2",
+      "units_configs": {
+        "U1": {
+          "k1": {
+            "EA": 1,
+            "impl": 5.0,
+            "l_x": 0.0,
+            "v_u": 3.0
+          },
+          "k2": {
+            "EA": 2,
+            "impl": 5.0,
+            "l_x": 0.0,
+            "v_u": 2.5
+          }
+        },
+        "U2": {
+          "k1": {
+            "EA": 1,
+            "impl": 5.0,
+            "l_x": 2.5,
+            "v_u": 2.0
+          }
+        }
+      }
+    }
+  rankings:
+    {
+      "loose": {
+        "U1": {
+          "a(x)": {
+            "U1:k0": [
+              0.0,
+              0.0
+            ],
+            "U1:k1": [
+              5.0,
+              0.0
+            ],
+            "U1:k2": [
+              5.0,
+              0.0
+            ]
+          },
+          "by_F_E": [
+            [
+              "U1:k1",
+              25.0
+            ],
+            [
+              "U1:k2",
+              20.0
+            ],
+            [
+              "U1:k0",
+              0.0
+            ]
+          ],
+          "by_F_u": [
+            [
+              "U1:k1",
+              25.0
+            ],
+            [
+              "U1:k2",
+              20.0
+            ],
+            [
+              "U1:k0",
+              0.0
+            ]
+          ]
+        },
+        "U2": {
+          "a(x)": {
+            "U2:k0": [
+              0.0,
+              0.0
+            ],
+            "U2:k1": [
+              5.0,
+              0.0
+            ]
+          },
+          "by_F_E": [
+            [
+              "U2:k0",
+              0.0
+            ],
+            [
+              "U2:k1",
+              -10.0
+            ]
+          ],
+          "by_F_u": [
+            [
+              "U2:k1",
+              15.0
+            ],
+            [
+              "U2:k0",
+              0.0
+            ]
+          ]
+        }
+      },
+      "strict": {
+        "U1": {
+          "a(x)": {
+            "U1:k0": [
+              0.0,
+              0.0
+            ],
+            "U1:k2": [
+              5.0,
+              0.0
+            ]
+          },
+          "by_F_E": [
+            [
+              "U1:k2",
+              20.0
+            ],
+            [
+              "U1:k0",
+              0.0
+            ]
+          ],
+          "by_F_u": [
+            [
+              "U1:k2",
+              20.0
+            ],
+            [
+              "U1:k0",
+              0.0
+            ]
+          ]
+        },
+        "U2": {
+          "a(x)": {
+            "U2:k0": [
+              0.0,
+              0.0
+            ]
+          },
+          "by_F_E": [
+            [
+              "U2:k0",
+              0.0
+            ]
+          ],
+          "by_F_u": [
+            [
+              "U2:k0",
+              0.0
+            ]
+          ]
+        }
+      }
+    }
+  choices:
+    {
+      "loose_B_optima": [
+        {
+          "gamma": "loose",
+          "plans": [
+            "U1:k1",
+            "U2:k0"
+          ],
+          "unblockable_deviations": {
+            "U1": [],
+            "U2": []
+          },
+          "y": [
+            "c"
+          ]
+        }
+      ],
+      "loose_C": {
+        "opt": {
+          "F": 15.0,
+          "best_responses": {
+            "U1": [
+              "U1:k1"
+            ],
+            "U2": [
+              "U2:k0"
+            ]
+          },
+          "envelopes": {
+            "U1": [
+              5.0,
+              0.0
+            ],
+            "U2": [
+              0.0,
+              0.0
+            ]
+          },
+          "gamma": "loose",
+          "y": [
+            "c"
+          ]
+        },
+        "pess": {
+          "F": 15.0,
+          "best_responses": {
+            "U1": [
+              "U1:k1"
+            ],
+            "U2": [
+              "U2:k0"
+            ]
+          },
+          "envelopes": {
+            "U1": [
+              5.0,
+              0.0
+            ],
+            "U2": [
+              0.0,
+              0.0
+            ]
+          },
+          "gamma": "loose",
+          "y": [
+            "c"
+          ]
+        }
+      },
+      "strict_B_optima": [
+        {
+          "gamma": "strict",
+          "plans": [
+            "U1:k2",
+            "U2:k0"
+          ],
+          "unblockable_deviations": {
+            "U1": [],
+            "U2": []
+          },
+          "y": [
+            "c"
+          ]
+        }
+      ],
+      "strict_C": {
+        "opt": {
+          "F": 10.0,
+          "best_responses": {
+            "U1": [
+              "U1:k2"
+            ],
+            "U2": [
+              "U2:k0"
+            ]
+          },
+          "envelopes": {
+            "U1": [
+              5.0,
+              0.0
+            ],
+            "U2": [
+              0.0,
+              0.0
+            ]
+          },
+          "gamma": "strict",
+          "y": [
+            "c"
+          ]
+        },
+        "pess": {
+          "F": 10.0,
+          "best_responses": {
+            "U1": [
+              "U1:k2"
+            ],
+            "U2": [
+              "U2:k0"
+            ]
+          },
+          "envelopes": {
+            "U1": [
+              5.0,
+              0.0
+            ],
+            "U2": [
+              0.0,
+              0.0
+            ]
+          },
+          "gamma": "strict",
+          "y": [
+            "c"
+          ]
+        }
+      }
+    }
+  outputs:
+    {
+      "B_loose": 15.0,
+      "B_strict": 10.0,
+      "C_opt_leader_chooses_policy": 15.0,
+      "C_opt_loose": 15.0,
+      "C_opt_strict": 10.0,
+      "C_pess_loose": 15.0,
+      "C_pess_strict": 10.0,
+      "DL_opt_loose": 0.0,
+      "DL_opt_strict": 0.0,
+      "DL_pess_loose": 0.0,
+      "DL_pess_strict": 0.0,
+      "GSV_opt": -5.0,
+      "GSV_pess": -5.0,
+      "PR_B": 5.0,
+      "chosen_policy_opt": "loose",
+      "identity_GSV_eq_dDL_minus_PR": true
+    }
+  expected:
+    {
+      "B_loose": 15,
+      "B_strict": 10,
+      "C_opt_leader_chooses_policy": 15,
+      "C_opt_loose": 15,
+      "C_opt_strict": 10,
+      "C_pess_loose": 15,
+      "C_pess_strict": 10,
+      "DL_opt_loose": 0,
+      "DL_opt_strict": 0,
+      "GSV_opt": -5,
+      "GSV_pess": -5,
+      "PR_B": 5
+    }
+  minimality: Minimal core: 1 BU, plans xG=(F_u=F_E=2,EA=1), xG'=(F_u=F_E=1,EA=2), x0; strict removes xG: C 2 -> 1. Two BUs kept to show the requirement also removes U2:k1 (the reversal) at no gain because the envelope already blocks it.
+  result: PASS
+  witness_sha256: 232e3dce2b01df8ad465d39e83534bbe689aaa70385b0fdd0966f5a8a4f20913
+
+--------------------------------------------------------------------------------------------------------------
+[W4c] Screening vs price of requirement: removes DL=5 but costs PR_B=8 (10 -> 7)   (SUPPLEMENTARY; part T1, part id W4c)
+--------------------------------------------------------------------------------------------------------------
+  demonstrates: screening removes DL = 5 but price of requirement PR_B = 8
+  source test mapping: constructed variant (not in 51)
+  inputs (algebraic):
+    {
+      "Abar": [
+        100,
+        100
+      ],
+      "DeltaC_gov": "0 in both (so Direct Governance Cost = 0, Net = Gross)",
+      "F_c": 10,
+      "N": 10,
+      "reading": "Reversal + envelope non-separability + requirement separating x^H are present, yet GSV < 0.",
+      "requirement": "EA_k >= EA_req for A>=1; loose EA_req=0, strict EA_req=2",
+      "units_configs": {
+        "U1": {
+          "k1": {
+            "EA": 1,
+            "impl": 5.0,
+            "l_x": 0.0,
+            "v_u": 3.0
+          },
+          "k2": {
+            "EA": 2,
+            "impl": 5.0,
+            "l_x": 0.0,
+            "v_u": 2.2
+          }
+        },
+        "U2": {
+          "k1": {
+            "EA": 1,
+            "impl": 0.0,
+            "l_x": 2.5,
+            "v_u": 2.0
+          }
+        }
+      }
+    }
+  rankings:
+    {
+      "loose": {
+        "U1": {
+          "a(x)": {
+            "U1:k0": [
+              0.0,
+              0.0
+            ],
+            "U1:k1": [
+              5.0,
+              0.0
+            ],
+            "U1:k2": [
+              5.0,
+              0.0
+            ]
+          },
+          "by_F_E": [
+            [
+              "U1:k1",
+              25.0
+            ],
+            [
+              "U1:k2",
+              17.0
+            ],
+            [
+              "U1:k0",
+              0.0
+            ]
+          ],
+          "by_F_u": [
+            [
+              "U1:k1",
+              25.0
+            ],
+            [
+              "U1:k2",
+              17.0
+            ],
+            [
+              "U1:k0",
+              0.0
+            ]
+          ]
+        },
+        "U2": {
+          "a(x)": {
+            "U2:k0": [
+              0.0,
+              0.0
+            ],
+            "U2:k1": [
+              0.0,
+              0.0
+            ]
+          },
+          "by_F_E": [
+            [
+              "U2:k0",
+              0.0
+            ],
+            [
+              "U2:k1",
+              -5.0
+            ]
+          ],
+          "by_F_u": [
+            [
+              "U2:k1",
+              20.0
+            ],
+            [
+              "U2:k0",
+              0.0
+            ]
+          ]
+        }
+      },
+      "strict": {
+        "U1": {
+          "a(x)": {
+            "U1:k0": [
+              0.0,
+              0.0
+            ],
+            "U1:k2": [
+              5.0,
+              0.0
+            ]
+          },
+          "by_F_E": [
+            [
+              "U1:k2",
+              17.0
+            ],
+            [
+              "U1:k0",
+              0.0
+            ]
+          ],
+          "by_F_u": [
+            [
+              "U1:k2",
+              17.0
+            ],
+            [
+              "U1:k0",
+              0.0
+            ]
+          ]
+        },
+        "U2": {
+          "a(x)": {
+            "U2:k0": [
+              0.0,
+              0.0
+            ]
+          },
+          "by_F_E": [
+            [
+              "U2:k0",
+              0.0
+            ]
+          ],
+          "by_F_u": [
+            [
+              "U2:k0",
+              0.0
+            ]
+          ]
+        }
+      }
+    }
+  choices:
+    {
+      "loose_B_optima": [
+        {
+          "gamma": "loose",
+          "plans": [
+            "U1:k1",
+            "U2:k0"
+          ],
+          "unblockable_deviations": {
+            "U1": [],
+            "U2": [
+              {
+                "dFE": -5.0,
+                "dFU": 20.0,
+                "plan": "U2:k1",
+                "strict_pref": true
+              }
+            ]
+          },
+          "y": [
+            "c"
+          ]
+        }
+      ],
+      "loose_C": {
+        "opt": {
+          "F": 10.0,
+          "best_responses": {
+            "U1": [
+              "U1:k1"
+            ],
+            "U2": [
+              "U2:k1"
+            ]
+          },
+          "envelopes": {
+            "U1": [
+              5.0,
+              0.0
+            ],
+            "U2": [
+              0.0,
+              0.0
+            ]
+          },
+          "gamma": "loose",
+          "y": [
+            "c"
+          ]
+        },
+        "pess": {
+          "F": 10.0,
+          "best_responses": {
+            "U1": [
+              "U1:k1"
+            ],
+            "U2": [
+              "U2:k1"
+            ]
+          },
+          "envelopes": {
+            "U1": [
+              5.0,
+              0.0
+            ],
+            "U2": [
+              0.0,
+              0.0
+            ]
+          },
+          "gamma": "loose",
+          "y": [
+            "c"
+          ]
+        }
+      },
+      "strict_B_optima": [
+        {
+          "gamma": "strict",
+          "plans": [
+            "U1:k2",
+            "U2:k0"
+          ],
+          "unblockable_deviations": {
+            "U1": [],
+            "U2": []
+          },
+          "y": [
+            "c"
+          ]
+        }
+      ],
+      "strict_C": {
+        "opt": {
+          "F": 7.0,
+          "best_responses": {
+            "U1": [
+              "U1:k2"
+            ],
+            "U2": [
+              "U2:k0"
+            ]
+          },
+          "envelopes": {
+            "U1": [
+              5.0,
+              0.0
+            ],
+            "U2": [
+              0.0,
+              0.0
+            ]
+          },
+          "gamma": "strict",
+          "y": [
+            "c"
+          ]
+        },
+        "pess": {
+          "F": 7.0,
+          "best_responses": {
+            "U1": [
+              "U1:k2"
+            ],
+            "U2": [
+              "U2:k0"
+            ]
+          },
+          "envelopes": {
+            "U1": [
+              5.0,
+              0.0
+            ],
+            "U2": [
+              0.0,
+              0.0
+            ]
+          },
+          "gamma": "strict",
+          "y": [
+            "c"
+          ]
+        }
+      }
+    }
+  outputs:
+    {
+      "B_loose": 15.0,
+      "B_strict": 7.0,
+      "C_opt_leader_chooses_policy": 10.0,
+      "C_opt_loose": 10.0,
+      "C_opt_strict": 7.0,
+      "C_pess_loose": 10.0,
+      "C_pess_strict": 7.0,
+      "DL_opt_loose": 5.0,
+      "DL_opt_strict": 0.0,
+      "DL_pess_loose": 5.0,
+      "DL_pess_strict": 0.0,
+      "GSV_opt": -3.0,
+      "GSV_pess": -3.0,
+      "PR_B": 8.0,
+      "chosen_policy_opt": "loose",
+      "identity_GSV_eq_dDL_minus_PR": true
+    }
+  expected:
+    {
+      "B_loose": 15,
+      "B_strict": 7,
+      "C_opt_leader_chooses_policy": 10,
+      "C_opt_loose": 10,
+      "C_opt_strict": 7,
+      "DL_opt_loose": 5,
+      "DL_opt_strict": 0,
+      "GSV_opt": -3,
+      "GSV_pess": -3,
+      "PR_B": 8
+    }
+  minimality: Two BUs needed: the screened reversal (U2) and the priced-out first-best config (U1) sit in different units, which is the policy-coupling channel (one gamma for all units).
+  result: PASS
+  witness_sha256: a17b53e07d786c7f3627c2dd249d1ee6b1553a3f1844776300e7fd7b3ad2a57e
+
+--------------------------------------------------------------------------------------------------------------
+[W4d] Pairwise screening insufficient: removing x^H lets a worse x^M become the best response   (SUPPLEMENTARY; part T1, part id W4d)
+--------------------------------------------------------------------------------------------------------------
+  demonstrates: pairwise screening insufficient (worse x^M becomes best response)
+  source test mapping: constructed variant (not in 51)
+  inputs (algebraic):
+    {
+      "Abar": [
+        100,
+        100
+      ],
+      "DeltaC_gov": "0 in both (so Direct Governance Cost = 0, Net = Gross)",
+      "F_c": 10,
+      "N": 10,
+      "reading": "Screening must remove every unblockable deviation, not a single reversing plan (Prop. GS-2).",
+      "requirement": "EA_k >= EA_req for A>=1; loose EA_req=0, strict EA_req=2",
+      "units_configs": {
+        "U1": {
+          "k1": {
+            "EA": 2,
+            "impl": 5.0,
+            "l_x": 0.0,
+            "v_u": 3.0
+          }
+        },
+        "U2": {
+          "k1": {
+            "EA": 1,
+            "impl": 0.0,
+            "l_x": 2.5,
+            "v_u": 2.0
+          },
+          "k2": {
+            "EA": 2,
+            "impl": 0.0,
+            "l_x": 2.5,
+            "v_u": 1.9
+          }
+        }
+      }
+    }
+  rankings:
+    {
+      "loose": {
+        "U1": {
+          "a(x)": {
+            "U1:k0": [
+              0.0,
+              0.0
+            ],
+            "U1:k1": [
+              5.0,
+              0.0
+            ]
+          },
+          "by_F_E": [
+            [
+              "U1:k1",
+              25.0
+            ],
+            [
+              "U1:k0",
+              0.0
+            ]
+          ],
+          "by_F_u": [
+            [
+              "U1:k1",
+              25.0
+            ],
+            [
+              "U1:k0",
+              0.0
+            ]
+          ]
+        },
+        "U2": {
+          "a(x)": {
+            "U2:k0": [
+              0.0,
+              0.0
+            ],
+            "U2:k1": [
+              0.0,
+              0.0
+            ],
+            "U2:k2": [
+              0.0,
+              0.0
+            ]
+          },
+          "by_F_E": [
+            [
+              "U2:k0",
+              0.0
+            ],
+            [
+              "U2:k1",
+              -5.0
+            ],
+            [
+              "U2:k2",
+              -6.000000000000001
+            ]
+          ],
+          "by_F_u": [
+            [
+              "U2:k1",
+              20.0
+            ],
+            [
+              "U2:k2",
+              19.0
+            ],
+            [
+              "U2:k0",
+              0.0
+            ]
+          ]
+        }
+      },
+      "strict": {
+        "U1": {
+          "a(x)": {
+            "U1:k0": [
+              0.0,
+              0.0
+            ],
+            "U1:k1": [
+              5.0,
+              0.0
+            ]
+          },
+          "by_F_E": [
+            [
+              "U1:k1",
+              25.0
+            ],
+            [
+              "U1:k0",
+              0.0
+            ]
+          ],
+          "by_F_u": [
+            [
+              "U1:k1",
+              25.0
+            ],
+            [
+              "U1:k0",
+              0.0
+            ]
+          ]
+        },
+        "U2": {
+          "a(x)": {
+            "U2:k0": [
+              0.0,
+              0.0
+            ],
+            "U2:k2": [
+              0.0,
+              0.0
+            ]
+          },
+          "by_F_E": [
+            [
+              "U2:k0",
+              0.0
+            ],
+            [
+              "U2:k2",
+              -6.000000000000001
+            ]
+          ],
+          "by_F_u": [
+            [
+              "U2:k2",
+              19.0
+            ],
+            [
+              "U2:k0",
+              0.0
+            ]
+          ]
+        }
+      }
+    }
+  choices:
+    {
+      "loose_B_optima": [
+        {
+          "gamma": "loose",
+          "plans": [
+            "U1:k1",
+            "U2:k0"
+          ],
+          "unblockable_deviations": {
+            "U1": [],
+            "U2": [
+              {
+                "dFE": -5.0,
+                "dFU": 20.0,
+                "plan": "U2:k1",
+                "strict_pref": true
+              },
+              {
+                "dFE": -6.000000000000001,
+                "dFU": 19.0,
+                "plan": "U2:k2",
+                "strict_pref": true
+              }
+            ]
+          },
+          "y": [
+            "c"
+          ]
+        }
+      ],
+      "loose_C": {
+        "opt": {
+          "F": 10.0,
+          "best_responses": {
+            "U1": [
+              "U1:k1"
+            ],
+            "U2": [
+              "U2:k1"
+            ]
+          },
+          "envelopes": {
+            "U1": [
+              5.0,
+              0.0
+            ],
+            "U2": [
+              0.0,
+              0.0
+            ]
+          },
+          "gamma": "loose",
+          "y": [
+            "c"
+          ]
+        },
+        "pess": {
+          "F": 10.0,
+          "best_responses": {
+            "U1": [
+              "U1:k1"
+            ],
+            "U2": [
+              "U2:k1"
+            ]
+          },
+          "envelopes": {
+            "U1": [
+              5.0,
+              0.0
+            ],
+            "U2": [
+              0.0,
+              0.0
+            ]
+          },
+          "gamma": "loose",
+          "y": [
+            "c"
+          ]
+        }
+      },
+      "strict_B_optima": [
+        {
+          "gamma": "strict",
+          "plans": [
+            "U1:k1",
+            "U2:k0"
+          ],
+          "unblockable_deviations": {
+            "U1": [],
+            "U2": [
+              {
+                "dFE": -6.000000000000001,
+                "dFU": 19.0,
+                "plan": "U2:k2",
+                "strict_pref": true
+              }
+            ]
+          },
+          "y": [
+            "c"
+          ]
+        }
+      ],
+      "strict_C": {
+        "opt": {
+          "F": 9.0,
+          "best_responses": {
+            "U1": [
+              "U1:k1"
+            ],
+            "U2": [
+              "U2:k2"
+            ]
+          },
+          "envelopes": {
+            "U1": [
+              5.0,
+              0.0
+            ],
+            "U2": [
+              0.0,
+              0.0
+            ]
+          },
+          "gamma": "strict",
+          "y": [
+            "c"
+          ]
+        },
+        "pess": {
+          "F": 9.0,
+          "best_responses": {
+            "U1": [
+              "U1:k1"
+            ],
+            "U2": [
+              "U2:k2"
+            ]
+          },
+          "envelopes": {
+            "U1": [
+              5.0,
+              0.0
+            ],
+            "U2": [
+              0.0,
+              0.0
+            ]
+          },
+          "gamma": "strict",
+          "y": [
+            "c"
+          ]
+        }
+      }
+    }
+  outputs:
+    {
+      "B_loose": 15.0,
+      "B_strict": 15.0,
+      "C_opt_leader_chooses_policy": 10.0,
+      "C_opt_loose": 10.0,
+      "C_opt_strict": 9.0,
+      "C_pess_loose": 10.0,
+      "C_pess_strict": 9.0,
+      "DL_opt_loose": 5.0,
+      "DL_opt_strict": 6.0,
+      "DL_pess_loose": 5.0,
+      "DL_pess_strict": 6.0,
+      "GSV_opt": -1.0,
+      "GSV_pess": -1.0,
+      "PR_B": 0.0,
+      "chosen_policy_opt": "loose",
+      "identity_GSV_eq_dDL_minus_PR": true
+    }
+  expected:
+    {
+      "B_loose": 15,
+      "B_strict": 15,
+      "C_opt_leader_chooses_policy": 10,
+      "C_opt_loose": 10,
+      "C_opt_strict": 9,
+      "DL_opt_loose": 5,
+      "DL_opt_strict": 6,
+      "GSV_opt": -1,
+      "GSV_pess": -1,
+      "PR_B": 0
+    }
+  minimality: Minimal core: 1 BU, x0=(F_u 0,F_E 0), xH=(20,-5,EA1), xM=(19,-6,EA2), all a=0.
+  result: PASS
+  witness_sha256: c970795a0d5728e0bfe0dd3ee2ce88de25cb64fbd5aaa7e15b7cbe552be585a8
+
+--------------------------------------------------------------------------------------------------------------
+[W4e] GSV_pess = 1 > 0 = GSV_opt without any strict preference reversal   (SUPPLEMENTARY; part T1, part id W4e)
+--------------------------------------------------------------------------------------------------------------
+  demonstrates: GSV_pess > 0 = GSV_opt without strict reversal
+  source test mapping: none in 51 (extends W3b)
+  inputs (algebraic):
+    {
+      "plans": [
+        {
+          "EA": 2,
+          "FE": 1.0,
+          "FU": 0.0,
+          "a": [
+            0.0
+          ],
+          "name": "U:xG"
+        },
+        {
+          "EA": 1,
+          "FE": 0.0,
+          "FU": 0.0,
+          "a": [
+            0.0
+          ],
+          "name": "U:xH"
+        }
+      ],
+      "requirement": {
+        "loose": 0,
+        "strict": 2
+      }
+    }
+  rankings:
+    {
+      "U": {
+        "by_F_E": [
+          "xG(1)",
+          "xH(0)"
+        ],
+        "by_F_u": [
+          "xG(0)=xH(0)"
+        ]
+      }
+    }
+  choices:
+    {
+      "loose": {
+        "opt": {
+          "F": 1.0,
+          "best_responses": {
+            "U": [
+              "U:xG",
+              "U:xH"
+            ]
+          },
+          "envelopes": {
+            "U": [
+              0.0
+            ]
+          },
+          "gamma": "loose",
+          "y": []
+        },
+        "pess": {
+          "F": 0.0,
+          "best_responses": {
+            "U": [
+              "U:xG",
+              "U:xH"
+            ]
+          },
+          "envelopes": {
+            "U": [
+              0.0
+            ]
+          },
+          "gamma": "loose",
+          "y": []
+        }
+      },
+      "strict": {
+        "opt": {
+          "F": 1.0,
+          "best_responses": {
+            "U": [
+              "U:xG"
+            ]
+          },
+          "envelopes": {
+            "U": [
+              0.0
+            ]
+          },
+          "gamma": "strict",
+          "y": []
+        },
+        "pess": {
+          "F": 1.0,
+          "best_responses": {
+            "U": [
+              "U:xG"
+            ]
+          },
+          "envelopes": {
+            "U": [
+              0.0
+            ]
+          },
+          "gamma": "strict",
+          "y": []
+        }
+      }
+    }
+  outputs:
+    {
+      "DL_opt_loose": 0.0,
+      "DL_pess_loose": 1.0,
+      "GSV_opt": 0.0,
+      "GSV_pess": 1.0,
+      "PR_B": 0.0
+    }
+  expected:
+    {
+      "DL_opt_loose": 0.0,
+      "DL_pess_loose": 1.0,
+      "GSV_opt": 0.0,
+      "GSV_pess": 1.0,
+      "PR_B": 0.0
+    }
+  minimality: Minimal (1 BU, 2 plans). Shows 'aligned preferences => GSV<=0' must be stated for strict alignment incl. ties: positive pessimistic screening can come from follower indifference alone.
+  result: PASS
+  witness_sha256: 6e8e008f1ad8704a8484e0923958430ba0608d1ebb4d1b2cb9972179457b2c60
+
+--------------------------------------------------------------------------------------------------------------
+[W_DL_AL3] DL>0 with F_u == F_E: unit-only constraint (AL3 fails, AL1/2/4 hold)   (SUPPLEMENTARY; part T1, part id W5)
+--------------------------------------------------------------------------------------------------------------
+  demonstrates: DL > 0 with F_u == F_E via a unit-only constraint (AL3)
+  source test mapping: none in 51 (51 implements no unit-only constraints; 42 sec. 8.1-8.2 AL3)
+  inputs (algebraic):
+    {
+      "note": "unit_ok=False: violates a unit-only constraint (e.g. s_min or e^u_j) that is not in the enterprise problem",
+      "plans": [
+        {
+          "FE": 1.0,
+          "FU": 1.0,
+          "a": [
+            0.0
+          ],
+          "name": "U:xG",
+          "unit_ok": false
+        },
+        {
+          "FE": 0.0,
+          "FU": 0.0,
+          "a": [
+            0.0
+          ],
+          "name": "U:x0"
+        }
+      ]
+    }
+  rankings:
+    {
+      "U": {
+        "by_F_E": [
+          "xG(1)",
+          "x0(0)"
+        ],
+        "by_F_u": [
+          "xG(1)",
+          "x0(0)"
+        ]
+      }
+    }
+  choices:
+    {
+      "B_optima": [
+        {
+          "gamma": "g",
+          "plans": [
+            "U:xG"
+          ],
+          "unblockable_deviations": {
+            "U": []
+          },
+          "y": []
+        }
+      ],
+      "C": {
+        "opt": {
+          "F": 0.0,
+          "best_responses": {
+            "U": [
+              "U:x0"
+            ]
+          },
+          "envelopes": {
+            "U": [
+              0.0
+            ]
+          },
+          "gamma": "g",
+          "y": []
+        },
+        "pess": {
+          "F": 0.0,
+          "best_responses": {
+            "U": [
+              "U:x0"
+            ]
+          },
+          "envelopes": {
+            "U": [
+              0.0
+            ]
+          },
+          "gamma": "g",
+          "y": []
+        }
+      }
+    }
+  outputs:
+    {
+      "B": 1.0,
+      "C_opt": 0.0,
+      "C_pess": 0.0,
+      "DL_opt": 1.0,
+      "DL_pess": 1.0,
+      "theorem_DL1_prediction_DLpos": {
+        "opt": true,
+        "pess": true
+      }
+    }
+  expected:
+    {
+      "B": 1.0,
+      "C_opt": 0.0,
+      "C_pess": 0.0,
+      "DL_opt": 1.0,
+      "DL_pess": 1.0
+    }
+  minimality: Minimal (1 BU, 2 plans). Ledger misalignment is not necessary once AL3 fails.
+  result: PASS
+  witness_sha256: b906671d89b26426072746b8b205ebe34f52a28682db279911d2aaa8f2a46fcd
+
+--------------------------------------------------------------------------------------------------------------
+[W5b] Model B monotone in delta on the W5 instances; source-indexing assumption is load-bearing   (SUPPLEMENTARY; part T2, part id W5b)
+--------------------------------------------------------------------------------------------------------------
+  demonstrates: Model B monotone in delta; source-indexing assumption load-bearing
+  source test mapping: 51 T-SEN-8 (B part: single 0->1 switch on 8 seeds); 42 ¡±10 + D8 + ¡±19 audit #3
+  inputs (algebraic):
+    {
+      "boundary_instance": "2 BUs; F_c=5; U1 may build local c (F_loc=1), U2 may not; pooled BUD=6 (binding); j1 (U1): V=10, cost base 6; j2 (U2): V=6.5, cost base 1; reuse path: cost = max(0, base - delta)",
+      "delta_grid_boundary": [
+        0.0,
+        1.0,
+        3.0,
+        5.0,
+        6.0
+      ],
+      "same_as": "W5 (T-SEN-8 analog) and W5-min"
+    }
+  rankings:
+    {
+      "note": "Model B: no follower; enterprise picks plans by OBJ-E"
+    }
+  choices:
+    [
+      {
+        "B": [
+          [
+            "U1",
+            1
+          ],
+          [
+            "U2",
+            0
+          ]
+        ],
+        "delta": 0.0
+      },
+      {
+        "B": [
+          [
+            "U1",
+            1
+          ],
+          [
+            "U2",
+            0
+          ]
+        ],
+        "delta": 1.0
+      },
+      {
+        "B": [
+          [
+            "U1",
+            1
+          ],
+          [
+            "U2",
+            0
+          ]
+        ],
+        "delta": 2.0
+      },
+      {
+        "B": [
+          [
+            "U1",
+            1
+          ],
+          [
+            "U2",
+            0
+          ]
+        ],
+        "delta": 2.9
+      },
+      {
+        "B": [
+          [
+            "U1",
+            1
+          ],
+          [
+            "U2",
+            0
+          ]
+        ],
+        "delta": 3.0
+      },
+      {
+        "B": [
+          [
+            "U1",
+            1
+          ],
+          [
+            "U2",
+            0
+          ]
+        ],
+        "delta": 3.5
+      },
+      {
+        "B": [
+          [
+            "U1",
+            1
+          ],
+          [
+            "U2",
+            0
+          ]
+        ],
+        "delta": 4.0
+      },
+      {
+        "B": [
+          [
+            "U1",
+            1
+          ],
+          [
+            "U2",
+            0
+          ]
+        ],
+        "delta": 5.0
+      }
+    ]
+  outputs:
+    {
+      "D_B_TSEN8": [
+        1.0,
+        2.0,
+        3.0,
+        3.9,
+        4.0,
+        4.5,
+        5.0,
+        6.0
+      ],
+      "D_B_W5min": [
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0
+      ],
+      "D_availability": [
+        0.5,
+        -2.5,
+        -4.5,
+        2.5,
+        2.5
+      ],
+      "D_source": [
+        0.5,
+        1.5,
+        1.5,
+        10.5,
+        11.5
+      ],
+      "seq_availability": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "1"
+      ],
+      "seq_source": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ]
+    }
+  expected:
+    {
+      "DB": [
+        1.0,
+        2.0,
+        3.0,
+        3.9,
+        4.0,
+        4.5,
+        5.0,
+        6.0
+      ],
+      "DBm": [
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0
+      ],
+      "avl": [
+        0.5,
+        -2.5,
+        -4.5,
+        2.5,
+        2.5
+      ],
+      "seq_avl": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "1"
+      ],
+      "seq_src": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "src": [
+        0.5,
+        1.5,
+        1.5,
+        10.5,
+        11.5
+      ]
+    }
+  minimality: Boundary instance uses 2 BUs x 1 initiative x 2 options and one local option; with source indexing G_0 is constant (local L-cell fixed) and D is nondecreasing (budget binding does not matter); with availability indexing delta also lowers the local-version cost, G_0 rises first and the B build decision goes 1 -> 0 -> 1. Not claimed globally minimal.
+  result: PASS
+  witness_sha256: d4a40bbd2fc5e18610a2a25c31caf0e89cc4f9e1d36aec12506d27c1d1c162fa
+
+--------------------------------------------------------------------------------------------------------------
+[W5_WIDE] Wide-margin supplement to W5: Model C build region [0,4) U (7,inf) with margins 3 (perturbation-robust)   (SUPPLEMENTARY; part T7, part id W5_WIDE)
+--------------------------------------------------------------------------------------------------------------
+  demonstrates: wide-margin W5 supplement: region [0,4) U (7,inf), +-5% perturbation survivors
+  source test mapping: none in 51 (supplement to T-SEN-8 / W5; instance from red-team report Q/11 A6, t6/w5_wide.py)
+  inputs (algebraic):
+    {
+      "F_c": 17,
+      "U1": "aligned: N1=10, v1=3, l_x=0; k1: F_u = phi = 30 - C1, C1(delta) = max(0, 10 - delta) (S-cell); a(k1) = (C1, 0)",
+      "U2": "misaligned: N2=10, v2=2, l_x=3; k1: F_u = 20 - C2, phi = -10 - C2, C2(delta) = max(0, 4 - delta); a(k1) = (C2, 0)",
+      "capability": "one shared c; y_cur = {}; pooled (BUD, ENG) = (100, 100) minus F_c on BUD; no local version",
+      "delta_grid": [
+        0.0,
+        2.0,
+        3.9,
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        7.5,
+        9.0,
+        10.0,
+        12.0
+      ],
+      "envelopes": "E'_u = {a(x)}; weak affordability a(x) <= e; exact ties (none occur)",
+      "robustness": "all 8 scalars (N1, v1, b1, N2, v2, l_x, b2, F_c) multiplied by independent U[1-r, 1+r] factors; 400 draws per radius; private random.Random(20261015 + stream); region scanned on delta in {0, 0.05, ..., 12} (241 points); 'kept' = strict region has >= 2 components",
+      "status_quo": "k0: a = (0,0), F_u = phi = 0 for both units"
+    }
+  rankings:
+    {
+      "U1_follower": "k1 strictly preferred for all delta (30 - C1 > 0)",
+      "U2_blockable": "iff C2(delta) > 0 iff delta < 4 (envelope e_U2 = (0,0) then excludes k1)",
+      "U2_follower": "k1 strictly preferred for all delta (20 - C2 > 0)"
+    }
+  choices:
+    {
+      "delta_4_to_10": "U2:k1 unblockable (a = (0,0)): D = 30 - (10 - delta) - 10 - 17 = delta - 7",
+      "delta_ge_10": "D = 30 - 10 - 17 = 3",
+      "delta_lt_4": "leader admits U1:k1, blocks U2 (e_U2 = 0): D = 30 - (10 - delta) - 17 = 3 + delta"
+    }
+  outputs:
+    {
+      "D_B": [
+        3.0,
+        5.0,
+        6.9,
+        7.0,
+        8.0,
+        9.0,
+        10.0,
+        10.5,
+        12.0,
+        13.0,
+        13.0
+      ],
+      "D_opt": [
+        3.0,
+        5.0,
+        6.9,
+        -3.0,
+        -2.0,
+        -1.0,
+        0.0,
+        0.5,
+        2.0,
+        3.0,
+        3.0
+      ],
+      "D_pess": [
+        3.0,
+        5.0,
+        6.9,
+        -3.0,
+        -2.0,
+        -1.0,
+        0.0,
+        0.5,
+        2.0,
+        3.0,
+        3.0
+      ],
+      "build_region_strict": "[0,4) U (7,inf)",
+      "build_region_tiebuild": "[0,4) U [7,inf)",
+      "engine_check_canonical_W5_D": [
+        1.0,
+        2.0,
+        3.0,
+        3.9,
+        -1.0,
+        -0.5,
+        0.0,
+        1.0
+      ],
+      "engine_check_canonical_W5_seq": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "knife_edge_components": {
+        "canonical": {
+          "base": 2,
+          "cost_floor_0_01": 1,
+          "eng_footprint_1e_6": 1,
+          "floor_0_5_plus_negative_opex_minus_1": 2
+        },
+        "wide": {
+          "base": 2,
+          "cost_floor_0_01": 1,
+          "eng_footprint_1e_6": 1,
+          "floor_0_5_plus_negative_opex_minus_1": 2
+        }
+      },
+      "margins": "D(0) = 3, D(4) = -3, D(>=10) = 3 (W5: 1, -1, 1)",
+      "nominal_components": {
+        "canonical": 2,
+        "wide": 2
+      },
+      "robustness_survivors": {
+        "canonical_pm1pct": 398,
+        "canonical_pm5pct": 162,
+        "total_per_radius": 400,
+        "wide_pm10pct": 256,
+        "wide_pm5pct": 367
+      },
+      "seq_pess_strict": [
+        "1",
+        "1",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "seq_pess_tiebuild": [
+        "1",
+        "1",
+        "1",
+        "0",
+        "0",
+        "0",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ]
+    }
+  expected:
+    {
+      "D_B": [
+        3.0,
+        5.0,
+        6.9,
+        7.0,
+        8.0,
+        9.0,
+        10.0,
+        10.5,
+        12.0,
+        13.0,
+        13.0
+      ],
+      "D_pess": [
+        3.0,
+        5.0,
+        6.9,
+        -3.0,
+        -2.0,
+        -1.0,
+        0.0,
+        0.5,
+        2.0,
+        3.0,
+        3.0
+      ],
+      "canonical_D_TSEN8": [
+        1.0,
+        2.0,
+        3.0,
+        3.9,
+        -1.0,
+        -0.5,
+        0.0,
+        1.0
+      ],
+      "canonical_seq_TSEN8": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "knife_edge_components_eng_or_floor": 1,
+      "nominal_components": {
+        "canonical": 2,
+        "wide": 2
+      },
+      "robustness_survivors": {
+        "canonical_pm1pct": 398,
+        "canonical_pm5pct": 162,
+        "wide_pm10pct": 256,
+        "wide_pm5pct": 367
+      },
+      "seq_strict": [
+        "1",
+        "1",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "seq_tiebuild": [
+        "1",
+        "1",
+        "1",
+        "0",
+        "0",
+        "0",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ]
+    }
+  minimality: Same structure as W5 (2 BUs x 1 initiative x 2 options, uniform clipped reuse, no follower ties); only the scalars differ, so the numeric margins are 3 instead of 1. NOT more robust structurally: like W5 it needs the misaligned unit's reused AI configuration to reach a pooled footprint <= the status quo's in EVERY pooled resource (exact zero cost floor and exact zero ENG footprint); with ENG footprint 1e-6 or cost floor 0.01 the region is an interval (knife_edge_components). A fixed-seed perturbation count is a synthetic regression, not a proof of robustness.
+  result: PASS
+  witness_sha256: f05b23d58f7498ce65ffead74b80611211e65fb6e1338dbb1ab614bfd25f0143
+
+--------------------------------------------------------------------------------------------------------------
+[W6b] Adaptive robust candidate set: Theta shrinkage raises MMR and makes VOI negative   (SUPPLEMENTARY; part T3, part id W6b)
+--------------------------------------------------------------------------------------------------------------
+  demonstrates: adaptive candidate set: Theta shrinkage raises MMR, VOI = -1
+  source test mapping: 51 solve_robust (candidates = ROBUSTLY_FEASIBLE on the group box), T-SEN-4 feasibility classes; 42 ¡±13.3
+  inputs (algebraic):
+    {
+      "Theta^(0)": "[0,1] x [0,1]",
+      "Theta^(1)": "[0,1] x [0,1/2]  (block-wise shrinkage of q)",
+      "blocks": "v in [0,1], q in [0,1]",
+      "one-block variant": "v in [0,1]; A: F = v; B: F = 1 - v, slack 4/5 - v; Theta^(1) = [0, 4/5]",
+      "portfolios": "A: F = v, slack 1 (robustly feasible); B: F = 1 - v, slack 1/2 - q (feasible iff q <= 1/2)"
+    }
+  rankings:
+    {
+      "Theta^(1)": "A best for v >= 1/2, B best for v <= 1/2 (crossing inside the box)"
+    }
+  choices:
+    {
+      "d*_0": [
+        "A"
+      ],
+      "d*_1": [
+        "A",
+        "B"
+      ]
+    }
+  outputs:
+    {
+      "C(Theta^(0))": [
+        "A"
+      ],
+      "C(Theta^(1))": [
+        "A",
+        "B"
+      ],
+      "MMR(Theta|q) adaptive, q in {0,1}": {
+        "0": "1",
+        "1": "0"
+      },
+      "MMR_0": "0",
+      "MMR_1 adaptive": "1",
+      "MMR_1 with C frozen at C(Theta^(0))": "0",
+      "VOI_q adaptive": "-1",
+      "VOI_q fixed candidates": "0",
+      "one-block MMR_0 -> MMR_1": [
+        "0",
+        "3/5"
+      ]
+    }
+  expected:
+    {
+      "MMR_0": "0",
+      "MMR_1 adaptive": "1 (increase)",
+      "VOI_q adaptive": "-1",
+      "VOI_q fixed": "0",
+      "one-block": "0 -> 3/5"
+    }
+  minimality: 2 portfolios is minimal (one candidate has zero regret). The MMR increase needs only one block (one-block variant 0 -> 3/5). A negative adaptive VOI needs >= 2 blocks: with one block the conditioned set is a point, adaptive MMR(point) = 0 <= MMR(Theta), so VOI >= 0.
+  result: PASS
+  witness_sha256: 568509fffa5924bd2177d3da4ba2d6d2ff56825b510366e2db22ba6087be957b
+
+--------------------------------------------------------------------------------------------------------------
+[W6c] Grid refinement of VOI: nested grids monotone; non-nested and edge-only grids are not   (SUPPLEMENTARY; part T3, part id W6c)
+--------------------------------------------------------------------------------------------------------------
+  demonstrates: grid refinement: nested monotone, non-nested / edge-only not
+  source test mapping: 51 block_values (scale: t/grid; prob: vertices + 2-vertex mixtures), t_sen7 vg9 check; 42 ¡±13.5
+  inputs (algebraic):
+    {
+      "prob oracle": "block w in simplex conv{e1,e2,e3} (3 vertices), block q in [0,1]; candidates W_i = w_i, D = q, E = 1 - q",
+      "scale oracle": "T-SEN-7: F_A=1-v, F_B=v, F_D=q, F_E=1-q; grids t/n on [0,1]"
+    }
+  rankings:
+    {
+      "grid VOI_v by n": {
+        "1": "1",
+        "16": "1/2",
+        "2": "1/2",
+        "3": "2/3",
+        "4": "1/2",
+        "5": "3/5",
+        "8": "1/2",
+        "9": "5/9"
+      }
+    }
+  choices:
+    {
+      "nested chain": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "non-nested pair": [
+        4,
+        5
+      ]
+    }
+  outputs:
+    {
+      "all grids >= exact": true,
+      "exact VOI_v": "1/2",
+      "exact VOI_w": "1/3",
+      "grid4 -> grid5": [
+        "1/2",
+        "3/5"
+      ],
+      "nested chain monotone non-increasing": true,
+      "prob block MMR(Theta)": "1",
+      "prob block edge-grid VOI_w by n": {
+        "12": "1/2",
+        "2": "1/2",
+        "3": "2/3",
+        "4": "1/2",
+        "6": "1/2",
+        "8": "1/2"
+      },
+      "sup MMR(w) on simplex (lattice 1/12, contains barycentre)": "2/3"
+    }
+  expected:
+    {
+      "edge-grid VOI_w": ">= 1/2 for every n (does not converge)",
+      "exact VOI_w": "1/3 (barycentre)",
+      "grid4 -> grid5": "1/2 -> 3/5 (bound worsens)",
+      "nested": "1 >= 1/2 >= 1/2 >= 1/2 >= 1/2"
+    }
+  minimality: Scale case uses the 2-block T-SEN-7 oracle (2 blocks needed, see W6). Non-nestedness needs only grids n=4 (contains 1/2) and n=5 (does not). Edge-only non-convergence needs a probability block with >= 3 vertices (a 2-vertex block is a segment, fully covered by its edge grid).
+  result: PASS
+  witness_sha256: b9ce2f4887f6831d849757ced94401c04aba83ae4044f1e43b310fdd610161c4
+
+--------------------------------------------------------------------------------------------------------------
+[W6d] Theta-independent (pointwise-feasible) regret benchmark: monotone but not vertex-exact   (SUPPLEMENTARY; part T3, part id W6d)
+--------------------------------------------------------------------------------------------------------------
+  demonstrates: Theta-independent benchmark: monotone but not vertex-exact
+  source test mapping: 42 ¡±13.2 MaxRegret vertex exactness 'for a fixed candidate set'; 51 regret_table ScopeError guard
+  inputs (algebraic):
+    {
+      "benchmark": "F#(q) = max over portfolios feasible at q",
+      "block": "q in [0,1]",
+      "portfolios": "A: F = 0, always feasible; B: F = q, slack 1/2 - q"
+    }
+  rankings:
+    {
+      "F#": "q on [0,1/2], 0 on (1/2,1]"
+    }
+  choices:
+    {
+      "decision": "A (only robustly feasible portfolio)"
+    }
+  outputs:
+    {
+      "MaxRegret#(A) at vertices": "0",
+      "MaxRegret#(A) on 9-point grid": "1/2",
+      "W6b instance MMR# Theta^(0) -> Theta^(1) (9x9 grid evaluation)": [
+        "1",
+        "1"
+      ]
+    }
+  expected:
+    {
+      "W6b instance": "1 -> 1 (non-increasing)",
+      "true (q = 1/2)": "1/2",
+      "vertex": "0"
+    }
+  minimality: One block, two portfolios; the benchmark jump at q = 1/2 is the minimal non-multilinearity.
+  result: PASS
+  witness_sha256: 703a44ba4d17efa600a3c35ea633e235ba4cfea1abcabb4003e52dd53f4f5674
+
+--------------------------------------------------------------------------------------------------------------
+[W6e] Myopic VOI complementarity: every single-block VOI is 0, joint identification removes all regret   (SUPPLEMENTARY; part T3, part id W6e)
+--------------------------------------------------------------------------------------------------------------
+  demonstrates: myopic VOI complementarity (single VOIs 0, joint removes regret)
+  source test mapping: 42 ¡±13.5 VOI_p (one block at a time); no 51 test (new)
+  inputs (algebraic):
+    {
+      "blocks": "v, q in [0,1]",
+      "candidates": "X: F = (2v-1)(2q-1); Y: F = 0"
+    }
+  rankings:
+    {
+      "MMR(Theta | v)": "|2v - 1| (maximal 1 at the vertices)"
+    }
+  choices:
+    {
+      "greedy argmax VOI": "tie at 0; stopping rule D (any cost > 0) stops with MMR = 1"
+    }
+  outputs:
+    {
+      "MMR(Theta)": "1",
+      "VOI_q exact": "0",
+      "VOI_v exact": "0",
+      "VOI_v vertex": "0",
+      "max MMR after identifying both (grid of points)": "0",
+      "realised MMR after observing v": {
+        "0": "1",
+        "1": "1",
+        "1/2": "0",
+        "1/4": "1/2",
+        "3/4": "1/2"
+      }
+    }
+  expected:
+    {
+      "MMR(Theta)": "1",
+      "VOI_v = VOI_q": "0",
+      "joint": "0"
+    }
+  minimality: 2 candidates and 2 blocks (one block: identification is complete, VOI = MMR(Theta)).
+  result: PASS
+  witness_sha256: 68b299e89f7e4bd82fc38f022d8c1039029bdd99ad17da939c79a76d370929be
+
+--------------------------------------------------------------------------------------------------------------
+[W6f] No termination guarantee without discretised evidence (strictly nested boxes, MMR >= 1/4)   (SUPPLEMENTARY; part T3, part id W6f)
+--------------------------------------------------------------------------------------------------------------
+  demonstrates: no termination guarantee without discretised evidence
+  source test mapping: 42 ¡±16 (D2) Theta_{t+1} subset Theta_t (dynamic extension); no 51 test (new)
+  inputs (algebraic):
+    {
+      "candidates": "T-SEN-7 oracle",
+      "q": "identified at 1/2",
+      "v-boxes": "[1/4 - 2^-(t+2), 3/4 + 2^-(t+2)], t = 1, 2, ... (strictly decreasing)"
+    }
+  rankings:
+    {}
+  choices:
+    {
+      "eps_R": "any eps_R < 1/4"
+    }
+  outputs:
+    {
+      "(t, L, U, MMR_t, argmin set M_t)": [
+        [
+          1,
+          "1/8",
+          "7/8",
+          "3/8",
+          [
+            "D",
+            "E"
+          ]
+        ],
+        [
+          2,
+          "3/16",
+          "13/16",
+          "5/16",
+          [
+            "D",
+            "E"
+          ]
+        ],
+        [
+          3,
+          "7/32",
+          "25/32",
+          "9/32",
+          [
+            "D",
+            "E"
+          ]
+        ],
+        [
+          4,
+          "15/64",
+          "49/64",
+          "17/64",
+          [
+            "D",
+            "E"
+          ]
+        ],
+        [
+          5,
+          "31/128",
+          "97/128",
+          "33/128",
+          [
+            "D",
+            "E"
+          ]
+        ],
+        [
+          6,
+          "63/256",
+          "193/256",
+          "65/256",
+          [
+            "D",
+            "E"
+          ]
+        ],
+        [
+          7,
+          "127/512",
+          "385/512",
+          "129/512",
+          [
+            "D",
+            "E"
+          ]
+        ],
+        [
+          8,
+          "255/1024",
+          "769/1024",
+          "257/1024",
+          [
+            "D",
+            "E"
+          ]
+        ]
+      ],
+      "limit MMR": "1/4"
+    }
+  expected:
+    {
+      "MMR_t": "1/4 + 2^-(t+2) > 1/4 for all t; rule A never fires for eps_R < 1/4",
+      "M_t": "{D, E} for every t: rule C (weak / element stability) fires although MMR_t > 1/4"
+    }
+  minimality: Single unresolved block; any non-degenerate limit box with positive MMR suffices.
+  result: PASS
+  witness_sha256: 455b5340aad17bc82b3dc2a861e3154a1a1ca8a07587e9b7284ed9e2ce54478c
+
+--------------------------------------------------------------------------------------------------------------
+[W8a] Feasibility-changing missingness: zero-filled ENG use fabricates feasibility   (SUPPLEMENTARY; part T2, part id W8a)
+--------------------------------------------------------------------------------------------------------------
+  demonstrates: feasibility-changing missingness (zero-fill fabricates feasibility)
+  source test mapping: 51 T-MIS-6 site 'eng cell' (RESTRICTED_SOLVE, 'disclosed' bin on seed 5); 42 ¡±13.4 rows 3-4; P8
+  inputs (algebraic):
+    {
+      "A_ENG": 10.0,
+      "admissible_V_p": [
+        0.0,
+        30.0
+      ],
+      "missing": "a^ENG_{j1}(S)",
+      "model": "B",
+      "model_C_part": "follower options a (u=5, Psi=5), b (u=v MISSING in [0,10], Psi=-3), cost 0; pessimistic",
+      "phi_j1": 5.0,
+      "zero_fill": 0.0
+    }
+  rankings:
+    {
+      "B": "phi_1 = 5 > phi_0 = 0 whenever k=1 is feasible"
+    }
+  choices:
+    {
+      "restricted": {
+        "F": 0.0,
+        "X": [
+          0
+        ],
+        "decision": 0,
+        "element_q_j": "UNIDENTIFIED",
+        "excluded_configs": [
+          [
+            "j",
+            1,
+            "MissingStateLookup"
+          ]
+        ],
+        "status": "RESTRICTED_SOLVE"
+      },
+      "zero_fill": {
+        "F": 5.0,
+        "X": [
+          0,
+          1
+        ],
+        "decision": 1,
+        "disclosed": [],
+        "status": "OK_POINT"
+      }
+    }
+  outputs:
+    {
+      "identified_decision_set": [
+        0,
+        1
+      ],
+      "model_C_lower_bound_violations": [
+        5.0,
+        6.0,
+        10.0
+      ],
+      "model_C_restricted_value": 5.0,
+      "model_C_true_values": {
+        "0.0": 5.0,
+        "10.0": -3.0,
+        "4.0": 5.0,
+        "5.0": -3.0,
+        "6.0": -3.0
+      },
+      "restricted_value_is_lower_bound_B": true,
+      "zero_fill_decision_infeasible_at": [
+        10.5,
+        20.0,
+        30.0
+      ]
+    }
+  expected:
+    {
+      "C_restricted_not_lower_bound": "violated for v>=5 (pess)",
+      "identified": [
+        0,
+        1
+      ],
+      "zero_fill": "k=1, infeasible for v>10"
+    }
+  minimality: 1 initiative, 2 options, 1 constraint; a 1-option instance has no decision. C part: 1 follower, 3 options.
+  result: PASS
+  witness_sha256: 507f88ef9134b1c6499a96ec8a350588177ae84602e5056b7a581aa5575e0c4a
+
+--------------------------------------------------------------------------------------------------------------
+[W8b] Decision-changing missingness through the objective ranking (lambda; ledger split in C; status-quo cell)   (SUPPLEMENTARY; part T2, part id W8b)
+--------------------------------------------------------------------------------------------------------------
+  demonstrates: decision-changing missingness via objective (lambda, ledger split, status-quo cell)
+  source test mapping: 51 T-MIS-6 sites 'lambda' (PARTIAL_OBJECTIVE), 'impl_x/tau (ledger)' (FOLLOWER_LEDGER_UNIDENTIFIED in C), 'outcome cell (status quo)' (UNEVALUABLE_INITIATIVE); 42 ¡±7.4 (iii), ¡±13.4
+  inputs (algebraic):
+    {
+      "lambda_case": {
+        "F_minus_time_k1": 10.0,
+        "delta_hours_k1": 5.0,
+        "lambda_box": [
+          0.0,
+          4.0
+        ],
+        "zero_fill": 0.0
+      },
+      "ledger_case": "W5 instance at delta=3.5; enterprise loss of U2 fixed at l = 2.5/event; ledger split s = l_x in [0, 2.5] MISSING (l_u = 2.5 - s); follower gross = 10(2 - l_u)",
+      "status_quo_case": "phi_1 - phi_0 = N(g_1 - g_0) - C^impl = (5 - x) - 1, x = per-event status-quo value MISSING"
+    }
+  rankings:
+    {
+      "lambda_case": "k=1 iff lambda < 2 (tie at 2)",
+      "ledger_case": "U2 picks k=1 iff 10(s - 0.5) > 0 iff s > 0.5",
+      "status_quo_case": "k=1 iff x < 4"
+    }
+  choices:
+    {
+      "lambda_vertices": {
+        "0.0": 1,
+        "4.0": 0
+      },
+      "ledger_split_C_and_B": {
+        "0.0": [
+          true,
+          true
+        ],
+        "0.4": [
+          true,
+          true
+        ],
+        "0.6": [
+          false,
+          true
+        ],
+        "2.5": [
+          false,
+          true
+        ]
+      },
+      "status_quo": {
+        "0.0": 1,
+        "3.0": 1,
+        "5.0": 0
+      }
+    }
+  outputs:
+    {
+      "certified": false,
+      "honest_lambda": "PARTIAL_OBJECTIVE, FRAGILE, no point decision",
+      "lambda_dagger": 2.0,
+      "ledger": "C build decision changes with the unidentified split; B unaffected",
+      "status_quo": "decision changes with the status-quo cell",
+      "zero_fill_lambda": "k=1, F_E=10, OK_POINT (no disclosure)"
+    }
+  expected:
+    {
+      "lambda_vertices": {
+        "0.0": 1,
+        "4.0": 0
+      },
+      "ledger_switch": "between s=0.4 and s=0.6",
+      "status_quo_switch": "x=4"
+    }
+  minimality: 1 initiative x 2 options x 1 missing scalar (lambda); ledger part reuses the 2-BU W5 instance.
+  result: PASS
+  witness_sha256: 021d28006a6a2b9060f6b6847cd77502f53c6f6720211e5c1dc6943236526f05
+
+--------------------------------------------------------------------------------------------------------------
+[W8c] Decision-invariant but epistemically relevant missingness (zero-fill overstates identification)   (SUPPLEMENTARY; part T2, part id W8c)
+--------------------------------------------------------------------------------------------------------------
+  demonstrates: decision-invariant but epistemically relevant missingness
+  source test mapping: 51 T-MIS-4 narrow-box case (certified PARTIAL_OBJECTIVE) and T-MIS-6 'disclosed' bin (site 'Allow'); 42 ¡±7.4 (iii), ¡±13.4 (c)
+  inputs (algebraic):
+    {
+      "allow_case": "options {0,1,2}: phi_1=5; Allow(j,2) MISSING in {0,1}; phi_2 in [0,3] if allowed",
+      "lambda_case": {
+        "F_minus_time_k1": 10.0,
+        "delta_hours_k1": 1.0,
+        "lambda_box": [
+          0.0,
+          4.0
+        ]
+      }
+    }
+  rankings:
+    {
+      "allow_case": "phi_1 > phi_2 for every admissible value",
+      "lambda_case": "F(1;lambda) = 10 - lambda in [6,10] > 0 = F(0)"
+    }
+  choices:
+    {
+      "allow_decisions": {
+        "[0,0.0]": 1,
+        "[0,3.0]": 1,
+        "[1,0.0]": 1,
+        "[1,3.0]": 1
+      },
+      "honest": {
+        "F_E_minus_time": 10.0,
+        "decision": 1,
+        "decision_valid_for_all_lambda_in_box": true,
+        "delta_hours": 1.0,
+        "status": "PARTIAL_OBJECTIVE",
+        "value_identified_set": [
+          6.0,
+          10.0
+        ]
+      },
+      "zero_fill": {
+        "F_E": 10.0,
+        "decision": 1,
+        "disclosed": [],
+        "status": "OK_POINT"
+      }
+    }
+  outputs:
+    {
+      "decision_invariant": true,
+      "value_identified_set": [
+        6.0,
+        10.0
+      ],
+      "zero_fill_reports_point_value": 10.0
+    }
+  expected:
+    {
+      "decision": 1,
+      "value_interval": [
+        6.0,
+        10.0
+      ],
+      "zero_fill": "claims F_E = 10 as identified"
+    }
+  minimality: 1 initiative x 2 options x 1 missing scalar; Allow part 1 initiative x 3 options x 1 missing binary.
+  result: PASS
+  witness_sha256: b26db8141a5fbe9ff1176f49b80a623b4b2e46106bb6f835c7ef637c3c7dd23d
+
+--------------------------------------------------------------------------------------------------------------
+[W_MECH_ABL] M1-M4 irreducibility fibres: each removal leaves two alternatives indistinguishable to the remaining three mechanisms but distinguished by a v2.2 decision problem   (SUPPLEMENTARY; part T4, part id mech_ablation)
+--------------------------------------------------------------------------------------------------------------
+  demonstrates: M1-M4 ablation fibres (each mechanism separately decision-relevant)
+  source test mapping: Q/01 Sec. 5 (Proposition IRR); 42 v2.2 Sec. 5 (F5a,F5b,F5d,F6,F7,F8), Sec. 6 (X1)
+  inputs (algebraic):
+    {
+      "P": {
+        "correct": 0.9,
+        "wrong": 0.1
+      },
+      "f": [
+        [
+          [
+            "Use",
+            "correct"
+          ],
+          10.0
+        ],
+        [
+          [
+            "Use",
+            "wrong"
+          ],
+          -50.0
+        ],
+        [
+          [
+            "Verify",
+            "correct"
+          ],
+          7.0
+        ],
+        [
+          [
+            "Verify",
+            "wrong"
+          ],
+          -3.0
+        ]
+      ],
+      "kappa": "high",
+      "pairs": {
+        "M1": [
+          {
+            "M1": {
+              "EffH": 1,
+              "H": 3
+            },
+            "M2": {
+              "FB": 1,
+              "WI": 3
+            },
+            "M3": {
+              "A": 2,
+              "m": "AI->Human",
+              "rho": {
+                "Verify": 1.0
+              }
+            },
+            "M4": {
+              "EA": 3
+            }
+          },
+          {
+            "M1": {
+              "EffH": 0,
+              "H": 3
+            },
+            "M2": {
+              "FB": 1,
+              "WI": 3
+            },
+            "M3": {
+              "A": 2,
+              "m": "AI->Human",
+              "rho": {
+                "Verify": 1.0
+              }
+            },
+            "M4": {
+              "EA": 3
+            }
+          }
+        ],
+        "M2": [
+          {
+            "M1": {
+              "EffH": 1,
+              "H": 3
+            },
+            "M2": {
+              "FB": 1,
+              "WI": 3
+            },
+            "M3": {
+              "A": 2,
+              "m": "AI->Human",
+              "rho": {
+                "Verify": 1.0
+              }
+            },
+            "M4": {
+              "EA": 3
+            }
+          },
+          {
+            "M1": {
+              "EffH": 1,
+              "H": 3
+            },
+            "M2": {
+              "FB": 0,
+              "WI": 3
+            },
+            "M3": {
+              "A": 2,
+              "m": "AI->Human",
+              "rho": {
+                "Verify": 1.0
+              }
+            },
+            "M4": {
+              "EA": 3
+            }
+          }
+        ],
+        "M3_feas": [
+          {
+            "M1": {
+              "EffH": 1,
+              "H": 3
+            },
+            "M2": {
+              "FB": 1,
+              "WI": 3
+            },
+            "M3": {
+              "A": 3,
+              "m": "BoundedExecution",
+              "rho": {
+                "Use": 1.0
+              }
+            },
+            "M4": {
+              "EA": 3
+            }
+          },
+          {
+            "M1": {
+              "EffH": 1,
+              "H": 3
+            },
+            "M2": {
+              "FB": 1,
+              "WI": 3
+            },
+            "M3": {
+              "A": 3,
+              "m": "AI->Human",
+              "rho": {
+                "Use": 1.0
+              }
+            },
+            "M4": {
+              "EA": 3
+            }
+          }
+        ],
+        "M3_value": [
+          {
+            "M1": {
+              "EffH": 1,
+              "H": 3
+            },
+            "M2": {
+              "FB": 1,
+              "WI": 3
+            },
+            "M3": {
+              "A": 2,
+              "m": "AI->Human",
+              "rho": {
+                "Verify": 1.0
+              }
+            },
+            "M4": {
+              "EA": 3
+            }
+          },
+          {
+            "M1": {
+              "EffH": 1,
+              "H": 3
+            },
+            "M2": {
+              "FB": 1,
+              "WI": 3
+            },
+            "M3": {
+              "A": 2,
+              "m": "Aggregation",
+              "rho": {
+                "Use": 1.0
+              }
+            },
+            "M4": {
+              "EA": 3
+            }
+          }
+        ],
+        "M4": [
+          {
+            "M1": {
+              "EffH": 1,
+              "H": 3
+            },
+            "M2": {
+              "FB": 1,
+              "WI": 3
+            },
+            "M3": {
+              "A": 2,
+              "m": "AI->Human",
+              "rho": {
+                "Verify": 1.0
+              }
+            },
+            "M4": {
+              "EA": 3
+            }
+          },
+          {
+            "M1": {
+              "EffH": 1,
+              "H": 3
+            },
+            "M2": {
+              "FB": 1,
+              "WI": 3
+            },
+            "M3": {
+              "A": 2,
+              "m": "AI->Human",
+              "rho": {
+                "Verify": 1.0
+              }
+            },
+            "M4": {
+              "EA": 1
+            }
+          }
+        ]
+      },
+      "requirements": {
+        "Cons": [
+          [
+            0,
+            "HumanOnly"
+          ],
+          [
+            2,
+            "AI->Human"
+          ],
+          [
+            2,
+            "Aggregation"
+          ],
+          [
+            3,
+            "BoundedExecution"
+          ],
+          [
+            3,
+            "Delegated"
+          ]
+        ],
+        "EA": [
+          [
+            [
+              0,
+              "high"
+            ],
+            0
+          ],
+          [
+            [
+              1,
+              "high"
+            ],
+            0
+          ],
+          [
+            [
+              2,
+              "high"
+            ],
+            2
+          ],
+          [
+            [
+              3,
+              "high"
+            ],
+            2
+          ]
+        ],
+        "H": [
+          [
+            [
+              0,
+              "high"
+            ],
+            0
+          ],
+          [
+            [
+              1,
+              "high"
+            ],
+            0
+          ],
+          [
+            [
+              2,
+              "high"
+            ],
+            2
+          ],
+          [
+            [
+              3,
+              "high"
+            ],
+            2
+          ]
+        ],
+        "WI": [
+          [
+            [
+              0,
+              "high"
+            ],
+            0
+          ],
+          [
+            [
+              1,
+              "high"
+            ],
+            0
+          ],
+          [
+            [
+              2,
+              "high"
+            ],
+            2
+          ],
+          [
+            [
+              3,
+              "high"
+            ],
+            2
+          ]
+        ]
+      }
+    }
+  rankings:
+    {
+      "M1": "k1 > k2",
+      "M2": "k1 > k2",
+      "M3_feas": "k1 > k2",
+      "M3_value": "k1 > k2",
+      "M4": "k1 > k2"
+    }
+  choices:
+    {
+      "M1": "k1",
+      "M2": "k1",
+      "M3_feas": "k1",
+      "M3_value": "k1",
+      "M4": "k1"
+    }
+  outputs:
+    {
+      "M1": {
+        "choice": "k1",
+        "failed_flags_k2": [
+          "F6_EffH"
+        ],
+        "feasible": [
+          true,
+          false
+        ],
+        "not_representable_without_removed": true,
+        "problem_distinguishes": true,
+        "removed": "M1",
+        "same_projection_on_remaining": true,
+        "value": [
+          6.0,
+          6.0
+        ]
+      },
+      "M2": {
+        "choice": "k1",
+        "failed_flags_k2": [
+          "F7_FB"
+        ],
+        "feasible": [
+          true,
+          false
+        ],
+        "not_representable_without_removed": true,
+        "problem_distinguishes": true,
+        "removed": "M2",
+        "same_projection_on_remaining": true,
+        "value": [
+          6.0,
+          6.0
+        ]
+      },
+      "M3_feas": {
+        "choice": "k1",
+        "failed_flags_k2": [
+          "F8_Cons"
+        ],
+        "feasible": [
+          true,
+          false
+        ],
+        "not_representable_without_removed": true,
+        "problem_distinguishes": true,
+        "removed": "M3",
+        "same_projection_on_remaining": true,
+        "value": [
+          4.0,
+          4.0
+        ]
+      },
+      "M3_value": {
+        "choice": "k1",
+        "failed_flags_k2": [],
+        "feasible": [
+          true,
+          true
+        ],
+        "not_representable_without_removed": true,
+        "problem_distinguishes": true,
+        "removed": "M3",
+        "same_projection_on_remaining": true,
+        "value": [
+          6.0,
+          4.0
+        ]
+      },
+      "M4": {
+        "choice": "k1",
+        "failed_flags_k2": [
+          "F5d_EA"
+        ],
+        "feasible": [
+          true,
+          false
+        ],
+        "not_representable_without_removed": true,
+        "problem_distinguishes": true,
+        "removed": "M4",
+        "same_projection_on_remaining": true,
+        "value": [
+          6.0,
+          6.0
+        ]
+      }
+    }
+  expected:
+    "For every removal: identical projection on remaining mechanisms AND different feasibility (or value, M3_value: 6.0 vs 4.0) => no model measurable in the remaining components represents the problem."
+  minimality: One initiative, one role, one visible signal, two outcomes, two alternatives per removal; each pair differs in exactly one mechanism component. Fewer alternatives cannot exhibit a non-injective projection.
+  result: PASS
+  witness_sha256: e8993f432e3f72d0ba8e56714ddb5dea8e73c0d53f62934892db470518f94f26
+
+--------------------------------------------------------------------------------------------------------------
+[W_IA_NDV] Information-asymmetry sidecar: NDV = LIA - DL_info can be positive or negative (P3 ordering B>=C is an artifact of full information)   (SUPPLEMENTARY; part T4, part id ia_ndv_sign)
+--------------------------------------------------------------------------------------------------------------
+  demonstrates: information-asymmetry sidecar: NDV sign can be + or - (NOT canonical v2.2)
+  source test mapping: Q/08 Sec. 4-5 (sidecar design only); 42 v2.2 Sec. 15 P3
+  inputs (algebraic):
+    {
+      "Theta_u": [
+        "a",
+        "b"
+      ],
+      "misalignment": {
+        "phi_u(k1,b)": 9.0
+      },
+      "phi_E(k,theta)": [
+        [
+          [
+            "k0",
+            "a"
+          ],
+          0.0
+        ],
+        [
+          [
+            "k0",
+            "b"
+          ],
+          0.0
+        ],
+        [
+          [
+            "k1",
+            "a"
+          ],
+          10.0
+        ],
+        [
+          [
+            "k1",
+            "b"
+          ],
+          1.0
+        ],
+        [
+          [
+            "k2",
+            "a"
+          ],
+          4.0
+        ],
+        [
+          [
+            "k2",
+            "b"
+          ],
+          8.0
+        ]
+      ],
+      "prior_I_E": {
+        "a": 0.5,
+        "b": 0.5
+      },
+      "resource": "a(k1)=a(k2), envelope non-separating"
+    }
+  rankings:
+    {
+      "max_regret": {
+        "k0": 10.0,
+        "k1": 7.0,
+        "k2": 6.0
+      },
+      "prior_mean": {
+        "k0": 0.0,
+        "k1": 5.5,
+        "k2": 6.0
+      }
+    }
+  choices:
+    {
+      "B_info_minimax_regret": "k2",
+      "B_info_prior_mean": "k2"
+    }
+  outputs:
+    {
+      "aligned|theta=a": {
+        "B_full": 10.0,
+        "B_info": 4.0,
+        "C_info": 10.0,
+        "DL_info": 0.0,
+        "LIA": 6.0,
+        "NDV": 6.0,
+        "identity_NDV_eq_LIA_minus_DLinfo": true
+      },
+      "aligned|theta=b": {
+        "B_full": 8.0,
+        "B_info": 8.0,
+        "C_info": 8.0,
+        "DL_info": 0.0,
+        "LIA": 0.0,
+        "NDV": 0.0,
+        "identity_NDV_eq_LIA_minus_DLinfo": true
+      },
+      "misaligned|theta=a": {
+        "B_full": 10.0,
+        "B_info": 4.0,
+        "C_info": 10.0,
+        "DL_info": 0.0,
+        "LIA": 6.0,
+        "NDV": 6.0,
+        "identity_NDV_eq_LIA_minus_DLinfo": true
+      },
+      "misaligned|theta=b": {
+        "B_full": 8.0,
+        "B_info": 8.0,
+        "C_info": 1.0,
+        "DL_info": 7.0,
+        "LIA": 0.0,
+        "NDV": -7.0,
+        "identity_NDV_eq_LIA_minus_DLinfo": true
+      }
+    }
+  expected:
+    "aligned, theta=a: NDV=+6 (=LIA, DL_info=0); misaligned, theta=b: NDV=-7 (LIA=0, DL_info=7)"
+  minimality: One unit, one initiative, two types, three configs; constructive example only, SIMULATED_ONLY, not a theorem and not a v2.2 result.
+  result: PASS
+  witness_sha256: 1bb9c447800a4c87bba2e1dbf48e1d69194a62b63a5110d79bcc38eec0dafca4
+
+==============================================================================================================
+CROSS-CHECK AGAINST CANONICAL 51 BASELINE (Q/baseline/BASELINE_V2_2_RUN_STDOUT.txt)
+  anchor T-ORC-8  PASS T-ORC-8: aligned B=C=30; blockable B=C=15, DL=0; unblockable B=15, C=10, DL=5, VSC=15, NEV=10
+  anchor REG-P8   P8 screening (10->15)
+  anchor T-SEN-8  C: y_c* sequence ['1', '1', '1', '1', '0', '0', '0', '1'] over delta [0.0, 1.0, 2.0, 2.9, 3.0, 3.5, 4.0, 5.0]
+  anchor T-SEN-7  vertex-conditioned VOI_v = 1 (overstated), grid VOI_v = 0.5 = true value
+  anchor T-SEN-3  element-level counterexample: vertex-only classification says ROBUST, adding interior points gives FRAGILE
+  PASS T-ORC-8 aligned B=C=30, DL=0 (W1)
+  PASS T-ORC-8 blockable B=C=15, DL=0 (W2)
+  PASS T-ORC-8 unblockable B=15, C=10, DL=5, VSC=15, NEV=10 (W3)
+  PASS REG P8 screening 10 -> 15 (W4)
+  PASS T-SEN-8 C sequence 1,1,1,1,0,0,0,1 over delta [0,1,2,2.9,3,3.5,4,5] (W5)
+  PASS T-SEN-7 vertex VOI_v = 1, true VOI_v = 1/2 (W6)
+  PASS T-SEN-3 element-level vertex ROBUST / interior FRAGILE (W7)
+  baseline file: MATCH: all 5 anchors found verbatim in baseline/BASELINE_V2_2_RUN_STDOUT.txt
+
+SUMMARY TABLE
+  id          set           part result sha256                                                           demonstrates
+  W1          CANONICAL     T1   PASS   aeb8fec41bda59e4150f199984197d4611bc9dfd48696f0839708d353f2857b0 aligned ledgers: B = C = 30, DL = 0 (T-ORC-8 aligned)
+  W2          CANONICAL     T1   PASS   ac899cce66774fc2b186801c47732d9ee14a082b08e85857ad179d1f5ff1368a misaligned but envelope-blockable: B = C = 15, DL = 0
+  W3          CANONICAL     T1   PASS   d6a662f462e6e90dc183cf4dc8a3eab546d6ee0e32eb55bcb8ce4b53ae83566f misaligned and envelope-unblockable: B = 15, C = 10, DL = 5
+  W4          CANONICAL     T1   PASS   93d632600a9944a7c887e6ec9c4548e11669a7a60dd75fc96521c80e785b486b P8 governance screening 10 -> 15
+  W5          CANONICAL     T2   PASS   4a6988ccd445b7f2d00ea88fde342df4229fde67485850dee8c9f6f7902a73ae Model C build decision non-monotone in reuse delta (1 -> 0 -> 1)
+  W6          CANONICAL     T3   PASS   6c55fa3662d9c9039f625ce7043644fd60c93c502809bbf140f4b8433b71c077 vertex-conditioned VOI overstatement (vertex 1, true 1/2)
+  W7          CANONICAL     T2   PASS   e29ce9e4829cdc3baed473f71449170939ecb5823494e2270d56799f023bd2de element-level robustness counterexample (vertex ROBUST, interior FRAGILE)
+  W3m         SUPPLEMENTARY T1   PASS   2f8701b659c2c8891f7920a3d677c992c8491affb61c477755fd4fc49921c4dd minimal DL > 0 (1 BU, 1 resource, 2 plans)
+  W3b         SUPPLEMENTARY T1   PASS   8d4230c798af26948c633431f442451bc640965cbb236d8511f1950d8fb2afcf DL_opt = 0 < DL_pess = 1 from a follower tie
+  W3c         SUPPLEMENTARY T1   PASS   d32f24dcf6ad6f499256bd917d5e442c8454a28d09eddee3f588137699a3427b pairwise primitives do not determine the sign of DL
+  W4b         SUPPLEMENTARY T1   PASS   232e3dce2b01df8ad465d39e83534bbe689aaa70385b0fdd0966f5a8a4f20913 screening in the opposite direction 15 -> 10
+  W4c         SUPPLEMENTARY T1   PASS   a17b53e07d786c7f3627c2dd249d1ee6b1553a3f1844776300e7fd7b3ad2a57e screening removes DL = 5 but price of requirement PR_B = 8
+  W4d         SUPPLEMENTARY T1   PASS   c970795a0d5728e0bfe0dd3ee2ce88de25cb64fbd5aaa7e15b7cbe552be585a8 pairwise screening insufficient (worse x^M becomes best response)
+  W4e         SUPPLEMENTARY T1   PASS   6e8e008f1ad8704a8484e0923958430ba0608d1ebb4d1b2cb9972179457b2c60 GSV_pess > 0 = GSV_opt without strict reversal
+  W_DL_AL3    SUPPLEMENTARY T1   PASS   b906671d89b26426072746b8b205ebe34f52a28682db279911d2aaa8f2a46fcd DL > 0 with F_u == F_E via a unit-only constraint (AL3)
+  W5b         SUPPLEMENTARY T2   PASS   d4a40bbd2fc5e18610a2a25c31caf0e89cc4f9e1d36aec12506d27c1d1c162fa Model B monotone in delta; source-indexing assumption load-bearing
+  W5_WIDE     SUPPLEMENTARY T7   PASS   f05b23d58f7498ce65ffead74b80611211e65fb6e1338dbb1ab614bfd25f0143 wide-margin W5 supplement: region [0,4) U (7,inf), +-5% perturbation survivors
+  W6b         SUPPLEMENTARY T3   PASS   568509fffa5924bd2177d3da4ba2d6d2ff56825b510366e2db22ba6087be957b adaptive candidate set: Theta shrinkage raises MMR, VOI = -1
+  W6c         SUPPLEMENTARY T3   PASS   b9ce2f4887f6831d849757ced94401c04aba83ae4044f1e43b310fdd610161c4 grid refinement: nested monotone, non-nested / edge-only not
+  W6d         SUPPLEMENTARY T3   PASS   703a44ba4d17efa600a3c35ea633e235ba4cfea1abcabb4003e52dd53f4f5674 Theta-independent benchmark: monotone but not vertex-exact
+  W6e         SUPPLEMENTARY T3   PASS   68b299e89f7e4bd82fc38f022d8c1039029bdd99ad17da939c79a76d370929be myopic VOI complementarity (single VOIs 0, joint removes regret)
+  W6f         SUPPLEMENTARY T3   PASS   455b5340aad17bc82b3dc2a861e3154a1a1ca8a07587e9b7284ed9e2ce54478c no termination guarantee without discretised evidence
+  W8a         SUPPLEMENTARY T2   PASS   507f88ef9134b1c6499a96ec8a350588177ae84602e5056b7a581aa5575e0c4a feasibility-changing missingness (zero-fill fabricates feasibility)
+  W8b         SUPPLEMENTARY T2   PASS   021d28006a6a2b9060f6b6847cd77502f53c6f6720211e5c1dc6943236526f05 decision-changing missingness via objective (lambda, ledger split, status-quo cell)
+  W8c         SUPPLEMENTARY T2   PASS   b26db8141a5fbe9ff1176f49b80a623b4b2e46106bb6f835c7ef637c3c7dd23d decision-invariant but epistemically relevant missingness
+  W_MECH_ABL  SUPPLEMENTARY T4   PASS   e8993f432e3f72d0ba8e56714ddb5dea8e73c0d53f62934892db470518f94f26 M1-M4 ablation fibres (each mechanism separately decision-relevant)
+  W_IA_NDV    SUPPLEMENTARY T4   PASS   1bb9c447800a4c87bba2e1dbf48e1d69194a62b63a5110d79bcc38eec0dafca4 information-asymmetry sidecar: NDV sign can be + or - (NOT canonical v2.2)
+
+  witnesses: 27 (canonical 7, supplementary 20); PASS 27 / FAIL 0
+  cross-checks: 7/7 PASS
+  IN_PROCESS_DETERMINISM (2 runs, identical per-witness hashes): PASS
+  witness_set_sha256: a68664cefa61f4d23e00982309c09afe77b74b5db3ba9e70b4607043fa29f8f1
+Q1_WITNESS_VERDICT: PASS

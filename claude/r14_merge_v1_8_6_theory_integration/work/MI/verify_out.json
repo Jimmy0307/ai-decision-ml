@@ -1,0 +1,1094 @@
+{
+ "sha256_59a": "bf4379a4d492d762ef2dbdd293b41c574e475b7368d210b6a129274cd61381bd",
+ "sha256_01": "94d41d5682818953912784d0e870d58d1e4c418e7261b619d5c73485dfee82f4",
+ "line_count": [
+  3136,
+  3304
+ ],
+ "patch_count": 50,
+ "diff_opcodes": [
+  [
+   "replace",
+   5,
+   5,
+   5,
+   5
+  ],
+  [
+   "replace",
+   15,
+   15,
+   15,
+   15
+  ],
+  [
+   "replace",
+   31,
+   31,
+   31,
+   31
+  ],
+  [
+   "replace",
+   113,
+   113,
+   113,
+   113
+  ],
+  [
+   "insert",
+   170,
+   169,
+   170,
+   171
+  ],
+  [
+   "replace",
+   178,
+   178,
+   180,
+   180
+  ],
+  [
+   "replace",
+   180,
+   180,
+   182,
+   184
+  ],
+  [
+   "insert",
+   769,
+   768,
+   773,
+   782
+  ],
+  [
+   "replace",
+   1138,
+   1138,
+   1152,
+   1152
+  ],
+  [
+   "insert",
+   1144,
+   1143,
+   1158,
+   1165
+  ],
+  [
+   "replace",
+   1151,
+   1151,
+   1173,
+   1173
+  ],
+  [
+   "replace",
+   1178,
+   1178,
+   1200,
+   1200
+  ],
+  [
+   "insert",
+   1273,
+   1272,
+   1295,
+   1296
+  ],
+  [
+   "replace",
+   1277,
+   1277,
+   1301,
+   1305
+  ],
+  [
+   "replace",
+   1327,
+   1327,
+   1355,
+   1355
+  ],
+  [
+   "replace",
+   1329,
+   1329,
+   1357,
+   1357
+  ],
+  [
+   "replace",
+   1888,
+   1888,
+   1916,
+   1916
+  ],
+  [
+   "replace",
+   1917,
+   1917,
+   1945,
+   1945
+  ],
+  [
+   "insert",
+   1985,
+   1984,
+   2013,
+   2036
+  ],
+  [
+   "replace",
+   2317,
+   2317,
+   2369,
+   2369
+  ],
+  [
+   "replace",
+   2323,
+   2323,
+   2375,
+   2375
+  ],
+  [
+   "replace",
+   2327,
+   2327,
+   2379,
+   2379
+  ],
+  [
+   "insert",
+   2330,
+   2329,
+   2382,
+   2383
+  ],
+  [
+   "insert",
+   2341,
+   2340,
+   2395,
+   2398
+  ],
+  [
+   "replace",
+   2343,
+   2343,
+   2401,
+   2401
+  ],
+  [
+   "insert",
+   2392,
+   2391,
+   2450,
+   2453
+  ],
+  [
+   "insert",
+   2962,
+   2961,
+   3024,
+   3126
+  ],
+  [
+   "insert",
+   3075,
+   3074,
+   3240,
+   3241
+  ],
+  [
+   "insert",
+   3130,
+   3129,
+   3297,
+   3297
+  ]
+ ],
+ "changed_lines_59a": [
+  5,
+  15,
+  31,
+  113,
+  178,
+  180,
+  1138,
+  1151,
+  1178,
+  1277,
+  1327,
+  1329,
+  1888,
+  1917,
+  2317,
+  2323,
+  2327,
+  2343
+ ],
+ "math_counts": {
+  "$$": [
+   18,
+   18
+  ],
+  "$inline": [
+   31,
+   31
+  ],
+  "\\[\\]": [
+   7,
+   7
+  ],
+  "begin_env": [
+   0,
+   0
+  ]
+ },
+ "headings_count": [
+  182,
+  195
+ ],
+ "headings_added": [
+  "### 3.9.6 M1–M4 的範圍、非冗餘性與充分性狀態（v1.8.6 新增）",
+  "### 4.9.1 合成驗證的三類區分與構造例（v1.8.6 新增；SIMULATED_ONLY）",
+  "### 5.8.10 理論結果的未證明部分（v1.8.6 新增）",
+  "### C.10 Q1 理論補充（v1.8.6 新增；非 v2.2 原文）",
+  "#### C.10.1 M1–M4 的形式定義與狀態（理論補充包 01）",
+  "#### C.10.2 授權損失（理論補充包 02）",
+  "#### C.10.3 治理篩選（理論補充包 03）",
+  "#### C.10.4 共享能力重用（理論補充包 04）",
+  "#### C.10.5 VOI 與序列識別（理論補充包 05）",
+  "#### C.10.6 穩健性範圍（理論補充包 06）",
+  "#### C.10.7 缺值分類（理論補充包 07）",
+  "#### C.10.8 構造例索引（理論補充包 09）",
+  "#### C.10.9 勘誤：Lemma E′ 悲觀情形的證明用語（只改用語）"
+ ],
+ "captions_added": [
+  "**表 4-20D：理論補充的構造例（SIMULATED_ONLY；構造例，非證明）**"
+ ],
+ "G_table_rows": [
+  36,
+  36
+ ],
+ "G01_G16_token_counts": [
+  326,
+  339
+ ],
+ "section_3_9_1_lines": 14,
+ "section_3_9_2_tables_3_4_3_4A_lines": 74,
+ "section_3_9_3_V1_design_lines": 6,
+ "section_3_9_4_lines": 6,
+ "section_3_9_5_lines": 8,
+ "section_3_11_x_lines": 23,
+ "section_3_11_2_lines": 14,
+ "section_3_11_3_lines": 18,
+ "section_3_11_4_lines": 34,
+ "section_3_12_1_lines": 33,
+ "section_3_12_2_lines": 24,
+ "section_3_12_3_lines": 25,
+ "section_3_12_5_lines": 21,
+ "section_3_12_7_lines": 50,
+ "section_4_1_to_4_8_lines": 508,
+ "section_4_10_lines": 217,
+ "section_4_11_lines": 20,
+ "section_chapter2_lines": [
+  203,
+  203
+ ],
+ "section_3_1_to_3_8_lines": [
+  260,
+  260
+ ],
+ "section_5_1_to_5_5_lines": [
+  82,
+  82
+ ],
+ "section_5_8_1_to_5_8_9_lines": [
+  48,
+  48
+ ],
+ "section_references_lines": [
+  270,
+  270
+ ],
+ "section_appendix_A_B_lines": [
+  100,
+  100
+ ],
+ "section_appendix_E_F_except_E51_lines": [
+  1,
+  1
+ ],
+ "appendix_C1_C9_lines": [
+  171,
+  171
+ ],
+ "P_bullets_found": [
+  [
+   "P1",
+   "P2",
+   "P3",
+   "P4",
+   "P5",
+   "P7",
+   "P8"
+  ],
+  [
+   "P1",
+   "P2",
+   "P3",
+   "P4",
+   "P5",
+   "P7",
+   "P8"
+  ]
+ ],
+ "P_bullet_identical": {
+  "P1": true,
+  "P2": false,
+  "P3": true,
+  "P4": true,
+  "P5": true,
+  "P7": true,
+  "P8": true
+ },
+ "P2_remark_change": {
+  "old": "不對齊是 DL > 0 的必要而非充分條件：若不利企業的配置需要池化資源，企業可以 envelope 阻止。",
+  "new": "不對齊是 DL > 0 的必要而非充分條件：若不利企業的配置在至少一項池化資源上需要多於企業偏好配置的用量，企業可以 envelope 阻止（envelope 可分離性的精確條件見 Lemma S，附錄 C.10.2）。"
+ },
+ "primary_phrase_counts": {
+  "保留 6,499 筆分析記錄": [
+   1,
+   1
+  ],
+  "其中 3,125 筆的人工智慧端與決策端皆完成分類": [
+   2,
+   2
+  ],
+  "形成 2,180 筆功能配對邊": [
+   1,
+   1
+  ],
+  "辨識出 47 個": [
+   2,
+   2
+  ],
+  "32 個配對在四種分析下皆顯著且方向一致，其中 16 個高於期望、16 個低於期望": [
+   1,
+   1
+  ],
+  "主要分析最後留下 3,125 筆兩端皆完成分類的證據記錄，涵蓋 783 篇文獻；去除同篇文獻內的重複配對後，形成 2,180 筆文獻層級邊": [
+   1,
+   1
+  ],
+  "凍結的 32 組（16 過度、16 不足）仍為正式推論基準": [
+   1,
+   1
+  ],
+  "| L2 主要穩健集合 |": [
+   1,
+   1
+  ],
+  "| L1 主要零模型顯著 |": [
+   1,
+   1
+  ],
+  "6,499 strict analytical records; 3,125 were fully mapped": [
+   1,
+   1
+  ],
+  "yielding 2,180 document-level": [
+   1,
+   1
+  ],
+  "identified 47 cells": [
+   1,
+   1
+  ],
+  "comprising 16 enrichments and 16 depletions": [
+   1,
+   1
+  ]
+ },
+ "study1_token_counts": {
+  "6,499": [
+   14,
+   14
+  ],
+  "3,125": [
+   18,
+   18
+  ],
+  "783": [
+   17,
+   17
+  ],
+  "2,180": [
+   21,
+   21
+  ],
+  "2,118": [
+   10,
+   10
+  ],
+  "26,501": [
+   8,
+   8
+  ],
+  ".561": [
+   5,
+   5
+  ],
+  ".647": [
+   4,
+   4
+  ],
+  "68.3%": [
+   4,
+   4
+  ]
+ },
+ "numeric_added_doc": {
+  "0": 74,
+  "0,3": 5,
+  "0,4": 1,
+  "0.4": 3,
+  "0.5": 2,
+  "0.6": 4,
+  "01": 6,
+  "02": 2,
+  "03": 3,
+  "04": 1,
+  "05": 1,
+  "06": 1,
+  "07": 1,
+  "08": 1,
+  "09": 2,
+  "1": 53,
+  "1,1,1,1,0,0,0,1": 3,
+  "1.7.2": 2,
+  "1/2": 4,
+  "1/3": 2,
+  "10": 13,
+  "100": 1,
+  "13": 2,
+  "13.2": 1,
+  "13.4": 1,
+  "15": 12,
+  "16": 2,
+  "162/400": 2,
+  "2": 18,
+  "2026-10-18": 1,
+  "27": 2,
+  "27/27": 1,
+  "3": 18,
+  "3,5": 1,
+  "3-4": 2,
+  "3.11.2": 1,
+  "3.12.4": 7,
+  "3.12.6": 2,
+  "3.13": 7,
+  "3.14.3": 6,
+  "3.9.2": 1,
+  "3.9.3": 2,
+  "3.9.5": 1,
+  "3.9.6": 4,
+  "3/5": 1,
+  "30": 2,
+  "367/400": 2,
+  "4": 16,
+  "4-20": 17,
+  "4.9.1": 5,
+  "400": 1,
+  "42": 1,
+  "5": 19,
+  "5.6": 3,
+  "5.7": 1,
+  "5.8": 2,
+  "5.8.10": 2,
+  "5.8.5": 1,
+  "51": 20,
+  "6": 8,
+  "6,912": 1,
+  "7": 7,
+  "8": 8,
+  "9": 6
+ },
+ "numeric_removed_doc": {
+  "2026-10-14": 1
+ },
+ "numeric_per_patch": {
+  "T01": {
+   "added": {
+    "2026-10-18": 1,
+    "3.9.6": 1,
+    "3.12.4": 1,
+    "3.13": 1,
+    "3.14.3": 1,
+    "4.9.1": 1,
+    "5.6": 1,
+    "5.8": 1,
+    "3-4": 2,
+    "3.9.2": 1,
+    "3.9.5": 1,
+    "1": 1,
+    "51": 1
+   },
+   "removed": {
+    "2026-10-14": 1
+   }
+  },
+  "T02": {
+   "added": {
+    "3.9.6": 1
+   },
+   "removed": {}
+  },
+  "T03": {
+   "added": {
+    "3.12.4": 1,
+    "3.13": 1,
+    "3.14.3": 1,
+    "5.8.10": 1
+   },
+   "removed": {}
+  },
+  "T04": {
+   "added": {
+    "3.12.4": 1,
+    "3.13": 1,
+    "1": 1,
+    "3": 1,
+    "6": 1
+   },
+   "removed": {}
+  },
+  "T05": {
+   "added": {
+    "3.13": 1
+   },
+   "removed": {}
+  },
+  "T06": {
+   "added": {
+    "3.9.6": 1,
+    "3.11.2": 1,
+    "1": 1,
+    "2": 1,
+    "3": 1,
+    "3.9.3": 1,
+    "16": 2
+   },
+   "removed": {}
+  },
+  "T08": {
+   "added": {
+    "0": 11,
+    "1": 4,
+    "2": 3,
+    "3": 1,
+    "4": 2,
+    "6": 1,
+    "10": 4,
+    "15": 2,
+    "5": 2,
+    "7": 1,
+    "8": 2,
+    "9": 1,
+    "51": 2,
+    "1,1,1,1,0,0,0,1": 1,
+    "0,3": 1
+   },
+   "removed": {}
+  },
+  "T10": {
+   "added": {
+    "0": 1,
+    "51": 2
+   },
+   "removed": {}
+  },
+  "T11": {
+   "added": {
+    "3": 1,
+    "0.4": 1,
+    "0.6": 1
+   },
+   "removed": {}
+  },
+  "T12": {
+   "added": {
+    "51": 1,
+    "1/2": 1,
+    "1/3": 1
+   },
+   "removed": {}
+  },
+  "T13": {
+   "added": {
+    "4.9.1": 1,
+    "4-20": 1,
+    "1": 3,
+    "0.5": 1,
+    "3.14.3": 1,
+    "0": 5,
+    "2": 1,
+    "3": 1,
+    "3.12.6": 1
+   },
+   "removed": {}
+  },
+  "T14": {
+   "added": {
+    "0": 1,
+    "1": 1,
+    "2": 1,
+    "3": 1
+   },
+   "removed": {}
+  },
+  "T16": {
+   "added": {
+    "4.9.1": 1
+   },
+   "removed": {}
+  },
+  "T17": {
+   "added": {
+    "4-20": 1
+   },
+   "removed": {}
+  },
+  "T18": {
+   "added": {
+    "4.9.1": 1,
+    "4-20": 14,
+    "13": 1,
+    "0": 8,
+    "27": 1,
+    "51": 1,
+    "30": 1,
+    "4": 2,
+    "15": 3,
+    "10": 2,
+    "5": 5,
+    "1": 6,
+    "3": 2,
+    "1,1,1,1,0,0,0,1": 1,
+    "0,3": 1,
+    "8": 2,
+    "0.5": 1,
+    "7": 1,
+    "0.4": 1,
+    "0.6": 1,
+    "400": 1,
+    "162/400": 1,
+    "367/400": 1
+   },
+   "removed": {}
+  },
+  "T20": {
+   "added": {
+    "6": 1
+   },
+   "removed": {}
+  },
+  "T22": {
+   "added": {
+    "1": 1,
+    "3": 1,
+    "6": 1,
+    "0": 1
+   },
+   "removed": {}
+  },
+  "T23": {
+   "added": {
+    "1": 4,
+    "0": 1,
+    "2": 2,
+    "3": 2,
+    "6": 2,
+    "4": 1,
+    "5": 2,
+    "1.7.2": 1
+   },
+   "removed": {}
+  },
+  "T25": {
+   "added": {
+    "5.8.10": 1,
+    "3.12.4": 1,
+    "3.13": 1,
+    "1": 6,
+    "3": 3,
+    "2": 3,
+    "51": 2,
+    "9": 2,
+    "5": 2,
+    "4": 1,
+    "0": 1,
+    "6": 1,
+    "7": 1,
+    "8": 1,
+    "5.8.5": 1
+   },
+   "removed": {}
+  },
+  "T26": {
+   "added": {
+    "01": 2,
+    "08": 1,
+    "09": 2,
+    "02": 1,
+    "1": 24,
+    "0": 45,
+    "51": 10,
+    "9": 3,
+    "15": 5,
+    "2": 7,
+    "3": 4,
+    "4": 10,
+    "5": 8,
+    "6": 1,
+    "30": 1,
+    "10": 7,
+    "03": 1,
+    "7": 4,
+    "8": 3,
+    "04": 1,
+    "0,3": 3,
+    "3,5": 1,
+    "1,1,1,1,0,0,0,1": 1,
+    "6,912": 1,
+    "162/400": 1,
+    "0,4": 1,
+    "367/400": 1,
+    "05": 1,
+    "13.2": 1,
+    "1/2": 3,
+    "3/5": 1,
+    "1/3": 1,
+    "06": 1,
+    "0.6": 2,
+    "0.4": 1,
+    "07": 1,
+    "3.14.3": 2,
+    "13.4": 1,
+    "27/27": 1,
+    "4-20": 1,
+    "3.12.6": 1,
+    "13": 1,
+    "100": 1
+   },
+   "removed": {}
+  },
+  "T27": {
+   "added": {
+    "01": 4,
+    "15": 2,
+    "27": 1,
+    "42": 1,
+    "51": 1,
+    "1.7.2": 1,
+    "3.9.6": 1,
+    "3.12.4": 1,
+    "3.13": 1,
+    "3.14.3": 1,
+    "4.9.1": 1,
+    "5.6": 1,
+    "5.8": 1,
+    "03": 2,
+    "02": 1
+   },
+   "removed": {}
+  },
+  "T28": {
+   "added": {
+    "3.12.4": 1,
+    "3.13": 1,
+    "5.7": 1
+   },
+   "removed": {}
+  },
+  "T31": {
+   "added": {
+    "3.9.3": 1
+   },
+   "removed": {}
+  },
+  "T45": {
+   "added": {
+    "3.12.4": 1,
+    "5.6": 1
+   },
+   "removed": {}
+  },
+  "T50": {
+   "added": {
+    "1": 1
+   },
+   "removed": {}
+  }
+ },
+ "numeric_added_unmapped": {},
+ "numeric_added_sources": {
+  "0": "witness values (W1–W7, W3b DL^opt = 0, W2/W1 DL = 0, W6e MMR 1→0, interval endpoints) and model notation (k = 0, ε_tie = 0, a(x)=0 cases) — theory pack r14_merge_q1_theory_upgrade_v1 02–07, 09",
+  "0,3": "W5 region [0,3) — theory pack r14_merge_q1_theory_upgrade_v1 04 §5.1, §6",
+  "0,4": "W5_WIDE region [0,4) — theory pack r14_merge_q1_theory_upgrade_v1 04 §6",
+  "0.4": "T-SEN-3 / W7 FRAGILE interval (0.4, 0.6) (already in 59a l.1271) — theory pack r14_merge_q1_theory_upgrade_v1 06 App A",
+  "0.5": "W6 analytic oracle true VOI 0.5 (already in 59a l.1277, 1917) — theory pack r14_merge_q1_theory_upgrade_v1 05 §6(3)",
+  "0.6": "T-SEN-3 / W7 interval endpoint and y0 value 0.6 — theory pack r14_merge_q1_theory_upgrade_v1 06 App A",
+  "01": "theory pack file numbers 01–09 / OUT file ids 01–03 (Appendix D rows; C.10 headings)",
+  "02": "theory pack file numbers 01–09 / OUT file ids 01–03 (Appendix D rows; C.10 headings)",
+  "03": "theory pack file numbers 01–09 / OUT file ids 01–03 (Appendix D rows; C.10 headings)",
+  "04": "theory pack file numbers 01–09 / OUT file ids 01–03 (Appendix D rows; C.10 headings)",
+  "05": "theory pack file numbers 01–09 / OUT file ids 01–03 (Appendix D rows; C.10 headings)",
+  "06": "theory pack file numbers 01–09 / OUT file ids 01–03 (Appendix D rows; C.10 headings)",
+  "07": "theory pack file numbers 01–09 / OUT file ids 01–03 (Appendix D rows; C.10 headings)",
+  "08": "theory pack file numbers 01–09 / OUT file ids 01–03 (Appendix D rows; C.10 headings)",
+  "09": "theory pack file numbers 01–09 / OUT file ids 01–03 (Appendix D rows; C.10 headings)",
+  "1": "witness values (W3b DL^pess = 1, W_DL_AL3 DL = 1, W4e GSV_pess = 1, W6 vertex VOI = 1, W5 sequence 1→0→1, W5 D(δ)=1+δ), N_j0 = N_j1 = 1 (G7), margins 1 TWD — theory pack r14_merge_q1_theory_upgrade_v1 02–07, 09",
+  "1,1,1,1,0,0,0,1": "W5 / 51 T-SEN-8 build sequence (already in 59a l.1140, 1918, 2903)",
+  "1.7.2": "section / table / appendix reference (no data value)",
+  "1/2": "W6 true VOI 1/2; W6c grid ≥ 1/2 — theory pack r14_merge_q1_theory_upgrade_v1 05 §6",
+  "1/3": "W6c edge-only grid true value 1/3 — theory pack r14_merge_q1_theory_upgrade_v1 05 §6(4e)",
+  "10": "W4 / W4c / W4d loose C = 10; W4b 15 → 10; erratum pess value 10 (13 §3); C.10 heading — theory pack r14_merge_q1_theory_upgrade_v1 03, 13",
+  "100": "erratum counterexample pess value −100 — theory pack r14_merge_q1_theory_upgrade_v1 13 §3",
+  "13": "theory pack file 13 (erratum); existing '13 種輸出狀態' (4-20) — theory pack r14_merge_q1_theory_upgrade_v1 13",
+  "13.2": "section / table / appendix reference (no data value) (v2.2 §13.2/§13.4 cited by theory pack r14_merge_q1_theory_upgrade_v1 05/07)",
+  "13.4": "section / table / appendix reference (no data value) (v2.2 §13.2/§13.4 cited by theory pack r14_merge_q1_theory_upgrade_v1 05/07)",
+  "15": "W2/W3 B = 15; W4 15; W4b 15 → 10; theory pack 01–15 — theory pack r14_merge_q1_theory_upgrade_v1 02 §4, 03 §8",
+  "16": "G01–G16 / 16 V1 items (existing manuscript facts, 3.9.3)",
+  "162/400": "R-4 PRIMARY: canonical W5 ±5% survival — theory pack r14_merge_q1_theory_upgrade_v1 04 §6, 09, 14 A6, 15 §4.4",
+  "2": "W3c DL = 2; W3m B = 2; 'two sources' counts — theory pack r14_merge_q1_theory_upgrade_v1 02 §2.1, 09",
+  "2026-10-18": "status-line review date (orchestrator brief; replaces 2026-10-14)",
+  "27": "27 witnesses — theory pack r14_merge_q1_theory_upgrade_v1 09, 12, 14 §3",
+  "27/27": "witness verdict 27/27 PASS — theory pack r14_merge_q1_theory_upgrade_v1 09, 12",
+  "3": "W5 region endpoint 3 ([0,3)); W5_WIDE margin 3; 3 portfolios × 1 block (R3); ≥3 vertices (E.6e) — theory pack r14_merge_q1_theory_upgrade_v1 04 §5–§6, 05 §6, 06 App A",
+  "3,5": "W5 D(δ) piece on [3,5] — theory pack r14_merge_q1_theory_upgrade_v1 04 §5.1",
+  "3-4": "section / table / appendix reference (no data value)",
+  "3.11.2": "section / table / appendix reference (no data value)",
+  "3.12.4": "section / table / appendix reference (no data value)",
+  "3.12.6": "section / table / appendix reference (no data value)",
+  "3.13": "section / table / appendix reference (no data value)",
+  "3.14.3": "section / table / appendix reference (no data value)",
+  "3.9.2": "section / table / appendix reference (no data value)",
+  "3.9.3": "section / table / appendix reference (no data value)",
+  "3.9.5": "section / table / appendix reference (no data value)",
+  "3.9.6": "section / table / appendix reference (no data value)",
+  "3/5": "W6c non-nested grid 4 → 5 value 3/5 — theory pack r14_merge_q1_theory_upgrade_v1 05 §6(4d)",
+  "30": "W1 B = C = 30 — theory pack r14_merge_q1_theory_upgrade_v1 02 §4 / 51 T-ORC-8 (already in 59a table 4-20)",
+  "367/400": "R-4 SENSITIVITY ONLY: W5_WIDE ±5% survival — theory pack r14_merge_q1_theory_upgrade_v1 04 §6, 09, 14 A6, 15 §4.4",
+  "4": "W5 region endpoint 4 ((4,∞)); W5_WIDE [0,4); Remark G7 x < 4 (W8b iii); 4-20 table ids — theory pack r14_merge_q1_theory_upgrade_v1 04, 07",
+  "4-20": "section / table / appendix reference (no data value)",
+  "4.9.1": "section / table / appendix reference (no data value)",
+  "400": "400 deterministic perturbation draws per radius — theory pack r14_merge_q1_theory_upgrade_v1 04 §6, 09, 14 A6",
+  "42": "canonical model file id 42 (v2.2), not modified",
+  "5": "W3 DL = 5; W4 GSV = DL_loose = 5; W4c DL = 5; D(δ) piece [3,5] — theory pack r14_merge_q1_theory_upgrade_v1 02 §4, 03 §8, 04 §5.1",
+  "5.6": "section / table / appendix reference (no data value)",
+  "5.7": "section / table / appendix reference (no data value)",
+  "5.8": "section / table / appendix reference (no data value)",
+  "5.8.10": "section / table / appendix reference (no data value)",
+  "5.8.5": "section / table / appendix reference (no data value)",
+  "51": "canonical solver file id 51 (v2.2), not modified",
+  "6": "theory pack file 06 (C.10.6 heading) and W-series counts — theory pack r14_merge_q1_theory_upgrade_v1 06",
+  "6,912": "Conjecture M2 bounded search 0 of 6,912 — theory pack r14_merge_q1_theory_upgrade_v1 04 §5.3, 09",
+  "7": "W4c C 10 → 7; W5_WIDE region (7,∞); 7/7 canonical cross-checks; file 07 — theory pack r14_merge_q1_theory_upgrade_v1 03 §6, 04 §6, 09",
+  "8": "W4c PR_B = 8; eight scalars perturbed (W5/W5_WIDE); file 08 — theory pack r14_merge_q1_theory_upgrade_v1 03 §6, 04 §6",
+  "9": "W4d C 10 → 9; v2.2 C.8 D1–D9 reference; file 09 — theory pack r14_merge_q1_theory_upgrade_v1 03 §4, 09"
+ },
+ "numeric_removed_unexpected": {},
+ "citation_pattern_counts_main_text": [
+  [
+   205,
+   205
+  ],
+  [
+   119,
+   119
+  ],
+  [
+   109,
+   109
+  ],
+  [
+   21,
+   21
+  ],
+  [
+   0,
+   0
+  ]
+ ],
+ "citation_pattern_counts_whole": [
+  [
+   210,
+   210
+  ],
+  [
+   161,
+   161
+  ],
+  [
+   168,
+   168
+  ],
+  [
+   242,
+   242
+  ],
+  [
+   251,
+   251
+  ]
+ ],
+ "years_in_patch_new_text": [],
+ "unverified_anchor_names_in_new_text": {},
+ "forbidden_hits_01": {
+  "minimal sufficient (claim)": {},
+  "DL>0 iff": {},
+  "governance always": {},
+  "generally non-monotone": {},
+  "enterprise evidence for synthetic": {},
+  "FULLY_VALIDATED": {}
+ },
+ "forbidden_hits_59a": {
+  "minimal sufficient (claim)": {
+   "最小充分": 1
+  },
+  "DL>0 iff": {},
+  "governance always": {},
+  "generally non-monotone": {},
+  "enterprise evidence for synthetic": {},
+  "FULLY_VALIDATED": {}
+ },
+ "forbidden_hits_patch_new_text": {
+  "minimal sufficient (claim)": {},
+  "DL>0 iff": {},
+  "governance always": {},
+  "generally non-monotone": {},
+  "enterprise evidence for synthetic": {},
+  "FULLY_VALIDATED": {}
+ },
+ "sentences_367_400": [
+  "擴大邊際的側車構造例 W5_WIDE 只作擴大構造例的敏感度分析（SENSITIVITY）：在相同 ±5% 擾動下保留 367/400 次，不作為主要結果，也不取代 W5。",
+  "擴大邊際的側車構造例 W5_WIDE（區域 `[0,4) ∪ (7,∞)`，邊際 3）在相同擾動下保留 367/400 次，只是敏感度分析（擴大構造例），不作為主要結果，也不取代 W5；"
+ ],
+ "sentences_162_400": [
+  "在全部八個純量同時 ±5% 的確定性擾動下（固定種子，400 次抽樣），W5 保留非區間建置區域 162/400 次，這是主要報告值（其邊際只有 1 TWD）。",
+  "主要（canonical）構造例為 W5：逐點重現 T-SEN-8，在全部八個純量同時 ±5% 的確定性擾動下保留非區間區域 162/400 次（主要報告值；"
+ ],
+ "sentences_with_充要_in_patch_text": [
+  "這些結果不包含授權損失為正的原始條件充要刻畫，也不宣稱任何治理要求必然提高企業價值。",
+  "(D) **反例**：構造例 W3c 顯示，同一對逆轉且不可分離的計畫，可在一個實例中造成 DL = 2、在另一實例中 DL = 0，因此理論補充包所列成對存在性條件 (A)–(F) 的任何布林組合，都不能構成 DL 正負號的充要判準。",
+  "本稿不宣稱任何不依賴首佳解的 DL 原始充要條件。",
+  "兩者之間沒有原始條件的充要刻畫（未證明）。",
+  "下列項目未證明（NOT_PROVEN），本稿不以其作為結論：(1) 授權損失為正的原始條件充要刻畫（不依賴首佳解；",
+  "(2) 治理篩選價值為正的原始條件充要刻畫（只有 Prop GS-1 的充分條件與 Thm GS-N 的精確平手必要條件）。",
+  "成對存在性條件 (A)–(F) 的任何布林組合都不是 DL 正負號的充要判準）；",
+  "不依賴首佳解的原始充要刻畫：NOT_PROVEN；",
+  "** 不存在已證明的原始條件充要刻畫（NOT_PROVEN）。"
+ ],
+ "sentences_iff_positive_in_new_text": [
+  "** Part (i)：在唯一首佳下，若首佳計畫在 C 中皆可行，則 `DL^opt` 為正若且唯若某一部門存在 `a(x^H) ≤ a(x*_u)` 且 `F_u(x^H) > F_u(x*_u)` 的計畫，`DL^pess` 為正若且唯若存在 `x^H ≠ x*_u`、`a(x^H) ≤ a(x*_u)` 且 `F_u(x^H) ≥ F_u(x*_u)` 的計畫（企業貢獻較低自動成立）。"
+ ],
+ "SUBMISSION_READY_NO_counts": [
+  3,
+  4
+ ],
+ "V1_3_9_3_term_counts": {
+  "企業決策介面": 2,
+  "企業決策過程": 0
+ },
+ "V1_term_mismatch_with_S1e": true,
+ "erratum_C10_9_present": true,
+ "canonical_hashes": {
+  "42": "0249e7b980f060e979afcaa77d6f7161dd890ae5b2353f95a7607d7f7adb9af9",
+  "51": "37f26a529ff2f42a3b951155ca41fa1423e8028435214dd2024719f348eff516"
+ },
+ "S1e_packet_hashes": {
+  "CODER_1_ZH_TW.xlsx": "cbbbaa0a9741426a051168439ae4f8ce2d212c2878ed1990e444a9b1e2655a29",
+  "CODER_2_ZH_TW.xlsx": "5925ead55daa2c9db99a084c4cce48441bd6a3c2994371b1e170562bac0e3f38",
+  "CODER_3_ZH_TW.xlsx": "50d8c818950a33ea4644fe038c8f89e9cde70990afd0d70dc194012c620084a9"
+ },
+ "hard_checks": {
+  "source_sha_expected": true,
+  "changed_lines_subset_of_patched_lines": true,
+  "reverse_replay_reproduces_59a": true,
+  "math_spans_identical_ordered": true,
+  "equation_tags_identical": true,
+  "no_dollar_or_latex_in_patch_new_text": true,
+  "fenced_code_blocks_identical": true,
+  "existing_headings_preserved_in_order": true,
+  "headings_added_exactly_expected": true,
+  "no_heading_removed": true,
+  "captions_only_4_20D_added": true,
+  "G_rows_identical_ordered": true,
+  "GM_arrow_tokens_identical": true,
+  "no_G17_or_new_G_code": true,
+  "section_3_9_1_identical": true,
+  "section_3_9_2_tables_3_4_3_4A_identical": true,
+  "section_3_9_3_V1_design_identical": true,
+  "section_3_9_4_identical": true,
+  "section_3_9_5_identical": true,
+  "section_3_11_x_identical": true,
+  "section_3_11_2_identical": true,
+  "section_3_11_3_identical": true,
+  "section_3_11_4_identical": true,
+  "section_3_12_1_identical": true,
+  "section_3_12_2_identical": true,
+  "section_3_12_3_identical": true,
+  "section_3_12_5_identical": true,
+  "section_3_12_7_identical": true,
+  "section_4_1_to_4_8_identical": true,
+  "section_4_10_identical": true,
+  "section_4_11_identical": true,
+  "section_chapter2_identical": true,
+  "section_3_1_to_3_8_identical": true,
+  "section_5_1_to_5_5_identical": true,
+  "section_5_8_1_to_5_8_9_identical": true,
+  "section_references_identical": true,
+  "section_appendix_A_B_identical": true,
+  "section_appendix_E_F_except_E51_identical": true,
+  "table_identical_ 3-4：G0": true,
+  "table_identical_ 3-4A：G": true,
+  "appendix_C1_C9_verbatim": true,
+  "P1_P3_to_P8_bullets_identical": true,
+  "P2_formal_statement_identical": true,
+  "P2_only_remark_changed_by_T07": true,
+  "study1_primary_phrases_unchanged": true,
+  "study1_tokens_unchanged": true,
+  "numeric_patch_sum_matches_doc": true,
+  "numeric_added_all_traceable": true,
+  "numeric_removed_only_status_date": true,
+  "no_new_citation_keys_main_text": true,
+  "no_new_citation_keys_whole_document": true,
+  "no_year_tokens_added_except_status_date": true,
+  "reference_list_identical": true,
+  "no_unverified_anchor_names_added": true,
+  "no_forbidden_phrases_in_01": true,
+  "W5_WIDE_367_only_as_sensitivity": true,
+  "W5_162_reported_as_primary": true,
+  "every_充要_in_new_text_scoped_or_negated": true,
+  "every_positive_iff_scoped_to_unique_first_best": true,
+  "4_9_1_footnote_present": true,
+  "4_9_1_ABC_present": true,
+  "4_9_1_W1_W7_rows": true,
+  "governance_sentence_present": true,
+  "M1_M4_scope_sentence_TA_MAJOR1": true,
+  "synthetic_analytic_counterexample_label": true,
+  "W_IA_NDV_not_in_chapter4": true,
+  "status_line_L5_v186": true,
+  "SUBMISSION_READY_NO_kept": true,
+  "erratum_present_and_C2_verbatim": true,
+  "canonical_42_51_unchanged": true,
+  "S1e_packets_unchanged": true
+ },
+ "ALL_HARD_CHECKS_PASS": true
+}
