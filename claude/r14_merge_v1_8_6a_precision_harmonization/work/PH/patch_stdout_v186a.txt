@@ -1,0 +1,55 @@
+patches 52
+src sha 94d41d5682818953912784d0e870d58d1e4c418e7261b619d5c73485dfee82f4
+dst sha 12eee36a8c1a762a16603deb4f46d2962cc4019a62e443241c082629546d9517
+H01 src line 5 VERSION label + RD-2 provenance phrase
+H02 src line 5 RD-2 provenance phrase
+H03 src line 11 RD-1 construct term
+H04 src line 15 RD-1 construct term
+H05 src line 27 RD-1 construct term (EN)
+H06 src line 31 RD-1 construct term (EN)
+H07 src line 89 RD-1 construct term
+H08 src line 93 RD-1 construct term
+H09 src line 95 RD-1 construct term
+H10 src line 105 RD-1 construct term
+H11 src line 130 RD-1 construct term
+H12 src line 160 RD-1 construct term
+H13 src line 180 RD-1 construct term
+H14 src line 190 RD-1 construct term
+H15 src line 222 RD-1 construct term
+H16 src line 399 RD-1 construct term (I-label kept in parentheses)
+H17 src line 407 RD-1 construct term
+H18 src line 667 RD-1 construct definition + terminology note
+H19 src line 755 RD-1 verbatim S1e sentence + coder-facing wording sync
+H20 src line 755 RD-1 coder-facing wording sync (S1e)
+H21 src line 755 RD-1 coder-facing wording sync (S1e)
+H22 src line 755 RD-1 V1-design status sync (S1e packet version)
+H23 src line 779 RD-1 description sync (¡±3.9.3 now synced)
+H24 src line 1366 RD-1 V1-design status sync (S1e)
+H25 src line 1797 RD-1 coder-facing wording sync (S1e)
+H26 src line 2277 RD-1 construct term
+H27 src line 2322 RD-1 construct term
+H28 src line 2351 RD-1 construct term (heading)
+H29 src line 2461 RD-1 construct term
+H30 src line 2475 RD-1 construct term
+H31 src line 2475 RD-1 construct term
+H32 src line 3252 RD-1 V1-design status sync (S1e)
+H33 src line 1159 RD-2 provenance phrase
+H34 src line 3125 RD-2 provenance phrase
+H35 src line 150 RD-5 scope condition (DL)
+H36 src line 151 RD-5 scope condition (screening; shared capability)
+H37 src line 152 RD-5 scope condition (robustness; VOI)
+H38 src line 332 RD-5 separate necessary/sufficient
+H39 src line 332 RD-5 attribution boundary (model-internal vs literature)
+H40 src line 1184 RD-5 scope condition (£_ threshold)
+H41 src line 1186 RD-5 separate necessary/sufficient (DL diagnosis)
+H42 src line 1189 RD-5 scope condition (vertex exactness)
+H43 src line 2114 RD-5 scope condition (Lemma R; VOI fixed candidate set)
+H44 src line 2268 RD-5 existence vs universal
+H45 src line 2268 RD-5 scope condition (screening)
+H46 src line 2269 RD-5 VOI qualifier
+H47 src line 2429 RD-5 pointer (V1 does not test sufficiency; NONE/AMBIGUOUS)
+H48 src line 2433 RD-5 pointer (information-asymmetry sidecar)
+H49 src line 2377 SWEEP necessary-condition precision (AL3 channel)
+H52 src line 2397 SWEEP empirical-status qualifier (V7 not run)
+H50 src line 3125 VERSION erratum lineage record
+H51 src line 3241 VERSION Appendix D row

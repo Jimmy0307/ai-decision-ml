@@ -1,0 +1,9 @@
+CONTEXT — V1.8.6a PRECISION HARMONIZATION + LINEAGE CLOSURE (sub-agent rules)
+This is a wording / precision / lineage closure. NOT a new theory version, NOT an empirical version, NOT a model revision.
+Paths
+- REPO (git; branch research/v1.8.6a-precision-harmonization-20261018 from ff151d8; LF): C:\NTUST_PAPER\outputs\00_CURRENT\02_STUDY1_FREEZE\02_STUDY1_FREEZE_V1_8_1\repo
+- Base manuscript (V1.8.6, READ-ONLY): REPO\claude\r14_merge_v1_8_6_theory_integration\01_V1_8_6_THEORY_INTEGRATED_MANUSCRIPT.md (sha256 94d41d5682818953912784d0e870d58d1e4c418e7261b619d5c73485dfee82f4); V1.8.6 reports 02–12 and work\MI\ (patch/verify scripts) in the same folder; theory status matrix 06; audits 05/11; reference verification 07/08 + work\RV\.
+- Theory pack (READ-ONLY): REPO\claude\r14_merge_q1_theory_upgrade_v1\ (12 final status, 13 erratum candidate).
+- 42/51 READ-ONLY (never modify). S1e packets READ-ONLY: C:\NTUST_PAPER\outputs\00_CURRENT\03_V1_HUMAN_VALIDATION\04_CODER_PACKETS_S1E_ZH_TW_TEACHER_APPROVED_READY_TO_DISTRIBUTE\ (cbbbaa0a… / 5925ead5… / 50d8c818…); S1e records REPO\artifacts\v1.8.2e_s1e_process_wording_20261014\.
+- OUT = C:\NTUST_PAPER\outputs\00_CURRENT\V1_8_6A_PRECISION_HARMONIZATION_20261018\ (write only here; scratch OUT\work\<letter>\)
+Rules: no new theorem; no change to math/model/Study 1/G01–G16/S1e packets/coder categories; no human/enterprise results; theory status stays PARTIAL; SUBMISSION_READY=NO; never global-replace 「介面」 (keep 使用者介面, API／系統串接介面, true technical interfaces); no citation padding; no unverified citation; no DOIs/pages invented. No git commit/push.
