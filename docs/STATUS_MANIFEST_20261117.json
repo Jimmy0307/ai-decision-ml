@@ -1,0 +1,95 @@
+{
+  "project": "AI × Decision — Structural Hole & Unresolved Research Gap",
+  "updated_on": "2026-11-17",
+  "supervisor_meeting": "2026-11-18",
+  "repository": "Jimmy0307/ai-decision-ml",
+  "visibility": "public",
+  "note": "Public summary of research status. No raw fulltexts, private OpenAlex logs, access tokens or private collaboration files copied.",
+  "source_policy": {
+    "direct": "Verified from mounted 20260929_V9_HUMAN_VALIDATION.zip or direct sidecar",
+    "historical": "Earlier experiment report; original version logs not mounted",
+    "user_reported": "V11.1 results reported from local completed run; original package not mounted",
+    "synthetic": "Synthetic only—not observed researcher evidence"
+  },
+  "results": {
+    "v5": {
+      "source_works": 2118,
+      "parsed_fulltext_historical": 1729,
+      "strict_records": 6499,
+      "fully_mapped": 3125,
+      "eligible_documents": 783,
+      "document_pair_edges": 2180,
+      "cell_count": 120,
+      "observed_cells": 104,
+      "robust_enriched": 16,
+      "robust_depleted": 16,
+      "status": "FROZEN_BASELINE_PENDING_FULL_HUMAN_REANALYSIS",
+      "evidence": "DIRECT_V9_REPORT"
+    },
+    "v9_human": {
+      "targeted": 50,
+      "blind_second_coder": 20,
+      "ai_family_kappa": 0.048,
+      "decision_family_kappa": 0.14,
+      "affected_cells_after_local_adjudication": 24,
+      "status": "FULL_REANALYSIS_REQUIRED",
+      "evidence": "DIRECT_V9_FORENSIC"
+    },
+    "v10_1": {
+      "candidate_pairs": 8,
+      "rejected": 6,
+      "unresolved": 2,
+      "confirmed": 0,
+      "evidence": "HISTORICAL_NOT_IN_UPLOAD"
+    },
+    "v11_1": {
+      "works_checked": 7880,
+      "works_with_author_data": 7835,
+      "v9_authors": 26443,
+      "merged_authors": 30140,
+      "openalex_calls": 95,
+      "author_candidates": 4,
+      "rejected": 3,
+      "insufficient": 1,
+      "confirmed_burt": 0,
+      "evidence": "USER_REPORTED_V11_1_ORIGINAL_LOCAL_PACKAGE_NOT_MOUNTED"
+    },
+    "gap_validity": {
+      "depleted_pairs_with_alternative_paths": "16/16",
+      "cross_backbone_components_by_definition": [
+        10,
+        14,
+        0
+      ],
+      "automated_tests_passed": "14/14",
+      "evidence": "DIRECT_SIDECAR"
+    },
+    "limitation_scout": {
+      "selected_spans": 25112,
+      "document_ids": 1104,
+      "lexically_flagged_documents": 100,
+      "lexical_hits": 142,
+      "automated_tests_passed": "8/8",
+      "followup_resolution_verification": "NOT_STARTED",
+      "evidence": "DIRECT_SIDECAR"
+    }
+  },
+  "why_rescanning": [
+    "V9 double-blind AI/Decision family agreement is low; local adjudication changed 24/120 cell counts and robust-core membership.",
+    "Different network representations and backbone thresholds change apparent gaps, invalidating a naïve Burt inference.",
+    "Author disambiguation and external coauthor ties refute apparent isolated brokers.",
+    "Full limitation sections and downstream resolution evidence were not part of the original semantic extraction."
+  ],
+  "current_status": {
+    "fulltext_recovery": "PARTIAL",
+    "citation_edge_recovery": "PENDING",
+    "author_identity_raw_v11_1": "LOCAL_ONLY_NOT_UPLOADED",
+    "v9_full_reanalysis": "IN_PROGRESS_NOT_REVERIFIED",
+    "burt_final_gate": "PENDING_PRE_REGISTERED_LAST_CHECK",
+    "limitation_extraction": "PILOT_ONLY",
+    "future_literature_resolution": "NOT_VERIFIED",
+    "submission_ready": false
+  },
+  "stop_rule": "Freeze corpus, author ID reconciliation, time window, edge definition, peer comparison and external validation before any final Burt gate. If no robust nonredundant broker remains or relation data are unsuitable, stop searching this dataset and consider a suitable temporally grounded relational dataset.",
+  "publication_warning": "No confirmed long-term unresolved limitation is reported. A lexical hit is not a research gap."
+}
