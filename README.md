@@ -1,5 +1,6 @@
 > **2026-11-17｜AI × Decision supervisor research status**  
 > [研究進度總覽（HTML）](docs/index.html) · [完整稽核報告](docs/RESEARCH_AUDIT_20261117.md) · [11/18 老師會議摘要](docs/SUPERVISOR_BRIEF_20261118.md)  
+> [GitHub Pages 發布設定與驗收](docs/PUBLISHING_AND_SMOKE_TEST.md)（網頁檔案已提交，但 Pages 公開部署尚未確認）  
 > [13 個版本](docs/data/VERSION_METHOD_REGISTER_20261117.csv) · [20 項方法](docs/data/METHOD_VALIDATION_MATRIX_20261117.csv) · [90 項數值與來源](docs/data/ALL_METRICS_WITH_PROVENANCE_20261117.csv) · [機器可讀進度](docs/STATUS_MANIFEST_20261117.json)
 >
 > **目前證據裁決：**功能網路 V9 凍結基準有 16 個穩健低整合介面，但不等於 Burt 結構洞；Citation、Higher-order 與 Co-author 研究到 V11.1 未有確認成立的 AI × Decision Burt 仲介。V9 人工編碼一致性不足，全面重分析 **FULL_REANALYSIS_REQUIRED**。V11.1 原始外部驗證資料仍在本機，網站僅引用其回報摘要；Limitation 追蹤目前只是初篩，不得宣稱任何問題已被證實長期未解。
