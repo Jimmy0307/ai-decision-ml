@@ -1,0 +1,314 @@
+% ============================================================
+% appendix.tex -- Appendices A, B, C (the main file places \appendix before this).
+% Numbers come from raw_materials/experimental_log.md. Appendix A additionally
+% states commit ids and preregistered decision rules taken from the frozen
+% preregistration texts (branch research/patent-citation-hole-20261118).
+% ============================================================
+
+\section{Preregistration and Amendment Log}
+\label{app:prereg}
+
+Study~2 rests on four preregistrations, each frozen as a public commit in PR~\#5 of the project repository before the analysis it governs \citep{nosek2018preregistration}. Each text fixes definitions, null models, decision rules, sensitivity checks and stop rules; changes after freezing are recorded as dated amendments that do not overwrite the frozen text. Table~\ref{tab:app_prereg} summarises the four plans; Table~\ref{tab:app_amend} lists every amendment and recorded deviation.
+
+\begin{table}[htbp]
+\centering
+\caption{Preregistration log for Study~2. ``Frozen before'' states what had not yet been seen or computed when the plan was committed. Outcomes are DIRECT results (E3).}
+\label{tab:app_prereg}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{2.0cm}p{2.3cm}p{3.9cm}p{4.3cm}p{2.3cm}}
+\toprule
+Plan (commit) & Frozen before & Hypotheses and content & Decision rule & Outcome \tabularnewline
+\midrule
+\raggedright 1.~Aggregate test (\texttt{a8f3289}) &
+\raggedright Any patent data were downloaded or inspected &
+\raggedright H1a: OE(AI,DEC) relative to reference CPC main groups in G06/G16/H04 with $\geq$2,000 patents; H1b: ratio to OE(AI,BIZ-OTHER); H2: trend by citing year; H3 (exploratory): firm brokers; six sensitivity checks; synthetic calibration &
+\raggedright H1 supported only if OE is in the lowest quartile on both sides (H1a) and the ratio's upper 95\% CI bound is $<1$ (H1b); labels \texttt{HOLE\_SUPPORTED}, \texttt{PARTIAL\_NOT\_CLAIMED}, \texttt{HOLE\_NOT\_SUPPORTED}; $\geq$4 of 6 sensitivity checks disagree $\rightarrow$ \texttt{FRAGILE}; H2 labels \texttt{CLOSING}, \texttt{PERSISTENT}, \texttt{NARROWING\_BUT\_OPEN} &
+\raggedright \texttt{HOLE\_NOT\_SUPPORTED}; 0/6 disagree; H2 \texttt{PERSISTENT} \tabularnewline
+\addlinespace
+\raggedright 2.~V9 battery on the CPC matrix (\texttt{a6266f7}) &
+\raggedright Any cell-level count (written after the aggregate verdict) &
+\raggedright Unchanged V9 engine on a $6\times7$ matrix fixed from the CPC scheme; Part~A co-classification, Part~B applicant citations &
+\raggedright Full core: q $\leq$ .05 in main, exact and document-preserving tests in the same direction, plus raw; convergent depletion: full-core depleted in both A and B; a depleted cell may not be called a structural hole &
+\raggedright Preregistered core 0 by construction (B1); adapted core reported \tabularnewline
+\addlinespace
+\raggedright 3.~Full replication suite (\texttt{d641256}) &
+\raggedright Any module P1--P10 was run (aggregate and full-window cell results known) &
+\raggedright P1 with M06-P; P2 seeds, null false positives, power, segmentation; P3 time split; P4 label face validity; P5 firm network; P6 removal; P7 hyperedges; P8 aliases; P9 Gap Validity; P10 Limitation Scout &
+\raggedright Three-test agreement for P3 and P9; replicated depleted cell must pass in both halves; P4 pass if lift $\geq$1.5; P5 firm hole if O/E $<1$ and below both MIXED O/Es; a candidate is refuted if AI and DEC firms stay connected after its removal &
+\raggedright See Appendix~\ref{app:sens}; P5 criterion met; 10/10 candidates refuted; P10 \texttt{NOT\_APPLICABLE} \tabularnewline
+\addlinespace
+\raggedright 4.~Portfolio-preserving firm null (\texttt{b59fc71}) &
+\raggedright Any null replicate was computed (written after P5) &
+\raggedright T1: OE(AI\_FIRM$\sim$DEC\_FIRM); T2: MIXED median constraint; owner sets permuted within strata (primary; S-tech) &
+\raggedright \texttt{ORGANISATIONAL\_HOLE\_BEYOND\_PORTFOLIO} if T1 and T2 both have one-sided $p<.05$; \texttt{PARTIAL} if exactly one; \texttt{PORTFOLIO\_ARTEFACT} if neither; S-tech disagreement $\rightarrow$ \texttt{TECH\_MIX\_SENSITIVE} &
+\raggedright \texttt{PARTIAL} in both stratifications \tabularnewline
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Amendments and recorded deviations. Amendments are appended to the frozen texts, which remain unchanged.}
+\label{tab:app_amend}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{1.5cm}p{1.6cm}p{2.8cm}p{5.6cm}p{3.1cm}}
+\toprule
+Item & Plan & When & Change & Effect on design \tabularnewline
+\midrule
+\raggedright A1 & \raggedright 1 & \raggedright 2026-11-18, before any citation data or result was computed (\texttt{a158e70}) & \raggedright The CPC file labels inventive codes ``inventional''; the code accepts both spellings so that sensitivity check s4 keeps its meaning. CPC rows are loaded in chunks. & \raggedright None \tabularnewline
+\addlinespace
+\raggedright A2 & \raggedright 1 & \raggedright 2026-11-18, after the run (data note) & \raggedright Before 2013, non-examiner citations are labelled ``cited by other'', so the applicant-only specification effectively covers citing years 2013--2025; s1 (all categories) agrees with the primary verdict. H3 was not run: with H1 unsupported there is no hole to broker. & \raggedright None to H1; H3 moot \tabularnewline
+\addlinespace
+\raggedright B1 & \raggedright 2 & \raggedright 2026-11-18, after the run & \raggedright M06 accepted 0 of 21,843,600 proposed swaps because each document is a complete row $\times$ column block; the preregistered core is 0 by construction and uninformative. Three-test cells reported as exploratory; M06-P then frozen in Plan~3 (P1) before computation. & \raggedright Documented deviation from Plan~2 \tabularnewline
+\addlinespace
+\raggedright Seeding & \raggedright 4 & \raggedright Before any null replicate finished (\texttt{1eb7319}) & \raggedright The first run was stopped by host memory pressure after reproducing P5 exactly. The run was made resumable; each replicate $r$ of scheme $s$ uses its own seed sequence [20261119, $s$, $r$] instead of one stream. & \raggedright Statistic, strata and rule unchanged \tabularnewline
+\addlinespace
+\raggedright P6, P10 & \raggedright 3 & \raggedright Recorded with results & \raggedright The P6 cross-weight-retained metric is identically 1 by construction; P10 Limitation Scout is \texttt{NOT\_APPLICABLE} (patents have no limitation section). & \raggedright Reported as uninformative \tabularnewline
+\bottomrule
+\end{tabular}
+\end{table}
+
+Study~1 used frozen V9 seeds: 20260918 for the stub Monte Carlo and 20260919 for the document-preserving swap (E1.1). Its data-validity re-analysis (2026-11-18; E1.3--E1.5) was not preregistered. Its verdict is recorded as follows: directional under-integration DEFENSIBLE; ``16 statistically robust depleted pairs'' NOT DEFENSIBLE as measured; Burt structural hole STOP; research gap NOT SUPPORTED.
+
+% ------------------------------------------------------------
+\section{Sensitivity Tables}
+\label{app:sens}
+
+\subsection{Study 1}
+
+\begin{table}[htbp]
+\centering
+\caption{The 16 V9 depleted cells with observed counts (DIRECT; \texttt{V9\_ROBUSTNESS\_MASTER\_TABLE.csv}). These are depleted cells, not gaps.}
+\label{tab:app_v9cells}
+\footnotesize
+\begin{tabular}{llr}
+\toprule
+AI family & Decision family & $O$ \\
+\midrule
+\texttt{COORDINATION\_EXECUTION} & \texttt{HUMAN\_REVIEW\_ACCOUNTABILITY} & 10 \\
+\texttt{COORDINATION\_EXECUTION} & \texttt{RISK\_ASSESSMENT} & 3 \\
+\texttt{EVALUATION\_ASSESSMENT} & \texttt{ALLOCATION\_PLANNING} & 12 \\
+\texttt{EVALUATION\_ASSESSMENT} & \texttt{PREDICTION\_DIAGNOSIS} & 9 \\
+\texttt{EXPLANATION\_ASSURANCE} & \texttt{ALLOCATION\_PLANNING} & 7 \\
+\texttt{EXPLANATION\_ASSURANCE} & \texttt{EVALUATION\_SELECTION} & 7 \\
+\texttt{EXPLANATION\_ASSURANCE} & \texttt{PREDICTION\_DIAGNOSIS} & 15 \\
+\texttt{GENERATION\_SYNTHESIS} & \texttt{PREDICTION\_DIAGNOSIS} & 7 \\
+\texttt{HUMAN\_AUGMENTATION} & \texttt{EVALUATION\_SELECTION} & 2 \\
+\texttt{HUMAN\_AUGMENTATION} & \texttt{PREDICTION\_DIAGNOSIS} & 3 \\
+\texttt{PREDICTION\_RISK\_ESTIMATION} & \texttt{EVALUATION\_SELECTION} & 8 \\
+\texttt{PREDICTION\_RISK\_ESTIMATION} & \texttt{GENERAL\_DECISION\_PROCESS} & 8 \\
+\texttt{PREDICTION\_RISK\_ESTIMATION} & \texttt{GOVERNANCE\_OVERSIGHT} & 26 \\
+\texttt{PREDICTION\_RISK\_ESTIMATION} & \texttt{HUMAN\_REVIEW\_ACCOUNTABILITY} & 6 \\
+\texttt{PREDICTION\_RISK\_ESTIMATION} & \texttt{INFORMATION\_ACQUISITION} & 21 \\
+\texttt{RECOMMENDATION\_OPTIMIZATION} & \texttt{HUMAN\_REVIEW\_ACCOUNTABILITY} & 8 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Study~1 robustness checks (DIRECT; data-validity re-analysis, 2026-11-18; E1.3). Core cells are defined by BH-FDR \citep{benjamini1995controlling}.}
+\label{tab:app_s1robust}
+\footnotesize
+\begin{tabular}{p{3.6cm}p{11.0cm}}
+\toprule
+Check & Result \tabularnewline
+\midrule
+\raggedright Re-implementation & \raggedright Exact and raw tests reproduce the official q values ($|\Delta q|\leq 6\times10^{-12}$); Jaccard overlap of the 32-cell core .94 \tabularnewline
+\raggedright 20 Monte Carlo seeds & \raggedright 31 cells in the core under every seed, including all 16 depleted cells; 2 boundary cells, exactly the one-in / one-out pair of the human-corrected sidecar \tabularnewline
+\raggedright Exclusion bias & \raggedright Depleted core cells pass the strict filter more often than other cells (38\% vs 28\%) \tabularnewline
+\raggedright Track-stratified null & \raggedright 16/16 depleted and 16/16 enriched cells remain significant with unchanged direction \tabularnewline
+\raggedright Two periods ($\leq$2023 vs $\geq$2024) & \raggedright 16/16 cells depleted in both periods; change does not differ from a permutation null ($p=.86$) \tabularnewline
+\raggedright Keyword (stage-1) coding & \raggedright 13/16 depleted cells keep the same direction \tabularnewline
+\raggedright Same-term self-pairing & \raggedright 33\% of records in the strongest enriched cell pair the same term; removing them drops 2 prediction-related depleted cells from the core \tabularnewline
+\raggedright Rule-based keyword matrix & \raggedright 741 same-term records removed, 1,431 document edges; 13/16 same direction, 6 significant, 0 significantly reversed; only 7 cells reach the four-test core \tabularnewline
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Study 2}
+
+Table~\ref{tab:app_oeyear} gives the yearly intensities behind Figure~\ref{fig:patent_trend} and the synthetic calibration run before the real data. Table~\ref{tab:app_suite} summarises the calibration (P2), time-split (P3) and Gap Validity (P9) modules, and Table~\ref{tab:app_lift} gives the label face-validity lifts (P4). P4 is a title-keyword check, not a human coding audit.
+
+\begin{table}[htbp]
+\centering
+\caption{OE(AI,DEC) by citing grant year, primary specification (applicant citations), with 95\% CI; and synthetic calibration of the aggregate rule (DIRECT; E3.1).}
+\label{tab:app_oeyear}
+\footnotesize
+\begin{tabular}{lrl@{\hspace{1.2cm}}lrl}
+\toprule
+Year & OE & 95\% CI & Year & OE & 95\% CI \\
+\midrule
+2013 & 3.90 & 3.16--4.85 & 2020 & 3.55 & 3.18--3.94 \\
+2014 & 2.84 & 2.42--3.41 & 2021 & 3.34 & 3.03--3.69 \\
+2015 & 3.79 & 3.14--4.55 & 2022 & 2.95 & 2.62--3.30 \\
+2016 & 4.05 & 3.42--4.75 & 2023 & 3.05 & 2.78--3.34 \\
+2017 & 3.29 & 2.78--3.86 & 2024 & 2.69 & 2.40--2.98 \\
+2018 & 3.20 & 2.81--3.64 & 2025 & 2.34 & 2.08--2.64 \\
+2019 & 3.99 & 3.48--4.54 & & & \\
+\midrule
+\multicolumn{6}{p{8.4cm}}{WLS slope $-0.097$ per year (95\% CI $-0.130$ to $-0.065$); last-3-year OE 2.69 vs reference median 1.095; label \texttt{PERSISTENT}.} \\
+\midrule
+\multicolumn{6}{l}{\emph{Synthetic calibration (before real data)}} \\
+\multicolumn{6}{p{8.4cm}}{No hole: OE 0.388 vs reference lowest quartile 0.356; ratio 0.99 (0.79--1.21) $\rightarrow$ \texttt{HOLE\_NOT\_SUPPORTED}.} \\
+\multicolumn{6}{p{8.4cm}}{30\% suppression: OE 0.275; ratio 0.66 (0.52--0.83) $\rightarrow$ detected.} \\
+\multicolumn{6}{p{8.4cm}}{50\% suppression: OE 0.223; ratio 0.47 $\rightarrow$ detected.} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Replication suite: calibration (P2), time split (P3) and Gap Validity (P9). Part~A is co-classification; Part~B is applicant citations (DIRECT; E3.3).}
+\label{tab:app_suite}
+\footnotesize
+\begin{tabular}{lp{6.0cm}ll}
+\toprule
+Module & Statistic & Part A & Part B \\
+\midrule
+P2 seeds & Seeds (20 $\times$ 10,000): cells always q $\leq$ .05 / boundary & 20 / 4 & 22 / 0 \\
+P2 null & Mean false cells per matrix (1,000 null matrices) & 0.045 & 0.049 \\
+ & Share of matrices with any false cell & 3.6\% & 4.4\% \\
+P2 power & 20\% depletion detected, cells with $E\geq100$ & 18/27 = 67\% & 23/29 = 79\% \\
+P2 segmentation & S1 inventive codes only: depleted (overlap with P1) & 8 (6) & 11 (8) \\
+ & S2 single-code documents: depleted (overlap with P1) & 8 (5) & 8 (4) \\
+\midrule
+P3 time split & First half: documents, depleted & 2010--2017: 543, 0 & 2013--2018: 4,772, 3 \\
+ & Second half: documents, depleted & 2018--2025: 4,773, 8 & 2019--2025: 26,071, 11 \\
+ & Depleted cells replicated in both halves & 0 & 0 \\
+\midrule
+P9 Gap Validity & Indirect constraint term (bipartite) & 0 & 0 \\
+ & Alternative length-3 routes per depleted cell & 20--30 & 20--30 \\
+ & Depleted cells at q $\leq$ .01 vs q $\leq$ .05 & 7 vs 9 & 9 vs 10 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Label face validity (P4): lift of the title-keyword hit rate over other AI$\cup$DEC patents. A label passes if lift $\geq$ 1.5; all 11 pass (DIRECT; E3.3). This is not inter-rater reliability.}
+\label{tab:app_lift}
+\footnotesize
+\begin{tabular}{lr@{\hspace{1.2cm}}lr}
+\toprule
+AI-method label & Lift & Decision-function label & Lift \\
+\midrule
+G06N3 & 4.69 & FORECAST\_OPTIMISE & 3.31 \\
+G06N5 & 7.81 & RESOURCE\_SCHEDULING & 4.51 \\
+G06N7 & 14.28 & WORKFLOW & 4.88 \\
+G06N10 & 1,650 & RISK & 55.39 \\
+G06N20 & 2.18 & STRATEGY (hit rate 4.5\%) & 4.40 \\
+ & & PERFORMANCE & 6.32 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{External-data feasibility}
+
+\begin{table}[htbp]
+\centering
+\caption{Six public sources screened for flow validity (DIRECT; E2). No source passes the independent-relation and validation gates.}
+\label{tab:app_sources}
+\footnotesize
+\begin{tabular}{p{2.2cm}p{6.6cm}p{5.6cm}}
+\toprule
+Source & Scale & Relation type and outcome \tabularnewline
+\midrule
+\raggedright CORDIS H2020 & \raggedright 35,389 projects; 179,063 organisation participations; keyword candidates 195 projects $\times$ 1,105 organisations = 1,436 edges; projection 1,049 nodes, 12,181 edges, 102,660 within-project triads, 156 edges recurring across $\geq$2 projects & \raggedright Co-membership (affiliation). Degree-preserving bipartite swap null (49 reps): 5 testable candidates, $p=.41$--$.86$, BH q $\geq$ .80; 0 significant \tabularnewline
+\raggedright GLEIF Level-2 & \raggedright 663,449 relationship records (481,247 active) & \raggedright Legal consolidation, not information flow \tabularnewline
+\raggedright OpenAlex & \raggedright 8 works & \raggedright Fails gates \tabularnewline
+\raggedright OCDS & \raggedright 0 verifiable buyer--supplier edges in the round-3 sample & \raggedright Fails gates \tabularnewline
+\raggedright SEC & \raggedright Not fetched (requires a genuine contact User-Agent) & \raggedright Not assessed \tabularnewline
+\raggedright PyPSA & \raggedright 8,786 buses & \raggedright Physical grid topology, not information flow \tabularnewline
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ------------------------------------------------------------
+\section{Multi-Level Programming Constraint Details}
+\label{app:mlp}
+
+All values in this appendix describe the simulated v1.0 prototype. They are design assumptions, not estimates, and describe no real firm.
+
+\subsection{Notation and governance regimes}
+
+Level~1 chooses integer allocations $b_i^r\in\{0,1,2,3\}$ for each process $i$ and resource $r\in\{D,A,R,G\}$ at unit costs $c_i^r$, subject to $\sum_{i,r}c_i^r b_i^r\leq B_{\mathrm{tot}}$. The capability map $\phi_X(X_i^0,b_i^X)=\min(3,X_i^0+b_i^X)$ yields the ceilings $\bar D_i$, $\bar A_i$, $\bar R_i$ and $\bar G_i$ on the ordinal scale $\{0,1,2,3\}$. A governance regime $\Gamma$ is defined by the parameters in Table~\ref{tab:app_regimes} and by the permission matrix $\mathrm{Allow}_{m\Gamma}$. In the prototype source, the flexibility multiplier scales realised gain at Level~3, the risk multiplier scales residual risk at Level~3 and governance risk at Level~2, and the cost multiplier scales integration cost at Level~2. Bilevel and multilevel background is given in \citet{dempe2002foundations}, \citet{lee2001fuzzy} and \citet{cheng2019fuzzy}.
+
+\begin{table}[htbp]
+\centering
+\caption{Governance regime parameters (SIMULATED; E4). The letters C, F and D are labels for parameter sets only and are not expanded. In the baseline, all five configurations are permitted under every regime.}
+\label{tab:app_regimes}
+\footnotesize
+\begin{tabular}{lrrrr}
+\toprule
+Regime & Capacity $K_\Gamma$ & Risk multiplier & Cost multiplier & Flexibility multiplier \\
+\midrule
+C & 5.5 & 0.85 & 1.10 & 0.95 \\
+F & 6.0 & 1.00 & 1.00 & 1.00 \\
+D & 6.5 & 1.15 & 0.90 & 1.05 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Level-2 requirement thresholds and capacity}
+
+Table~\ref{tab:app_thresholds} lists the threshold functions. The symbol $\kappa_i$ denotes the consequence class of process $i$; it is unrelated to Cohen's $\kappa$. The capability conditions are $\bar D_i\geq D_{\mathrm{req}}(A_i)$ and $\bar R_i\geq R_{\mathrm{req}}(A_i)$, and the ceilings are $A_i\leq\bar A_i$, $H_i,EA_i\leq\bar G_i$ and $WI_i\leq\bar D_i$. The shared capacity constraint is
+\begin{equation}
+\mathrm{CapUse}=\sum_{i\in I}\left(0.42A_i+0.24H_i+0.24EA_i+0.20WI_i\right)\leq K_\Gamma ,
+\label{eq:app_capacity}
+\end{equation}
+with $\mathrm{CapUse}(0,0,0,0)=0$ and $K_\Gamma\geq0$. The prototype source also bounds $H_i$, $EA_i$ and $WI_i$ by $3A_i$. On the ordinal scale this restriction binds only at $A_i=0$, where it rules out oversight, assurance or workflow integration of an absent AI component \citep{colson2007overview,fortunyamat1981representation}.
+
+\begin{table}[htbp]
+\centering
+\caption{Level-2 requirement thresholds as functions of AI depth $A$ and consequence class $\kappa$ (canonical v1.0 specification).}
+\label{tab:app_thresholds}
+\footnotesize
+\begin{tabular}{ll}
+\toprule
+Requirement & Definition \\
+\midrule
+Data, $D_{\mathrm{req}}(A)$ & $A$ \\
+Reliability, $R_{\mathrm{req}}(A)$ & $A$ \\
+Oversight, $H_{\mathrm{req}}(A,\kappa)$ & $0$ if $A=0$; otherwise $\min(3,\max(0,A+\kappa-2))$ \\
+Assurance, $EA_{\mathrm{req}}(A,\kappa)$ & $0$ if $A=0$; otherwise $\min(3,\max(1,A+\kappa-2))$ \\
+Workflow integration, $WI_{\mathrm{req}}(A)$ & $3$ for an execution process with $A=3$; otherwise $A$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Level-3 configurations and the selection mechanism}
+
+Table~\ref{tab:app_configs} gives the minimum Level-2 state each configuration requires. A process may choose configuration $m$ only if $\mathrm{Allow}_{m\Gamma}=1$ and its state meets $\rho_m$ componentwise; it then receives $U_{im}=\mathrm{Gain}_{im}-0.45\,\mathrm{Burden}_{im}-0.75\,\mathrm{ResidualRisk}_{im}$. For selection processes, the AI recommendation is $d_i=\mathbf{1}[s_i\geq\tau_i]$, and the realised value factor is 1 for a correct recommendation and 0.35 otherwise (Eq.~\ref{eq:mlp_tau}). Review configurations reduce risk or change utility but do not correct a wrong recommendation. Ties are broken deterministically in the order HumanOnly, AIAssist, HumanFirstAICheck, AIFirstReview, BoundedAutomation.
+
+\begin{table}[htbp]
+\centering
+\caption{Minimum Level-2 requirements $\rho_m=(A,H,WI,EA)$ of the five human--AI configurations (canonical v1.0 specification).}
+\label{tab:app_configs}
+\footnotesize
+\begin{tabular}{lcccc}
+\toprule
+Configuration $m$ & $A$ & $H$ & $WI$ & $EA$ \\
+\midrule
+HumanOnly & 0 & 0 & 0 & 0 \\
+AIAssist & 1 & 0 & 1 & 1 \\
+HumanFirstAICheck & 2 & 1 & 2 & 1 \\
+AIFirstReview & 2 & 2 & 2 & 2 \\
+BoundedAutomation & 3 & 3 & 3 & 3 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Existence and scope}
+
+\paragraph{Lemma (existence of a selected tri-level profile).} Assume (i) all decision and state domains are finite; (ii) the zero allocation $b=0$ is admissible ($B_{\mathrm{tot}}\geq0$); (iii) HumanOnly has requirement $(0,0,0,0)$ and is permitted under every regime; (iv) Level-3 followers are separable conditional on upstream decisions; and (v) deterministic tie-breaking at every level. Then, for a fixed regime, initial state and parameter snapshot, at least one selected tri-level profile exists, and exhaustive backward induction terminates in finitely many steps.
+
+\paragraph{Proof sketch.} \emph{Level~3:} HumanOnly is feasible for every Level-2 state, so each follower's feasible set is finite and non-empty; a maximiser exists, and tie-breaking selects one. \emph{Level~2:} for any capability vector the null architecture $A_i=H_i=WI_i=EA_i=0$ satisfies the ceilings, every threshold (all are 0 at $A=0$), the $A_i=0$ restriction and the capacity constraint, since $\mathrm{CapUse}=0\leq K_\Gamma$; the feasible set is finite and non-empty, so $F_2$ attains a maximum. \emph{Level~1:} $b=0$ is feasible and the allocation set is finite. Backward induction enumerates finite sets at every level and therefore terminates. $\square$
+
+\paragraph{Scope.} The lemma establishes non-empty feasibility, existence of a selected response and finite termination for this bounded finite prototype only. A selected representative is not a unique optimum, and optimistic and pessimistic formulations are not generally equivalent \citep{dempe2002foundations}. Existence and exact enumeration do not imply tractability for larger, continuous or non-convex tri-level programmes \citep{jeroslow1985polynomial}. The Level-2 capacity constraint couples processes, but it is chosen by a single decision maker. If instead the Level-3 followers shared a constraint (for example, a common pool of reviewers), assumption (iv) would fail. A coupled or generalised equilibrium concept would then be required, and payoff interactions could rule out pure-strategy equilibria. Equilibrium existence in finite non-cooperative games \citep{nash1951noncooperative} serves only as a boundary reference; it does not cover coupled constraints.
+
+\subsection{Conformance and mutation checks}
+
+The solver was checked in two ways (E4). The \emph{conformance check} evaluates, for each of the three processes and every tuple of capability ceilings $(\bar D_i,\bar A_i,\bar R_i,\bar G_i)$, the canonical constraints written above independently of the solver's state generator and compares the two feasible sets. Across 768 cases it counted 3,121 canonical-feasible state occurrences and found 0 mismatches. The \emph{mutation check} runs the real generator with the $A_i=0$ restriction disabled and the corresponding branch relaxed. It detected a mismatch with the canonical set in 720/768 cases, which shows that the conformance check is sensitive to this class of error. Both checks share the threshold-function implementations, so neither can detect a common-mode defect in those functions. The total runtime of the solver script was 13.9 s. These checks verify the toy instance computationally; they leave every coefficient, threshold, score, outcome, permission matrix and regime ordering empirically unverified.

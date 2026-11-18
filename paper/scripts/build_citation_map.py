@@ -35,6 +35,10 @@ ROLES = {
     "cohen1960coefficient": "Cohen's kappa: chance-corrected agreement for nominal scales.",
     "nosek2018preregistration": "Preregistration separates confirmatory from exploratory research by fixing the analysis plan before observing outcomes.",
     "granovetter1985economic": "Economic action is embedded in concrete ongoing social relations. Background for locating integration problems inside organisations.",
+    "shrestha2019organizational": "Organisational decision-making structures that combine humans and AI (full delegation to AI, sequential human-AI or AI-human decision-making, aggregated decision-making), and the decision-task conditions under which each fits.",
+    "raisch2021artificial": "Automation versus augmentation of managerial tasks with AI as a paradox; argues the two are interdependent across time and space and should be managed together.",
+    "jarrahi2018artificial": "Human-AI symbiosis in organisational decision making: AI is suited to complexity, while humans contribute where decisions involve uncertainty and equivocality.",
+    "berente2021managing": "Managing AI as the frontier of computing; the facets of autonomy, learning and inscrutability raise distinctive management challenges for information-systems research.",
     "uspto2026patentsview": "USPTO PatentsView granted-patent tables (pvgpatdis): patents, current CPC classifications, US patent citations and disambiguated assignees.",
 }
 

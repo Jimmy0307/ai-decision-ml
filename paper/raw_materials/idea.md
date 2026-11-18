@@ -31,13 +31,13 @@ where p_ij is the proportional tie strength (Burt 1992). Later work makes three 
 
 **Design:**
 - An LLM pipeline coded evidence sentences into 10 AI families × 12 decision families.
-- A document-level bipartite matrix of 2,180 edges was tested with four nulls: stub Monte Carlo, exact hypergeometric, document-preserving swap and raw records. BH-FDR was applied (Benjamini & Hochberg 1995).
+- A document-level bipartite matrix of 2,180 edges was tested with four tests: a stub Monte Carlo null, an exact hypergeometric test, a document-preserving swap null and a raw-record exact test. BH-FDR was applied (Benjamini & Hochberg 1995).
 - Network lines V6–V11.1 searched citation, co-author and higher-order networks for Burt brokers.
 
 **Findings:**
-- The direction of 16 depleted cells is robust (seeds, tracks, periods, keyword coding).
+- The direction of the 16 depleted cells is robust to seeds, source tracks and periods. Under keyword coding, 13/16 keep the same direction.
 - Significance does not survive realistic misclassification: reliability is low (human κ 0.05 / 0.14; Cohen 1960).
-- No Burt broker was confirmed across 13 versions.
+- No Burt broker was confirmed in any of the V6–V11.1 network lines (E1.6).
 
 Study 1 therefore supports only a directional description, and it shows why co-occurrence data cannot carry the Burt construct.
 
@@ -77,7 +77,8 @@ Every original research line has a patent analogue:
 - removal falsification (V10.1);
 - co-assignment hyperedges (V10);
 - an alias check (V11.1);
-- Gap Validity.
+- Gap Validity;
+- Limitation Scout, marked NOT_APPLICABLE (P10).
 
 ### 5.4 Portfolio-preserving firm null
 
@@ -88,7 +89,8 @@ The firm-level pattern could be mechanical: mixed-portfolio firms own both kinds
 1. At the domain level, AI and decision technologies are **over**-connected, not separated. The over-connection persists over time, though it is declining.
 2. At the cell level there are only small, time-unstable depletions.
 3. At the firm level, specialist firms are separated, but 85–91% of that separation is a portfolio effect, and mixed firms show no brokerage advantage.
-4. Together with Study 1, three independent data lines fail to confirm a Burt structural hole.
+4. Three data lines fail to confirm a Burt structural hole: (i) the literature (Study 1, E1), (ii) six public organisational and relational sources screened for flow validity (E2), and (iii) US patents at the domain, cell and firm levels (Study 2, E3). The patent analyses at different levels share one source and are not independent of each other.
+4a. Reconciling the units: Study 1's persistent cell-level under-integration concerns which *function pairs* co-occur in papers, relative to the margins of a closed 10×12 matrix. Study 2's over-connection concerns *citation flows* between technology domains, relative to 179 comparable fields. The two statements answer different questions and do not contradict each other.
 5. Implication: the AI–decision integration problem is **not a knowledge-flow gap**. If firms struggle to integrate AI into decisions, the binding constraints more plausibly sit inside organisations: resource allocation, decision rights and governance, and human–AI configuration. **This is a hypothesis, not a finding of Studies 1–2.**
 
 ## 7. Multi-level programming formulation (canonical v1.0; simulated prototype)
@@ -102,7 +104,7 @@ A tri-level model of an enterprise with processes i ∈ I, capability resources 
 
 **Level 2 — AI decision architecture.**
 - Decision per process: (A_i, H_i, WI_i, EA_i) ∈ {0,…,3}⁴, where A = AI integration depth, H = human oversight, WI = workflow integration, EA = assurance.
-- Capability ceilings: A ≤ Ā, H, EA ≤ Ḡ, WI ≤ D̄.
+- Capability ceilings: A ≤ Ā, H, EA ≤ Ḡ, WI ≤ D̄; capability conditions D̄ ≥ D_req(A) and R̄ ≥ R_req(A).
 - Requirement thresholds depend on AI depth A and consequence class κ:
   - D_req = R_req = A;
   - H_req = 0 if A = 0, else min(3, max(0, A + κ − 2));
@@ -113,7 +115,8 @@ A tri-level model of an enterprise with processes i ∈ I, capability resources 
 
 **Level 3 — human–AI configuration (followers).**
 - Decision: q_im ∈ {0,1}, Σ_m q_im = 1, over the configurations m ∈ {HumanOnly, AIAssist, HumanFirstAICheck, AIFirstReview, BoundedAutomation}.
-- Each configuration has minimum (A, H, WI, EA) requirements, and only permitted configurations may be chosen: q_im ≤ Allow_mΓ.
+- Each configuration has minimum (A, H, WI, EA) requirements: HumanOnly (0,0,0,0); AIAssist (1,0,1,1); HumanFirstAICheck (2,1,2,1); AIFirstReview (2,2,2,2); BoundedAutomation (3,3,3,3). Only permitted configurations may be chosen: q_im ≤ Allow_mΓ.
+- Selection processes: for a process with an AI score s_i and a selection threshold τ_i, the AI recommendation is d_i = 1[s_i ≥ τ_i]. A correct decision has value factor 1 and an incorrect one 0.35. In the prototype, s_i and the true outcome are a single fixed realisation known to all levels, so this is a sensitivity toy, not an error-rate model.
 - Utility: U_im = Gain − 0.45 Burden − 0.75 ResidualRisk.
 
 **Properties and scope.**

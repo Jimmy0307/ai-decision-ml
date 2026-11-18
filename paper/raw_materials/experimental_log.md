@@ -260,7 +260,7 @@ over strata s = (citing grant year, cited grant year).
 - Part B, all categories: 8 / 8.
 - Number of q ≤ .05 cells by test (main / exact / raw / M06-P): A 20 / 20 / 29 / 22; B 22 / 22 / 27 / 25.
 
-**Cells depleted in both A and B** (adapted full core and 3-test agreement give the same set). Values are O/E, with observed / expected in brackets:
+**Cells depleted in both A and B** (adapted full core and 3-test agreement give the same set). Note: G06N10 × PERFORMANCE has expected count < 10 in Part B, so read it as small-sample. Values are O/E, with observed / expected in brackets:
 
 | AI method | Decision function | Part A | Part B |
 |---|---|---|---|
@@ -272,7 +272,7 @@ over strata s = (citing grant year, cited grant year).
 
 The quantum-computing row is tiny: 74 edges in A.
 
-**Cells enriched in both:**
+**Cells enriched in both A and B under the 3-test rule** (main + exact + raw; G06N7 × PERFORMANCE is adapted full core only in B: Part A M06-P q = .93):
 - G06N20 × RISK (1.18 / 1.33);
 - G06N3 × FORECAST_OPTIMISE (1.09 / 1.17);
 - G06N5 × MGMT_GENERAL (1.16 / 1.06);

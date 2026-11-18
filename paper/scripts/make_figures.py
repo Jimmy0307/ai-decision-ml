@@ -60,7 +60,7 @@ def fig_research_design():
                     arrowprops=dict(arrowstyle="-|>", color=MUTED, lw=1.1))
     ax.annotate("", xy=(50, 20.6), xytext=(50, 26.4), arrowprops=dict(arrowstyle="-|>", color=MUTED, lw=1.1))
     ax.annotate("", xy=(70, 20.6), xytext=(83.5, 26.4), arrowprops=dict(arrowstyle="-|>", color=ORANGE, lw=1.1))
-    ax.text(50, 24.1, "rules out a knowledge-flow gap", ha="center", fontsize=6.8, color=INK2,
+    ax.text(50, 24.1, "no structural hole in knowledge flows", ha="center", fontsize=6.8, color=INK2,
             bbox=dict(facecolor=SURF, edgecolor="none", pad=0.6))
     save(fig, "fig_research_design")
 
@@ -207,7 +207,7 @@ def fig_firm_null():
     axes[0].legend(frameon=False, fontsize=7, loc="upper right")
     s1 = res["primary"]["share_of_T1_gap_reproduced_by_null"]
     s2 = res["S_tech"]["share_of_T1_gap_reproduced_by_null"]
-    fig.suptitle(f"Portfolio-preserving null: it reproduces {s1:.0%}–{s2:.0%} of the specialist gap; mixed firms are not brokers",
+    fig.suptitle(f"Portfolio-preserving null: it reproduces {s1:.0%}–{s2:.0%} of the specialist separation; mixed firms are not brokers",
                  fontsize=9, fontweight="bold", color=INK, y=1.03)
     fig.tight_layout()
     save(fig, "fig_firm_null")

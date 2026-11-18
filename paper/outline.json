@@ -1,0 +1,914 @@
+{
+ "title_candidates": [
+  "Integrated in Knowledge, Unresolved in Organisations? A Preregistered Test for Structural Holes Between AI and Decision-Making",
+  "Co-occurrence Is Not Flow: Preregistered Literature and Patent Evidence on the AI-Decision Structural-Hole Premise",
+  "Testing for a Structural Hole Between AI and Decision-Making: Evidence from Literature and US Patents, and a Multi-Level Programming Agenda"
+ ],
+ "word_budget": {
+  "note": "Main-text total (Sections 1-9) = 10,600 words, within the 9,000-12,000 venue range. The abstract (max 200) is counted separately; references and appendices are excluded from the main-text count, per conference_guidelines.md. Table and figure captions count toward their section.",
+  "Abstract": 200,
+  "1. Introduction": 1200,
+  "2. Theoretical Background": 1400,
+  "2.1 Structural holes and their measurement": 550,
+  "2.2 AI and decision-making as knowledge domains": 400,
+  "2.3 Why co-occurrence is not flow": 450,
+  "3. Research Design and Preregistration": 850,
+  "4. Study 1: Literature Evidence": 1450,
+  "5. Study 2: Patent Evidence": 2300,
+  "6. Integrative Discussion": 1100,
+  "7. A Multi-Level Programming Agenda": 1300,
+  "8. Limitations": 700,
+  "9. Conclusion": 300,
+  "main_text_total_sections_1_to_9": 10600,
+  "main_text_plus_abstract": 10800,
+  "Appendix A (excluded from count)": 500,
+  "Appendix B (excluded from count; mostly tables)": 600,
+  "Appendix C (excluded from count)": 700
+ },
+ "plotting_plan": [
+  {
+   "figure_id": "fig_research_design",
+   "title": "Research design: three studies and the multi-level programming model",
+   "plot_type": "diagram",
+   "data_source": "both",
+   "target_section": "3.1 Overview of the three studies",
+   "objective": "Flow diagram (existing file) that places Study 1 (literature, V5-V11.1), Study 2 (US patents, four preregistrations, AI = G06N vs Decision = G06Q10) and Study 3 (preregistered enterprise plan) in sequence, and shows that Study 3 is meant to calibrate the tri-level MLP model (L1 resource allocation, L2 AI architecture and governance, L3 human-AI configuration). It must show that the MLP is a simulated prototype and Study 3 is a plan, not results.",
+   "caption_requirements": [
+    "State that Study 3 is a preregistered plan with no results yet, and that MLP parameters are simulated (idea.md section 7-8; E4).",
+    "The figure arrow reads 'rules out a knowledge-flow gap'. The caption must use the claim-bounded wording 'does not support a knowledge-flow structural hole (HOLE_NOT_SUPPORTED, E3.1)', not 'rules out'.",
+    "Numbers in the figure (8.5M patents, OE 3.05, PARTIAL) map to E3 (8,512,829 patents), E3.1 (OE 3.05) and E3.4 (PARTIAL)."
+   ],
+   "aspect_ratio": "21:9"
+  },
+  {
+   "figure_id": "fig_study1_direction",
+   "title": "Study 1: the 16 depleted V9 cells stay depleted in both periods",
+   "plot_type": "plot",
+   "data_source": "experimental_log.md",
+   "target_section": "4.2 Direction and robustness of the depleted cells",
+   "objective": "Dumbbell chart (existing file) of log2(observed/expected) for each of the 16 V9 depleted cells, for documents from 2023 or earlier vs 2024 or later. It must show that all 16 cells are below O = E in both periods (E1.3: 16/16 depleted in both periods; change vs permutation null p = .86).",
+   "caption_requirements": [
+    "Report only the E1.3 numbers (16/16; p = .86). Do not read per-cell values off the plot; they are not in experimental_log.md.",
+    "Say that direction is robust but significance does not survive realistic misclassification (E1.5), and that the cells are 'depleted cells', never 'gaps'."
+   ],
+   "aspect_ratio": "16:9"
+  },
+  {
+   "figure_id": "fig_patent_trend",
+   "title": "OE(AI, Decision) by citing grant year, 2013-2025",
+   "plot_type": "plot",
+   "data_source": "experimental_log.md",
+   "target_section": "5.1 Data and the aggregate test",
+   "objective": "Line chart with a 95% CI band (existing file) of the yearly symmetric intensity OE(AI,DEC) from the E3.1 H2 table (3.90 in 2013 down to 2.34 in 2025). Reference lines: the median of 179 comparable fields (1.095) and O = E. It must show the PERSISTENT label: the over-connection declines (WLS slope -0.097 per year, 95% CI -0.130 to -0.065) but stays above the reference median.",
+   "caption_requirements": [
+    "Applicant citations only. Citing years begin in 2013 because PatentsView labels non-examiner citations 'cited by other' before 2013 (E3 data block).",
+    "Give the last-3-year OE 2.69 vs reference median 1.095 (E3.1 H2)."
+   ],
+   "aspect_ratio": "16:9"
+  },
+  {
+   "figure_id": "fig_patent_sensitivity",
+   "title": "H1b ratio across the primary and six preregistered sensitivity specifications",
+   "plot_type": "plot",
+   "data_source": "experimental_log.md",
+   "target_section": "5.1 Data and the aggregate test",
+   "objective": "Forest plot (existing file) of OE(AI,DEC)/OE(AI,BIZ-OTHER) with 95% bootstrap CIs for the primary specification and s1-s6 (E3.1 sensitivity table: 1.69, 1.65, 1.43, 1.56, 1.62, 1.69, 2.35). A dashed line at 1 marks the H1b criterion (upper CI bound < 1). It must show that every interval lies above 1, so H1b fails in all 7 specifications (0/6 sensitivity checks disagree).",
+   "caption_requirements": [
+    "State the bootstrap: Poisson cluster bootstrap over citing patents, 2,000 reps (E3.1).",
+    "Point to Table 5 for the H1a percentiles of each specification."
+   ],
+   "aspect_ratio": "21:9"
+  },
+  {
+   "figure_id": "fig_cpc_heatmap",
+   "title": "Cell-level O/E in the 6 x 7 CPC matrix: co-classification (A) and citation flow (B)",
+   "plot_type": "plot",
+   "data_source": "experimental_log.md",
+   "target_section": "5.2 The V9 battery on the CPC matrix and the M06-P null",
+   "objective": "Two-panel diverging heatmap (existing file) of log2 O/E for 6 AI-method rows x 7 decision-function columns. Panel A: co-classification, 5,316 patents. Panel B: applicant citation flow, 30,843 citations. Triangles mark the adapted full core (M06-P; BH q <= .05). It must show that deviations within AI x Decision are small (most depleted O/E between 0.70 and 0.95 in Table 6). The only extreme cell is the tiny quantum row (G06N10 x PERFORMANCE, 74 edges in A). Hatched cells have expected count < 10.",
+   "caption_requirements": [
+    "Core counts: A 8 depleted / 7 enriched; B 9 depleted / 8 enriched (E3.2).",
+    "Say the depletions do not replicate across time halves (E3.3 P3: 0 depleted cells in both halves).",
+    "Consistency check for the writer: E3.2 lists G06N7 x PERFORMANCE (1.15 / 1.16) as enriched in both A and B, but Panel A does not mark that cell as core. Do not claim the four enriched-in-both cells are all core in A without resolving this; see the inconsistency list."
+   ],
+   "aspect_ratio": "16:9"
+  },
+  {
+   "figure_id": "fig_firm_null",
+   "title": "Portfolio-preserving firm null: specialist separation and mixed-firm constraint",
+   "plot_type": "plot",
+   "data_source": "experimental_log.md",
+   "target_section": "5.4 Portfolio-preserving firm null",
+   "objective": "Two-panel histogram (existing file) of 1,000 null replicates under the primary (type x year) and S-tech (+ technology mix) stratifications. Left: O/E of ties between AI_FIRM and DEC_FIRM firms, observed 0.240 vs null medians 0.356 and 0.307 (p = .001 each). Right: MIXED median Burt constraint, observed 0.358 vs null medians 0.104 and 0.116 (p = 1.000 each). It must show that the null reproduces 85% / 91% of the specialist separation, and that mixed firms are more constrained than the null, so they have no brokerage advantage (E3.4).",
+   "caption_requirements": [
+    "Verdict PARTIAL in both stratifications (E3.4).",
+    "The null keeps every firm's portfolio and group and the patent-level citation network fixed (E3.4 null definition)."
+   ],
+   "aspect_ratio": "21:9"
+  },
+  {
+   "figure_id": "fig_mlp_scenarios",
+   "title": "Simulated tri-level prototype: F1, realised value and residual risk by budget and governance regime",
+   "plot_type": "plot",
+   "data_source": "experimental_log.md",
+   "target_section": "7.2 Simulated illustration",
+   "objective": "Three-panel line chart (existing file) of the nine baseline scenarios in E4 (regimes C/F/D x budgets 3/5/7): Level-1 objective F1, realised value and residual risk. It must show that under C and F the budget-7 result equals the budget-5 result, while D at budget 7 moves one process to HumanFirstAICheck, with F1 2.616, realised value 3.286 and residual risk 0.736.",
+   "caption_requirements": [
+    "Caption must state: all coefficients are simulated; no firm data; the outputs do not describe any real firm (idea.md section 10; E4).",
+    "Regimes C, F, D are parameter sets only. Do not expand the letters (E4 note). Give K 5.5/6.0/6.5 and risk multipliers 0.85/1.00/1.15 as in the legend."
+   ],
+   "aspect_ratio": "21:9"
+  }
+ ],
+ "intro_related_work_plan": {
+  "adaptation_note": "No literature search will be run. Every citation below is an existing key from citation_map.json (26 entries). 'citation_keys' replaces the original 'search_directions' / 'limitation_search_queries'. This venue has a Theoretical Background section (2.1-2.3) instead of a Related Work section, so the related-work clusters map onto 2.1-2.3. The citation map contains no papers on organisational AI adoption or on the AI-and-decision literature. Claims about firm AI investment or the AI-decision 'gap' literature must therefore be framed as the project's starting premise (idea.md section 1), without empirical citation, or left out.",
+  "introduction_strategy": {
+   "hook_hypothesis": "A common explanation for the gap between AI capability and its use in managerial decisions is that AI and decision-making form two weakly connected communities separated by a Burt structural hole, where bridging gives information and control advantages. The premise motivated this project's own multi-level programming (MLP) model (idea.md sections 1-2).",
+   "problem_gap_hypothesis": "The premise has been assumed, not tested with data that can carry Burt's construct. Much 'gap' evidence rests on co-occurrence or affiliation data, which cannot measure constraint or brokerage. Scope: the test covers (i) a literature corpus of 2,118 source documents coded into 10 x 12 function families (E1.1) and (ii) US utility patents granted 2010-2025 under CPC G06N vs G06Q10/04 + G06Q10/06, with applicant citations from citing years 2013-2025 (E3). Do not generalise beyond these data, these CPC operationalisations or US patents.",
+   "citation_keys": [
+    {
+     "key": "burt1992structural",
+     "supports": "Structural-hole construct and network constraint; the premise being tested."
+    },
+    {
+     "key": "burt2004structural",
+     "supports": "Brokers who span holes gain advantages (good ideas). Brokerage needs real ties and observed outcomes."
+    },
+    {
+     "key": "granovetter1973strength",
+     "supports": "Weak ties carry information across groups; background for the 'two communities' framing."
+    },
+    {
+     "key": "everett2020unpacking",
+     "supports": "Constraint is driven by degree and dyadic ties, so the measurement needs care."
+    },
+    {
+     "key": "johnson2026reassessing",
+     "supports": "Constraint mainly operationalises dyadic constructs; a reinterpretation framework, not a refutation of the theory."
+    },
+    {
+     "key": "saglietto2020research",
+     "supports": "Structural-hole measures suit specific data types and are not interchangeable."
+    },
+    {
+     "key": "jaffe1993geographic",
+     "supports": "Patent citations as evidence of knowledge flows; motivates Study 2."
+    },
+    {
+     "key": "nosek2018preregistration",
+     "supports": "Preregistration separates confirmatory from exploratory analysis; motivates the four frozen plans."
+    },
+    {
+     "key": "granovetter1985economic",
+     "supports": "Embeddedness: background for moving the integration problem into organisations (stated as a hypothesis)."
+    }
+   ]
+  },
+  "related_work_strategy": {
+   "overview": "Three clusters (mapped onto Theoretical Background 2.1-2.3) build the argument that a valid structural-hole test needs directed dyadic flow relations with group labels, and that patent citations meet this requirement while co-occurrence data do not. A fourth cluster (multilevel programming) is cited only in Section 7 and Appendix C.",
+   "subsections": [
+    {
+     "subsection_title": "2.1 Structural holes and their measurement",
+     "methodology_cluster": "Ego-network constraint and brokerage measures",
+     "sota_investigation_mission": "Present Burt's constraint (idea.md section 2 equation) and its interpretation. Then present the measurement critiques and the brokerage-role alternatives. Use only the keys listed.",
+     "limitation_hypothesis": "Constraint mostly measures dyadic concentration, and brokerage needs open two-paths with group membership. Betweenness or low constraint alone is not sufficient evidence of a Burt broker.",
+     "citation_keys": [
+      {
+       "key": "burt1992structural",
+       "supports": "Definition of constraint c_i with proportional tie strength p_ij."
+      },
+      {
+       "key": "burt2004structural",
+       "supports": "Information and control benefits of spanning holes."
+      },
+      {
+       "key": "everett2020unpacking",
+       "supports": "Constraint is not a 0-1 index of exclusive brokerage."
+      },
+      {
+       "key": "johnson2026reassessing",
+       "supports": "Constraint operationalises alternatives, partner diversity and concentration (dyadic)."
+      },
+      {
+       "key": "saglietto2020research",
+       "supports": "Measures cannot be substituted across network types."
+      },
+      {
+       "key": "freeman1977set",
+       "supports": "Betweenness centrality; it is not a sufficient test of Burt brokerage (relevant to V6-V11.1 candidate screening)."
+      },
+      {
+       "key": "gould1989structures",
+       "supports": "Five brokerage roles on directed open two-paths with group membership."
+      },
+      {
+       "key": "zador2022weighted",
+       "supports": "Weighted, normalised Gould-Fernandez brokerage."
+      },
+      {
+       "key": "granovetter1973strength",
+       "supports": "Weak ties carry cross-group information."
+      }
+     ],
+     "bridge_to_our_method": "Study 2 uses directed applicant-citation flows between examiner-labelled groups, tests group-level OE against a relative reference set, and applies Burt constraint only on a real firm-to-firm citation network (E3.3 P5) with a portfolio-preserving null (E3.4)."
+    },
+    {
+     "subsection_title": "2.2 AI and decision-making as knowledge domains",
+     "methodology_cluster": "Patent citations and classification as measures of knowledge domains and flows",
+     "sota_investigation_mission": "Define the two domains as used in the paper: function families in Study 1 (E1.1) and CPC groups in Study 2 (E3: AI = G06N; DEC = G06Q10/04 + G06Q10/06). Justify patent citations as flow proxies and the separate handling of examiner citations.",
+     "limitation_hypothesis": "Because citing is field-local, cross-field OE is usually below 1. An absolute 'OE < 1' criterion would therefore wrongly flag almost any pair of fields as separated (idea.md section 5.1). Examiner-added citations may not reflect inventor knowledge.",
+     "citation_keys": [
+      {
+       "key": "jaffe1993geographic",
+       "supports": "Patent citations as a long-established proxy for knowledge flows."
+      },
+      {
+       "key": "alcacer2006patent",
+       "supports": "Examiner citations are a large share and must be distinguished; justifies the applicant-only primary specification and s1 sensitivity."
+      },
+      {
+       "key": "uspto2026patentsview",
+       "supports": "Data source: PatentsView pvgpatdis tables (patents, CPC, citations, disambiguated assignees)."
+      },
+      {
+       "key": "granovetter1985economic",
+       "supports": "Knowledge domains are distinct from the organisations in which economic action is embedded; prepares the firm-level RQ2."
+      }
+     ],
+     "bridge_to_our_method": "Relative hypotheses H1a (lowest quartile among 179 reference CPC main groups) and H1b (ratio vs other business-method patents, upper CI < 1) replace the uninformative absolute criterion."
+    },
+    {
+     "subsection_title": "2.3 Why co-occurrence is not flow",
+     "methodology_cluster": "Two-mode (affiliation) networks and their projections",
+     "sota_investigation_mission": "Explain why co-occurrence of functions in papers, or of organisations in projects, is affiliation data. Show what projection and bipartite structure do to constraint.",
+     "limitation_hypothesis": "One-mode projection manufactures cliques (closure). In a strict bipartite graph the indirect term of constraint is identically zero, so with equal tie weights constraint reduces to 1/k. Brokerage computed after projection is not Burt brokerage.",
+     "citation_keys": [
+      {
+       "key": "newman2001scientific",
+       "supports": "Co-authorship networks are projections of two-mode data; co-authorship is not direct evidence of knowledge flow."
+      },
+      {
+       "key": "opsahl2013triadic",
+       "supports": "Projection creates artificial closure; two-mode clustering must be redefined."
+      },
+      {
+       "key": "jasny2015two",
+       "supports": "Two-mode brokerage chains as an alternative to post-projection brokerage."
+      },
+      {
+       "key": "gould1989structures",
+       "supports": "Brokerage needs open two-paths, which projections destroy."
+      }
+     ],
+     "bridge_to_our_method": "Empirical illustrations come from the paper's own data: CORDIS projection triads (E2), the zero indirect term (E1.6 Gap Validity; E3.3 P9), same-term self-pairing (E1.3) and model-inferred labels (E1.4). These motivate the switch to directed patent citations."
+    }
+   ]
+  }
+ },
+ "section_plan": [
+  {
+   "section_title": "Abstract",
+   "word_budget": 200,
+   "subsections": [
+    {
+     "subsection_title": "Abstract Content",
+     "content_bullets": [
+      "Unstructured, at most 200 words, no citations.",
+      "Premise: AI and decision-making are often described as communities separated by a structural hole. We test this rather than assume it (idea.md section 1).",
+      "Design: literature evidence (V5-V11.1) and four preregistered tests on 8,512,829 US utility patents (E3).",
+      "Domain result: AI and decision patents cite each other about three times the time-stratified expectation (OE 3.05, 95% CI 2.94-3.17). Both relative hole criteria fail; the verdict is HOLE_NOT_SUPPORTED in all 6 sensitivity checks (E3.1).",
+      "Firm result: specialist firms are separated, but a portfolio-preserving null reproduces 85-91% of that separation, and mixed-portfolio firms show no brokerage advantage (E3.4).",
+      "Literature result: depletions are directionally robust but do not survive realistic misclassification; no broker was confirmed (E1.5, E1.6).",
+      "Contributions: measurement lessons (co-occurrence is not flow; M06-P; portfolio-preserving null) and a multi-level programming agenda with a preregistered enterprise study. State that the organisational-bottleneck view is a hypothesis and that the model is simulated."
+     ],
+     "citation_hints": []
+    }
+   ]
+  },
+  {
+   "section_title": "1. Introduction",
+   "word_budget": 1200,
+   "subsections": [
+    {
+     "subsection_title": "Introduction Content (no numbered subsections)",
+     "content_bullets": [
+      "Motivation and premise (idea.md section 1): the 'two weakly connected communities' explanation and Burt's structural-hole framing. Present it as a widely used premise and the starting point of this project. Make no citation-free empirical claims about industry AI spending.",
+      "Say plainly that the project began with this premise and used it to motivate a multi-level programming model (idea.md section 1). The paper now tests the premise.",
+      "Measurement problem in one paragraph (idea.md section 2): Burt's construct needs real relations; constraint is mostly dyadic; co-occurrence is not flow. Preview Section 2.3.",
+      "Research questions RQ1, RQ2 and RQ3/RQ4 verbatim in substance from idea.md section 3.",
+      "What we do: Study 1 (literature, V5-V11.1; E1), Study 2 (US patents; four preregistrations frozen in public commits; E3), Study 3 (preregistered enterprise plan; idea.md section 8). Point to Figure fig_research_design.",
+      "Findings in brief, with numbers only from the log: OE(AI,DEC) = 3.05 (95% CI 2.94-3.17); H1a and H1b both FAIL; 0/6 sensitivity checks disagree (E3.1). Over-connection is PERSISTENT though declining (WLS slope -0.097 per year; E3.1 H2). No depleted CPC cell replicates across time halves (E3.3 P3). The specialist-firm O/E of 0.24 is 85% (primary) / 91% (S-tech) reproduced by the portfolio null, and MIXED firms show no brokerage advantage (E3.4). In Study 1, direction is defensible but significance is not, and there are 0 confirmed brokers (E1.5 verdict; E1.6).",
+      "Implication stated as a hypothesis (idea.md section 6 item 5; section 10): if firms struggle to integrate AI into decisions, the binding constraints more plausibly sit inside organisations. This is not a finding of Studies 1-2.",
+      "Contributions (idea.md section 9), each within the claim boundaries: (1) a preregistered negative result at the knowledge-flow level; (2) a measurement lesson listing four failure modes of co-occurrence data; (3) method contributions: M06-P and the portfolio-preserving firm null; (4) a reframing with a formal MLP model (simulated) and a preregistered calibration plan.",
+      "Roadmap of Sections 2-9.",
+      "Ground the managerial premise in the verified AI-and-organisational-decision literature: decision structures with AI (shrestha2019organizational), the automation-augmentation paradox (raisch2021artificial), human-AI symbiosis (jarrahi2018artificial), managing AI in IS research (berente2021managing). Characterise these only at the level of their role notes in citation_map.json; do not attribute empirical results to them."
+     ],
+     "citation_hints": [
+      "burt1992structural",
+      "burt2004structural",
+      "granovetter1973strength",
+      "everett2020unpacking",
+      "johnson2026reassessing",
+      "saglietto2020research",
+      "jaffe1993geographic",
+      "nosek2018preregistration",
+      "granovetter1985economic",
+      "shrestha2019organizational",
+      "raisch2021artificial",
+      "jarrahi2018artificial",
+      "berente2021managing"
+     ]
+    }
+   ]
+  },
+  {
+   "section_title": "2. Theoretical Background",
+   "word_budget": 1400,
+   "subsections": [
+    {
+     "subsection_title": "2.1 Structural holes and their measurement",
+     "word_budget": 550,
+     "content_bullets": [
+      "Define network constraint as Eq. (1), copied from idea.md section 2: c_i = sum over j in N(i) of (p_ij + sum over q != i,j of p_iq p_qj)^2, with p_ij the proportional tie strength. Explain the direct and indirect terms.",
+      "State the benefits claim (information and control) and that brokerage requires real ties and observed outcomes.",
+      "Measurement critiques: constraint mostly captures dyadic concentration; it is not an exclusive-brokerage index. Present this as reinterpretation, not refutation of the theory.",
+      "Measures are not interchangeable across network types. Betweenness alone does not establish Burt brokerage.",
+      "Brokerage roles need directed open two-paths with group membership (Gould-Fernandez; weighted version).",
+      "Conclude with the requirement used throughout: a valid test needs directed dyadic flow relations between actors with group labels."
+     ],
+     "citation_hints": [
+      "burt1992structural",
+      "burt2004structural",
+      "everett2020unpacking",
+      "johnson2026reassessing",
+      "saglietto2020research",
+      "freeman1977set",
+      "gould1989structures",
+      "zador2022weighted",
+      "granovetter1973strength"
+     ]
+    },
+    {
+     "subsection_title": "2.2 AI and decision-making as knowledge domains",
+     "word_budget": 400,
+     "content_bullets": [
+      "Define the two domains as operationalised: Study 1 uses 10 AI families x 12 decision families coded from evidence sentences (E1.1). Study 2 uses examiner-assigned CPC labels: AI = G06N; DEC = G06Q10/04 (forecasting/optimisation) + G06Q10/06 (resources, workflow, management, decision analysis) (E3 data block).",
+      "Patent citations as records of prior art and a proxy for knowledge flows. Examiner-added citations are handled separately: the primary specification uses applicant citations, and s1 uses all categories (E3.1).",
+      "Explain why the domain test must be relative: citing is field-local, so cross-field OE is usually below 1 (idea.md section 5.1). Introduce the logic of H1a and H1b here; give formal definitions in Section 5.1.",
+      "Introduce the firm level (RQ2): the same knowledge flows run between organisations, which hold mixed or specialist portfolios (idea.md section 5.4).",
+      "Do not cite or invent any AI-adoption or decision-support literature; the citation map contains none.",
+      "Ground the managerial premise in the verified AI-and-organisational-decision literature: decision structures with AI (shrestha2019organizational), the automation-augmentation paradox (raisch2021artificial), human-AI symbiosis (jarrahi2018artificial), managing AI in IS research (berente2021managing). Characterise these only at the level of their role notes in citation_map.json; do not attribute empirical results to them."
+     ],
+     "citation_hints": [
+      "jaffe1993geographic",
+      "alcacer2006patent",
+      "uspto2026patentsview",
+      "granovetter1985economic",
+      "shrestha2019organizational",
+      "raisch2021artificial",
+      "jarrahi2018artificial",
+      "berente2021managing"
+     ]
+    },
+    {
+     "subsection_title": "2.3 Why co-occurrence is not flow",
+     "word_budget": 450,
+     "content_bullets": [
+      "Co-occurrence data (functions appearing together in papers; organisations sharing projects) are two-mode affiliation data, not flows (idea.md section 2).",
+      "Formal point: in a strict bipartite graph the indirect term of constraint is identically zero (E1.6 Gap Validity V1; E3.3 P9). With equal tie weights, constraint therefore degenerates to 1/k (idea.md section 2). State the equal-weight condition explicitly.",
+      "Projections manufacture cliques. Illustrate with CORDIS H2020 (E2): the co-membership projection has 1,049 nodes and 12,181 edges and creates 102,660 within-project triads, while only 156 edges recur across >= 2 projects.",
+      "Two further failure modes from Study 1: same-term self-pairing (33% of records in the strongest enriched cell pair the same term; E1.3) and model-inferred labels with low human reliability (E1.4). These are previewed here and detailed in Section 4.",
+      "Conclusion: Burt's construct needs directed dyadic flows; patent citations provide them, and this motivates Study 2."
+     ],
+     "citation_hints": [
+      "newman2001scientific",
+      "opsahl2013triadic",
+      "jasny2015two",
+      "gould1989structures",
+      "burt1992structural"
+     ]
+    }
+   ]
+  },
+  {
+   "section_title": "3. Research Design and Preregistration",
+   "word_budget": 850,
+   "subsections": [
+    {
+     "subsection_title": "3.1 Overview of the three studies",
+     "content_bullets": [
+      "Present Figure fig_research_design. Map RQ1 to Study 1 and Study 2 (domain and cell level), RQ2 to Study 2 (firm level), and RQ3/RQ4 to Section 7 and Study 3 (idea.md sections 3-8).",
+      "TABLE 1 'Overview of studies' (sources: idea.md sections 4, 5, 8; E1.1, E3, E4). Columns: study; data; unit/relation type (co-occurrence vs directed citation vs planned enterprise data); main tests; provenance grade (DIRECT / HISTORICAL / USER_REPORTED); status (completed / plan). Rows: Study 1 functional matrix (DIRECT); Study 1 network lines V6-V11.1 (HISTORICAL / USER_REPORTED); Study 2 patents (DIRECT); MLP prototype (SIMULATED); Study 3 (plan)."
+     ],
+     "citation_hints": []
+    },
+    {
+     "subsection_title": "3.2 Selecting a flow-valid data source",
+     "content_bullets": [
+      "Summarise the six public sources screened in E2: CORDIS H2020 (35,389 projects; 179,063 organisation participations; degree-preserving bipartite swap null with 49 reps; 5 testable low-constraint candidates, p = .41-.86, BH q >= .80, 0 significant); GLEIF Level-2 (663,449 relationship records, 481,247 active; legal consolidation, not flow); OpenAlex (8 works); OCDS (0 verifiable buyer-supplier edges); SEC (not fetched); PyPSA (8,786 buses; physical grid).",
+      "Verdict (E2): no source passes the independent-relation and validation gates. Co-membership, ownership and physical topology are not information flows. Full table in Appendix B (Table B6).",
+      "Hence patents: citations are directed flows; CPC classes are examiner-assigned labels; the data are population-scale (idea.md section 5)."
+     ],
+     "citation_hints": [
+      "benjamini1995controlling",
+      "jaffe1993geographic"
+     ]
+    },
+    {
+     "subsection_title": "3.3 Preregistration log and provenance grades",
+     "content_bullets": [
+      "Four preregistrations frozen in public commits: aggregate test a8f3289; V9 battery a6266f7; full suite d641256; firm null b59fc71; all in PR #5 of the project repository (E3). The aggregate test was frozen before data access, the follow-ups before computation (idea.md section 5).",
+      "Contents frozen: definitions, null models, decision rules, sensitivity checks and stop rules. Deviations are recorded as dated amendments. Name only amendment B1 (M06 degeneracy; E3.2); do not invent others.",
+      "Synthetic calibration of the aggregate test before real data (E3.1): with no hole the verdict is HOLE_NOT_SUPPORTED; 30% and 50% suppression are detected. This shows the test can detect a hole.",
+      "Study 1 seeds frozen in V9: stub MC seed 20260918; document-preserving swap seed 20260919 (E1.1).",
+      "Define the provenance grades from the log header (DIRECT, HISTORICAL, USER_REPORTED). Say that every number in the paper carries its grade where it matters. Full log in Appendix A (Table A1)."
+     ],
+     "citation_hints": [
+      "nosek2018preregistration"
+     ]
+    },
+    {
+     "subsection_title": "3.4 Claim boundaries",
+     "content_bullets": [
+      "List the boundaries from idea.md section 10 explicitly, as a numbered list in the text:",
+      "(i) No confirmed structural hole is claimed at any level.",
+      "(ii) The 16 V9 depleted cells and the 5 patent cells depleted in both parts are not called 'research gaps'.",
+      "(iii) No causal effects are claimed.",
+      "(iv) MLP outputs are simulated and reflect no real firm.",
+      "(v) 'The bottleneck is organisational' is a hypothesis for Study 3.",
+      "(vi) Model-to-model agreement is not human reliability.",
+      "(vii) HISTORICAL / USER_REPORTED figures (V6-V11.1) are labelled as such.",
+      "Add a sentence that 'depleted' and 'enriched' are statistical descriptions relative to a null, not evidence of separation."
+     ],
+     "citation_hints": []
+    }
+   ]
+  },
+  {
+   "section_title": "4. Study 1: Literature Evidence (V5-V11.1)",
+   "word_budget": 1450,
+   "subsections": [
+    {
+     "subsection_title": "4.1 Corpus, coding and test design",
+     "content_bullets": [
+      "Corpus (E1.1): 2,118 source documents; 1,729 parsed; 26,501 candidate evidence records; 6,499 strict records. An LLM pipeline coded evidence sentences into 10 AI families x 12 decision families = 120 cells (idea.md section 4).",
+      "Matrix: 2,180 document-level edges, deduplicated within each document; 104 cells observed; 16 zero cells, disjoint from the 16 depleted cells. 86.5% of edges come from AI-track documents.",
+      "Expected count E = k_a k_d / M with M = 2,180 (Eq. 2).",
+      "Four tests (E1.1): fixed-degree stub Monte Carlo (R = 10,000); exact hypergeometric; document-preserving within-document swap MCMC (5,000 samples, burn-in 43,600, thinning 4,360); raw-record exact test (non-deduplicated, n = 3,125). Benjamini-Hochberg FDR within the 120 cells.",
+      "Frozen core rule: q <= .05 in main + exact + document-preserving tests with the same direction, plus raw. Result: 32 cells (16 enriched, 16 depleted)."
+     ],
+     "citation_hints": [
+      "benjamini1995controlling"
+     ]
+    },
+    {
+     "subsection_title": "4.2 Direction and robustness of the depleted cells",
+     "content_bullets": [
+      "Point to Appendix Table B1 for the 16 depleted cells and observed counts (E1.2). In the text give only the most extreme cell: PREDICTION_RISK_ESTIMATION x HUMAN_REVIEW_ACCOUNTABILITY, O = 6, E = 44.9.",
+      "Re-implementation (E1.3): exact and raw tests reproduce the official q values (|delta q| <= 6x10^-12); Jaccard overlap of the 32-cell core = .94.",
+      "20 Monte Carlo seeds: 31 cells are in the core under every seed, including all 16 depleted cells; 2 boundary cells are exactly the one-in / one-out pair of the human-corrected sidecar.",
+      "Track-stratified null: 16/16 depleted and 16/16 enriched cells remain significant with unchanged direction. Exclusion bias: depleted core cells pass the strict filter more often (38% vs 28%).",
+      "Two periods (<= 2023 vs >= 2024): 16/16 depleted in both; the change does not differ from a permutation null (p = .86). Present Figure fig_study1_direction.",
+      "Triangulation limits, stated plainly: keyword (stage-1) coding gives 13/16 same direction. Removing same-term self-pairs (33% in the strongest enriched cell) drops 2 prediction-related depleted cells from the core. The rule-based keyword matrix (741 same-term records removed, 1,431 document edges) gives 13/16 same direction, 6 significant, 0 significantly reversed, and only 7 cells reach the four-test core.",
+      "Summarise Study 1 robustness checks in Appendix Table B2 (E1.3)."
+     ],
+     "citation_hints": [
+      "benjamini1995controlling"
+     ]
+    },
+    {
+     "subsection_title": "4.3 Measurement reliability and misclassification",
+     "content_bullets": [
+      "TABLE 2 'Coding reliability' (source E1.4, all 7 rows, AI kappa and Decision kappa, exactly as logged). Kappa as defined by Cohen.",
+      "Key reading: human vs human agreement is very low (0.05 / 0.14). Two Claude models agree (0.72 / 0.56), but model-to-model agreement shows reproducibility, not human inter-rater reliability (E1.4; claim boundary vi).",
+      "Under codebook v2, 42-64% of evidence sentences state no explicit decision function, against a pipeline rate of 18%. Only about 9% of matrix records are reproduced in the same cell by both new coders (E1.4).",
+      "Analytic bound (E1.5) as Eq. (3): O_obs/E - 1 = (1 - e_AI)(1 - e_Dec)(T/E - 1). Random error can only attenuate a depletion; it cannot create one. For the most extreme cell, even the 95% upper bound needs an accuracy product >= 0.71, while the human audit implies about 0.07.",
+      "TABLE 3 'Misclassification simulation' (source E1.5, 6 scenarios; 300 runs each; median and 5th-95th percentile of still-significant and still-depleted cells). No scenario produced a spurious depleted cell.",
+      "Verdict as logged (E1.5, 2026-11-18): directional under-integration DEFENSIBLE; '16 statistically robust depleted pairs' NOT DEFENSIBLE as measured; Burt structural hole STOP; research gap NOT SUPPORTED."
+     ],
+     "citation_hints": [
+      "cohen1960coefficient",
+      "benjamini1995controlling"
+     ]
+    },
+    {
+     "subsection_title": "4.4 Network lines V6-V11.1 and Gap Validity",
+     "content_bullets": [
+      "TABLE 4 'Network search for Burt brokers, V6-V11.1' (source E1.6; columns version, line, scale, result). The caption and a table column must mark the rows HISTORICAL / USER_REPORTED (claim boundary vii).",
+      "Summary: 0 confirmed brokers in any line. V10.1 external review: 6 refuted, 2 unresolved, 0 confirmed. V11.1: 3 rejected, 1 insufficient, 0 confirmed. Do not use the idea.md phrase '13 versions'; the log does not support that count (see inconsistency list).",
+      "Explain why citation and co-author lines cannot carry the construct: co-authorship is a projection, and centrality screens are not Burt tests (Section 2.1, 2.3).",
+      "Gap Validity V1 (DIRECT sidecar; E1.6): in the bipartite family network all 16 depleted cells have alternative routes (16/16), and the indirect term of constraint is identically zero.",
+      "Close: Study 1 supports only a directional description, and it shows why co-occurrence data cannot carry the Burt construct (idea.md section 4)."
+     ],
+     "citation_hints": [
+      "newman2001scientific",
+      "freeman1977set",
+      "gould1989structures",
+      "burt1992structural"
+     ]
+    }
+   ]
+  },
+  {
+   "section_title": "5. Study 2: Patent Evidence",
+   "word_budget": 2300,
+   "subsections": [
+    {
+     "subsection_title": "5.1 Data and the aggregate test",
+     "content_bullets": [
+      "Data (E3): USPTO PatentsView pvgpatdis, downloaded 2026-11-18; 8,512,829 utility patents granted 1976-2025; 152,631,929 citation rows; in scope (citing year 2010-2025) 87,414,291, of which 63,083,371 are applicant citations. Before 2013, non-examiner citations are labelled 'cited by other', so the applicant-only specification effectively covers citing years 2013-2025.",
+      "Groups for grant years 2010-2025 (E3): AI 94,929; DEC 37,501; BRIDGE 5,316; other business-method patents (G06Q excluding G06Q10) 150,170. Bridge patents are excluded from the cross counts (idea.md section 5.1).",
+      "Eq. (4) time-stratified configuration expectation: E(A->B) = sum over s of out_A(s) in_B(s) / M(s), s = (citing grant year, cited grant year). Eq. (5) symmetric intensity: OE(A,B) = [O(A->B) + O(B->A)] / [E(A->B) + E(B->A)].",
+      "Hypotheses H1a and H1b as preregistered (idea.md section 5.1; E3.1). H1a reference set: 179 CPC main groups in G06/G16/H04 with >= 2,000 patents.",
+      "Primary result (E3.1): O = 30,843, E = 10,112, OE(AI,DEC) = 3.05 (95% CI 2.94-3.17; Poisson cluster bootstrap over citing patents, 2,000 reps). AI->DEC O/E 3.26 (O 21,820, E 6,686); DEC->AI O/E 2.63 (O 9,023, E 3,426).",
+      "H1a: OE exceeds 97.8% of OE(AI,X) and 92.2% of OE(DEC,X). Reference lowest-quartile values are 0.787 (AI) and 0.502 (DEC); medians 1.240 and 1.095. FAIL. H1b: ratio 1.69 (95% CI 1.60-1.77), with OE(AI,BIZ-OTHER) = 1.809. FAIL.",
+      "TABLE 5 'Aggregate test: primary and preregistered sensitivity specifications' (source: E3.1 sensitivity table, 7 rows: OE, ratio vs BIZ with CI, percentiles AI/DEC, verdict). Present Figure fig_patent_sensitivity. Verdict HOLE_NOT_SUPPORTED; 0/6 sensitivity checks disagree; not fragile.",
+      "H2 trend (E3.1): present Figure fig_patent_trend. WLS slope -0.097 per year (95% CI -0.130 to -0.065); last-3-year OE 2.69 against a reference median of 1.095; preregistered label PERSISTENT. Full yearly table in Appendix Table B3.",
+      "Answer RQ1 at the domain level: AI and decision technologies are over-connected, not separated. Word it as 'not supported', not as proof of absence."
+     ],
+     "citation_hints": [
+      "uspto2026patentsview",
+      "jaffe1993geographic",
+      "alcacer2006patent",
+      "nosek2018preregistration"
+     ]
+    },
+    {
+     "subsection_title": "5.2 The V9 battery on the CPC matrix and the M06-P null",
+     "content_bullets": [
+      "Matrix (E3.2): 6 AI-method rows (G06N3, G06N5, G06N7, G06N10, G06N20, G06N_OTHER) x 7 decision-function columns (FORECAST_OPTIMISE G06Q10/04; RESOURCE_SCHEDULING /0631; WORKFLOW /0633; RISK /0635; STRATEGY /0637; PERFORMANCE /0639; MGMT_GENERAL other /06) = 42 cells. The engine is a byte-identical copy of the V9 engine (SHA-256 09c3d60c...bc33).",
+      "Parts (E3.2): A co-classification, 5,316 patents and 14,573 edges. B applicant citations between AI-only and DEC-only patents, 30,843 citations and 66,056 edges. B all categories: 38,252 citations and 80,849 edges.",
+      "Methodological finding: the original M06 document-preserving swap accepted 0 of 21,843,600 swaps. Each document contributes a complete row x column block, so every swap targets an existing edge. The preregistered core is 0 by construction and uninformative (amendment B1).",
+      "Define M06-P: permute column sets among documents within (|rows|, |cols|) strata. Both margins and the block structure are preserved; 5,000 samples (E3.2; idea.md section 5.2).",
+      "Results (E3.2): adapted full core A 8 depleted / 7 enriched; B 9 / 8; B all categories 8 / 8. q <= .05 cells by test (main / exact / raw / M06-P): A 20 / 20 / 29 / 22; B 22 / 22 / 27 / 25.",
+      "TABLE 6 'Cells depleted in both co-classification (A) and citation flow (B)' (source: E3.2 table, 5 rows with O/E and observed/expected). Note that the quantum row is tiny (74 edges in A). List the 4 cells enriched in both in the text (E3.2).",
+      "Present Figure fig_cpc_heatmap. Emphasise magnitude: apart from the quantum cell, depleted O/E values lie between 0.70 and 0.95 (Table 6). These are small deviations inside an over-connected pair; they are not separations and never 'gaps' (claim boundary ii)."
+     ],
+     "citation_hints": [
+      "benjamini1995controlling",
+      "uspto2026patentsview"
+     ]
+    },
+    {
+     "subsection_title": "5.3 Full replication suite",
+     "content_bullets": [
+      "Explain that every original Study 1 line has a patent analogue (idea.md section 5.3), and present P2-P10 in that order.",
+      "P2 V9.1 calibration (E3.3): seeds (20 x 10,000): A has 20 cells always q <= .05 and 4 boundary cells; B has 22 always and 0 boundary. 1,000 stub-permutation null matrices: mean false cells per matrix 0.045 (A) / 0.049 (B); share of matrices with any false cell 3.6% / 4.4%. Power for a 20% depletion in cells with E >= 100: 18/27 = 67% (A), 23/29 = 79% (B). Segmentation S1/S2 counts and overlaps as logged.",
+      "P3 time split (E3.3): A 2010-2017 0 depleted vs 2018-2025 8; B 2013-2018 3 vs 2019-2025 11. 0 depleted cells replicate in both halves, in A or B. Cell-level depletions are time-unstable.",
+      "P4 label face validity: all 11 labels pass the lift >= 1.5 criterion (full lifts in Appendix Table B5). This replaces the human audit of Study 1; say that it is a title-keyword check, not a human coding audit.",
+      "P5 firm network (E3.3): 6,201 organisations with ties; 20,681 ties (total weight 109,508 applicant citations; self-citations excluded). Groups: 2,926 AI_FIRM, 1,570 DEC_FIRM, 1,705 MIXED. Group O/E: AI_FIRM~DEC_FIRM 0.24 (O 886, E 3,700); AI_FIRM~MIXED 0.81; DEC_FIRM~MIXED 0.97. The preregistered firm-level hole criterion is met at this stage. Median Burt constraint: AI_FIRM 0.62, DEC_FIRM 0.76, MIXED 0.36. Against a degree-matched label-permutation null: null median 0.444, one-sided p = .001.",
+      "Make clear that the P5 criterion being met motivated preregistration 4 (Section 5.4) and is not a confirmed structural hole (claim boundary i).",
+      "P6 removal falsification: after removing the 10 lowest-constraint MIXED candidates (degree >= 5), AI_FIRM and DEC_FIRM firms remain connected. The largest component containing both groups falls from 5,954 to 5,563 firms. 10/10 candidates are refuted as indispensable brokers. The cross-weight-retained metric is identically 1 by construction and therefore uninformative. If candidate firms are named (E3.3 P5 list), name them only as refuted candidates.",
+      "P7: 2,546 co-assignment hyperedges; 32% join an AI_FIRM with a DEC_FIRM or MIXED firm. P8: 54 firms checked; 0 possible alias collisions.",
+      "P9 Gap Validity: the indirect constraint term is 0 (bipartite); every depleted cell has 20-30 alternative length-3 routes; depleted cells at q <= .01 vs q <= .05: A 7 vs 9, B 9 vs 10. P10 Limitation Scout: NOT_APPLICABLE.",
+      "Summary table of P2/P3/P9 in Appendix Table B4."
+     ],
+     "citation_hints": [
+      "burt1992structural",
+      "benjamini1995controlling",
+      "uspto2026patentsview"
+     ]
+    },
+    {
+     "subsection_title": "5.4 Portfolio-preserving firm null",
+     "content_bullets": [
+      "Rationale (idea.md section 5.4): the firm-level pattern could be mechanical. Mixed-portfolio firms own both kinds of patents, and patents cite within their field.",
+      "Null (E3.4): permute patents' owner sets within strata. This keeps every firm's portfolio and group and the whole patent-level citation network fixed. Primary strata: patent type x grant year (48 strata). S-tech strata: type x year x AI rows x DEC columns (1,795 strata). 1,000 replicates each; replicate r uses seed sequence [20261119, s, r]. Scope: 127,114 patents, 14,600 firms, 162,339 citations. The identity permutation reproduces P5 exactly.",
+      "TABLE 7 'Portfolio-preserving firm null' (source: E3.4 table, 4 statistics x observed / primary null median [95%] / p / S-tech null median [95%] / p).",
+      "Present Figure fig_firm_null. Share of the T1 gap reproduced by the null: 85% (primary), 91% (S-tech).",
+      "Interpretation (E3.4): the verdict is PARTIAL in both stratifications, so it is not sensitive to technology mix. Specialist separation is mostly a portfolio effect. The lower constraint of MIXED firms does not survive: observed 0.358 vs null medians 0.104 / 0.116, p = 1.000, so real firms are more clustered than the null and mixed firms show no brokerage advantage.",
+      "Contrast with P5: against a degree-matched label null, MIXED constraint looked low (p = .001). Against a portfolio-preserving null it does not. The choice of null determines the brokerage conclusion, which sets up the measurement lesson in Section 6.2.",
+      "Answer RQ2: no firm-level structural hole beyond what portfolios mechanically imply. A residual specialist separation remains unexplained by the null; report it without interpretation as a hole."
+     ],
+     "citation_hints": [
+      "burt1992structural",
+      "burt2004structural",
+      "nosek2018preregistration"
+     ]
+    }
+   ]
+  },
+  {
+   "section_title": "6. Integrative Discussion",
+   "word_budget": 1100,
+   "subsections": [
+    {
+     "subsection_title": "6.1 What the three data lines jointly show",
+     "content_bullets": [
+      "Restate idea.md section 6 items 1-4 with evidence pointers: (1) the domain level is over-connected and persistently so, though declining (E3.1); (2) cell-level depletions are small and time-unstable (E3.2 Table 6; E3.3 P3); (3) specialist firms are separated, but 85-91% of that is a portfolio effect, and mixed firms have no brokerage advantage (E3.4); (4) no line confirms a Burt structural hole (E1.6; E2; E3.3-E3.4).",
+      "Define the 'three data lines' explicitly when first used. Proposed: (i) literature co-occurrence and network lines (Study 1, E1); (ii) public organisational sources (E2, CORDIS bipartite null: 0 significant); (iii) US patent citations at domain, cell and firm level (Study 2, E3). Add that only (iii) is flow-valid. idea.md does not define the three lines; see the inconsistency list.",
+      "Reconcile the apparent tension. Study 1 finds persistent cell-level depletion within the AI-decision literature (E1.3, p = .86 for period change), while patents show domain-level over-connection (E3.1). These are different units and references: function co-occurrence relative to matrix margins vs domain-to-domain citation relative to all fields. Cell-level depletions in both data lines are relative deviations, not separation.",
+      "Answer RQ1 and RQ2 together, in negative and claim-bounded terms: the evidence does not support a structural hole between AI and decision knowledge domains or between firms, beyond portfolio composition. Do not claim causal effects (claim boundary iii)."
+     ],
+     "citation_hints": [
+      "burt1992structural",
+      "jaffe1993geographic"
+     ]
+    },
+    {
+     "subsection_title": "6.2 Measurement lessons for gap research",
+     "content_bullets": [
+      "Four failure modes of co-occurrence/affiliation data (idea.md section 9 item 2), each with its evidence: projection cliques (E2 CORDIS: 102,660 triads vs 156 recurring edges); bipartite degeneration of constraint (E1.6 Gap Validity; E3.3 P9); same-term self-pairing (E1.3, 33%); model-inferred labels with low human reliability (E1.4).",
+      "Null-model lessons (idea.md section 9 item 3): the document-preserving swap is degenerate on block-structured documents (0 of 21,843,600 swaps accepted; E3.2), and M06-P preserves both margins and block structure. The portfolio-preserving null separates firm brokerage from portfolio composition (E3.4). A degree-matched label null gave the opposite reading (E3.3 P5).",
+      "Design lessons: test relative rather than absolute OE because citing is field-local (idea.md section 5.1); calibrate on synthetic data before real data (E3.1 synthetic calibration); report preregistered stop rules and amendments (Section 3.3).",
+      "Practical guidance for researchers who study 'gaps' between AI and decision functions: a depleted cell is not a gap, and a low-constraint node is not a broker without a portfolio-aware null."
+     ],
+     "citation_hints": [
+      "opsahl2013triadic",
+      "newman2001scientific",
+      "jasny2015two",
+      "everett2020unpacking",
+      "johnson2026reassessing",
+      "saglietto2020research",
+      "cohen1960coefficient"
+     ]
+    },
+    {
+     "subsection_title": "6.3 Where the integration problem may sit: a hypothesis",
+     "content_bullets": [
+      "idea.md section 6 item 5: the AI-decision integration problem is not a knowledge-flow gap. If firms struggle to integrate AI into decisions, the binding constraints more plausibly sit inside organisations: resource allocation, decision rights and governance, and human-AI configuration.",
+      "State twice and plainly that this is a hypothesis, not a finding of Studies 1-2 (claim boundary v), and that the studies contain no organisation-internal data.",
+      "Link to embeddedness: integration happens in concrete organisational relations, which is the level the MLP model represents and Study 3 will observe.",
+      "Transition to Section 7."
+     ],
+     "citation_hints": [
+      "granovetter1985economic",
+      "burt2004structural"
+     ]
+    }
+   ]
+  },
+  {
+   "section_title": "7. A Multi-Level Programming Agenda",
+   "word_budget": 1300,
+   "subsections": [
+    {
+     "subsection_title": "7.1 Formal model",
+     "content_bullets": [
+      "Set-up (idea.md section 7): processes i in I; capability resources r in {D (data), A (AI), R (reliability), G (governance)}; governance regime Gamma; budget B_tot. Position the model in bilevel and multilevel programming.",
+      "Level 1 (leader), Eq. (6): b_i^r in {0,1,2,3}; sum over i,r of c_i^r b_i^r <= B_tot; capabilities X-bar_i = phi_X(X_i^0, b_i^X) with toy map phi_X = min(3, X^0 + b); F1 = 1.25 RealizedValue + 0.20 AIAdoptions - 0.22 ResourceUse - 0.75 ResidualRisk.",
+      "Level 2, Eq. (7): (A_i, H_i, WI_i, EA_i) in {0..3}^4 with capability ceilings and the shared capacity constraint sum over i of (0.42A + 0.24H + 0.24EA + 0.20WI) <= K_Gamma. F2 aggregates feasibility, reliability, scalability, integration cost, governance risk and Level-3 utility. Requirement thresholds go to Appendix C.",
+      "Level 3, Eq. (8): q_im in {0,1}, sum over m of q_im = 1 over the five configurations (HumanOnly, AIAssist, HumanFirstAICheck, AIFirstReview, BoundedAutomation); q_im <= Allow_m,Gamma; U_im = Gain - 0.45 Burden - 0.75 ResidualRisk.",
+      "Properties: under the stated assumptions (finite domains; zero allocation feasible; HumanOnly always feasible; separable followers; deterministic tie-breaking) a selected tri-level profile exists and exhaustive backward induction terminates. This is not a tractability claim. If followers share constraints, a coupled or generalised equilibrium concept is needed; Nash is only a boundary reference.",
+      "Say that the original v1.0 governing source was the 16 V9 depleted cells. This paper does not use them as validated empirical gaps; the thresholds are design assumptions to be calibrated in Study 3 (idea.md section 7)."
+     ],
+     "citation_hints": [
+      "dempe2002foundations",
+      "colson2007overview",
+      "fortunyamat1981representation",
+      "jeroslow1985polynomial",
+      "lee2001fuzzy",
+      "cheng2019fuzzy",
+      "nash1951noncooperative"
+     ]
+    },
+    {
+     "subsection_title": "7.2 Simulated illustration",
+     "content_bullets": [
+      "Open with the boundary: all coefficients are simulated; there is no internal company data; outputs describe no real firm (E4; claim boundary iv).",
+      "Exactness checks (E4): exact backward induction over 3 processes, governance regimes C/F/D and budgets 3/5/7. Generator vs canonical domain check: 768 cases, 3,121 canonical-feasible state occurrences, 0 mismatches. Mutation sensitivity 720/768 detected. Runtime 13.9 s.",
+      "Regimes are parameter sets only; do not expand C/F/D. Parameters (K, risk, cost and flexibility multipliers) are in Appendix Table C1. In the baseline all five configurations are permitted under every regime.",
+      "TABLE 8 'Simulated baseline scenarios' (source: E4 nine-scenario table; columns governance, budget, F1, realised value, residual risk, AI adoptions, configurations). Present Figure fig_mlp_scenarios.",
+      "Describe the pattern without causal language: under C and F, budget 7 gives the same solution as budget 5. Under D at budget 7 one process moves to HumanFirstAICheck (F1 2.616).",
+      "Governance permission probe (E4; C, B = 5): restricting configuration permissions lowers F1 from 2.158 to 0.837, and configurations change from AIAssist x3 to HumanOnly x2 + HumanFirstAICheck x1. Use this only to show the mechanism the model represents (permission-bound rather than capability-bound), not as evidence.",
+      "Selection-threshold sensitivity (E4; process P2, score 0.65, truth 1): at tau <= 0.6, P2 uses AIAssist (F1 2.244); at tau = 0.7, Level 1 allocates nothing to P2's AI capability and P2 reverts to HumanOnly (F1 1.450). The writer must define tau in one sentence consistent with E4 only; idea.md does not define it (see the inconsistency list)."
+     ],
+     "citation_hints": [
+      "dempe2002foundations",
+      "jeroslow1985polynomial"
+     ]
+    },
+    {
+     "subsection_title": "7.3 Study 3: a preregistered enterprise study (plan, not results)",
+     "content_bullets": [
+      "Aim (idea.md section 8): locate where AI-decision integration breaks inside organisations, and calibrate the MLP parameters.",
+      "Unit and sample: decision processes within one or more manufacturing firms. The firm is identified in the thesis and anonymised in this paper.",
+      "TABLE 9 'Study 3 data mapped to model levels' (source: idea.md section 8 table: Level 1 budgets and staffing; Level 2 approval/audit workflows and decision-rights matrices; Level 3 process observation and interviews; optional organisational structural-hole test on de-identified ticket and meeting metadata with Burt constraint and the portfolio-style nulls of Study 2).",
+      "Preregistered decision rules, to be frozen before data access: what supports an organisational bottleneck (feasible configurations blocked by Allow_m,Gamma or K_Gamma rather than by capability ceilings); what contradicts it (capability ceilings or data quality bind first); a stop rule.",
+      "The three-expert translation exercise is a pilot for the instruments, not evidence (idea.md section 8).",
+      "Say that Study 3 tests the hypothesis of Section 6.3; no result is reported or implied."
+     ],
+     "citation_hints": [
+      "nosek2018preregistration",
+      "burt1992structural",
+      "granovetter1985economic"
+     ]
+    }
+   ]
+  },
+  {
+   "section_title": "8. Limitations",
+   "word_budget": 700,
+   "subsections": [
+    {
+     "subsection_title": "8.1 Measurement and data",
+     "content_bullets": [
+      "Mandatory and explicit section; it overrides any instruction to avoid stating limitations.",
+      "Study 1 coding reliability is low (human kappa 0.05 / 0.14; E1.4), and significance does not survive realistic misclassification (E1.5). The 16 depleted cells are not '16 statistically robust depleted pairs' (E1.5 verdict). Model-to-model agreement (0.72 / 0.56) is not human reliability.",
+      "V6-V11.1 network results are HISTORICAL / USER_REPORTED; their raw files were not re-verified (E1.6).",
+      "CPC classes are proxies for knowledge domains. 'Decision' is operationalised as G06Q10/04 + G06Q10/06 (s2 broadens it to all G06Q10; E3.1). Label validity rests on a title-keyword lift check (P4), not a human audit.",
+      "Patent citations are an imperfect flow proxy. Examiner citations are excluded from the primary specification only through PatentsView categories; applicant-only analysis effectively starts in 2013 (E3). The data cover US patents only and patented inventions, not organisational practice.",
+      "Firm identities rely on disambiguated assignees; the alias check covered 54 firms (E3.3 P8). No external source passed the flow-validity gates, and SEC data were not fetched (E2)."
+     ],
+     "citation_hints": [
+      "cohen1960coefficient",
+      "alcacer2006patent",
+      "uspto2026patentsview"
+     ]
+    },
+    {
+     "subsection_title": "8.2 Inference and design",
+     "content_bullets": [
+      "All results are associational; no causal effects are claimed (claim boundary iii).",
+      "A failure to support a hole is not proof that no hole exists in other data, other operationalisations or other countries. Synthetic calibration detected 30% and 50% suppression (E3.1). Cell-level power for a 20% depletion with E >= 100 was 67% (A) and 79% (B) (E3.3 P2), so smaller cells or weaker depletions may be missed.",
+      "M06-P was introduced by amendment B1 after the preregistered M06 proved degenerate (E3.2); it is a documented deviation, not part of the original frozen plan.",
+      "The portfolio null reproduces 85% (primary) / 91% (S-tech) of the specialist separation (E3.4), so the rest is unexplained. Do not state a derived residual percentage, which is not in the log. Report the residual as unexplained, not as a hole. The P6 cross-weight-retained metric is uninformative by construction (E3.3).",
+      "Cell-level patent depletions do not replicate across time halves (E3.3 P3), and the quantum row is tiny (74 edges in A; E3.2)."
+     ],
+     "citation_hints": [
+      "nosek2018preregistration"
+     ]
+    },
+    {
+     "subsection_title": "8.3 The model and the organisational hypothesis",
+     "content_bullets": [
+      "All MLP coefficients are simulated and uncalibrated; outputs reflect no real firm (E4; claim boundary iv).",
+      "Exact enumeration of a bounded 3-process prototype is not evidence of tractability at scale (Jeroslow). Shared follower constraints would need a generalised equilibrium concept (idea.md section 7).",
+      "'The bottleneck is organisational' is a hypothesis for Study 3, not a result (claim boundary v). Study 3 is a plan in one or more manufacturing firms, which will limit generalisation; the expert translation exercise is a pilot only (idea.md section 8)."
+     ],
+     "citation_hints": [
+      "jeroslow1985polynomial",
+      "nash1951noncooperative"
+     ]
+    }
+   ]
+  },
+  {
+   "section_title": "9. Conclusion",
+   "word_budget": 300,
+   "subsections": [
+    {
+     "subsection_title": "Conclusion Content (no numbered subsections)",
+     "content_bullets": [
+      "Answer RQ1: knowledge-domain evidence does not support a structural hole; AI and decision patents are over-connected (OE 3.05; HOLE_NOT_SUPPORTED; E3.1).",
+      "Answer RQ2: firm-level separation is mostly a portfolio effect (85-91%), and mixed firms are not brokers (E3.4).",
+      "Restate the measurement lesson in one sentence: co-occurrence is not flow, and the null model must preserve the structure that generates the data.",
+      "RQ3/RQ4: the integration question moves to the organisation as a hypothesis, with a formal (simulated) MLP model and a preregistered Study 3 to calibrate it. End without promotional language."
+     ],
+     "citation_hints": []
+    }
+   ]
+  },
+  {
+   "section_title": "10. References",
+   "word_budget": 0,
+   "subsections": [
+    {
+     "subsection_title": "References Content",
+     "content_bullets": [
+      "Generated from citation_map.json only (26 keys) with natbib author-year and an APA-like style (apalike). Every one of the 26 keys is cited at least once in the plan above. No other references."
+     ],
+     "citation_hints": []
+    }
+   ]
+  },
+  {
+   "section_title": "Appendix A. Preregistration and Amendment Log",
+   "word_budget": 500,
+   "subsections": [
+    {
+     "subsection_title": "A.1 Preregistered plans and freeze points",
+     "content_bullets": [
+      "TABLE A1 'Preregistration log' (source: E3 preregistration commits; idea.md section 5): columns plan, commit, frozen before (data access / computation), content frozen, outcome. Rows: aggregate test a8f3289 -> HOLE_NOT_SUPPORTED (E3.1); V9 battery a6266f7 -> preregistered core 0 by construction, adapted core reported (E3.2); full suite d641256 -> P2-P10 outcomes (E3.3); firm null b59fc71 -> PARTIAL (E3.4). All in PR #5 of the project repository.",
+      "Also list the frozen Study 1 V9 seeds (20260918, 20260919; E1.1) and the firm-null seed sequence [20261119, s, r] (E3.4)."
+     ],
+     "citation_hints": [
+      "nosek2018preregistration"
+     ]
+    },
+    {
+     "subsection_title": "A.2 Amendments and deviations",
+     "content_bullets": [
+      "Amendment B1 (E3.2): the original M06 accepted 0 of 21,843,600 swaps; the preregistered core is 0 by construction; M06-P was adopted. Give its date only if it is in the log; otherwise state 'dated in the repository'.",
+      "Recorded non-informative or non-applicable items: P6 cross-weight-retained metric identically 1 (E3.3); P10 Limitation Scout NOT_APPLICABLE (E3.3).",
+      "Data-validity re-analysis of Study 1 (2026-11-18; E1.3-E1.5) and its verdict list.",
+      "Do not invent further amendments."
+     ],
+     "citation_hints": []
+    }
+   ]
+  },
+  {
+   "section_title": "Appendix B. Sensitivity Tables",
+   "word_budget": 600,
+   "subsections": [
+    {
+     "subsection_title": "B.1 Study 1",
+     "content_bullets": [
+      "TABLE B1 'The 16 V9 depleted cells' (source: E1.2 table; AI family, decision family, O). Caption: 'depleted cells, not gaps'; DIRECT; file V9_ROBUSTNESS_MASTER_TABLE.csv.",
+      "TABLE B2 'Study 1 robustness checks' (source: E1.3): re-implementation, 20 seeds, exclusion bias, track-stratified null, two periods, keyword triangulation, same-term self-pairing, rule-based keyword matrix, each with its logged result."
+     ],
+     "citation_hints": [
+      "benjamini1995controlling"
+     ]
+    },
+    {
+     "subsection_title": "B.2 Study 2",
+     "content_bullets": [
+      "TABLE B3 'OE(AI,DEC) by citing year' (source: E3.1 H2 table, 2013-2025 with 95% CI) plus a row block with the synthetic calibration results (no hole; 30%; 50% suppression; E3.1).",
+      "TABLE B4 'Replication suite summary' (source: E3.3 P2 seeds / null false-positive / power / segmentation; P3 time split; P9 Gap Validity).",
+      "TABLE B5 'Label face validity' (source: E3.3 P4 table, 11 labels with lift; pass threshold 1.5)."
+     ],
+     "citation_hints": [
+      "uspto2026patentsview",
+      "benjamini1995controlling"
+     ]
+    },
+    {
+     "subsection_title": "B.3 External-data feasibility",
+     "content_bullets": [
+      "TABLE B6 'Six public sources screened' (source: E2): CORDIS H2020, GLEIF Level-2, OpenAlex, OCDS, SEC, PyPSA, with scale, relation type, and pass/fail on the independent-relation and validation gates.",
+      "Note SEC was not fetched because it requires a genuine contact User-Agent (E2)."
+     ],
+     "citation_hints": [
+      "opsahl2013triadic"
+     ]
+    }
+   ]
+  },
+  {
+   "section_title": "Appendix C. Multi-Level Programming Constraint Details",
+   "word_budget": 700,
+   "subsections": [
+    {
+     "subsection_title": "C.1 Decision variables, capabilities and governance regimes",
+     "content_bullets": [
+      "Full notation from idea.md section 7: b_i^r, c_i^r, B_tot, X_i^0, phi_X, capability ceilings A-bar, G-bar, D-bar.",
+      "TABLE C1 'Governance regime parameters' (source: E4 regime table: K_Gamma 5.5/6.0/6.5; risk 0.85/1.00/1.15; cost 1.10/1.00/0.90; flexibility 0.95/1.00/1.05). Caption: letters are not expanded; all values simulated."
+     ],
+     "citation_hints": [
+      "dempe2002foundations",
+      "lee2001fuzzy",
+      "cheng2019fuzzy"
+     ]
+    },
+    {
+     "subsection_title": "C.2 Level-2 requirement thresholds and capacity",
+     "content_bullets": [
+      "TABLE C2 'Level-2 requirement thresholds' (source: idea.md section 7): D_req = R_req = A; H_req = 0 if A = 0, else min(3, max(0, A + kappa - 2)); EA_req = 0 if A = 0, else min(3, max(1, A + kappa - 2)); WI_req = 3 if execution and A = 3, else A. Kappa here is the consequence class; distinguish its symbol from Cohen's kappa in Section 4.",
+      "Ceilings A <= A-bar; H, EA <= G-bar; WI <= D-bar. Shared capacity constraint with coefficients 0.42, 0.24, 0.24, 0.20 and K_Gamma.",
+      "Note that idea.md defines R_req but lists no ceiling involving R-bar; present only what idea.md states (see the inconsistency list)."
+     ],
+     "citation_hints": [
+      "colson2007overview",
+      "fortunyamat1981representation"
+     ]
+    },
+    {
+     "subsection_title": "C.3 Level-3 configurations, existence and solution procedure",
+     "content_bullets": [
+      "List the five configurations with their minimum (A, H, WI, EA) requirements only if available in idea.md (it states that minimums exist but gives no values; do not invent them). Include the permission constraint q_im <= Allow_m,Gamma and the utility U_im = Gain - 0.45 Burden - 0.75 ResidualRisk.",
+      "Existence statement and its five assumptions; exhaustive backward induction; deterministic tie-breaking (idea.md section 7).",
+      "Verification: 768 cases, 3,121 canonical-feasible state occurrences, 0 mismatches; mutation sensitivity 720/768; runtime 13.9 s (E4).",
+      "Boundary statements: not a tractability claim; generalised equilibrium is needed for shared follower constraints; Nash is a boundary reference only."
+     ],
+     "citation_hints": [
+      "jeroslow1985polynomial",
+      "nash1951noncooperative",
+      "dempe2002foundations"
+     ]
+    }
+   ]
+  }
+ ],
+ "table_plan_summary": {
+  "main_text": [
+   "Table 1 Overview of studies (3.1; idea.md sections 4, 5, 8; E1.1, E3, E4)",
+   "Table 2 Coding reliability (4.3; E1.4)",
+   "Table 3 Misclassification simulation (4.3; E1.5)",
+   "Table 4 Network search for Burt brokers V6-V11.1, HISTORICAL/USER_REPORTED (4.4; E1.6)",
+   "Table 5 Aggregate test: primary and sensitivity specifications (5.1; E3.1)",
+   "Table 6 Cells depleted in both A and B (5.2; E3.2)",
+   "Table 7 Portfolio-preserving firm null (5.4; E3.4)",
+   "Table 8 Simulated baseline scenarios (7.2; E4)",
+   "Table 9 Study 3 data mapped to model levels (7.3; idea.md section 8)"
+  ],
+  "appendix": [
+   "Table A1 Preregistration log (E3 commits; E1.1 and E3.4 seeds)",
+   "Table B1 The 16 V9 depleted cells (E1.2)",
+   "Table B2 Study 1 robustness checks (E1.3)",
+   "Table B3 OE(AI,DEC) by citing year + synthetic calibration (E3.1)",
+   "Table B4 Replication suite summary (E3.3 P2, P3, P9)",
+   "Table B5 Label face validity (E3.3 P4)",
+   "Table B6 Six public sources screened (E2)",
+   "Table C1 Governance regime parameters (E4)",
+   "Table C2 Level-2 requirement thresholds (idea.md section 7)"
+  ],
+  "counts": {
+   "main_text_tables": 9,
+   "appendix_tables": 9,
+   "total_tables": 18,
+   "figures": 7
+  }
+ }
+}

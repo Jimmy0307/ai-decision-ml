@@ -232,5 +232,41 @@
   "venue": "\\url{https://data.uspto.gov/bulkdata/datasets/pvgpatdis}",
   "doi": null,
   "abstract_or_role": "USPTO PatentsView granted-patent tables (pvgpatdis): patents, current CPC classifications, US patent citations and disambiguated assignees."
+ },
+ "shrestha2019organizational": {
+  "type": "article",
+  "title": "Organizational Decision-Making Structures in the Age of Artificial Intelligence",
+  "authors": "Shrestha, Yash Raj and Ben-Menahem, Shiko M. and von Krogh, Georg",
+  "year": "2019",
+  "venue": "California Management Review",
+  "doi": "10.1177/0008125619862257",
+  "abstract_or_role": "Organisational decision-making structures that combine humans and AI (full delegation to AI, sequential human-AI or AI-human decision-making, aggregated decision-making), and the decision-task conditions under which each fits."
+ },
+ "raisch2021artificial": {
+  "type": "article",
+  "title": "Artificial Intelligence and Management: The Automation--Augmentation Paradox",
+  "authors": "Raisch, Sebastian and Krakowski, Sebastian",
+  "year": "2021",
+  "venue": "Academy of Management Review",
+  "doi": "10.5465/amr.2018.0072",
+  "abstract_or_role": "Automation versus augmentation of managerial tasks with AI as a paradox; argues the two are interdependent across time and space and should be managed together."
+ },
+ "jarrahi2018artificial": {
+  "type": "article",
+  "title": "Artificial intelligence and the future of work: Human-{AI} symbiosis in organizational decision making",
+  "authors": "Jarrahi, Mohammad Hossein",
+  "year": "2018",
+  "venue": "Business Horizons",
+  "doi": "10.1016/j.bushor.2018.03.007",
+  "abstract_or_role": "Human-AI symbiosis in organisational decision making: AI is suited to complexity, while humans contribute where decisions involve uncertainty and equivocality."
+ },
+ "berente2021managing": {
+  "type": "article",
+  "title": "Managing Artificial Intelligence",
+  "authors": "Berente, Nicholas and Gu, Bin and Recker, Jan and Santhanam, Radhika",
+  "year": "2021",
+  "venue": "MIS Quarterly",
+  "doi": "10.25300/MISQ/2021/16274",
+  "abstract_or_role": "Managing AI as the frontier of computing; the facets of autonomy, learning and inscrutability raise distinctive management challenges for information-systems research."
  }
 }
