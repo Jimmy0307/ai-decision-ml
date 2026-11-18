@@ -2,6 +2,12 @@
 
 > **Research-only / 2026-11-18.** 分支 `research/external-data-mlp-feasibility-20261118`。目前測試為 **dataset feasibility / schema validation / synthetic model**，不是 V9 重分析，也不是證實結構洞／企業 AI 最適解。既有 `main`、V9/V11.1、LEM2、DRSA 一律不覆蓋。
 
+## 第二輪結論（最新、正式閱讀入口）
+
+**[ROUND2_RESEARCH_CONCLUSIONS_20261118.md](ROUND2_RESEARCH_CONCLUSIONS_20261118.md)** — GitHub Actions #44269235163 已對 H2020 全量 project/participation 進行第二輪對帳及六來源可識別性評估。**33/33 deterministic tests PASS**。195 title/objective 候選的經費與角色資料可形成 **semi-empirical allocation benchmark**；加入 topics/keywords 則有 233 個字詞候選（未人工驗證）。187/187 可對帳 EC projects 在 1% 差距內；OpenAlex 跨資料庫獨立獎補助／成果連結尚未解決，SEC 未執行，沒有 confirmed Burt holes 或 empirical MLP equilibrium。
+
+**注意：**H2020 project ZIP 裡**沒有** publication.csv；CORDIS 出版品資料另有來源，且官方資料集註有欄位錯置風險。先前授款編號查詢 500 筆不等於 500 筆有效 CORDIS grants（不同 funder 會重複編號）。
+
 ## 最新已執行結果（2026-11-18；以下優先於建立分支時的初期狀態描述）
 
 **正式成果入口**：[GitHub Actions 全部六源實測報告](EXTERNAL_DATA_FINAL_POC_REPORT_20261118.md) · [公開來源與證據等級 JSON](results/FROZEN_SIX_SOURCE_SNAPSHOT_20261118.json) · [實際 GitHub Actions](https://github.com/Jimmy0307/ai-decision-ml/actions/runs/44264544878)
