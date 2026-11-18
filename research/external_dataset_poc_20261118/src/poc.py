@@ -35,7 +35,7 @@ def bounded_get(url, max_bytes=8_000_000, ua="Academic research feasibility/0.1"
     if len(body)>max_bytes:raise ValueError("stream_size_limit")
     return body,hashlib.sha256(body).hexdigest()
 
-def grid_stats(transformers, links, lines=None):
+def grid_stats(transformers, links, lines=None, export_edges=False):
     """UNOFFICIAL GridKit physical topology, NOT organization/social ties."""
     graph=defaultdict(set); edge_types={}; count={}
     for tag, raw in (("transformer",transformers),("dc_link",links),("ac_line",lines)):
@@ -63,6 +63,7 @@ def grid_stats(transformers, links, lines=None):
     return {"rows":count,"nodes":len(graph),"edges":len(edge_types),
             "components":len(components),"largest_component":max(components,default=0),
             "triangles":triangles,"ac_lines_included":lines is not None,
+            "derived_edges":[{"u":a,"v":b,"kind":t} for (a,b),t in sorted(edge_types.items())] if export_edges else None,
             "scope":"UNOFFICIAL_2022_GRIDKIT_MAP_PHYSICAL_NETWORK_ONLY"}
 
 def ocds_stats(data):
@@ -75,10 +76,15 @@ def ocds_stats(data):
 
 def openalex_stats(data):
     works=data.get("results",[])
+    work_authorship=[{"work_id":w.get("id"),"doi":w.get("doi"),
+        "year":w.get("publication_year"),
+        "authors":sorted({a.get("author",{}).get("id") for a in w.get("authorships",[]) if a.get("author",{}).get("id")}),
+        "institutions":sorted({i.get("id") for a in w.get("authorships",[]) for i in a.get("institutions",[]) if i.get("id")})} for w in works]
     authors={a.get("author",{}).get("id") for w in works for a in w.get("authorships",[])}
     institutions={i.get("id") for w in works for a in w.get("authorships",[]) for i in a.get("institutions",[])}
     return {"works":len(works),"authors":len(authors-{None}),"institutions":len(institutions-{None}),
             "work_ids":[w.get("id") for w in works],
+            "work_memberships":work_authorship,
             "works_with_doi":sum(bool(w.get("doi")) for w in works),
             "any_truncated_authorships":any(w.get("is_authors_truncated",False) for w in works),
             "scope":"BOUNDED_LIVE_API_SAMPLE_NOT_A_RECONCILED_CORDIS_LINK"}
@@ -170,6 +176,7 @@ def cordis_bulk_stats(blob):
                       "grantDoi":row.get("grantDoi"),"frameworkProgramme":row.get("frameworkProgramme")}
         organisation_rows=0; orgids=set(); source_projectids=set()
         selected_participants=defaultdict(set)
+        alternate_participants=defaultdict(set)
         selected_roles=defaultdict(set)
         selected_allocation_rows=[]
         full_organisation_funding_missing={"ecContribution":0,"netEcContribution":0,"totalCost":0}
@@ -193,6 +200,7 @@ def cordis_bulk_stats(blob):
                 if pid in pids: matched_projects+=1
             if oid:
                 orgids.add(oid); valid_orgids+=1
+                if pid in topic_sensitivity_joint: alternate_participants[pid].add(oid)
                 if pid in joint_projects:
                     selected_participants[pid].add(oid)
                     selected_roles[oid].add(role)
@@ -274,6 +282,7 @@ def cordis_bulk_stats(blob):
                      "project_records_with_cost":sum(bool(m.get("totalCost")) for m in joint_metadata.values()),
                      "project_records_with_grant_doi":sum(bool(m.get("grantDoi")) for m in joint_metadata.values()),
                      "derived_affiliations":derived_affiliations,
+                     "alternate_affiliations":[{"project_id":pid,"organisation_id":oid} for pid in sorted(alternate_participants) for oid in sorted(alternate_participants[pid])],
                      "derived_allocations":selected_allocation_rows,
                      "selected_project_metadata":joint_metadata,
                      "consortium_projected_unique_edges":len(projected_edges),
@@ -367,6 +376,7 @@ def run(mode="fixture", cordis=False, full_grid=False):
                         "ocids":[r.get("ocid") for r in packages[:3]] if isinstance(packages,list) else [],
                         "tags":[r.get("tag") for r in packages[:3]] if isinstance(packages,list) else [],
                         "tenderer_count_observed":sum(len((r.get("tender") or {}).get("tenderers",[])) for r in packages) if isinstance(packages,list) else 0,
+                        "real_buyer_supplier_edges":sorted({(str((r.get("buyer") or {}).get("id")),str(s.get("id"))) for r in packages for a in r.get("awards",[]) for s in a.get("suppliers",[]) if (r.get("buyer") or {}).get("id") and s.get("id")}) if isinstance(packages,list) else [],
                         "scope":"REAL_UK_NOTICE_PROBE_NOT_FAILED_BIDDER_COMPLETENESS"}
             result["source_status"][k]={"status":"FETCHED_PARSED","size_bytes":len(raw),"sha256":sha,
                                        "url":url,"parsed":parsed}
@@ -377,7 +387,7 @@ def run(mode="fixture", cordis=False, full_grid=False):
         try:
             result["grid_stats"]=grid_stats(payloads["PyPSA_Transformers"].decode("utf-8-sig"),
                 payloads["PyPSA_DC_Links"].decode("utf-8-sig"),
-                payloads["PyPSA_AC_Lines"].decode("utf-8-sig") if "PyPSA_AC_Lines" in payloads else None)
+                payloads["PyPSA_AC_Lines"].decode("utf-8-sig") if "PyPSA_AC_Lines" in payloads else None,export_edges=True)
         except Exception as e:result["grid_error"]={"type":type(e).__name__,"message":str(e)[:160]}
     if "CORDIS" in payloads:
         try:result["cordis_bulk_profile"]=cordis_bulk_stats(payloads["CORDIS"])
