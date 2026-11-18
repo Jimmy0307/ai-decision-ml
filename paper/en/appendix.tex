@@ -237,9 +237,49 @@ Source & Scale & Relation type and outcome \tabularnewline
 
 All values in this appendix describe the simulated v1.0 prototype. They are design assumptions, not estimates, and describe no real firm. The model formalises only the organisational candidate explanation (Section~\ref{sec:discussion_hypothesis}), and its original anchor, the 16 V9 depleted cells, has been withdrawn.
 
-\subsection{Notation and governance regimes}
+\subsection{Full statement of the three levels}
+\label{app:mlp_full}
 
-Level~1 chooses integer allocations $b_i^r\in\{0,1,2,3\}$ for each process $i$ and resource $r\in\{D,A,R,G\}$ at unit costs $c_i^r$, subject to $\sum_{i,r}c_i^r b_i^r\leq B_{\mathrm{tot}}$. The capability map $\phi_X(X_i^0,b_i^X)=\min(3,X_i^0+b_i^X)$ yields the ceilings $\bar D_i$, $\bar A_i$, $\bar R_i$ and $\bar G_i$ on the ordinal scale $\{0,1,2,3\}$. A governance regime $\Gamma$ is defined by the parameters in Table~\ref{tab:app_regimes} and by the permission matrix $\mathrm{Allow}_{m\Gamma}$. In the prototype source, the flexibility multiplier scales realised gain at Level~3, the risk multiplier scales residual risk at Level~3 and governance risk at Level~2, and the cost multiplier scales integration cost at Level~2. For general background on bilevel and multilevel programming, see \citet{dempe2002foundations}, \citet{colson2007overview}, \citet{fortunyamat1981representation}, \citet{lee2001fuzzy} and \citet{cheng2019fuzzy}; none of these sources supports a specific modelling choice of the prototype.
+This subsection states the model summarised in Section~\ref{sec:mlp_model}. Each process $i$ has an initial capability $X_i^0$ for every resource $X\in\mathcal{R}=\{D,A,R,G\}$.
+
+\paragraph{Level 1: enterprise resource allocation (leader).}
+\begin{align}
+\max_{b}\quad & F_1 = 1.25\,\mathrm{RealizedValue} + 0.20\,\mathrm{AIAdoptions} - 0.22\,\mathrm{ResourceUse} - 0.75\,\mathrm{ResidualRisk} \label{eq:mlp_l1}\\
+\text{s.t.}\quad & b_i^r\in\{0,1,2,3\}, \qquad \sum_{i\in I}\sum_{r\in\mathcal{R}} c_i^r\, b_i^r \leq B_{\mathrm{tot}}, \nonumber\\
+& \bar{X}_i = \phi_X\!\left(X_i^0, b_i^X\right) = \min\!\left(3,\; X_i^0 + b_i^X\right), \qquad X\in\mathcal{R}, \nonumber\\
+& (A_i,H_i,WI_i,EA_i)_{i\in I} \text{ solves Level 2 given } \bar{X}, \text{ and } q \text{ solves Level 3}. \nonumber
+\end{align}
+The toy map $\phi_X$ turns an allocation $b_i^X$ at unit cost $c_i^r$ into a capability ceiling $\bar{X}_i\in\{\bar D_i,\bar A_i,\bar R_i,\bar G_i\}$. RealizedValue, AIAdoptions and ResidualRisk are evaluated at the followers' responses.
+
+\paragraph{Level 2: AI decision architecture and governance.} For each process the architecture chooses AI integration depth $A_i$, human oversight $H_i$, workflow integration $WI_i$ and assurance $EA_i$:
+\begin{align}
+\max_{(A_i,H_i,WI_i,EA_i)_{i\in I}}\quad & F_2 \label{eq:mlp_l2}\\
+\text{s.t.}\quad & (A_i,H_i,WI_i,EA_i)\in\{0,\dots,3\}^4, \nonumber\\
+& A_i\leq\bar{A}_i,\quad H_i\leq\bar{G}_i,\quad EA_i\leq\bar{G}_i,\quad WI_i\leq\bar{D}_i, \nonumber\\
+& \bar{D}_i\geq D_{\mathrm{req}}(A_i),\quad \bar{R}_i\geq R_{\mathrm{req}}(A_i), \nonumber\\
+& H_i\geq H_{\mathrm{req}}(A_i,\kappa_i),\quad EA_i\geq EA_{\mathrm{req}}(A_i,\kappa_i),\quad WI_i\geq WI_{\mathrm{req}}(A_i), \nonumber\\
+& \sum_{i\in I}\left(0.42A_i + 0.24H_i + 0.24EA_i + 0.20WI_i\right)\leq K_\Gamma. \nonumber
+\end{align}
+The requirement thresholds are listed in Table~\ref{tab:app_thresholds}. The capacity constraint is shared by all processes; it represents the organisation's limited capacity to govern AI across processes. $F_2$ sums, over processes, weighted terms for feasibility, reliability and scalability (bounded linear indices of the capability surplus and the Level-2 state), minus integration cost and governance risk, plus the best Level-3 utility the architecture makes available. Its functional form and weights are specified in the canonical model file of the project repository and summarised below; the weights are not calibrated and carry no empirical content.
+
+\paragraph{Level 3: human--AI configuration (followers).} Given its Level-2 state, each process chooses one configuration $m\in\mathcal{M}=\{$HumanOnly, AIAssist, HumanFirstAICheck, AIFirstReview, BoundedAutomation$\}$:
+\begin{align}
+\max_{q_{i\cdot}}\quad & \sum_{m\in\mathcal{M}} q_{im}\,U_{im}, \qquad U_{im} = \mathrm{Gain}_{im} - 0.45\,\mathrm{Burden}_{im} - 0.75\,\mathrm{ResidualRisk}_{im} \label{eq:mlp_l3}\\
+\text{s.t.}\quad & q_{im}\in\{0,1\},\qquad \sum_{m\in\mathcal{M}} q_{im}=1,\qquad q_{im}\leq\mathrm{Allow}_{m\Gamma}, \nonumber\\
+& q_{im}=1 \;\Rightarrow\; (A_i,H_i,WI_i,EA_i)\geq\rho_m \text{ componentwise}. \nonumber
+\end{align}
+The minimum requirement vectors $\rho_m=(A,H,WI,EA)$ are given in Table~\ref{tab:app_configs}; HumanOnly requires $(0,0,0,0)$, and the requirements rise to $(3,3,3,3)$ for BoundedAutomation.
+
+\paragraph{Selection processes and the threshold $\tau$.} For a process that selects among alternatives, the AI component produces a score $s_i$, and $\tau_i$ is the score threshold above which it recommends the positive choice:
+\begin{equation}
+d_i=\mathbf{1}\!\left[s_i\geq\tau_i\right], \qquad v_i=\begin{cases}1 & \text{if } d_i \text{ matches the true outcome},\\ 0.35 & \text{otherwise},\end{cases}
+\label{eq:mlp_tau}
+\end{equation}
+where $v_i$ scales the value the process realises. The threshold is a fixed design parameter of the process, not a decision variable of any level. In the prototype, $s_i$ and the true outcome are a single fixed realisation known to all levels, so $\tau_i$ is a sensitivity device, not a model of error rates.
+
+\subsection{Governance regimes}
+
+A governance regime $\Gamma$ is defined by the parameters in Table~\ref{tab:app_regimes} and by the permission matrix $\mathrm{Allow}_{m\Gamma}$. In the prototype source, the flexibility multiplier scales realised gain at Level~3, the risk multiplier scales residual risk at Level~3 and governance risk at Level~2, and the cost multiplier scales integration cost at Level~2. For general background on bilevel and multilevel programming, see \citet{dempe2002foundations}, \citet{colson2007overview}, \citet{fortunyamat1981representation}, \citet{lee2001fuzzy} and \citet{cheng2019fuzzy}; none of these sources supports a specific modelling choice of the prototype.
 
 \begin{table}[tbp]
 \centering
@@ -259,7 +299,7 @@ D & 6.5 & 1.15 & 0.90 & 1.05 \\
 
 \subsection{Level-2 requirement thresholds and capacity}
 
-Table~\ref{tab:app_thresholds} lists the threshold functions. The symbol $\kappa_i$ denotes the consequence class of process $i$; it is unrelated to Cohen's $\kappa$. The capability conditions are $\bar D_i\geq D_{\mathrm{req}}(A_i)$ and $\bar R_i\geq R_{\mathrm{req}}(A_i)$, and the ceilings are $A_i\leq\bar A_i$, $H_i,EA_i\leq\bar G_i$ and $WI_i\leq\bar D_i$. The shared capacity constraint is
+Table~\ref{tab:app_thresholds} lists the threshold functions used in Eq.~\eqref{eq:mlp_l2}; $\kappa_i$ is the consequence class of process $i$. The shared capacity constraint is
 \begin{equation}
 \mathrm{CapUse}=\sum_{i\in I}\left(0.42A_i+0.24H_i+0.24EA_i+0.20WI_i\right)\leq K_\Gamma ,
 \label{eq:app_capacity}
@@ -328,3 +368,14 @@ BoundedAutomation & 3 & 3 & 3 & 3 \\
 \subsection{Conformance and mutation checks}
 
 The solver was checked in two ways (E4). The \emph{conformance check} evaluates, for each of the three processes and every tuple of capability ceilings $(\bar D_i,\bar A_i,\bar R_i,\bar G_i)$, the canonical constraints written above independently of the solver's state generator and compares the two feasible sets. Across 768 cases it counted 3,121 canonical-feasible state occurrences and found 0 mismatches. The \emph{mutation check} runs the real generator with the $A_i=0$ restriction disabled and the corresponding branch relaxed. It detected a mismatch with the canonical set in 720/768 cases, which shows that the conformance check is sensitive to this class of error. Both checks share the threshold-function implementations, so neither can detect a common-mode defect in those functions. The total runtime of the solver script was 13.9 s. These checks verify the toy instance computationally; they leave every coefficient, threshold, score, outcome, permission matrix and regime ordering empirically unverified.
+
+\subsection{Study 3: decision rules, stop rules and network test}
+\label{app:study3}
+
+This subsection states in full the rules summarised in Section~\ref{sec:mlp_study3}. No data have been collected, and all thresholds will be fixed in Study~3's own preregistration before data access.
+
+\paragraph{Decision rules.} The organisational candidate is supported if, among episodes with a determinable binding constraint, internal permission, decision rights, governance capacity or allocation is the most frequent first binding constraint and exceeds the preregistered share, and if episodes that changed status after an internal rule or allocation changed did so without a recorded change in capability or data. Each alternative (data quality, cost, regulation and liability, task suitability) is supported by the same rule applied to its own signature in Table~\ref{tab:back_study3_rivals}. Internal decision rights and external regulation can both appear as a withheld permission; they are separated by whether the binding rule originates inside the firm, where management can change it, or outside it. If no candidate reaches the threshold, the result is reported as mixed, and the model is not calibrated as a governance-bottleneck model.
+
+\paragraph{Stop rules.} The study stops and is reported as uninformative if the episodes with a determinable binding constraint fall below the preregistered minimum. Coding stops, and the codebook is revised as a dated amendment before any outcome analysis, if agreement between human coders on a pilot set falls below the preregistered minimum. If the organisational candidate is not supported, the model's governance layer is not calibrated, and the model is reported as unsupported.
+
+\paragraph{Optional network test.} If de-identified metadata on tickets and meetings between AI staff and decision owners are available, Burt constraint \citep{burt1992structural} will be computed on real organisational ties, where embeddedness arguments locate economic action \citep{granovetter1985economic}, against a null that preserves both what each unit is responsible for and its degree.

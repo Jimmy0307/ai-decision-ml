@@ -34,6 +34,7 @@ jobs:
           root_file: thesis_zh.tex
           working_directory: paper/zh
           latexmk_use_xelatex: true
+          extra_system_packages: "font-noto-cjk fontconfig"
 
       - name: Upload PDFs
         uses: actions/upload-artifact@v4
