@@ -145,6 +145,7 @@ def cordis_bulk_stats(blob):
         decision_terms=("decision making","decision-making","decision support","decision process","decision maker","decision-maker")
         pids=set(); project_rows=0
         ai_projects=set(); decision_projects=set(); joint_projects=set()
+        topic_sensitivity_joint=set()
         joint_metadata={}
         project_fields=reader("project.csv").fieldnames
         org_fields=reader("organization.csv").fieldnames
@@ -158,6 +159,9 @@ def cordis_bulk_stats(blob):
                 hit_de=any(term in combined for term in decision_terms)
                 if hit_ai:ai_projects.add(pid)
                 if hit_de:decision_projects.add(pid)
+                alltext=combined+" "+str(row.get("topics") or "").lower()+" "+str(row.get("keywords") or "").lower()
+                if any(term in alltext for term in ai_terms) and any(term in alltext for term in decision_terms):
+                    topic_sensitivity_joint.add(pid)
                 if hit_ai and hit_de:
                     joint_projects.add(pid)
                     joint_metadata[pid]={
@@ -203,6 +207,33 @@ def cordis_bulk_stats(blob):
             if "coordinator" in role:coordinator_roles+=1
         # Induced shared-consortium *affiliation projection*: NOT observed bilateral
         # research communication or an independently validated Burt network.
+        publication_profile={"status":"NO_PUBLICATION_CSV",
+                             "csv_members":sorted(n for n in members if n.endswith(".csv"))}
+        pub_name=next((n for n in ("publication.csv","publications.csv") if n in members),None)
+        if pub_name:
+            pubs=reader(pub_name)
+            pub_fields=pubs.fieldnames
+            pub_rows=0; joined_pub=0;selected_pub=0;selected_doi=0;selected_doi_ids=set()
+            selected_publication_links=[]
+            for row in pubs:
+                pub_rows+=1
+                pid=(row.get("projectID") or row.get("projectId") or "").strip()
+                if pid in pids:joined_pub+=1
+                if pid in joint_projects:
+                    selected_pub+=1
+                    doi=(row.get("doi") or row.get("DOI") or "").strip()
+                    if doi: selected_doi+=1; selected_doi_ids.add(doi.lower())
+                    if len(selected_publication_links)<300:
+                        selected_publication_links.append({"project_id":pid,"doi":doi,
+                                               "publication_year":row.get("year") or row.get("publishedYear")})
+            publication_profile={"status":"PARSED",
+                  "file":pub_name,"fields":pub_fields,"all_rows":pub_rows,
+                  "rows_joining_h2020_projects":joined_pub,
+                  "selected_195_project_publication_rows":selected_pub,
+                  "selected_publication_rows_with_doi":selected_doi,
+                  "unique_selected_publication_dois":len(selected_doi_ids),
+                  "up_to_300_selected_publication_id_links":selected_publication_links,
+                  "warning":"CORDIS outcome catalog and project record are the SAME source; not an independent validation sample."}
         projected_edges=set()
         for names in selected_participants.values():
             if len(names)>250:continue  # prevent unusual huge consortium expansion
@@ -233,6 +264,8 @@ def cordis_bulk_stats(blob):
                      "ai_terms":list(ai_terms),"decision_terms":list(decision_terms),
                      "ai_projects":len(ai_projects),"decision_projects":len(decision_projects),
                      "joint_ai_decision_projects":len(joint_projects),
+                     "joint_ai_decision_projects_including_topics_keywords":len(topic_sensitivity_joint),
+                     "selection_added_only_by_topics_keywords":len(topic_sensitivity_joint-joint_projects),
                      "joint_projects_with_participant":len(selected_participants),
                      "joint_projects_with_2plus_organizations":sum(len(v)>1 for v in selected_participants.values()),
                      "unique_joint_project_organizations":len(membership_count),
@@ -250,6 +283,7 @@ def cordis_bulk_stats(blob):
                      "scope":"DRAFT_AFFILIATION_PROJECTION_NOT_CONFIRMED_BURT_BROKERAGE"}
         return {"status":"BOUNDED_BULK_READ_SUCCESS",
                 "project_csv_columns":project_fields,"organization_csv_columns":org_fields,
+                "publication_profile":publication_profile,
                 "exploratory_ai_decision":exploratory,
                 "project_rows":project_rows,"unique_project_ids":len(pids),
                 "organisation_rows":organisation_rows,"unique_participant_organisation_ids":len(orgids),
