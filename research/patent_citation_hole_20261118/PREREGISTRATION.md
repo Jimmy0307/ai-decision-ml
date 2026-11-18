@@ -113,3 +113,7 @@ The report will state whether each sensitivity agrees with the primary verdict. 
 
 The decision rule does not flag a network with no hole, and it detects a 30% suppression.
 
+
+## Amendments (dated; the text above is unchanged)
+
+**A1 — 2026-11-18, before any citation data or result was computed.** After download, `g_cpc_current` was found to label inventive codes `"inventional"`, not `"inventive"`. The code now accepts both spellings, so sensitivity check 4 (inventive codes only) keeps its intended meaning. Implementation change: CPC rows are processed in chunks to limit memory use. Neither change touches the design, group definitions, thresholds or decision rules.

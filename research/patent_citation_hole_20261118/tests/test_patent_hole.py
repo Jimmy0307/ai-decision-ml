@@ -58,6 +58,18 @@ class Basics(unittest.TestCase):
         self.assertTrue(all(ph.DEC_RE.match(x) for x in yes))
         self.assertFalse(any(ph.DEC_RE.match(x) for x in no))
 
+    def test_inventional_label_and_chunks(self):
+        u = ph.Universe(pid=np.array([1, 2, 3], np.int64), year=np.array([2012, 2012, 2013], np.int16))
+        cpc = pd.DataFrame({"patent_id": ['"1"', '"2"', '"3"', '"3"'],
+                            "cpc_group": ['"G06N3/08"', '"G06Q10/0631"', '"G06F16/24"', '"G06N20/00"'],
+                            "cpc_type": ['"inventional"', '"additional"', '"inventional"', '"additional"']})
+        ph.build_memberships(u, [cpc.iloc[:2], cpc.iloc[2:]])
+        self.assertEqual(u.flags["AI"].tolist(), [True, False, True])
+        self.assertEqual(u.flags["AI_inv"].tolist(), [True, False, False])
+        self.assertEqual(u.flags["DEC"].tolist(), [False, True, False])
+        self.assertEqual(u.flags["DEC_inv"].tolist(), [False, False, False])
+        self.assertEqual(u.group_names, ["G06F16", "G06N20", "G06N3", "G06Q10"])
+
     def test_index_and_explode(self):
         u = ph.Universe(pid=np.array([5, 7, 9], np.int64), year=np.array([2010, 2011, 2012], np.int16))
         self.assertEqual(u.index(np.array([7, 8, 9, np.nan])).tolist(), [1, -1, 2, -1])

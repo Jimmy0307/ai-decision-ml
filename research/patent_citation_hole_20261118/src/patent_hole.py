@@ -105,47 +105,49 @@ def load_patents(path: Path) -> Universe:
     return Universe(pid=ids[order], year=yr[order])
 
 
-def build_memberships(u: Universe, cpc: pd.DataFrame) -> None:
-    """cpc: columns patent_id (str), cpc_group (str), cpc_type (str)."""
-    idx = u.index(numeric_ids(cpc.patent_id))
-    keep = idx >= 0
-    grp = cpc.cpc_group.str.strip('"').str.replace(" ", "", regex=False).to_numpy()[keep]
-    inv = (cpc.cpc_type.str.strip('"').str.lower() == "inventive").to_numpy()[keep]
-    idx = idx[keep]
+def build_memberships(u: Universe, cpc) -> None:
+    """cpc: a DataFrame or an iterable of DataFrames with patent_id, cpc_group, cpc_type (str)."""
+    chunks = [cpc] if isinstance(cpc, pd.DataFrame) else cpc
     n = len(u.pid)
-    s = pd.Series(grp)
-    is_ai = s.str.startswith("G06N").to_numpy()
-    is_ai_b = s.str.match(AI_BROAD_RE).to_numpy()
-    is_dec = s.str.match(DEC_RE).to_numpy()
-    is_dec_all = s.str.startswith("G06Q10/").to_numpy()
-    is_biz = (s.str.startswith("G06Q") & ~s.str.startswith("G06Q10/")).to_numpy()
-
-    def flag(mask):
-        f = np.zeros(n, bool)
-        f[idx[mask]] = True
-        return f
-
+    names_flags = ["AI", "DEC", "BIZ", "AI_inv", "DEC_inv", "BIZ_inv", "AI_BROAD", "DEC_ALL"]
+    for k in names_flags:
+        u.flags[k] = np.zeros(n, bool)
+    ref_idx, ref_main, ref_inv = [], [], []
+    rows = 0
+    for ch in chunks:
+        idx = u.index(numeric_ids(ch.patent_id))
+        keep = idx >= 0
+        s = ch.cpc_group.str.strip('"').str.replace(" ", "", regex=False)[keep].reset_index(drop=True)
+        # PatentsView labels inventive codes "inventional" (amendment A1); accept both spellings.
+        inv = ch.cpc_type.str.strip('"').str.lower().isin(["inventive", "inventional"]).to_numpy()[keep]
+        idx = idx[keep]
+        rows += len(ch)
+        is_ai = s.str.startswith("G06N").to_numpy()
+        is_dec = s.str.match(DEC_RE).to_numpy()
+        is_biz = (s.str.startswith("G06Q") & ~s.str.startswith("G06Q10/")).to_numpy()
+        for name, mask in (("AI", is_ai), ("DEC", is_dec), ("BIZ", is_biz),
+                           ("AI_inv", is_ai & inv), ("DEC_inv", is_dec & inv), ("BIZ_inv", is_biz & inv),
+                           ("AI_BROAD", s.str.match(AI_BROAD_RE).to_numpy()),
+                           ("DEC_ALL", s.str.startswith("G06Q10/").to_numpy())):
+            u.flags[name][idx[mask]] = True
+        is_ref = s.str.startswith(REF_CLASSES).to_numpy()
+        ref_idx.append(idx[is_ref].astype(np.int64))
+        ref_main.append(s[is_ref].str.split("/", n=1).str[0].to_numpy())
+        ref_inv.append(inv[is_ref])
+        if not isinstance(cpc, pd.DataFrame):
+            log(f"cpc rows {rows:,}")
+    idx = np.concatenate(ref_idx)
+    main = np.concatenate(ref_main) if ref_main else np.array([], object)
+    inv = np.concatenate(ref_inv)
+    codes, names = pd.factorize(pd.Series(main, dtype=object), sort=True)
+    u.group_names = [str(x) for x in names]
+    G = max(len(names), 1)
     for scheme, sel in (("all", np.ones(len(idx), bool)), ("inv", inv)):
-        sfx = "" if scheme == "all" else "_inv"
-        u.flags["AI" + sfx] = flag(is_ai & sel)
-        u.flags["DEC" + sfx] = flag(is_dec & sel)
-        u.flags["BIZ" + sfx] = flag(is_biz & sel)
-    u.flags["AI_BROAD"] = flag(is_ai_b)
-    u.flags["DEC_ALL"] = flag(is_dec_all)
-
-    main_s = s.str.split("/", n=1).str[0]
-    main = main_s.to_numpy()
-    names = sorted(set(main_s[main_s.str.startswith(REF_CLASSES)]))
-    u.group_names = names
-    code = {g: i for i, g in enumerate(names)}
-    gi = np.array([code.get(m, -1) for m in main], dtype=np.int32)
-    for scheme, sel in (("all", np.ones(len(idx), bool)), ("inv", inv)):
-        m = (gi >= 0) & sel
-        pairs = np.unique(idx[m].astype(np.int64) * len(names) + gi[m])
-        p, g = pairs // len(names), (pairs % len(names)).astype(np.int32)
+        pairs = np.unique(idx[sel] * G + codes[sel])
+        p, g = pairs // G, (pairs % G).astype(np.int32)
         indptr = np.zeros(n + 1, np.int64)
-        np.add.at(indptr, p + 1, 1)
-        u.ref_csr[scheme] = (np.cumsum(indptr), g)
+        indptr[1:] = np.cumsum(np.bincount(p, minlength=n))
+        u.ref_csr[scheme] = (indptr, g)
 
 
 def load_citations(path: Path, u: Universe, first_year: int, chunksize: int):
@@ -407,9 +409,7 @@ def main(argv=None):
     log("provenance", json.dumps(prov))
     u = load_patents(files["g_patent"])
     log(f"utility patents {len(u.pid):,}, years {u.year.min()}-{u.year.max()}")
-    cpc = read_tsv(files["g_cpc_current"], REQUIRED["g_cpc_current"])
-    build_memberships(u, cpc)
-    del cpc
+    build_memberships(u, read_tsv(files["g_cpc_current"], REQUIRED["g_cpc_current"], chunksize=a.chunksize))
     log("memberships", {k: int(v.sum()) for k, v in u.flags.items()}, "ref groups", len(u.group_names))
     y_end = int(u.year.max())
     if (u.year == y_end).sum() < 0.5 * (u.year == y_end - 1).sum():
