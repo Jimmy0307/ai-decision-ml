@@ -2,6 +2,16 @@
 
 > **Research-only / 2026-11-18.** 分支 `research/external-data-mlp-feasibility-20261118`。目前測試為 **dataset feasibility / schema validation / synthetic model**，不是 V9 重分析，也不是證實結構洞／企業 AI 最適解。既有 `main`、V9/V11.1、LEM2、DRSA 一律不覆蓋。
 
+## 最新已執行結果（2026-11-18；以下優先於建立分支時的初期狀態描述）
+
+**正式成果入口**：[GitHub Actions 全部六源實測報告](EXTERNAL_DATA_FINAL_POC_REPORT_20261118.md) · [公開來源與證據等級 JSON](results/FROZEN_SIX_SOURCE_SNAPSHOT_20261118.json) · [實際 GitHub Actions](https://github.com/Jimmy0307/ai-decision-ml/actions/runs/44264544878)
+
+- **CORDIS H2020 完整 ZIP：已在 GitHub Runner 真實下載並解析** 35,389 projects、179,063 organization participations、41,995 organisation IDs；探索性 title+objective AI∩Decision 詞彙交集 195 projects、1,436 個 project-org edges、1,105 機構。**不是 195 件經人審的研究。**
+- **PyPSA 非官方 GridKit AC/DC/Transformer：已在 GitHub Runner 取回三份 CSV**，11,690 distinct edges、8,786 incident buses；不是 CORDIS 的合作網路。
+- OpenAlex／GLEIF／英國真實 OCDS 均已在 GitHub 取得小樣本，但實證識別不足；**SEC 因需提供真實聯絡 User-Agent 而未跑**。
+- GitHub CI offline tests **19/19 PASS**（新 CORDIS 合成 ZIP join 測試加入）；這不是各外部母體已完成確認性假說檢驗。
+- **原始大型 ZIP 不推入公開 repository**；取得指令、source SHA-256、run IDs、資料來源上限及 QA 已記錄；衍生小母體的 public project/organisation IDs 由 GitHub Actions artifact 保留。
+
 ## 先看結論
 
 1. **PyPSA-Eur 實資料已獨立讀取。** 實際自 `PyPSA/pypsa-eur` 下載型 GitHub 內容接口取得 `transformers.csv`（1,039 列）及 `links.csv`（62 列），轉成不含自迴圈的無向去重網路 1,096 邊、2,061 節點、997 個連通分量（最大 10）、32 個局部三角形。這是**缺少 AC `lines.csv` 的局部物理拓樸**，絕不可拿它計算「全歐洲社會／合作結構洞」。原始資料來自 GridKit 對 2022 年 3 月非官方 ENTSO-E 地圖的推導；`transformers` 為推導所得，非官方核准資料。來源原始 GitHub blob SHA 及量化結果在 [real_source_poc_20261118.json](results/real_source_poc_20261118.json)。
