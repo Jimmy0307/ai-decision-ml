@@ -152,5 +152,22 @@
     },
     "human_reliability_study": "PREPARED_NOT_RUN (no human coders); model agreement is not human reliability",
     "public_scope": "aggregate numbers only; evidence text, coding sheets and keys kept local"
+  },
+  "patent_replication_20261119": {
+    "pr": "https://github.com/Jimmy0307/ai-decision-ml/pull/5",
+    "data": "USPTO PatentsView pvgpatdis, downloaded 2026-11-18; raw files local only",
+    "preregistrations": [
+      "PREREGISTRATION.md (a8f3289)",
+      "PREREGISTRATION_V9_MATRIX.md (a6266f7)",
+      "PREREGISTRATION_FULL_SUITE.md (d641256)",
+      "PREREGISTRATION_FIRM_NULL.md (b59fc71)"
+    ],
+    "verdicts": {
+      "technology_level_hole": "HOLE_NOT_SUPPORTED (OE 3.05; 0/6 sensitivity disagree)",
+      "cell_level": "5 convergent mildly depleted cells (O/E 0.70-0.95); 0 replicate across time halves",
+      "firm_level": "PARTIAL in both stratifications (1000 reps each): portfolio explains 85-91% of specialist separation; MIXED low constraint does not survive",
+      "burt_structural_hole": "NOT_CONFIRMED in literature, external-data and patent lines"
+    },
+    "status": "complete; firm null final 2026-11-19 (primary and S-tech)"
   }
 }
