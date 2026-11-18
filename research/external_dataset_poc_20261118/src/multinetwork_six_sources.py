@@ -195,7 +195,7 @@ def gridkit(live):
     layer_result=undirected_layers(by_type)
     return {"status":"UNOFFICIAL_2022_PHYSICAL_GRID_TOPOLOGY",
             "typed_edge_count_in_upstream":{k:len(v) for k,v in by_type.items()},
-            "bus_asset_incidence_two_mode":two_mode(asset_edges,"bus","asset","",""),
+            "bus_asset_incidence_two_mode":two_mode(asset_edges,"bus","asset","BUS:","ASSET:"),
             "physical_bus_network":layer_result,
             "note":"Bus--asset incidence has C_i=1/k_i by construction, but electrical paths are not information or social brokerage.",
             "verdict":"TOPOLOGICAL_CONTROL_NOT_SOCIAL_BURT"}
