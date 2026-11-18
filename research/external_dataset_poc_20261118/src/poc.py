@@ -140,12 +140,27 @@ def cordis_bulk_stats(blob):
             delim=";" if first.count(";")>first.count(",") else ","
             from itertools import chain
             return csv.DictReader(chain([first],wrapper),delimiter=delim)
+        # Exploratory text keywords, not validated AI/Decision concept annotations.
+        ai_terms=("artificial intelligence","machine learning","deep learning","neural network","predictive analytics")
+        decision_terms=("decision making","decision-making","decision support","decision process","decision maker","decision-maker")
         pids=set(); project_rows=0
+        ai_projects=set(); decision_projects=set(); joint_projects=set()
+        project_fields=reader("project.csv").fieldnames
+        org_fields=reader("organization.csv").fieldnames
         for row in reader("project.csv"):
             project_rows+=1
             pid=(row.get("id") or row.get("projectID") or "").strip()
-            if pid:pids.add(pid)
+            if pid:
+                pids.add(pid)
+                combined=" ".join(str(row.get(k) or "") for k in ("title","objective","topic")).lower()
+                hit_ai=any(term in combined for term in ai_terms)
+                hit_de=any(term in combined for term in decision_terms)
+                if hit_ai:ai_projects.add(pid)
+                if hit_de:decision_projects.add(pid)
+                if hit_ai and hit_de:joint_projects.add(pid)
         organisation_rows=0; orgids=set(); source_projectids=set()
+        selected_participants=defaultdict(set)
+        selected_roles=defaultdict(set)
         project_members=defaultdict(int); matched_projects=0; valid_orgids=0; coordinator_roles=0
         for row in reader("organization.csv"):
             organisation_rows+=1
@@ -155,9 +170,51 @@ def cordis_bulk_stats(blob):
             if pid:
                 source_projectids.add(pid); project_members[pid]+=1
                 if pid in pids: matched_projects+=1
-            if oid:orgids.add(oid); valid_orgids+=1
+            if oid:
+                orgids.add(oid); valid_orgids+=1
+                if pid in joint_projects:
+                    selected_participants[pid].add(oid)
+                    selected_roles[oid].add(role)
             if "coordinator" in role:coordinator_roles+=1
+        # Induced shared-consortium *affiliation projection*: NOT observed bilateral
+        # research communication or an independently validated Burt network.
+        projected_edges=set()
+        for names in selected_participants.values():
+            if len(names)>250:continue  # prevent unusual huge consortium expansion
+            for aa,bb in itertools.combinations(sorted(names),2):
+                projected_edges.add((aa,bb))
+        projected_adj=defaultdict(set)
+        for aa,bb in projected_edges:
+            projected_adj[aa].add(bb);projected_adj[bb].add(aa)
+        proj_visited=set();sizes=[]
+        for start in projected_adj:
+            if start in proj_visited:continue
+            dq=deque([start]);proj_visited.add(start);size=0
+            while dq:
+                x=dq.popleft();size+=1
+                for y in projected_adj[x]:
+                    if y not in proj_visited:
+                        proj_visited.add(y);dq.append(y)
+            sizes.append(size)
+        membership_count=defaultdict(int)
+        for members in selected_participants.values():
+            for org in members:membership_count[org]+=1
+        exploratory={"definition":"UNVALIDATED_STRING_MATCHING_IN_TITLE_OBJECTIVE_TOPIC",
+                     "ai_terms":list(ai_terms),"decision_terms":list(decision_terms),
+                     "ai_projects":len(ai_projects),"decision_projects":len(decision_projects),
+                     "joint_ai_decision_projects":len(joint_projects),
+                     "joint_projects_with_participant":len(selected_participants),
+                     "joint_projects_with_2plus_organizations":sum(len(v)>1 for v in selected_participants.values()),
+                     "unique_joint_project_organizations":len(membership_count),
+                     "organizations_in_two_or_more_joint_projects":sum(x>=2 for x in membership_count.values()),
+                     "consortium_projected_unique_edges":len(projected_edges),
+                     "projected_nonisolated_organizations":len(projected_adj),
+                     "projected_connected_components":len(sizes),
+                     "projected_largest_component":max(sizes,default=0),
+                     "scope":"DRAFT_AFFILIATION_PROJECTION_NOT_CONFIRMED_BURT_BROKERAGE"}
         return {"status":"BOUNDED_BULK_READ_SUCCESS",
+                "project_csv_columns":project_fields,"organization_csv_columns":org_fields,
+                "exploratory_ai_decision":exploratory,
                 "project_rows":project_rows,"unique_project_ids":len(pids),
                 "organisation_rows":organisation_rows,"unique_participant_organisation_ids":len(orgids),
                 "organisation_rows_with_matched_project_id":matched_projects,
