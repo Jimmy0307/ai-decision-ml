@@ -233,7 +233,8 @@ def gridkit(live):
         asset_edges.append({"bus":"bus:"+str(x["v"]),"asset":asset})
     layer_result=undirected_layers(by_type)
     bus_asset_aff=[{"project_id":x["bus"],"organisation_id":x["asset"]} for x in asset_edges]
-    asset_proj,asset_overlap,_=project_affiliations([{"project_id":x["asset"],"organisation_id":x["bus"]} for x in asset_edges])
+    # Line graph: assets are linked when they share a bus, so buses play the "project" role.
+    asset_proj,asset_overlap,_=project_affiliations(bus_asset_aff)
     return {"status":"UNOFFICIAL_2022_PHYSICAL_GRID_TOPOLOGY",
             "typed_edge_count_in_upstream":{k:len(v) for k,v in by_type.items()},
             "bus_asset_incidence_two_mode":two_mode(asset_edges,"bus","asset","BUS:","ASSET:"),
