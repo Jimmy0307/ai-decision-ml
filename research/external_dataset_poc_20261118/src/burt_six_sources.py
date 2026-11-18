@@ -289,11 +289,19 @@ def other_sources_round(live):
             result["OpenAlex"][which]=digest_graph("shared_paper_"+field,graph,sample_betweenness=False)
     uk=src.get("OCDS_REAL_UK",{}).get("parsed") or {}
     # An unconnected single buyer does not establish a brokerage network.
-    edge_pairs=uk.get("real_buyer_supplier_edges") or []
-    result["OCDS"]={"real_notices":uk.get("releases_in_package"),"buyer_supplier_edges":len(edge_pairs),
+    edge_pairs=uk.get("verified_scheme_id_buyer_supplier_edges") or []
+    seller_by_buyer=[{"project_id":str(e[0]),"organisation_id":str(e[1])} for e in edge_pairs]
+    g_ocds=build_graph([("buyer:"+str(e[0]),"supplier:"+str(e[1])) for e in edge_pairs])
+    g_supplier,_,_=project_affiliations(seller_by_buyer)
+    result["OCDS"]={"real_notices":uk.get("releases_in_package"),"real_awards":uk.get("award_count"),
+                    "buyer_supplier_edges":len(edge_pairs),
+                    "releases_with_stable_buyer_id":uk.get("notices_with_global_buyer_id"),
+                    "buyer_supplier_two_mode":digest_graph("recorded_award_buyer_supplier_affiliation",g_ocds,sample_betweenness=False) if edge_pairs else None,
+                    "supplier_projection":digest_graph("common_buyer_projection_NOT_supplier_cooperation",g_supplier,sample_betweenness=False) if g_supplier else None,
                     "schema_fictional_excluded":True,
-                    "status":"ONLY_BOUNDED_UK_REAL_NOTICE","verdict":"NO_IDENTIFIABLE_BROKERAGE_NETWORK",
-                    "note":"Repeated buyer-supplier contracting and actual bids would be required; 1 notice is not population."}
+                    "status":"BOUNDED_FIXED_MONTH_UK_AWARD_NOTICES",
+                    "verdict":"OBSERVED_AWARDS_NOT_INDEPENDENT_BROKERAGE",
+                    "note":"Buyer-supplier awards and same-buyer supplier projection do NOT imply competitor collaboration; failed bidder identities/costs missing."}
     gleif=src.get("GLEIF",{}).get("parsed") or {}
     result["GLEIF"]={"sample_records":1 if gleif.get("lei") else 0,
                      "verified_parent_edges":0,"status":"LEI_PARENT_RELATION_NOT_VERIFIED",
