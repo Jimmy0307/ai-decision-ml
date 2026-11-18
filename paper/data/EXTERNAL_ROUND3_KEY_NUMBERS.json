@@ -1,0 +1,272 @@
+{
+  "schema": "ai-decision-round3-key-numbers/1.0",
+  "source_run": "https://github.com/Jimmy0307/ai-decision-ml/actions/runs/44275890175",
+  "source_head": "e6d2b27",
+  "source_artifacts": [
+    "external-dataset-live-probe",
+    "gleif-rr-cdf-bulk-profile"
+  ],
+  "evidence": "SOURCE_DERIVED_EXPLORATORY_NOT_HYPOTHESIS_CONFIRMATION",
+  "overall": "NO_SOURCE_PASSES_INDEPENDENT_RELATIONAL_AND_VALIDATION_GATES",
+  "multinetwork_overall": "NO_CONFIRMATORY_BURT_OR_SHARED_SEMANTIC_MULTIPLEX_YET",
+  "CORDIS": {
+    "selection": "195 projects from unvalidated title+objective keyword selection; alternative 233 projects including topics/keywords",
+    "two_mode": {
+      "project_org_edges": 1436,
+      "unique_orgs": 1105,
+      "organisation_degree": {
+        "n": 1105,
+        "min": 1,
+        "median": 1,
+        "max": 9,
+        "mean": 1.2995475113122172
+      },
+      "triangles_in_bipartite": 0,
+      "uniform_strict_bipartite_constraint": "1/k (indirect terms 0), cannot establish Burt brokerage"
+    },
+    "one_mode_projection": {
+      "nodes": 1049,
+      "edges": 12181,
+      "degree": {
+        "n": 1049,
+        "min": 1,
+        "median": 17,
+        "max": 135,
+        "mean": 23.224022878932317
+      },
+      "constraint": {
+        "n": 1049,
+        "min": 0.024007252684227664,
+        "median": 0.1799112213205208,
+        "max": 1.125,
+        "mean": 0.2050916458662324
+      },
+      "effective_size": {
+        "n": 1049,
+        "min": 1.0,
+        "median": 1.0,
+        "max": 115.35555555555555,
+        "mean": 5.037367150119718
+      },
+      "n_with_indirect_excess": 1034
+    },
+    "within_project_triads_created_by_projection": 102660,
+    "recurring_edges_two_plus_projects": 156,
+    "backbone_two_plus_projects": {
+      "nodes": 87,
+      "edges": 156,
+      "constraint": {
+        "n": 87,
+        "min": 0.203125,
+        "median": 0.925925925925926,
+        "max": 1.125,
+        "mean": 0.7509705069348984
+      }
+    },
+    "period_edge_overlap": {
+      "2014-2017__2018-2020": {
+        "overlapping_edges": 2,
+        "jaccard": 0.00024606299212598425
+      },
+      "2014-2017__other": {
+        "overlapping_edges": 7,
+        "jaccard": 0.0013938669852648347
+      },
+      "2014-2017__unknown": {
+        "overlapping_edges": 0,
+        "jaccard": 0.0
+      },
+      "2018-2020__other": {
+        "overlapping_edges": 104,
+        "jaccard": 0.009184845005740528
+      },
+      "2018-2020__unknown": {
+        "overlapping_edges": 0,
+        "jaccard": 0.0
+      },
+      "other__unknown": {
+        "overlapping_edges": 0,
+        "jaccard": 0.0
+      }
+    },
+    "degree_preserving_null": {
+      "reps": 49,
+      "bh_q_below_point05": 0,
+      "caveat": "Post-selected top candidates; p-values exploratory only; degree-tolerance conditioning and 49 permutations have weak power, no confirmatory inference.",
+      "tested": [
+        {
+          "observed_constraint": 0.024007252684227664,
+          "observed_projected_degree": 135,
+          "valid_degree_matched_nulls": 28,
+          "null_constraint_median_degree_matched": 0.024382914825678153,
+          "empirical_lower_tail_p": 0.4827586206896552,
+          "bh_q": 0.8045977011494253
+        },
+        {
+          "observed_constraint": 0.029283008389994484,
+          "observed_projected_degree": 122,
+          "valid_degree_matched_nulls": 3,
+          "null_constraint_median_degree_matched": 0.033585618508424044,
+          "empirical_lower_tail_p": null,
+          "bh_q": null
+        },
+        {
+          "observed_constraint": 0.02949716913224381,
+          "observed_projected_degree": 116,
+          "valid_degree_matched_nulls": 19,
+          "null_constraint_median_degree_matched": 0.030604642250645603,
+          "empirical_lower_tail_p": null,
+          "bh_q": null
+        },
+        {
+          "observed_constraint": 0.030516641090505035,
+          "observed_projected_degree": 102,
+          "valid_degree_matched_nulls": 33,
+          "null_constraint_median_degree_matched": 0.03186750407538485,
+          "empirical_lower_tail_p": 0.4117647058823529,
+          "bh_q": 0.8045977011494253
+        },
+        {
+          "observed_constraint": 0.03117392625992327,
+          "observed_projected_degree": 107,
+          "valid_degree_matched_nulls": 15,
+          "null_constraint_median_degree_matched": 0.02693477933489389,
+          "empirical_lower_tail_p": null,
+          "bh_q": null
+        },
+        {
+          "observed_constraint": 0.03300853077018875,
+          "observed_projected_degree": 106,
+          "valid_degree_matched_nulls": 21,
+          "null_constraint_median_degree_matched": 0.029669027491490516,
+          "empirical_lower_tail_p": 0.8636363636363636,
+          "bh_q": 0.8636363636363636
+        },
+        {
+          "observed_constraint": 0.03313401945462411,
+          "observed_projected_degree": 92,
+          "valid_degree_matched_nulls": 17,
+          "null_constraint_median_degree_matched": 0.031824161186367016,
+          "empirical_lower_tail_p": null,
+          "bh_q": null
+        },
+        {
+          "observed_constraint": 0.033181907617394465,
+          "observed_projected_degree": 102,
+          "valid_degree_matched_nulls": 18,
+          "null_constraint_median_degree_matched": 0.028968333078354166,
+          "empirical_lower_tail_p": null,
+          "bh_q": null
+        },
+        {
+          "observed_constraint": 0.033363904488129655,
+          "observed_projected_degree": 104,
+          "valid_degree_matched_nulls": 28,
+          "null_constraint_median_degree_matched": 0.030718527686926372,
+          "empirical_lower_tail_p": 0.7931034482758621,
+          "bh_q": 0.8636363636363636
+        },
+        {
+          "observed_constraint": 0.033454265904457485,
+          "observed_projected_degree": 107,
+          "valid_degree_matched_nulls": 14,
+          "null_constraint_median_degree_matched": 0.032342793743006616,
+          "empirical_lower_tail_p": null,
+          "bh_q": null
+        },
+        {
+          "observed_constraint": 0.033513924421283266,
+          "observed_projected_degree": 94,
+          "valid_degree_matched_nulls": 32,
+          "null_constraint_median_degree_matched": 0.03542799732047931,
+          "empirical_lower_tail_p": 0.42424242424242425,
+          "bh_q": 0.8045977011494253
+        },
+        {
+          "observed_constraint": 0.03400751902384198,
+          "observed_projected_degree": 101,
+          "valid_degree_matched_nulls": 4,
+          "null_constraint_median_degree_matched": 0.037020830405087336,
+          "empirical_lower_tail_p": null,
+          "bh_q": null
+        }
+      ]
+    },
+    "candidate_stability": {
+      "two_or_more_common_projects": 7,
+      "max_project_size_20": 5,
+      "with_topics_keywords": 7,
+      "early_2014_2017": 3,
+      "late_2018_2020": 11
+    },
+    "verdict": "NO_CONFIRMED_BURT_BROKER_ONLY_PROJECTION_DIAGNOSTICS"
+  },
+  "GLEIF": {
+    "snapshot_date": "2026-08-10",
+    "official_url": "https://leidata.gleif.org/api/v1/concatenated-files/rr/get/41888/zip",
+    "zip_bytes": 37245130,
+    "sha256": "39118a8963ac04ba02812d99aa272095b4001b52c75b211bfad5f99ace0ee7f8",
+    "record_rows": 663449,
+    "status_values": {
+      "ACTIVE": 481247,
+      "INACTIVE": 125124,
+      "NULL": 57078
+    },
+    "active_direct_edges": 125538,
+    "active_ultimate_edges": 131784,
+    "direct_ultimate_overlap": 88686,
+    "undirected_parent_union": {
+      "nodes_with_edge": 182135,
+      "edges": 168635,
+      "connected_components": 41734,
+      "largest_component_nodes": 1044,
+      "nodes_degree_2_to_100": 53458,
+      "nodes_degree_over_100": 96
+    },
+    "bounded_ego_sample": {
+      "sample_size": 1500,
+      "seed": 20261118,
+      "max_ego_degree": 100,
+      "constraint": {
+        "n": 1500,
+        "min": 0.01190476190476192,
+        "median": 0.5394696221873416,
+        "max": 1.125
+      },
+      "effective_size": {
+        "n": 1500,
+        "min": 1.0,
+        "median": 1.0,
+        "max": 90.67391304347827
+      },
+      "not_a_population_estimate": "Excludes ego degrees 0,1 and >100; directed legal relation converted to undirected; not confirmatory social brokerage."
+    },
+    "verdict": "LEGAL_CONSOLIDATION_GRAPH_VALID_SOCIAL_BURT_NOT_IDENTIFIED",
+    "warning": "Source snapshot includes relationship records, not reporting exceptions, private non-LEI parents, social ties or firm decision utility."
+  },
+  "OpenAlex": {
+    "works": 8,
+    "verdict": "UNCONFIRMED_IDENTITY_AND_OUTCOME"
+  },
+  "OCDS": {
+    "buyer_supplier_edges": 0,
+    "verdict": "OBSERVED_AWARDS_NOT_INDEPENDENT_BROKERAGE"
+  },
+  "SEC": {
+    "status": "NOT_FETCHED_VALID_CONTACT_REQUIRED",
+    "relational_edges": 0,
+    "verdict": "NOT_APPLICABLE_FINANCIAL_FACTS_NOT_SOCIAL_NETWORK"
+  },
+  "PyPSA": {
+    "status": "REAL_UNOFFICIAL_PHYSICAL_TOPOLOGY",
+    "verdict": "DIAGNOSTICS_ONLY_NOT_SOCIAL_BURT",
+    "known_issue": "asset_one_mode_shared_bus_line_graph in this run was the bus projection (8786 nodes / 11690 edges); fixed in 5599a76, rerun needed"
+  },
+  "cross_source_multiplex": "NOT_CONSTRUCTED_BECAUSE_COMMON_ENTITY_IDS_DO_NOT_PASS_RESOLUTION",
+  "methods_not_portable": [
+    "V9 10x12 family pair null/hypergeometric/q; no identical sample frame",
+    "limitation claims and source-text semantic classes; not measured by organizational edge tables",
+    "Gould-Fernandez groups not established uniformly across all six sources",
+    "causal brokerage / innovation outcome or leader-follower equilibria not identifiable"
+  ]
+}
