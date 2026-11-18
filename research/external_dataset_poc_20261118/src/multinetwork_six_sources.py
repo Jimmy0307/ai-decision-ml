@@ -88,6 +88,35 @@ def undirected_layers(layers, top=6):
             "shared_edges_across_layers":sum(v>1 for v in counts.values()),
             "disclaimer":"Layers must share node identity AND edge semantic for cross-layer brokerage. Intersection alone is not evidence of mediation."}
 
+def right_projection_from_affiliations(rows):
+    """Project/project projection through common organizations (reverse one-mode)."""
+    entities=defaultdict(set)
+    for row in rows:
+        a=row.get("project_id")
+        b=row.get("organisation_id")
+        if a and b:
+            entities[str(b)].add(str(a))
+    shared=Counter()
+    for pids in entities.values():
+        shared.update(combinations(sorted(pids),2))
+    return build_graph(shared.keys()),shared
+
+def higher_order_affiliation(rows):
+    """Summarize native project hyperedges without equating co-membership to ties."""
+    members=defaultdict(set)
+    for row in rows:
+        pid=row.get("project_id");oid=row.get("organisation_id")
+        if pid and oid:members[str(pid)].add(str(oid))
+    sizes=[len(v) for v in members.values()]
+    triangles_created_by_clique_projection=sum(math.comb(k,3) for k in sizes if k>=3)
+    return {"projects":len(members),
+            "project_size":describe(sizes),
+            "projects_2plus_members":sum(k>=2 for k in sizes),
+            "projects_3plus_members":sum(k>=3 for k in sizes),
+            "projects_4plus_members":sum(k>=4 for k in sizes),
+            "within_project_triads_created_in_projection_counting_repeat_triples":triangles_created_by_clique_projection,
+            "scope":"HYPEREDGE_MEMBERSHIP_COUNTS_NOT_OBSERVED_TRIADIC_INFORMATION_FLOWS"}
+
 def cordis(live):
     p=(live.get("cordis_bulk_profile") or {}).get("exploratory_ai_decision") or {}
     aff=p.get("derived_affiliations") or []
@@ -98,6 +127,7 @@ def cordis(live):
         role=(item.get("role") or "").lower()
         type_rows["coordinator" if "coordinator" in role else "non_coordinator"].append(item)
     g,edges,profile=project_affiliations(aff)
+    project_graph,project_shared=right_projection_from_affiliations(aff)
     repeat_graph,repeat_edges,rep_meta=project_affiliations(aff,min_shared=2)
     wa=weighted_constraint(edges)
     unweighted=score_graph(g)
@@ -126,6 +156,9 @@ def cordis(live):
           name:two_mode(rows,"project_id","organisation_id")
           for name,rows in type_rows.items()},
       "one_mode_unweighted":sgraph_stats(g),
+      "reverse_one_mode_shared_participant_project_graph":sgraph_stats(project_graph),
+      "project_pairs_sharing_2plus_organizations":sum(x>=2 for x in project_shared.values()),
+      "native_higher_order_consortium_hyperedges":higher_order_affiliation(aff),
       "one_mode_shared_project_count_weighted_constraint":describe(list(wa.values())),
       "difference_absolute_weighted_vs_binary_constraint":describe(list(diff.values())),
       "at_least_two_projects_backbone":sgraph_stats(repeat_graph),
@@ -147,7 +180,10 @@ def openalex(live):
         rows=[{"work":w["work_id"],"entity":ent} for w in works
               for ent in w.get(key,[]) if w.get("work_id")]
         graph,proj,_=project_affiliations([{"project_id":x["work"],"organisation_id":x["entity"]} for x in rows])
+        work_graph,work_overlap=right_projection_from_affiliations([{"project_id":x["work"],"organisation_id":x["entity"]} for x in rows])
         out["layers"][key]={"two_mode":two_mode(rows,"work","entity","W:",prefix),
+                            "reverse_one_mode_shared_entity_work_graph":sgraph_stats(work_graph),
+                            "work_pairs_sharing_two_plus_entities":sum(v>=2 for v in work_overlap.values()),
                             "one_mode":sgraph_stats(graph),
                             "repeated_cooccurrence_edges":sum(v>1 for v in proj.values())}
     authors_in_year=defaultdict(list)
@@ -171,12 +207,15 @@ def ocds(live):
     pairs=item.get("verified_scheme_id_buyer_supplier_edges") or []
     rows=[{"buyer":str(a),"supplier":str(b)} for a,b in pairs]
     buyer_supplier=two_mode(rows,"buyer","supplier","BUYER:","SUPPLIER:")
-    p=project_affiliations([{"project_id":x["buyer"],"organisation_id":x["supplier"]} for x in rows])
+    purchase_aff=[{"project_id":x["buyer"],"organisation_id":x["supplier"]} for x in rows]
+    p=project_affiliations(purchase_aff)
+    buyer_proj, buyer_overlap=right_projection_from_affiliations(purchase_aff)
     return {"status":"FIXED_WINDOW_BOUNDED_UK_AWARD_SAMPLE",
             "real_notice_count":item.get("releases_in_package"),
             "award_count":item.get("award_count"),
             "two_mode_buyer_supplier":buyer_supplier,
             "supplier_one_mode_common_buyer":sgraph_stats(p[0]),
+            "buyer_one_mode_common_supplier":sgraph_stats(buyer_proj),
             "note":"Common buyer ≠ supplier cooperation; award ≠ bid; party-ID missingness can remove most edges.",
             "verdict":"NO_VALIDATED_INFO_BROKERAGE"}
 
@@ -193,9 +232,12 @@ def gridkit(live):
         asset_edges.append({"bus":"bus:"+str(x["u"]),"asset":asset})
         asset_edges.append({"bus":"bus:"+str(x["v"]),"asset":asset})
     layer_result=undirected_layers(by_type)
+    bus_asset_aff=[{"project_id":x["bus"],"organisation_id":x["asset"]} for x in asset_edges]
+    asset_proj,asset_overlap=project_affiliations([{"project_id":x["asset"],"organisation_id":x["bus"]} for x in asset_edges])
     return {"status":"UNOFFICIAL_2022_PHYSICAL_GRID_TOPOLOGY",
             "typed_edge_count_in_upstream":{k:len(v) for k,v in by_type.items()},
             "bus_asset_incidence_two_mode":two_mode(asset_edges,"bus","asset","BUS:","ASSET:"),
+            "asset_one_mode_shared_bus_line_graph":sgraph_stats(asset_proj),
             "physical_bus_network":layer_result,
             "note":"Bus--asset incidence has C_i=1/k_i by construction, but electrical paths are not information or social brokerage.",
             "verdict":"TOPOLOGICAL_CONTROL_NOT_SOCIAL_BURT"}
