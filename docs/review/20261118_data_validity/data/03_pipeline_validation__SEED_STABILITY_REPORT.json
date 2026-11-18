@@ -1,0 +1,37 @@
+{
+  "seeds": 20,
+  "core_size_distribution": {
+    "32": 10,
+    "33": 5,
+    "31": 5
+  },
+  "core_composition_distribution": {
+    "{\"DEPLETED\": 17, \"ENRICHED\": 15}": 7,
+    "{\"DEPLETED\": 17, \"ENRICHED\": 16}": 5,
+    "{\"DEPLETED\": 16, \"ENRICHED\": 16}": 3,
+    "{\"DEPLETED\": 16, \"ENRICHED\": 15}": 5
+  },
+  "cells_always_in_core": 31,
+  "always_in_core_by_direction": {
+    "ENRICHED": 15,
+    "DEPLETED": 16
+  },
+  "cells_sometimes_in_core": [
+    [
+      "COORDINATION_EXECUTION x GENERAL_DECISION_PROCESS",
+      0.4,
+      "True"
+    ],
+    [
+      "HUMAN_AUGMENTATION x RISK_ASSESSMENT",
+      0.6,
+      "False"
+    ]
+  ],
+  "official_core_cells_not_always_in_core": [
+    [
+      "COORDINATION_EXECUTION x GENERAL_DECISION_PROCESS",
+      0.4
+    ]
+  ]
+}

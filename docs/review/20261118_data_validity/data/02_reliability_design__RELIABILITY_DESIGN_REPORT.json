@@ -1,0 +1,191 @@
+{
+  "marginals_LEFT": {
+    "COORDINATION_EXECUTION": 420,
+    "EVALUATION_ASSESSMENT": 504,
+    "EXPLANATION_ASSURANCE": 614,
+    "GENERAL_REASONING_SYSTEMS": 32,
+    "GENERATION_SYNTHESIS": 565,
+    "HUMAN_AUGMENTATION": 317,
+    "NONE_OR_AMBIGUOUS": 2012,
+    "PERCEPTION_EXTRACTION": 125,
+    "PREDICTION_RISK_ESTIMATION": 1160,
+    "RECOMMENDATION_OPTIMIZATION": 689,
+    "RETRIEVAL_SYNTHESIS": 61
+  },
+  "key_rows_LEFT": [
+    {
+      "true_alpha": 0.667,
+      "n_items": 150,
+      "mean_alpha": 0.6734,
+      "sd": 0.0431,
+      "ci95_halfwidth": 0.0845,
+      "P_estimate_ge_0.667": 0.566,
+      "P_estimate_ge_0.80": 0.001,
+      "P_lower95_ge_0.667": 0.027
+    },
+    {
+      "true_alpha": 0.667,
+      "n_items": 200,
+      "mean_alpha": 0.6731,
+      "sd": 0.0384,
+      "ci95_halfwidth": 0.0753,
+      "P_estimate_ge_0.667": 0.585,
+      "P_estimate_ge_0.80": 0.0,
+      "P_lower95_ge_0.667": 0.031
+    },
+    {
+      "true_alpha": 0.667,
+      "n_items": 250,
+      "mean_alpha": 0.6736,
+      "sd": 0.033,
+      "ci95_halfwidth": 0.0648,
+      "P_estimate_ge_0.667": 0.577,
+      "P_estimate_ge_0.80": 0.0,
+      "P_lower95_ge_0.667": 0.041
+    },
+    {
+      "true_alpha": 0.8,
+      "n_items": 150,
+      "mean_alpha": 0.8002,
+      "sd": 0.0369,
+      "ci95_halfwidth": 0.0723,
+      "P_estimate_ge_0.667": 1.0,
+      "P_estimate_ge_0.80": 0.513,
+      "P_lower95_ge_0.667": 0.942
+    },
+    {
+      "true_alpha": 0.8,
+      "n_items": 200,
+      "mean_alpha": 0.8028,
+      "sd": 0.0323,
+      "ci95_halfwidth": 0.0634,
+      "P_estimate_ge_0.667": 1.0,
+      "P_estimate_ge_0.80": 0.54,
+      "P_lower95_ge_0.667": 0.984
+    },
+    {
+      "true_alpha": 0.8,
+      "n_items": 250,
+      "mean_alpha": 0.8014,
+      "sd": 0.0284,
+      "ci95_halfwidth": 0.0556,
+      "P_estimate_ge_0.667": 1.0,
+      "P_estimate_ge_0.80": 0.529,
+      "P_lower95_ge_0.667": 0.997
+    }
+  ],
+  "marginals_RIGHT": {
+    "ALLOCATION_PLANNING": 568,
+    "EVALUATION_SELECTION": 188,
+    "EXECUTION_COORDINATION": 256,
+    "GENERAL_DECISION_PROCESS": 153,
+    "GOVERNANCE_OVERSIGHT": 956,
+    "HUMAN_REVIEW_ACCOUNTABILITY": 318,
+    "INFORMATION_ACQUISITION": 638,
+    "INFORMATION_SYNTHESIS": 58,
+    "NONE_OR_AMBIGUOUS": 2235,
+    "OPTION_GENERATION": 8,
+    "PREDICTION_DIAGNOSIS": 806,
+    "PROBLEM_FRAMING": 21,
+    "RISK_ASSESSMENT": 294
+  },
+  "key_rows_RIGHT": [
+    {
+      "true_alpha": 0.667,
+      "n_items": 150,
+      "mean_alpha": 0.6697,
+      "sd": 0.0437,
+      "ci95_halfwidth": 0.0856,
+      "P_estimate_ge_0.667": 0.533,
+      "P_estimate_ge_0.80": 0.001,
+      "P_lower95_ge_0.667": 0.029
+    },
+    {
+      "true_alpha": 0.667,
+      "n_items": 200,
+      "mean_alpha": 0.6664,
+      "sd": 0.037,
+      "ci95_halfwidth": 0.0724,
+      "P_estimate_ge_0.667": 0.486,
+      "P_estimate_ge_0.80": 0.0,
+      "P_lower95_ge_0.667": 0.022
+    },
+    {
+      "true_alpha": 0.667,
+      "n_items": 250,
+      "mean_alpha": 0.6674,
+      "sd": 0.0344,
+      "ci95_halfwidth": 0.0674,
+      "P_estimate_ge_0.667": 0.511,
+      "P_estimate_ge_0.80": 0.0,
+      "P_lower95_ge_0.667": 0.032
+    },
+    {
+      "true_alpha": 0.8,
+      "n_items": 150,
+      "mean_alpha": 0.7971,
+      "sd": 0.0376,
+      "ci95_halfwidth": 0.0738,
+      "P_estimate_ge_0.667": 1.0,
+      "P_estimate_ge_0.80": 0.485,
+      "P_lower95_ge_0.667": 0.932
+    },
+    {
+      "true_alpha": 0.8,
+      "n_items": 200,
+      "mean_alpha": 0.7987,
+      "sd": 0.0308,
+      "ci95_halfwidth": 0.0605,
+      "P_estimate_ge_0.667": 1.0,
+      "P_estimate_ge_0.80": 0.505,
+      "P_lower95_ge_0.667": 0.988
+    },
+    {
+      "true_alpha": 0.8,
+      "n_items": 250,
+      "mean_alpha": 0.7974,
+      "sd": 0.0284,
+      "ci95_halfwidth": 0.0556,
+      "P_estimate_ge_0.667": 1.0,
+      "P_estimate_ge_0.80": 0.464,
+      "P_lower95_ge_0.667": 0.995
+    }
+  ],
+  "sample": {
+    "seed": 20261118,
+    "pool_after_excluding_prior_audit": 6449,
+    "excluded_prior_audit_records": 50,
+    "n": 200,
+    "by_stratum": {
+      "FULLY_MAPPED": 140,
+      "FULLY_UNRESOLVED": 20,
+      "PARTIALLY_MAPPED": 40
+    },
+    "fully_mapped_by_ai_family": {
+      "GENERATION_SYNTHESIS": 15,
+      "COORDINATION_EXECUTION": 14,
+      "PERCEPTION_EXTRACTION": 9,
+      "EXPLANATION_ASSURANCE": 15,
+      "EVALUATION_ASSESSMENT": 15,
+      "RECOMMENDATION_OPTIMIZATION": 17,
+      "RETRIEVAL_SYNTHESIS": 9,
+      "PREDICTION_RISK_ESTIMATION": 27,
+      "GENERAL_REASONING_SYSTEMS": 8,
+      "HUMAN_AUGMENTATION": 11
+    },
+    "decision_families_covered": {
+      "GOVERNANCE_OVERSIGHT": 40,
+      "NONE": 45,
+      "INFORMATION_SYNTHESIS": 6,
+      "HUMAN_REVIEW_ACCOUNTABILITY": 17,
+      "INFORMATION_ACQUISITION": 22,
+      "ALLOCATION_PLANNING": 20,
+      "GENERAL_DECISION_PROCESS": 6,
+      "PREDICTION_DIAGNOSIS": 21,
+      "EVALUATION_SELECTION": 7,
+      "RISK_ASSESSMENT": 6,
+      "EXECUTION_COORDINATION": 10
+    },
+    "documents": 158
+  }
+}

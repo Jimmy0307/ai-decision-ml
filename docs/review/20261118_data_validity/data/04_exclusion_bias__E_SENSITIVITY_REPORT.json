@@ -1,0 +1,69 @@
+{
+  "triangulation_all_candidates": {
+    "records": 2703,
+    "document_edges": 1742,
+    "DEPLETED_CORE|opposite_direction_q05": 0,
+    "DEPLETED_CORE|same_direction": 13,
+    "DEPLETED_CORE|same_direction_q05": 11,
+    "ENRICHED_CORE|opposite_direction_q05": 0,
+    "ENRICHED_CORE|same_direction": 14,
+    "ENRICHED_CORE|same_direction_q05": 8
+  },
+  "triangulation_non_strict_only": {
+    "records": 1978,
+    "document_edges": 1374,
+    "DEPLETED_CORE|opposite_direction_q05": 0,
+    "DEPLETED_CORE|same_direction": 13,
+    "DEPLETED_CORE|same_direction_q05": 11,
+    "ENRICHED_CORE|opposite_direction_q05": 0,
+    "ENRICHED_CORE|same_direction": 14,
+    "ENRICHED_CORE|same_direction_q05": 8
+  },
+  "same_term_removed": {
+    "records_removed": 184,
+    "raw_records": 2941,
+    "document_edges": 2100,
+    "summary": {
+      "cells": 120,
+      "edges": 2100,
+      "raw_records": 2941,
+      "observed_nonzero": 104,
+      "main_q05": 47,
+      "exact_q05": 47,
+      "raw_q05": 55,
+      "doc_q05": 30,
+      "structural_core": 30,
+      "full_core": 30,
+      "full_core_by_direction": {
+        "ENRICHED": 15,
+        "DEPLETED": 15
+      },
+      "doc_null_diagnostics": {
+        "attempts": 21843600,
+        "accepted": 10137083,
+        "acceptance_rate": 0.46407565602739476,
+        "documents_touched": 309,
+        "exchangeable_documents": 429,
+        "degrees_preserved": true
+      }
+    },
+    "core_vs_reimpl_baseline_same_seeds": {
+      "gained": [],
+      "lost": [
+        "GENERATION_SYNTHESIS x PREDICTION_DIAGNOSIS (DEPLETED)",
+        "PREDICTION_RISK_ESTIMATION x GENERAL_DECISION_PROCESS (DEPLETED)"
+      ]
+    },
+    "prediction_x_prediction": {
+      "observed": 148,
+      "oe_ratio": 3.089218,
+      "main_q": 0.0009229846246144618,
+      "exact_q": 1.877215153530714e-49,
+      "doc_q": 0.0023995200959808036,
+      "raw_q": 3.032714816322514e-140,
+      "full_core": true,
+      "core_direction": "ENRICHED"
+    },
+    "depleted_core_unchanged": false
+  }
+}

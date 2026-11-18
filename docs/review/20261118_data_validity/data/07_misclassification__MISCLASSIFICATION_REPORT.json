@@ -1,0 +1,372 @@
+{
+  "baseline": {
+    "depleted_core": 16,
+    "enriched_core": 16,
+    "records": 3125
+  },
+  "error_models": {
+    "E1_first_coder": {
+      "ai": {
+        "n": 50,
+        "pooled_keep": 0.38,
+        "pooled_none": 0.32,
+        "pooled_other": 0.3
+      },
+      "decision": {
+        "n": 50,
+        "pooled_keep": 0.18,
+        "pooled_none": 0.3,
+        "pooled_other": 0.52
+      },
+      "record_exclude_rate": 0.18
+    },
+    "E2_reconciled": {
+      "ai": {
+        "n": 20,
+        "pooled_keep": 0.35,
+        "pooled_none": 0.35,
+        "pooled_other": 0.3
+      },
+      "decision": {
+        "n": 20,
+        "pooled_keep": 0.35,
+        "pooled_none": 0.3,
+        "pooled_other": 0.35
+      },
+      "record_exclude_rate": 0.4
+    }
+  },
+  "scenarios": {
+    "E1_first_coder_as_truth": {
+      "draws": 300,
+      "edges_p5_median_p95": [
+        1046,
+        1087,
+        1127
+      ],
+      "depleted_core_retained_p5_median_p95": [
+        0,
+        0,
+        1
+      ],
+      "enriched_core_retained_p5_median_p95": [
+        0,
+        0,
+        1
+      ],
+      "P_at_least_12_of_16_depleted_retained": 0.0,
+      "depleted_core_same_direction_p5_median_p95": [
+        8,
+        11,
+        13
+      ],
+      "new_depleted_cells_median": 0.0,
+      "new_enriched_cells_median": 0.0,
+      "mean_oe_of_16_depleted_cells_median": 0.89,
+      "per_cell_depleted_retention": {
+        "COORDINATION_EXECUTION x HUMAN_REVIEW_ACCOUNTABILITY": 0.0,
+        "COORDINATION_EXECUTION x RISK_ASSESSMENT": 0.0,
+        "EVALUATION_ASSESSMENT x ALLOCATION_PLANNING": 0.0,
+        "EVALUATION_ASSESSMENT x PREDICTION_DIAGNOSIS": 0.0,
+        "EXPLANATION_ASSURANCE x ALLOCATION_PLANNING": 0.0,
+        "EXPLANATION_ASSURANCE x EVALUATION_SELECTION": 0.0,
+        "EXPLANATION_ASSURANCE x PREDICTION_DIAGNOSIS": 0.0,
+        "GENERATION_SYNTHESIS x PREDICTION_DIAGNOSIS": 0.0,
+        "HUMAN_AUGMENTATION x EVALUATION_SELECTION": 0.0,
+        "HUMAN_AUGMENTATION x PREDICTION_DIAGNOSIS": 0.003,
+        "PREDICTION_RISK_ESTIMATION x EVALUATION_SELECTION": 0.0,
+        "PREDICTION_RISK_ESTIMATION x GENERAL_DECISION_PROCESS": 0.0,
+        "PREDICTION_RISK_ESTIMATION x GOVERNANCE_OVERSIGHT": 0.07,
+        "PREDICTION_RISK_ESTIMATION x HUMAN_REVIEW_ACCOUNTABILITY": 0.0,
+        "PREDICTION_RISK_ESTIMATION x INFORMATION_ACQUISITION": 0.0,
+        "RECOMMENDATION_OPTIMIZATION x HUMAN_REVIEW_ACCOUNTABILITY": 0.01
+      },
+      "per_cell_enriched_retention": {
+        "COORDINATION_EXECUTION x ALLOCATION_PLANNING": 0.003,
+        "COORDINATION_EXECUTION x GENERAL_DECISION_PROCESS": 0.0,
+        "EVALUATION_ASSESSMENT x EVALUATION_SELECTION": 0.0,
+        "EVALUATION_ASSESSMENT x GOVERNANCE_OVERSIGHT": 0.0,
+        "EXPLANATION_ASSURANCE x GOVERNANCE_OVERSIGHT": 0.127,
+        "EXPLANATION_ASSURANCE x HUMAN_REVIEW_ACCOUNTABILITY": 0.007,
+        "GENERATION_SYNTHESIS x INFORMATION_ACQUISITION": 0.0,
+        "HUMAN_AUGMENTATION x HUMAN_REVIEW_ACCOUNTABILITY": 0.003,
+        "HUMAN_AUGMENTATION x INFORMATION_ACQUISITION": 0.0,
+        "PREDICTION_RISK_ESTIMATION x PREDICTION_DIAGNOSIS": 0.017,
+        "PREDICTION_RISK_ESTIMATION x RISK_ASSESSMENT": 0.0,
+        "RECOMMENDATION_OPTIMIZATION x ALLOCATION_PLANNING": 0.03,
+        "RECOMMENDATION_OPTIMIZATION x EVALUATION_SELECTION": 0.0,
+        "RECOMMENDATION_OPTIMIZATION x GENERAL_DECISION_PROCESS": 0.0,
+        "RETRIEVAL_SYNTHESIS x INFORMATION_ACQUISITION": 0.0,
+        "RETRIEVAL_SYNTHESIS x INFORMATION_SYNTHESIS": 0.0
+      }
+    },
+    "E2_reconciled_as_truth": {
+      "draws": 300,
+      "edges_p5_median_p95": [
+        760,
+        796,
+        833
+      ],
+      "depleted_core_retained_p5_median_p95": [
+        0,
+        0,
+        1
+      ],
+      "enriched_core_retained_p5_median_p95": [
+        0,
+        0,
+        1
+      ],
+      "P_at_least_12_of_16_depleted_retained": 0.0,
+      "depleted_core_same_direction_p5_median_p95": [
+        10,
+        12,
+        14
+      ],
+      "new_depleted_cells_median": 0.0,
+      "new_enriched_cells_median": 0.0,
+      "mean_oe_of_16_depleted_cells_median": 0.773,
+      "per_cell_depleted_retention": {
+        "COORDINATION_EXECUTION x HUMAN_REVIEW_ACCOUNTABILITY": 0.0,
+        "COORDINATION_EXECUTION x RISK_ASSESSMENT": 0.0,
+        "EVALUATION_ASSESSMENT x ALLOCATION_PLANNING": 0.0,
+        "EVALUATION_ASSESSMENT x PREDICTION_DIAGNOSIS": 0.0,
+        "EXPLANATION_ASSURANCE x ALLOCATION_PLANNING": 0.01,
+        "EXPLANATION_ASSURANCE x EVALUATION_SELECTION": 0.0,
+        "EXPLANATION_ASSURANCE x PREDICTION_DIAGNOSIS": 0.0,
+        "GENERATION_SYNTHESIS x PREDICTION_DIAGNOSIS": 0.0,
+        "HUMAN_AUGMENTATION x EVALUATION_SELECTION": 0.0,
+        "HUMAN_AUGMENTATION x PREDICTION_DIAGNOSIS": 0.0,
+        "PREDICTION_RISK_ESTIMATION x EVALUATION_SELECTION": 0.0,
+        "PREDICTION_RISK_ESTIMATION x GENERAL_DECISION_PROCESS": 0.0,
+        "PREDICTION_RISK_ESTIMATION x GOVERNANCE_OVERSIGHT": 0.15,
+        "PREDICTION_RISK_ESTIMATION x HUMAN_REVIEW_ACCOUNTABILITY": 0.003,
+        "PREDICTION_RISK_ESTIMATION x INFORMATION_ACQUISITION": 0.017,
+        "RECOMMENDATION_OPTIMIZATION x HUMAN_REVIEW_ACCOUNTABILITY": 0.0
+      },
+      "per_cell_enriched_retention": {
+        "COORDINATION_EXECUTION x ALLOCATION_PLANNING": 0.0,
+        "COORDINATION_EXECUTION x GENERAL_DECISION_PROCESS": 0.0,
+        "EVALUATION_ASSESSMENT x EVALUATION_SELECTION": 0.0,
+        "EVALUATION_ASSESSMENT x GOVERNANCE_OVERSIGHT": 0.027,
+        "EXPLANATION_ASSURANCE x GOVERNANCE_OVERSIGHT": 0.137,
+        "EXPLANATION_ASSURANCE x HUMAN_REVIEW_ACCOUNTABILITY": 0.047,
+        "GENERATION_SYNTHESIS x INFORMATION_ACQUISITION": 0.003,
+        "HUMAN_AUGMENTATION x HUMAN_REVIEW_ACCOUNTABILITY": 0.013,
+        "HUMAN_AUGMENTATION x INFORMATION_ACQUISITION": 0.0,
+        "PREDICTION_RISK_ESTIMATION x PREDICTION_DIAGNOSIS": 0.04,
+        "PREDICTION_RISK_ESTIMATION x RISK_ASSESSMENT": 0.003,
+        "RECOMMENDATION_OPTIMIZATION x ALLOCATION_PLANNING": 0.0,
+        "RECOMMENDATION_OPTIMIZATION x EVALUATION_SELECTION": 0.0,
+        "RECOMMENDATION_OPTIMIZATION x GENERAL_DECISION_PROCESS": 0.0,
+        "RETRIEVAL_SYNTHESIS x INFORMATION_ACQUISITION": 0.0,
+        "RETRIEVAL_SYNTHESIS x INFORMATION_SYNTHESIS": 0.003
+      }
+    },
+    "E3_random_err20_drop20": {
+      "draws": 300,
+      "edges_p5_median_p95": [
+        1989,
+        2026,
+        2060
+      ],
+      "depleted_core_retained_p5_median_p95": [
+        5,
+        7,
+        10
+      ],
+      "enriched_core_retained_p5_median_p95": [
+        8,
+        10,
+        12
+      ],
+      "P_at_least_12_of_16_depleted_retained": 0.0,
+      "depleted_core_same_direction_p5_median_p95": [
+        15,
+        16,
+        16
+      ],
+      "new_depleted_cells_median": 1.0,
+      "new_enriched_cells_median": 1.0,
+      "mean_oe_of_16_depleted_cells_median": 0.617,
+      "per_cell_depleted_retention": {
+        "COORDINATION_EXECUTION x HUMAN_REVIEW_ACCOUNTABILITY": 0.103,
+        "COORDINATION_EXECUTION x RISK_ASSESSMENT": 0.17,
+        "EVALUATION_ASSESSMENT x ALLOCATION_PLANNING": 0.573,
+        "EVALUATION_ASSESSMENT x PREDICTION_DIAGNOSIS": 0.73,
+        "EXPLANATION_ASSURANCE x ALLOCATION_PLANNING": 0.707,
+        "EXPLANATION_ASSURANCE x EVALUATION_SELECTION": 0.073,
+        "EXPLANATION_ASSURANCE x PREDICTION_DIAGNOSIS": 0.393,
+        "GENERATION_SYNTHESIS x PREDICTION_DIAGNOSIS": 0.473,
+        "HUMAN_AUGMENTATION x EVALUATION_SELECTION": 0.083,
+        "HUMAN_AUGMENTATION x PREDICTION_DIAGNOSIS": 0.44,
+        "PREDICTION_RISK_ESTIMATION x EVALUATION_SELECTION": 0.207,
+        "PREDICTION_RISK_ESTIMATION x GENERAL_DECISION_PROCESS": 0.057,
+        "PREDICTION_RISK_ESTIMATION x GOVERNANCE_OVERSIGHT": 0.983,
+        "PREDICTION_RISK_ESTIMATION x HUMAN_REVIEW_ACCOUNTABILITY": 0.853,
+        "PREDICTION_RISK_ESTIMATION x INFORMATION_ACQUISITION": 0.883,
+        "RECOMMENDATION_OPTIMIZATION x HUMAN_REVIEW_ACCOUNTABILITY": 0.68
+      },
+      "per_cell_enriched_retention": {
+        "COORDINATION_EXECUTION x ALLOCATION_PLANNING": 0.92,
+        "COORDINATION_EXECUTION x GENERAL_DECISION_PROCESS": 0.07,
+        "EVALUATION_ASSESSMENT x EVALUATION_SELECTION": 0.937,
+        "EVALUATION_ASSESSMENT x GOVERNANCE_OVERSIGHT": 0.61,
+        "EXPLANATION_ASSURANCE x GOVERNANCE_OVERSIGHT": 0.94,
+        "EXPLANATION_ASSURANCE x HUMAN_REVIEW_ACCOUNTABILITY": 0.993,
+        "GENERATION_SYNTHESIS x INFORMATION_ACQUISITION": 0.117,
+        "HUMAN_AUGMENTATION x HUMAN_REVIEW_ACCOUNTABILITY": 0.997,
+        "HUMAN_AUGMENTATION x INFORMATION_ACQUISITION": 0.113,
+        "PREDICTION_RISK_ESTIMATION x PREDICTION_DIAGNOSIS": 1.0,
+        "PREDICTION_RISK_ESTIMATION x RISK_ASSESSMENT": 0.983,
+        "RECOMMENDATION_OPTIMIZATION x ALLOCATION_PLANNING": 0.893,
+        "RECOMMENDATION_OPTIMIZATION x EVALUATION_SELECTION": 0.053,
+        "RECOMMENDATION_OPTIMIZATION x GENERAL_DECISION_PROCESS": 0.737,
+        "RETRIEVAL_SYNTHESIS x INFORMATION_ACQUISITION": 0.613,
+        "RETRIEVAL_SYNTHESIS x INFORMATION_SYNTHESIS": 0.223
+      }
+    },
+    "E3_random_err40_drop20": {
+      "draws": 300,
+      "edges_p5_median_p95": [
+        2115,
+        2151,
+        2185
+      ],
+      "depleted_core_retained_p5_median_p95": [
+        0,
+        0,
+        1
+      ],
+      "enriched_core_retained_p5_median_p95": [
+        0,
+        2,
+        5
+      ],
+      "P_at_least_12_of_16_depleted_retained": 0.0,
+      "depleted_core_same_direction_p5_median_p95": [
+        12,
+        14,
+        16
+      ],
+      "new_depleted_cells_median": 0.0,
+      "new_enriched_cells_median": 0.0,
+      "mean_oe_of_16_depleted_cells_median": 0.831,
+      "per_cell_depleted_retention": {
+        "COORDINATION_EXECUTION x HUMAN_REVIEW_ACCOUNTABILITY": 0.0,
+        "COORDINATION_EXECUTION x RISK_ASSESSMENT": 0.0,
+        "EVALUATION_ASSESSMENT x ALLOCATION_PLANNING": 0.007,
+        "EVALUATION_ASSESSMENT x PREDICTION_DIAGNOSIS": 0.017,
+        "EXPLANATION_ASSURANCE x ALLOCATION_PLANNING": 0.04,
+        "EXPLANATION_ASSURANCE x EVALUATION_SELECTION": 0.0,
+        "EXPLANATION_ASSURANCE x PREDICTION_DIAGNOSIS": 0.003,
+        "GENERATION_SYNTHESIS x PREDICTION_DIAGNOSIS": 0.003,
+        "HUMAN_AUGMENTATION x EVALUATION_SELECTION": 0.003,
+        "HUMAN_AUGMENTATION x PREDICTION_DIAGNOSIS": 0.003,
+        "PREDICTION_RISK_ESTIMATION x EVALUATION_SELECTION": 0.003,
+        "PREDICTION_RISK_ESTIMATION x GENERAL_DECISION_PROCESS": 0.0,
+        "PREDICTION_RISK_ESTIMATION x GOVERNANCE_OVERSIGHT": 0.067,
+        "PREDICTION_RISK_ESTIMATION x HUMAN_REVIEW_ACCOUNTABILITY": 0.01,
+        "PREDICTION_RISK_ESTIMATION x INFORMATION_ACQUISITION": 0.033,
+        "RECOMMENDATION_OPTIMIZATION x HUMAN_REVIEW_ACCOUNTABILITY": 0.04
+      },
+      "per_cell_enriched_retention": {
+        "COORDINATION_EXECUTION x ALLOCATION_PLANNING": 0.067,
+        "COORDINATION_EXECUTION x GENERAL_DECISION_PROCESS": 0.0,
+        "EVALUATION_ASSESSMENT x EVALUATION_SELECTION": 0.133,
+        "EVALUATION_ASSESSMENT x GOVERNANCE_OVERSIGHT": 0.01,
+        "EXPLANATION_ASSURANCE x GOVERNANCE_OVERSIGHT": 0.077,
+        "EXPLANATION_ASSURANCE x HUMAN_REVIEW_ACCOUNTABILITY": 0.25,
+        "GENERATION_SYNTHESIS x INFORMATION_ACQUISITION": 0.003,
+        "HUMAN_AUGMENTATION x HUMAN_REVIEW_ACCOUNTABILITY": 0.35,
+        "HUMAN_AUGMENTATION x INFORMATION_ACQUISITION": 0.007,
+        "PREDICTION_RISK_ESTIMATION x PREDICTION_DIAGNOSIS": 0.67,
+        "PREDICTION_RISK_ESTIMATION x RISK_ASSESSMENT": 0.103,
+        "RECOMMENDATION_OPTIMIZATION x ALLOCATION_PLANNING": 0.06,
+        "RECOMMENDATION_OPTIMIZATION x EVALUATION_SELECTION": 0.0,
+        "RECOMMENDATION_OPTIMIZATION x GENERAL_DECISION_PROCESS": 0.05,
+        "RETRIEVAL_SYNTHESIS x INFORMATION_ACQUISITION": 0.033,
+        "RETRIEVAL_SYNTHESIS x INFORMATION_SYNTHESIS": 0.037
+      }
+    },
+    "E3_random_err60_drop20": {
+      "draws": 300,
+      "edges_p5_median_p95": [
+        2192,
+        2230,
+        2262
+      ],
+      "depleted_core_retained_p5_median_p95": [
+        0,
+        0,
+        0
+      ],
+      "enriched_core_retained_p5_median_p95": [
+        0,
+        0,
+        0
+      ],
+      "P_at_least_12_of_16_depleted_retained": 0.0,
+      "depleted_core_same_direction_p5_median_p95": [
+        7,
+        10,
+        13
+      ],
+      "new_depleted_cells_median": 0.0,
+      "new_enriched_cells_median": 0.0,
+      "mean_oe_of_16_depleted_cells_median": 0.949,
+      "per_cell_depleted_retention": {
+        "COORDINATION_EXECUTION x HUMAN_REVIEW_ACCOUNTABILITY": 0.0,
+        "COORDINATION_EXECUTION x RISK_ASSESSMENT": 0.0,
+        "EVALUATION_ASSESSMENT x ALLOCATION_PLANNING": 0.0,
+        "EVALUATION_ASSESSMENT x PREDICTION_DIAGNOSIS": 0.0,
+        "EXPLANATION_ASSURANCE x ALLOCATION_PLANNING": 0.0,
+        "EXPLANATION_ASSURANCE x EVALUATION_SELECTION": 0.0,
+        "EXPLANATION_ASSURANCE x PREDICTION_DIAGNOSIS": 0.0,
+        "GENERATION_SYNTHESIS x PREDICTION_DIAGNOSIS": 0.0,
+        "HUMAN_AUGMENTATION x EVALUATION_SELECTION": 0.0,
+        "HUMAN_AUGMENTATION x PREDICTION_DIAGNOSIS": 0.0,
+        "PREDICTION_RISK_ESTIMATION x EVALUATION_SELECTION": 0.0,
+        "PREDICTION_RISK_ESTIMATION x GENERAL_DECISION_PROCESS": 0.0,
+        "PREDICTION_RISK_ESTIMATION x GOVERNANCE_OVERSIGHT": 0.0,
+        "PREDICTION_RISK_ESTIMATION x HUMAN_REVIEW_ACCOUNTABILITY": 0.0,
+        "PREDICTION_RISK_ESTIMATION x INFORMATION_ACQUISITION": 0.0,
+        "RECOMMENDATION_OPTIMIZATION x HUMAN_REVIEW_ACCOUNTABILITY": 0.007
+      },
+      "per_cell_enriched_retention": {
+        "COORDINATION_EXECUTION x ALLOCATION_PLANNING": 0.0,
+        "COORDINATION_EXECUTION x GENERAL_DECISION_PROCESS": 0.0,
+        "EVALUATION_ASSESSMENT x EVALUATION_SELECTION": 0.003,
+        "EVALUATION_ASSESSMENT x GOVERNANCE_OVERSIGHT": 0.0,
+        "EXPLANATION_ASSURANCE x GOVERNANCE_OVERSIGHT": 0.0,
+        "EXPLANATION_ASSURANCE x HUMAN_REVIEW_ACCOUNTABILITY": 0.007,
+        "GENERATION_SYNTHESIS x INFORMATION_ACQUISITION": 0.0,
+        "HUMAN_AUGMENTATION x HUMAN_REVIEW_ACCOUNTABILITY": 0.013,
+        "HUMAN_AUGMENTATION x INFORMATION_ACQUISITION": 0.0,
+        "PREDICTION_RISK_ESTIMATION x PREDICTION_DIAGNOSIS": 0.0,
+        "PREDICTION_RISK_ESTIMATION x RISK_ASSESSMENT": 0.0,
+        "RECOMMENDATION_OPTIMIZATION x ALLOCATION_PLANNING": 0.0,
+        "RECOMMENDATION_OPTIMIZATION x EVALUATION_SELECTION": 0.0,
+        "RECOMMENDATION_OPTIMIZATION x GENERAL_DECISION_PROCESS": 0.0,
+        "RETRIEVAL_SYNTHESIS x INFORMATION_ACQUISITION": 0.0,
+        "RETRIEVAL_SYNTHESIS x INFORMATION_SYNTHESIS": 0.003
+      }
+    }
+  },
+  "analytic_bound": {
+    "most_restrictive_cell": {
+      "cell": "PREDICTION_RISK_ESTIMATION x HUMAN_REVIEW_ACCOUNTABILITY",
+      "observed": 6,
+      "expected": 44.93,
+      "oe": 0.134,
+      "oe_upper95": 0.291,
+      "min_accuracy_product_required": 0.709,
+      "max_symmetric_error_rate": 0.158
+    },
+    "required_accuracy_product": 0.709,
+    "implied_by_first_coder_audit": 0.068,
+    "implied_by_reconciled_audit": 0.122,
+    "cells_requiring_product_gt_0.5": 8,
+    "logic": "If the audit-implied accuracy product is below the required product, the observed depletion cannot be produced from any true matrix under non-differential error: either the audit labels are not a valid truth, or errors are differential (structured)."
+  }
+}

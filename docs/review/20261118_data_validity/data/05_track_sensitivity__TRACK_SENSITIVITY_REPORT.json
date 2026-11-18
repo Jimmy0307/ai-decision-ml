@@ -1,0 +1,145 @@
+{
+  "edges_by_track": {
+    "AI": 1885,
+    "DECISION": 295
+  },
+  "documents_by_track": {
+    "AI": 614,
+    "DECISION": 169
+  },
+  "stratified_null_q05_cells": 47,
+  "core_agreement": {
+    "DEPLETED|AI_expected_lt5": 0,
+    "DEPLETED|AI_opposite_dir_q05": 0,
+    "DEPLETED|AI_same_dir": 16,
+    "DEPLETED|AI_same_dir_q05": 15,
+    "DEPLETED|DECISION_expected_lt5": 11,
+    "DEPLETED|DECISION_opposite_dir_q05": 0,
+    "DEPLETED|DECISION_same_dir": 16,
+    "DEPLETED|DECISION_same_dir_q05": 2,
+    "DEPLETED|stratified_same_dir_q05": 16,
+    "ENRICHED|AI_expected_lt5": 1,
+    "ENRICHED|AI_opposite_dir_q05": 0,
+    "ENRICHED|AI_same_dir": 16,
+    "ENRICHED|AI_same_dir_q05": 15,
+    "ENRICHED|DECISION_expected_lt5": 12,
+    "ENRICHED|DECISION_opposite_dir_q05": 0,
+    "ENRICHED|DECISION_same_dir": 13,
+    "ENRICHED|DECISION_same_dir_q05": 3,
+    "ENRICHED|stratified_same_dir_q05": 16
+  },
+  "depleted_core_detail": [
+    [
+      "COORDINATION_EXECUTION x HUMAN_REVIEW_ACCOUNTABILITY",
+      0.0075,
+      0.445,
+      0.0,
+      0.163
+    ],
+    [
+      "COORDINATION_EXECUTION x RISK_ASSESSMENT",
+      0.0009,
+      0.178,
+      0.0,
+      0.203
+    ],
+    [
+      "EVALUATION_ASSESSMENT x ALLOCATION_PLANNING",
+      0.0009,
+      0.328,
+      0.0,
+      3.342
+    ],
+    [
+      "EVALUATION_ASSESSMENT x PREDICTION_DIAGNOSIS",
+      0.0009,
+      0.147,
+      0.373,
+      10.719
+    ],
+    [
+      "EXPLANATION_ASSURANCE x ALLOCATION_PLANNING",
+      0.0009,
+      0.149,
+      0.509,
+      3.932
+    ],
+    [
+      "EXPLANATION_ASSURANCE x EVALUATION_SELECTION",
+      0.0217,
+      0.483,
+      0.246,
+      4.068
+    ],
+    [
+      "EXPLANATION_ASSURANCE x PREDICTION_DIAGNOSIS",
+      0.0009,
+      0.287,
+      0.476,
+      12.61
+    ],
+    [
+      "GENERATION_SYNTHESIS x PREDICTION_DIAGNOSIS",
+      0.0009,
+      0.165,
+      0.453,
+      4.414
+    ],
+    [
+      "HUMAN_AUGMENTATION x EVALUATION_SELECTION",
+      0.0162,
+      0.132,
+      0.492,
+      2.034
+    ],
+    [
+      "HUMAN_AUGMENTATION x PREDICTION_DIAGNOSIS",
+      0.0009,
+      0.105,
+      0.159,
+      6.305
+    ],
+    [
+      "PREDICTION_RISK_ESTIMATION x EVALUATION_SELECTION",
+      0.0009,
+      0.351,
+      0.126,
+      7.932
+    ],
+    [
+      "PREDICTION_RISK_ESTIMATION x GENERAL_DECISION_PROCESS",
+      0.0048,
+      0.355,
+      0.54,
+      3.702
+    ],
+    [
+      "PREDICTION_RISK_ESTIMATION x GOVERNANCE_OVERSIGHT",
+      0.0009,
+      0.293,
+      0.42,
+      4.759
+    ],
+    [
+      "PREDICTION_RISK_ESTIMATION x HUMAN_REVIEW_ACCOUNTABILITY",
+      0.0009,
+      0.15,
+      0.0,
+      4.231
+    ],
+    [
+      "PREDICTION_RISK_ESTIMATION x INFORMATION_ACQUISITION",
+      0.0009,
+      0.339,
+      0.161,
+      12.427
+    ],
+    [
+      "RECOMMENDATION_OPTIMIZATION x HUMAN_REVIEW_ACCOUNTABILITY",
+      0.0009,
+      0.249,
+      0.0,
+      3.471
+    ]
+  ]
+}

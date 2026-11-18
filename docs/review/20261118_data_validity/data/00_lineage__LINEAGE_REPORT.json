@@ -1,0 +1,61 @@
+{
+  "official_strict_records": 6499,
+  "private_strict_records": 6499,
+  "record_id_sets_identical": true,
+  "field_mismatches_on_shared_ids": {},
+  "records_all": 26501,
+  "records_all_passed_strict_filter": 6499,
+  "records_all_requires_human_review": {
+    "1": 19942,
+    "0": 6559
+  },
+  "docs_total": 2118,
+  "docs_status": {
+    "Done": 1729,
+    "Skipped": 388,
+    "Failed": 1
+  },
+  "docs_track": {
+    "AI": 1199,
+    "DECISION": 919
+  },
+  "strict_documents": 1104,
+  "strict_documents_in_docs_table": 1104,
+  "edge_documents": 783,
+  "edge_documents_in_docs_table": 783,
+  "edge_documents_status": {
+    "Done": 783
+  },
+  "edge_documents_track": {
+    "DECISION": 169,
+    "AI": 614
+  },
+  "edge_documents_with_year": 783,
+  "edge_documents_year_distribution": {
+    "2007": 1,
+    "2012": 1,
+    "2013": 2,
+    "2014": 1,
+    "2016": 1,
+    "2017": 5,
+    "2018": 3,
+    "2019": 6,
+    "2020": 16,
+    "2021": 30,
+    "2022": 76,
+    "2023": 120,
+    "2024": 137,
+    "2025": 206,
+    "2026": 178
+  },
+  "edge_documents_identity_level": {
+    "IDENTITY_LEVEL_2_EXACT_DOI_TO_OPENALEX": 24,
+    "UNRESOLVED": 142,
+    "IDENTITY_LEVEL_1_OPENALEX_NATIVE": 614,
+    "IDENTITY_LEVEL_3_DOI_ONLY": 3
+  },
+  "edges_by_track": {
+    "AI": 1885,
+    "DECISION": 295
+  }
+}

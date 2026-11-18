@@ -1,0 +1,359 @@
+{
+  "sources": {
+    "HH_first_vs_blind_20": {
+      "AI": 20,
+      "DECISION": 20
+    },
+    "MH_model_vs_first_50": {
+      "AI": 50,
+      "DECISION": 50
+    },
+    "MM_stage2_pass1_vs_pass2": {
+      "AI": 68,
+      "DECISION": 75
+    }
+  },
+  "taxonomies": {
+    "T0_original": {
+      "ai_categories": 10,
+      "decision_categories": 12,
+      "mapping_ai": {},
+      "mapping_decision": {},
+      "agreement": {
+        "HH_first_vs_blind_20": {
+          "AI": {
+            "n": 20,
+            "exact": 4,
+            "kappa": 0.0476,
+            "alpha": 0.0355,
+            "n_both_substantive": 13,
+            "kappa_both_substantive": 0.0085
+          },
+          "DECISION": {
+            "n": 20,
+            "exact": 4,
+            "kappa": 0.1398,
+            "alpha": 0.1136,
+            "n_both_substantive": 13,
+            "kappa_both_substantive": 0.2252
+          }
+        },
+        "MH_model_vs_first_50": {
+          "AI": {
+            "n": 50,
+            "exact": 19,
+            "kappa": 0.2651,
+            "alpha": 0.2383,
+            "n_both_substantive": 34,
+            "kappa_both_substantive": 0.4021
+          },
+          "DECISION": {
+            "n": 50,
+            "exact": 9,
+            "kappa": 0.1236,
+            "alpha": 0.0735,
+            "n_both_substantive": 35,
+            "kappa_both_substantive": 0.1794
+          }
+        },
+        "MM_stage2_pass1_vs_pass2": {
+          "AI": {
+            "n": 68,
+            "exact": 47,
+            "kappa": 0.6389,
+            "alpha": 0.6377,
+            "n_both_substantive": 60,
+            "kappa_both_substantive": 0.7192
+          },
+          "DECISION": {
+            "n": 75,
+            "exact": 52,
+            "kappa": 0.6327,
+            "alpha": 0.6323,
+            "n_both_substantive": 66,
+            "kappa_both_substantive": 0.6435
+          }
+        }
+      }
+    },
+    "T1_theory": {
+      "ai_categories": 7,
+      "decision_categories": 6,
+      "mapping_ai": {
+        "PERCEPTION_EXTRACTION": "A1_SENSE_RETRIEVE",
+        "RETRIEVAL_SYNTHESIS": "A1_SENSE_RETRIEVE",
+        "PREDICTION_RISK_ESTIMATION": "A2_PREDICT",
+        "RECOMMENDATION_OPTIMIZATION": "A3_PRESCRIBE_OPTIMIZE",
+        "GENERATION_SYNTHESIS": "A4_GENERATE",
+        "EXPLANATION_ASSURANCE": "A5_ASSURE_EVALUATE",
+        "EVALUATION_ASSESSMENT": "A5_ASSURE_EVALUATE",
+        "COORDINATION_EXECUTION": "A6_ACT_AUGMENT",
+        "HUMAN_AUGMENTATION": "A6_ACT_AUGMENT",
+        "GENERAL_REASONING_SYSTEMS": "A7_GENERAL_REASONING"
+      },
+      "mapping_decision": {
+        "PROBLEM_FRAMING": "D1_INTELLIGENCE",
+        "INFORMATION_ACQUISITION": "D1_INTELLIGENCE",
+        "INFORMATION_SYNTHESIS": "D1_INTELLIGENCE",
+        "PREDICTION_DIAGNOSIS": "D1_INTELLIGENCE",
+        "RISK_ASSESSMENT": "D1_INTELLIGENCE",
+        "OPTION_GENERATION": "D2_DESIGN",
+        "EVALUATION_SELECTION": "D3_CHOICE",
+        "ALLOCATION_PLANNING": "D3_CHOICE",
+        "EXECUTION_COORDINATION": "D4_IMPLEMENTATION",
+        "GOVERNANCE_OVERSIGHT": "D5_REVIEW_CONTROL",
+        "HUMAN_REVIEW_ACCOUNTABILITY": "D5_REVIEW_CONTROL",
+        "GENERAL_DECISION_PROCESS": "D6_GENERAL"
+      },
+      "agreement": {
+        "HH_first_vs_blind_20": {
+          "AI": {
+            "n": 20,
+            "exact": 5,
+            "kappa": 0.0798,
+            "alpha": 0.0744,
+            "n_both_substantive": 13,
+            "kappa_both_substantive": 0.0714
+          },
+          "DECISION": {
+            "n": 20,
+            "exact": 5,
+            "kappa": 0.1573,
+            "alpha": 0.1229,
+            "n_both_substantive": 13,
+            "kappa_both_substantive": 0.2296
+          }
+        },
+        "MH_model_vs_first_50": {
+          "AI": {
+            "n": 50,
+            "exact": 21,
+            "kappa": 0.2871,
+            "alpha": 0.2576,
+            "n_both_substantive": 34,
+            "kappa_both_substantive": 0.457
+          },
+          "DECISION": {
+            "n": 50,
+            "exact": 17,
+            "kappa": 0.1959,
+            "alpha": 0.1398,
+            "n_both_substantive": 35,
+            "kappa_both_substantive": 0.2825
+          }
+        },
+        "MM_stage2_pass1_vs_pass2": {
+          "AI": {
+            "n": 68,
+            "exact": 47,
+            "kappa": 0.6218,
+            "alpha": 0.6207,
+            "n_both_substantive": 60,
+            "kappa_both_substantive": 0.7046
+          },
+          "DECISION": {
+            "n": 75,
+            "exact": 59,
+            "kappa": 0.6746,
+            "alpha": 0.676,
+            "n_both_substantive": 66,
+            "kappa_both_substantive": 0.6912
+          }
+        }
+      }
+    },
+    "T2_confusion": {
+      "ai_categories": 5,
+      "decision_categories": 5,
+      "mapping_ai": {
+        "COORDINATION_EXECUTION": "COORDINATION_EXECUTION+EVALUATION_ASSESSMENT+EXPLANATION_ASSURANCE+HUMAN_AUGMENTATION+PREDICTION_RISK_ESTIMATION+RECOMMENDATION_OPTIMIZATION",
+        "EVALUATION_ASSESSMENT": "COORDINATION_EXECUTION+EVALUATION_ASSESSMENT+EXPLANATION_ASSURANCE+HUMAN_AUGMENTATION+PREDICTION_RISK_ESTIMATION+RECOMMENDATION_OPTIMIZATION",
+        "EXPLANATION_ASSURANCE": "COORDINATION_EXECUTION+EVALUATION_ASSESSMENT+EXPLANATION_ASSURANCE+HUMAN_AUGMENTATION+PREDICTION_RISK_ESTIMATION+RECOMMENDATION_OPTIMIZATION",
+        "HUMAN_AUGMENTATION": "COORDINATION_EXECUTION+EVALUATION_ASSESSMENT+EXPLANATION_ASSURANCE+HUMAN_AUGMENTATION+PREDICTION_RISK_ESTIMATION+RECOMMENDATION_OPTIMIZATION",
+        "PREDICTION_RISK_ESTIMATION": "COORDINATION_EXECUTION+EVALUATION_ASSESSMENT+EXPLANATION_ASSURANCE+HUMAN_AUGMENTATION+PREDICTION_RISK_ESTIMATION+RECOMMENDATION_OPTIMIZATION",
+        "RECOMMENDATION_OPTIMIZATION": "COORDINATION_EXECUTION+EVALUATION_ASSESSMENT+EXPLANATION_ASSURANCE+HUMAN_AUGMENTATION+PREDICTION_RISK_ESTIMATION+RECOMMENDATION_OPTIMIZATION",
+        "GENERAL_REASONING_SYSTEMS": "GENERAL_REASONING_SYSTEMS",
+        "GENERATION_SYNTHESIS": "GENERATION_SYNTHESIS",
+        "PERCEPTION_EXTRACTION": "PERCEPTION_EXTRACTION",
+        "RETRIEVAL_SYNTHESIS": "RETRIEVAL_SYNTHESIS"
+      },
+      "mapping_decision": {
+        "ALLOCATION_PLANNING": "ALLOCATION_PLANNING+EVALUATION_SELECTION+EXECUTION_COORDINATION+GENERAL_DECISION_PROCESS+INFORMATION_ACQUISITION+INFORMATION_SYNTHESIS+PREDICTION_DIAGNOSIS+RISK_ASSESSMENT",
+        "EVALUATION_SELECTION": "ALLOCATION_PLANNING+EVALUATION_SELECTION+EXECUTION_COORDINATION+GENERAL_DECISION_PROCESS+INFORMATION_ACQUISITION+INFORMATION_SYNTHESIS+PREDICTION_DIAGNOSIS+RISK_ASSESSMENT",
+        "EXECUTION_COORDINATION": "ALLOCATION_PLANNING+EVALUATION_SELECTION+EXECUTION_COORDINATION+GENERAL_DECISION_PROCESS+INFORMATION_ACQUISITION+INFORMATION_SYNTHESIS+PREDICTION_DIAGNOSIS+RISK_ASSESSMENT",
+        "GENERAL_DECISION_PROCESS": "ALLOCATION_PLANNING+EVALUATION_SELECTION+EXECUTION_COORDINATION+GENERAL_DECISION_PROCESS+INFORMATION_ACQUISITION+INFORMATION_SYNTHESIS+PREDICTION_DIAGNOSIS+RISK_ASSESSMENT",
+        "INFORMATION_ACQUISITION": "ALLOCATION_PLANNING+EVALUATION_SELECTION+EXECUTION_COORDINATION+GENERAL_DECISION_PROCESS+INFORMATION_ACQUISITION+INFORMATION_SYNTHESIS+PREDICTION_DIAGNOSIS+RISK_ASSESSMENT",
+        "INFORMATION_SYNTHESIS": "ALLOCATION_PLANNING+EVALUATION_SELECTION+EXECUTION_COORDINATION+GENERAL_DECISION_PROCESS+INFORMATION_ACQUISITION+INFORMATION_SYNTHESIS+PREDICTION_DIAGNOSIS+RISK_ASSESSMENT",
+        "PREDICTION_DIAGNOSIS": "ALLOCATION_PLANNING+EVALUATION_SELECTION+EXECUTION_COORDINATION+GENERAL_DECISION_PROCESS+INFORMATION_ACQUISITION+INFORMATION_SYNTHESIS+PREDICTION_DIAGNOSIS+RISK_ASSESSMENT",
+        "RISK_ASSESSMENT": "ALLOCATION_PLANNING+EVALUATION_SELECTION+EXECUTION_COORDINATION+GENERAL_DECISION_PROCESS+INFORMATION_ACQUISITION+INFORMATION_SYNTHESIS+PREDICTION_DIAGNOSIS+RISK_ASSESSMENT",
+        "GOVERNANCE_OVERSIGHT": "GOVERNANCE_OVERSIGHT",
+        "HUMAN_REVIEW_ACCOUNTABILITY": "HUMAN_REVIEW_ACCOUNTABILITY",
+        "OPTION_GENERATION": "OPTION_GENERATION",
+        "PROBLEM_FRAMING": "PROBLEM_FRAMING"
+      },
+      "agreement": {
+        "HH_first_vs_blind_20": {
+          "AI": {
+            "n": 20,
+            "exact": 11,
+            "kappa": 0.0955,
+            "alpha": 0.0883,
+            "n_both_substantive": 13,
+            "kappa_both_substantive": 0.0
+          },
+          "DECISION": {
+            "n": 20,
+            "exact": 12,
+            "kappa": 0.2982,
+            "alpha": 0.2761,
+            "n_both_substantive": 13,
+            "kappa_both_substantive": 0.6389
+          }
+        },
+        "MH_model_vs_first_50": {
+          "AI": {
+            "n": 50,
+            "exact": 29,
+            "kappa": 0.0094,
+            "alpha": -0.1112,
+            "n_both_substantive": 34,
+            "kappa_both_substantive": -0.0241
+          },
+          "DECISION": {
+            "n": 50,
+            "exact": 30,
+            "kappa": 0.278,
+            "alpha": 0.2474,
+            "n_both_substantive": 35,
+            "kappa_both_substantive": 0.4898
+          }
+        },
+        "MM_stage2_pass1_vs_pass2": {
+          "AI": {
+            "n": 68,
+            "exact": 59,
+            "kappa": 0.5353,
+            "alpha": 0.5269,
+            "n_both_substantive": 60,
+            "kappa_both_substantive": 0.8214
+          },
+          "DECISION": {
+            "n": 75,
+            "exact": 68,
+            "kappa": 0.743,
+            "alpha": 0.7439,
+            "n_both_substantive": 66,
+            "kappa_both_substantive": 0.7891
+          }
+        }
+      }
+    }
+  },
+  "top_confusions": {
+    "AI": [
+      [
+        "PREDICTION_RISK_ESTIMATION",
+        "RECOMMENDATION_OPTIMIZATION",
+        6
+      ],
+      [
+        "AMBIGUOUS",
+        "PREDICTION_RISK_ESTIMATION",
+        5
+      ],
+      [
+        "AMBIGUOUS",
+        "EVALUATION_ASSESSMENT",
+        5
+      ],
+      [
+        "COORDINATION_EXECUTION",
+        "PREDICTION_RISK_ESTIMATION",
+        5
+      ],
+      [
+        "HUMAN_AUGMENTATION",
+        "PREDICTION_RISK_ESTIMATION",
+        3
+      ],
+      [
+        "AMBIGUOUS",
+        "EXPLANATION_ASSURANCE",
+        3
+      ],
+      [
+        "EVALUATION_ASSESSMENT",
+        "PREDICTION_RISK_ESTIMATION",
+        3
+      ],
+      [
+        "AMBIGUOUS",
+        "GENERAL_REASONING_SYSTEMS",
+        2
+      ],
+      [
+        "COORDINATION_EXECUTION",
+        "HUMAN_AUGMENTATION",
+        2
+      ],
+      [
+        "EXPLANATION_ASSURANCE",
+        "UNMAPPED",
+        2
+      ]
+    ],
+    "DECISION": [
+      [
+        "GENERAL_DECISION_PROCESS",
+        "PREDICTION_DIAGNOSIS",
+        8
+      ],
+      [
+        "AMBIGUOUS",
+        "GOVERNANCE_OVERSIGHT",
+        7
+      ],
+      [
+        "PREDICTION_DIAGNOSIS",
+        "RISK_ASSESSMENT",
+        5
+      ],
+      [
+        "INFORMATION_ACQUISITION",
+        "PREDICTION_DIAGNOSIS",
+        5
+      ],
+      [
+        "ALLOCATION_PLANNING",
+        "INFORMATION_ACQUISITION",
+        4
+      ],
+      [
+        "EXECUTION_COORDINATION",
+        "PREDICTION_DIAGNOSIS",
+        3
+      ],
+      [
+        "AMBIGUOUS",
+        "PREDICTION_DIAGNOSIS",
+        3
+      ],
+      [
+        "INFORMATION_SYNTHESIS",
+        "PREDICTION_DIAGNOSIS",
+        3
+      ],
+      [
+        "AMBIGUOUS",
+        "GENERAL_DECISION_PROCESS",
+        2
+      ],
+      [
+        "EVALUATION_SELECTION",
+        "GENERAL_DECISION_PROCESS",
+        2
+      ]
+    ]
+  },
+  "guard": "Agreement under T2 is optimistic by construction (merges chosen from the same disagreements). Only a NEW independent reliability sample can validate any taxonomy."
+}

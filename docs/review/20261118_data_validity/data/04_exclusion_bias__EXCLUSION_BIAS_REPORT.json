@@ -1,0 +1,147 @@
+{
+  "a_strict_filter": {
+    "overall_rate": 0.2452,
+    "by_ai_family": {
+      "chi2": 420.45,
+      "p": 2.7801912546205725e-83,
+      "dof": 11,
+      "cramers_v": 0.126
+    },
+    "by_decision_family": {
+      "chi2": 268.19,
+      "p": 1.0558523251004994e-49,
+      "dof": 13,
+      "cramers_v": 0.1006
+    },
+    "by_section": {
+      "chi2": 484.64,
+      "p": 1.6066952783175897e-100,
+      "dof": 7,
+      "cramers_v": 0.1352
+    }
+  },
+  "a_both_anchored_by_core_group": {
+    "n": 2703,
+    "table": [
+      {
+        "group": "ENRICHED_CORE",
+        "n": 1434,
+        "included": 396,
+        "rate": 0.2762,
+        "ci95_lo": 0.2536,
+        "ci95_hi": 0.2999
+      },
+      {
+        "group": "OTHER",
+        "n": 1127,
+        "included": 275,
+        "rate": 0.244,
+        "ci95_lo": 0.2198,
+        "ci95_hi": 0.2699
+      },
+      {
+        "group": "DEPLETED_CORE",
+        "n": 142,
+        "included": 54,
+        "rate": 0.3803,
+        "ci95_lo": 0.3046,
+        "ci95_hi": 0.4623
+      }
+    ],
+    "test": {
+      "chi2": 12.91,
+      "p": 0.0015727347881504803,
+      "dof": 2,
+      "cramers_v": 0.0691
+    }
+  },
+  "b_full_mapping_within_strict": {
+    "n": 6499,
+    "overall_rate": 0.4808,
+    "by_ai_family": {
+      "chi2": 633.38,
+      "p": 1.0068496743509452e-128,
+      "dof": 11,
+      "cramers_v": 0.3122
+    },
+    "by_decision_family": {
+      "chi2": 578.89,
+      "p": 2.4160226835203904e-115,
+      "dof": 13,
+      "cramers_v": 0.2985
+    }
+  },
+  "c_stage1_triangulation": {
+    "records_both_anchored": 2703,
+    "document_edges": 1742,
+    "nonzero_cells": 94,
+    "agreement_with_v9_core": {
+      "DEPLETED_CORE|opposite_direction_q05": 0,
+      "DEPLETED_CORE|same_direction": 13,
+      "DEPLETED_CORE|same_direction_and_q05": 11,
+      "DEPLETED_CORE|zero_expected_or_untestable": 1,
+      "ENRICHED_CORE|opposite_direction_q05": 0,
+      "ENRICHED_CORE|same_direction": 14,
+      "ENRICHED_CORE|same_direction_and_q05": 8,
+      "ENRICHED_CORE|zero_expected_or_untestable": 2
+    },
+    "note": "Stage-1 anchors are a keyword lexicon applied before the LLM; coverage is partial (many families rarely anchored)."
+  },
+  "d_lexical_self_pairing": {
+    "pair_eligible_records": 3125,
+    "records_same_term_both_sides": 184,
+    "cells_with_any_same_term": 2,
+    "top_cells": [
+      [
+        "PREDICTION_RISK_ESTIMATION x PREDICTION_DIAGNOSIS",
+        "ENRICHED_CORE",
+        182,
+        0.3327
+      ],
+      [
+        "RETRIEVAL_SYNTHESIS x INFORMATION_SYNTHESIS",
+        "ENRICHED_CORE",
+        2,
+        0.3333
+      ],
+      [
+        "COORDINATION_EXECUTION x GOVERNANCE_OVERSIGHT",
+        "OTHER",
+        0,
+        0.0
+      ],
+      [
+        "EVALUATION_ASSESSMENT x INFORMATION_ACQUISITION",
+        "OTHER",
+        0,
+        0.0
+      ],
+      [
+        "GENERATION_SYNTHESIS x ALLOCATION_PLANNING",
+        "OTHER",
+        0,
+        0.0
+      ],
+      [
+        "EXPLANATION_ASSURANCE x GOVERNANCE_OVERSIGHT",
+        "ENRICHED_CORE",
+        0,
+        0.0
+      ],
+      [
+        "GENERATION_SYNTHESIS x INFORMATION_ACQUISITION",
+        "ENRICHED_CORE",
+        0,
+        0.0
+      ],
+      [
+        "EXPLANATION_ASSURANCE x EXECUTION_COORDINATION",
+        "OTHER",
+        0,
+        0.0
+      ]
+    ],
+    "enriched_core_records_same_term": 184,
+    "enriched_core_records": 1712
+  }
+}

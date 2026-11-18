@@ -1,0 +1,28 @@
+{
+  "split": "EARLY <= 2023, LATE >= 2024 (publication year from document metadata)",
+  "documents": {
+    "early": 262,
+    "late": 521
+  },
+  "edges": {
+    "early": 535,
+    "late": 1645
+  },
+  "test1_frozen_16_depleted": {
+    "mean_change_log2_oe": -0.0532,
+    "null_mean": -0.0094,
+    "null_sd": 0.2719,
+    "p_two_sided": 0.863568215892054,
+    "early_still_depleted": 16,
+    "late_still_depleted": 16
+  },
+  "test2_early_selected_depleted": {
+    "cells_selected": 11,
+    "mean_change_log2_oe": 0.5578,
+    "null_mean": 0.3115,
+    "null_sd": 0.281,
+    "p_upper_convergence": 0.18440779610194902,
+    "permutations_with_selection": 2000
+  },
+  "interpretation_guard": "Exploratory on frozen (unreliable) labels; convergence would not by itself show that gaps were 'filled by research'."
+}

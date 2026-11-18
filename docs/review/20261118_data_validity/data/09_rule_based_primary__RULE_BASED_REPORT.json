@@ -1,0 +1,69 @@
+{
+  "records_both_anchored": 2703,
+  "same_term_removed": 741,
+  "records_used": 1962,
+  "document_edges": 1431,
+  "documents": 814,
+  "summary": {
+    "cells": 120,
+    "edges": 1431,
+    "raw_records": 1962,
+    "observed_nonzero": 94,
+    "main_q05": 22,
+    "exact_q05": 23,
+    "raw_q05": 30,
+    "doc_q05": 8,
+    "structural_core": 7,
+    "full_core": 7,
+    "full_core_by_direction": {
+      "ENRICHED": 3,
+      "DEPLETED": 4
+    },
+    "doc_null_diagnostics": {
+      "attempts": 21843600,
+      "accepted": 8518850,
+      "acceptance_rate": 0.3899929498800564,
+      "documents_touched": 175,
+      "exchangeable_documents": 347,
+      "degrees_preserved": true
+    }
+  },
+  "rule_core": 7,
+  "rule_core_by_direction": {
+    "ENRICHED": 3,
+    "DEPLETED": 4
+  },
+  "llm_core": 32,
+  "shared_same_direction": 5,
+  "shared_by_direction": {
+    "ENRICHED": 3,
+    "DEPLETED": 2
+  },
+  "opposite_direction": {},
+  "llm_core_cells_testable_in_rule_matrix_(E>=5)": 24,
+  "llm_depleted_recovered": [
+    "PREDICTION_RISK_ESTIMATION x HUMAN_REVIEW_ACCOUNTABILITY",
+    "RECOMMENDATION_OPTIMIZATION x HUMAN_REVIEW_ACCOUNTABILITY"
+  ],
+  "llm_depleted_not_recovered": [
+    "COORDINATION_EXECUTION x HUMAN_REVIEW_ACCOUNTABILITY",
+    "COORDINATION_EXECUTION x RISK_ASSESSMENT",
+    "EVALUATION_ASSESSMENT x ALLOCATION_PLANNING",
+    "EVALUATION_ASSESSMENT x PREDICTION_DIAGNOSIS",
+    "EXPLANATION_ASSURANCE x ALLOCATION_PLANNING",
+    "EXPLANATION_ASSURANCE x EVALUATION_SELECTION",
+    "EXPLANATION_ASSURANCE x PREDICTION_DIAGNOSIS",
+    "GENERATION_SYNTHESIS x PREDICTION_DIAGNOSIS",
+    "HUMAN_AUGMENTATION x EVALUATION_SELECTION",
+    "HUMAN_AUGMENTATION x PREDICTION_DIAGNOSIS",
+    "PREDICTION_RISK_ESTIMATION x EVALUATION_SELECTION",
+    "PREDICTION_RISK_ESTIMATION x GENERAL_DECISION_PROCESS",
+    "PREDICTION_RISK_ESTIMATION x GOVERNANCE_OVERSIGHT",
+    "PREDICTION_RISK_ESTIMATION x INFORMATION_ACQUISITION"
+  ],
+  "rule_only_core": [
+    "PREDICTION_RISK_ESTIMATION x EXECUTION_COORDINATION (DEPLETED)",
+    "RECOMMENDATION_OPTIMIZATION x PREDICTION_DIAGNOSIS (DEPLETED)"
+  ],
+  "jaccard_core": 0.147
+}
