@@ -64,3 +64,11 @@ That gives 6 × 7 = **42 cells**. Codes in G06Q10/08, /10, /20 and /30 are not p
 3. **Allowed reading of a depleted core cell:** "this AI-method × decision-function combination is under-represented relative to its margins in patents". This is directional under-integration at the cell level, the same claim level V9 can support. It is **not** called a Burt structural hole, and it does not override the aggregate result (AI and DEC overall are strongly connected, OE = 3.05).
 4. There is no mapping between V9's LLM-coded families and CPC groups, so V9 and patent cells are **not** matched one to one. Only the overall pattern is compared: how many cells are depleted or enriched, and how they are distributed.
 5. No other granularity, row or column definition, window or citation type will be substituted after results are seen. Any extra analysis will be labelled exploratory.
+
+## Amendments (dated; the text above is unchanged)
+
+**B1, 2026-11-18, recorded after the run: M06 cannot be applied to patents.**
+- **What happened:** the document-preserving swap null accepted **0 of 21,843,600** proposed swaps in all three matrices.
+- **Why:** each patent (Part A) or citation (Part B) contributes the complete product of its row set and column set. Any swap (a1,d1),(a2,d2) → (a1,d2),(a2,d1) therefore targets an edge that already exists, and the engine correctly rejects it. The null distribution equals the observed matrix, so every doc-null p = 1.
+- **Consequence:** the preregistered structural/full core (which requires M06) is **0 in every matrix by construction**. That zero is uninformative; it is not evidence that no cell is depleted. This was not foreseen when §1 was written. In V9, documents were sets of separate evidence records, so swaps were possible.
+- **Exploratory replacement:** cells where the three applicable tests (main MC, exact, raw) all give q ≤ .05 in the same direction are reported. They are labelled **exploratory, not preregistered**.

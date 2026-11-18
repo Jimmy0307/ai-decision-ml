@@ -86,12 +86,17 @@ def build_part_a(ai, dec, year, y0, y1):
 def build_part_b(ai, dec, ci, cj):
     """Citations between AI-only and DEC-only patents, either direction."""
     E, R = [], []
-    ai_only = lambda p: p in ai and p not in dec  # noqa: E731
-    dec_only = lambda p: p in dec and p not in ai  # noqa: E731
-    for k, (i, j) in enumerate(zip(ci.tolist(), cj.tolist())):
-        if ai_only(i) and dec_only(j):
+    n = int(max(ci.max(initial=0), cj.max(initial=0), max(ai, default=0), max(dec, default=0))) + 1
+    is_ai, is_dec = np.zeros(n, bool), np.zeros(n, bool)
+    is_ai[list(ai)] = True
+    is_dec[list(dec)] = True
+    a_only, d_only = is_ai & ~is_dec, is_dec & ~is_ai
+    cand = np.flatnonzero((a_only[ci] & d_only[cj]) | (d_only[ci] & a_only[cj]))
+    for k in cand.tolist():
+        i, j = int(ci[k]), int(cj[k])
+        if a_only[i] and d_only[j]:
             a, d = i, j
-        elif dec_only(i) and ai_only(j):
+        elif d_only[i] and a_only[j]:
             a, d = j, i
         else:
             continue

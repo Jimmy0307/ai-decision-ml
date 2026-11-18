@@ -1,6 +1,7 @@
 # Patent-citation structural-hole test (AI × Decision)
 
 > **Result (2026-11-18): `HOLE_NOT_SUPPORTED`; 0/6 sensitivity checks disagree.** AI and decision patents cite each other about 3× the null expectation, higher than 92–98% of comparable fields. See [RESULTS_20261118.md](RESULTS_20261118.md).
+> **Follow-up (V9 test battery on a 6×7 CPC matrix):** see [RESULTS_V9_MATRIX_20261118.md](RESULTS_V9_MATRIX_20261118.md). The document-preserving null (M06) cannot be applied to patents (0 accepted swaps), so the preregistered core is uninformative. In exploratory analysis, three tests agree on 5 mildly depleted cells (O/E 0.70–0.95) in both co-classification and citations.
 
 Preregistered test of whether AI patents (CPC G06N) and decision/management patents (CPC G06Q10/04, G06Q10/06) cite each other less than comparable technology fields do. See [PREREGISTRATION.md](PREREGISTRATION.md).
 
