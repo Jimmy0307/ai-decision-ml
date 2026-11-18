@@ -160,6 +160,38 @@ def run(mode="fixture", cordis=False, full_grid=False):
         if key in payloads:
             try:result["source_status"][key]["parsed"]=fn(json.loads(payloads[key]))
             except Exception as e:result["source_status"][key]["parse_error"]=type(e).__name__
+    # Small *empirical* public probes: do not confuse a successful HTTP response
+    # with evidence that bidder coverage or consortia identification are adequate.
+    from urllib.parse import quote
+    cordis_query=("PREFIX eurio: <http://data.europa.eu/s66#> "
+                  "SELECT ?project ?organisation ?role WHERE { "
+                  "?project a eurio:Project . "
+                  "?project eurio:hasInvolvedParty ?party . "
+                  "?party eurio:isRoleOf ?organisation . "
+                  "OPTIONAL { ?party eurio:roleLabel ?role . } } LIMIT 24")
+    empirical_urls={
+       "CORDIS_SPARQL":"https://cordis.europa.eu/datalab/sparql/query?query="+quote(cordis_query)+"&format=json",
+       "OCDS_REAL_UK":"https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=1",
+    }
+    for k,url in empirical_urls.items():
+        try:
+            raw,sha=bounded_get(url,max_bytes=1_500_000,accept="application/sparql-results+json,application/json")
+            obj=json.loads(raw)
+            if k=="CORDIS_SPARQL":
+                bindings=(obj.get("results") or {}).get("bindings",[])
+                parsed={"row_count":len(bindings),
+                        "fields":sorted({v for row in bindings for v in row}),
+                        "unique_project_uris":len({r.get("project",{}).get("value") for r in bindings}),
+                        "scope":"TINY_CONSORTIUM_QUERY_NOT_H2020_POPULATION"}
+            else:
+                packages=obj.get("releases",obj.get("results",[]))
+                parsed={"top_level_keys":sorted(obj.keys()),"releases_in_package":len(packages) if isinstance(packages,list) else None,
+                        "scope":"REAL_UK_NOTICE_PROBE_NOT_FAILED_BIDDER_COMPLETENESS"}
+            result["source_status"][k]={"status":"FETCHED_PARSED","size_bytes":len(raw),"sha256":sha,
+                                       "url":url,"parsed":parsed}
+        except Exception as e:
+            result["source_status"][k]={"status":"FETCH_OR_PARSE_FAILED","url":url,
+                                       "error":type(e).__name__,"message":str(e)[:165]}
     if "PyPSA_Transformers" in payloads and "PyPSA_DC_Links" in payloads:
         try:
             result["grid_stats"]=grid_stats(payloads["PyPSA_Transformers"].decode("utf-8-sig"),
