@@ -45,9 +45,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Retrieve bounded public samples (bulk and SEC remain opt-in)
+      - name: Freeze public CORDIS AI Decision project-org derived records (one-shot bulk)
         run: |
-          python research/external_dataset_poc_20261118/src/poc.py --mode live \
+          python research/external_dataset_poc_20261118/src/poc.py --mode live --cordis-bulk --pypsa-full \
             --output research/external_dataset_poc_20261118/results/ci-live.json
       - uses: actions/upload-artifact@v4
         with:
