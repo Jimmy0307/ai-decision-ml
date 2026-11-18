@@ -1,3 +1,4 @@
 inputs_LOCAL/
 outputs/
 __pycache__/
+.venv/
