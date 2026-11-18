@@ -69,6 +69,22 @@ class MultiNetworkTests(unittest.TestCase):
     def test_cordis_weighted_constraint_exists(self):
         x=m.cordis(live_sample())
         self.assertEqual(x["one_mode_shared_project_count_weighted_constraint"]["n"],4)
+    def test_reverse_project_one_mode_by_shared_organizations(self):
+        rows=[{"project_id":"P1","organisation_id":"O1"},
+              {"project_id":"P2","organisation_id":"O1"},
+              {"project_id":"P3","organisation_id":"O2"}]
+        g,c=m.right_projection_from_affiliations(rows)
+        self.assertEqual(sum(len(v) for v in g.values())//2,1)
+        self.assertEqual(c[("P1","P2")],1)
+    def test_native_consortium_hyperedge_is_not_social_triangle(self):
+        rows=[{"project_id":"P1","organisation_id":x} for x in ["O1","O2","O3"]]
+        x=m.higher_order_affiliation(rows)
+        self.assertEqual(x["within_project_triads_created_in_projection_counting_repeat_triples"],1)
+        self.assertEqual(x["projects_3plus_members"],1)
+    def test_reverse_cordis_project_graph(self):
+        x=m.cordis(live_sample())
+        self.assertEqual(x["reverse_one_mode_shared_participant_project_graph"]["edges"],1)
+        self.assertEqual(x["project_pairs_sharing_2plus_organizations"],1)
     def test_openalex_two_mode_author_institution(self):
         x=m.openalex(live_sample())
         self.assertEqual(x["layers"]["authors"]["two_mode"]["left_nodes"],2)
@@ -87,6 +103,7 @@ class MultiNetworkTests(unittest.TestCase):
         self.assertEqual(x["bus_asset_incidence_two_mode"]["right_nodes"],3)
         self.assertEqual(x["physical_bus_network"]["union"]["edges"],2)
         self.assertEqual(x["physical_bus_network"]["shared_edges_across_layers"],1)
+        self.assertEqual(x["asset_one_mode_shared_bus_line_graph"]["edges"],3)
     def test_gleif_directed_abstention(self):
         self.assertEqual(m.gleif(live_sample())["verdict"],
           "PARENT_RELATIONSHIP_MAY_BE_TOPOLOGICALLY_VALID_NOT_BURT_EVIDENCE")
