@@ -108,6 +108,22 @@ class Basics(unittest.TestCase):
             self.assertAlmostEqual(float(E[g]), r["E_ab"] + r["E_ba"], places=6)
 
 
+    def test_blocking_does_not_change_results(self):
+        u, ci, cj, _ = synth(n=1500, seed=4)
+        c = ph.strata(u, ci, cj, 2008)
+        M = np.bincount(c.s, minlength=c.n_strata)
+        G = len(u.group_names)
+        a = ph.oe_vs_reference(c, u.flags["DEC"], u.ref_csr["all"], G, M)
+        old = ph.BLOCK
+        ph.BLOCK = 97
+        try:
+            b = ph.oe_vs_reference(c, u.flags["DEC"], u.ref_csr["all"], G, M)
+        finally:
+            ph.BLOCK = old
+        self.assertTrue(np.array_equal(a[0], b[0]))
+        self.assertTrue(np.allclose(a[1], b[1]))
+
+
 class Decisions(unittest.TestCase):
     def setUp(self):
         self._min = ph.REF_MIN_PATENTS

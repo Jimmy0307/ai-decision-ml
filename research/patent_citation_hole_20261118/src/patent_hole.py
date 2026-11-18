@@ -178,15 +178,6 @@ def explode(rows: np.ndarray, csr):
     return pos, groups[np.repeat(starts, lens) + offs]
 
 
-def member(rows: np.ndarray, grp: np.ndarray, csr, n_groups: int) -> np.ndarray:
-    indptr, groups = csr
-    owner = np.repeat(np.arange(len(indptr) - 1), np.diff(indptr))
-    keys = owner.astype(np.int64) * n_groups + groups
-    q = rows.astype(np.int64) * n_groups + grp
-    pos = np.clip(np.searchsorted(keys, q), 0, max(len(keys) - 1, 0))
-    return keys[pos] == q if len(keys) else np.zeros(len(q), bool)
-
-
 @dataclass
 class Cites:
     i: np.ndarray
@@ -219,38 +210,84 @@ def oe_pair(c: Cites, A: np.ndarray, B: np.ndarray, M: np.ndarray):
                 in_a=in_a, in_b=in_b)
 
 
-def oe_vs_reference(c: Cites, F: np.ndarray, csr, n_groups: int, M: np.ndarray):
-    """OE(F \\ X, X \\ F) for every reference group X (vectorised over groups)."""
+BLOCK = 4_000_000
+_KEYS = {}
+
+
+def csr_keys(csr, n_groups):
+    """Sorted (patent * G + group) keys of a membership CSR, cached per CSR object."""
+    k = id(csr[1])
+    if k not in _KEYS:
+        indptr, groups = csr
+        owner = np.repeat(np.arange(len(indptr) - 1, dtype=np.int64), np.diff(indptr))
+        _KEYS[k] = owner * n_groups + groups
+    return _KEYS[k]
+
+
+def member(rows: np.ndarray, grp: np.ndarray, csr, n_groups: int) -> np.ndarray:
+    keys = csr_keys(csr, n_groups)
+    if not len(keys):
+        return np.zeros(len(rows), bool)
+    q = rows.astype(np.int64) * n_groups + grp
+    pos = np.clip(np.searchsorted(keys, q), 0, len(keys) - 1)
+    return keys[pos] == q
+
+
+def _bc(s, g, S, G):
+    return np.bincount(s.astype(np.int64) * G + g, minlength=S * G).reshape(S, G)
+
+
+def ref_margins(c: Cites, csr, n_groups: int):
+    """out_X(s), in_X(s) for all reference groups; computed in blocks to bound memory."""
+    S, G = c.n_strata, n_groups
+    out_X = np.zeros((S, G), np.int64)
+    in_X = np.zeros((S, G), np.int64)
+    for b in range(0, len(c.i), BLOCK):
+        sl = slice(b, b + BLOCK)
+        s = c.s[sl]
+        p, g = explode(c.i[sl], csr)
+        out_X += _bc(s[p], g, S, G)
+        p, g = explode(c.j[sl], csr)
+        in_X += _bc(s[p], g, S, G)
+    return out_X, in_X
+
+
+def oe_vs_reference(c: Cites, F: np.ndarray, csr, n_groups: int, M: np.ndarray, margins=None):
+    """OE(F \ X, X \ F) for every reference group X (vectorised over groups, blocked over citations)."""
     S, G = c.n_strata, n_groups
     Mi = np.where(M > 0, 1.0 / np.maximum(M, 1), 0.0)
-
-    def bc(s, g):
-        return np.bincount(s.astype(np.int64) * G + g, minlength=S * G).reshape(S, G)
-
-    p_i, g_i = explode(c.i, csr)            # citing side membership
-    out_X = bc(c.s[p_i], g_i)
-    p_j, g_j = explode(c.j, csr)
-    in_X = bc(c.s[p_j], g_j)
+    out_X, in_X = margins if margins is not None else ref_margins(c, csr, G)
+    out_FX = np.zeros((S, G), np.int64)
+    in_FX = np.zeros((S, G), np.int64)
+    O = np.zeros(G, np.int64)
+    for b in range(0, len(c.i), BLOCK):
+        sl = slice(b, b + BLOCK)
+        ci, cj, s = c.i[sl], c.j[sl], c.s[sl]
+        Fi, Fj = F[ci], F[cj]
+        # citing in F: membership of citing (for out_FX) and of cited (for O1)
+        rows = np.flatnonzero(Fi)
+        p, g = explode(ci[rows], csr)
+        out_FX += _bc(s[rows][p], g, S, G)
+        p, g = explode(cj[rows], csr)                      # cited groups X
+        r = rows[p]
+        keep = ~Fj[r]
+        r, g = r[keep], g[keep]
+        ok = ~member(ci[r], g, csr, G)                      # citing not in X
+        O += np.bincount(g[ok], minlength=G)
+        # cited in F: membership of cited (for in_FX) and of citing (for O2)
+        rows = np.flatnonzero(Fj)
+        p, g = explode(cj[rows], csr)
+        in_FX += _bc(s[rows][p], g, S, G)
+        p, g = explode(ci[rows], csr)                      # citing groups X
+        r = rows[p]
+        keep = ~Fi[r]
+        r, g = r[keep], g[keep]
+        ok = ~member(cj[r], g, csr, G)                      # cited not in X
+        O += np.bincount(g[ok], minlength=G)
     out_F = np.bincount(c.s[F[c.i]], minlength=S)
     in_F = np.bincount(c.s[F[c.j]], minlength=S)
-    fi, fj = F[c.i][p_i], F[c.j][p_j]
-    out_FX = bc(c.s[p_i][fi], g_i[fi])      # citing in F and X
-    in_FX = bc(c.s[p_j][fj], g_j[fj])       # cited in F and X
-    out_F_not_X = out_F[:, None] - out_FX
-    in_X_not_F = in_X - in_FX
-    out_X_not_F = out_X - out_FX
-    in_F_not_X = in_F[:, None] - in_FX
-    E = ((out_F_not_X * in_X_not_F + out_X_not_F * in_F_not_X) * Mi[:, None]).sum(0)
-    # observed: citing in F\X -> cited in X\F, and citing in X\F -> cited in F\X
-    sel = F[c.i][p_j] & ~F[c.j][p_j]                       # cited not in F, citing in F
-    rows, grp = p_j[sel], g_j[sel]
-    ok = ~member(c.i[rows], grp, csr, G)
-    O1 = np.bincount(grp[ok], minlength=G)
-    sel = F[c.j][p_i] & ~F[c.i][p_i]
-    rows, grp = p_i[sel], g_i[sel]
-    ok = ~member(c.j[rows], grp, csr, G)
-    O2 = np.bincount(grp[ok], minlength=G)
-    O = O1 + O2
+    E = (((out_F[:, None] - out_FX) * (in_X - in_FX) + (out_X - out_FX) * (in_F[:, None] - in_FX))
+         * Mi[:, None]).sum(0)
     with np.errstate(invalid="ignore", divide="ignore"):
         return O, E, np.where(E > 0, O / E, np.nan)
 
@@ -322,8 +359,10 @@ def run_spec(u: Universe, ci_all, cj_all, ccat, spec: dict, n_boot=N_BOOT, boot=
     ref = [g for g in range(G)
            if counts[g] >= REF_MIN_PATENTS
            and not u.group_names[g].startswith("G06N") and u.group_names[g] != "G06Q10"]
-    _, _, oe_ai = oe_vs_reference(c, AI, csr, G, M)
-    _, _, oe_dec = oe_vs_reference(c, DEC, csr, G, M)
+    margins = ref_margins(c, csr, G)
+    _, _, oe_ai = oe_vs_reference(c, AI, csr, G, M, margins)
+    _, _, oe_dec = oe_vs_reference(c, DEC, csr, G, M, margins)
+    del margins
     ai_ref, dec_ref = oe_ai[ref], oe_dec[ref]
     q25_ai, q25_dec = float(np.nanpercentile(ai_ref, 25)), float(np.nanpercentile(dec_ref, 25))
     pr_ai = float(np.mean(ai_ref < pd_["OE"]))
@@ -416,23 +455,39 @@ def main(argv=None):
         y_end -= 1                                   # last complete calendar year
     keep = u.year <= y_end
     log("Y_end", y_end)
-    ci_all, cj_all, ccat, total = load_citations(files["g_us_patent_citation"], u, 2010, a.chunksize)
+    cache = a.out / "cache_citations_LOCAL.npz"
+    if cache.exists() and json.loads(str(np.load(cache)["prov"])) == prov:
+        z = np.load(cache)
+        ci_all, cj_all, ccat, total = z["i"], z["j"], z["c"], int(z["total"])
+        log(f"citations from cache {len(ci_all):,}")
+    else:
+        ci_all, cj_all, ccat, total = load_citations(files["g_us_patent_citation"], u, 2010, a.chunksize)
+        np.savez(cache, i=ci_all, j=cj_all, c=ccat, total=total, prov=json.dumps(prov))
     m = keep[ci_all]
     ci_all, cj_all, ccat = ci_all[m], cj_all[m], ccat[m]
-    results = dict(preregistration="PREREGISTRATION.md v1.0", provenance=prov, Y_end=y_end,
+    out_file = a.out / "PATENT_HOLE_RESULTS.json"
+    results = dict(preregistration="PREREGISTRATION.md v1.0 (+A1)", provenance=prov, Y_end=y_end,
                    citation_rows_read=int(total), citations_in_scope=int(len(ci_all)),
                    applicant_share=float(ccat.mean()), specs={})
+    if out_file.exists():
+        old = json.loads(out_file.read_text(encoding="utf-8"))
+        if old.get("provenance") == prov:
+            results["specs"] = {k: v for k, v in old.get("specs", {}).items() if "verdict" in v}
+            log("resuming; done:", list(results["specs"]))
     for name, spec in SPECS.items():
+        if name in results["specs"]:
+            continue
         log("spec", name)
         r, _, _ = run_spec(u, ci_all, cj_all, ccat, spec, n_boot=a.n_boot)
         results["specs"][name] = r
+        out_file.write_text(json.dumps(results, indent=2, default=float), encoding="utf-8")
         log(name, r["verdict"], "OE", round(r["AI_DEC"]["OE"], 4), "ratio", round(r["ratio_point"], 4))
     prim = results["specs"]["primary"]["verdict"]
     disagree = sum(results["specs"][k]["verdict"] != prim for k in SPECS if k != "primary")
     results["primary_verdict"] = prim
     results["sensitivity_disagreements"] = disagree
     results["fragile"] = disagree >= 4
-    (a.out / "PATENT_HOLE_RESULTS.json").write_text(json.dumps(results, indent=2, default=float), encoding="utf-8")
+    out_file.write_text(json.dumps(results, indent=2, default=float), encoding="utf-8")
     log("done", prim, "fragile" if results["fragile"] else "robust", f"{disagree}/6 disagree")
 
 
