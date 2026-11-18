@@ -2,13 +2,23 @@
 
 > **Research-only / 2026-11-18.** 分支 `research/external-data-mlp-feasibility-20261118`。目前測試為 **dataset feasibility / schema validation / synthetic model**，不是 V9 重分析，也不是證實結構洞／企業 AI 最適解。既有 `main`、V9/V11.1、LEM2、DRSA 一律不覆蓋。
 
-## 第二輪結論（最新、正式閱讀入口）
+## 第三輪結果（最新、正式閱讀入口）
+
+**[ROUND3_BURT_MULTINETWORK_RESULTS_20261118.md](ROUND3_BURT_MULTINETWORK_RESULTS_20261118.md)**：來自 GitHub Actions [#44275890175](https://github.com/Jimmy0307/ai-decision-ml/actions/runs/44275890175)，關鍵數字在 [results/ROUND3_KEY_NUMBERS_20261118.json](results/ROUND3_KEY_NUMBERS_20261118.json)。
+- **六個來源都沒有找到經確認的 Burt 中介者**（`NO_SOURCE_PASSES_INDEPENDENT_RELATIONAL_AND_VALIDATION_GATES`）。
+- CORDIS 保度數隨機對照做了 49 次：可算 p 值的 5 個候選 p = 0.41–0.86，q ≥ 0.80，沒有任何一個 q < .05；另外 7 個同度數對照樣本不足。
+- CORDIS 投影圖由計畫內部自動生成了 102,660 個三角形。在重複邊骨幹圖上，constraint 中位數是 0.926。
+- GLEIF 全量 RR-CDF：663,449 筆關係紀錄，其中 481,247 筆為 ACTIVE；這是法律合併關係，不是資訊流。
+- 跨來源多層網路沒有建成，因為實體 ID 對不起來。
+- 離線測試 **90/90 PASS**（`5599a76` 修正了 PyPSA line graph 的投影方向）。
+
+## 第二輪結論（歷史紀錄）
 
 **[ROUND2_RESEARCH_CONCLUSIONS_20261118.md](ROUND2_RESEARCH_CONCLUSIONS_20261118.md)** — GitHub Actions #44269235163 已對 H2020 全量 project/participation 進行第二輪對帳及六來源可識別性評估。**33/33 deterministic tests PASS**。195 title/objective 候選的經費與角色資料可形成 **semi-empirical allocation benchmark**；加入 topics/keywords 則有 233 個字詞候選（未人工驗證）。187/187 可對帳 EC projects 在 1% 差距內；OpenAlex 跨資料庫獨立獎補助／成果連結尚未解決，SEC 未執行，沒有 confirmed Burt holes 或 empirical MLP equilibrium。
 
 **注意：**H2020 project ZIP 裡**沒有** publication.csv；CORDIS 出版品資料另有來源，且官方資料集註有欄位錯置風險。先前授款編號查詢 500 筆不等於 500 筆有效 CORDIS grants（不同 funder 會重複編號）。
 
-## 最新已執行結果（2026-11-18；以下優先於建立分支時的初期狀態描述）
+## 第一輪已執行結果（歷史紀錄）
 
 **正式成果入口**：[GitHub Actions 全部六源實測報告](EXTERNAL_DATA_FINAL_POC_REPORT_20261118.md) · [公開來源與證據等級 JSON](results/FROZEN_SIX_SOURCE_SNAPSHOT_20261118.json) · [實際 GitHub Actions](https://github.com/Jimmy0307/ai-decision-ml/actions/runs/44264544878)
 
@@ -18,23 +28,25 @@
 - GitHub CI offline tests **19/19 PASS**（新 CORDIS 合成 ZIP join 測試加入）；這不是各外部母體已完成確認性假說檢驗。
 - **原始大型 ZIP 不推入公開 repository**；取得指令、source SHA-256、run IDs、資料來源上限及 QA 已記錄；衍生小母體的 public project/organisation IDs 由 GitHub Actions artifact 保留。
 
-## 先看結論
+## 先看結論（已更新至第三輪）
 
-1. **PyPSA-Eur 實資料已獨立讀取。** 實際自 `PyPSA/pypsa-eur` 下載型 GitHub 內容接口取得 `transformers.csv`（1,039 列）及 `links.csv`（62 列），轉成不含自迴圈的無向去重網路 1,096 邊、2,061 節點、997 個連通分量（最大 10）、32 個局部三角形。這是**缺少 AC `lines.csv` 的局部物理拓樸**，絕不可拿它計算「全歐洲社會／合作結構洞」。原始資料來自 GridKit 對 2022 年 3 月非官方 ENTSO-E 地圖的推導；`transformers` 為推導所得，非官方核准資料。來源原始 GitHub blob SHA 及量化結果在 [real_source_poc_20261118.json](results/real_source_poc_20261118.json)。
-2. **OCDS 僅驗證 schema**：讀取官方 open-contracting `sample-data` 的 **fictional** 範例，正確取出一買方、兩投標者、一得標者、一獎項及 GBP 幣別；**不可作政府採購經驗證據**。
-3. **本機 14/14 測試 PASS**：可重現下載／解析 guard、各來源 schema 範例、簡化 GNE 和 leader→multi-follower 最佳反應。GitHub 分支上的簡化 CI 另提供 18 項 deterministic QA（**CI 結果需實際查 Actions**）。
-4. **OpenAlex、CORDIS、GLEIF、SEC、OCDS 真實採購：官方路徑已核對、編寫受控取得程式，但尚未取得足夠原始資料來證明研究適配性**。不可把「有 API」等同於實際取得、可串聯或通過資料品質驗證。
+1. **CORDIS H2020 是唯一有真實關係結構的來源。** 完整官方 ZIP 已解析：35,389 個計畫、179,063 筆參與紀錄。用關鍵詞選出 195 個候選計畫（未經人工驗證）。經費對帳 187/187 都在 1% 以內，可以做 **semi-empirical allocation benchmark**。但「共同參與計畫」不等於資訊流，Burt 中介者在第三輪隨機對照中 0 個顯著。
+2. **GLEIF（全量關係檔）、PyPSA（完整的交流、直流與變壓器拓樸）是有效的網路**，但分別是法律所有權與物理電網，不是社會或知識網路，只能當對照組。
+3. **OpenAlex（8 篇）、OCDS（第三輪 0 條可驗證邊）、SEC（未執行）** 的樣本或識別不足。
+4. **MLP 數值仍全部是 SYNTHETIC。** 沒有觀測到 follower 的效用、反應函數或決策順序，所以不能宣稱實證均衡。
+5. 早期描述（PyPSA 只有 1,096 邊、CORDIS 大包未執行、14/14 或 19/19 測試）已被後續輪次取代，只保留在歷史報告中。
+
 
 ## 六大資料來源與適配定位
 
 | 源 | 唯一來源／官方規格 | 主要欄位與驗證目標 | 目前裁決 |
 |---|---|---|---|
-| CORDIS H2020 | [EU CORDIS](https://cordis.europa.eu/projects/en) [官方 ZIP](https://cordis.europa.eu/data/cordis-h2020projects-csv.zip) | `project.id ↔ organization.projectID`、participant、coordinator、funding、start/end | 官網確認；**大包未執行，待下載與 schema/joins QA** |
-| OpenAlex | [OpenAlex API](https://help.openalex.org/api/) | works、authorships、institutions/ROR、topics、citations，與 CORDIS project DOI 對接 | 小批查詢 adapter 已編寫；CI live 選用，尚無獨立外部匹配 |
-| OCDS | [OCP Data Registry](https://data.open-contracting.org/en/) [UK 真實出版者](https://data.open-contracting.org/en/publication/128) | buyer、tenderers、awards、suppliers、amount、date | 官方**fictional schema 已測**；UK 真實發布資料未定母體 |
-| GLEIF | [GLEIF API](https://www.gleif.org/en/lei-data/gleif-api) [Level 2](https://www.gleif.org/en/lei-data/access-and-use-lei-data/level-2-data-who-owns-whom) | LEI、direct / ultimate accounting consolidating parent | adapter 已編寫，未聲稱驗證 parent edge；reporting exception 必須處理 |
+| CORDIS H2020 | [EU CORDIS](https://cordis.europa.eu/projects/en) [官方 ZIP](https://cordis.europa.eu/data/cordis-h2020projects-csv.zip) | `project.id ↔ organization.projectID`、participant、coordinator、funding、start/end | **完整 ZIP 已解析**；195 個候選計畫的經費基準可用；Burt 0 個顯著（第三輪） |
+| OpenAlex | [OpenAlex API](https://help.openalex.org/api/) | works、authorships、institutions/ROR、topics、citations，與 CORDIS project DOI 對接 | 8 篇小樣本；尚未與 CORDIS 確認性連結 |
+| OCDS | [OCP Data Registry](https://data.open-contracting.org/en/) [UK 真實出版者](https://data.open-contracting.org/en/publication/128) | buyer、tenderers、awards、suppliers、amount、date | fictional schema 已測；英國真實樣本第三輪 0 條可驗證邊 |
+| GLEIF | [GLEIF API](https://www.gleif.org/en/lei-data/gleif-api) [Level 2](https://www.gleif.org/en/lei-data/access-and-use-lei-data/level-2-data-who-owns-whom) | LEI、direct / ultimate accounting consolidating parent | **全量 RR-CDF 已解析**（663,449 筆）；法律合併關係，不是社會網路；不含 reporting exceptions |
 | SEC EDGAR | [SEC XBRL API](https://www.sec.gov/search-filings/edgar-application-programming-interfaces) | CIK、`us-gaap/Assets` 等財務時序；**不是 AI 導入參數** | 需具真實研究聯絡方式之 `SEC_USER_AGENT` 才允許擷取，未設就跳過 |
-| PyPSA-Eur | [PyPSA-Eur](https://github.com/PyPSA/pypsa-eur) [GridKit](https://github.com/PyPSA/pypsa-eur/tree/master/data/entsoegridkit) | buses、AC/DC lines、topology、physical network；再建 multi-follower power planning | 兩份真實來源局部圖已量化；全網 `lines.csv`、需求／成本、solver 尚未執行 |
+| PyPSA-Eur | [PyPSA-Eur](https://github.com/PyPSA/pypsa-eur) [GridKit](https://github.com/PyPSA/pypsa-eur/tree/master/data/entsoegridkit) | buses、AC/DC lines、topology、physical network；再建 multi-follower power planning | 交流、直流與變壓器三份 CSV 已完整解析（8,786 個母線）；需求／成本與 solver 尚未執行 |
 
 > 權限與限制：OpenAlex 的 2026 API 用量依 API key 與方案變動；設定 `OPENALEX_API_KEY` 前先確認當前價格／rate-limit，不得直接對全資料庫暴力爬取。SEC 公開指南要求 **真實 User-Agent（機構和聯絡資訊）**，請從本機環境變數提供，切勿提交公司／私人信箱於 GitHub。CORDIS 原始 ZIP 不在 public git 儲存；PyPSA 原始資料、不同第三方模型授權可能不一樣。
 
