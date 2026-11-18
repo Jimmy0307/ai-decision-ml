@@ -54,24 +54,31 @@ jobs:
           python research/external_dataset_poc_20261118/src/full_round.py \
             --input research/external_dataset_poc_20261118/results/ci-live.json \
             --output research/external_dataset_poc_20261118/results/ci-research-conclusions.json \
+      - name: Preserve current OpenAlex API status and overlay historical pinned eight-work sample only if needed
+        run: |
+          python research/external_dataset_poc_20261118/src/source_snapshot_overlay.py \
+            --live-input research/external_dataset_poc_20261118/results/ci-live.json \
+            --snapshot research/external_dataset_poc_20261118/snapshots/OPENALEX_EIGHT_WORK_MEMBERSHIPS_20261118.json \
+            --output research/external_dataset_poc_20261118/results/ci-analysis-input.json
       - name: Six-source Burt methods and negative controls (49 affiliation nulls)
         timeout-minutes: 6
         run: |
           python research/external_dataset_poc_20261118/src/burt_six_sources.py \
-            --input research/external_dataset_poc_20261118/results/ci-live.json \
+            --input research/external_dataset_poc_20261118/results/ci-analysis-input.json \
             --output research/external_dataset_poc_20261118/results/ci-burt-six-sources.json \
             --null-reps 49
       - name: Reconstruct 2-mode / 1-mode / temporal and typed multilayer networks per source
         timeout-minutes: 5
         run: |
           python research/external_dataset_poc_20261118/src/multinetwork_six_sources.py \
-            --input research/external_dataset_poc_20261118/results/ci-live.json \
+            --input research/external_dataset_poc_20261118/results/ci-analysis-input.json \
             --output research/external_dataset_poc_20261118/results/ci-multinetwork-six-sources.json
       - uses: actions/upload-artifact@v4
         with:
           name: external-dataset-live-probe
           path: |
             research/external_dataset_poc_20261118/results/ci-live.json
+            research/external_dataset_poc_20261118/results/ci-analysis-input.json
             research/external_dataset_poc_20261118/results/ci-research-conclusions.json
             research/external_dataset_poc_20261118/results/ci-burt-six-sources.json
             research/external_dataset_poc_20261118/results/ci-multinetwork-six-sources.json
