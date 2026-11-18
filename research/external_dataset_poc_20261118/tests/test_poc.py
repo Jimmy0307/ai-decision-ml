@@ -55,6 +55,7 @@ class FeasibilityTests(unittest.TestCase):
   with zipfile.ZipFile(raw,"w") as z:
    z.writestr("project.csv","id;title;objective;topic\\nP1;Artificial intelligence decision support;AI use;H2020\\nP2;Solar energy project;renewable energy;H2020\\n".replace("\\n","\n"))
    z.writestr("organization.csv","projectID;organisationID;role\\nP1;O1;coordinator\\nP1;O2;participant\\nP2;O1;coordinator\\n".replace("\\n","\n"))
+   z.writestr("publication.csv","projectID;doi;year\\nP1;10.1234/example;2020\\nP2;10.1234/other;2021\\n".replace("\\n","\n"))
   got=poc.cordis_bulk_stats(raw.getvalue())
   self.assertEqual(got["project_rows"],2)
   self.assertEqual(got["organisation_rows_with_matched_project_id"],3)
@@ -62,6 +63,8 @@ class FeasibilityTests(unittest.TestCase):
   self.assertEqual(p["joint_ai_decision_projects"],1)
   self.assertEqual(p["consortium_projected_unique_edges"],1)
   self.assertEqual(p["unique_joint_project_organizations"],2)
+  self.assertEqual(got["publication_profile"]["selected_195_project_publication_rows"],1)
+  self.assertEqual(got["publication_profile"]["unique_selected_publication_dois"],1)
  def test_gne_shared_cap(self):
   z=poc.gne_shared_capacity(3)
   self.assertTrue(z["equilibria"])
