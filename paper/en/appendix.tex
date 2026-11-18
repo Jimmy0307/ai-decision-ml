@@ -2,14 +2,14 @@
 % appendix.tex -- Appendices A, B, C (the main file places \appendix before this).
 % Numbers come from raw_materials/experimental_log.md. Appendix A additionally
 % states commit ids and preregistered decision rules taken from the frozen
-% preregistration texts (branch research/patent-citation-hole-20261118).
-% Revised in round 1 (REVISION_PLAN_round1.md, sections A--C).
+% preregistration texts (repository identifiers withheld for review).
+% Revised in rounds 1 and 2 (REVISION_PLAN_round1.md, REVISION_PLAN_round2.md).
 % ============================================================
 
 \section{Preregistration and Amendment Log}
 \label{app:prereg}
 
-Study~2 rests on four preregistration plans. Each is a self-timestamped git commit in PR~\#5 of the project repository; none was registered with a third-party registry such as OSF, and the commit timestamps are set by the authors' own tooling. Preregistration is meant to separate confirmatory from exploratory analysis by fixing the plan before outcomes are observed \citep{nosek2018preregistration}. By that standard, Plan~1 was fixed before any patent data were downloaded. Plans 2--4 were written after earlier results were known, so the questions they ask were data-informed; only their definitions, null models, decision rules, thresholds and stop rules were fixed before the analyses they govern were computed. Changes after freezing are recorded as dated amendments that do not overwrite the frozen text. Table~\ref{tab:app_prereg} summarises the four plans, including the commit ids and rule thresholds taken from the frozen texts; Table~\ref{tab:app_amend} lists every amendment and recorded deviation.
+Study~2 rests on four preregistration plans. Each is a self-timestamped git commit in the project repository (repository identifiers withheld for review; the commit ids are listed in Table~\ref{tab:app_prereg}); none was registered with a third-party registry such as OSF, and the commit timestamps are set by the authors' own tooling. Preregistration is meant to separate confirmatory from exploratory analysis by fixing the plan before outcomes are observed \citep{nosek2018preregistration}. By that standard, Plan~1 was fixed before any patent data were downloaded. Plans 2--4 were written after earlier results were known, so the questions they ask were data-informed; only their definitions, null models, decision rules, thresholds and stop rules were fixed before the analyses they govern were computed. Changes after freezing are recorded as dated amendments that do not overwrite the frozen text. Table~\ref{tab:app_prereg} summarises the four plans, including the commit ids and rule thresholds taken from the frozen texts; Table~\ref{tab:app_amend} lists every amendment and recorded deviation.
 
 \begin{table}[tbp]
 \centering
@@ -24,8 +24,8 @@ Plan (commit) & Frozen before / known when written & Hypotheses and content & De
 \raggedright 1.~Aggregate test (\texttt{a8f3289}) &
 \raggedright Frozen before any patent data were downloaded or inspected. Known: Study~1 only &
 \raggedright H1a: OE(AI,DEC) relative to reference CPC main groups in G06/G16/H04 with $\geq$2,000 patents; H1b: ratio to OE(AI,BIZ-OTHER); H2: trend by citing year; H3 (exploratory): assignees as brokers of a domain-level hole; six sensitivity checks; synthetic calibration &
-\raggedright H1 supported only if OE is in the lowest quartile on both sides (H1a) and the ratio's upper 95\% CI bound is $<1$ (H1b); labels \texttt{HOLE\_\allowbreak SUPPORTED}, \texttt{PARTIAL\_\allowbreak NOT\_\allowbreak CLAIMED}, \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}; $\geq$4 of 6 sensitivity checks disagree $\rightarrow$ \texttt{FRAGILE}; H2 labels \texttt{CLOSING}, \texttt{PERSISTENT}, \texttt{NARROWING\_\allowbreak BUT\_\allowbreak OPEN} &
-\raggedright \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}; 0/6 disagree; H2 \texttt{PERSISTENT} \tabularnewline
+\raggedright H1 supported only if OE is in the lowest quartile on both sides (H1a) and the ratio's upper 95\% CI bound is $<1$ (H1b); labels \texttt{HOLE\_\allowbreak SUPPORTED}, \texttt{PARTIAL\_\allowbreak NOT\_\allowbreak CLAIMED}, \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}; $\geq$4 of 6 sensitivity checks disagree $\rightarrow$ \texttt{FRAGILE}; H2 labels \texttt{CLOSING}, \texttt{PERSISTENT}, \texttt{NARROWING\_\allowbreak BUT\_\allowbreak OPEN}, with \texttt{PERSISTENT} if the slope's 95\% CI includes 0 or lies below 0 (written for the hole case, where closing means OE rising) &
+\raggedright \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}; 0/6 disagree; H2 \texttt{PERSISTENT} (slope negative: the over-connection declines) \tabularnewline
 \addlinespace
 \raggedright 2.~V9 battery on the CPC matrix (\texttt{a6266f7}) &
 \raggedright Frozen before any cell-level count. Known: the aggregate verdict &
@@ -71,7 +71,7 @@ Item & Plan & When & Change & Effect on design \tabularnewline
 \end{tabular}
 \end{table}
 
-Study~1 used frozen V9 seeds: 20260918 for the stub Monte Carlo and 20260919 for the document-preserving swap (E1.1). Its data-validity re-analysis (2026-11-18; E1.3--E1.5) was not preregistered. Its verdict was recorded as follows: directional under-integration DEFENSIBLE; ``16 statistically robust depleted pairs'' NOT DEFENSIBLE as measured; Burt structural hole STOP; research gap NOT SUPPORTED. We qualify the first item in this paper. It rests on the attenuation argument, which holds only for non-differential misclassification, whereas same-term self-pairing and model-inferred labels are non-random errors. The direction survives every check we could run, but it is descriptive and unconfirmed (Section~\ref{sec:discussion_measurement}).
+Study~1 used frozen V9 seeds: 20260918 for the stub Monte Carlo and 20260919 for the document-preserving swap (E1.1). Its data-validity re-analysis (2026-11-18; E1.3--E1.5) was not preregistered. Its verdict was recorded as follows: directional under-integration DEFENSIBLE; ``16 statistically robust depleted pairs'' NOT DEFENSIBLE as measured; Burt structural hole STOP; research gap NOT SUPPORTED. We qualify the first item in this paper. It rests on the attenuation argument, which holds only for non-differential misclassification, whereas same-term self-pairing and model-inferred labels are non-random errors. The removal checks in Table~\ref{tab:app_s1robust} indicate that self-pairing is not the main driver; the effect of model-inferred labels is untested. The direction survives every check we could run, but it is descriptive and unconfirmed (Section~\ref{sec:discussion_measurement}).
 
 % ------------------------------------------------------------
 \section{Sensitivity Tables}
@@ -83,7 +83,7 @@ Table~\ref{tab:app_v9cells} lists the 16 depleted cells of the frozen V9 analysi
 
 \begin{table}[tbp]
 \centering
-\caption{The 16 V9 depleted cells with observed counts (DIRECT; \texttt{V9\_ROBUSTNESS\_MASTER\_TABLE.csv}). These are depleted cells, not gaps, and they are withdrawn as anchors of the model (Section~\ref{sec:mlp_model}). Nine of the 16 lie in the \texttt{PREDICTION\_\allowbreak RISK\_\allowbreak ESTIMATION} row or the \texttt{PREDICTION\_\allowbreak DIAGNOSIS} column, where same-term self-pairing in the prediction $\times$ prediction cell can deplete cells mechanically under fixed margins.}
+\caption{The 16 V9 depleted cells with observed counts (DIRECT; \texttt{V9\_ROBUSTNESS\_MASTER\_TABLE.csv}). These are depleted cells, not gaps, and they are withdrawn as anchors of the model (Section~\ref{sec:mlp_model}). Same-term self-pairing in the prediction $\times$ prediction cell can deplete cells in its row and column mechanically under fixed margins, but without the same-term records 13/16 cells keep their direction (Table~\ref{tab:app_s1robust}).}
 \label{tab:app_v9cells}
 \footnotesize
 \begin{tabular}{llr}
@@ -152,7 +152,7 @@ Year & OE & 95\% CI & Year & OE & 95\% CI \\
 2018 & 3.20 & 2.81--3.64 & 2025 & 2.34 & 2.08--2.64 \\
 2019 & 3.99 & 3.48--4.54 & & & \\
 \midrule
-\multicolumn{6}{p{8.4cm}}{WLS slope $-0.097$ per year (95\% CI $-0.130$ to $-0.065$); last-3-year OE 2.69 vs reference median 1.095; label \texttt{PERSISTENT}.} \\
+\multicolumn{6}{p{8.4cm}}{WLS slope $-0.097$ per year (95\% CI $-0.130$ to $-0.065$); last-3-year OE 2.69 vs DEC-side reference median 1.095 (AI side 1.240); label \texttt{PERSISTENT} (slope CI not above 0).} \\
 \midrule
 \multicolumn{6}{l}{\emph{Synthetic calibration (before real data)}} \\
 \multicolumn{6}{p{8.4cm}}{No hole: OE 0.388 vs reference lowest quartile 0.356; ratio 0.99 (0.79--1.21) $\rightarrow$ \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}.} \\
@@ -260,7 +260,7 @@ The toy map $\phi_X$ turns an allocation $b_i^X$ at unit cost $c_i^r$ into a cap
 & H_i\geq H_{\mathrm{req}}(A_i,\kappa_i),\quad EA_i\geq EA_{\mathrm{req}}(A_i,\kappa_i),\quad WI_i\geq WI_{\mathrm{req}}(A_i), \nonumber\\
 & \sum_{i\in I}\left(0.42A_i + 0.24H_i + 0.24EA_i + 0.20WI_i\right)\leq K_\Gamma. \nonumber
 \end{align}
-The requirement thresholds are listed in Table~\ref{tab:app_thresholds}. The capacity constraint is shared by all processes; it represents the organisation's limited capacity to govern AI across processes. $F_2$ sums, over processes, weighted terms for feasibility, reliability and scalability (bounded linear indices of the capability surplus and the Level-2 state), minus integration cost and governance risk, plus the best Level-3 utility the architecture makes available. Its functional form and weights are specified in the canonical model file of the project repository and summarised below; the weights are not calibrated and carry no empirical content.
+The requirement thresholds are listed in Table~\ref{tab:app_thresholds}. The capacity constraint is shared by all processes; it represents the organisation's limited capacity to govern AI across processes. $F_2$ sums, over processes, weighted terms for feasibility, reliability and scalability (bounded linear indices of the capability surplus and the Level-2 state), minus integration cost and governance risk, plus the best Level-3 utility the architecture makes available. Eq.~\eqref{eq:app_f2} below states it in full with its weights, which are uncalibrated design values.
 
 \paragraph{Level 3: human--AI configuration (followers).} Given its Level-2 state, each process chooses one configuration $m\in\mathcal{M}=\{$HumanOnly, AIAssist, HumanFirstAICheck, AIFirstReview, BoundedAutomation$\}$:
 \begin{align}
@@ -326,18 +326,27 @@ Workflow integration, $WI_{\mathrm{req}}(A)$ & $3$ for an execution process with
 
 \subsection{Structure of the Level-2 objective and the Level-3 terms}
 
-The Level-2 objective $F_2$ and the value and risk terms are specified in full, with their weights, in the canonical model file of the project repository (\texttt{01\_\allowbreak CANONICAL\_\allowbreak MODEL\_\allowbreak v1\_\allowbreak 0.md}). We give their structure here so that the model can be read without that file; the weights are positive constants that have not been calibrated, and we do not reproduce them because they carry no empirical content. With uncalibrated weights $\omega_1,\dots,\omega_6>0$,
-\begin{equation}
-F_2=\sum_{i\in I}\Bigl[\omega_1\,\mathrm{Feas}_i+\omega_2\,\mathrm{Rel}_i+\omega_3\,\mathrm{Scal}_i-\omega_4\,\mathrm{IntCost}_i-\omega_5\,\mathrm{GovRisk}_i+\omega_6\max\!\bigl(0,U_i^{*}\bigr)\Bigr],
-\label{eq:app_f2}
-\end{equation}
-where $U_i^{*}$ is the best Level-3 utility available to process $i$ in its Level-2 state. Feasibility $\mathrm{Feas}_i$, reliability $\mathrm{Rel}_i$ and scalability $\mathrm{Scal}_i$ are linear indices clipped to $[0,1]$. Feasibility increases in the capability surpluses $\bar D_i-D_{\mathrm{req}}$, $\bar R_i-R_{\mathrm{req}}$ and $\bar G_i-\max(H_{\mathrm{req}},EA_{\mathrm{req}})$. Reliability increases in $EA_i$, $H_i$ and $WI_i$ and decreases in $A_i\kappa_i$. Scalability increases in $\bar D_i$, $\bar R_i$ and $WI_i$. Integration cost is the regime's cost multiplier times a linear function increasing in $A_i$, $WI_i$, $H_i$ and $EA_i$. Governance risk is 0 when $A_i=0$; otherwise it is the regime's risk multiplier times a term proportional to $\kappa_i A_i$, divided by a term increasing in $H_i$ and $EA_i$.
+The Level-2 objective and its components are those of the canonical model file \texttt{01\_\allowbreak CANONICAL\_\allowbreak MODEL\_\allowbreak v1\_\allowbreak 0.md} in the project repository (identifiers withheld for review). All weights below are uncalibrated design values; we print them so that the prototype can be reproduced from the text together with that file. With $\mathrm{clip}_{[0,1]}$ denoting truncation to $[0,1]$, and $\mathrm{cost}_\Gamma$ and $\mathrm{risk}_\Gamma$ the regime's cost and risk multipliers (Table~\ref{tab:app_regimes}),
+\begin{align}
+F_2 &= \sum_{i\in I}\Bigl[0.90\,\mathrm{Feas}_i+0.90\,\mathrm{Rel}_i+0.45\,\mathrm{Scal}_i-0.55\,\mathrm{IntCost}_i-0.75\,\mathrm{GovRisk}_i+0.65\max\!\bigl(0,U_i^{*}\bigr)\Bigr], \label{eq:app_f2}\\
+\mathrm{Feas}_i &= \mathrm{clip}_{[0,1]}\bigl(0.55+0.08(\bar D_i-D_{\mathrm{req}})+0.08(\bar R_i-R_{\mathrm{req}})+0.04(\bar G_i-\max(H_{\mathrm{req}},EA_{\mathrm{req}}))\bigr), \nonumber\\
+\mathrm{Rel}_i &= \mathrm{clip}_{[0,1]}\bigl(0.45+0.10\,EA_i+0.06\,H_i+0.04\,WI_i-0.030\,A_i\kappa_i\bigr), \nonumber\\
+\mathrm{Scal}_i &= \mathrm{clip}_{[0,1]}\bigl(0.30+0.08\,\bar D_i+0.08\,\bar R_i+0.04\,WI_i\bigr), \nonumber\\
+\mathrm{IntCost}_i &= \mathrm{cost}_\Gamma\,\bigl(0.10\,A_i+0.06\,WI_i+0.05\,H_i+0.05\,EA_i\bigr), \nonumber\\
+\mathrm{GovRisk}_i &= \begin{cases} 0 & \text{if } A_i=0,\\ \mathrm{risk}_\Gamma\cdot 0.08\,\kappa_i A_i\,/\,(1+0.4\,H_i+0.4\,EA_i) & \text{otherwise,}\end{cases} \nonumber
+\end{align}
+where $U_i^{*}$ is the best Level-3 utility available to process $i$ in its Level-2 state, and the requirement thresholds are evaluated at $(A_i,\kappa_i)$ (Table~\ref{tab:app_thresholds}).
 
-At Level~3, $\mathrm{Gain}_{im}$ is the product of a configuration-specific base gain, a process value weight, a factor $\psi_i$ that increases in $EA_i$ and $WI_i$ and, for selection processes, is multiplied by the value factor $v_i$ of Eq.~\ref{eq:mlp_tau}, and the regime's flexibility multiplier. $\mathrm{Burden}_{im}$ is a configuration-specific base burden plus a linear term increasing in $H_i$, $EA_i$ and $WI_i$. $\mathrm{ResidualRisk}_{im}$ is $\kappa_i$ times a configuration-specific autonomy level times the regime's risk multiplier, divided by a term increasing in $H_i$ and $EA_i$. All configuration-specific constants are simulated.
+At Level~3 the terms of $U_{im}$ in Eq.~\eqref{eq:mlp_l3} are
+\begin{align}
+\mathrm{Gain}_{im} &= g_{im}\,v_i\,\psi_i\,\mathrm{flex}_\Gamma, \qquad \mathrm{Burden}_{im} = \beta_m+0.03\,H_i+0.02\,EA_i+0.02\,WI_i, \nonumber\\
+\mathrm{ResidualRisk}_{im} &= \kappa_i\,\mathrm{autonomy}_m\,\mathrm{risk}_\Gamma\,/\,(1+0.45\,H_i+0.45\,EA_i), \nonumber
+\end{align}
+where $g_{im}$ is a configuration-specific base gain for the process, $v_i$ is the value factor of Eq.~\eqref{eq:mlp_tau} for selection processes, $\psi_i$ is a factor that increases in $EA_i$ and $WI_i$, $\mathrm{flex}_\Gamma$ is the regime's flexibility multiplier, $\beta_m$ is a configuration-specific base burden and $\mathrm{autonomy}_m$ a configuration-specific autonomy level. These configuration-specific constants and $\psi_i$ are simulated and are given in the canonical model file.
 
 \subsection{Level-3 configurations and the selection mechanism}
 
-Table~\ref{tab:app_configs} gives the minimum Level-2 state each configuration requires. A process may choose configuration $m$ only if $\mathrm{Allow}_{m\Gamma}=1$ and its state meets $\rho_m$ componentwise; it then receives $U_{im}=\mathrm{Gain}_{im}-0.45\,\mathrm{Burden}_{im}-0.75\,\mathrm{ResidualRisk}_{im}$. For selection processes, the AI recommendation is $d_i=\mathbf{1}[s_i\geq\tau_i]$, and the realised value factor is 1 for a correct recommendation and 0.35 otherwise (Eq.~\ref{eq:mlp_tau}). Review configurations reduce risk or change utility but do not correct a wrong recommendation. Ties are broken deterministically in the order HumanOnly, AIAssist, HumanFirstAICheck, AIFirstReview, BoundedAutomation.
+Table~\ref{tab:app_configs} gives the minimum Level-2 state each configuration requires. A process may choose configuration $m$ only if $\mathrm{Allow}_{m\Gamma}=1$ and its state meets $\rho_m$ componentwise; it then receives $U_{im}=\mathrm{Gain}_{im}-0.45\,\mathrm{Burden}_{im}-0.75\,\mathrm{ResidualRisk}_{im}$. For selection processes, the AI recommendation is $d_i=\mathbf{1}[s_i\geq\tau_i]$, and the realised value factor is 1 for a correct recommendation and 0.35 otherwise (Eq.~\eqref{eq:mlp_tau}). Review configurations reduce risk or change utility but do not correct a wrong recommendation. Ties are broken deterministically in the order HumanOnly, AIAssist, HumanFirstAICheck, AIFirstReview, BoundedAutomation.
 
 \begin{table}[tbp]
 \centering
@@ -372,10 +381,27 @@ The solver was checked in two ways (E4). The \emph{conformance check} evaluates,
 \subsection{Study 3: decision rules, stop rules and network test}
 \label{app:study3}
 
-This subsection states in full the rules summarised in Section~\ref{sec:mlp_study3}. No data have been collected, and all thresholds will be fixed in Study~3's own preregistration before data access.
+This subsection states in full the rules summarised in Section~\ref{sec:mlp_study3}. No data have been collected, and all thresholds will be fixed in Study~3's own preregistration before data access. Table~\ref{tab:back_study3} maps the planned data to the levels and parameters of the model.
 
-\paragraph{Decision rules.} The organisational candidate is supported if, among episodes with a determinable binding constraint, internal permission, decision rights, governance capacity or allocation is the most frequent first binding constraint and exceeds the preregistered share, and if episodes that changed status after an internal rule or allocation changed did so without a recorded change in capability or data. Each alternative (data quality, cost, regulation and liability, task suitability) is supported by the same rule applied to its own signature in Table~\ref{tab:back_study3_rivals}. Internal decision rights and external regulation can both appear as a withheld permission; they are separated by whether the binding rule originates inside the firm, where management can change it, or outside it. If no candidate reaches the threshold, the result is reported as mixed, and the model is not calibrated as a governance-bottleneck model.
+\begin{table}[tbp]
+\centering
+\caption{Study~3 (plan): planned data mapped to model levels and parameters. Calibration is attempted only if the organisational candidate is supported. No data have been collected; no result is reported or implied.}
+\label{tab:back_study3}
+\footnotesize
+\begin{tabular}{p{2.6cm}p{6.2cm}p{5.4cm}}
+\toprule
+Model level & Planned data & Parameters informed \tabularnewline
+\midrule
+\raggedright Level 1 & \raggedright AI budgets and staffing by process & \raggedright $b_i^r$, $B_{\mathrm{tot}}$ \tabularnewline
+\raggedright Level 2 & \raggedright Approval and audit workflows; decision-rights matrices & \raggedright $\mathrm{Allow}_{m\Gamma}$, $H_{\mathrm{req}}$, $EA_{\mathrm{req}}$, $K_\Gamma$ \tabularnewline
+\raggedright Level 3 & \raggedright Process observation and interviews on the configurations actually used & \raggedright $q_{im}$ \tabularnewline
+\raggedright Optional organisational structural-hole test & \raggedright De-identified aggregate metadata on tickets and meetings between AI staff and decision owners & \raggedright Burt constraint, assessed against nulls that preserve both portfolio-style responsibilities and degree \tabularnewline
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Decision rules.} The organisational candidate is supported if, among episodes with a determinable binding constraint, internal permission, decision rights, governance capacity or allocation is the most frequent first binding constraint and exceeds the preregistered share, and if episodes that changed status after an internal rule or allocation changed did so without a recorded change in capability or data. Each alternative (data quality, cost, regulation and liability, task suitability) is supported by the same rule applied to its own signature in Table~\ref{tab:back_study3_rivals}. Internal decision rights and external regulation can both appear as a withheld permission; they are separated by whether the binding rule originates inside the firm, where management can change it, or outside it. Organisational allocation and cost can both appear as a budget refusal; they are separated by whether the budget exists in aggregate. An episode is coded as cost if a feasible, permitted configuration is rejected because its integration cost exceeds the budget even after reallocation, and as allocation if budget exists in aggregate but the leader has allocated it elsewhere, or if an internal decision right blocks adoption. Both codes rest on dated records, such as budget allocations and business cases, not on the model. If no candidate reaches the threshold, the result is reported as mixed, and the model is not calibrated as a governance-bottleneck model.
 
 \paragraph{Stop rules.} The study stops and is reported as uninformative if the episodes with a determinable binding constraint fall below the preregistered minimum. Coding stops, and the codebook is revised as a dated amendment before any outcome analysis, if agreement between human coders on a pilot set falls below the preregistered minimum. If the organisational candidate is not supported, the model's governance layer is not calibrated, and the model is reported as unsupported.
 
-\paragraph{Optional network test.} If de-identified metadata on tickets and meetings between AI staff and decision owners are available, Burt constraint \citep{burt1992structural} will be computed on real organisational ties, where embeddedness arguments locate economic action \citep{granovetter1985economic}, against a null that preserves both what each unit is responsible for and its degree.
+\paragraph{Optional network test.} If de-identified metadata on tickets and meetings between AI staff and decision owners are available, Burt constraint \citep{burt1992structural} will be computed on real organisational ties, where embeddedness arguments locate economic action \citep{granovetter1985economic}, against a null that preserves both what each unit is responsible for and its degree. A three-expert exercise that translated the AI $\times$ decision categories into enterprise language is a pilot for the instruments only. Study~3 has not been run.

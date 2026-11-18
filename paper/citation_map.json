@@ -268,5 +268,23 @@
   "venue": "MIS Quarterly",
   "doi": "10.25300/MISQ/2021/16274",
   "abstract_or_role": "Managing AI as the frontier of computing; the facets of autonomy, learning and inscrutability raise distinctive management challenges for information-systems research."
+ },
+ "swanson1986fish": {
+  "type": "article",
+  "title": "Fish Oil, {Raynaud's} Syndrome, and Undiscovered Public Knowledge",
+  "authors": "Swanson, Don R.",
+  "year": "1986",
+  "venue": "Perspectives in Biology and Medicine",
+  "doi": "10.1353/pbm.1986.0087",
+  "abstract_or_role": "Literature-based discovery: links between literatures that are never co-cited or co-mentioned can point to undiscovered public knowledge; the absence of co-occurrence is used to generate hypotheses about connections."
+ },
+ "callon1983translations": {
+  "type": "article",
+  "title": "From translations to problematic networks: An introduction to co-word analysis",
+  "authors": "Callon, Michel and Courtial, Jean-Pierre and Turner, William A. and Bauin, Serge",
+  "year": "1983",
+  "venue": "Social Science Information",
+  "doi": "10.1177/053901883022002003",
+  "abstract_or_role": "Co-word analysis: co-occurrence of keywords is used to map the structure of research fields and the relations, or lack of relations, between research themes."
  }
 }

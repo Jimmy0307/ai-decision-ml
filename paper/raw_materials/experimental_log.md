@@ -357,6 +357,8 @@ The quantum-computing row is tiny: 74 edges in A.
 
 **Scope difference with P5:** the firm null starts from all 127,114 in-scope patents and 14,600 firms that own any in-scope patent, with 162,339 applicant citations among in-scope patents. P5 reports only the 6,201 firms that have at least one inter-firm tie after self-citations are removed, with 20,681 ties and total weight 109,508. The identity permutation reproduces the P5 values exactly.
 
+**Ratio form of T1 (derived):** observed T1 divided by the null median is 0.240/0.356 = 0.67 (primary) and 0.240/0.307 = 0.78 (S-tech). Specialist ties are therefore 33% and 22% below what the portfolio null implies. On the gap-from-1 scale the null reproduces 85% / 91%; on the ratio scale the shortfall is 33% / 22%. Both readings are valid, and they answer different questions.
+
 **Known limitation of the null:** the null preserves each firm's portfolio counts by type and year, not its degree or strength. Constraint is degree-dependent, so T2 cannot separate brokerage from degree. The degree-matched label null in P5 (null median 0.444) and the portfolio null (null median 0.104) answer different questions.
 
 **Verdict: PARTIAL in both stratifications** (not tech-mix sensitive). Specialist separation is mostly a portfolio effect. The lower constraint of MIXED firms does not survive: real firms are more clustered than the null.
@@ -371,6 +373,20 @@ The quantum-computing row is tiny: 74 edges in A.
 - Generator vs canonical domain check: 768 cases, 3,121 canonical-feasible state occurrences, 0 mismatches.
 - Mutation sensitivity: 720/768 detected.
 - Runtime 13.9 s.
+
+**Level-2 objective (canonical model `01_CANONICAL_MODEL_v1_0.md`; weights are uncalibrated design values):**
+
+F2 = Σ_i [0.90 Feas + 0.90 Rel + 0.45 Scalability − 0.55 IntegrationCost − 0.75 GovRisk + 0.65 max(0, U_i*)]
+
+- Feas = clip[0,1](0.55 + 0.08(D̄ − D_req) + 0.08(R̄ − R_req) + 0.04(Ḡ − max(H_req, EA_req)))
+- Rel = clip[0,1](0.45 + 0.10 EA + 0.06 H + 0.04 WI − 0.030 A·κ)
+- Scalability = clip[0,1](0.30 + 0.08 D̄ + 0.08 R̄ + 0.04 WI)
+- IntegrationCost = cost_Γ(0.10 A + 0.06 WI + 0.05 H + 0.05 EA)
+- GovRisk = 0 if A = 0, else risk_Γ · 0.08 · κ · A / (1 + 0.4 H + 0.4 EA)
+
+Level 3: Gain = g_im v_i ψ_i flex_Γ; Burden = β_m + 0.03 H + 0.02 EA + 0.02 WI; ResidualRisk = κ · autonomy_m · risk_Γ / (1 + 0.45 H + 0.45 EA).
+
+In the permission probe, Level 1 re-optimises its allocation; capabilities are endogenous and are **not** held fixed.
 
 **Governance regimes** (`04_solver_v1_0.py`). The source defines the letters C, F and D only as parameter sets and **does not name them**, so do not expand them (e.g. not "centralised"):
 

@@ -39,6 +39,8 @@ ROLES = {
     "raisch2021artificial": "Automation versus augmentation of managerial tasks with AI as a paradox; argues the two are interdependent across time and space and should be managed together.",
     "jarrahi2018artificial": "Human-AI symbiosis in organisational decision making: AI is suited to complexity, while humans contribute where decisions involve uncertainty and equivocality.",
     "berente2021managing": "Managing AI as the frontier of computing; the facets of autonomy, learning and inscrutability raise distinctive management challenges for information-systems research.",
+    "swanson1986fish": "Literature-based discovery: links between literatures that are never co-cited or co-mentioned can point to undiscovered public knowledge; the absence of co-occurrence is used to generate hypotheses about connections.",
+    "callon1983translations": "Co-word analysis: co-occurrence of keywords is used to map the structure of research fields and the relations, or lack of relations, between research themes.",
     "uspto2026patentsview": "USPTO PatentsView granted-patent tables (pvgpatdis): patents, current CPC classifications, US patent citations and disambiguated assignees.",
 }
 

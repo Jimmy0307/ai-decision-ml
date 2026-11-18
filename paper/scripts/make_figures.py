@@ -51,17 +51,16 @@ def fig_research_design():
         ax.text(x + w / 2, y + h - 2.2, title, ha="center", va="top", fontsize=8.5, fontweight="bold", color=INK)
         ax.text(x + w / 2, y + h - 6.6, body, ha="center", va="top", fontsize=6.8, color=INK2, linespacing=1.35)
 
-    box(2, 27, 29, 21, "Study 1  Literature", "V5-V11.1: function co-occurrence,\ncitation and co-author networks\n\nDirection robust, significance not;\n0 confirmed brokers", MUTED)
-    box(35.5, 27, 29, 21, "Study 2  Patents", "8.5M US patents, 4 preregistered analyses\nAI (G06N) x Decision (G06Q10/04, /06)\n\nTechnology level: hole not supported\nFirm level: PARTIAL (mostly portfolio)", BLUE)
-    box(69, 27, 29, 21, "Study 3  Enterprise", "Preregistered plan:\nresources, decision rights,\nhuman-AI configuration\n\nCalibrates the model", ORANGE)
-    box(14, 4, 72, 14, "Multi-level programming model", "L1 resource allocation  ->  L2 AI architecture & governance  ->  L3 human-AI configuration\nSimulated prototype now; parameters to be calibrated by Study 3", INK2)
-    for x0 in (31, 64.5):
-        ax.annotate("", xy=(x0 + 4.3, 37.5), xytext=(x0 + 0.2, 37.5),
-                    arrowprops=dict(arrowstyle="-|>", color=MUTED, lw=1.1))
-    ax.annotate("", xy=(50, 20.6), xytext=(50, 26.4), arrowprops=dict(arrowstyle="-|>", color=MUTED, lw=1.1))
-    ax.annotate("", xy=(70, 20.6), xytext=(83.5, 26.4), arrowprops=dict(arrowstyle="-|>", color=ORANGE, lw=1.1))
-    ax.text(50, 24.1, "structural hole in knowledge flows not supported", ha="center", fontsize=6.8, color=INK2,
-            bbox=dict(facecolor=SURF, edgecolor="none", pad=0.6))
+    box(1, 27, 26.5, 21, "Study 1  Literature", "V5-V11.1: function\nco-occurrence and\nnetwork searches\n\nDirection descriptive only;\nsignificance not robust", MUTED)
+    box(36.75, 27, 26.5, 21, "Study 2  Patents", "8.5M US patents,\n4 preregistered analyses\n\nDomain: hole not supported\nFirm: unresolved (PARTIAL)", BLUE)
+    box(72.5, 27, 26.5, 21, "Study 3  Enterprise", "Plan: discriminates\ncompeting explanations\n(allocation and decision\nrights, data, cost,\nregulation, task fit)", ORANGE)
+    box(14, 4, 72, 14, "Multi-level programming model (simulated)", "Formalises only the organisational candidate\nCalibrated only if Study 3 supports that candidate", INK2)
+    for x0, x1, lab in ((28.4, 36.3, "co-\noccurrence\nis not flow"), (64.1, 72.0, "which\nconstraint\nbinds?")):
+        ax.annotate("", xy=(x1, 34.5), xytext=(x0, 34.5), arrowprops=dict(arrowstyle="-|>", color=MUTED, lw=1.1))
+        ax.text((x0 + x1) / 2, 36.2, lab, ha="center", va="bottom", fontsize=5.8, color=INK2, linespacing=1.2)
+    ax.annotate("", xy=(72, 18.6), xytext=(85.5, 26.4),
+                arrowprops=dict(arrowstyle="-|>", color=ORANGE, lw=1.1, ls=(0, (4, 3))))
+    ax.text(87, 21.5, "only if\nsupported", ha="left", fontsize=6, color=INK2)
     save(fig, "fig_research_design")
 
 
@@ -104,7 +103,7 @@ def fig_patent_trend():
     ax.axhline(1, color=MUTED, lw=0.9, ls=(0, (3, 3)))
     ax.axhline(min(med), color=ORANGE, lw=1.2, ls=(0, (5, 3)))
     ax.text(yr[-1], 1.0 - 0.12, "no association (O = E)", fontsize=7, color=INK2, ha="right", va="top")
-    ax.text(yr[-1], min(med) + 0.1, f"median of 179 comparable fields ({min(med):.3f})", fontsize=7, color=INK2, ha="right")
+    ax.text(yr[-1], min(med) + 0.1, f"median OE(DEC, X) over 179 comparable fields ({min(med):.3f}; AI side {max(med):.3f})", fontsize=7, color=INK2, ha="right")
     ax.text(yr[-1] + 0.15, oe[-1], f"{oe[-1]:.2f}", fontsize=7.5, color=INK, va="center")
     ax.text(yr[0] - 0.15, oe[0], f"{oe[0]:.2f}", fontsize=7.5, color=INK, va="center", ha="right")
     ax.set_ylim(0, 5.2)
@@ -181,7 +180,7 @@ def fig_cpc_heatmap():
     cb.ax.tick_params(labelsize=7)
     fig.suptitle("Within AI x Decision: small cell-level deviations (▼/▲ = adapted full core, BH q ≤ .05)",
                  fontsize=9, fontweight="bold", color=INK, y=1.02)
-    fig.text(0.5, -0.04, "Hatched cells: expected count < 10 (too few observations to interpret).",
+    fig.text(0.5, -0.04, "Hatched cells: expected count < 10 (small sample; shown, marked and counted, but not interpreted).",
              ha="center", fontsize=7, color=INK2)
     save(fig, "fig_cpc_heatmap")
 
