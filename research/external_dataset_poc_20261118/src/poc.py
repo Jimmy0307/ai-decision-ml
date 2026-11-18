@@ -14,7 +14,7 @@ from urllib.request import Request, urlopen
 
 SOURCES = {
  "CORDIS":"https://cordis.europa.eu/data/cordis-h2020projects-csv.zip",
- "OpenAlex":"https://api.openalex.org/works?search=artificial%20intelligence%20decision%20making&per-page=50",
+ "OpenAlex":"https://api.openalex.org/works?search=artificial%20intelligence%20decision%20making&per-page=8",
  "OCDS_FICTIONAL":"https://raw.githubusercontent.com/open-contracting/sample-data/main/fictional-example/1.1/ocds-213czf-000-00001-04-award.json",
  "OCDS_REAL":"https://data.open-contracting.org/en/publication/128",
  "GLEIF":"https://api.gleif.org/api/v1/lei-records/5493001KJTIIGC8Y1R12",
@@ -359,7 +359,7 @@ def run(mode="fixture", cordis=False, full_grid=False):
                   "OPTIONAL { ?party eurio:roleLabel ?role . } } LIMIT 24")
     empirical_urls={
        "CORDIS_SPARQL":"https://cordis.europa.eu/datalab/sparql/query?query="+quote(cordis_query)+"&format=json",
-       "OCDS_REAL_UK":"https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&stages=award&updatedFrom=2026-08-01T00:00:00&updatedTo=2026-08-31T23:59:59",
+       "OCDS_REAL_UK":"https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=1",
     }
     for k,url in empirical_urls.items():
         try:
@@ -393,7 +393,7 @@ def run(mode="fixture", cordis=False, full_grid=False):
                                 sup=stable_key(supplier,parties)
                                 if buyer and sup and buyer!=sup:stable_edges.add((buyer,sup))
                 parsed={"top_level_keys":sorted(obj.keys()),"releases_in_package":len(packages) if isinstance(packages,list) else None,
-                        "window":"updatedFrom=2026-08-01 through updatedTo=2026-08-31; stages=award; max 100 releases",
+                        "window":"unstable next-available latest sample, limit=1; cannot estimate bidder coverage",
                         "award_count":awards_count,"notices_with_global_buyer_id":with_stable_buyer,
                         "verified_scheme_id_buyer_supplier_edges":sorted(stable_edges),
                         "ocids":[r.get("ocid") for r in packages[:3]] if isinstance(packages,list) else [],
