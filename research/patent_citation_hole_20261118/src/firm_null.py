@@ -103,14 +103,18 @@ class FirmModel:
                 "OE_AI_MIXED": oe["AI_FIRM~MIXED"], "OE_DEC_MIXED": oe["DEC_FIRM~MIXED"],
                 "ties": int(W.nnz // 2), "weight": float(tot)}
 
-    def null(self, scheme, reps, seed=SEED):
-        rng = np.random.default_rng(seed)
-        out = []
-        for _ in range(reps):
+    def null(self, scheme, reps, seed=SEED, done=None, checkpoint=None):
+        """Replicate r uses its own seed sequence [seed, scheme, r], so interrupted runs resume exactly."""
+        out = list(done or [])
+        sid = ("primary", "S_tech").index(scheme)
+        for r in range(len(out), reps):
+            rng = np.random.default_rng([seed, sid, r])
             perm = np.arange(len(self.S))
             for g in self.strata[scheme]:
                 perm[g] = rng.permutation(g)
             out.append(self.stats(self.weights(perm)))
+            if checkpoint and (r + 1) % 100 == 0:
+                checkpoint(out)
         return out
 
     def firm_counts(self, perm):
@@ -137,15 +141,30 @@ def summarise(obs, null):
     return res
 
 
+def build_or_load(out: Path):
+    """Build the slim firm model once (needs the large suite cache), then reuse it."""
+    slim = out / "firm_model_LOCAL.pkl"
+    if slim.exists():
+        with open(slim, "rb") as f:
+            return pickle.load(f)
+    import gc
+    with open(out / "suite_cache_LOCAL.pkl", "rb") as f:
+        D = pickle.load(f)
+    M = FirmModel(D)
+    del D
+    gc.collect()
+    with open(slim, "wb") as f:
+        pickle.dump(M, f, protocol=4)
+    return M
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--reps", type=int, default=1000)
     a = ap.parse_args(argv)
     t0 = time.time()
-    with open(a.out / "suite_cache_LOCAL.pkl", "rb") as f:
-        D = pickle.load(f)
-    M = FirmModel(D)
+    M = build_or_load(a.out)
     obs = M.stats(M.weights())
     fs.log("observed", obs, "patents", len(M.S), "firms", len(M.firms), "citations", len(M.ca))
     p5 = json.loads((a.out / "FULL_SUITE_RESULTS.json").read_text(encoding="utf-8"))["P5"]
@@ -158,10 +177,21 @@ def main(argv=None):
         perm[g] = rng.permutation(g)
     assert M.firm_counts(perm) == M.firm_counts(np.arange(len(M.S))), "portfolio not preserved"
     R = {"preregistration": "PREREGISTRATION_FIRM_NULL.md v1.0", "observed": obs, "reps": a.reps,
+         "seeding": "replicate r of scheme s uses default_rng([20261119, s, r])",
          "n_patents": int(len(M.S)), "n_firms": len(M.firms), "n_citations": int(len(M.ca)),
          "reproduces_P5": True, "portfolio_preserved_check": True}
     for scheme in ("primary", "S_tech"):
-        R[scheme] = summarise(obs, M.null(scheme, a.reps))
+        part = a.out / f"FIRM_NULL_PARTIAL_{scheme}_LOCAL.json"
+        done = json.loads(part.read_text(encoding="utf-8")) if part.exists() else []
+        if done:
+            fs.log(scheme, "resuming at", len(done))
+
+        def ckpt(rows, part=part, scheme=scheme):
+            part.write_text(json.dumps(rows, default=float), encoding="utf-8")
+            fs.log(scheme, "checkpoint", len(rows))
+        null = M.null(scheme, a.reps, done=done, checkpoint=ckpt)
+        ckpt(null)
+        R[scheme] = summarise(obs, null)
         R[scheme]["strata"] = len(M.strata[scheme])
         fs.log(scheme, R[scheme]["verdict"], R[scheme]["T1"], R[scheme]["T2"])
         (a.out / "FIRM_NULL_RESULTS.json").write_text(json.dumps(R, indent=2, default=float), encoding="utf-8")
