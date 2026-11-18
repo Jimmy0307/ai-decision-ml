@@ -37,7 +37,7 @@ def bounded_get(url, max_bytes=8_000_000, ua="Academic research feasibility/0.1"
 
 def grid_stats(transformers, links, lines=None, export_edges=False):
     """UNOFFICIAL GridKit physical topology, NOT organization/social ties."""
-    graph=defaultdict(set); edge_types={}; count={}
+    graph=defaultdict(set); edge_types={}; typed_edge_set=set(); count={}
     for tag, raw in (("transformer",transformers),("dc_link",links),("ac_line",lines)):
         if raw is None:continue
         rd=csv.DictReader(io.StringIO(raw),quotechar="'")
@@ -48,6 +48,7 @@ def grid_stats(transformers, links, lines=None, export_edges=False):
             a,b=(row.get("bus0") or "").strip(),(row.get("bus1") or "").strip()
             if not a or not b or a==b:continue
             e=tuple(sorted((a,b))); edge_types.setdefault(e,tag)
+            typed_edge_set.add((e[0],e[1],tag))
     for a,b in edge_types:
         graph[a].add(b);graph[b].add(a)
     seen=set();components=[]
@@ -63,7 +64,8 @@ def grid_stats(transformers, links, lines=None, export_edges=False):
     return {"rows":count,"nodes":len(graph),"edges":len(edge_types),
             "components":len(components),"largest_component":max(components,default=0),
             "triangles":triangles,"ac_lines_included":lines is not None,
-            "derived_edges":[{"u":a,"v":b,"kind":t} for (a,b),t in sorted(edge_types.items())] if export_edges else None,
+            "derived_edges":[{"u":a,"v":b,"kind":t} for a,b,t in sorted(typed_edge_set)] if export_edges else None,
+            "typed_edge_count":len(typed_edge_set),
             "scope":"UNOFFICIAL_2022_GRIDKIT_MAP_PHYSICAL_NETWORK_ONLY"}
 
 def ocds_stats(data):
