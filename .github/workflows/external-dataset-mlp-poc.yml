@@ -37,7 +37,7 @@ jobs:
           path: research/external_dataset_poc_20261118/results/ci-fixture.json
           retention-days: 30
   bounded-public-probe:
-    if: ${{ github.event_name == 'workflow_dispatch' && inputs.live_probe }}
+    if: ${{ github.event_name == 'pull_request' || (github.event_name == 'workflow_dispatch' && inputs.live_probe) }}
     runs-on: ubuntu-latest
     timeout-minutes: 14
     steps:
