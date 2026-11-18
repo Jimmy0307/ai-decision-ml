@@ -1,0 +1,116 @@
+{
+  "schema": "ai-decision-external-poc/1.0",
+  "created_utc": "2026-11-18",
+  "github_runner": "https://github.com/Jimmy0307/ai-decision-ml/actions/runs/44263879106",
+  "github_runner_source_commit": "34ca9846dc9db66ce0f94849b9be9d8dd6cb3695",
+  "preserved_artifact": "external-dataset-live-probe",
+  "evidence_type": "REAL_PUBLIC_SOURCES_WITH_EXPLORATORY_MODELING",
+  "sources": {
+    "cordis_h2020": {
+      "status": "DOWNLOADED_AND_SCHEMATICALLY_VALIDATED",
+      "bytes": 55260681,
+      "sha256": "8d4baffe558b7d0a74fc538f6ddf857147aab3895cf8032fb76ca4c5ce7df0fe",
+      "project_rows": 35389,
+      "organization_participation_rows": 179063,
+      "distinct_organizations": 41995,
+      "join_matched_rows": 179063,
+      "projects_with_two_plus_participations": 14755
+    },
+    "openalex": {
+      "status": "SMALL_LIVE_SAMPLE",
+      "works": 8,
+      "authors": 25,
+      "institutions": 14,
+      "works_with_doi": 8,
+      "same_entities_linked_to_cordis": false
+    },
+    "ocds_real_uk": {
+      "status": "SMALL_LIVE_SAMPLE_INSUFFICIENT_BIDDER_DATA",
+      "notices": 1,
+      "ocid": "ocds-h6vhtk-06a9c4",
+      "tenderers_observed": 0
+    },
+    "ocds_fictional": {
+      "status": "SCHEMA_FIXTURE_ONLY",
+      "releases": 1,
+      "buyers": 1,
+      "tenderers": 2,
+      "awards": 1
+    },
+    "gleif": {
+      "status": "ENTITY_RECORD_FETCHED_PARENT_LINK_NOT_VALIDATED",
+      "lei": "5493001KJTIIGC8Y1R12",
+      "direct_parent_record_path": null,
+      "ultimate_parent_record_path": null
+    },
+    "sec_edgar": {
+      "status": "NOT_RUN_NEEDS_GENUINE_SEC_USER_AGENT",
+      "live_facts": 0
+    },
+    "pypsa_gridkit": {
+      "status": "THREE_SOURCE_CSVS_DOWNLOADED_PHYSICAL_NETWORK_ONLY",
+      "source_description": "unofficial GridKit extraction of March 2022 ENTSO-E map",
+      "transformer_rows": 1039,
+      "dc_rows": 62,
+      "ac_rows": 11151,
+      "unique_edges": 11690,
+      "nodes": 8786,
+      "components": 117,
+      "largest_component": 8422,
+      "triangles": 796,
+      "sha256": {
+        "transformers": "cfac9ae6fac75c405232fc70ba6da477866ee791caec81d502c92f4fc33dcbf7",
+        "dc_links": "6cc90094d9e5ac4d67761f6b62c743ee741ec6e714288d550adf67fc8d520d28",
+        "ac_lines": "ad46bd0093a0fdffdd11b721f510929d2f6f98c1b48a19ccb0ac9162245eda9a"
+      }
+    }
+  },
+  "ai_decision_exploratory": {
+    "selection": "case-insensitive exact substring checks in project title and objective ONLY (code attempted singular 'topic', CORDIS has plural 'topics', which was not included in this version); not human-validated",
+    "ai_terms": [
+      "artificial intelligence",
+      "machine learning",
+      "deep learning",
+      "neural network",
+      "predictive analytics"
+    ],
+    "decision_terms": [
+      "decision making",
+      "decision-making",
+      "decision support",
+      "decision process",
+      "decision maker",
+      "decision-maker"
+    ],
+    "ai_keyword_projects": 1902,
+    "decision_keyword_projects": 1522,
+    "both_keywords": 195,
+    "projects_with_at_least_two_organization_ids": 104,
+    "organization_ids": 1105,
+    "organizations_in_two_plus_selected_projects": 188,
+    "projected_unweighted_co_membership_edges": 12181,
+    "projected_nonisolated_orgs": 1049,
+    "projected_components": 8,
+    "projected_largest_component": 1029,
+    "analysis_status": "DESCRIPTIVE_AFFILIATION_NETWORK_ONLY_NOT_BURT_STRUCTURAL_HOLES",
+    "risk": "Keyword selectivity; one-mode projection induces cliques, not observed information exchange; no external independent followup links."
+  },
+  "synthetic_mlp": {
+    "status": "FIxture_ONLY",
+    "leader_budget": 10,
+    "leader_caps": [
+      2,
+      2,
+      3
+    ],
+    "follower_responses": [
+      2,
+      2,
+      3
+    ],
+    "leader_objective": 26.75,
+    "follower_welfare": 31.5
+  },
+  "validity": "NO_EMPIRICAL_STRUCTURE_HOLE_OR_EMPIRICAL_MLP_CLAIM",
+  "reproducibility": "Raw bytes not committed; acquire via official upstream APIs; compare SHA256, run recorded code, document refetched SHA drift."
+}
