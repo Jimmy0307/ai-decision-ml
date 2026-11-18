@@ -117,3 +117,7 @@ The decision rule does not flag a network with no hole, and it detects a 30% sup
 ## Amendments (dated; the text above is unchanged)
 
 **A1 — 2026-11-18, before any citation data or result was computed.** After download, `g_cpc_current` was found to label inventive codes `"inventional"`, not `"inventive"`. The code now accepts both spellings, so sensitivity check 4 (inventive codes only) keeps its intended meaning. Implementation change: CPC rows are processed in chunks to limit memory use. Neither change touches the design, group definitions, thresholds or decision rules.
+
+**A2 — 2026-11-18, recorded after the run (data note, no change to the analysis).**
+- **Citation labels before 2013.** PatentsView labels non-examiner citations of 2010–2012 grants `"cited by other"`, not `"cited by applicant"`. In a sample of 4.0M citation rows from patents granted around 2011–2012, there were 3.13M "cited by other" and 0.88M "cited by examiner". The primary specification (applicant citations only) therefore covers citing years **2013–2025** in practice. Sensitivity check s1 (all citation categories) covers 2010–2025, and its verdict matches the primary.
+- **H3 not run.** H3 asks which firms broker an AI–DEC hole. With H1 clearly unsupported (§6), there is no hole to broker, so H3 is moot.
