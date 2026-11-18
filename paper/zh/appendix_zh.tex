@@ -1,0 +1,406 @@
+% ============================================================
+% appendix_zh.tex -- 附錄 A、B、C（主檔已於本檔之前放置 \appendix）。
+% 譯自 paper/en/appendix.tex。數字取自 raw_materials/experimental_log.md；附錄 A 之
+% 提交編號與預先登錄決策規則取自凍結之預先登錄文本（為供審查，儲存庫識別資訊暫不公開）。
+% 治理型態 C／F／D 不得展開為任何名稱。
+% ============================================================
+
+\chapter{預先登錄與修訂紀錄}
+\label{zh:app:prereg}
+
+研究二以四份預先登錄（preregistration）計畫為基礎。每份計畫皆為本研究計畫儲存庫中自行加註時間戳記的 git 提交（為供審查，儲存庫識別資訊暫不公開；提交編號列於表~\ref{zh:tab:app_prereg}）；沒有任何一份在 OSF 等第三方登錄平台登錄，且提交時間戳記係由作者自有的工具設定。預先登錄的目的，是在觀察到結果之前即固定研究計畫，以區分驗證性與探索性分析 \citep{nosek2018preregistration}。依此標準，計畫 1 是在下載任何專利資料之前即已固定。計畫 2--4 則是在已知先前結果之後撰寫，因此其所提出的問題受到資料啟發；僅其定義、虛無模型（null model）、決策規則、門檻與停止規則（stop rule），是在其所規範的分析計算之前固定的。凍結之後的變更以附日期的修訂（amendment）加以記錄，且不覆寫已凍結的文本。表~\ref{zh:tab:app_prereg} 彙整四份計畫，包括取自凍結文本的提交編號與規則門檻；表~\ref{zh:tab:app_amend} 列出每一項修訂與已記錄的偏離。
+
+\begin{table}[tbp]
+\centering
+\caption{研究二之預先登錄紀錄。「凍結前」說明計畫提交時尚未計算的內容，「撰寫時已知」則說明當時已計算的內容。提交編號與決策規則引自凍結文本；結果為 DIRECT 結果（E3）。}
+\label{zh:tab:app_prereg}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{2.0cm}p{2.5cm}p{3.7cm}p{4.3cm}p{2.3cm}}
+\toprule
+計畫（提交） & 凍結前／撰寫時已知 & 假設與內容 & 決策規則 & 結果 \tabularnewline
+\midrule
+\raggedright 1.~整體檢定（\texttt{a8f3289}） &
+\raggedright 於下載或檢視任何專利資料之前凍結。已知：僅研究一 &
+\raggedright H1a：OE(AI,DEC) 相對於 G06/G16/H04 中專利數 $\geq$2,000 之參照 CPC 大組；H1b：與 OE(AI,BIZ-OTHER) 之比值；H2：依引用年份之趨勢；H3（探索性）：受讓人作為領域層次結構洞之中介者；六項敏感度檢查；合成資料校準 &
+\raggedright 唯有當 OE 在兩側皆位於最低四分位數（H1a），且比值之 95\% 信賴區間上界 $<1$（H1b）時，H1 才獲支持；標籤為 \texttt{HOLE\_\allowbreak SUPPORTED}、\texttt{PARTIAL\_\allowbreak NOT\_\allowbreak CLAIMED}、\texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}；6 項敏感度檢查中有 $\geq$4 項不一致 $\rightarrow$ \texttt{FRAGILE}；H2 標籤為 \texttt{CLOSING}、\texttt{PERSISTENT}、\texttt{NARROWING\_\allowbreak BUT\_\allowbreak OPEN}，若斜率之 95\% 信賴區間包含 0 或位於 0 以下，則為 \texttt{PERSISTENT}（此規則係針對結構洞情形撰寫，其中「閉合」意指 OE 上升） &
+\raggedright \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}；0/6 不一致；H2 為 \texttt{PERSISTENT}（斜率為負：過度連結正在下降） \tabularnewline
+\addlinespace
+\raggedright 2.~CPC 矩陣上的 V9 檢定組合（\texttt{a6266f7}） &
+\raggedright 於任何格層次計數之前凍結。已知：整體判定結果 &
+\raggedright 在依 CPC 分類架構固定之 $6\times7$ 矩陣上使用未經修改的 V9 引擎；A 部分為共同分類，B 部分為申請人引用 &
+\raggedright 完整核心格：主檢定、精確檢定與保留文件結構檢定皆 q $\leq$ .05 且方向相同，另加原始紀錄檢定；趨同偏低：在 A 與 B 中皆為完整核心偏低格；偏低格不得稱為結構洞 &
+\raggedright 預先登錄之核心格在建構上為 0（B1）；三檢定格為探索性 \tabularnewline
+\addlinespace
+\raggedright 3.~完整重現套組（\texttt{d641256}） &
+\raggedright 於執行任何模組 P1--P10 之前凍結。已知：整體判定結果、計畫 2 全期間的格層次結果，以及 M06 的失敗（B1） &
+\raggedright P1 採用專利適用之虛無模型 M06-P；P2 種子、虛無模型偽陽性、檢定力、區段劃分；P3 時間切分；P4 標籤表面效度；P5 公司網路；P6 移除；P7 超邊；P8 別名；P9 缺口效度（Gap Validity）；P10 Limitation Scout &
+\raggedright P3 與 P9 採三檢定一致；複製的偏低格必須在前後兩半皆通過；P4 若提升度 $\geq$1.5 則通過；P5 公司結構洞成立的條件為 O/E $<1$ 且低於兩個 MIXED 的 O/E；若移除某候選者後 AI 與 DEC 公司仍保持連結，則該候選者即被否證 &
+\raggedright 見附錄~\ref{zh:app:sens}；P5 判準達成（其後在計畫 4 的虛無模型下為 \texttt{PARTIAL}；並非經證實的結構洞）；10/10 個候選者被否證；P10 為 \texttt{NOT\_\allowbreak APPLICABLE} \tabularnewline
+\addlinespace
+\raggedright 4.~保留專利組合的公司虛無模型（\texttt{b59fc71}） &
+\raggedright 於計算任何虛無重複樣本之前凍結。已知：P5 結果，此結果促成了本計畫 &
+\raggedright T1：OE(AI\_FIRM$\sim$DEC\_FIRM)；T2：MIXED 之限制度中位數；在各層內置換專利擁有者集合（主要分層；S-tech）。此虛無模型保留專利組合計數，而非公司度數 &
+\raggedright 若 T1 與 T2 皆為單尾 $p<.05$，則為 \texttt{ORGANISATIONAL\_\allowbreak HOLE\_\allowbreak BEYOND\_\allowbreak PORTFOLIO}；恰有一項成立則為 \texttt{PARTIAL}；皆不成立則為 \texttt{PORTFOLIO\_\allowbreak ARTEFACT}；S-tech 結果不一致 $\rightarrow$ \texttt{TECH\_\allowbreak MIX\_\allowbreak SENSITIVE} &
+\raggedright 兩種分層下皆為 \texttt{PARTIAL}（T1 達成，T2 未達成） \tabularnewline
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[tbp]
+\centering
+\caption{修訂與已記錄之偏離。修訂附加於凍結文本之後，凍結文本本身維持不變。}
+\label{zh:tab:app_amend}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{1.3cm}p{1.2cm}p{2.6cm}p{6.4cm}p{3.1cm}}
+\toprule
+項目 & 計畫 & 時間 & 變更內容 & 對設計的影響 \tabularnewline
+\midrule
+\raggedright A1 & \raggedright 1 & \raggedright 2026-11-18，於計算任何引用資料或結果之前（\texttt{a158e70}） & \raggedright CPC 檔案將發明性（inventive）分類碼標示為「inventional」；程式碼同時接受兩種拼寫，使敏感度檢查 s4 維持其原意。CPC 資料列以分塊方式載入。 & \raggedright 無 \tabularnewline
+\addlinespace
+\raggedright A2 & \raggedright 1 & \raggedright 2026-11-18，執行之後（資料附註） & \raggedright 2013 年以前，非審查員引用被標示為「cited by other」，因此僅含申請人引用的設定實際上涵蓋引用年份 2013--2025；s1（所有類別）與主要判定一致。H3 未執行。H3 探討的是受讓人是否對「領域層次」的結構洞進行中介，因此以 H1 為條件；由於 H1 未獲支持，並不存在可供中介的此類結構洞。其後的公司分析提出的是另一個問題——AI 與 DEC 專門型公司是否彼此分隔，以及混合型公司是否跨越此一分隔，且與領域層次的判定結果無關。此問題另於計畫 3（P5）中預先登錄，作為研究一作者網路資料線在專利資料上的對應分析，並於計畫 4 中進一步追蹤。 & \raggedright 對 H1 無影響；H3 失去意義；公司層次問題於計畫 3--4 中重新提出 \tabularnewline
+\addlinespace
+\raggedright B1 & \raggedright 2 & \raggedright 2026-11-18，執行之後 & \raggedright M06 在 21,843,600 次提議的交換中接受 0 次，因為每份文件皆為一個完整的列 $\times$ 欄區塊；預先登錄的核心格在建構上即為 0，不具資訊性。三檢定格以探索性結果報告。替代的 M06-P 是在此一失敗之後、且在計畫 2 的三檢定格結果已知之後才設定；隨後於計畫 3（模組 P1，\texttt{d641256}）中、在計算之前凍結。計畫 2 的結果檔僅記錄退化的核心格；所有 M06-P 的計數皆來自計畫 3 的 P1 輸出。 & \raggedright 有紀錄的、受資料啟發的計畫 2 偏離 \tabularnewline
+\addlinespace
+\raggedright 種子設定 & \raggedright 4 & \raggedright 於任何虛無重複樣本完成之前（\texttt{1eb7319}） & \raggedright 首次執行在完全重現 P5 之後，因主機記憶體壓力而中止。之後將執行改為可續跑；方案 $s$ 的每一重複樣本 $r$ 使用各自的種子序列 [20261119, $s$, $r$]，而非單一亂數流。 & \raggedright 統計量、分層與規則皆未改變 \tabularnewline
+\addlinespace
+\raggedright P6、P10 & \raggedright 3 & \raggedright 與結果一併記錄 & \raggedright P6 的跨權重保留指標在建構上恆等於 1；P10 Limitation Scout 為 \texttt{NOT\_\allowbreak APPLICABLE}（專利沒有研究限制章節）。 & \raggedright 以不具資訊性報告 \tabularnewline
+\bottomrule
+\end{tabular}
+\end{table}
+
+研究一使用凍結的 V9 種子：端點重配蒙地卡羅（stub Monte Carlo）為 20260918，保留文件結構的交換虛無模型（document-preserving swap null）為 20260919（E1.1）。其資料效度再分析（2026-11-18；E1.3--E1.5）並未預先登錄。其判定結果記錄如下：方向性低整合（under-integration）為 \texttt{DEFENSIBLE}；「16 個統計上穩健的偏低配對」依現行測量為 \texttt{NOT DEFENSIBLE}；Burt 結構洞（structural hole）為 \texttt{STOP}；研究缺口為 \texttt{NOT SUPPORTED}。本論文對第一項判定加以限定。該項判定依據的是削弱論證，而此論證僅在非差異性誤分類（misclassification, non-differential）下成立，然而同詞兩端共用（same-term self-pairing）與模型推論標籤屬於非隨機誤差。表~\ref{zh:tab:app_s1robust} 中的移除檢查顯示，同詞兩端共用並非主要驅動因素；模型推論標籤的影響則尚未檢驗。此方向通過了本研究所能執行的每一項檢查，但它僅屬描述性，且未獲證實（第~\ref{zh:sec:discussion_measurement}~節）。
+
+% ------------------------------------------------------------
+\chapter{敏感度分析表}
+\label{zh:app:sens}
+
+\section{研究一}
+
+表~\ref{zh:tab:app_v9cells} 列出凍結之 V9 分析中的 16 個偏低格（depleted cell），表~\ref{zh:tab:app_s1robust} 則列出資料效度再分析的穩健性檢查。
+
+\begin{table}[tbp]
+\centering
+\caption{16 個 V9 偏低格及其觀察次數（DIRECT；\texttt{V9\_ROBUSTNESS\_MASTER\_TABLE.csv}）。這些是偏低格而非缺口，且已撤回其作為模型錨定之用（第~\ref{zh:sec:mlp_model}~節）。在固定邊際下，預測 $\times$ 預測格中的同詞兩端共用可能機械性地使其所在列與欄的其他格偏低；但排除同詞紀錄後，13/16 格維持其方向（表~\ref{zh:tab:app_s1robust}）。}
+\label{zh:tab:app_v9cells}
+\footnotesize
+\begin{tabular}{llr}
+\toprule
+AI 家族 & 決策家族 & $O$ \\
+\midrule
+\texttt{COORDINATION\_EXECUTION} & \texttt{HUMAN\_REVIEW\_ACCOUNTABILITY} & 10 \\
+\texttt{COORDINATION\_EXECUTION} & \texttt{RISK\_ASSESSMENT} & 3 \\
+\texttt{EVALUATION\_ASSESSMENT} & \texttt{ALLOCATION\_PLANNING} & 12 \\
+\texttt{EVALUATION\_ASSESSMENT} & \texttt{PREDICTION\_DIAGNOSIS} & 9 \\
+\texttt{EXPLANATION\_ASSURANCE} & \texttt{ALLOCATION\_PLANNING} & 7 \\
+\texttt{EXPLANATION\_ASSURANCE} & \texttt{EVALUATION\_SELECTION} & 7 \\
+\texttt{EXPLANATION\_ASSURANCE} & \texttt{PREDICTION\_DIAGNOSIS} & 15 \\
+\texttt{GENERATION\_SYNTHESIS} & \texttt{PREDICTION\_DIAGNOSIS} & 7 \\
+\texttt{HUMAN\_AUGMENTATION} & \texttt{EVALUATION\_SELECTION} & 2 \\
+\texttt{HUMAN\_AUGMENTATION} & \texttt{PREDICTION\_DIAGNOSIS} & 3 \\
+\texttt{PREDICTION\_RISK\_ESTIMATION} & \texttt{EVALUATION\_SELECTION} & 8 \\
+\texttt{PREDICTION\_RISK\_ESTIMATION} & \texttt{GENERAL\_DECISION\_PROCESS} & 8 \\
+\texttt{PREDICTION\_RISK\_ESTIMATION} & \texttt{GOVERNANCE\_OVERSIGHT} & 26 \\
+\texttt{PREDICTION\_RISK\_ESTIMATION} & \texttt{HUMAN\_REVIEW\_ACCOUNTABILITY} & 6 \\
+\texttt{PREDICTION\_RISK\_ESTIMATION} & \texttt{INFORMATION\_ACQUISITION} & 21 \\
+\texttt{RECOMMENDATION\_OPTIMIZATION} & \texttt{HUMAN\_REVIEW\_ACCOUNTABILITY} & 8 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[tbp]
+\centering
+\caption{研究一之穩健性檢查（DIRECT；資料效度再分析，2026-11-18；E1.3）。核心格的定義結合了各檢定內的 BH 偽發現率（FDR）校正 \citep{benjamini1995controlling} 與跨檢定的一致性，因此核心格沒有單一明確定義的偽發現率。這些檢查檢驗的是模式的穩定性；其中沒有任何一項處理非隨機的編碼誤差。}
+\label{zh:tab:app_s1robust}
+\footnotesize
+\begin{tabular}{p{3.6cm}p{11.0cm}}
+\toprule
+檢查 & 結果 \tabularnewline
+\midrule
+\raggedright 重新實作 & \raggedright 精確檢定與原始紀錄檢定重現了官方 q 值（$|\Delta q|\leq 6\times10^{-12}$）；32 格核心的 Jaccard 重疊為 .94 \tabularnewline
+\raggedright 20 個蒙地卡羅種子 & \raggedright 每一種子下皆有 31 格位於核心格中，包括全部 16 個偏低格；2 個邊界格，恰為人工校正附檔（sidecar）中一進一出的那一對格 \tabularnewline
+\raggedright 排除偏誤 & \raggedright 偏低核心格通過嚴格篩選的比例高於其他格（38\% 對 28\%） \tabularnewline
+\raggedright 依軌道（track）分層之虛無模型 & \raggedright 16/16 個偏低格與 16/16 個偏高格仍維持顯著，且方向不變 \tabularnewline
+\raggedright 兩個時期（$\leq$2023 對 $\geq$2024） & \raggedright 16/16 格在兩個時期皆偏低；其變化與置換虛無模型無差異（$p=.86$） \tabularnewline
+\raggedright 關鍵詞（第一階段）編碼 & \raggedright 13/16 個偏低格維持相同方向 \tabularnewline
+\raggedright 同詞兩端共用 & \raggedright 最強偏高格中 33\% 的紀錄兩端為同一詞彙；移除這些紀錄後，2 個與預測相關的偏低格自核心格中脫落 \tabularnewline
+\raggedright 規則式關鍵詞矩陣 & \raggedright 移除 741 筆同詞紀錄；文件邊 1,431 條；13/16 方向相同，6 格顯著，0 格顯著反轉；僅 7 格達到四檢定核心格 \tabularnewline
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{研究二}
+
+表~\ref{zh:tab:app_oeyear} 列出圖~\ref{zh:fig:patent_trend} 所依據的逐年強度，以及在真實資料之前執行的合成資料校準。表~\ref{zh:tab:app_suite} 彙整校準（P2）、時間切分（P3）與缺口效度（P9）模組，表~\ref{zh:tab:app_lift} 則列出標籤表面效度的提升度（P4）。P4 是標題關鍵詞檢查，而非人工編碼稽核。
+
+\begin{table}[tbp]
+\centering
+\caption{依引用專利核准年份之 OE(AI,DEC)，主要設定（申請人引用），附 95\% 信賴區間；以及整體規則的合成資料校準（DIRECT；E3.1）。合成資料生成器相當簡單（領域內引用並植入抑制），其無結構洞基準遠低於真實的 OE。}
+\label{zh:tab:app_oeyear}
+\footnotesize
+\begin{tabular}{lrl@{\hspace{1.2cm}}lrl}
+\toprule
+年份 & OE & 95\% 信賴區間 & 年份 & OE & 95\% 信賴區間 \\
+\midrule
+2013 & 3.90 & 3.16--4.85 & 2020 & 3.55 & 3.18--3.94 \\
+2014 & 2.84 & 2.42--3.41 & 2021 & 3.34 & 3.03--3.69 \\
+2015 & 3.79 & 3.14--4.55 & 2022 & 2.95 & 2.62--3.30 \\
+2016 & 4.05 & 3.42--4.75 & 2023 & 3.05 & 2.78--3.34 \\
+2017 & 3.29 & 2.78--3.86 & 2024 & 2.69 & 2.40--2.98 \\
+2018 & 3.20 & 2.81--3.64 & 2025 & 2.34 & 2.08--2.64 \\
+2019 & 3.99 & 3.48--4.54 & & & \\
+\midrule
+\multicolumn{6}{p{8.4cm}}{WLS 斜率每年 $-0.097$（95\% 信賴區間 $-0.130$ 至 $-0.065$）；最近 3 年 OE 為 2.69，對照 DEC 側參照中位數 1.095（AI 側 1.240）；標籤為 \texttt{PERSISTENT}（斜率信賴區間未高於 0）。} \\
+\midrule
+\multicolumn{6}{l}{\textbf{合成資料校準（真實資料之前）}} \\
+\multicolumn{6}{p{8.4cm}}{無結構洞：OE 0.388，對照參照最低四分位數 0.356；比值 0.99（0.79--1.21）$\rightarrow$ \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}。} \\
+\multicolumn{6}{p{8.4cm}}{30\% 抑制：OE 0.275；比值 0.66（0.52--0.83）$\rightarrow$ 偵測到。} \\
+\multicolumn{6}{p{8.4cm}}{50\% 抑制：OE 0.223；比值 0.47 $\rightarrow$ 偵測到。} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[tbp]
+\centering
+\caption{重現套組：校準（P2）、時間切分（P3）與缺口效度（P9）。A 部分為共同分類；B 部分為申請人引用（DIRECT；E3.3）。P2 的虛無矩陣為將各條邊視為獨立的端點置換矩陣，因此無法偵測文件群聚（clustering）所造成的反保守性。A 部分的前半期樣本較小。P9 的數值為診斷結果而非證據：間接項為零是二分圖的恆等性質，而在稠密的 $6\times7$ 矩陣中，替代路徑幾乎必然存在。}
+\label{zh:tab:app_suite}
+\footnotesize
+\begin{tabular}{lp{6.0cm}ll}
+\toprule
+模組 & 統計量 & A 部分 & B 部分 \\
+\midrule
+P2 種子 & 種子（20 $\times$ 10,000）：始終 q $\leq$ .05 之格數／邊界格數 & 20 / 4 & 22 / 0 \\
+P2 虛無 & 每個矩陣的平均偽陽性格數（1,000 個虛無矩陣） & 0.045 & 0.049 \\
+ & 含任何偽陽性格之矩陣比例 & 3.6\% & 4.4\% \\
+P2 檢定力 & 偵測到 20\% 偏低，$E\geq100$ 之格 & 18/27 = 67\% & 23/29 = 79\% \\
+P2 區段劃分 & S1 僅發明性分類碼：偏低格數（與 P1 重疊數） & 8 (6) & 11 (8) \\
+ & S2 單一分類碼文件：偏低格數（與 P1 重疊數） & 8 (5) & 8 (4) \\
+\midrule
+P3 時間切分 & 前半期：文件數、偏低格數 & 2010--2017: 543, 0 & 2013--2018: 4,772, 3 \\
+ & 後半期：文件數、偏低格數 & 2018--2025: 4,773, 8 & 2019--2025: 26,071, 11 \\
+ & 在前後兩半皆複製的偏低格 & 0 & 0 \\
+\midrule
+P9 缺口效度 & 間接限制項（二分網路；恆等性質） & 0 & 0 \\
+ & 每一偏低格的長度 3 替代路徑數 & 20--30 & 20--30 \\
+ & q $\leq$ .01 對 q $\leq$ .05 的偏低格數 & 7 對 9 & 9 對 10 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[tbp]
+\centering
+\caption{標籤表面效度（P4）：標題關鍵詞命中率相對於其他 AI$\cup$DEC 專利的提升度。提升度 $\geq$ 1.5 即視為通過；全部 11 個標籤皆通過（DIRECT；E3.3）。此並非評分者間信度（inter-rater reliability）。}
+\label{zh:tab:app_lift}
+\footnotesize
+\begin{tabular}{lr@{\hspace{1.2cm}}lr}
+\toprule
+AI 方法標籤 & 提升度 & 決策功能標籤 & 提升度 \\
+\midrule
+G06N3 & 4.69 & FORECAST\_OPTIMISE & 3.31 \\
+G06N5 & 7.81 & RESOURCE\_SCHEDULING & 4.51 \\
+G06N7 & 14.28 & WORKFLOW & 4.88 \\
+G06N10 & 1,650 & RISK & 55.39 \\
+G06N20 & 2.18 & STRATEGY（命中率 4.5\%） & 4.40 \\
+ & & PERFORMANCE & 6.32 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{外部資料可行性}
+
+表~\ref{zh:tab:app_sources} 列出六個經流動效度篩選之公開資料來源的規模與結果。
+
+\begin{table}[tbp]
+\centering
+\caption{經流動效度篩選的六個公開資料來源（DIRECT；E2）。沒有任何來源通過獨立關係與驗證關卡。}
+\label{zh:tab:app_sources}
+\footnotesize
+\begin{tabular}{p{2.2cm}p{6.6cm}p{5.6cm}}
+\toprule
+來源 & 規模 & 關係類型與結果 \tabularnewline
+\midrule
+\raggedright CORDIS H2020 & \raggedright 35,389 個計畫；179,063 筆組織參與紀錄；關鍵詞候選：195 個計畫 $\times$ 1,105 個組織 = 1,436 條邊；投影：1,049 個節點、12,181 條邊、102,660 個計畫內三元組，156 條邊在 $\geq$2 個計畫中重複出現 & \raggedright 共同成員關係（隸屬）。保留度數的二分交換虛無模型（49 次重複）：5 個可檢定候選者，$p=.41$--$.86$，BH q $\geq$ .80；0 個顯著 \tabularnewline
+\raggedright GLEIF Level-2 & \raggedright 663,449 筆關係紀錄（481,247 筆有效） & \raggedright 法律上的合併關係，而非資訊流動 \tabularnewline
+\raggedright OpenAlex & \raggedright 8 篇著作 & \raggedright 未通過關卡 \tabularnewline
+\raggedright OCDS & \raggedright 第 3 輪樣本中可驗證的買方--供應商邊為 0 條 & \raggedright 未通過關卡 \tabularnewline
+\raggedright SEC & \raggedright 未擷取（需要真實的聯絡用 User-Agent） & \raggedright 未評估 \tabularnewline
+\raggedright PyPSA & \raggedright 8,786 個匯流排（bus） & \raggedright 實體電網拓撲，而非資訊流動 \tabularnewline
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ------------------------------------------------------------
+\chapter{多層規劃限制式細節}
+\label{zh:app:mlp}
+
+本附錄中的所有數值皆描述模擬的 v1.0 原型。它們是設計假設而非估計值，且不描述任何真實公司。該模型僅將組織候選解釋加以形式化（第~\ref{zh:sec:discussion_hypothesis}~節），且其原始錨定——16 個 V9 偏低格——已被撤回。
+
+\section{三層的完整陳述}
+\label{zh:app:mlp_full}
+
+本節陳述第~\ref{zh:sec:mlp_model}~節所摘要的模型（多層規劃，multi-level programming, MLP）。每個流程 $i$ 對每一資源 $X\in\mathcal{R}=\{D,A,R,G\}$ 皆有初始能力 $X_i^0$。
+
+\paragraph{第一層：企業資源分配（resource allocation；領導者，leader）。}
+\begin{align}
+\max_{b}\quad & F_1 = 1.25\,\mathrm{RealizedValue} + 0.20\,\mathrm{AIAdoptions} - 0.22\,\mathrm{ResourceUse} - 0.75\,\mathrm{ResidualRisk} \label{zh:eq:mlp_l1}\\
+\text{s.t.}\quad & b_i^r\in\{0,1,2,3\}, \qquad \sum_{i\in I}\sum_{r\in\mathcal{R}} c_i^r\, b_i^r \leq B_{\mathrm{tot}}, \nonumber\\
+& \bar{X}_i = \phi_X\!\left(X_i^0, b_i^X\right) = \min\!\left(3,\; X_i^0 + b_i^X\right), \qquad X\in\mathcal{R}, \nonumber\\
+& (A_i,H_i,WI_i,EA_i)_{i\in I} \text{ solves Level 2 given } \bar{X}, \text{ and } q \text{ solves Level 3}. \nonumber
+\end{align}
+簡化映射（toy map）$\phi_X$ 將單位成本為 $c_i^r$ 的分配 $b_i^X$ 轉換為能力上限 $\bar{X}_i\in\{\bar D_i,\bar A_i,\bar R_i,\bar G_i\}$。RealizedValue、AIAdoptions 與 ResidualRisk 皆於追隨者的回應下評估。
+
+\paragraph{第二層：AI 決策架構與治理。}架構為每個流程選擇 AI 整合深度 $A_i$、人類監督 $H_i$、工作流程整合 $WI_i$ 與保證 $EA_i$：
+\begin{align}
+\max_{(A_i,H_i,WI_i,EA_i)_{i\in I}}\quad & F_2 \label{zh:eq:mlp_l2}\\
+\text{s.t.}\quad & (A_i,H_i,WI_i,EA_i)\in\{0,\dots,3\}^4, \nonumber\\
+& A_i\leq\bar{A}_i,\quad H_i\leq\bar{G}_i,\quad EA_i\leq\bar{G}_i,\quad WI_i\leq\bar{D}_i, \nonumber\\
+& \bar{D}_i\geq D_{\mathrm{req}}(A_i),\quad \bar{R}_i\geq R_{\mathrm{req}}(A_i), \nonumber\\
+& H_i\geq H_{\mathrm{req}}(A_i,\kappa_i),\quad EA_i\geq EA_{\mathrm{req}}(A_i,\kappa_i),\quad WI_i\geq WI_{\mathrm{req}}(A_i), \nonumber\\
+& \sum_{i\in I}\left(0.42A_i + 0.24H_i + 0.24EA_i + 0.20WI_i\right)\leq K_\Gamma. \nonumber
+\end{align}
+要求門檻列於表~\ref{zh:tab:app_thresholds}。容量限制式由所有流程共用；它代表組織在各流程間治理 AI 的有限能力。$F_2$ 係對各流程加總以下各項：可行性、可靠性與可擴展性的加權項（能力剩餘與第二層狀態的有界線性指標），減去整合成本與治理風險，再加上該架構所能提供的最佳第三層效用。下方式~\eqref{zh:eq:app_f2} 完整列出 $F_2$ 及其權重，這些權重皆為未經校準的設計值。
+
+\paragraph{第三層：人機配置（追隨者，follower）。}給定其第二層狀態，每個流程從 $m\in\mathcal{M}=\{$\texttt{HumanOnly}, \texttt{AIAssist}, \texttt{HumanFirstAICheck}, \texttt{AIFirstReview}, \texttt{BoundedAutomation}$\}$ 中選擇一種配置：
+\begin{align}
+\max_{q_{i\cdot}}\quad & \sum_{m\in\mathcal{M}} q_{im}\,U_{im}, \qquad U_{im} = \mathrm{Gain}_{im} - 0.45\,\mathrm{Burden}_{im} - 0.75\,\mathrm{ResidualRisk}_{im} \label{zh:eq:mlp_l3}\\
+\text{s.t.}\quad & q_{im}\in\{0,1\},\qquad \sum_{m\in\mathcal{M}} q_{im}=1,\qquad q_{im}\leq\mathrm{Allow}_{m\Gamma}, \nonumber\\
+& q_{im}=1 \;\Rightarrow\; (A_i,H_i,WI_i,EA_i)\geq\rho_m \text{ componentwise}. \nonumber
+\end{align}
+最低要求向量 $\rho_m=(A,H,WI,EA)$ 列於表~\ref{zh:tab:app_configs}；\texttt{HumanOnly} 的要求為 $(0,0,0,0)$，而要求逐步提高至 \texttt{BoundedAutomation} 的 $(3,3,3,3)$。
+
+\paragraph{選擇型流程與門檻 $\tau$。}對於在多個方案之間進行選擇的流程，AI 元件產生分數 $s_i$，而 $\tau_i$ 為分數門檻，高於此門檻時 AI 即建議正向選擇：
+\begin{equation}
+d_i=\mathbf{1}\!\left[s_i\geq\tau_i\right], \qquad v_i=\begin{cases}1 & \text{if } d_i \text{ matches the true outcome},\\ 0.35 & \text{otherwise},\end{cases}
+\label{zh:eq:mlp_tau}
+\end{equation}
+其中 $v_i$ 用以調整流程所實現的價值。此門檻是流程的固定設計參數，而非任何一層的決策變數。在原型中，$s_i$ 與真實結果是為各層所知的單一固定實現值，因此 $\tau_i$ 是一種敏感度分析（sensitivity analysis）工具，而非錯誤率的模型。
+
+\section{治理型態}
+
+治理型態（governance regime）$\Gamma$ 由表~\ref{zh:tab:app_regimes} 中的參數與許可矩陣 $\mathrm{Allow}_{m\Gamma}$ 所定義。在原型原始程式碼中，彈性乘數用以調整第三層的實現收益，風險乘數用以調整第三層的剩餘風險與第二層的治理風險，成本乘數則用以調整第二層的整合成本。關於雙層（bilevel）與多層規劃的一般背景，請參見 \citet{dempe2002foundations}、\citet{colson2007overview}、\citet{fortunyamat1981representation}、\citet{lee2001fuzzy} 與 \citet{cheng2019fuzzy}；這些文獻皆未支持原型中任何特定的建模選擇。
+
+\begin{table}[tbp]
+\centering
+\caption{治理型態參數（SIMULATED；E4）。字母 C、F 與 D 僅為參數集合的標記，不予展開。在基準情境中，所有五種配置在每一治理型態下皆獲許可。}
+\label{zh:tab:app_regimes}
+\footnotesize
+\begin{tabular}{lrrrr}
+\toprule
+治理型態 & 容量 $K_\Gamma$ & 風險乘數 & 成本乘數 & 彈性乘數 \\
+\midrule
+C & 5.5 & 0.85 & 1.10 & 0.95 \\
+F & 6.0 & 1.00 & 1.00 & 1.00 \\
+D & 6.5 & 1.15 & 0.90 & 1.05 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{第二層要求門檻與容量}
+
+表~\ref{zh:tab:app_thresholds} 列出式~\eqref{zh:eq:mlp_l2} 所使用的門檻函數；$\kappa_i$ 為流程 $i$ 的後果等級。共用的容量限制式為
+\begin{equation}
+\mathrm{CapUse}=\sum_{i\in I}\left(0.42A_i+0.24H_i+0.24EA_i+0.20WI_i\right)\leq K_\Gamma ,
+\label{zh:eq:app_capacity}
+\end{equation}
+其中 $\mathrm{CapUse}(0,0,0,0)=0$ 且 $K_\Gamma\geq0$。原型原始程式碼亦以 $3A_i$ 作為 $H_i$、$EA_i$ 與 $WI_i$ 的上限。在順序尺度上，此限制僅在 $A_i=0$ 時產生約束，此時它排除了對不存在之 AI 元件的監督、保證或工作流程整合。這是原型的一項設計假設。
+
+\begin{table}[tbp]
+\centering
+\caption{第二層要求門檻，表示為 AI 深度 $A$ 與後果等級 $\kappa$ 的函數（正式 v1.0 規格；設計假設，未經校準）。}
+\label{zh:tab:app_thresholds}
+\footnotesize
+\begin{tabular}{ll}
+\toprule
+要求 & 定義 \\
+\midrule
+資料，$D_{\mathrm{req}}(A)$ & $A$ \\
+可靠性，$R_{\mathrm{req}}(A)$ & $A$ \\
+監督，$H_{\mathrm{req}}(A,\kappa)$ & 若 $A=0$ 則為 $0$；否則為 $\min(3,\max(0,A+\kappa-2))$ \\
+保證，$EA_{\mathrm{req}}(A,\kappa)$ & 若 $A=0$ 則為 $0$；否則為 $\min(3,\max(1,A+\kappa-2))$ \\
+工作流程整合，$WI_{\mathrm{req}}(A)$ & 對 $A=3$ 的執行型流程為 $3$；否則為 $A$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{第二層目標函數與第三層各項的結構}
+
+第二層目標函數及其組成項取自本研究計畫儲存庫中的正式模型檔 \texttt{01\_\allowbreak CANONICAL\_\allowbreak MODEL\_\allowbreak v1\_\allowbreak 0.md}（為供審查，識別資訊暫不公開）。以下所有權重皆為未經校準的設計值；本研究將其列出，以便結合該檔案即可由本文重現此原型。以 $\mathrm{clip}_{[0,1]}$ 表示截斷至 $[0,1]$，並以 $\mathrm{cost}_\Gamma$ 與 $\mathrm{risk}_\Gamma$ 表示治理型態的成本與風險乘數（表~\ref{zh:tab:app_regimes}），
+\begin{align}
+F_2 &= \sum_{i\in I}\Bigl[0.90\,\mathrm{Feas}_i+0.90\,\mathrm{Rel}_i+0.45\,\mathrm{Scal}_i-0.55\,\mathrm{IntCost}_i-0.75\,\mathrm{GovRisk}_i+0.65\max\!\bigl(0,U_i^{*}\bigr)\Bigr], \label{zh:eq:app_f2}\\
+\mathrm{Feas}_i &= \mathrm{clip}_{[0,1]}\bigl(0.55+0.08(\bar D_i-D_{\mathrm{req}})+0.08(\bar R_i-R_{\mathrm{req}})+0.04(\bar G_i-\max(H_{\mathrm{req}},EA_{\mathrm{req}}))\bigr), \nonumber\\
+\mathrm{Rel}_i &= \mathrm{clip}_{[0,1]}\bigl(0.45+0.10\,EA_i+0.06\,H_i+0.04\,WI_i-0.030\,A_i\kappa_i\bigr), \nonumber\\
+\mathrm{Scal}_i &= \mathrm{clip}_{[0,1]}\bigl(0.30+0.08\,\bar D_i+0.08\,\bar R_i+0.04\,WI_i\bigr), \nonumber\\
+\mathrm{IntCost}_i &= \mathrm{cost}_\Gamma\,\bigl(0.10\,A_i+0.06\,WI_i+0.05\,H_i+0.05\,EA_i\bigr), \nonumber\\
+\mathrm{GovRisk}_i &= \begin{cases} 0 & \text{if } A_i=0,\\ \mathrm{risk}_\Gamma\cdot 0.08\,\kappa_i A_i\,/\,(1+0.4\,H_i+0.4\,EA_i) & \text{otherwise,}\end{cases} \nonumber
+\end{align}
+其中 $U_i^{*}$ 為流程 $i$ 在其第二層狀態下可取得的最佳第三層效用，而要求門檻皆於 $(A_i,\kappa_i)$ 處評估（表~\ref{zh:tab:app_thresholds}）。
+
+在第三層，式~\eqref{zh:eq:mlp_l3} 中 $U_{im}$ 的各項為
+\begin{align}
+\mathrm{Gain}_{im} &= g_{im}\,v_i\,\psi_i\,\mathrm{flex}_\Gamma, \qquad \mathrm{Burden}_{im} = \beta_m+0.03\,H_i+0.02\,EA_i+0.02\,WI_i, \nonumber\\
+\mathrm{ResidualRisk}_{im} &= \kappa_i\,\mathrm{autonomy}_m\,\mathrm{risk}_\Gamma\,/\,(1+0.45\,H_i+0.45\,EA_i), \nonumber
+\end{align}
+其中 $g_{im}$ 為該流程特定於配置的基礎收益，$v_i$ 為選擇型流程在式~\eqref{zh:eq:mlp_tau} 中的價值因子，$\psi_i$ 為隨 $EA_i$ 與 $WI_i$ 遞增的因子，$\mathrm{flex}_\Gamma$ 為治理型態的彈性乘數，$\beta_m$ 為特定於配置的基礎負擔，$\mathrm{autonomy}_m$ 則為特定於配置的自主程度。這些特定於配置的常數與 $\psi_i$ 皆為模擬值，並載於正式模型檔中。
+
+\section{第三層配置與選擇機制}
+
+表~\ref{zh:tab:app_configs} 列出每種配置所需的最低第二層狀態。唯有在 $\mathrm{Allow}_{m\Gamma}=1$ 且流程狀態在各分量上皆滿足 $\rho_m$ 時，流程才可選擇配置 $m$；此時其效用為 $U_{im}=\mathrm{Gain}_{im}-0.45\,\mathrm{Burden}_{im}-0.75\,\mathrm{ResidualRisk}_{im}$。對於選擇型流程，AI 的建議為 $d_i=\mathbf{1}[s_i\geq\tau_i]$，建議正確時實現價值因子為 1，否則為 0.35（式~\eqref{zh:eq:mlp_tau}）。審查型配置可降低風險或改變效用，但無法更正錯誤的建議。平手時依 \texttt{HumanOnly}、\texttt{AIAssist}、\texttt{HumanFirstAICheck}、\texttt{AIFirstReview}、\texttt{BoundedAutomation} 的順序做確定性裁決。
+
+\begin{table}[tbp]
+\centering
+\caption{五種人機配置的最低第二層要求 $\rho_m=(A,H,WI,EA)$（正式 v1.0 規格）。}
+\label{zh:tab:app_configs}
+\footnotesize
+\begin{tabular}{lcccc}
+\toprule
+配置 $m$ & $A$ & $H$ & $WI$ & $EA$ \\
+\midrule
+\texttt{HumanOnly} & 0 & 0 & 0 & 0 \\
+\texttt{AIAssist} & 1 & 0 & 1 & 1 \\
+\texttt{HumanFirstAICheck} & 2 & 1 & 2 & 1 \\
+\texttt{AIFirstReview} & 2 & 2 & 2 & 2 \\
+\texttt{BoundedAutomation} & 3 & 3 & 3 & 3 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{存在性與適用範圍}
+
+\paragraph{引理（所選三層解組合之存在性）。}假設 (i) 所有決策與狀態定義域皆為有限；(ii) 零分配 $b=0$ 為可容許（$B_{\mathrm{tot}}\geq0$）；(iii) \texttt{HumanOnly} 的要求為 $(0,0,0,0)$，且在每一治理型態下皆獲許可；(iv) 在給定上游決策的條件下，第三層追隨者彼此可分離；以及 (v) 每一層皆採確定性的平手裁決。則對於固定的治理型態、初始狀態與參數快照，至少存在一個所選的三層解組合，且窮舉式逆向歸納會在有限步驟內終止。
+
+\paragraph{證明概要。}\textbf{第三層：}\texttt{HumanOnly} 對每一第二層狀態皆為可行，因此每一追隨者的可行集合皆為有限且非空；最大化解存在，並由平手裁決選出其一。\textbf{第二層：}對任一能力向量，空架構 $A_i=H_i=WI_i=EA_i=0$ 滿足各上限、每一門檻（在 $A=0$ 時皆為 0）、$A_i=0$ 限制以及容量限制式，因為 $\mathrm{CapUse}=0\leq K_\Gamma$；可行集合有限且非空，因此 $F_2$ 可達到最大值。\textbf{第一層：}$b=0$ 為可行，且分配集合為有限。逆向歸納在每一層皆窮舉有限集合，因此必然終止。$\square$
+
+\paragraph{適用範圍。}此引理僅就此有界有限原型確立了非空可行性、所選回應的存在性以及有限步終止。所選出的代表解並非唯一最適解，且樂觀與悲觀的表述一般而言並不等價 \citep{dempe2002foundations}。存在性與精確窮舉並不意味著較大、連續或非凸的三層規劃問題具可處理性 \citep{jeroslow1985polynomial}。第二層的容量限制式使各流程相互耦合，但它是由單一決策者所選擇。若改由第三層追隨者共用某項限制式（例如共用的審查人員池），則假設 (iv) 將不成立。此時將需要耦合或廣義均衡的概念，且收益間的交互作用可能排除純策略均衡的存在。有限非合作賽局中均衡的存在性 \citep{nash1951noncooperative} 僅作為邊界參照；它並不涵蓋耦合限制式。
+
+\section{一致性檢查與突變檢查}
+
+求解器以兩種方式進行檢查（E4）。「一致性檢查」（conformance check）針對三個流程中的每一個以及能力上限的每一組合 $(\bar D_i,\bar A_i,\bar R_i,\bar G_i)$，獨立於求解器的狀態生成器，評估上文所寫的正式限制式，並比較兩者的可行集合。在 768 個案例中，共計得 3,121 次正式可行狀態出現，且發現 0 件不一致。「突變檢查」（mutation check）以停用 $A_i=0$ 限制並放寬相應分支的方式執行真實生成器。它在 720/768 個案例中偵測到與正式集合的不一致，顯示一致性檢查對此類錯誤具敏感性。兩項檢查共用門檻函數的實作，因此皆無法偵測這些函數中的共模缺陷。求解器腳本的總執行時間為 13.9 秒。這些檢查以計算方式驗證此簡化實例；它們使每一項係數、門檻、分數、結果、許可矩陣與治理型態排序在實證上仍未經驗證。
+
+\section{研究三：決策規則、停止規則與網路檢定}
+\label{zh:app:study3}
+
+本節完整陳述第~\ref{zh:sec:mlp_study3}~節所摘要的規則。目前尚未蒐集任何資料，所有門檻皆將在取得資料之前，於研究三自身的預先登錄中確定。表~\ref{zh:tab:back_study3} 將規劃中的資料對應至模型的層級與參數。
+
+\begin{table}[tbp]
+\centering
+\caption{研究三（計畫）：規劃中的資料與模型層級及參數的對應。唯有在組織候選解釋獲得支持時，才會嘗試進行校準。目前尚未蒐集任何資料；本表不報告亦不暗示任何結果。}
+\label{zh:tab:back_study3}
+\footnotesize
+\begin{tabular}{p{2.6cm}p{6.2cm}p{5.4cm}}
+\toprule
+模型層級 & 規劃中的資料 & 所提供資訊之參數 \tabularnewline
+\midrule
+\raggedright 第一層 & \raggedright 各流程的 AI 預算與人力配置 & \raggedright $b_i^r$、$B_{\mathrm{tot}}$ \tabularnewline
+\raggedright 第二層 & \raggedright 核准與稽核工作流程；決策權矩陣 & \raggedright $\mathrm{Allow}_{m\Gamma}$、$H_{\mathrm{req}}$、$EA_{\mathrm{req}}$、$K_\Gamma$ \tabularnewline
+\raggedright 第三層 & \raggedright 針對實際使用之配置的流程觀察與訪談 & \raggedright $q_{im}$ \tabularnewline
+\raggedright 選擇性組織結構洞檢定 & \raggedright AI 人員與決策負責人之間工單與會議的去識別化彙總後設資料 & \raggedright Burt 網路限制度，以同時保留類專利組合職責與度數的虛無模型加以評估 \tabularnewline
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{決策規則。}若在具可判定約束條件的事件中，內部許可、決策權（decision rights）、治理容量或分配是最常出現的首個約束條件（first binding constraint），且超過預先登錄的比例，同時在內部規則或分配改變後狀態隨之改變的事件，其變化並未伴隨任何有紀錄的能力或資料改變，則組織候選解釋獲得支持。每一項替代解釋（資料品質、成本、法規與責任、任務適配性）皆以相同規則，套用於其在表~\ref{zh:tab:back_study3_rivals} 中的特徵加以判定。內部決策權與外部法規都可能表現為許可遭拒；兩者的區分在於構成約束的規則源自公司內部（管理階層可加以改變）或外部。組織分配與成本都可能表現為預算遭拒；兩者的區分在於總體上是否存在預算。若可行且獲許可的配置因其整合成本即使在重新分配後仍超出預算而遭拒絕，該事件即編碼為成本；若總體上存在預算、但領導者已將其分配至他處，或內部決策權阻擋採用，則編碼為分配。兩種編碼皆依據附日期的紀錄（例如預算分配與商業論證），而非依據模型。若沒有任何候選解釋達到門檻，結果即報告為混合，且模型不會被校準為治理瓶頸模型。
+
+\paragraph{停止規則。}若具可判定約束條件的事件低於預先登錄的最低數量，研究即停止並報告為不具資訊性。若人類編碼者在試行集上的一致性低於預先登錄的最低標準，編碼即停止，並在任何結果分析之前以附日期的修訂方式修改編碼手冊。若組織候選解釋未獲支持，模型的治理層即不予校準，且模型報告為未獲支持。
+
+\paragraph{選擇性網路檢定。}若可取得 AI 人員與決策負責人之間工單與會議的去識別化後設資料，將在真實的組織關係上計算 Burt 網路限制度（network constraint）\citep{burt1992structural}——鑲嵌性論點正是將經濟行動定位於這些關係之中 \citep{granovetter1985economic}——並以一個同時保留各單位所負責之事項及其度數的虛無模型作為比較基準。一項由三位專家將 AI $\times$ 決策類別轉譯為企業用語的練習，僅作為研究工具的前導測試。研究三尚未執行。

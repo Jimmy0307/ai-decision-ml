@@ -1,0 +1,65 @@
+% 中文論文版本（臺灣碩博士論文章節格式）；與英文稿 paper/en/main.tex 內容一致，數字以 raw_materials/experimental_log.md 為準。
+\documentclass[12pt,a4paper,UTF8,fontset=none,openany]{ctexrep}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xcolor}
+\usepackage[round,authoryear]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{setspace}
+\IfFontExistsTF{Noto Serif CJK TC}{%
+  \setCJKmainfont{Noto Serif CJK TC}
+  \setCJKsansfont{Noto Sans CJK TC}
+  \setCJKmonofont{Noto Sans Mono CJK TC}
+}{%
+  \setCJKmainfont{Noto Sans CJK TC}
+  \setCJKsansfont{Noto Sans CJK TC}
+  \setCJKmonofont{Noto Sans Mono CJK TC}
+}
+\ctexset{
+  chapter = {name = {第,章}, number = \chinese{chapter}},
+  bibname = {參考文獻},
+  contentsname = {目錄},
+  listfigurename = {圖目錄},
+  listtablename = {表目錄},
+  figurename = {圖},
+  tablename = {表},
+  appendixname = {附錄},
+}
+\setstretch{1.5}
+\setlength{\emergencystretch}{3em}
+\graphicspath{{../figures/}}
+
+\title{共現不等於流動：AI 與決策之間結構洞前提的預先登錄檢驗}
+\author{［作者姓名］\\［系所、學校］}
+\date{論文草稿，2026 年 11 月}
+
+\begin{document}
+\maketitle
+
+\chapter*{摘要}
+\addcontentsline{toc}{chapter}{摘要}
+\input{abstract_zh}
+
+\noindent\textbf{關鍵詞：}結構洞；人工智慧；決策；專利引用；預先登錄；多層規劃
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\input{ch1_intro}
+\input{ch2_literature}
+\input{ch3_method}
+\input{ch4_results}
+\input{ch5_discussion}
+\input{ch6_conclusion}
+
+\bibliographystyle{apalike}
+\bibliography{../references}
+
+\appendix
+\input{appendix_zh}
+
+\end{document}

@@ -1,0 +1,15 @@
+% ============================================================
+% ch6_conclusion.tex -- 第六章：結論與建議
+% 譯自 paper/en/back.tex 第 9 節（Conclusion）。數字取自 raw_materials/experimental_log.md。
+% ============================================================
+
+\chapter{結論與建議}
+\label{zh:sec:conclusion}
+
+共詞分析（co-word analysis）與文獻本位發現（literature-based discovery）皆從共現（co-occurrence）中解讀關係及其缺席 \citep{callon1983translations,swanson1986fish}。本研究計畫將同樣的推論應用於 AI 與決策：把兩者功能之間稀疏的共現解讀為結構性分隔。本研究在預先登錄（preregistration）下，檢驗有向流動（flow）資料是否支持此一解讀。在知識領域層次上，證據並不支持結構洞（structural hole）的存在：AI 領域與決策技術領域的美國專利彼此引用的程度，約為時間分層期望值的三倍，且判定結果 \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED} 在所有敏感度分析（sensitivity analysis）設定下皆維持穩定；不過，部分過度連結（over-connection）可能反映預測與最佳化在方法上與 AI 的重疊，而本論文並未分離此一重疊。格層次的偏低（depleted cell）大多幅度有限，且無法跨時間複製。
+
+在公司層次上，AI 與決策的專門型公司（specialist firm）在其專利組合之外仍顯著分隔（兩種分層下皆為 $p=.001$）。保留專利組合的虛無模型（portfolio-preserving null）重現了與 1 之差距的 85--91\%，然而專門型公司之間的連結僅為其期望值的 0.67 與 0.78。混合型（多角化）公司（mixed-portfolio firm）是否對此分隔進行中介（brokerage），仍未解決，因為目前沒有任何可用的虛無模型能同時固定度數與專利組合。判定結果 \texttt{PARTIAL} 表示公司層次的結構洞未獲證實；但它並未被排除。研究一僅支持方向性的描述，此描述無法以同詞兩端共用（same-term self-pairing）解釋，但可能受到模型推論標籤的影響；且沒有任何網路資料線證實中介者的存在（HISTORICAL / USER\_REPORTED）。
+
+方法論上的啟示具有普遍性：共現不等於流動，而虛無模型（null model）的解讀取決於它固定了什麼。投影、二分矩陣、共用詞彙與模型指派的標籤，各自都可能製造出分隔或中介的表象。
+
+將 AI 整合進決策的困難，究竟在於組織的資源分配（resource allocation）與決策權（decision rights），抑或在於資料品質、成本、法規與責任，或任務適配性，仍是未解的問題。三層模型僅將組織候選解釋加以形式化，且其輸出結果為模擬值。研究三的設計首先在於區辨這些候選解釋，其後才會對模型進行校準。

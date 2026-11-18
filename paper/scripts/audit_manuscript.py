@@ -21,7 +21,7 @@ ALLOW = {
     "1951", "1960", "1973", "1977", "1981", "1985", "1989", "1992", "1993", "1995", "2001", "2002", "2004", "2006",
     "2007", "2013", "2015", "2018", "2019", "2020", "2021", "2022",
 }
-NUM = re.compile(r"(?<![\w.\\{])(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?(?![\w}])")
+NUM = re.compile(r"(?<![A-Za-z0-9_.\\{])(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?(?![A-Za-z0-9_}])")  # ASCII boundaries so CJK-adjacent numbers are checked
 FORBIDDEN = [r"\bresearch gaps?\b(?![^.]{0,80}(not|no evidence|unsupported|NOT))", r"confirmed structural hole(?! at any)",
              r"\bcentrali[sz]ed\b", r"\bfederated\b", r"\bdecentrali[sz]ed\b", r"13 versions"]
 
