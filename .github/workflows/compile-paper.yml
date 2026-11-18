@@ -28,6 +28,7 @@ jobs:
           latexmk_use_lualatex: false
 
       - name: Compile Chinese thesis version (xelatex + bibtex, ctex/Fandol fonts)
+        if: hashFiles('paper/zh/thesis_zh.tex') != ''
         uses: xu-cheng/latex-action@v3
         with:
           root_file: thesis_zh.tex
@@ -43,4 +44,5 @@ jobs:
             paper/zh/thesis_zh.pdf
             paper/en/main.log
             paper/zh/thesis_zh.log
+          if-no-files-found: warn
           retention-days: 30
