@@ -1,0 +1,56 @@
+name: External Dataset / MLP Feasibility POC
+on:
+  pull_request:
+    paths:
+      - 'research/external_dataset_poc_20261118/**'
+      - '.github/workflows/external-dataset-mlp-poc.yml'
+  workflow_dispatch:
+    inputs:
+      live_probe:
+        description: 'Run bounded OpenAlex/OCDS fictional/GLEIF/PyPSA API probes (no full bulk)'
+        required: false
+        default: 'false'
+        type: boolean
+permissions:
+  contents: read
+jobs:
+  deterministic-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout source branch
+        uses: actions/checkout@v4
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Unit tests (no network)
+        run: python -m unittest discover -s research/external_dataset_poc_20261118/tests -p 'test_*.py' -v
+      - name: Toy MLP and fixture adapters
+        run: |
+          python research/external_dataset_poc_20261118/src/poc.py --mode fixture \
+            --output research/external_dataset_poc_20261118/results/ci-fixture.json
+      - name: Upload fixture evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: external-dataset-mlp-fixture
+          path: research/external_dataset_poc_20261118/results/ci-fixture.json
+          retention-days: 30
+  bounded-public-probe:
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.live_probe }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Retrieve bounded public samples (no bulk, no SEC contact)
+        run: |
+          python research/external_dataset_poc_20261118/src/poc.py --mode live \
+            --output research/external_dataset_poc_20261118/results/ci-live.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: external-dataset-live-probe
+          path: research/external_dataset_poc_20261118/results/ci-live.json
+          retention-days: 14
