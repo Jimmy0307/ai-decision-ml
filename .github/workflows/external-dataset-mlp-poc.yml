@@ -61,6 +61,12 @@ jobs:
             --input research/external_dataset_poc_20261118/results/ci-live.json \
             --output research/external_dataset_poc_20261118/results/ci-burt-six-sources.json \
             --null-reps 49
+      - name: Reconstruct 2-mode / 1-mode / temporal and typed multilayer networks per source
+        timeout-minutes: 5
+        run: |
+          python research/external_dataset_poc_20261118/src/multinetwork_six_sources.py \
+            --input research/external_dataset_poc_20261118/results/ci-live.json \
+            --output research/external_dataset_poc_20261118/results/ci-multinetwork-six-sources.json
       - uses: actions/upload-artifact@v4
         with:
           name: external-dataset-live-probe
@@ -68,6 +74,7 @@ jobs:
             research/external_dataset_poc_20261118/results/ci-live.json
             research/external_dataset_poc_20261118/results/ci-research-conclusions.json
             research/external_dataset_poc_20261118/results/ci-burt-six-sources.json
+            research/external_dataset_poc_20261118/results/ci-multinetwork-six-sources.json
           retention-days: 14
 
   gleif-rr-bulk:
