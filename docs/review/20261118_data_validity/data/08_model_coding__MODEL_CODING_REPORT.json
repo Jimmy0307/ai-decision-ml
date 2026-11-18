@@ -1,0 +1,369 @@
+{
+  "coverage": {
+    "SONNET": 250,
+    "HAIKU": 250,
+    "QWEN_v1": 250
+  },
+  "invalid_labels": {
+    "SONNET": 0,
+    "HAIKU": 0,
+    "QWEN_v1": 0
+  },
+  "items_scored": 250,
+  "none_rates": {
+    "SONNET": {
+      "ai": 0.296,
+      "de": 0.636
+    },
+    "HAIKU": {
+      "ai": 0.24,
+      "de": 0.424
+    },
+    "QWEN_v1": {
+      "ai": 0.14,
+      "de": 0.18
+    }
+  },
+  "model_model": {
+    "SONNET_vs_HAIKU": {
+      "ai": {
+        "n": 250,
+        "exact": 189,
+        "kappa": 0.718,
+        "alpha": 0.718,
+        "n_both_substantive": 153,
+        "kappa_both_substantive": 0.872
+      },
+      "de": {
+        "n": 250,
+        "exact": 172,
+        "kappa": 0.558,
+        "alpha": 0.548,
+        "n_both_substantive": 84,
+        "kappa_both_substantive": 0.817
+      }
+    },
+    "SONNET_vs_QWEN_v1": {
+      "ai": {
+        "n": 250,
+        "exact": 114,
+        "kappa": 0.386,
+        "alpha": 0.38,
+        "n_both_substantive": 146,
+        "kappa_both_substantive": 0.626
+      },
+      "de": {
+        "n": 250,
+        "exact": 94,
+        "kappa": 0.265,
+        "alpha": 0.207,
+        "n_both_substantive": 82,
+        "kappa_both_substantive": 0.626
+      }
+    },
+    "HAIKU_vs_QWEN_v1": {
+      "ai": {
+        "n": 250,
+        "exact": 126,
+        "kappa": 0.441,
+        "alpha": 0.438,
+        "n_both_substantive": 165,
+        "kappa_both_substantive": 0.636
+      },
+      "de": {
+        "n": 250,
+        "exact": 89,
+        "kappa": 0.269,
+        "alpha": 0.243,
+        "n_both_substantive": 126,
+        "kappa_both_substantive": 0.44
+      }
+    }
+  },
+  "model_vs_human": {
+    "SONNET": {
+      "vs_first_coder_50": {
+        "ai": {
+          "n": 50,
+          "exact": 21,
+          "kappa": 0.322,
+          "alpha": 0.316,
+          "n_both_substantive": 29,
+          "kappa_both_substantive": 0.322
+        },
+        "de": {
+          "n": 50,
+          "exact": 7,
+          "kappa": 0.109,
+          "alpha": 0.019,
+          "n_both_substantive": 17,
+          "kappa_both_substantive": 0.292
+        }
+      },
+      "vs_reconciled_20": {
+        "ai": {
+          "n": 20,
+          "exact": 12,
+          "kappa": 0.454,
+          "alpha": 0.467,
+          "n_both_substantive": 12,
+          "kappa_both_substantive": 0.221
+        },
+        "de": {
+          "n": 20,
+          "exact": 16,
+          "kappa": 0.756,
+          "alpha": 0.761,
+          "n_both_substantive": 12,
+          "kappa_both_substantive": 0.895
+        }
+      },
+      "vs_blind_coder_20": {
+        "ai": {
+          "n": 20,
+          "exact": 8,
+          "kappa": 0.25,
+          "alpha": 0.24,
+          "n_both_substantive": 14,
+          "kappa_both_substantive": 0.288
+        },
+        "de": {
+          "n": 20,
+          "exact": 13,
+          "kappa": 0.592,
+          "alpha": 0.589,
+          "n_both_substantive": 13,
+          "kappa_both_substantive": 0.715
+        }
+      }
+    },
+    "HAIKU": {
+      "vs_first_coder_50": {
+        "ai": {
+          "n": 50,
+          "exact": 21,
+          "kappa": 0.332,
+          "alpha": 0.323,
+          "n_both_substantive": 31,
+          "kappa_both_substantive": 0.369
+        },
+        "de": {
+          "n": 50,
+          "exact": 6,
+          "kappa": 0.071,
+          "alpha": 0.019,
+          "n_both_substantive": 26,
+          "kappa_both_substantive": 0.145
+        }
+      },
+      "vs_reconciled_20": {
+        "ai": {
+          "n": 20,
+          "exact": 12,
+          "kappa": 0.458,
+          "alpha": 0.468,
+          "n_both_substantive": 13,
+          "kappa_both_substantive": 0.343
+        },
+        "de": {
+          "n": 20,
+          "exact": 15,
+          "kappa": 0.704,
+          "alpha": 0.71,
+          "n_both_substantive": 14,
+          "kappa_both_substantive": 0.736
+        }
+      },
+      "vs_blind_coder_20": {
+        "ai": {
+          "n": 20,
+          "exact": 9,
+          "kappa": 0.288,
+          "alpha": 0.29,
+          "n_both_substantive": 15,
+          "kappa_both_substantive": 0.371
+        },
+        "de": {
+          "n": 20,
+          "exact": 15,
+          "kappa": 0.704,
+          "alpha": 0.709,
+          "n_both_substantive": 16,
+          "kappa_both_substantive": 0.692
+        }
+      }
+    },
+    "QWEN_v1": {
+      "vs_first_coder_50": {
+        "ai": {
+          "n": 50,
+          "exact": 19,
+          "kappa": 0.265,
+          "alpha": 0.238,
+          "n_both_substantive": 34,
+          "kappa_both_substantive": 0.402
+        },
+        "de": {
+          "n": 50,
+          "exact": 9,
+          "kappa": 0.124,
+          "alpha": 0.073,
+          "n_both_substantive": 35,
+          "kappa_both_substantive": 0.179
+        }
+      },
+      "vs_reconciled_20": {
+        "ai": {
+          "n": 20,
+          "exact": 7,
+          "kappa": 0.113,
+          "alpha": 0.075,
+          "n_both_substantive": 13,
+          "kappa_both_substantive": 0.114
+        },
+        "de": {
+          "n": 20,
+          "exact": 7,
+          "kappa": 0.292,
+          "alpha": 0.257,
+          "n_both_substantive": 14,
+          "kappa_both_substantive": 0.424
+        }
+      },
+      "vs_blind_coder_20": {
+        "ai": {
+          "n": 20,
+          "exact": 10,
+          "kappa": 0.273,
+          "alpha": 0.27,
+          "n_both_substantive": 19,
+          "kappa_both_substantive": 0.302
+        },
+        "de": {
+          "n": 20,
+          "exact": 7,
+          "kappa": 0.301,
+          "alpha": 0.259,
+          "n_both_substantive": 17,
+          "kappa_both_substantive": 0.358
+        }
+      }
+    }
+  },
+  "human_first_vs_blind_20_reference": {
+    "ai": {
+      "n": 20,
+      "exact": 4,
+      "kappa": 0.048,
+      "alpha": 0.036,
+      "n_both_substantive": 13,
+      "kappa_both_substantive": 0.008
+    },
+    "de": {
+      "n": 20,
+      "exact": 4,
+      "kappa": 0.14,
+      "alpha": 0.114,
+      "n_both_substantive": 13,
+      "kappa_both_substantive": 0.225
+    }
+  },
+  "differential_by_qwen_cell_type": {
+    "OTHER": {
+      "n": 68,
+      "decision_none_both": 30,
+      "ai_none_both": 9,
+      "cell_confirmed_by_both": 7
+    },
+    "ENRICHED_CORE": {
+      "n": 113,
+      "decision_none_both": 34,
+      "ai_none_both": 24,
+      "cell_confirmed_by_both": 10
+    },
+    "DEPLETED_CORE": {
+      "n": 9,
+      "decision_none_both": 2,
+      "ai_none_both": 2,
+      "cell_confirmed_by_both": 1
+    }
+  },
+  "E4_error_model": {
+    "ai": {
+      "n": 142,
+      "pooled_keep": 0.556,
+      "pooled_none": 0.254,
+      "pooled_other": 0.19
+    },
+    "decision": {
+      "n": 127,
+      "pooled_keep": 0.315,
+      "pooled_none": 0.52,
+      "pooled_other": 0.165
+    },
+    "accuracy_product": 0.175
+  },
+  "E4_simulation_claude_consensus_as_truth": {
+    "draws": 200,
+    "edges_p5_median_p95": [
+      908,
+      952,
+      987
+    ],
+    "depleted_core_retained_p5_median_p95": [
+      3,
+      4,
+      6
+    ],
+    "enriched_core_retained_p5_median_p95": [
+      3,
+      5,
+      7
+    ],
+    "P_at_least_12_of_16_depleted_retained": 0.0,
+    "depleted_core_same_direction_p5_median_p95": [
+      12,
+      14,
+      15
+    ],
+    "new_depleted_cells_median": 1.0,
+    "new_enriched_cells_median": 2.0,
+    "mean_oe_of_16_depleted_cells_median": 0.558,
+    "per_cell_depleted_retention": {
+      "COORDINATION_EXECUTION x HUMAN_REVIEW_ACCOUNTABILITY": 0.0,
+      "COORDINATION_EXECUTION x RISK_ASSESSMENT": 0.42,
+      "EVALUATION_ASSESSMENT x ALLOCATION_PLANNING": 0.41,
+      "EVALUATION_ASSESSMENT x PREDICTION_DIAGNOSIS": 0.0,
+      "EXPLANATION_ASSURANCE x ALLOCATION_PLANNING": 0.945,
+      "EXPLANATION_ASSURANCE x EVALUATION_SELECTION": 0.015,
+      "EXPLANATION_ASSURANCE x PREDICTION_DIAGNOSIS": 0.085,
+      "GENERATION_SYNTHESIS x PREDICTION_DIAGNOSIS": 0.0,
+      "HUMAN_AUGMENTATION x EVALUATION_SELECTION": 0.0,
+      "HUMAN_AUGMENTATION x PREDICTION_DIAGNOSIS": 0.02,
+      "PREDICTION_RISK_ESTIMATION x EVALUATION_SELECTION": 0.0,
+      "PREDICTION_RISK_ESTIMATION x GENERAL_DECISION_PROCESS": 0.0,
+      "PREDICTION_RISK_ESTIMATION x GOVERNANCE_OVERSIGHT": 1.0,
+      "PREDICTION_RISK_ESTIMATION x HUMAN_REVIEW_ACCOUNTABILITY": 0.985,
+      "PREDICTION_RISK_ESTIMATION x INFORMATION_ACQUISITION": 0.105,
+      "RECOMMENDATION_OPTIMIZATION x HUMAN_REVIEW_ACCOUNTABILITY": 0.075
+    },
+    "per_cell_enriched_retention": {
+      "COORDINATION_EXECUTION x ALLOCATION_PLANNING": 0.005,
+      "COORDINATION_EXECUTION x GENERAL_DECISION_PROCESS": 0.0,
+      "EVALUATION_ASSESSMENT x EVALUATION_SELECTION": 0.055,
+      "EVALUATION_ASSESSMENT x GOVERNANCE_OVERSIGHT": 0.425,
+      "EXPLANATION_ASSURANCE x GOVERNANCE_OVERSIGHT": 0.98,
+      "EXPLANATION_ASSURANCE x HUMAN_REVIEW_ACCOUNTABILITY": 0.895,
+      "GENERATION_SYNTHESIS x INFORMATION_ACQUISITION": 0.015,
+      "HUMAN_AUGMENTATION x HUMAN_REVIEW_ACCOUNTABILITY": 0.61,
+      "HUMAN_AUGMENTATION x INFORMATION_ACQUISITION": 0.035,
+      "PREDICTION_RISK_ESTIMATION x PREDICTION_DIAGNOSIS": 0.97,
+      "PREDICTION_RISK_ESTIMATION x RISK_ASSESSMENT": 0.825,
+      "RECOMMENDATION_OPTIMIZATION x ALLOCATION_PLANNING": 0.255,
+      "RECOMMENDATION_OPTIMIZATION x EVALUATION_SELECTION": 0.025,
+      "RECOMMENDATION_OPTIMIZATION x GENERAL_DECISION_PROCESS": 0.075,
+      "RETRIEVAL_SYNTHESIS x INFORMATION_ACQUISITION": 0.015,
+      "RETRIEVAL_SYNTHESIS x INFORMATION_SYNTHESIS": 0.02
+    }
+  }
+}

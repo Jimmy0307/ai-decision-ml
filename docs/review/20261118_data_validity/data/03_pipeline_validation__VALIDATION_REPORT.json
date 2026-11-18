@@ -1,0 +1,104 @@
+{
+  "reimplementation_summary": {
+    "cells": 120,
+    "edges": 2180,
+    "raw_records": 3125,
+    "observed_nonzero": 104,
+    "main_q05": 46,
+    "exact_q05": 46,
+    "raw_q05": 54,
+    "doc_q05": 32,
+    "structural_core": 32,
+    "full_core": 32,
+    "full_core_by_direction": {
+      "ENRICHED": 15,
+      "DEPLETED": 17
+    },
+    "doc_null_diagnostics": {
+      "attempts": 21843600,
+      "accepted": 10412821,
+      "acceptance_rate": 0.47669894156640846,
+      "documents_touched": 328,
+      "exchangeable_documents": 449,
+      "degrees_preserved": true
+    }
+  },
+  "official_q05_counts": {
+    "main": 47,
+    "exact": 46,
+    "doc": 32,
+    "raw": 54,
+    "structural": 32,
+    "full": 32
+  },
+  "reimpl_q05_counts": {
+    "main": 46,
+    "exact": 46,
+    "doc": 32,
+    "raw": 54,
+    "structural": 32,
+    "full": 32
+  },
+  "set_identical": {
+    "main": false,
+    "exact": true,
+    "doc": false,
+    "raw": true,
+    "structural": false,
+    "full": false
+  },
+  "jaccard": {
+    "main": 0.9787,
+    "exact": 1.0,
+    "doc": 0.9394,
+    "raw": 1.0,
+    "structural": 0.9394,
+    "full": 0.9394
+  },
+  "only_official": {
+    "main": [
+      "PERCEPTION_EXTRACTION x PREDICTION_DIAGNOSIS"
+    ],
+    "exact": [],
+    "doc": [
+      "COORDINATION_EXECUTION x GENERAL_DECISION_PROCESS"
+    ],
+    "raw": [],
+    "structural": [
+      "COORDINATION_EXECUTION x GENERAL_DECISION_PROCESS"
+    ],
+    "full": [
+      "COORDINATION_EXECUTION x GENERAL_DECISION_PROCESS"
+    ]
+  },
+  "only_reimpl": {
+    "main": [],
+    "exact": [],
+    "doc": [
+      "HUMAN_AUGMENTATION x RISK_ASSESSMENT"
+    ],
+    "raw": [],
+    "structural": [
+      "HUMAN_AUGMENTATION x RISK_ASSESSMENT"
+    ],
+    "full": [
+      "HUMAN_AUGMENTATION x RISK_ASSESSMENT"
+    ]
+  },
+  "max_abs_q_diff_deterministic_tests": {
+    "exact": 2.0479173912235638e-12,
+    "raw": 5.704547945128979e-12
+  },
+  "direction_agreement_120": {
+    "main": 119,
+    "exact": 120,
+    "doc": 118,
+    "raw": 120
+  },
+  "official_doc_null_reference": {
+    "attempts": 21843600,
+    "accepted": 11604932,
+    "acceptance_rate": 0.531274,
+    "documents_touched": 328
+  }
+}

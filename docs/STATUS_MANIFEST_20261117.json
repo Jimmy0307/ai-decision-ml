@@ -124,5 +124,33 @@
     ],
     "pending": "PENDING_LOCAL_RECOVERY: V11.1 raw package, V5 fulltexts/SQLite, V6–V10.1 run bundles, V9 full reanalysis outputs, Limitation fulltext follow-up",
     "github_pages": "has_pages=false (GitHub API, 2026-11-18); not deployed"
+  },
+  "data_validity_verdict_20261118": {
+    "report": "docs/review/20261118_data_validity/DATA_VALIDITY_VERDICT.md",
+    "verdict": {
+      "burt_structural_holes": "STOP",
+      "sixteen_statistically_robust_depleted_pairs": "NOT_DEFENSIBLE_AS_MEASURED",
+      "directional_under_integration_description": "DEFENSIBLE",
+      "research_gap_or_opportunity": "NOT_SUPPORTED"
+    },
+    "key_numbers": {
+      "seed_stable_core_cells": 31,
+      "mc_boundary_cells": 2,
+      "depleted_same_direction_across_error_scenarios": "10-16 of 16",
+      "depleted_still_q05_under_realistic_error_median": "0-7 of 16",
+      "human_human_kappa_ai_decision": [
+        0.048,
+        0.14
+      ],
+      "llm_llm_kappa_codebook_v2_ai_decision": [
+        0.718,
+        0.558
+      ],
+      "decision_side_none_rate_codebook_v2": "0.42-0.64 (qwen pipeline 0.18)",
+      "same_term_self_pairing_share_prediction_x_prediction": 0.333,
+      "temporal_change_p": 0.86
+    },
+    "human_reliability_study": "PREPARED_NOT_RUN (no human coders); model agreement is not human reliability",
+    "public_scope": "aggregate numbers only; evidence text, coding sheets and keys kept local"
   }
 }

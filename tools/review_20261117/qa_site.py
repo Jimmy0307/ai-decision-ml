@@ -53,6 +53,8 @@ REVIEW_FILES = [
     "docs/review/20261117/PROVENANCE_LIMITS.md",
     "docs/review/20261117/METRIC_AUDIT_90.csv",
     "docs/review/20261117/RECOMPUTE_RESULTS.json",
+    "docs/review/20261118_data_validity/DATA_VALIDITY_VERDICT.md",
+    "docs/review/20261118_data_validity/data/ROBUSTNESS_MASTER_TABLE.csv",
 ]
 
 FORBIDDEN_ADDED_EXT = {".zip", ".pdf", ".sqlite", ".db", ".7z", ".rar", ".docx", ".xlsx", ".pptx", ".pem", ".key"}
