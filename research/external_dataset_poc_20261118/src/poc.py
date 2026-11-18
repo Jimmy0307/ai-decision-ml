@@ -14,7 +14,7 @@ from urllib.request import Request, urlopen
 
 SOURCES = {
  "CORDIS":"https://cordis.europa.eu/data/cordis-h2020projects-csv.zip",
- "OpenAlex":"https://api.openalex.org/works?search=artificial%20intelligence%20decision%20making&per-page=8",
+ "OpenAlex":"https://api.openalex.org/works?search=artificial%20intelligence%20decision%20making&per-page=50",
  "OCDS_FICTIONAL":"https://raw.githubusercontent.com/open-contracting/sample-data/main/fictional-example/1.1/ocds-213czf-000-00001-04-award.json",
  "OCDS_REAL":"https://data.open-contracting.org/en/publication/128",
  "GLEIF":"https://api.gleif.org/api/v1/lei-records/5493001KJTIIGC8Y1R12",
@@ -357,11 +357,11 @@ def run(mode="fixture", cordis=False, full_grid=False):
                   "OPTIONAL { ?party eurio:roleLabel ?role . } } LIMIT 24")
     empirical_urls={
        "CORDIS_SPARQL":"https://cordis.europa.eu/datalab/sparql/query?query="+quote(cordis_query)+"&format=json",
-       "OCDS_REAL_UK":"https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=1",
+       "OCDS_REAL_UK":"https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100&stages=award&updatedFrom=2026-08-01T00:00:00&updatedTo=2026-08-31T23:59:59",
     }
     for k,url in empirical_urls.items():
         try:
-            raw,sha=bounded_get(url,max_bytes=1_500_000,accept="application/sparql-results+json,application/json")
+            raw,sha=bounded_get(url,max_bytes=8_000_000,accept="application/sparql-results+json,application/json")
             obj=json.loads(raw)
             if k=="CORDIS_SPARQL":
                 bindings=(obj.get("results") or {}).get("bindings",[])
@@ -372,7 +372,28 @@ def run(mode="fixture", cordis=False, full_grid=False):
                         "scope":"TINY_CONSORTIUM_QUERY_NOT_H2020_POPULATION"}
             else:
                 packages=obj.get("releases",obj.get("results",[]))
+                def stable_key(item,parties):
+                    pid=str((item or {}).get("id") or "")
+                    party=next((x for x in parties if str(x.get("id") or "")==pid),{})
+                    ident=party.get("identifier") or {}
+                    if not ident.get("id"):ident=(item or {}).get("identifier") or {}
+                    scheme,ident_id=str(ident.get("scheme") or ""),str(ident.get("id") or "")
+                    return scheme+":"+ident_id if scheme and ident_id else None
+                stable_edges=set(); awards_count=0; with_stable_buyer=0
+                if isinstance(packages,list):
+                    for record in packages:
+                        parties=record.get("parties") or []
+                        buyer=stable_key(record.get("buyer"),parties)
+                        if buyer:with_stable_buyer+=1
+                        for award in record.get("awards") or []:
+                            awards_count+=1
+                            for supplier in award.get("suppliers") or []:
+                                sup=stable_key(supplier,parties)
+                                if buyer and sup and buyer!=sup:stable_edges.add((buyer,sup))
                 parsed={"top_level_keys":sorted(obj.keys()),"releases_in_package":len(packages) if isinstance(packages,list) else None,
+                        "window":"updatedFrom=2026-08-01 through updatedTo=2026-08-31; stages=award; max 100 releases",
+                        "award_count":awards_count,"notices_with_global_buyer_id":with_stable_buyer,
+                        "verified_scheme_id_buyer_supplier_edges":sorted(stable_edges),
                         "ocids":[r.get("ocid") for r in packages[:3]] if isinstance(packages,list) else [],
                         "tags":[r.get("tag") for r in packages[:3]] if isinstance(packages,list) else [],
                         "tenderer_count_observed":sum(len((r.get("tender") or {}).get("tenderers",[])) for r in packages) if isinstance(packages,list) else 0,
