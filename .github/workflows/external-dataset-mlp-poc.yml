@@ -54,10 +54,18 @@ jobs:
           python research/external_dataset_poc_20261118/src/full_round.py \
             --input research/external_dataset_poc_20261118/results/ci-live.json \
             --output research/external_dataset_poc_20261118/results/ci-research-conclusions.json \
+      - name: Six-source Burt methods and negative controls (49 affiliation nulls)
+        timeout-minutes: 6
+        run: |
+          python research/external_dataset_poc_20261118/src/burt_six_sources.py \
+            --input research/external_dataset_poc_20261118/results/ci-live.json \
+            --output research/external_dataset_poc_20261118/results/ci-burt-six-sources.json \
+            --null-reps 49
       - uses: actions/upload-artifact@v4
         with:
           name: external-dataset-live-probe
           path: |
             research/external_dataset_poc_20261118/results/ci-live.json
             research/external_dataset_poc_20261118/results/ci-research-conclusions.json
+            research/external_dataset_poc_20261118/results/ci-burt-six-sources.json
           retention-days: 14
