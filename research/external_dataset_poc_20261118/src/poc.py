@@ -145,6 +145,7 @@ def cordis_bulk_stats(blob):
         decision_terms=("decision making","decision-making","decision support","decision process","decision maker","decision-maker")
         pids=set(); project_rows=0
         ai_projects=set(); decision_projects=set(); joint_projects=set()
+        joint_metadata={}
         project_fields=reader("project.csv").fieldnames
         org_fields=reader("organization.csv").fieldnames
         for row in reader("project.csv"):
@@ -157,7 +158,12 @@ def cordis_bulk_stats(blob):
                 hit_de=any(term in combined for term in decision_terms)
                 if hit_ai:ai_projects.add(pid)
                 if hit_de:decision_projects.add(pid)
-                if hit_ai and hit_de:joint_projects.add(pid)
+                if hit_ai and hit_de:
+                    joint_projects.add(pid)
+                    joint_metadata[pid]={
+                      "startDate":row.get("startDate"),"endDate":row.get("endDate"),
+                      "totalCost":row.get("totalCost"),"ecMaxContribution":row.get("ecMaxContribution"),
+                      "grantDoi":row.get("grantDoi"),"frameworkProgramme":row.get("frameworkProgramme")}
         organisation_rows=0; orgids=set(); source_projectids=set()
         selected_participants=defaultdict(set)
         selected_roles=defaultdict(set)
@@ -199,6 +205,11 @@ def cordis_bulk_stats(blob):
         membership_count=defaultdict(int)
         for members in selected_participants.values():
             for org in members:membership_count[org]+=1
+        derived_affiliations=[{"project_id":pid,"organisation_id":oid}
+                              for pid in sorted(selected_participants)
+                              for oid in sorted(selected_participants[pid])]
+        # The selected public identifiers form a reproducible derived bi-modal dataset.
+        # Institution/author names, full source text and original CORDIS ZIP are not emitted.
         exploratory={"definition":"UNVALIDATED_STRING_MATCHING_IN_TITLE_OBJECTIVE_TOPIC",
                      "ai_terms":list(ai_terms),"decision_terms":list(decision_terms),
                      "ai_projects":len(ai_projects),"decision_projects":len(decision_projects),
@@ -207,6 +218,11 @@ def cordis_bulk_stats(blob):
                      "joint_projects_with_2plus_organizations":sum(len(v)>1 for v in selected_participants.values()),
                      "unique_joint_project_organizations":len(membership_count),
                      "organizations_in_two_or_more_joint_projects":sum(x>=2 for x in membership_count.values()),
+                     "selected_project_participation_edges":len(derived_affiliations),
+                     "project_records_with_cost":sum(bool(m.get("totalCost")) for m in joint_metadata.values()),
+                     "project_records_with_grant_doi":sum(bool(m.get("grantDoi")) for m in joint_metadata.values()),
+                     "derived_affiliations":derived_affiliations,
+                     "selected_project_metadata":joint_metadata,
                      "consortium_projected_unique_edges":len(projected_edges),
                      "projected_nonisolated_organizations":len(projected_adj),
                      "projected_connected_components":len(sizes),
