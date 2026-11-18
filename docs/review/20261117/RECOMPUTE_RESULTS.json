@@ -1,0 +1,161 @@
+{
+  "tool": "tools/review_20261117/audit_recompute.py",
+  "inputs_sha256": {
+    "ROBUST_CORE_LOCAL_SENSITIVITY.csv": "e3166ee183e18f340c539b983108e2c972d18b916672a62510a25638db8b5b59",
+    "FIRST_CODER_50_FINAL_FROZEN.csv": "dd332dd8cfecf7dde9a29d32bca654b7c04c49f499c3e6213cd4d9a2ed157400",
+    "BLIND_REPEAT_20_FINAL_FROZEN.csv": "6afc8d7a2c2bb5f1e507f50b2f6664fe4d80216cf7f2fcb36c4e94b813bff797",
+    "V9_1_SEGMENTATION_SENSITIVITY/ROBUST_CORE_COMPARISON.csv": "10b0f65bab16f79e4706adada7300c8ee2b4087e386f3cb3efd99fd86b5fe646",
+    "V9_1_SEGMENTATION_SENSITIVITY/S1_SEGMENT_CORPUS.csv": "4cc461c02f02939582561171a322824cd121a5413d05dd7613d8df7e44f359cb",
+    "LIMITATION_SCOUT/outputs/v9_segment_candidates.csv": "3399724d74fa2031277d2dc683259894327abc802101fc185f7fb65e8e55a440",
+    "GAP_VALIDITY/outputs/results.json": "a01ba0e13b15e5ad286725624184426c24d075650a4ceea3f84a9e03d041034d"
+  },
+  "funnel_machine_output": {
+    "production_records": 26501,
+    "strict_records": 6499,
+    "strict_unique_documents": 1104,
+    "fully_mapped_records": 3125,
+    "partially_mapped_records": 2501,
+    "fully_unresolved_records": 873,
+    "eligible_unique_documents": 783,
+    "identity_strict_eq_mapped_partial_unresolved": true,
+    "mapped_endpoints_2x_full_plus_partial": 8751
+  },
+  "cells_120": {
+    "cells": 120,
+    "ai_families": 10,
+    "decision_families": 12,
+    "official_observed_nonzero_cells": 104,
+    "official_zero_cells": 16,
+    "official_document_level_edges_sum": 2180,
+    "official_main_q05": 47,
+    "official_main_q05_by_direction": {
+      "ENRICHED": 22,
+      "DEPLETED": 25
+    },
+    "official_main_q01": 34,
+    "official_main_q01_by_direction": {
+      "ENRICHED": 15,
+      "DEPLETED": 19
+    },
+    "official_exact_q05": 46,
+    "official_document_q05": 32,
+    "official_raw_q05": 54,
+    "official_core": 32,
+    "official_core_by_direction": {
+      "ENRICHED": 16,
+      "DEPLETED": 16
+    },
+    "official_core_rule_rederived": 32,
+    "depleted_core_observed_counts": [
+      2,
+      3,
+      3,
+      6,
+      7,
+      7,
+      7,
+      8,
+      8,
+      8,
+      9,
+      10,
+      12,
+      15,
+      21,
+      26
+    ],
+    "zero_cells_inside_core": 0,
+    "sidecar_observed_nonzero_cells": 106,
+    "sidecar_document_level_edges_sum": 2181,
+    "sidecar_main_count_changed_cells": 24,
+    "sidecar_main_direction_changed_cells": 3,
+    "sidecar_core": 32,
+    "sidecar_core_by_direction": {
+      "ENRICHED": 15,
+      "DEPLETED": 17
+    },
+    "sidecar_core_rule_rederived": 32,
+    "sidecar_core_gained": [
+      "HUMAN_AUGMENTATION x RISK_ASSESSMENT"
+    ],
+    "sidecar_core_lost": [
+      "COORDINATION_EXECUTION x GENERAL_DECISION_PROCESS"
+    ],
+    "rule_matches_published_flags": true
+  },
+  "segmentation_s1_s2": {
+    "baseline_core": 32,
+    "s1_core": 31,
+    "s2_core": 31,
+    "s1_retained_of_baseline": 29,
+    "s2_retained_of_baseline": 30,
+    "s1_retained_depleted": 14,
+    "s2_retained_depleted": 15
+  },
+  "human_reliability": {
+    "first_coder_records": 50,
+    "blind_second_coder_records": 20,
+    "blind_is_subset_of_first": true,
+    "blind_records_with_any_disagreement": 19,
+    "dimensions": {
+      "C1": {
+        "field": "human_evidence_valid",
+        "n": 20,
+        "exact_agreement": 15,
+        "cohen_kappa": 0.5614
+      },
+      "C2": {
+        "field": "human_relation_type",
+        "n": 20,
+        "exact_agreement": 7,
+        "cohen_kappa": 0.1798
+      },
+      "C3": {
+        "field": "human_ai_family",
+        "n": 20,
+        "exact_agreement": 4,
+        "cohen_kappa": 0.0476
+      },
+      "C4": {
+        "field": "human_decision_family",
+        "n": 20,
+        "exact_agreement": 4,
+        "cohen_kappa": 0.1398
+      },
+      "C5": {
+        "field": "human_include",
+        "n": 20,
+        "exact_agreement": 12,
+        "cohen_kappa": 0.3162
+      }
+    }
+  },
+  "limitation_scout": {
+    "s1_segments": 25112,
+    "s1_document_ids": 1104,
+    "s1_parent_strict_records": 6499,
+    "lexical_hit_segments": 142,
+    "documents_with_hits": 100,
+    "hit_status_values": [
+      "LEXICAL_HIT_IN_SELECTED_SPAN_NOT_FULLTEXT"
+    ]
+  },
+  "gap_validity_results_json": {
+    "observed_edges": 104,
+    "depleted_alt_connected": 16,
+    "depleted_alt_len3": 16,
+    "alt_disjoint_min_max": [
+      7,
+      9
+    ],
+    "cross_component": {
+      "robust16": 10,
+      "main_q01": 14,
+      "main_q05": 0
+    },
+    "direct_bipartite_triangles": 0,
+    "constraint_equals_dyadic_hhi": true,
+    "synthetic_K33_C": 0.333333333,
+    "synthetic_prism_C": 0.50617284
+  }
+}
