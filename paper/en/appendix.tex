@@ -3,74 +3,75 @@
 % Numbers come from raw_materials/experimental_log.md. Appendix A additionally
 % states commit ids and preregistered decision rules taken from the frozen
 % preregistration texts (branch research/patent-citation-hole-20261118).
+% Revised in round 1 (REVISION_PLAN_round1.md, sections A--C).
 % ============================================================
 
 \section{Preregistration and Amendment Log}
 \label{app:prereg}
 
-Study~2 rests on four preregistrations, each frozen as a public commit in PR~\#5 of the project repository before the analysis it governs \citep{nosek2018preregistration}. Each text fixes definitions, null models, decision rules, sensitivity checks and stop rules; changes after freezing are recorded as dated amendments that do not overwrite the frozen text. Table~\ref{tab:app_prereg} summarises the four plans; Table~\ref{tab:app_amend} lists every amendment and recorded deviation.
+Study~2 rests on four preregistration plans. Each is a self-timestamped git commit in PR~\#5 of the project repository; none was registered with a third-party registry such as OSF, and the commit timestamps are set by the authors' own tooling. Preregistration is meant to separate confirmatory from exploratory analysis by fixing the plan before outcomes are observed \citep{nosek2018preregistration}. By that standard, Plan~1 was fixed before any patent data were downloaded. Plans 2--4 were written after earlier results were known, so the questions they ask were data-informed; only their definitions, null models, decision rules, thresholds and stop rules were fixed before the analyses they govern were computed. Changes after freezing are recorded as dated amendments that do not overwrite the frozen text. Table~\ref{tab:app_prereg} summarises the four plans, including the commit ids and rule thresholds taken from the frozen texts; Table~\ref{tab:app_amend} lists every amendment and recorded deviation.
 
-\begin{table}[htbp]
+\begin{table}[tbp]
 \centering
-\caption{Preregistration log for Study~2. ``Frozen before'' states what had not yet been seen or computed when the plan was committed. Outcomes are DIRECT results (E3).}
+\caption{Preregistration log for Study~2. ``Frozen before'' states what had not yet been computed when the plan was committed, and ``Known when written'' what had. Commit ids and decision rules are quoted from the frozen texts; outcomes are DIRECT results (E3).}
 \label{tab:app_prereg}
 \footnotesize
 \setlength{\tabcolsep}{4pt}
-\begin{tabular}{p{2.0cm}p{2.3cm}p{3.9cm}p{4.3cm}p{2.3cm}}
+\begin{tabular}{p{2.0cm}p{2.5cm}p{3.7cm}p{4.3cm}p{2.3cm}}
 \toprule
-Plan (commit) & Frozen before & Hypotheses and content & Decision rule & Outcome \tabularnewline
+Plan (commit) & Frozen before / known when written & Hypotheses and content & Decision rule & Outcome \tabularnewline
 \midrule
 \raggedright 1.~Aggregate test (\texttt{a8f3289}) &
-\raggedright Any patent data were downloaded or inspected &
-\raggedright H1a: OE(AI,DEC) relative to reference CPC main groups in G06/G16/H04 with $\geq$2,000 patents; H1b: ratio to OE(AI,BIZ-OTHER); H2: trend by citing year; H3 (exploratory): firm brokers; six sensitivity checks; synthetic calibration &
-\raggedright H1 supported only if OE is in the lowest quartile on both sides (H1a) and the ratio's upper 95\% CI bound is $<1$ (H1b); labels \texttt{HOLE\_SUPPORTED}, \texttt{PARTIAL\_NOT\_CLAIMED}, \texttt{HOLE\_NOT\_SUPPORTED}; $\geq$4 of 6 sensitivity checks disagree $\rightarrow$ \texttt{FRAGILE}; H2 labels \texttt{CLOSING}, \texttt{PERSISTENT}, \texttt{NARROWING\_BUT\_OPEN} &
-\raggedright \texttt{HOLE\_NOT\_SUPPORTED}; 0/6 disagree; H2 \texttt{PERSISTENT} \tabularnewline
+\raggedright Frozen before any patent data were downloaded or inspected. Known: Study~1 only &
+\raggedright H1a: OE(AI,DEC) relative to reference CPC main groups in G06/G16/H04 with $\geq$2,000 patents; H1b: ratio to OE(AI,BIZ-OTHER); H2: trend by citing year; H3 (exploratory): assignees as brokers of a domain-level hole; six sensitivity checks; synthetic calibration &
+\raggedright H1 supported only if OE is in the lowest quartile on both sides (H1a) and the ratio's upper 95\% CI bound is $<1$ (H1b); labels \texttt{HOLE\_\allowbreak SUPPORTED}, \texttt{PARTIAL\_\allowbreak NOT\_\allowbreak CLAIMED}, \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}; $\geq$4 of 6 sensitivity checks disagree $\rightarrow$ \texttt{FRAGILE}; H2 labels \texttt{CLOSING}, \texttt{PERSISTENT}, \texttt{NARROWING\_\allowbreak BUT\_\allowbreak OPEN} &
+\raggedright \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}; 0/6 disagree; H2 \texttt{PERSISTENT} \tabularnewline
 \addlinespace
 \raggedright 2.~V9 battery on the CPC matrix (\texttt{a6266f7}) &
-\raggedright Any cell-level count (written after the aggregate verdict) &
+\raggedright Frozen before any cell-level count. Known: the aggregate verdict &
 \raggedright Unchanged V9 engine on a $6\times7$ matrix fixed from the CPC scheme; Part~A co-classification, Part~B applicant citations &
 \raggedright Full core: q $\leq$ .05 in main, exact and document-preserving tests in the same direction, plus raw; convergent depletion: full-core depleted in both A and B; a depleted cell may not be called a structural hole &
-\raggedright Preregistered core 0 by construction (B1); adapted core reported \tabularnewline
+\raggedright Preregistered core 0 by construction (B1); three-test cells exploratory \tabularnewline
 \addlinespace
 \raggedright 3.~Full replication suite (\texttt{d641256}) &
-\raggedright Any module P1--P10 was run (aggregate and full-window cell results known) &
-\raggedright P1 with M06-P; P2 seeds, null false positives, power, segmentation; P3 time split; P4 label face validity; P5 firm network; P6 removal; P7 hyperedges; P8 aliases; P9 Gap Validity; P10 Limitation Scout &
+\raggedright Frozen before any module P1--P10 was run. Known: the aggregate verdict, the Plan~2 full-window cell results and the M06 failure (B1) &
+\raggedright P1 with the patent-adapted null M06-P; P2 seeds, null false positives, power, segmentation; P3 time split; P4 label face validity; P5 firm network; P6 removal; P7 hyperedges; P8 aliases; P9 Gap Validity; P10 Limitation Scout &
 \raggedright Three-test agreement for P3 and P9; replicated depleted cell must pass in both halves; P4 pass if lift $\geq$1.5; P5 firm hole if O/E $<1$ and below both MIXED O/Es; a candidate is refuted if AI and DEC firms stay connected after its removal &
-\raggedright See Appendix~\ref{app:sens}; P5 criterion met; 10/10 candidates refuted; P10 \texttt{NOT\_APPLICABLE} \tabularnewline
+\raggedright See Appendix~\ref{app:sens}; P5 criterion met (later \texttt{PARTIAL} under the Plan~4 null; not a confirmed hole); 10/10 candidates refuted; P10 \texttt{NOT\_\allowbreak APPLICABLE} \tabularnewline
 \addlinespace
 \raggedright 4.~Portfolio-preserving firm null (\texttt{b59fc71}) &
-\raggedright Any null replicate was computed (written after P5) &
-\raggedright T1: OE(AI\_FIRM$\sim$DEC\_FIRM); T2: MIXED median constraint; owner sets permuted within strata (primary; S-tech) &
-\raggedright \texttt{ORGANISATIONAL\_HOLE\_BEYOND\_PORTFOLIO} if T1 and T2 both have one-sided $p<.05$; \texttt{PARTIAL} if exactly one; \texttt{PORTFOLIO\_ARTEFACT} if neither; S-tech disagreement $\rightarrow$ \texttt{TECH\_MIX\_SENSITIVE} &
-\raggedright \texttt{PARTIAL} in both stratifications \tabularnewline
+\raggedright Frozen before any null replicate was computed. Known: the P5 result, which motivated the plan &
+\raggedright T1: OE(AI\_FIRM$\sim$DEC\_FIRM); T2: MIXED median constraint; owner sets permuted within strata (primary; S-tech). The null preserves portfolio counts, not firm degree &
+\raggedright \texttt{ORGANISATIONAL\_\allowbreak HOLE\_\allowbreak BEYOND\_\allowbreak PORTFOLIO} if T1 and T2 both have one-sided $p<.05$; \texttt{PARTIAL} if exactly one; \texttt{PORTFOLIO\_\allowbreak ARTEFACT} if neither; S-tech disagreement $\rightarrow$ \texttt{TECH\_\allowbreak MIX\_\allowbreak SENSITIVE} &
+\raggedright \texttt{PARTIAL} in both stratifications (T1 met, T2 not) \tabularnewline
 \bottomrule
 \end{tabular}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[tbp]
 \centering
 \caption{Amendments and recorded deviations. Amendments are appended to the frozen texts, which remain unchanged.}
 \label{tab:app_amend}
 \footnotesize
 \setlength{\tabcolsep}{4pt}
-\begin{tabular}{p{1.5cm}p{1.6cm}p{2.8cm}p{5.6cm}p{3.1cm}}
+\begin{tabular}{p{1.3cm}p{1.2cm}p{2.6cm}p{6.4cm}p{3.1cm}}
 \toprule
 Item & Plan & When & Change & Effect on design \tabularnewline
 \midrule
 \raggedright A1 & \raggedright 1 & \raggedright 2026-11-18, before any citation data or result was computed (\texttt{a158e70}) & \raggedright The CPC file labels inventive codes ``inventional''; the code accepts both spellings so that sensitivity check s4 keeps its meaning. CPC rows are loaded in chunks. & \raggedright None \tabularnewline
 \addlinespace
-\raggedright A2 & \raggedright 1 & \raggedright 2026-11-18, after the run (data note) & \raggedright Before 2013, non-examiner citations are labelled ``cited by other'', so the applicant-only specification effectively covers citing years 2013--2025; s1 (all categories) agrees with the primary verdict. H3 was not run: with H1 unsupported there is no hole to broker. & \raggedright None to H1; H3 moot \tabularnewline
+\raggedright A2 & \raggedright 1 & \raggedright 2026-11-18, after the run (data note) & \raggedright Before 2013, non-examiner citations are labelled ``cited by other'', so the applicant-only specification effectively covers citing years 2013--2025; s1 (all categories) agrees with the primary verdict. H3 was not run. H3 asked whether assignees broker a \emph{domain-level} hole, so it was conditional on H1; with H1 unsupported there was no such hole to broker. The later firm analysis asks a different question---whether specialist AI and DEC firms are separated, and whether mixed-portfolio firms span that separation, irrespective of the domain-level verdict. It was preregistered separately in Plan~3 (P5) as the patent analogue of the Study~1 author-network line, and followed up in Plan~4. & \raggedright None to H1; H3 moot; firm-level question re-posed in Plans 3--4 \tabularnewline
 \addlinespace
-\raggedright B1 & \raggedright 2 & \raggedright 2026-11-18, after the run & \raggedright M06 accepted 0 of 21,843,600 proposed swaps because each document is a complete row $\times$ column block; the preregistered core is 0 by construction and uninformative. Three-test cells reported as exploratory; M06-P then frozen in Plan~3 (P1) before computation. & \raggedright Documented deviation from Plan~2 \tabularnewline
+\raggedright B1 & \raggedright 2 & \raggedright 2026-11-18, after the run & \raggedright M06 accepted 0 of 21,843,600 proposed swaps because each document is a complete row $\times$ column block; the preregistered core is 0 by construction and uninformative. Three-test cells are reported as exploratory. The replacement M06-P was specified only after this failure and after the Plan~2 three-test cell results were known; it was then frozen in Plan~3 (module P1, \texttt{d641256}) before it was computed. The Plan~2 result file records only the degenerate core; all M06-P counts come from the Plan~3 P1 output. & \raggedright Documented, data-informed deviation from Plan~2 \tabularnewline
 \addlinespace
 \raggedright Seeding & \raggedright 4 & \raggedright Before any null replicate finished (\texttt{1eb7319}) & \raggedright The first run was stopped by host memory pressure after reproducing P5 exactly. The run was made resumable; each replicate $r$ of scheme $s$ uses its own seed sequence [20261119, $s$, $r$] instead of one stream. & \raggedright Statistic, strata and rule unchanged \tabularnewline
 \addlinespace
-\raggedright P6, P10 & \raggedright 3 & \raggedright Recorded with results & \raggedright The P6 cross-weight-retained metric is identically 1 by construction; P10 Limitation Scout is \texttt{NOT\_APPLICABLE} (patents have no limitation section). & \raggedright Reported as uninformative \tabularnewline
+\raggedright P6, P10 & \raggedright 3 & \raggedright Recorded with results & \raggedright The P6 cross-weight-retained metric is identically 1 by construction; P10 Limitation Scout is \texttt{NOT\_\allowbreak APPLICABLE} (patents have no limitation section). & \raggedright Reported as uninformative \tabularnewline
 \bottomrule
 \end{tabular}
 \end{table}
 
-Study~1 used frozen V9 seeds: 20260918 for the stub Monte Carlo and 20260919 for the document-preserving swap (E1.1). Its data-validity re-analysis (2026-11-18; E1.3--E1.5) was not preregistered. Its verdict is recorded as follows: directional under-integration DEFENSIBLE; ``16 statistically robust depleted pairs'' NOT DEFENSIBLE as measured; Burt structural hole STOP; research gap NOT SUPPORTED.
+Study~1 used frozen V9 seeds: 20260918 for the stub Monte Carlo and 20260919 for the document-preserving swap (E1.1). Its data-validity re-analysis (2026-11-18; E1.3--E1.5) was not preregistered. Its verdict was recorded as follows: directional under-integration DEFENSIBLE; ``16 statistically robust depleted pairs'' NOT DEFENSIBLE as measured; Burt structural hole STOP; research gap NOT SUPPORTED. We qualify the first item in this paper. It rests on the attenuation argument, which holds only for non-differential misclassification, whereas same-term self-pairing and model-inferred labels are non-random errors. The direction survives every check we could run, but it is descriptive and unconfirmed (Section~\ref{sec:discussion_measurement}).
 
 % ------------------------------------------------------------
 \section{Sensitivity Tables}
@@ -78,9 +79,11 @@ Study~1 used frozen V9 seeds: 20260918 for the stub Monte Carlo and 20260919 for
 
 \subsection{Study 1}
 
-\begin{table}[htbp]
+Table~\ref{tab:app_v9cells} lists the 16 depleted cells of the frozen V9 analysis, and Table~\ref{tab:app_s1robust} the robustness checks of the data-validity re-analysis.
+
+\begin{table}[tbp]
 \centering
-\caption{The 16 V9 depleted cells with observed counts (DIRECT; \texttt{V9\_ROBUSTNESS\_MASTER\_TABLE.csv}). These are depleted cells, not gaps.}
+\caption{The 16 V9 depleted cells with observed counts (DIRECT; \texttt{V9\_ROBUSTNESS\_MASTER\_TABLE.csv}). These are depleted cells, not gaps, and they are withdrawn as anchors of the model (Section~\ref{sec:mlp_model}). Nine of the 16 lie in the \texttt{PREDICTION\_\allowbreak RISK\_\allowbreak ESTIMATION} row or the \texttt{PREDICTION\_\allowbreak DIAGNOSIS} column, where same-term self-pairing in the prediction $\times$ prediction cell can deplete cells mechanically under fixed margins.}
 \label{tab:app_v9cells}
 \footnotesize
 \begin{tabular}{llr}
@@ -107,9 +110,9 @@ AI family & Decision family & $O$ \\
 \end{tabular}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[tbp]
 \centering
-\caption{Study~1 robustness checks (DIRECT; data-validity re-analysis, 2026-11-18; E1.3). Core cells are defined by BH-FDR \citep{benjamini1995controlling}.}
+\caption{Study~1 robustness checks (DIRECT; data-validity re-analysis, 2026-11-18; E1.3). Core cells are defined by BH-FDR within each test \citep{benjamini1995controlling} combined with agreement across tests, so the core has no single defined false discovery rate. The checks test the stability of the pattern; none of them addresses non-random coding error.}
 \label{tab:app_s1robust}
 \footnotesize
 \begin{tabular}{p{3.6cm}p{11.0cm}}
@@ -132,9 +135,9 @@ Check & Result \tabularnewline
 
 Table~\ref{tab:app_oeyear} gives the yearly intensities behind Figure~\ref{fig:patent_trend} and the synthetic calibration run before the real data. Table~\ref{tab:app_suite} summarises the calibration (P2), time-split (P3) and Gap Validity (P9) modules, and Table~\ref{tab:app_lift} gives the label face-validity lifts (P4). P4 is a title-keyword check, not a human coding audit.
 
-\begin{table}[htbp]
+\begin{table}[tbp]
 \centering
-\caption{OE(AI,DEC) by citing grant year, primary specification (applicant citations), with 95\% CI; and synthetic calibration of the aggregate rule (DIRECT; E3.1).}
+\caption{OE(AI,DEC) by citing grant year, primary specification (applicant citations), with 95\% CI; and synthetic calibration of the aggregate rule (DIRECT; E3.1). The synthetic generator is simple (field-local citing with planted suppression), and its no-hole baseline lies far below the real OE.}
 \label{tab:app_oeyear}
 \footnotesize
 \begin{tabular}{lrl@{\hspace{1.2cm}}lrl}
@@ -152,16 +155,16 @@ Year & OE & 95\% CI & Year & OE & 95\% CI \\
 \multicolumn{6}{p{8.4cm}}{WLS slope $-0.097$ per year (95\% CI $-0.130$ to $-0.065$); last-3-year OE 2.69 vs reference median 1.095; label \texttt{PERSISTENT}.} \\
 \midrule
 \multicolumn{6}{l}{\emph{Synthetic calibration (before real data)}} \\
-\multicolumn{6}{p{8.4cm}}{No hole: OE 0.388 vs reference lowest quartile 0.356; ratio 0.99 (0.79--1.21) $\rightarrow$ \texttt{HOLE\_NOT\_SUPPORTED}.} \\
+\multicolumn{6}{p{8.4cm}}{No hole: OE 0.388 vs reference lowest quartile 0.356; ratio 0.99 (0.79--1.21) $\rightarrow$ \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}.} \\
 \multicolumn{6}{p{8.4cm}}{30\% suppression: OE 0.275; ratio 0.66 (0.52--0.83) $\rightarrow$ detected.} \\
 \multicolumn{6}{p{8.4cm}}{50\% suppression: OE 0.223; ratio 0.47 $\rightarrow$ detected.} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[tbp]
 \centering
-\caption{Replication suite: calibration (P2), time split (P3) and Gap Validity (P9). Part~A is co-classification; Part~B is applicant citations (DIRECT; E3.3).}
+\caption{Replication suite: calibration (P2), time split (P3) and Gap Validity (P9). Part~A is co-classification; Part~B is applicant citations (DIRECT; E3.3). The P2 null matrices are stub permutations that treat edges as independent, so they cannot detect anti-conservatism from document clustering. The first half of Part~A is small. The P9 entries are diagnostics, not evidence: the zero indirect term is an identity of bipartite graphs, and alternative routes are near-guaranteed in a dense $6\times7$ matrix.}
 \label{tab:app_suite}
 \footnotesize
 \begin{tabular}{lp{6.0cm}ll}
@@ -179,14 +182,14 @@ P3 time split & First half: documents, depleted & 2010--2017: 543, 0 & 2013--201
  & Second half: documents, depleted & 2018--2025: 4,773, 8 & 2019--2025: 26,071, 11 \\
  & Depleted cells replicated in both halves & 0 & 0 \\
 \midrule
-P9 Gap Validity & Indirect constraint term (bipartite) & 0 & 0 \\
+P9 Gap Validity & Indirect constraint term (bipartite; identity) & 0 & 0 \\
  & Alternative length-3 routes per depleted cell & 20--30 & 20--30 \\
  & Depleted cells at q $\leq$ .01 vs q $\leq$ .05 & 7 vs 9 & 9 vs 10 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[tbp]
 \centering
 \caption{Label face validity (P4): lift of the title-keyword hit rate over other AI$\cup$DEC patents. A label passes if lift $\geq$ 1.5; all 11 pass (DIRECT; E3.3). This is not inter-rater reliability.}
 \label{tab:app_lift}
@@ -207,7 +210,9 @@ G06N20 & 2.18 & STRATEGY (hit rate 4.5\%) & 4.40 \\
 
 \subsection{External-data feasibility}
 
-\begin{table}[htbp]
+Table~\ref{tab:app_sources} gives the scale and outcome of the six public sources screened for flow validity.
+
+\begin{table}[tbp]
 \centering
 \caption{Six public sources screened for flow validity (DIRECT; E2). No source passes the independent-relation and validation gates.}
 \label{tab:app_sources}
@@ -230,13 +235,13 @@ Source & Scale & Relation type and outcome \tabularnewline
 \section{Multi-Level Programming Constraint Details}
 \label{app:mlp}
 
-All values in this appendix describe the simulated v1.0 prototype. They are design assumptions, not estimates, and describe no real firm.
+All values in this appendix describe the simulated v1.0 prototype. They are design assumptions, not estimates, and describe no real firm. The model formalises only the organisational candidate explanation (Section~\ref{sec:discussion_hypothesis}), and its original anchor, the 16 V9 depleted cells, has been withdrawn.
 
 \subsection{Notation and governance regimes}
 
-Level~1 chooses integer allocations $b_i^r\in\{0,1,2,3\}$ for each process $i$ and resource $r\in\{D,A,R,G\}$ at unit costs $c_i^r$, subject to $\sum_{i,r}c_i^r b_i^r\leq B_{\mathrm{tot}}$. The capability map $\phi_X(X_i^0,b_i^X)=\min(3,X_i^0+b_i^X)$ yields the ceilings $\bar D_i$, $\bar A_i$, $\bar R_i$ and $\bar G_i$ on the ordinal scale $\{0,1,2,3\}$. A governance regime $\Gamma$ is defined by the parameters in Table~\ref{tab:app_regimes} and by the permission matrix $\mathrm{Allow}_{m\Gamma}$. In the prototype source, the flexibility multiplier scales realised gain at Level~3, the risk multiplier scales residual risk at Level~3 and governance risk at Level~2, and the cost multiplier scales integration cost at Level~2. Bilevel and multilevel background is given in \citet{dempe2002foundations}, \citet{lee2001fuzzy} and \citet{cheng2019fuzzy}.
+Level~1 chooses integer allocations $b_i^r\in\{0,1,2,3\}$ for each process $i$ and resource $r\in\{D,A,R,G\}$ at unit costs $c_i^r$, subject to $\sum_{i,r}c_i^r b_i^r\leq B_{\mathrm{tot}}$. The capability map $\phi_X(X_i^0,b_i^X)=\min(3,X_i^0+b_i^X)$ yields the ceilings $\bar D_i$, $\bar A_i$, $\bar R_i$ and $\bar G_i$ on the ordinal scale $\{0,1,2,3\}$. A governance regime $\Gamma$ is defined by the parameters in Table~\ref{tab:app_regimes} and by the permission matrix $\mathrm{Allow}_{m\Gamma}$. In the prototype source, the flexibility multiplier scales realised gain at Level~3, the risk multiplier scales residual risk at Level~3 and governance risk at Level~2, and the cost multiplier scales integration cost at Level~2. For general background on bilevel and multilevel programming, see \citet{dempe2002foundations}, \citet{colson2007overview}, \citet{fortunyamat1981representation}, \citet{lee2001fuzzy} and \citet{cheng2019fuzzy}; none of these sources supports a specific modelling choice of the prototype.
 
-\begin{table}[htbp]
+\begin{table}[tbp]
 \centering
 \caption{Governance regime parameters (SIMULATED; E4). The letters C, F and D are labels for parameter sets only and are not expanded. In the baseline, all five configurations are permitted under every regime.}
 \label{tab:app_regimes}
@@ -259,11 +264,11 @@ Table~\ref{tab:app_thresholds} lists the threshold functions. The symbol $\kappa
 \mathrm{CapUse}=\sum_{i\in I}\left(0.42A_i+0.24H_i+0.24EA_i+0.20WI_i\right)\leq K_\Gamma ,
 \label{eq:app_capacity}
 \end{equation}
-with $\mathrm{CapUse}(0,0,0,0)=0$ and $K_\Gamma\geq0$. The prototype source also bounds $H_i$, $EA_i$ and $WI_i$ by $3A_i$. On the ordinal scale this restriction binds only at $A_i=0$, where it rules out oversight, assurance or workflow integration of an absent AI component \citep{colson2007overview,fortunyamat1981representation}.
+with $\mathrm{CapUse}(0,0,0,0)=0$ and $K_\Gamma\geq0$. The prototype source also bounds $H_i$, $EA_i$ and $WI_i$ by $3A_i$. On the ordinal scale this restriction binds only at $A_i=0$, where it rules out oversight, assurance or workflow integration of an absent AI component. It is a design assumption of the prototype.
 
-\begin{table}[htbp]
+\begin{table}[tbp]
 \centering
-\caption{Level-2 requirement thresholds as functions of AI depth $A$ and consequence class $\kappa$ (canonical v1.0 specification).}
+\caption{Level-2 requirement thresholds as functions of AI depth $A$ and consequence class $\kappa$ (canonical v1.0 specification; design assumptions, not calibrated).}
 \label{tab:app_thresholds}
 \footnotesize
 \begin{tabular}{ll}
@@ -279,11 +284,22 @@ Workflow integration, $WI_{\mathrm{req}}(A)$ & $3$ for an execution process with
 \end{tabular}
 \end{table}
 
+\subsection{Structure of the Level-2 objective and the Level-3 terms}
+
+The Level-2 objective $F_2$ and the value and risk terms are specified in full, with their weights, in the canonical model file of the project repository (\texttt{01\_\allowbreak CANONICAL\_\allowbreak MODEL\_\allowbreak v1\_\allowbreak 0.md}). We give their structure here so that the model can be read without that file; the weights are positive constants that have not been calibrated, and we do not reproduce them because they carry no empirical content. With uncalibrated weights $\omega_1,\dots,\omega_6>0$,
+\begin{equation}
+F_2=\sum_{i\in I}\Bigl[\omega_1\,\mathrm{Feas}_i+\omega_2\,\mathrm{Rel}_i+\omega_3\,\mathrm{Scal}_i-\omega_4\,\mathrm{IntCost}_i-\omega_5\,\mathrm{GovRisk}_i+\omega_6\max\!\bigl(0,U_i^{*}\bigr)\Bigr],
+\label{eq:app_f2}
+\end{equation}
+where $U_i^{*}$ is the best Level-3 utility available to process $i$ in its Level-2 state. Feasibility $\mathrm{Feas}_i$, reliability $\mathrm{Rel}_i$ and scalability $\mathrm{Scal}_i$ are linear indices clipped to $[0,1]$. Feasibility increases in the capability surpluses $\bar D_i-D_{\mathrm{req}}$, $\bar R_i-R_{\mathrm{req}}$ and $\bar G_i-\max(H_{\mathrm{req}},EA_{\mathrm{req}})$. Reliability increases in $EA_i$, $H_i$ and $WI_i$ and decreases in $A_i\kappa_i$. Scalability increases in $\bar D_i$, $\bar R_i$ and $WI_i$. Integration cost is the regime's cost multiplier times a linear function increasing in $A_i$, $WI_i$, $H_i$ and $EA_i$. Governance risk is 0 when $A_i=0$; otherwise it is the regime's risk multiplier times a term proportional to $\kappa_i A_i$, divided by a term increasing in $H_i$ and $EA_i$.
+
+At Level~3, $\mathrm{Gain}_{im}$ is the product of a configuration-specific base gain, a process value weight, a factor $\psi_i$ that increases in $EA_i$ and $WI_i$ and, for selection processes, is multiplied by the value factor $v_i$ of Eq.~\ref{eq:mlp_tau}, and the regime's flexibility multiplier. $\mathrm{Burden}_{im}$ is a configuration-specific base burden plus a linear term increasing in $H_i$, $EA_i$ and $WI_i$. $\mathrm{ResidualRisk}_{im}$ is $\kappa_i$ times a configuration-specific autonomy level times the regime's risk multiplier, divided by a term increasing in $H_i$ and $EA_i$. All configuration-specific constants are simulated.
+
 \subsection{Level-3 configurations and the selection mechanism}
 
 Table~\ref{tab:app_configs} gives the minimum Level-2 state each configuration requires. A process may choose configuration $m$ only if $\mathrm{Allow}_{m\Gamma}=1$ and its state meets $\rho_m$ componentwise; it then receives $U_{im}=\mathrm{Gain}_{im}-0.45\,\mathrm{Burden}_{im}-0.75\,\mathrm{ResidualRisk}_{im}$. For selection processes, the AI recommendation is $d_i=\mathbf{1}[s_i\geq\tau_i]$, and the realised value factor is 1 for a correct recommendation and 0.35 otherwise (Eq.~\ref{eq:mlp_tau}). Review configurations reduce risk or change utility but do not correct a wrong recommendation. Ties are broken deterministically in the order HumanOnly, AIAssist, HumanFirstAICheck, AIFirstReview, BoundedAutomation.
 
-\begin{table}[htbp]
+\begin{table}[tbp]
 \centering
 \caption{Minimum Level-2 requirements $\rho_m=(A,H,WI,EA)$ of the five human--AI configurations (canonical v1.0 specification).}
 \label{tab:app_configs}

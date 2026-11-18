@@ -353,6 +353,12 @@ The quantum-computing row is tiny: 74 edges in A.
 
 **Share of the T1 gap reproduced by the portfolio null:** 85% (primary), 91% (S-tech).
 
+**Derived residual:** the share of the observed specialist separation (1 − T1_obs) that the portfolio null does **not** reproduce is 15% (primary) and 9% (S-tech), i.e. 1 − 0.847 and 1 − 0.911. T1 is significant at the smallest attainable p with 1,000 replicates, p = 1/1,001 ≈ .001.
+
+**Scope difference with P5:** the firm null starts from all 127,114 in-scope patents and 14,600 firms that own any in-scope patent, with 162,339 applicant citations among in-scope patents. P5 reports only the 6,201 firms that have at least one inter-firm tie after self-citations are removed, with 20,681 ties and total weight 109,508. The identity permutation reproduces the P5 values exactly.
+
+**Known limitation of the null:** the null preserves each firm's portfolio counts by type and year, not its degree or strength. Constraint is degree-dependent, so T2 cannot separate brokerage from degree. The degree-matched label null in P5 (null median 0.444) and the portfolio null (null median 0.104) answer different questions.
+
 **Verdict: PARTIAL in both stratifications** (not tech-mix sensitive). Specialist separation is mostly a portfolio effect. The lower constraint of MIXED firms does not survive: real firms are more clustered than the null.
 
 ---
@@ -397,3 +403,5 @@ In the baseline all five configurations are permitted under every regime.
 **Selection-threshold sensitivity** (process P2; score 0.65; truth 1):
 - at τ ≤ 0.6, P2 uses AIAssist (F1 2.244);
 - at τ = 0.7, Level 1 allocates nothing to P2's AI capability and P2 reverts to HumanOnly (F1 1.450).
+- The τ probe holds the governance regime and budget fixed at regime F, budget 5. Its F1 at τ ≤ 0.6 (2.244) equals the F/5 baseline.
+- In the permission probe (regime C, B = 5), AIAssist is disallowed.

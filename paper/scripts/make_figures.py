@@ -52,7 +52,7 @@ def fig_research_design():
         ax.text(x + w / 2, y + h - 6.6, body, ha="center", va="top", fontsize=6.8, color=INK2, linespacing=1.35)
 
     box(2, 27, 29, 21, "Study 1  Literature", "V5-V11.1: function co-occurrence,\ncitation and co-author networks\n\nDirection robust, significance not;\n0 confirmed brokers", MUTED)
-    box(35.5, 27, 29, 21, "Study 2  Patents", "8.5M US patents, 4 preregistrations\nAI (G06N) x Decision (G06Q10)\n\nTechnology level: OE 3.05, no hole\nFirm level: PARTIAL (portfolio)", BLUE)
+    box(35.5, 27, 29, 21, "Study 2  Patents", "8.5M US patents, 4 preregistered analyses\nAI (G06N) x Decision (G06Q10/04, /06)\n\nTechnology level: hole not supported\nFirm level: PARTIAL (mostly portfolio)", BLUE)
     box(69, 27, 29, 21, "Study 3  Enterprise", "Preregistered plan:\nresources, decision rights,\nhuman-AI configuration\n\nCalibrates the model", ORANGE)
     box(14, 4, 72, 14, "Multi-level programming model", "L1 resource allocation  ->  L2 AI architecture & governance  ->  L3 human-AI configuration\nSimulated prototype now; parameters to be calibrated by Study 3", INK2)
     for x0 in (31, 64.5):
@@ -60,7 +60,7 @@ def fig_research_design():
                     arrowprops=dict(arrowstyle="-|>", color=MUTED, lw=1.1))
     ax.annotate("", xy=(50, 20.6), xytext=(50, 26.4), arrowprops=dict(arrowstyle="-|>", color=MUTED, lw=1.1))
     ax.annotate("", xy=(70, 20.6), xytext=(83.5, 26.4), arrowprops=dict(arrowstyle="-|>", color=ORANGE, lw=1.1))
-    ax.text(50, 24.1, "no structural hole in knowledge flows", ha="center", fontsize=6.8, color=INK2,
+    ax.text(50, 24.1, "structural hole in knowledge flows not supported", ha="center", fontsize=6.8, color=INK2,
             bbox=dict(facecolor=SURF, edgecolor="none", pad=0.6))
     save(fig, "fig_research_design")
 
@@ -207,7 +207,7 @@ def fig_firm_null():
     axes[0].legend(frameon=False, fontsize=7, loc="upper right")
     s1 = res["primary"]["share_of_T1_gap_reproduced_by_null"]
     s2 = res["S_tech"]["share_of_T1_gap_reproduced_by_null"]
-    fig.suptitle(f"Portfolio-preserving null: it reproduces {s1:.0%}–{s2:.0%} of the specialist separation; mixed firms are not brokers",
+    fig.suptitle(f"Portfolio-preserving null: it reproduces {s1:.0%}–{s2:.0%} of the specialist separation; no brokerage advantage established",
                  fontsize=9, fontweight="bold", color=INK, y=1.03)
     fig.tight_layout()
     save(fig, "fig_firm_null")

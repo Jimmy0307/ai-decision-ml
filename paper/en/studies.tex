@@ -1,12 +1,13 @@
 % ======================================================================
 % Sections 4 and 5: Study 1 (literature) and Study 2 (patents)
 % Every number in this file is copied from raw_materials/experimental_log.md.
+% Revision round 1: applies REVISION_PLAN_round1.md, sections B and C.
 % ======================================================================
 
 \section{Study 1: Literature Evidence}
 \label{sec:study1}
 
-Study~1 is the research line in which the structural-hole premise was first formulated. It covers the V5 literature corpus, the frozen V9 analysis of an AI-family $\times$ decision-family matrix, and the network lines V6--V11.1. We report it together with a data-validity re-analysis completed on 2026-11-18. Unless stated otherwise, the figures in this section are graded DIRECT. The network results in Section~\ref{sec:study1_network} are HISTORICAL / USER\_REPORTED and are labelled as such.
+Study~1 is the research line in which the structural-hole premise was first formulated. Its project versions are labelled V5--V11.1 only to tie results to the project logs: V5 built the literature corpus, V9 is the frozen analysis of an AI-family $\times$ decision-family matrix, and V6--V11.1 are network lines. We report it with a data-validity re-analysis of 2026-11-18, which was not preregistered. Figures are DIRECT unless labelled HISTORICAL / USER\_REPORTED (Section~\ref{sec:study1_network}).
 
 \subsection{Corpus, coding and test design}
 \label{sec:study1_corpus}
@@ -21,26 +22,28 @@ Each cell was evaluated with four tests:
 \begin{enumerate}
   \item a fixed-degree stub Monte Carlo null ($R = 10{,}000$; seed 20260918);
   \item an exact hypergeometric test;
-  \item a document-preserving within-document swap MCMC (5,000 samples, burn-in 43,600, thinning 4,360; seed 20260919);
+  \item a document-preserving within-document swap MCMC, labelled M06 in the V9 engine (5,000 samples, burn-in 43,600, thinning 4,360; seed 20260919);
   \item a raw-record exact test on the non-deduplicated records ($n = 3{,}125$).
 \end{enumerate}
-The Benjamini--Hochberg procedure controls the false discovery rate within the 120 cells \citep{benjamini1995controlling}. The frozen core rule requires three things: $q \le .05$ in the main, exact and document-preserving tests, the same direction in all three, and the raw test as well. Thirty-two cells meet this rule, 16 enriched and 16 depleted. ``Depleted'' and ``enriched'' are statistical descriptions relative to these nulls. They are not evidence of separation, and we do not call depleted cells gaps (Section~\ref{sec:design}).
+The Benjamini--Hochberg (BH) procedure controls the false discovery rate within the 120 cells \citep{benjamini1995controlling}. A cell enters the frozen \emph{core} if it has $q \le .05$ in the main, exact and document-preserving tests with the same direction in all three, and $q \le .05$ in the raw test as well. Thirty-two cells meet this rule, 16 enriched and 16 depleted. ``Depleted'' and ``enriched'' are statistical descriptions relative to these nulls. They are not evidence of separation, and we do not call depleted cells gaps (Section~\ref{sec:design_boundaries}).
+
+Two properties of this design qualify everything that follows, including its patent analogue (Section~\ref{sec:study2_cells}). First, the exact and raw tests treat edges as independent, although one document can contribute several edges; they ignore document clustering. Second, the core combines BH within each test with agreement across four dependent tests, so it has no single defined false discovery rate. We read it as a conservative screen, not as a set with a known error rate (Section~\ref{sec:limitations}).
 
 \subsection{Direction and robustness of the depleted cells}
 \label{sec:study1_direction}
 
-Appendix~\ref{app:sens} lists the 16 depleted cells with their observed counts. The most extreme cell is \texttt{PREDICTION\_RISK\_ESTIMATION}~$\times$ \texttt{HUMAN\_REVIEW\_ACCOUNTABILITY}, with $O = 6$ against $E = 44.9$.
+Table~\ref{tab:app_v9cells} lists the 16 depleted cells with their observed counts. The most extreme cell is \texttt{PREDICTION\_\allowbreak RISK\_\allowbreak ESTIMATION}~$\times$ \texttt{HUMAN\_\allowbreak REVIEW\_\allowbreak ACCOUNTABILITY}, with $O = 6$ against $E = 44.9$.
 
-\paragraph{Computational robustness.} An independent re-implementation of the exact and raw tests reproduces the official $q$ values to within $|\Delta q| \le 6\times10^{-12}$. The Jaccard overlap of the 32-cell core is .94. Across 20 Monte Carlo seeds, 31 cells are in the core under every seed, including all 16 depleted cells. The 2 boundary cells are exactly the one-in / one-out pair identified by the human-corrected sidecar.
+\paragraph{Computational robustness.} An independent re-implementation of the exact and raw tests reproduces the official $q$ values to within $|\Delta q| \le 6\times10^{-12}$. The Jaccard overlap of the 32-cell core is .94. Across 20 Monte Carlo seeds, 31 cells are in the core under every seed, including all 16 depleted cells. The 2 boundary cells are exactly the one-in / one-out pair identified by an earlier human-corrected re-coding.
 
-\paragraph{Compositional robustness.} Under a track-stratified null, which fixes the composition of AI-track and decision-track documents, 16/16 depleted and 16/16 enriched cells remain significant with unchanged direction. The dominance of AI-track documents therefore does not produce the pattern. Records from depleted core cells pass the strict filter more often than records from other cells (38\% vs 28\%). The depletion is therefore not created by the filter discarding records from these cells.
+\paragraph{Compositional robustness.} Under a track-stratified null, which fixes the composition of AI-track and decision-track documents, 16/16 depleted and 16/16 enriched cells remain significant with unchanged direction, so the pattern is not an artefact of the dominance of AI-track documents. Records from depleted core cells pass the strict filter more often than records from other cells (38\% vs 28\%).
 
-\paragraph{Temporal robustness.} Figure~\ref{fig:study1_direction} splits the documents into those from 2023 or earlier and those from 2024 or later. All 16 cells are depleted in both periods (16/16), and the change between periods does not differ from a permutation null ($p = .86$). Within this corpus the under-integration is persistent and shows no sign of closing.
+\paragraph{Temporal robustness.} Figure~\ref{fig:study1_direction} splits the documents into those from 2023 or earlier and those from 2024 or later. All 16 cells are depleted in both periods (16/16), and the change between periods does not differ from a permutation null ($p = .86$). The shortfall therefore has the same direction in both periods. The criterion is direction only, and a non-significant change is absence of evidence of change, not evidence of stability.
 
-\begin{figure}[t]
+\begin{figure}[tbp]
   \centering
   \includegraphics[width=\linewidth]{fig_study1_direction.png}
-  \caption{Study~1: $\log_2(O/E)$ for each of the 16 depleted V9 cells, for documents from 2023 or earlier (blue) and 2024 or later (orange). The vertical line marks $O = E$. All 16 cells lie below $O = E$ in both periods (16/16), and the change between periods does not differ from a permutation null ($p = .86$). The direction is robust, but statistical significance does not survive realistic misclassification (Section~\ref{sec:study1_reliability}). These are depleted cells, not gaps. DIRECT.}
+  \caption{Study~1: $\log_2(O/E)$ for each of the 16 depleted V9 cells, for documents from 2023 or earlier (blue) and 2024 or later (orange). The vertical line marks $O = E$. Expected counts in each period are recomputed from that period's own margins, so period values are not directly comparable with the pooled O/E (for the most extreme cell, pooled $O = 6$ against $E = 44.9$). The direction may reflect non-random coding artefacts (Section~\ref{sec:study1_reliability}). These are depleted cells, not gaps. DIRECT.}
   \label{fig:study1_direction}
 \end{figure}
 
@@ -50,17 +53,17 @@ Appendix~\ref{app:sens} lists the 16 depleted cells with their observed counts. 
   \item Same-term self-pairing inflates the strongest enriched cell (prediction $\times$ prediction). In that cell, 33\% of records pair the same term (e.g., ``forecasting'') on both sides. Removing these records drops 2 prediction-related depleted cells from the core.
   \item A rule-based keyword matrix removes 741 same-term records and leaves 1,431 document edges. In it, 13/16 depleted cells keep the same direction, 6 are significant and 0 are significantly reversed, but only 7 cells reach the four-test core.
 \end{itemize}
-The direction of the depletions is thus robust to seeds, source tracks and periods. The composition of the significant core, by contrast, depends on how sentences are coded. Appendix~\ref{app:sens} summarises all robustness checks.
+The direction of the depletions is thus robust to seeds, source tracks and periods, and largely to keyword coding. The composition of the significant core, by contrast, depends on how sentences are coded. Table~\ref{tab:app_s1robust} summarises all robustness checks.
 
 \subsection{Measurement reliability and misclassification}
 \label{sec:study1_reliability}
 
 Table~\ref{tab:reliability} reports chance-corrected agreement (Cohen's $\kappa$; \citealp{cohen1960coefficient}) for the AI and decision labels.
 
-\begin{table}[t]
+\begin{table}[tbp]
   \centering
   \small
-  \caption{Coding reliability of the Study~1 labels (Cohen's $\kappa$). Model-to-model agreement shows that a tool is reproducible. It is not human inter-rater reliability. DIRECT.}
+  \caption{Coding reliability of the Study~1 labels (Cohen's $\kappa$). Model-to-model agreement shows that a tool is reproducible. It is not human inter-rater reliability. The human--human estimates rest on $n = 20$ records and are therefore imprecise. DIRECT.}
   \label{tab:reliability}
   \begin{tabular}{p{0.62\linewidth}rr}
     \toprule
@@ -80,21 +83,25 @@ Table~\ref{tab:reliability} reports chance-corrected agreement (Cohen's $\kappa$
   \raggedright\footnotesize $^{a}$In brackets: agreement among sides that both models coded.
 \end{table}
 
-Agreement between human coders is very low ($\kappa$ = 0.05 for AI labels and 0.14 for decision labels). A coarser, theory-merged 7$\times$6 taxonomy does not improve it (0.08 / 0.16). The pipeline is stable on retest (0.64 / 0.63), but its agreement with the first human coder (0.27 / 0.12) and with reconciled human answers (0.11 / 0.29) is weak. Two Claude models coding blind under a revised codebook agree more closely (0.72 / 0.56). This agreement shows that the procedure is reproducible. It is not evidence of human inter-rater reliability. The revised codebook also changes what is coded: under codebook v2, 42--64\% of evidence sentences state no explicit decision function, against a pipeline rate of 18\%. Only about 9\% of matrix records are reproduced in the same cell by both new coders.
+Human--human agreement is very low, on only 20 records, and a coarser taxonomy does not improve it. The pipeline is stable on retest but agrees weakly with human coding. Two Claude models agree more closely, which shows that the procedure is reproducible, not that it is reliable. The revised codebook also changes what is coded: under codebook v2, 42--64\% of evidence sentences state no explicit decision function, against a pipeline rate of 18\%, and only about 9\% of matrix records are reproduced in the same cell by both new coders.
 
-\paragraph{Analytic bound.} Let $T$ be a cell's count under error-free coding, and let $e_{\mathrm{AI}}$ and $e_{\mathrm{Dec}}$ be the non-differential (random) error rates of the two labels. Then
+\paragraph{Analytic bound and its limits.} Let $T$ be a cell's count under error-free coding, and let $e_{\mathrm{AI}}$ and $e_{\mathrm{Dec}}$ be the non-differential (random) error rates of the two labels. Then
 \begin{equation}
 \frac{O^{\mathrm{obs}}}{E} - 1 = (1 - e_{\mathrm{AI}})(1 - e_{\mathrm{Dec}})\left(\frac{T}{E} - 1\right).
 \label{eq:attenuation}
 \end{equation}
-Because the accuracy product is at most one, random error can only attenuate a depletion. It cannot create one. This is why the direction of the depleted cells can be defended. The bound also limits what the magnitudes mean. For the most extreme cell, even the 95\% upper bound requires an accuracy product of at least 0.71, whereas the human audit implies a product of about 0.07. Under a purely random-error model the two figures cannot be reconciled. The observed magnitude should therefore not be read as the magnitude that human-coded data would show.
+Because the accuracy product is at most one, random error can only attenuate a depletion; it cannot create one. The bound does not, however, protect the direction, for two reasons.
 
-\paragraph{Simulation.} Table~\ref{tab:misclass} rebuilds the matrix and reruns the BH exact test under six misclassification scenarios. When either human coding is taken as the truth, the median number of depleted cells that remain significant is 0, although 11 and 12 cells keep their direction. Only the mildest error scenario (20\% random error) and the Claude-consensus scenario keep a non-zero median of significant cells (7 and 4). No scenario produced a spurious depleted cell.
+First, it covers only non-differential error, and two documented error sources are non-random. Same-term self-pairing inflates the prediction $\times$ prediction cell. Under Eq.~\eqref{eq:s1_expected}, inflating one cell raises its row and column margins and hence the expected counts of the other cells in that row and column, whose O/E falls; coding can thus create depletion in a fixed-margin matrix. More than half of the 16 depleted cells lie in the \texttt{PREDICTION\_\allowbreak RISK\_\allowbreak ESTIMATION} row or the \texttt{PREDICTION\_\allowbreak DIAGNOSIS} column (Table~\ref{tab:app_v9cells}). Model-inferred labels are a second non-random source: a model that routes certain sentence types to certain families moves records between cells in a patterned way.
 
-\begin{table}[t]
+Second, the random-error model does not fit. For the most extreme cell, even the 95\% upper bound requires an accuracy product of at least 0.71, whereas the human audit implies about 0.07. This points to non-random error or to an audit too small to estimate accuracy, and the observed magnitudes should not be read as what human-coded data would show.
+
+\paragraph{Simulation.} Table~\ref{tab:misclass} rebuilds the matrix and reruns the BH exact test under six misclassification scenarios. When either human coding is taken as the truth, the median number of depleted cells that remain significant is 0, although 11 and 12 keep their direction. Only the mildest random-error scenario and the Claude-consensus scenario keep a non-zero median (7 and 4). No scenario produced a spurious depleted cell, but the simulated errors are random, so this says nothing about non-random error. Because the two human coders largely disagree on 20 records, the ``as truth'' scenarios are stress tests, not calibrated error models.
+
+\begin{table}[tbp]
   \centering
   \small
-  \caption{Misclassification simulation for the 16 depleted cells: 300 runs per scenario. Each run rebuilds the matrix and reruns the BH exact test. Entries are the median (5th--95th percentile) number of cells. No scenario produced a spurious depleted cell. DIRECT.}
+  \caption{Misclassification simulation for the 16 depleted cells: 300 runs per scenario. Each run rebuilds the matrix and reruns the BH exact test. Entries are the median (5th--95th percentile) number of cells. All simulated errors are random; ``as truth'' scenarios are stress tests. No scenario produced a spurious depleted cell. DIRECT.}
   \label{tab:misclass}
   \begin{tabular}{lll}
     \toprule
@@ -110,20 +117,21 @@ Because the accuracy product is at most one, random error can only attenuate a d
   \end{tabular}
 \end{table}
 
-The re-analysis of 2026-11-18 reached four verdicts:
+The re-analysis of 2026-11-18 recorded four verdicts:
 \begin{itemize}
-  \item directional under-integration is DEFENSIBLE;
-  \item ``16 statistically robust depleted pairs'' is NOT DEFENSIBLE as measured;
+  \item directional under-integration: DEFENSIBLE;
+  \item ``16 statistically robust depleted pairs'': NOT DEFENSIBLE as measured;
   \item Burt structural hole: STOP, so the broker search is discontinued;
-  \item a research gap is NOT SUPPORTED.
+  \item research gap: NOT SUPPORTED.
 \end{itemize}
+We qualify the first verdict. The direction survives every check we could run, but it may reflect non-random coding artefacts. It is a descriptive, unconfirmed pattern, and ``defensible'' means no more than that.
 
 \subsection{Network lines V6--V11.1 and Gap Validity}
 \label{sec:study1_network}
 
-Successive versions of Study~1 searched citation, co-author and higher-order networks for Burt brokers (Table~\ref{tab:network_lines}). No line confirmed a broker. The V10.1 external review of 8 candidate pairs refuted 6 and left 2 unresolved. The V11.1 identity and peer validation rejected 3 of 4 candidates and found the evidence on the fourth insufficient.
+Successive versions of Study~1 searched citation, co-author and higher-order networks for Burt brokers (Table~\ref{tab:network_lines}). According to these HISTORICAL / USER\_REPORTED records, no line confirmed a broker. The V10.1 external review of 8 candidate pairs refuted 6 and left 2 unresolved. The V11.1 identity and peer validation rejected 3 of 4 candidates and found the evidence on the fourth insufficient.
 
-\begin{table}[t]
+\begin{table}[tbp]
   \centering
   \small
   \caption{Network search for Burt brokers, V6--V11.1. All rows are HISTORICAL / USER\_REPORTED. They are taken from earlier project logs or reported by the researcher, and the raw files were not re-verified.}
@@ -133,7 +141,7 @@ Successive versions of Study~1 searched citation, co-author and higher-order net
     \toprule
     Version & Line & Scale & Result & Grade \\
     \midrule
-    V6 & citation SNA & 458 leads; 13 G2 candidates & 0 confirmed & HIST./USER \\
+    V6 & citation SNA & 458 leads; 13 candidates & 0 confirmed & HIST./USER \\
     V7 & author SNA & 446 works; 8 cross-domain authors; 2 focal candidates & 0 confirmed & HIST./USER \\
     V8 & citation enrichment & 1,111 citing works; 5,592 references & unconfirmed & HIST./USER \\
     V9 & citation line & 3,983 discovery + 3,897 confirmation works (7,880 total) & no confirmed Burt result & HIST./USER \\
@@ -145,26 +153,26 @@ Successive versions of Study~1 searched citation, co-author and higher-order net
   \end{tabular}
 
   \smallskip
-  \raggedright\footnotesize HIST./USER = HISTORICAL / USER\_REPORTED.
+  \raggedright\footnotesize SNA = social network analysis. HIST./USER = HISTORICAL / USER\_REPORTED.
 \end{table}
 
-These lines could not have carried Burt's construct even with perfect data (Section~\ref{sec:theory}). A co-author network is a one-mode projection of author--work affiliation data \citep{newman2001scientific}, so a shared paper is not a directed flow between the two authors. Candidate screens based on centrality, such as the share of shortest paths through a node \citep{freeman1977set}, do not establish brokerage. Brokerage requires directed open two-paths between actors with group membership \citep{gould1989structures}, and Burt's benefits rest on non-redundant real contacts \citep{burt1992structural}.
+The lines differ in what their relations could carry. The co-author lines (V7, V11) and the higher-order line (V10) rest on projections. A co-author network is a one-mode projection of author--work affiliation data \citep{newman2001scientific}, so a shared paper is not a directed flow, and these lines could not have carried Burt's construct even with perfect data (Section~\ref{sec:theory_cooccurrence}). The citation lines (V6, V8, V9) are different: citations can carry directed flow in principle, which is why Study~2 uses them. These lines failed for reasons of data and design: they screened for candidate brokers in samples of the literature instead of testing group-level flows against a calibrated null. Centrality-based screens, such as the share of shortest paths through a node \citep{freeman1977set}, do not establish brokerage, which requires directed open two-paths between actors with group membership \citep{gould1989structures}; Burt's benefits rest on non-redundant real contacts \citep{burt1992structural}.
 
-The Gap Validity check (version V1, a DIRECT sidecar) makes the same point for the functional matrix itself. In the bipartite family network, all 16 depleted cells have alternative routes (16/16). The indirect term of Burt constraint is also identically zero in a strict bipartite graph. A depleted cell is therefore neither a disconnection nor a position whose constraint could reveal closure.
+A supplementary diagnostic, Gap Validity (DIRECT), records that all 16 depleted cells have alternative routes in the bipartite family network (16/16) and that the indirect term of Burt constraint is zero. Neither is empirical evidence: the zero indirect term is an identity for any strict bipartite graph (Section~\ref{sec:theory_cooccurrence}), and alternative routes are all but guaranteed when 104 of 120 cells are observed. The diagnostic only makes explicit that a depleted cell is not a disconnection.
 
-Study~1 therefore supports one claim only: the AI--decision pairs in this literature co-occur less often than their margins imply, and they do so persistently. It also documents why co-occurrence data cannot carry the Burt construct. Testing the premise requires directed flows, which Study~2 supplies.
+Study~1 therefore supports one descriptive claim: in this literature, as coded, the AI--decision pairs co-occur less often than their margins imply, with the same direction in both periods. Whether the pattern belongs to the literature or to the coding cannot be settled with these data. Testing the premise requires directed flows, which Study~2 supplies.
 
 % ======================================================================
 
 \section{Study 2: Patent Evidence}
 \label{sec:study2}
 
-Study~2 tests the premise on directed knowledge flows: applicant citations between US utility patents, with examiner-assigned CPC classes as group labels. Four preregistrations, frozen in public commits before data access (aggregate test) or before computation (follow-ups), fixed definitions, null models, decision rules, sensitivity checks and stop rules \citep{nosek2018preregistration}: the aggregate test (\texttt{a8f3289}), the V9 battery (\texttt{a6266f7}), the full replication suite (\texttt{d641256}) and the firm null (\texttt{b59fc71}) (Section~\ref{sec:design}; Appendix~\ref{app:prereg}). All results in this section are DIRECT.
+Study~2 tests the premise on directed knowledge flows: applicant citations between US utility patents, with examiner-assigned CPC classes as group labels. Patents were chosen after six public relational sources failed the flow-validity gates (Section~\ref{sec:design_sources}; Table~\ref{tab:app_sources}). The analyses follow four preregistrations: the aggregate test (\texttt{a8f3289}), the V9 battery on a CPC matrix (\texttt{a6266f7}), the full replication suite (\texttt{d641256}) and the firm null (\texttt{b59fc71}) (Table~\ref{tab:app_prereg}). All four are self-timestamped git commits in the project repository, not third-party registrations such as OSF. Preregistration~1 was frozen before any patent data were downloaded. Preregistrations~2--4 were each written after earlier results were known, so their questions are data-informed; only their definitions, null models, decision rules and thresholds were fixed before computation. Preregistration is meant to separate confirmatory from exploratory analysis by fixing a plan before the outcomes it governs are observed \citep{nosek2018preregistration}; for Preregistrations~2--4 we claim this for their rules, not their questions. Deviations are dated amendments (Table~\ref{tab:app_amend}). All results in this section are DIRECT.
 
 \subsection{Data and the aggregate test}
 \label{sec:study2_aggregate}
 
-\paragraph{Data.} We use the USPTO PatentsView \texttt{pvgpatdis} tables, downloaded on 2026-11-18 \citep{uspto2026patentsview}. They contain 8,512,829 utility patents granted 1976--2025 and 152,631,929 citation rows. Of these rows, 87,414,291 fall in scope (citing year 2010--2025), and 63,083,371 of those are applicant citations. Citations serve as a proxy for knowledge flows \citep{jaffe1993geographic}. Examiner-added citations may not reflect what inventors knew, so the primary specification uses applicant citations only \citep{alcacer2006patent}. Before 2013, PatentsView labels non-examiner citations ``cited by other''. The applicant-only specification therefore effectively covers citing years 2013--2025.
+\paragraph{Data.} We use the USPTO PatentsView \texttt{pvgpatdis} tables, downloaded on 2026-11-18 \citep{uspto2026patentsview}: 8,512,829 utility patents granted 1976--2025 and 152,631,929 citation rows, of which 87,414,291 fall in scope (citing year 2010--2025) and 63,083,371 of those are applicant citations. Citations serve as a proxy for knowledge flows \citep{jaffe1993geographic}. Examiner-added citations may not reflect what inventors knew, so the primary specification uses applicant citations only \citep{alcacer2006patent}. Because PatentsView labels non-examiner citations ``cited by other'' before 2013, this specification effectively covers citing years 2013--2025.
 
 The groups use grant years 2010--2025:
 \begin{itemize}
@@ -175,30 +183,33 @@ The groups use grant years 2010--2025:
 \end{itemize}
 Bridge patents are excluded from the cross counts.
 
+\paragraph{Construct validity of DEC.} \texttt{G06Q10/04} (forecasting and optimisation) overlaps methodologically with machine learning, so part of any AI--DEC over-connection may be near-mechanical: the two classes partly describe the same techniques. What the test measures is therefore the technological proximity of patent classes, not the integration of AI into managerial decision-making. Sensitivity check s2, which broadens DEC to all of \texttt{G06Q10}, lowers the intensity OE (Eq.~\eqref{eq:oe} below) from 3.05 to 2.59 without changing the verdict (Table~\ref{tab:aggregate}). We do not report \texttt{/04} and \texttt{/06} separately.
+
 \paragraph{Statistic.} Citations are stratified by $s = $ (citing grant year, cited grant year). In each stratum, $\mathrm{out}_A(s)$ is the number of citations made by group-$A$ patents, $\mathrm{in}_B(s)$ is the number received by group-$B$ patents, and $M(s)$ is the total. The time-stratified configuration expectation is
 \begin{equation}
 E(A\!\rightarrow\!B) = \sum_{s} \frac{\mathrm{out}_A(s)\,\mathrm{in}_B(s)}{M(s)} ,
 \label{eq:patent_expected}
 \end{equation}
-and the symmetric intensity is
+and the symmetric observed-to-expected intensity, OE, is
 \begin{equation}
 \mathrm{OE}(A,B) = \frac{O(A\!\rightarrow\!B) + O(B\!\rightarrow\!A)}{E(A\!\rightarrow\!B) + E(B\!\rightarrow\!A)} .
 \label{eq:oe}
 \end{equation}
 
-\paragraph{Why the test is relative.} Citing is field-local, so cross-field OE is usually below 1 even between fields no one would call separated. An absolute criterion ``$\mathrm{OE} < 1$'' would flag almost any pair of fields. The synthetic calibration, run before the real data, shows this. With no hole, $\mathrm{OE} = 0.388$, well below 1, yet it lies above the synthetic reference lowest quartile (0.356), the ratio is 0.99 (0.79--1.21), and the test correctly returns \texttt{HOLE\_NOT\_SUPPORTED}. With 30\% suppression of cross-group citations (OE 0.275; ratio 0.66, 0.52--0.83) or 50\% suppression (OE 0.223; ratio 0.47), the test detects the hole. The preregistered hypotheses are therefore relative:
+\paragraph{Why the test is relative.} Citing is field-local, so cross-field OE is usually below 1 even between fields no one would call separated, and an absolute criterion ``$\mathrm{OE} < 1$'' would flag almost any pair of fields. The synthetic calibration, run before the real data, shows this. With no hole, $\mathrm{OE} = 0.388$, yet it lies above the synthetic reference lowest quartile (0.356), the ratio is 0.99 (0.79--1.21), and the test correctly returns \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}. With 30\% suppression of cross-group citations (OE 0.275; ratio 0.66, 0.52--0.83) or 50\% suppression (OE 0.223; ratio 0.47), it detects the hole. The generator is simple (field-local citing with planted suppression), and its no-hole baseline lies near the lowest quartile, whereas the real OE lies far above it; the calibration shows detection from a low baseline, not power at the real one. The preregistered hypotheses are relative:
 \begin{itemize}
   \item \textbf{H1a:} $\mathrm{OE}(\mathrm{AI},\mathrm{DEC})$ lies in the lowest quartile $Q_1$ of both $\{\mathrm{OE}(\mathrm{AI},X)\}$ and $\{\mathrm{OE}(\mathrm{DEC},X)\}$. The reference set is the 179 CPC main groups in \texttt{G06}, \texttt{G16} and \texttt{H04} with at least 2,000 patents.
   \item \textbf{H1b:} the ratio $\mathrm{OE}(\mathrm{AI},\mathrm{DEC}) / \mathrm{OE}(\mathrm{AI},\mathrm{BIZ\text{-}OTHER})$ is below 1, with an upper 95\% confidence bound below 1.
 \end{itemize}
+H1a is not granularity-matched: DEC consists of two CPC subgroups, whereas the references are main groups. Narrow, homogeneous groups may show higher OE than broad ones, so the H1a percentiles may favour over-connection. We did not compute a subgroup-level reference set.
 
-\paragraph{Results.} Under the primary specification, $O = 30{,}843$ and $E = 10{,}112$. This gives $\mathrm{OE}(\mathrm{AI},\mathrm{DEC}) = 3.05$ (95\% CI 2.94--3.17; Poisson cluster bootstrap over citing patents, 2,000 replicates). Both directions are over-represented: AI$\rightarrow$DEC has $O = 21{,}820$ and $E = 6{,}686$ (O/E 3.26), and DEC$\rightarrow$AI has $O = 9{,}023$ and $E = 3{,}426$ (O/E 2.63). H1a fails: OE(AI,DEC) exceeds 97.8\% of the OE(AI,$X$) values and 92.2\% of the OE(DEC,$X$) values, against lowest-quartile thresholds of 0.787 (AI side) and 0.502 (DEC side) and medians of 1.240 and 1.095. H1b fails: the ratio is 1.69 (95\% CI 1.60--1.77), although the comparison pair is itself over-connected ($\mathrm{OE}(\mathrm{AI},\mathrm{BIZ\text{-}OTHER}) = 1.809$). The preregistered verdict is \texttt{HOLE\_NOT\_SUPPORTED}.
+\paragraph{Results.} Under the primary specification, $O = 30{,}843$ and $E = 10{,}112$. This gives $\mathrm{OE}(\mathrm{AI},\mathrm{DEC}) = 3.05$ (95\% CI 2.94--3.17; Poisson cluster bootstrap over citing patents, 2,000 replicates). Both directions are over-represented: AI$\rightarrow$DEC has $O = 21{,}820$ and $E = 6{,}686$ (O/E 3.26), and DEC$\rightarrow$AI has $O = 9{,}023$ and $E = 3{,}426$ (O/E 2.63). H1a fails: OE(AI,DEC) exceeds 97.8\% of the OE(AI,$X$) values and 92.2\% of the OE(DEC,$X$) values, against lowest-quartile thresholds of 0.787 (AI side) and 0.502 (DEC side) and medians of 1.240 and 1.095. H1b fails: the ratio is 1.69 (95\% CI 1.60--1.77), although the comparison pair is itself over-connected ($\mathrm{OE}(\mathrm{AI},\mathrm{BIZ\text{-}OTHER}) = 1.809$). The preregistered verdict is \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}.
 
-All six preregistered sensitivity specifications agree with it (0/6 disagree; Table~\ref{tab:aggregate}, Figure~\ref{fig:patent_sensitivity}), so the verdict is not fragile. OE ranges from 2.59 (s2, DEC broadened to all of \texttt{G06Q10}) to 4.25 (s6, bridge patents counted on both sides).
+All six preregistered sensitivity specifications agree with it (0/6 disagree; Table~\ref{tab:aggregate}, Figure~\ref{fig:patent_sensitivity}), so by the preregistered rule the verdict is not fragile. OE ranges from 2.59 (s2, DEC broadened to all of \texttt{G06Q10}) to 4.25 (s6, bridge patents counted on both sides).
 
-\begin{table}[t]
+\begin{table}[tbp]
   \centering
-  \caption{Aggregate test: primary and six preregistered sensitivity specifications. ``Ratio vs BIZ'' is OE(AI,DEC)/OE(AI,BIZ-OTHER) with 95\% bootstrap CI. ``Percentile'' is the share of the 179 reference values OE(AI,$X$) / OE(DEC,$X$) that OE(AI,DEC) exceeds. DIRECT.}
+  \caption{Aggregate test: primary and six preregistered sensitivity specifications. ``Ratio vs BIZ'' is OE(AI,DEC)/OE(AI,BIZ-OTHER) with 95\% bootstrap CI. ``Percentile'' is the share of the 179 reference values OE(AI,$X$) / OE(DEC,$X$) that OE(AI,DEC) exceeds. NOT\_SUPPORTED abbreviates HOLE\_NOT\_SUPPORTED. DIRECT.}
   \label{tab:aggregate}
   \footnotesize
   \setlength{\tabcolsep}{4pt}
@@ -217,23 +228,23 @@ All six preregistered sensitivity specifications agree with it (0/6 disagree; Ta
   \end{tabular}
 \end{table}
 
-\begin{figure}[t]
+\begin{figure}[tbp]
   \centering
   \includegraphics[width=\linewidth]{fig_patent_sensitivity.png}
-  \caption{H1b ratio OE(AI,DEC)/OE(AI,BIZ-OTHER) for the primary and the six preregistered sensitivity specifications, with 95\% CIs (Poisson cluster bootstrap over citing patents, 2,000 replicates). A hole requires the whole interval to lie below the dashed line at 1. Every interval lies above 1, so H1b fails in all seven specifications. Table~\ref{tab:aggregate} gives the H1a percentiles.}
+  \caption{H1b ratio OE(AI,DEC)/OE(AI,BIZ-OTHER) for the primary and six sensitivity specifications, with 95\% CIs. A hole requires the whole interval to lie below the dashed line at 1; every interval lies above it. Table~\ref{tab:aggregate} gives the H1a percentiles.}
   \label{fig:patent_sensitivity}
 \end{figure}
 
-\paragraph{Trend (H2).} Figure~\ref{fig:patent_trend} plots OE(AI,DEC) by citing year. It falls from 3.90 in 2013 to 2.34 in 2025, with a weighted least-squares slope of $-0.097$ per year (95\% CI $-0.130$ to $-0.065$). The last-three-year OE is 2.69, against a reference median of 1.095, and the preregistered label is PERSISTENT. The over-connection is declining but remains more than twice the reference median. Appendix~\ref{app:sens} gives the yearly values.
+\paragraph{Trend (H2).} Figure~\ref{fig:patent_trend} plots OE(AI,DEC) by citing year. It falls from 3.90 in 2013 to 2.34 in 2025, with a weighted least-squares slope of $-0.097$ per year (95\% CI $-0.130$ to $-0.065$). The last-three-year OE is 2.69, against a reference median of 1.095, and the preregistered label is PERSISTENT. The over-connection is declining but remains more than twice the reference median. Table~\ref{tab:app_oeyear} gives the yearly values.
 
-\begin{figure}[t]
+\begin{figure}[tbp]
   \centering
   \includegraphics[width=\linewidth]{fig_patent_trend.png}
-  \caption{OE(AI,DEC) by citing grant year, 2013--2025, with 95\% CI band. Applicant citations only; citing years begin in 2013 because PatentsView labels non-examiner citations ``cited by other'' before 2013. The dashed line is the median of the 179 comparable fields (1.095), and the dotted line is $O = E$. The last-three-year OE is 2.69. The preregistered label is PERSISTENT: OE declines but stays far above the reference median.}
+  \caption{OE(AI,DEC) by citing grant year, 2013--2025, with 95\% CI band (applicant citations only). The dashed line is the median of the 179 comparable fields (1.095), and the dotted line is $O = E$. Preregistered label: PERSISTENT.}
   \label{fig:patent_trend}
 \end{figure}
 
-For RQ1, the evidence does not support a structural hole between AI and decision-making as knowledge domains, as operationalised here. AI and decision patents are over-connected relative to both reference sets. This is a failure to support a hole under a calibrated, preregistered test, not a proof that no separation exists under other operationalisations.
+For RQ1, the evidence does not support a structural hole in knowledge flows between AI and decision technologies, as operationalised here: AI and decision patents are over-connected relative to both reference sets. This is a failure to support a hole under a preregistered rule, not a proof that no separation exists under other operationalisations, and given the overlap of \texttt{G06Q10/04} with AI methods, the size of the over-connection is not a measure of organisational integration.
 
 \subsection{The V9 battery on the CPC matrix and the M06-P null}
 \label{sec:study2_cells}
@@ -241,7 +252,7 @@ For RQ1, the evidence does not support a structural hole between AI and decision
 Preregistration~2 ran the Study~1 battery on a patent analogue of the functional matrix. The matrix has 42 cells:
 \begin{itemize}
   \item 6 AI-method rows: \texttt{G06N3} (neural), \texttt{G06N5} (knowledge-based), \texttt{G06N7} (probabilistic/fuzzy), \texttt{G06N10} (quantum), \texttt{G06N20} (machine learning) and \texttt{G06N\_OTHER};
-  \item 7 decision-function columns: FORECAST\_OPTIMISE (\texttt{G06Q10/04}), RESOURCE\_SCHEDULING (\texttt{/0631}), WORKFLOW (\texttt{/0633}), RISK (\texttt{/0635}), STRATEGY (\texttt{/0637}), PERFORMANCE (\texttt{/0639}) and MGMT\_GENERAL (other \texttt{/06}).
+  \item 7 decision-function columns: FORECAST\_\allowbreak OPTIMISE (\texttt{G06Q10/04}), RESOURCE\_\allowbreak SCHEDULING (\texttt{/0631}), WORKFLOW (\texttt{/0633}), RISK (\texttt{/0635}), STRATEGY (\texttt{/0637}), PERFORMANCE (\texttt{/0639}) and MGMT\_\allowbreak GENERAL (other \texttt{/06}).
 \end{itemize}
 The engine is a byte-identical copy of the V9 engine (SHA-256 \texttt{09c3d60c\ldots bc33}). The battery was run on three parts:
 \begin{itemize}
@@ -249,15 +260,16 @@ The engine is a byte-identical copy of the V9 engine (SHA-256 \texttt{09c3d60c\l
   \item Part B, applicant citations between AI-only and DEC-only patents: 30,843 citations and 66,056 edges;
   \item Part B with all citation categories: 38,252 citations and 80,849 edges.
 \end{itemize}
+Because Part B's 66,056 edges come from 30,843 citations, the clustering caveat of Section~\ref{sec:study1_corpus} applies here too.
 
-\paragraph{A degenerate null and its replacement.} The preregistered document-preserving swap (M06) accepted 0 of 21,843,600 proposed swaps. The reason is structural: each patent contributes the complete row $\times$ column product of its codes, so every candidate swap targets an edge that already exists. The preregistered core is therefore empty by construction and carries no information about the data (amendment B1). Its replacement, M06-P, permutes column sets among documents within ($|$rows$|$, $|$cols$|$) strata, which preserves both margins and each document's block structure (5,000 samples). M06-P is a documented deviation from Preregistration~2 (amendment B1). It was itself frozen in Preregistration~3 (module P1) before it was computed.
+\paragraph{A degenerate null and its replacement.} The preregistered document-preserving swap (M06) accepted 0 of 21,843,600 proposed swaps. The reason is structural: each patent contributes the complete row $\times$ column product of its codes, so every candidate swap targets an edge that already exists. The preregistered core is therefore empty by construction and carries no information about the data (Amendment B1, Table~\ref{tab:app_amend}). Its replacement, the patent-adapted document-preserving null M06-P, permutes column sets among documents within ($|$rows$|$, $|$cols$|$) strata, which preserves both margins and each document's block structure (5,000 samples). M06-P was designed after M06 failed and after the three-test cell results were known. It is a documented deviation from Preregistration~2 and was frozen as module P1 of Preregistration~3 before it was computed; the M06-P results below are those of P1. M06-P has no separate type-I error calibration.
 
-\paragraph{Results.} The adapted full core contains 8 depleted and 7 enriched cells in Part A, 9 depleted and 8 enriched in Part B, and 8 and 8 in Part B with all categories. The numbers of $q \le .05$ cells by test (main / exact / raw / M06-P) are 20 / 20 / 29 / 22 in A and 22 / 22 / 27 / 25 in B \citep{benjamini1995controlling}. Table~\ref{tab:cells_both} lists the five cells depleted in both A and B and the four cells enriched in both under the three-test rule. Figure~\ref{fig:cpc_heatmap} shows the full matrices.
+\paragraph{Results.} The \emph{adapted full core}, which is the Study~1 core rule with M06-P in place of M06, contains 8 depleted and 7 enriched cells in Part A, 9 depleted and 8 enriched in Part B, and 8 and 8 in Part B with all categories. The numbers of $q \le .05$ cells by test (main / exact / raw / M06-P) are 20 / 20 / 29 / 22 in A and 22 / 22 / 27 / 25 in B. Table~\ref{tab:cells_both} lists the five cells depleted in both A and B and the four cells enriched in both under three-test agreement (main + exact + raw). Under Amendment B1 the three-test results are exploratory. Figure~\ref{fig:cpc_heatmap} shows the full matrices.
 
-\begin{table}[t]
+\begin{table}[tbp]
   \centering
   \small
-  \caption{CPC cells that deviate in the same direction in co-classification (Part A) and citation flow (Part B). Values are O/E, with observed / expected counts in brackets. The adapted full core and three-test agreement give the same depleted set. \texttt{G06N10}~$\times$~PERFORMANCE is small-sample (expected count below 10 in B; 74 edges in the quantum row of A). Depleted cells, not gaps. DIRECT.}
+  \caption{CPC cells that deviate in the same direction in co-classification (Part A) and citation flow (Part B). Values are O/E, with observed / expected counts in brackets. Depleted rows: the adapted full core (M06-P; Preregistration~3, module P1) and three-test agreement give the same set. Enriched rows rest on three-test agreement (main + exact + raw), which is exploratory (Amendment B1). \texttt{G06N10}~$\times$~PERFORMANCE is small-sample (expected count below 10 in B; 74 edges in the whole quantum row of A). Depleted cells, not gaps. DIRECT.}
   \label{tab:cells_both}
   \begin{tabular}{llll}
     \toprule
@@ -270,7 +282,7 @@ The engine is a byte-identical copy of the V9 engine (SHA-256 \texttt{09c3d60c\l
     \texttt{G06N20} & FORECAST\_OPTIMISE & 0.89 (994 / 1,120.9) & 0.93 (2,255 / 2,425.9) \\
     \texttt{G06N10} & PERFORMANCE & 0.08 (1 / 12.0) & 0 (0 / 8.9) \\
     \midrule
-    \multicolumn{4}{l}{\emph{Enriched in both A and B (main + exact + raw)}} \\
+    \multicolumn{4}{l}{\emph{Enriched in both A and B (main + exact + raw; exploratory)}} \\
     \texttt{G06N20} & RISK & 1.18 & 1.33 \\
     \texttt{G06N3} & FORECAST\_OPTIMISE & 1.09 & 1.17 \\
     \texttt{G06N5} & MGMT\_GENERAL & 1.16 & 1.06 \\
@@ -282,21 +294,21 @@ The engine is a byte-identical copy of the V9 engine (SHA-256 \texttt{09c3d60c\l
   \raggedright\footnotesize $^{a}$In the adapted full core only in Part B (Part A M06-P $q = .93$).
 \end{table}
 
-\begin{figure}[t]
+\begin{figure}[tbp]
   \centering
   \includegraphics[width=\linewidth]{fig_cpc_heatmap.png}
-  \caption{Cell-level $\log_2$ O/E in the 6$\times$7 CPC matrix: (A) co-classification, 5,316 patents; (B) applicant citation flow, 30,843 citations. Red marks under-representation and blue over-representation; hatched cells have expected count below 10. Triangles mark the adapted full core under M06-P (BH $q \le .05$): 8 depleted / 7 enriched in A and 9 / 8 in B. \texttt{G06N7}~$\times$~PERFORMANCE carries no marker in A because it is in the adapted full core only in B (Part A M06-P $q = .93$). No depleted cell replicates across the two time halves (Section~\ref{sec:study2_suite}).}
+  \caption{Cell-level $\log_2$ O/E in the 6$\times$7 CPC matrix: (A) co-classification, 5,316 patents; (B) applicant citation flow, 30,843 citations. Red marks under-representation and blue over-representation; hatched cells have expected count below 10. Triangles mark the adapted full core under M06-P (BH $q \le .05$; Preregistration~3, module P1): 8 depleted / 7 enriched in A and 9 / 8 in B. \texttt{G06N7}~$\times$~PERFORMANCE carries no marker in A because it is in the adapted full core only in B (Part A M06-P $q = .93$). No depleted cell replicates across the two time halves (Section~\ref{sec:study2_suite}).}
   \label{fig:cpc_heatmap}
 \end{figure}
 
-The magnitudes matter more than the counts. Apart from the quantum cell, the depleted O/E values in Table~\ref{tab:cells_both} lie between 0.70 and 0.95: modest shortfalls inside a domain pair whose overall intensity is about three times expectation. They are not separations, and we do not call them gaps. The quantum cell rests on 1 observed against 12.0 expected co-classifications and 0 against 8.9 expected citations; it is a small-sample result.
+The magnitudes matter more than the counts. Apart from the small-sample quantum cell, the depleted O/E values lie between 0.70 and 0.95: modest shortfalls inside a domain pair whose overall intensity is about three times expectation. They are not separations, and we do not call them gaps.
 
 \subsection{Full replication suite}
 \label{sec:study2_suite}
 
-Preregistration~3 gives each original Study~1 research line a patent analogue on flow-valid data. Module P1 is the battery of Section~\ref{sec:study2_cells}; Table~\ref{tab:suite} maps P2--P10 to their original versions.
+Preregistration~3 consists of ten modules, P1--P10, each giving one original Study~1 research line a patent analogue on flow-valid data. P1 is the battery of Section~\ref{sec:study2_cells}. Table~\ref{tab:suite} maps P2--P10 to their original lines, and Table~\ref{tab:app_suite} gives details for P2, P3 and P9.
 
-\begin{table}[t]
+\begin{table}[tbp]
   \centering
   \small
   \caption{Full replication suite: patent analogues P2--P10 of the original Study~1 lines. DIRECT.}
@@ -307,44 +319,43 @@ Preregistration~3 gives each original Study~1 research line a patent analogue on
     Module & Original line & Patent analogue & Result \\
     \midrule
     P2 & V9.1 calibration & seeds, null false-positive rate, power, segmentation & A: 20 cells always $q \le .05$, 4 boundary; B: 22 always, 0 boundary. Mean false cells per null matrix 0.045 (A) / 0.049 (B). Power 67\% (A) / 79\% (B) \\
-    P3 & V6/V8/V9 citation line & exploration/confirmation by time halves & A: 0 $\rightarrow$ 8 depleted; B: 3 $\rightarrow$ 11 depleted; 0 depleted cells replicate in both halves \\
+    P3 & V6/V8/V9 citation line & exploration/confirmation by time halves & A: 0 $\rightarrow$ 8 depleted (first half only 543 documents); B: 3 $\rightarrow$ 11 depleted; 0 depleted cells replicate in both halves \\
     P4 & Study~1 human coding audit & title-keyword label face validity (pass if lift $\ge$ 1.5) & all 11 labels pass \\
-    P5 & V7/V11 author SNA & firm citation network with Burt constraint & AI\_FIRM$\sim$DEC\_FIRM O/E 0.24; preregistered firm-level criterion met; MIXED median constraint 0.36 vs degree-matched null 0.444 ($p = .001$) \\
+    P5 & V7/V11 author SNA & firm citation network with Burt constraint & AI\_FIRM$\sim$DEC\_FIRM O/E 0.24; preregistered firm-level criterion met (later: PARTIAL under the portfolio null); MIXED median constraint 0.36 vs degree-matched null 0.444 ($p = .001$) \\
     P6 & V10.1 external review & removal falsification & 10/10 candidates refuted as indispensable; largest joint component 5,954 $\rightarrow$ 5,563 firms \\
     P7 & V10 higher-order network & co-assignment hyperedges & 2,546 hyperedges; 32\% join an AI\_FIRM with a DEC\_FIRM or MIXED firm \\
     P8 & V11.1 identity validation & alias check & 54 firms checked; 0 possible alias collisions \\
-    P9 & Gap Validity V1 & indirect constraint term; alternative routes & indirect term 0 (bipartite); 20--30 alternative length-3 routes per depleted cell \\
+    P9 & Gap Validity & indirect constraint term; alternative routes & indirect term 0 (an identity for bipartite graphs); 20--30 alternative length-3 routes per depleted cell (near-guaranteed in a dense matrix) \\
     P10 & Limitation Scout & --- & NOT\_APPLICABLE (patents have no limitation section) \\
     \bottomrule
   \end{tabular}
 \end{table}
 
-\paragraph{P2: calibration.} The significant set is stable across seeds (20 $\times$ 10,000). On 1,000 stub-permutation null matrices (exact test with BH), the share of matrices with any false cell is 3.6\% (A) and 4.4\% (B). Power to detect a 20\% depletion in cells with $E \ge 100$ is 18/27 = 67\% in A and 23/29 = 79\% in B, so weaker or smaller depletions may be missed. Appendix~\ref{app:sens} reports the segmentation checks.
+\paragraph{P2: calibration.} Across 20 seeds ($\times$ 10,000 draws), the significant set in Part B is identical (22 cells always $q \le .05$, 0 boundary cells); in Part A, 20 cells are always significant and 4 are boundary cells. On 1,000 stub-permutation null matrices (exact test with BH), the share of matrices with any false cell is 3.6\% (A) and 4.4\% (B). These null matrices share the exact test's edge-independence assumption, so they cannot reveal anti-conservatism from document clustering. Power to detect a 20\% depletion in cells with $E \ge 100$ is 18/27 = 67\% in A and 23/29 = 79\% in B, so weaker or smaller depletions may be missed. Table~\ref{tab:app_suite} reports the segmentation checks.
 
-\paragraph{P3: replication across time.} The number of depleted cells rises from 0 (2010--2017) to 8 (2018--2025) in Part A and from 3 (2013--2018) to 11 (2019--2025) in Part B. No depleted cell replicates in both halves, in either part. Cell-level depletions in the patent data are therefore unstable over time, unlike the literature depletions of Section~\ref{sec:study1_direction}.
+\paragraph{P3: replication across time.} The number of depleted cells rises from 0 (2010--2017) to 8 (2018--2025) in Part A and from 3 (2013--2018) to 11 (2019--2025) in Part B. No depleted cell replicates in both halves, in either part. Two cautions apply. The first half of Part A has only 543 documents and is underpowered. And P3 requires a significant depletion in both halves, whereas Study~1's period check asked only whether the direction held. P3 thus shows that cell-level significance does not replicate over time; it does not show that the literature pattern is more stable than the patent pattern.
 
-\paragraph{P4: label face validity.} Against other AI$\cup$DEC patents, all 11 labels pass the lift threshold of 1.5 on title-keyword hit rates; the lowest lift is 2.18 (\texttt{G06N20}; all lifts in Appendix~\ref{app:sens}). This check stands in for the Study~1 coding audit, but it is a title-keyword check, not a human audit.
+\paragraph{P4: label face validity.} Against other AI$\cup$DEC patents, all 11 labels pass the lift threshold of 1.5 on title-keyword hit rates; the lowest lift is 2.18 (\texttt{G06N20}; all lifts in Table~\ref{tab:app_lift}). This check stands in for the Study~1 coding audit, but it is a title-keyword check, not a human audit.
 
-\paragraph{P5: firm network.} Disambiguated assignees linked by applicant citations (self-citations excluded) form a network of 6,201 organisations with 20,681 ties and a total weight of 109,508 citations. Firms fall into three groups: 2,926 AI\_FIRM (only AI-only patents), 1,570 DEC\_FIRM and 1,705 MIXED. Group O/E is 0.24 for AI\_FIRM$\sim$DEC\_FIRM ($O = 886$, $E = 3{,}700$), 0.81 for AI\_FIRM$\sim$MIXED and 0.97 for DEC\_FIRM$\sim$MIXED. The preregistered firm-level hole criterion is met at this stage. Median Burt constraint \citep{burt1992structural} is 0.62 for AI\_FIRM, 0.76 for DEC\_FIRM and 0.36 for MIXED. Against a degree-matched label-permutation null, the MIXED median looks low (null median 0.444; one-sided $p = .001$). Read alone, this is the pattern the premise predicts, but it is not a confirmed structural hole: because it could arise mechanically from firms' portfolios, it motivated preregistration~4 (Section~\ref{sec:study2_firm}).
+\paragraph{P5: firm network.} Preregistration~1 included an exploratory H3 on assignee brokers conditional on a domain-level hole; with H1 unsupported it was not run (Amendment A2). P5 asks a separate question (RQ2), whether a firm-level hole exists whatever the domain-level result, and was preregistered in Preregistration~3 as the analogue of the author-network lines V7 and V11. Disambiguated assignees linked by applicant citations (self-citations excluded) form a network of 6,201 organisations with 20,681 ties and a total weight of 109,508 citations. Firms fall into three groups: 2,926 AI\_FIRM (only AI-only patents), 1,570 DEC\_FIRM and 1,705 MIXED. Group O/E is 0.24 for AI\_FIRM$\sim$DEC\_FIRM ($O = 886$, $E = 3{,}700$), 0.81 for AI\_FIRM$\sim$MIXED and 0.97 for DEC\_FIRM$\sim$MIXED. The preregistered firm-level hole criterion is met at this stage. Median Burt constraint \citep{burt1992structural} is 0.62 for AI\_FIRM, 0.76 for DEC\_FIRM and 0.36 for MIXED. Against a degree-matched label-permutation null, the MIXED median looks low (null median 0.444; one-sided $p = .001$). Read alone, this is the pattern the premise predicts, but it is not a confirmed structural hole: the label null holds degree but not portfolios fixed, and the pattern could arise mechanically from what firms own. That possibility motivated Preregistration~4.
 
-\paragraph{P6: removal falsification.} Ten MIXED firms with degree at least 5 had the lowest constraint. These candidates, later refuted as indispensable, were International Business Machines, General Electric, Tesla, ioCurrents, Google, Accenture, Amazon Technologies, T-Mobile USA, Optum Services and Strong Force VCN Portfolio 2019. After all 10 are removed, AI\_FIRM and DEC\_FIRM firms remain connected, and the largest component containing both groups shrinks only from 5,954 to 5,563 firms: 10/10 candidates are refuted as indispensable brokers. The suite's cross-weight-retained metric is identically 1 by construction and therefore uninformative; we draw no inference from it.
+\paragraph{P6: removal falsification.} The ten MIXED firms with degree at least 5 and the lowest constraint were International Business Machines, General Electric, Tesla, ioCurrents, Google, Accenture, Amazon Technologies, T-Mobile USA, Optum Services and Strong Force VCN Portfolio 2019. After all 10 are removed, AI\_FIRM and DEC\_FIRM firms remain connected, and the largest component containing both groups shrinks only from 5,954 to 5,563 firms: 10/10 candidates are refuted as indispensable brokers. The suite's cross-weight-retained metric is identically 1 by construction, so we draw no inference from it.
 
-\paragraph{P7--P10.} Of 2,546 co-assignment hyperedges, 32\% join an AI\_FIRM with a DEC\_FIRM or MIXED firm (P7). The alias check found 0 possible collisions among 54 firms (P8). Gap Validity (P9) repeats the Study~1 finding: the indirect constraint term is 0 in the bipartite matrix, and every depleted cell has 20--30 alternative length-3 routes. The Limitation Scout (P10) does not apply to patents.
+\paragraph{P7--P10.} Table~\ref{tab:suite} gives the results of P7 (hyperedges) and P8 (aliases). Gap Validity (P9) repeats the Study~1 diagnostic: the zero indirect term is an identity, and the 20--30 alternative length-3 routes per depleted cell are near-guaranteed in a dense 6$\times$7 matrix; neither is evidence. The Limitation Scout (P10), a check of papers' stated limitations, does not apply to patents.
 
 \subsection{Portfolio-preserving firm null}
 \label{sec:study2_firm}
 
-The P5 pattern could be mechanical. MIXED firms own both kinds of patents, and patents cite mainly within their own field, so specialist firms in different fields would cite one another rarely even if no firm brokered anything. Preregistration~4 therefore permutes the owner sets of patents within strata, keeping every firm's portfolio and group and the whole patent-level citation network fixed.
-\begin{itemize}
-  \item The primary strata are patent type $\times$ grant year (48 strata).
-  \item The S-tech strata add technology mix: type $\times$ year $\times$ AI rows $\times$ DEC columns (1,795 strata).
-\end{itemize}
-Each null has 1,000 replicates, and replicate $r$ of scheme $s$ uses the seed sequence [20261119, $s$, $r$]. The scope is 127,114 patents, 14,600 firms and 162,339 citations. The identity permutation reproduces P5 exactly.
+The P5 pattern could be mechanical. MIXED firms own both kinds of patents, and patents cite mainly within their own field, so specialist firms in different fields would cite one another rarely even if no firm brokered anything. Preregistration~4 was written after the P5 result was known and was motivated by it; its statistics, strata and decision rule were frozen before any replicate was computed. Its null permutes the owner sets of patents within strata, keeping every firm's portfolio and group and the whole patent-level citation network fixed. The primary strata are patent type $\times$ grant year (48 strata); the technology-mix strata (S-tech) are type $\times$ year $\times$ AI rows $\times$ DEC columns (1,795 strata). Each null has 1,000 replicates, and replicate $r$ of scheme $s$ uses the seed sequence [20261119, $s$, $r$].
 
-\begin{table}[t]
+\paragraph{Scope.} The null starts from all 127,114 in-scope patents, the 14,600 firms that own any of them, and the 162,339 applicant citations among them. P5 reports only the 6,201 firms with at least one inter-firm tie after self-citations are removed (20,681 ties; total weight 109,508). The identity permutation, which leaves every owner set in place, reproduces the P5 values exactly, so the two sets of figures describe the same network at two stages of filtering.
+
+\paragraph{What the null does not hold fixed.} The null preserves each firm's portfolio counts by type and year, not its degree or tie strength. Constraint depends strongly on degree \citep{everett2020unpacking}, so T2 cannot separate brokerage from degree. The degree-matched label null of P5 (null median 0.444) and the portfolio null (null median 0.104) answer different questions, and neither holds both degree and portfolio fixed.
+
+\begin{table}[tbp]
   \centering
   \small
-  \caption{Portfolio-preserving firm null: 1,000 replicates per stratification, with one-sided lower-tail $p$ values. T1 is the O/E of ties between specialist AI and decision firms, and T2 is the median Burt constraint of MIXED firms. The verdict is PARTIAL in both stratifications. DIRECT.}
+  \caption{Portfolio-preserving firm null: 1,000 replicates per stratification, with one-sided lower-tail $p$ values. T1 is the O/E of ties between specialist AI and decision firms, and T2 is the median Burt constraint of MIXED firms. T1 meets its criterion and T2 does not, so the verdict is PARTIAL in both stratifications. The null does not preserve firm degree. DIRECT.}
   \label{tab:firm_null}
   \footnotesize
   \setlength{\tabcolsep}{4pt}
@@ -353,25 +364,25 @@ Each null has 1,000 replicates, and replicate $r$ of scheme $s$ uses the seed se
     & & \multicolumn{2}{c}{Primary (type $\times$ year)} & \multicolumn{2}{c}{S-tech (+ technology mix)} \\
     Statistic & Observed & Null median [95\%] & $p$ & Null median [95\%] & $p$ \\
     \midrule
-    T1 OE(AI\_FIRM$\sim$DEC\_FIRM) & 0.240 & 0.356 [0.317--0.398] & .001 & 0.307 [0.277--0.345] & .001 \\
+    T1 OE(AI\_FIRM$\sim$\allowbreak DEC\_FIRM) & 0.240 & 0.356 [0.317--0.398] & .001 & 0.307 [0.277--0.345] & .001 \\
     T2 MIXED median constraint & 0.358 & 0.104 [0.098--0.111] & 1.000 & 0.116 [0.110--0.122] & 1.000 \\
-    OE AI\_FIRM$\sim$MIXED & 0.809 & 1.000 & .001 & 0.985 & .001 \\
-    OE DEC\_FIRM$\sim$MIXED & 0.970 & 1.009 & .001 & 1.025 & .001 \\
+    OE AI\_FIRM$\sim$\allowbreak MIXED & 0.809 & 1.000 & .001 & 0.985 & .001 \\
+    OE DEC\_FIRM$\sim$\allowbreak MIXED & 0.970 & 1.009 & .001 & 1.025 & .001 \\
     \bottomrule
   \end{tabular}
 \end{table}
 
-\paragraph{Results.} Table~\ref{tab:firm_null} and Figure~\ref{fig:firm_null} report the results. The observed specialist O/E (T1 = 0.240) lies below every null replicate ($p = .001$, the smallest value attainable with 1,000 replicates). The null medians are much lower than 1: 0.356 under the primary and 0.307 under the S-tech stratification. Portfolio composition alone thus produces most of the separation between specialist firms. Of the observed shortfall of T1 below $O = E$, the null reproduces 85\% under the primary stratification and 91\% under S-tech. The remainder is a residual specialist separation that the null does not explain. We report it as unexplained, not as a structural hole.
+\paragraph{Results.} Table~\ref{tab:firm_null} and Figure~\ref{fig:firm_null} report the results. The observed specialist O/E (T1 = 0.240) lies below every null replicate ($p = .001$, the smallest value attainable with 1,000 replicates) in both stratifications. But the null medians (0.356 and 0.307) are themselves well below 1: a null that holds portfolios fixed reproduces 85\% (primary) and 91\% (S-tech) of the observed shortfall of T1 below $O = E$. The remaining 15\% and 9\% are a specialist separation beyond portfolio composition that is statistically significant but small. Specialist AI and decision firms tie less than their portfolios imply; that does not mean anyone brokers between them, and we do not call it a structural hole.
 
-The brokerage reading of P5 does not survive. The observed MIXED median constraint (0.358) lies above every null replicate (null medians 0.104 and 0.116; $p = 1.000$). Real firms are more clustered than the portfolio null implies, and mixed-portfolio firms show no brokerage advantage \citep{burt1992structural, burt2004structural}. The verdict is PARTIAL in both stratifications, so it does not depend on technology mix.
+T2 does not meet its criterion. The observed MIXED median constraint (0.358) lies above every null replicate (null medians 0.104 and 0.116; $p = 1.000$): real firms are more clustered than the portfolio null implies. Because the null does not preserve degree, this comparison cannot isolate brokerage. The brokerage advantage that \citet{burt1992structural,burt2004structural} describes therefore cannot be established for mixed-portfolio firms beyond degree and portfolio. The verdict is PARTIAL in both stratifications, so it does not depend on technology mix. PARTIAL means that the two-criterion rule for an organisational hole beyond portfolio is not met (Table~\ref{tab:app_prereg}), not that nothing remains: T1 is met.
 
-\begin{figure}[t]
+\begin{figure}[tbp]
   \centering
   \includegraphics[width=\linewidth]{fig_firm_null.png}
-  \caption{Portfolio-preserving firm null: 1,000 replicates under the primary (type $\times$ year; blue) and S-tech (+ technology mix; orange) stratifications. Every firm's portfolio and group and the patent-level citation network are held fixed. Left: O/E of AI\_FIRM--DEC\_FIRM ties, observed 0.240 against null medians of 0.356 and 0.307 ($p = .001$ each); the null reproduces 85\% and 91\% of the specialist separation. Right: MIXED median Burt constraint, observed 0.358 against null medians of 0.104 and 0.116 ($p = 1.000$ each); mixed firms show no brokerage advantage. Verdict: PARTIAL in both stratifications.}
+  \caption{Portfolio-preserving firm null: 1,000 replicates under the primary (type $\times$ year; blue) and S-tech (+ technology mix; orange) stratifications. Portfolios, groups and the patent-level citation network are held fixed; firm degree is not. Left: T1, specialist O/E; the null reproduces 85\% and 91\% of the separation, leaving a small but significant 15\% and 9\% ($p = .001$ each). Right: T2, MIXED median constraint ($p = 1.000$ each); a brokerage advantage cannot be established, and this panel cannot separate brokerage from degree. Verdict: PARTIAL in both stratifications.}
   \label{fig:firm_null}
 \end{figure}
 
-The contrast with P5 is the methodological point. Against a degree-matched label-permutation null, MIXED constraint looked low ($p = .001$). Against a null that preserves portfolios, it is high. The choice of null therefore determines the brokerage conclusion, and only the portfolio-preserving null holds fixed the structure that generates the data (Section~\ref{sec:discussion}). Because the null was frozen before computation \citep{nosek2018preregistration}, this reversal is not the product of choosing a null after seeing the results.
+The contrast with P5 is the methodological point. Against a degree-matched label-permutation null, MIXED constraint looked low ($p = .001$); against a null that preserves portfolios but not degree, it is high ($p = 1.000$). The choice of null determines the brokerage reading, and each null holds fixed a different part of the structure that generates the data (Section~\ref{sec:discussion}). The portfolio null was motivated by the P5 result and frozen before computation; the reversal is a data-informed follow-up and should be read as such.
 
-For RQ2, the evidence does not support a firm-level structural hole beyond what firms' technology portfolios mechanically imply. Specialist AI and decision firms are separated, but 85--91\% of that separation is reproduced by portfolio composition. Mixed-portfolio firms, the natural candidates for brokers, are more constrained than the null, not less.
+For RQ2, the evidence does not support a firm-level structural hole. Specialist AI and decision firms are separated, and a small part of that separation, 15\% (primary) or 9\% (S-tech) of the shortfall, remains beyond portfolio composition and is statistically significant. A brokerage advantage for mixed-portfolio firms beyond degree and portfolio cannot be established: the preregistered T2 criterion fails, and T2 is not degree-controlled.
