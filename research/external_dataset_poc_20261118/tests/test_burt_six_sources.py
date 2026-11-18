@@ -109,7 +109,17 @@ class BurtSixSourcesTests(unittest.TestCase):
             "real_buyer_supplier_edges":[]}}}}
         r=burt.other_sources_round(inp)["OCDS"]
         self.assertEqual(r["buyer_supplier_edges"],0)
-        self.assertEqual(r["verdict"],"NO_IDENTIFIABLE_BROKERAGE_NETWORK")
+        self.assertEqual(r["verdict"],"OBSERVED_AWARDS_NOT_INDEPENDENT_BROKERAGE")
+    def test_real_awards_stable_ids_only(self):
+        inp={"source_status":{"OCDS_REAL_UK":{"parsed":{
+             "releases_in_package":5,"award_count":3,"notices_with_global_buyer_id":5,
+             "verified_scheme_id_buyer_supplier_edges":[["GB:BUYER","GB:SUP1"],
+                  ["GB:BUYER","GB:SUP2"],["GB:OTHER","GB:SUP2"]]}}}}
+        r=burt.other_sources_round(inp)["OCDS"]
+        self.assertEqual(r["buyer_supplier_edges"],3)
+        self.assertEqual(r["buyer_supplier_two_mode"]["edges"],3)
+        self.assertEqual(r["supplier_projection"]["edges"],1)
+        self.assertEqual(r["buyer_supplier_two_mode"]["n_with_indirect_excess"],0)
     def test_grid_without_edges_is_not_falsely_analyzed(self):
         r=burt.other_sources_round({"grid_stats":{"nodes":3,"edges":2}})["PyPSA_Eur"]
         self.assertIsNone(r["network"])
