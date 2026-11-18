@@ -81,7 +81,7 @@ class MultiNetworkTests(unittest.TestCase):
         x=m.ocds(live_sample())
         self.assertEqual(x["two_mode_buyer_supplier"]["unique_affiliation_edges"],2)
         self.assertEqual(x["supplier_one_mode_common_buyer"]["edges"],1)
-        self.assertIn("not",x["note"].lower())
+        self.assertIn("≠",x["note"])
     def test_pypsa_incidence_keeps_duplicated_physical_type(self):
         x=m.gridkit(live_sample())
         self.assertEqual(x["bus_asset_incidence_two_mode"]["right_nodes"],3)
