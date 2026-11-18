@@ -23,12 +23,12 @@ SOURCES = {
  "PyPSA_DC_Links":"https://raw.githubusercontent.com/PyPSA/pypsa-eur/master/data/entsoegridkit/links.csv",
  "PyPSA_AC_Lines":"https://raw.githubusercontent.com/PyPSA/pypsa-eur/master/data/entsoegridkit/lines.csv",
 }
-def bounded_get(url, max_bytes=8_000_000, ua="Academic research feasibility/0.1", accept=None):
+def bounded_get(url, max_bytes=8_000_000, ua="Academic research feasibility/0.1", accept=None, timeout=30):
     """Do not commit raw third-party response bodies; cap single file downloads."""
     if not url.startswith("https://"): raise ValueError("https_required")
     headers={"User-Agent":ua}
     if accept:headers["Accept"]=accept
-    with urlopen(Request(url,headers=headers),timeout=30) as r:
+    with urlopen(Request(url,headers=headers),timeout=timeout) as r:
         n=r.headers.get("Content-Length")
         if n and int(n)>max_bytes:raise ValueError("content_length_too_large")
         body=r.read(max_bytes+1)
@@ -125,6 +125,49 @@ def gne_shared_capacity(K=3):
     return {"evidence":"SYNTHETIC_GNE_TOY","capacity":K,"equilibria":eq,
             "warning":"Shared feasible set invalidates independent-follower decomposition"}
 
+def cordis_bulk_stats(blob):
+    """Stream official H2020 project/organisation CSVs. Aggregate participation counts only."""
+    import zipfile
+    from pathlib import PurePosixPath
+    with zipfile.ZipFile(io.BytesIO(blob)) as archive:
+        members={PurePosixPath(p).name.lower():p for p in archive.namelist()}
+        if any(x not in members for x in ("project.csv","organization.csv")):
+            return {"status":"MISSING_REQUIRED_MEMBERS","csv_members":[x for x in members if x.endswith(".csv")]}
+        def reader(name):
+            handle=archive.open(members[name])
+            wrapper=io.TextIOWrapper(handle,encoding="utf-8-sig",errors="replace",newline="")
+            first=wrapper.readline()
+            delim=";" if first.count(";")>first.count(",") else ","
+            from itertools import chain
+            return csv.DictReader(chain([first],wrapper),delimiter=delim)
+        pids=set(); project_rows=0
+        for row in reader("project.csv"):
+            project_rows+=1
+            pid=(row.get("id") or row.get("projectID") or "").strip()
+            if pid:pids.add(pid)
+        organisation_rows=0; orgids=set(); source_projectids=set()
+        project_members=defaultdict(int); matched_projects=0; valid_orgids=0; coordinator_roles=0
+        for row in reader("organization.csv"):
+            organisation_rows+=1
+            pid=(row.get("projectID") or row.get("projectId") or "").strip()
+            oid=(row.get("organisationID") or row.get("organizationID") or "").strip()
+            role=(row.get("role") or "").strip().lower()
+            if pid:
+                source_projectids.add(pid); project_members[pid]+=1
+                if pid in pids: matched_projects+=1
+            if oid:orgids.add(oid); valid_orgids+=1
+            if "coordinator" in role:coordinator_roles+=1
+        return {"status":"BOUNDED_BULK_READ_SUCCESS",
+                "project_rows":project_rows,"unique_project_ids":len(pids),
+                "organisation_rows":organisation_rows,"unique_participant_organisation_ids":len(orgids),
+                "organisation_rows_with_matched_project_id":matched_projects,
+                "organisation_rows_with_identifier":valid_orgids,
+                "project_ids_in_organisation_rows":len(source_projectids),
+                "projects_with_two_or_more_participations":sum(x>=2 for x in project_members.values()),
+                "max_participation_rows_in_one_project":max(project_members.values(),default=0),
+                "coordinator_role_mentions":coordinator_roles,
+                "scope":"CONSORTIUM_MEMBERSHIP_NOT_DIRECT_INDIVIDUAL_BROKERAGE"}
+
 def run(mode="fixture", cordis=False, full_grid=False):
     result={"timestamp":datetime.now(timezone.utc).isoformat(),"mode":mode,
             "source_status":{},"source_urls":SOURCES,
@@ -154,7 +197,8 @@ def run(mode="fixture", cordis=False, full_grid=False):
             raw,sha=bounded_get(url,
                   max_bytes=180_000_000 if k=="CORDIS" else 8_000_000,
                   ua=ua if k=="SEC" else "AI-Decision academic reproducibility feasibility/0.1",
-                  accept="application/vnd.api+json" if k=="GLEIF" else None)
+                  accept="application/vnd.api+json" if k=="GLEIF" else None,
+                  timeout=105 if k=="CORDIS" else 30)
             result["source_status"][k]={"status":"FETCHED","size_bytes":len(raw),"sha256":sha}
             payloads[k]=raw
         except Exception as e:
@@ -208,12 +252,8 @@ def run(mode="fixture", cordis=False, full_grid=False):
                 payloads["PyPSA_AC_Lines"].decode("utf-8-sig") if "PyPSA_AC_Lines" in payloads else None)
         except Exception as e:result["grid_error"]={"type":type(e).__name__,"message":str(e)[:160]}
     if "CORDIS" in payloads:
-        import zipfile
-        try:
-            with zipfile.ZipFile(io.BytesIO(payloads["CORDIS"])) as z:
-                result["cordis_inventory"]={"csv_members":[n for n in z.namelist() if n.endswith(".csv")],
-                                            "status":"DOWNLOADED_NOT_FULL_JOIN_VALIDATED"}
-        except Exception as e:result["cordis_inventory"]={"status":"ZIP_INVALID","type":type(e).__name__}
+        try:result["cordis_bulk_profile"]=cordis_bulk_stats(payloads["CORDIS"])
+        except Exception as e:result["cordis_bulk_profile"]={"status":"PARSE_FAILED","type":type(e).__name__,"message":str(e)[:170]}
     return result
 
 def main():
