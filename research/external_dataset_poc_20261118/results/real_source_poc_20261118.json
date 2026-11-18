@@ -1,0 +1,88 @@
+{
+  "timestamp_utc": "2026-11-18",
+  "workflow": "RETRIEVED_PUBLIC_GITHUB_SOURCE_NOT_PIPELINE_RECONSTRUCTION",
+  "raw_sources": [
+    {
+      "source": "PyPSA-Eur unofficial ENTSO-E GridKit processed map, March 2022",
+      "repo": "PyPSA/pypsa-eur",
+      "path": "data/entsoegridkit/transformers.csv",
+      "github_blob_sha": "eac25ffbf307356c2294c6f72c3878480d9ea300",
+      "lines": 1039
+    },
+    {
+      "source": "PyPSA-Eur unofficial ENTSO-E GridKit processed map, March 2022",
+      "repo": "PyPSA/pypsa-eur",
+      "path": "data/entsoegridkit/links.csv",
+      "github_blob_sha": "abcaf0cc1f79479ddb43bc89e6b34d3790fd3e86",
+      "lines": 62
+    },
+    {
+      "source": "OCP fictional demonstration OCDS, NOT empirical contracts",
+      "repo": "open-contracting/sample-data",
+      "path": "fictional-example/1.1/ocds-213czf-000-00001-04-award.json",
+      "github_blob_sha": "48eb5e844af84d9f173ae473efef65e38eb2a599"
+    }
+  ],
+  "pypsa": {
+    "transformer_rows": 1039,
+    "dc_link_rows": 62,
+    "simple_edges": 1096,
+    "connected_nodes": 2061,
+    "components": 997,
+    "largest_component": 10,
+    "triangles_in_unweighted_graph": 32,
+    "highest_degree_nodes": [
+      {
+        "node": "7074",
+        "degree": 4,
+        "effective_size": 4,
+        "constraint": 0.25
+      },
+      {
+        "node": "7428",
+        "degree": 4,
+        "effective_size": 4,
+        "constraint": 0.25
+      },
+      {
+        "node": "5646",
+        "degree": 3,
+        "effective_size": 2.3333333333333335,
+        "constraint": 0.6111111111111112
+      },
+      {
+        "node": "5685",
+        "degree": 3,
+        "effective_size": 2.3333333333333335,
+        "constraint": 0.6111111111111112
+      },
+      {
+        "node": "5803",
+        "degree": 3,
+        "effective_size": 2.3333333333333335,
+        "constraint": 0.6111111111111112
+      }
+    ],
+    "analysis_scope": "ONLY transformer.csv + DC links.csv, excludes AC lines.csv, physical grid example, not sociology"
+  },
+  "ocds_fictional": {
+    "releases": 1,
+    "buyer": "GB-LAC-E09000003",
+    "tenderers": [
+      "GB-COH-11111111",
+      "GB-COH-22222222"
+    ],
+    "winners": [
+      "GB-COH-11111111"
+    ],
+    "awards": 1,
+    "award_values": [
+      {
+        "amount": 11000000,
+        "currency": "GBP"
+      }
+    ],
+    "status": "SCHEMA_ONLY_FICTIONAL"
+  },
+  "warning": "DO NOT infer real structural-hole / MLP efficacy from topology or fictional example. Source excludes full grid and collaboration relations."
+}
