@@ -78,12 +78,17 @@ def openalex_stats(data):
     authors={a.get("author",{}).get("id") for w in works for a in w.get("authorships",[])}
     institutions={i.get("id") for w in works for a in w.get("authorships",[]) for i in a.get("institutions",[])}
     return {"works":len(works),"authors":len(authors-{None}),"institutions":len(institutions-{None}),
+            "work_ids":[w.get("id") for w in works],
+            "works_with_doi":sum(bool(w.get("doi")) for w in works),
+            "any_truncated_authorships":any(w.get("is_authors_truncated",False) for w in works),
             "scope":"BOUNDED_LIVE_API_SAMPLE_NOT_A_RECONCILED_CORDIS_LINK"}
 
 def gleif_stats(data):
     x=data.get("data",{})
     if isinstance(x,list):x=x[0] if x else {}
-    return {"lei":x.get("id"),"returned_relationship_keys":sorted((x.get("relationships") or {}).keys()),
+    rel=x.get("relationships") or {}
+    return {"lei":x.get("id"),"returned_relationship_keys":sorted(rel.keys()),
+            "parent_link_paths":{k:(rel.get(k,{}).get("links") or {}).get("related") for k in ("direct-parent","ultimate-parent")},
             "scope":"LEVEL_1_RESPONSE_PARENT_NOT_VERIFIED"}
 
 def sec_stats(data):
@@ -182,10 +187,14 @@ def run(mode="fixture", cordis=False, full_grid=False):
                 parsed={"row_count":len(bindings),
                         "fields":sorted({v for row in bindings for v in row}),
                         "unique_project_uris":len({r.get("project",{}).get("value") for r in bindings}),
+                        "project_sample_uris":list(dict.fromkeys(r.get("project",{}).get("value") for r in bindings))[:24],
                         "scope":"TINY_CONSORTIUM_QUERY_NOT_H2020_POPULATION"}
             else:
                 packages=obj.get("releases",obj.get("results",[]))
                 parsed={"top_level_keys":sorted(obj.keys()),"releases_in_package":len(packages) if isinstance(packages,list) else None,
+                        "ocids":[r.get("ocid") for r in packages[:3]] if isinstance(packages,list) else [],
+                        "tags":[r.get("tag") for r in packages[:3]] if isinstance(packages,list) else [],
+                        "tenderer_count_observed":sum(len((r.get("tender") or {}).get("tenderers",[])) for r in packages) if isinstance(packages,list) else 0,
                         "scope":"REAL_UK_NOTICE_PROBE_NOT_FAILED_BIDDER_COMPLETENESS"}
             result["source_status"][k]={"status":"FETCHED_PARSED","size_bytes":len(raw),"sha256":sha,
                                        "url":url,"parsed":parsed}
