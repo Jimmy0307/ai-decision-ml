@@ -188,6 +188,78 @@ def profile_cordis(p):
                    "can_calibrate_resource_shares":len(ec_comparable)>0}
     }
 
+def openalex_award_linkage(project_ids, batch_size=40, max_batches=6):
+    """Explicit award-ID match against OpenAlex: bounded API, no fuzzy names.
+
+    Work grants list under \`awards\` in current OpenAlex schema. Any unmatched
+    ID is UNKNOWN (possible missing index), NOT evidence of no publications.
+    """
+    from urllib.request import urlopen, Request
+    from urllib.parse import urlencode
+    import hashlib
+    ids=sorted({str(x).strip() for x in project_ids if str(x).strip()})
+    if len(ids)>240:
+        raise ValueError("Too many grant ids for bounded crosslink")
+    summary={"status":"ATTEMPTED","input_project_ids":len(ids),
+             "award_record_matches":0,"works_matched_records":0,
+             "matched_grant_ids":[],"grant_work_links":[],
+             "queries":[],"errors":[],
+             "warning":"Award match is a metadata linkage, not a verified independent collaboration or publication causal effect."}
+    if not ids:
+        summary["status"]="NO_PROJECT_IDS"
+        return summary
+    def pull(url):
+        with urlopen(Request(url,headers={"User-Agent":"Academic research methods reproduction/1.0"}),timeout=40) as resp:
+            blob=resp.read(2_000_001)
+        if len(blob)>2_000_000:
+            raise ValueError("bounded_openalex_response_limit")
+        return json.loads(blob),hashlib.sha256(blob).hexdigest(),len(blob)
+    for start in range(0,len(ids),batch_size):
+        if start//batch_size>=max_batches:
+            summary["errors"].append("BATCH_LIMIT")
+            break
+        block=ids[start:start+batch_size]
+        for typ in ("awards","works"):
+            if typ=="awards":
+                filt="funder_award_id:"+"|".join(block)
+            else:
+                filt="awards.funder_award_id:"+"|".join(block)
+            url="https://api.openalex.org/"+typ+"?"+urlencode({"filter":filt,"per_page":"100"})
+            try:
+                obj,sha,size=pull(url)
+                found=obj.get("results") or []
+                metadata={"entity":typ,"input_ids":len(block),"count_returned":len(found),
+                          "api_reported_total":(obj.get("meta") or {}).get("count"),
+                          "response_sha256":sha,"response_bytes":size,"query_url":url,
+                          "response_truncated":((obj.get("meta") or {}).get("count") or 0)>len(found)}
+                summary["queries"].append(metadata)
+                if typ=="awards":
+                    summary["award_record_matches"]+=len(found)
+                    for a in found:
+                        gid=str(a.get("funder_award_id") or "")
+                        if gid in block:
+                            summary["matched_grant_ids"].append(gid)
+                            summary["grant_work_links"].append(
+                                {"grant_id":gid,"openalex_award_id":a.get("id"),
+                                 "reported_funded_outputs_count":a.get("funded_outputs_count"),
+                                 "works_api_url":a.get("works_api_url")})
+                else:
+                    summary["works_matched_records"]+=len(found)
+                    for w in found:
+                        awards=w.get("awards") or []
+                        for a in awards:
+                            gid=str(a.get("funder_award_id") or "")
+                            if gid in block:
+                                summary["grant_work_links"].append(
+                                   {"grant_id":gid,"openalex_work_id":w.get("id"),"doi":w.get("doi"),
+                                    "publication_year":w.get("publication_year")})
+            except Exception as e:
+                summary["errors"].append({"entity":typ,"input_ids":len(block),
+                                          "error":type(e).__name__,"message":str(e)[:150]})
+    summary["matched_grant_ids"]=sorted(set(summary["matched_grant_ids"]))
+    summary["status"]="COMPLETE_BOUNDED" if not summary["errors"] else "PARTIAL_BOUNDED"
+    return summary
+
 def assess(data):
     p=data.get("cordis_bulk_profile") or {}
     result={"schema":"ai-decision-external-dataset-round2/1.0",
@@ -209,9 +281,14 @@ def main():
     arg=argparse.ArgumentParser()
     arg.add_argument("--input",required=True)
     arg.add_argument("--output",required=True)
+    arg.add_argument("--openalex-awards",action="store_true")
     x=arg.parse_args()
     data=json.loads(Path(x.input).read_text(encoding="utf-8"))
     out=assess(data)
+    if x.openalex_awards and out.get("cordis"):
+        out["openalex_grant_linkage"]=openalex_award_linkage(
+            (data.get("cordis_bulk_profile",{}).get("exploratory_ai_decision",{})
+               .get("selected_project_metadata") or {}).keys())
     p=Path(x.output);p.parent.mkdir(parents=True,exist_ok=True)
     p.write_text(json.dumps(out,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps({"output":str(p),"decision":out["decision"],
