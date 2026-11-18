@@ -143,6 +143,7 @@ def profile_cordis(p):
     project_yrs=collections.Counter((r.get("startDate") or "MISSING")[:4] for r in metadata.values())
     return {
       "scope":"OBSERVED_CONSORTIUM_FUNDING_AND_PROJECTED_NETWORK_ONLY",
+      "cordis_same_source_publication_links":p.get("publication_profile"),
       "full_h2020":{"project_rows":p.get("project_rows"),
                     "organisation_rows":p.get("organisation_rows"),
                     "unique_organisations":p.get("unique_participant_organisation_ids"),
@@ -150,6 +151,8 @@ def profile_cordis(p):
                     p.get("organisation_rows_with_matched_project_id",0)/max(1,p.get("organisation_rows",0)),
                     "full_org_funding_missing":p.get("full_organisation_funding_missing")},
       "selected_keyword":{"projects":len(metadata),"participation_edges":len(edges),"allocation_rows":len(allocation),
+          "alternate_with_topics_and_keywords":expl.get("joint_ai_decision_projects_including_topics_keywords"),
+          "additional_candidates_from_topics_and_keywords":expl.get("selection_added_only_by_topics_keywords"),
           "projects_with_participants":len(projects),"unique_organisations":len(org_projects),
           "project_start_year_counts":dict(sorted(project_yrs.items())),
           "affiliation_project_size":summary(map(len,projects.values())),
