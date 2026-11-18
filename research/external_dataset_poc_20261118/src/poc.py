@@ -167,6 +167,17 @@ def cordis_bulk_stats(blob):
         organisation_rows=0; orgids=set(); source_projectids=set()
         selected_participants=defaultdict(set)
         selected_roles=defaultdict(set)
+        selected_allocation_rows=[]
+        full_organisation_funding_missing={"ecContribution":0,"netEcContribution":0,"totalCost":0}
+        def to_money(value):
+            if value is None or not str(value).strip():return None
+            v=str(value).replace(" ","").replace("\u00a0","")
+            if "," in v and "." in v:
+                v=v.replace(".","").replace(",",".") if v.rfind(",")>v.rfind(".") else v.replace(",","")
+            elif "," in v:
+                v=v.replace(",",".")
+            try:return float(v)
+            except ValueError:return None
         project_members=defaultdict(int); matched_projects=0; valid_orgids=0; coordinator_roles=0
         for row in reader("organization.csv"):
             organisation_rows+=1
@@ -181,6 +192,14 @@ def cordis_bulk_stats(blob):
                 if pid in joint_projects:
                     selected_participants[pid].add(oid)
                     selected_roles[oid].add(role)
+                    selected_allocation_rows.append({
+                       "project_id":pid,"organisation_id":oid,"role":role,
+                       "ecContribution":to_money(row.get("ecContribution")),
+                       "netEcContribution":to_money(row.get("netEcContribution")),
+                       "totalCost":to_money(row.get("totalCost")),
+                       "country":row.get("country"),"activityType":row.get("activityType")})
+            for funding_col in full_organisation_funding_missing:
+                if to_money(row.get(funding_col)) is None: full_organisation_funding_missing[funding_col]+=1
             if "coordinator" in role:coordinator_roles+=1
         # Induced shared-consortium *affiliation projection*: NOT observed bilateral
         # research communication or an independently validated Burt network.
@@ -222,6 +241,7 @@ def cordis_bulk_stats(blob):
                      "project_records_with_cost":sum(bool(m.get("totalCost")) for m in joint_metadata.values()),
                      "project_records_with_grant_doi":sum(bool(m.get("grantDoi")) for m in joint_metadata.values()),
                      "derived_affiliations":derived_affiliations,
+                     "derived_allocations":selected_allocation_rows,
                      "selected_project_metadata":joint_metadata,
                      "consortium_projected_unique_edges":len(projected_edges),
                      "projected_nonisolated_organizations":len(projected_adj),
@@ -235,6 +255,7 @@ def cordis_bulk_stats(blob):
                 "organisation_rows":organisation_rows,"unique_participant_organisation_ids":len(orgids),
                 "organisation_rows_with_matched_project_id":matched_projects,
                 "organisation_rows_with_identifier":valid_orgids,
+                "full_organisation_funding_missing":full_organisation_funding_missing,
                 "project_ids_in_organisation_rows":len(source_projectids),
                 "projects_with_two_or_more_participations":sum(x>=2 for x in project_members.values()),
                 "max_participation_rows_in_one_project":max(project_members.values(),default=0),
