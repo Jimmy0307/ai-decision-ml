@@ -59,6 +59,12 @@ class FullRoundTests(unittest.TestCase):
     def test_ocds_missing_tenderers_blocks_utility(self):
         z=mod.eligible_grade(dummy())["OCDS_REAL_UK"]
         self.assertFalse(z["checks"]["observed_bidders"])
+    def test_openalex_awards_empty_input_is_no_network(self):
+        result=mod.openalex_award_linkage([])
+        self.assertEqual(result["status"],"NO_PROJECT_IDS")
+    def test_openalex_awards_batch_limit(self):
+        with self.assertRaises(ValueError):
+            mod.openalex_award_linkage(range(241))
     def test_funding_missing_share(self):
         c=mod.profile_cordis(dummy()["cordis_bulk_profile"])
         self.assertEqual(c["selected_keyword"]["funding_missing_share"]["ecContribution"],0)
