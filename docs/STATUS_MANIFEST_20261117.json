@@ -91,5 +91,38 @@
     "submission_ready": false
   },
   "stop_rule": "Freeze corpus, author ID reconciliation, time window, edge definition, peer comparison and external validation before any final Burt gate. If no robust nonredundant broker remains or relation data are unsuitable, stop searching this dataset and consider a suitable temporally grounded relational dataset.",
-  "publication_warning": "No confirmed long-term unresolved limitation is reported. A lexical hit is not a research gap."
+  "publication_warning": "No confirmed long-term unresolved limitation is reported. A lexical hit is not a research gap.",
+  "independent_review_20261118": {
+    "base_commit": "cba0f3cf26148f990a9694bc71baabd1bd112268",
+    "report": "docs/review/20261117/INDEPENDENT_SOURCE_AUDIT.md",
+    "correction_log": "docs/review/20261117/CORRECTION_LOG.csv",
+    "metric_audit": "docs/review/20261117/METRIC_AUDIT_90.csv",
+    "metric_results": {
+      "recomputed_or_analytic_confirmed": 51,
+      "confirmed_in_two_primary_documents": 6,
+      "not_independently_verifiable": 33,
+      "numeric_mismatches": 0
+    },
+    "evidence_grades": {
+      "DIRECT": 55,
+      "HISTORICAL": 16,
+      "USER_REPORTED": 17,
+      "SYNTHETIC": 2
+    },
+    "terminology_notes": {
+      "document_pair_edges": "2,180 = document-level function-pair edges (sum of 120 cell counts), not document pairs or papers",
+      "zero_observation_cells": 16,
+      "sidecar_core_composition_not_adopted": {
+        "enriched": 15,
+        "depleted": 17
+      }
+    },
+    "labels": [
+      "V11.1 user-reported raw local-only",
+      "V9 full reanalysis pending",
+      "Limitation candidate scan only"
+    ],
+    "pending": "PENDING_LOCAL_RECOVERY: V11.1 raw package, V5 fulltexts/SQLite, V6–V10.1 run bundles, V9 full reanalysis outputs, Limitation fulltext follow-up",
+    "github_pages": "has_pages=false (GitHub API, 2026-11-18); not deployed"
+  }
 }
