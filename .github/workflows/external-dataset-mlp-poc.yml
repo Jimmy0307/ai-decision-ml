@@ -49,12 +49,11 @@ jobs:
         run: |
           python research/external_dataset_poc_20261118/src/poc.py --mode live --cordis-bulk --pypsa-full \
             --output research/external_dataset_poc_20261118/results/ci-live.json
-      - name: Full six-source MLP identifiability, funding reconciliation and OpenAlex award linkage
+      - name: Full six-source MLP identifiability and same-source publication/cost reconciliation
         run: |
           python research/external_dataset_poc_20261118/src/full_round.py \
             --input research/external_dataset_poc_20261118/results/ci-live.json \
             --output research/external_dataset_poc_20261118/results/ci-research-conclusions.json \
-            --openalex-awards
       - uses: actions/upload-artifact@v4
         with:
           name: external-dataset-live-probe
