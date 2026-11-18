@@ -165,9 +165,9 @@
     "verdicts": {
       "technology_level_hole": "HOLE_NOT_SUPPORTED (OE 3.05; 0/6 sensitivity disagree)",
       "cell_level": "5 convergent mildly depleted cells (O/E 0.70-0.95); 0 replicate across time halves",
-      "firm_level": "PARTIAL (interim 800/1000): portfolio explains ~85% of specialist separation; MIXED low constraint does not survive",
+      "firm_level": "PARTIAL in both stratifications (1000 reps each): portfolio explains 85-91% of specialist separation; MIXED low constraint does not survive",
       "burt_structural_hole": "NOT_CONFIRMED in literature, external-data and patent lines"
     },
-    "status": "firm null final 1000 reps and S-tech sensitivity pending (stopped twice by host memory pressure)"
+    "status": "complete; firm null final 2026-11-19 (primary and S-tech)"
   }
 }
