@@ -49,6 +49,19 @@ class FeasibilityTests(unittest.TestCase):
    self.assertLessEqual(x,c)
  def test_mlp_not_empirical(self):
   self.assertEqual(poc.toy_mlp()["evidence"],"SYNTHETIC_TOY")
+ def test_cordis_bulk_membership_and_keyword_projection(self):
+  import io,zipfile
+  raw=io.BytesIO()
+  with zipfile.ZipFile(raw,"w") as z:
+   z.writestr("project.csv","id;title;objective;topic\\nP1;Artificial intelligence decision support;AI use;H2020\\nP2;Solar energy project;renewable energy;H2020\\n".replace("\\n","\n"))
+   z.writestr("organization.csv","projectID;organisationID;role\\nP1;O1;coordinator\\nP1;O2;participant\\nP2;O1;coordinator\\n".replace("\\n","\n"))
+  got=poc.cordis_bulk_stats(raw.getvalue())
+  self.assertEqual(got["project_rows"],2)
+  self.assertEqual(got["organisation_rows_with_matched_project_id"],3)
+  p=got["exploratory_ai_decision"]
+  self.assertEqual(p["joint_ai_decision_projects"],1)
+  self.assertEqual(p["consortium_projected_unique_edges"],1)
+  self.assertEqual(p["unique_joint_project_organizations"],2)
  def test_gne_shared_cap(self):
   z=poc.gne_shared_capacity(3)
   self.assertTrue(z["equilibria"])
