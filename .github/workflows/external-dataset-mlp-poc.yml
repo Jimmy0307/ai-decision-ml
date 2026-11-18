@@ -69,3 +69,21 @@ jobs:
             research/external_dataset_poc_20261118/results/ci-research-conclusions.json
             research/external_dataset_poc_20261118/results/ci-burt-six-sources.json
           retention-days: 14
+
+  gleif-rr-bulk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Download bounded official historical GLEIF RR-CDF 2.1 ZIP and profile legal relationship graph
+        run: |
+          python research/external_dataset_poc_20261118/src/gleif_relationship_bulk.py \
+            --output research/external_dataset_poc_20261118/results/ci-gleif-full-rr.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: gleif-rr-cdf-bulk-profile
+          path: research/external_dataset_poc_20261118/results/ci-gleif-full-rr.json
+          retention-days: 14
