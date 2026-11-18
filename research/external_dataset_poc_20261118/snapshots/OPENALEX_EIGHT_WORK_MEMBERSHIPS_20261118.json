@@ -1,0 +1,121 @@
+{
+  "schema": "openalex-eight-work-memberships/1.0",
+  "evidence_grade": "PREVIOUS_GITHUB_ACTIONS_PUBLIC_API_RESPONSE_PINNED_HISTORICAL_SAMPLE",
+  "source_run": "https://github.com/Jimmy0307/ai-decision-ml/actions/runs/44271935689",
+  "raw_response_sha256": "18047eb98956f9ebd61b6b6868f579d27b07a5a9fd7e0d0fb4ccf752b1bfc3be",
+  "raw_response_bytes": 159060,
+  "raw_query": "https://api.openalex.org/works?search=artificial%20intelligence%20decision%20making&per-page=8",
+  "work_memberships": [
+    {
+      "work_id": "https://openalex.org/W3130194449",
+      "doi": "https://doi.org/10.1108/jea-10-2020-0216",
+      "year": 2021,
+      "authors": [
+        "https://openalex.org/A5037864330"
+      ],
+      "institutions": [
+        "https://openalex.org/I181565077"
+      ]
+    },
+    {
+      "work_id": "https://openalex.org/W4296252667",
+      "doi": "https://doi.org/10.3390/bs12090343",
+      "year": 2022,
+      "authors": [
+        "https://openalex.org/A5044216471",
+        "https://openalex.org/A5058762464",
+        "https://openalex.org/A5066514516"
+      ],
+      "institutions": [
+        "https://openalex.org/I59483232"
+      ]
+    },
+    {
+      "work_id": "https://openalex.org/W4366990071",
+      "doi": "https://doi.org/10.1163/15718107-bja10060",
+      "year": 2023,
+      "authors": [
+        "https://openalex.org/A5007361794",
+        "https://openalex.org/A5016061329"
+      ],
+      "institutions": [
+        "https://openalex.org/I881427289"
+      ]
+    },
+    {
+      "work_id": "https://openalex.org/W2980607852",
+      "doi": "https://doi.org/10.1042/bio04105020",
+      "year": 2019,
+      "authors": [
+        "https://openalex.org/A5002925901",
+        "https://openalex.org/A5043189450",
+        "https://openalex.org/A5044294554",
+        "https://openalex.org/A5070589969"
+      ],
+      "institutions": [
+        "https://openalex.org/I136199984",
+        "https://openalex.org/I150117356",
+        "https://openalex.org/I27837315"
+      ]
+    },
+    {
+      "work_id": "https://openalex.org/W4221095907",
+      "doi": "https://doi.org/10.3724/sp.j.1042.2022.01078",
+      "year": 2022,
+      "authors": [
+        "https://openalex.org/A5016657583",
+        "https://openalex.org/A5069261224",
+        "https://openalex.org/A5101961014",
+        "https://openalex.org/A5102001954",
+        "https://openalex.org/A5109542303"
+      ],
+      "institutions": []
+    },
+    {
+      "work_id": "https://openalex.org/W2952545560",
+      "doi": "https://doi.org/10.1007/978-981-13-8161-4_3",
+      "year": 2019,
+      "authors": [
+        "https://openalex.org/A5036331576",
+        "https://openalex.org/A5048581675"
+      ],
+      "institutions": [
+        "https://openalex.org/I32062511",
+        "https://openalex.org/I45129253"
+      ]
+    },
+    {
+      "work_id": "https://openalex.org/W4225831261",
+      "doi": "https://doi.org/10.3389/fpsyg.2022.850628",
+      "year": 2022,
+      "authors": [
+        "https://openalex.org/A5000764894",
+        "https://openalex.org/A5008454624",
+        "https://openalex.org/A5009542299",
+        "https://openalex.org/A5011253456",
+        "https://openalex.org/A5082646616",
+        "https://openalex.org/A5091609179"
+      ],
+      "institutions": [
+        "https://openalex.org/I1281378812",
+        "https://openalex.org/I1321296531",
+        "https://openalex.org/I166416128",
+        "https://openalex.org/I2802705668",
+        "https://openalex.org/I66946132"
+      ]
+    },
+    {
+      "work_id": "https://openalex.org/W4282920034",
+      "doi": "https://doi.org/10.3390/bs12050127",
+      "year": 2022,
+      "authors": [
+        "https://openalex.org/A5055123761",
+        "https://openalex.org/A5100421490"
+      ],
+      "institutions": [
+        "https://openalex.org/I10535382"
+      ]
+    }
+  ],
+  "boundaries": "Author/affiliation records are historical pinned sample only, not current live fetch, not a matched CORDIS corpus and not confirmation of Burt holes."
+}
