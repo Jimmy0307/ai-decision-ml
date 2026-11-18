@@ -1,0 +1,103 @@
+name: External Dataset / MLP Feasibility POC
+on:
+  pull_request:
+    paths:
+      - 'research/external_dataset_poc_20261118/**'
+      - '.github/workflows/external-dataset-mlp-poc.yml'
+  workflow_dispatch:
+    inputs:
+      live_probe:
+        description: 'Run bounded OpenAlex/OCDS fictional/GLEIF/PyPSA API probes (no full bulk)'
+        required: false
+        default: 'false'
+        type: boolean
+permissions:
+  contents: read
+jobs:
+  deterministic-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout source branch
+        uses: actions/checkout@v4
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Unit tests (no network)
+        run: python -m unittest discover -s research/external_dataset_poc_20261118/tests -p 'test_*.py' -v
+      - name: Toy MLP and fixture adapters
+        run: |
+          python research/external_dataset_poc_20261118/src/poc.py --mode fixture \
+            --output research/external_dataset_poc_20261118/results/ci-fixture.json
+      - name: Upload fixture evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: external-dataset-mlp-fixture
+          path: research/external_dataset_poc_20261118/results/ci-fixture.json
+          retention-days: 30
+  bounded-public-probe:
+    if: ${{ github.event_name == 'pull_request' || (github.event_name == 'workflow_dispatch' && inputs.live_probe) }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Freeze public CORDIS AI Decision project-org derived records (one-shot bulk)
+        run: |
+          python research/external_dataset_poc_20261118/src/poc.py --mode live --cordis-bulk --pypsa-full \
+            --output research/external_dataset_poc_20261118/results/ci-live.json
+      - name: Full six-source MLP identifiability and same-source publication/cost reconciliation
+        run: |
+          python research/external_dataset_poc_20261118/src/full_round.py \
+            --input research/external_dataset_poc_20261118/results/ci-live.json \
+            --output research/external_dataset_poc_20261118/results/ci-research-conclusions.json \
+      - name: Preserve current OpenAlex API status and overlay historical pinned eight-work sample only if needed
+        run: |
+          python research/external_dataset_poc_20261118/src/source_snapshot_overlay.py \
+            --live-input research/external_dataset_poc_20261118/results/ci-live.json \
+            --snapshot research/external_dataset_poc_20261118/snapshots/OPENALEX_EIGHT_WORK_MEMBERSHIPS_20261118.json \
+            --output research/external_dataset_poc_20261118/results/ci-analysis-input.json
+      - name: Six-source Burt methods and negative controls (49 affiliation nulls)
+        timeout-minutes: 6
+        run: |
+          python research/external_dataset_poc_20261118/src/burt_six_sources.py \
+            --input research/external_dataset_poc_20261118/results/ci-analysis-input.json \
+            --output research/external_dataset_poc_20261118/results/ci-burt-six-sources.json \
+            --null-reps 49
+      - name: Reconstruct 2-mode / 1-mode / temporal and typed multilayer networks per source
+        timeout-minutes: 5
+        run: |
+          python research/external_dataset_poc_20261118/src/multinetwork_six_sources.py \
+            --input research/external_dataset_poc_20261118/results/ci-analysis-input.json \
+            --output research/external_dataset_poc_20261118/results/ci-multinetwork-six-sources.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: external-dataset-live-probe
+          path: |
+            research/external_dataset_poc_20261118/results/ci-live.json
+            research/external_dataset_poc_20261118/results/ci-analysis-input.json
+            research/external_dataset_poc_20261118/results/ci-research-conclusions.json
+            research/external_dataset_poc_20261118/results/ci-burt-six-sources.json
+            research/external_dataset_poc_20261118/results/ci-multinetwork-six-sources.json
+          retention-days: 14
+
+  gleif-rr-bulk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Download bounded official historical GLEIF RR-CDF 2.1 ZIP and profile legal relationship graph
+        run: |
+          python research/external_dataset_poc_20261118/src/gleif_relationship_bulk.py \
+            --output research/external_dataset_poc_20261118/results/ci-gleif-full-rr.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: gleif-rr-cdf-bulk-profile
+          path: research/external_dataset_poc_20261118/results/ci-gleif-full-rr.json
+          retention-days: 14
