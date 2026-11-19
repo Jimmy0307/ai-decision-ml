@@ -87,3 +87,14 @@ Same-term self-pairing (a fourth mode in the manuscript) cannot be judged from a
 ## 8. Optional (exploratory, if feasible)
 
 Re-run the manuscript's diagnostic on one published case whose network data are openly available: an observed-versus-expected comparison against a degree-preserving null, plus a check of projection closure. If no case has open data, this is reported as not done.
+
+## Amendments (dated; the text above is unchanged)
+
+**S1, 2026-11-19, recorded after screening and before adjudication or coding.**
+- **What happened:** the blind 25% double-screen gave κ = 0.361 (raw agreement 0.681; 38 disagreements in 119 records). 243 of the 476 primary decisions were marked low-confidence (105 of the 216 primary inclusions).
+- **Main source of disagreement:** studies that compute Burt structural-hole measures on co-patenting or co-authorship networks and use them as predictors. The primary screener included them; the second screener excluded them as "no structural inference". The original guide already lists co-patenting/co-assignment and co-authorship under (a) and Burt-type measures under (b), so such studies meet the criteria.
+- **Change:**
+  - The adjudicator re-screens **all 38 disagreements and all 243 low-confidence primary decisions**, not only the overlap disagreements.
+  - The adjudicator applies the unchanged guide plus the clarifying note above.
+  - High-confidence primary decisions outside the overlap stand.
+- **Reporting:** κ = 0.361 is reported as observed. Screening reliability is a limitation of the review.
