@@ -41,6 +41,7 @@ ROLES = {
     "berente2021managing": "Managing AI as the frontier of computing; the facets of autonomy, learning and inscrutability raise distinctive management challenges for information-systems research.",
     "swanson1986fish": "Literature-based discovery: links between literatures that are never co-cited or co-mentioned can point to undiscovered public knowledge; the absence of co-occurrence is used to generate hypotheses about connections.",
     "callon1983translations": "Co-word analysis: co-occurrence of keywords is used to map the structure of research fields and the relations, or lack of relations, between research themes.",
+    "seierstad2011few": "Norwegian board-gender quota study; source of the open two-mode board-membership data re-analysed in the review (R1). Cite for the case and data only; its own measures are recorded in R1_CLAIM_RECORD.md.",
     "uspto2026patentsview": "USPTO PatentsView granted-patent tables (pvgpatdis): patents, current CPC classifications, US patent citations and disambiguated assignees.",
 }
 

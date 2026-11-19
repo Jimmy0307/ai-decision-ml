@@ -56,6 +56,12 @@ Plan (commit) & Frozen before / known when written & Hypotheses and content & De
 \raggedright Descriptive: BRIDGE share by year; locus of AI--DEC cross citations (within firm, between firms with a MIXED or a specialist citer, unowned end) against all in-scope citations; concentration of between-firm cross citations by citing firm &
 \raggedright No tests and no verdict; co-classification is not described as flow; within-firm shares are not read as organisational mechanisms &
 \raggedright Section~\ref{sec:study2_locus}; Figure~\ref{fig:plan_c_locus} \tabularnewline
+\addlinespace
+\raggedright 6.~Portfolio-and-degree firm null (\texttt{11117c4}) &
+\raggedright Frozen before any replicate; data-informed. Known: all other results, including the P5--Plan~4 contradiction &
+\raggedright Plan~4's T1 and T2, with owner sets permuted within type $\times$ year (or S-tech) $\times$ out- and in-degree classes (0--9, 10+) &
+\raggedright Validity gate: median Spearman $\rho$ of firm degree $\geq$ 0.90 and of strength $\geq$ 0.95, otherwise \texttt{INVALID\_\allowbreak NULL}; if valid, Plan~4's rule &
+\raggedright \texttt{INVALID\_\allowbreak NULL} in both schemes ($\rho$ degree 0.817, 0.825) \tabularnewline
 \bottomrule
 \end{tabular}
 \end{table}
@@ -507,3 +513,24 @@ Model level & Planned data & Parameters informed \tabularnewline
 \end{table}
 
 \paragraph{Final codes.} Claim type: structural hole 99, several 33, broker 3, gap 66, unclear 3. Measure named: Burt constraint or effective size 111, cluster or map position 39, absent or sparse links 35, none 12, betweenness 7. Relation type: patent co-inventorship, co-application or co-classification 73, mixed 66, co-word 42, other 11, co-authorship 6, co-membership 2, unclear 4. Publication period: 2000--2014, 11 studies; 2015--2019, 28; 2020--2026, 165. ``Unclear'' codes over all 204 studies: F1 9, F2 6, F3 4, F4 20, V 4. Among the 73 patent-network studies, 70 are coded F1, 72 F2 and 63 V; among the 42 co-word studies, 28 are coded F3 and 2 V.
+
+\paragraph{Re-analysis R1 (protocol \S8).} The re-analysis was preregistered before any data were downloaded. A step-0 record of the original article's measures followed. The article's full text was not accessible, and the record shows that it reads betweenness and the number of directorships as proxies of influence, while the broker reading appears in the citing literature. Amendment R1-A1 then added the article's August 2009 snapshot. The data are the public two-mode director $\times$ board files (CC BY-NC 3.0; not redistributed; hashes recorded). The null is a curveball randomisation that keeps every director's number of seats and every board's size. On the two-mode graph, constraint equals 1/(number of boards) for all 1,421 directors in the primary snapshot. All four snapshots meet the rule that projection closure is dominated by board cliques.
+
+\begin{table}[htbp]
+  \centering
+  \caption{R1, Norwegian boards: statistics against an affiliation-preserving null. Primary snapshot August 2011 (1,421 directors, 513 women, 55 with $\geq 3$ seats; 1,000 replicates). One-sided $p$: upper tail for S1 and S2, lower tail for S3 and S4. Secondary snapshots (200 replicates, descriptive): 2008-02 and 2009-08 \texttt{EXPLAINED}; 2002-05 (pre-quota, 87 women) \texttt{MIXED}, with S3 $p=.005$.}
+  \label{tab:app_r1}
+  \small
+  \begin{tabular}{lrrr}
+    \toprule
+    Statistic & Observed & Null median [95\%] & $p$ \\
+    \midrule
+    S1 women $-$ men, mean betweenness & 0.000787 & 0.001477 [0.000937, 0.002154] & .996 \\
+    S2 multi-seat, median betweenness & 0.0142 & 0.0225 [0.0171, 0.0293] & 1.000 \\
+    S3 women $-$ men, median constraint & $-0.0155$ & $-0.0209$ [$-0.0545$, 0.0010] & .653 \\
+    S4 multi-seat, median constraint & 0.192 & 0.178 [0.167, 0.191] & .987 \\
+    \midrule
+    \multicolumn{4}{l}{Overall: \texttt{BROKERAGE\_\allowbreak READING\_\allowbreak EXPLAINED}} \\
+    \bottomrule
+  \end{tabular}
+\end{table}

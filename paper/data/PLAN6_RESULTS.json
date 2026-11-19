@@ -1,0 +1,95 @@
+{
+ "preregistration": "PREREGISTRATION_FIRM_NULL_DEGREE.md",
+ "observed": {
+  "T1": 0.23947602946995408,
+  "T2": 0.35841995309816355,
+  "OE_AI_MIXED": 0.8094109552193106,
+  "OE_DEC_MIXED": 0.9698733095582488,
+  "ties": 20681,
+  "weight": 109508.0
+ },
+ "reps": 1000,
+ "seeding": "default_rng([20261119, 6, scheme_index, r])",
+ "active_firms": 6201,
+ "primary": {
+  "strata_nonsingleton": 1793,
+  "singleton_patent_share": 0.005223657504287438,
+  "gate": {
+   "median_rho_degree": 0.8174372167064048,
+   "median_rho_strength": 0.95217953348758,
+   "share_firms_null_median_degree_within_20pct": 0.33591356232865666,
+   "passed": false
+  },
+  "T1": {
+   "observed": 0.23947602946995408,
+   "null_median": 0.3147685150151699,
+   "null_2.5": 0.285454835802777,
+   "null_97.5": 0.34586304832945153,
+   "p_lower": 0.000999000999000999
+  },
+  "T2": {
+   "observed": 0.35841995309816355,
+   "null_median": 0.13031617236405796,
+   "null_2.5": 0.12698424399918234,
+   "null_97.5": 0.13466359074735784,
+   "p_lower": 1.0
+  },
+  "OE_AI_MIXED": {
+   "observed": 0.8094109552193106,
+   "null_median": 0.9515342619281989,
+   "null_2.5": 0.9382024470730197,
+   "null_97.5": 0.9644435828202723,
+   "p_lower": 0.000999000999000999
+  },
+  "OE_DEC_MIXED": {
+   "observed": 0.9698733095582488,
+   "null_median": 1.0728012597231684,
+   "null_2.5": 1.0539265806968452,
+   "null_97.5": 1.092171859773775,
+   "p_lower": 0.000999000999000999
+  },
+  "share_of_T1_gap_reproduced_by_null": 0.9009991946831856,
+  "verdict": "INVALID_NULL"
+ },
+ "S_tech": {
+  "strata_nonsingleton": 6234,
+  "singleton_patent_share": 0.06199946504712306,
+  "gate": {
+   "median_rho_degree": 0.8250622273473314,
+   "median_rho_strength": 0.956424019809877,
+   "share_firms_null_median_degree_within_20pct": 0.36606998871149815,
+   "passed": false
+  },
+  "T1": {
+   "observed": 0.23947602946995408,
+   "null_median": 0.24923229090058419,
+   "null_2.5": 0.223550800320764,
+   "null_97.5": 0.2731360141850274,
+   "p_lower": 0.23576423576423577
+  },
+  "T2": {
+   "observed": 0.35841995309816355,
+   "null_median": 0.1772994722750307,
+   "null_2.5": 0.17182136178144272,
+   "null_97.5": 0.1841510582712828,
+   "p_lower": 1.0
+  },
+  "OE_AI_MIXED": {
+   "observed": 0.8094109552193106,
+   "null_median": 0.9202379955237245,
+   "null_2.5": 0.9043691874748597,
+   "null_97.5": 0.9354512750791082,
+   "p_lower": 0.000999000999000999
+  },
+  "OE_DEC_MIXED": {
+   "observed": 0.9698733095582488,
+   "null_median": 1.0823807671899206,
+   "null_2.5": 1.0596077705625642,
+   "null_97.5": 1.1069120455930814,
+   "p_lower": 0.000999000999000999
+  },
+  "share_of_T1_gap_reproduced_by_null": 0.9871716582137042,
+  "verdict": "INVALID_NULL"
+ },
+ "tech_mix_sensitive": false
+}

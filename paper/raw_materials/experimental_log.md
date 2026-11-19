@@ -459,6 +459,28 @@ By period, cross citations:
 
 **Reading (post hoc):** the lower within-firm share of cross citations (18.6% vs 29.1%) has no baseline that holds portfolios fixed. It is a question for Study 3, not a finding about organisational boundaries.
 
+### E3.7 Plan 6: firm null preserving portfolio and degree (design A2; data-informed; `PREREGISTRATION_FIRM_NULL_DEGREE.md` frozen 11117c4; `paper/data/PLAN6_RESULTS.json`)
+
+**Design:**
+- Owner sets are permuted within: patent type × year (or the S-tech key) × out-degree class × in-degree class (0–9 exact, 10+ pooled).
+- Validity gate: median Spearman ρ of firm degree ≥ 0.90 and of strength ≥ 0.95.
+- R = 1,000 per scheme, run on a separate machine with the preregistered seeds.
+
+**Smoke test** (2 replicates, before the full run): degree ρ 0.817 and 0.826; T1/T2 sealed unread (5718fdb).
+
+**Observed values reproduce Plans 3 and 4:** T1 0.240, T2 0.358, 20,681 ties.
+
+| Scheme | Non-singleton strata | Singleton patent share | Median ρ degree | Median ρ strength | Firms with null degree within ±20% | Verdict |
+|---|---|---|---|---|---|---|
+| primary | 1,793 | 0.0052 | 0.817 | 0.952 | 0.336 | INVALID_NULL |
+| S-tech | 6,234 | 0.062 | 0.825 | 0.956 | 0.366 | INVALID_NULL |
+
+**Descriptive only (the null failed its gate):**
+- Primary: T1 null median 0.315 [0.286–0.346], p_lower .001; T2 null median 0.130 [0.127–0.135], p_lower 1.000.
+- S-tech: T1 null median 0.249 [0.224–0.273], p_lower .236; T2 null median 0.177 [0.172–0.184], p_lower 1.000.
+
+**Reading:** no verdict. Firm-level brokerage remains unresolved. A degree-stratified null could not hold firm degree close enough (rank correlation 0.82–0.83 against 0.90).
+
 ## E4. Multi-level programming prototype (v1.0; SIMULATED; `paper/data/MLP_SOLVER_RESULTS_v1_0.json`)
 
 **Model and exactness checks:**
@@ -599,3 +621,44 @@ By claim (yes counts): hole n = 99: F1 77, F2 81, V 81. Gap n = 66: F3 46, F4 62
 **Optional replication (protocol §8):** not done in this round.
 
 **Disclosure:** all screeners, coders and adjudicators were LLM subagents (Claude); agreement is between models, not human inter-rater reliability.
+
+
+### E5.1 R1: re-analysis of an open-data case (protocol §8; `paper/review_lit/replication/`; prereg c16ad60, step 0 and amendment R1-A1 2787d90)
+
+**Case and data:**
+- Seierstad & Opsahl (2011), Norwegian public limited company boards.
+- Public two-mode director × board files (CC BY-NC 3.0; not committed; SHA-256 recorded).
+- Gender code 2 = women.
+
+**Step 0:** the full text was not accessible. The article reads betweenness and the number of directorships as proxies of influence (prominence); the "broker" reading appears in the citing literature. S3–S4 (constraint) are not claims of the article.
+
+**D1 projection closure, by snapshot** (directors, women, projection transitivity, share of projection triangles within one board, two-mode transitivity):
+
+| Snapshot | Directors | Women | Projection transitivity | Triangles within one board | Two-mode transitivity |
+|---|---|---|---|---|---|
+| 2011-08 (primary) | 1,421 | 513 | 0.681 | 5,578 of 5,585, 99.9% (0.9987) | 0.0077 |
+| 2002-05 | 1,013 | 87 | 0.856 | 0.9995 | 0.0207 |
+| 2008-02 | 1,527 | 567 | 0.698 | 0.9990 | 0.0336 |
+| 2009-08 | 1,495 | 574 | 0.681 | 0.9981 | 0.0114 |
+
+All four snapshots meet the "dominated by board cliques" rule (≥ 0.90).
+
+**D2:** constraint on the two-mode graph equals 1/(number of boards) for all 1,421 directors (maximum absolute difference 2.8e-17).
+
+**D3 primary snapshot 2011-08** (1,000 curveball replicates; 55 directors with ≥ 3 seats):
+
+| Statistic | Observed | Null median [2.5–97.5] | Ratio | One-sided p | Label |
+|---|---|---|---|---|---|
+| S1 women − men mean betweenness | 0.000787 | 0.001477 [0.000937–0.002154] | 0.53 | .996 | EXPLAINED |
+| S2 multi-seat median betweenness | 0.0142 | 0.0225 [0.0171–0.0293] | 0.63 | 1.000 | EXPLAINED |
+| S3 women − men median constraint | −0.0155 | −0.0209 [−0.0545–0.0010] | | .653 | EXPLAINED |
+| S4 multi-seat median constraint | 0.192 | 0.178 [0.167–0.191] | 1.08 | .987 | EXPLAINED |
+
+Overall: BROKERAGE_READING_EXPLAINED. Women have higher betweenness than men (S1 > 0), but less than seat counts and board sizes alone produce.
+
+**D3 secondary snapshots** (200 replicates; descriptive):
+- 2008-02: EXPLAINED (S1 p .612, S2 1.000, S3 .358, S4 1.000).
+- 2009-08 (the article's snapshot): EXPLAINED (S1 p .970, S2 1.000, S3 .463, S4 1.000).
+- 2002-05 (pre-quota; 87 women): MIXED. S3 p .005 (women's median constraint lower than men's beyond affiliation); S1 p .602, S2 .995, S4 1.000.
+
+**Compute:** about 5 minutes on a 6-core ARM board for all D3 and Plan 6 replicates.

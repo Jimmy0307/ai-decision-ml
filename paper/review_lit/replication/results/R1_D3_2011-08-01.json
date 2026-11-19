@@ -1,0 +1,63 @@
+{
+ "snapshot": "2011-08-01",
+ "primary": true,
+ "reps": 1000,
+ "trades_per_replicate": 8730,
+ "n_directors": 1421,
+ "n_women": 513,
+ "n_men": 908,
+ "n_multi_seat": 55,
+ "observed": {
+  "S1": 0.0007870816483158873,
+  "S2": 0.014175823085092656,
+  "S3": -0.015510666927664896,
+  "S4": 0.19200127485407742
+ },
+ "tests": {
+  "S1": {
+   "tail": "upper",
+   "observed": 0.0007870816483158873,
+   "null_median": 0.0014765286277206478,
+   "null_2.5": 0.0009368541816788799,
+   "null_97.5": 0.0021541165878313255,
+   "ratio_obs_to_null_median": 0.5330622336330342,
+   "p": 0.996003996003996,
+   "label": "EXPLAINED_BY_AFFILIATION",
+   "valid_null_values": 1000
+  },
+  "S2": {
+   "tail": "upper",
+   "observed": 0.014175823085092656,
+   "null_median": 0.022537919270268984,
+   "null_2.5": 0.01706461152848835,
+   "null_97.5": 0.029320369370106257,
+   "ratio_obs_to_null_median": 0.6289765667850611,
+   "p": 1.0,
+   "label": "EXPLAINED_BY_AFFILIATION",
+   "valid_null_values": 1000
+  },
+  "S3": {
+   "tail": "lower",
+   "observed": -0.015510666927664896,
+   "null_median": -0.020855929202058365,
+   "null_2.5": -0.054454621264261274,
+   "null_97.5": 0.0010333439408733336,
+   "ratio_obs_to_null_median": 0.7437053884002482,
+   "p": 0.6533466533466533,
+   "label": "EXPLAINED_BY_AFFILIATION",
+   "valid_null_values": 1000
+  },
+  "S4": {
+   "tail": "lower",
+   "observed": 0.19200127485407742,
+   "null_median": 0.17836720292388727,
+   "null_2.5": 0.1666873035740713,
+   "null_97.5": 0.19103844939351966,
+   "ratio_obs_to_null_median": 1.0764382224237046,
+   "p": 0.987012987012987,
+   "label": "EXPLAINED_BY_AFFILIATION",
+   "valid_null_values": 1000
+  }
+ },
+ "overall": "BROKERAGE_READING_EXPLAINED"
+}

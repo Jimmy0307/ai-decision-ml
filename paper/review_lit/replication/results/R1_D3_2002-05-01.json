@@ -1,0 +1,63 @@
+{
+ "snapshot": "2002-05-01",
+ "primary": false,
+ "reps": 200,
+ "trades_per_replicate": 5650,
+ "n_directors": 1013,
+ "n_women": 87,
+ "n_men": 926,
+ "n_multi_seat": 19,
+ "observed": {
+  "S1": 1.7685483282279637e-05,
+  "S2": 0.0010223509771955133,
+  "S3": -0.08339856421505931,
+  "S4": 0.27321617357001965
+ },
+ "tests": {
+  "S1": {
+   "tail": "upper",
+   "observed": 1.7685483282279637e-05,
+   "null_median": 8.38393088815359e-05,
+   "null_2.5": -0.0006023141928204575,
+   "null_97.5": 0.0012605950744289818,
+   "ratio_obs_to_null_median": 0.21094500322359583,
+   "p": 0.6019900497512438,
+   "label": "EXPLAINED_BY_AFFILIATION",
+   "valid_null_values": 200
+  },
+  "S2": {
+   "tail": "upper",
+   "observed": 0.0010223509771955133,
+   "null_median": 0.010160824878280694,
+   "null_2.5": 0.0017060848453571973,
+   "null_97.5": 0.029590610009265664,
+   "ratio_obs_to_null_median": 0.1006169272123608,
+   "p": 0.9950248756218906,
+   "label": "EXPLAINED_BY_AFFILIATION",
+   "valid_null_values": 200
+  },
+  "S3": {
+   "tail": "lower",
+   "observed": -0.08339856421505931,
+   "null_median": -5.551115123125783e-17,
+   "null_2.5": -0.05497180716211451,
+   "null_97.5": 0.05793106481973585,
+   "ratio_obs_to_null_median": 1502374970888702.0,
+   "p": 0.004975124378109453,
+   "label": "BEYOND_AFFILIATION",
+   "valid_null_values": 200
+  },
+  "S4": {
+   "tail": "lower",
+   "observed": 0.27321617357001965,
+   "null_median": 0.1852318769758207,
+   "null_2.5": 0.15980970723466795,
+   "null_97.5": 0.2128772543711482,
+   "ratio_obs_to_null_median": 1.4749954383158577,
+   "p": 1.0,
+   "label": "EXPLAINED_BY_AFFILIATION",
+   "valid_null_values": 200
+  }
+ },
+ "overall": "MIXED"
+}

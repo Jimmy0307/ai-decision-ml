@@ -286,5 +286,14 @@
   "venue": "Social Science Information",
   "doi": "10.1177/053901883022002003",
   "abstract_or_role": "Co-word analysis: co-occurrence of keywords is used to map the structure of research fields and the relations, or lack of relations, between research themes."
+ },
+ "seierstad2011few": {
+  "type": "article",
+  "title": "For the few not the many? {The} effects of affirmative action on presence, prominence, and social capital of women directors in {Norway}",
+  "authors": "Seierstad, Cathrine and Opsahl, Tore",
+  "year": "2011",
+  "venue": "Scandinavian Journal of Management",
+  "doi": "10.1016/j.scaman.2010.10.002",
+  "abstract_or_role": "Norwegian board-gender quota study; source of the open two-mode board-membership data re-analysed in the review (R1). Cite for the case and data only; its own measures are recorded in R1_CLAIM_RECORD.md."
  }
 }
