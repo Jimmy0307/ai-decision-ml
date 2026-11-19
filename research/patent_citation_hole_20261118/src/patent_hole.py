@@ -358,7 +358,7 @@ def run_spec(u: Universe, ci_all, cj_all, ccat, spec: dict, n_boot=N_BOOT, boot=
     counts = np.bincount(explode(np.flatnonzero(in_window), csr)[1], minlength=G)
     ref = [g for g in range(G)
            if counts[g] >= REF_MIN_PATENTS
-           and not u.group_names[g].startswith("G06N") and u.group_names[g] != "G06Q10"]
+           and not u.group_names[g].startswith("G06N") and not u.group_names[g].startswith("G06Q10")]
     margins = ref_margins(c, csr, G)
     _, _, oe_ai = oe_vs_reference(c, AI, csr, G, M, margins)
     _, _, oe_dec = oe_vs_reference(c, DEC, csr, G, M, margins)
