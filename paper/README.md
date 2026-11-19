@@ -43,9 +43,16 @@ Draft v4 applies the 17 items of `review/REVISION_PLAN_round2.md`. Its main chan
 
 v4 has not been re-reviewed.
 
+v5 (2026-11-19) adds **Preregistration 5, the construct-validity checks** the round-2 review asked for:
+- G06Q10/06 only: OE 3.04;
+- granularity-matched H1a against 826 subgroup families: percentiles of 84–90%;
+- both changes together.
+
+All three give HOLE_NOT_SUPPORTED, so the construct verdict is `ROBUST_TO_CONSTRUCT` (Study 2, Table `tab:construct`).
+
 ## Known open items (stated in the manuscript's Limitations)
 
-- A G06Q10/06-only analysis and a granularity-matched H1a reference set were not run. They are the first robustness checks to do.
+- The construct checks are done (Preregistration 5, ROBUST_TO_CONSTRUCT). The domain verdict still applies only to these CPC constructs.
 - No null holds firm degree and portfolio fixed together.
 - Cell-level tests ignore document clustering. M06-P has no type-I calibration.
 - The MLP prototype is simulated. Study 3 is a plan, not a result.

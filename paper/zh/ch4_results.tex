@@ -169,12 +169,12 @@ Benjamini--Hochberg（BH）程序在 120 格內控制偽發現率（false discov
 \section{研究二：專利證據}
 \label{zh:sec:study2}
 
-研究二以有方向的知識流動（knowledge flow）檢驗此前提：即美國發明專利（utility patents）之間的申請人引用（applicant citation），並以審查員指派的 CPC 分類作為群體標籤。本研究是在六個公開的關係型資料來源未能通過流動效度關卡之後，才選定專利資料（第~\ref{zh:sec:design_sources}~節；表~\ref{zh:tab:app_sources}）。各項分析遵循第~\ref{zh:sec:design_prereg}~節所述的四份預先登錄計畫（表~\ref{zh:tab:app_prereg}）：這些計畫為自行加上時間戳記的提交（commit），其中僅計畫 1 早於所有專利結果，因此對於計畫 2--4，本研究主張的是其規則係事先固定，而非其研究問題係事先固定。各項偏離均以註明日期的修訂（amendment）記錄（表~\ref{zh:tab:app_amend}）。本節所有結果皆為 DIRECT。
+研究二以有方向的知識流動（knowledge flow）檢驗此前提：即美國發明專利（utility patents）之間的申請人引用（applicant citation），並以審查員指派的 CPC 分類作為群體標籤。本研究是在六個公開的關係型資料來源未能通過流動效度關卡之後，才選定專利資料（第~\ref{zh:sec:design_sources}~節；表~\ref{zh:tab:app_sources}）。各項分析遵循第~\ref{zh:sec:design_prereg}~節所述的五份預先登錄計畫（表~\ref{zh:tab:app_prereg}）；對於計畫 2--5，本研究主張的是其規則係事先固定，而非其研究問題係事先固定。各項偏離均以註明日期的修訂（amendment）記錄（表~\ref{zh:tab:app_amend}）。本節所有結果皆為 DIRECT。
 
 \subsection{資料與整體檢定}
 \label{zh:sec:study2_aggregate}
 
-\paragraph{資料。} 本研究使用 USPTO PatentsView 的 \texttt{pvgpatdis} 資料表，下載日期為 2026 年 11 月 18 日 \citep{uspto2026patentsview}：包括 1976--2025 年核准的 8,512,829 件發明專利，以及 152,631,929 列引用資料；其中 87,414,291 列屬於分析範圍（施引年份 2010--2025），而這些引用中又有 63,083,371 列為申請人引用。引用被用作知識流動的代理指標 \citep{jaffe1993geographic}。由審查員加入的引用（examiner citation）可能無法反映發明人所知，因此主要設定僅使用申請人引用 \citep{alcacer2006patent}。由於 PatentsView 在 2013 年以前將非審查員引用標示為「cited by other」，此設定實際上涵蓋施引年份 2013--2025。
+\paragraph{資料。} 本研究使用 USPTO PatentsView 的 \texttt{pvgpatdis} 資料表，下載日期為 2026 年 11 月 18 日 \citep{uspto2026patentsview}：包括 1976--2025 年核准的 8,512,829 件發明專利，以及 152,631,929 列引用資料；其中 87,414,291 列屬於分析範圍（施引年份 2010--2025），而這些引用中又有 63,083,371 列為申請人引用。由審查員加入的引用（examiner citation）可能無法反映發明人所知，因此主要設定僅使用申請人引用 \citep{alcacer2006patent}。由於 PatentsView 在 2013 年以前將非審查員引用標示為「cited by other」，此設定實際上涵蓋施引年份 2013--2025。
 
 各群體採用核准年份 2010--2025：
 \begin{itemize}
@@ -185,7 +185,7 @@ Benjamini--Hochberg（BH）程序在 120 格內控制偽發現率（false discov
 \end{itemize}
 跨群體計數排除橋接（BRIDGE）專利。
 
-\paragraph{DEC 的構念效度。} \texttt{G06Q10/04}（預測與最佳化）在方法上與機器學習重疊，因此 AI--DEC 過度連結（over-connection）的一部分可能近乎機械性：兩個分類部分描述的是相同的技術。因此，此檢定所測量的是專利分類之間的技術鄰近性，而非 AI 融入管理決策的程度。構念效度（construct validity）仍未經檢驗。敏感度檢查 s2 將 DEC 擴大至整個 \texttt{G06Q10}，使強度 OE（見下文式~\eqref{zh:eq:oe}）由 3.05 降至 2.59，但判定不變（表~\ref{zh:tab:aggregate}）；然而 s2 仍包含 \texttt{/04}，因此只是稀釋而非隔離此一重疊。僅以 DEC = \texttt{G06Q10/06} 進行的分析，以及粒度相符的 H1a 參照集（見下文），本研究均未執行；兩者是未來研究最優先的穩健性檢查。領域層級的判定適用於此處所定義的 \texttt{G06N} 對 \texttt{G06Q10/04} + \texttt{/06}。
+\paragraph{DEC 的構念效度。} \texttt{G06Q10/04}（預測與最佳化）在方法上與機器學習重疊，因此 AI--DEC 過度連結（over-connection）的一部分可能近乎機械性：兩個分類部分描述的是相同的技術。因此，此檢定所測量的是專利分類之間的技術鄰近性，而非 AI 融入管理決策的程度。敏感度檢查 s2 將 DEC 擴大至整個 \texttt{G06Q10}，使強度 OE（見下文式~\eqref{zh:eq:oe}）由 3.05 降至 2.59，但判定不變（表~\ref{zh:tab:aggregate}）；然而 s2 仍包含 \texttt{/04}，因此只是稀釋而非隔離此一重疊。因此，計畫 5 將 \texttt{/04} 移除（見下文表~\ref{zh:tab:construct}）。
 
 \paragraph{統計量。} 引用依 $s = $（施引專利核准年份，被引專利核准年份）分層。在每一層中，$\mathrm{out}_A(s)$ 為群體 $A$ 專利所做出的引用數，$\mathrm{in}_B(s)$ 為群體 $B$ 專利所獲得的引用數，$M(s)$ 為總數。時間分層的組態期望值（configuration expectation）為
 \begin{equation}
@@ -198,16 +198,40 @@ E(A\!\rightarrow\!B) = \sum_{s} \frac{\mathrm{out}_A(s)\,\mathrm{in}_B(s)}{M(s)}
 \label{zh:eq:oe}
 \end{equation}
 
-\paragraph{為何採用相對檢定。} 由於引用行為具有領域在地性，若採用絕對判準「$\mathrm{OE} < 1$」，幾乎任何一對領域都會被標記（第~\ref{zh:sec:theory_domains}~節）。在使用真實資料之前執行的合成校準顯示了這一點：在未植入結構洞時，$\mathrm{OE} = 0.388$，但檢定正確地回傳 \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}；而在跨群體引用受到 30\% 或 50\% 抑制時，檢定能偵測出結構洞（表~\ref{zh:tab:app_oeyear}）。此生成器相當簡單（領域在地的引用加上植入的抑制），其無結構洞的基準線接近參照最低四分位數，而真實 OE 則遠高於此；此校準顯示的是從低基準線出發的偵測能力，而非在真實基準線下的檢定力。預先登錄的假說皆為相對假說：
+\paragraph{為何採用相對檢定。} 由於引用行為具有領域在地性，若採用絕對判準「$\mathrm{OE} < 1$」，幾乎任何一對領域都會被標記（第~\ref{zh:sec:theory_domains}~節）。在使用真實資料之前執行的合成校準顯示了這一點：在未植入結構洞時，$\mathrm{OE} = 0.388$，但檢定正確地回傳 \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}；而在跨群體引用受到 30\% 或 50\% 抑制時，檢定能偵測出結構洞（表~\ref{zh:tab:app_oeyear}）。此生成器相當簡單，此校準顯示的是從低基準線出發的偵測能力，而非在真實基準線下的檢定力（第~\ref{zh:sec:lim_inference}~節）。預先登錄的假說皆為相對假說：
 \begin{itemize}
   \item \textbf{H1a：}$\mathrm{OE}(\mathrm{AI},\mathrm{DEC})$ 同時落在 $\{\mathrm{OE}(\mathrm{AI},X)\}$ 與 $\{\mathrm{OE}(\mathrm{DEC},X)\}$ 的最低四分位數 $Q_1$ 之內。參照集為 \texttt{G06}、\texttt{G16} 與 \texttt{H04} 中至少有 2,000 件專利的 179 個 CPC 大組（main group）。
   \item \textbf{H1b：}比值 $\mathrm{OE}(\mathrm{AI},\mathrm{DEC}) / \mathrm{OE}(\mathrm{AI},\mathrm{BIZ\text{-}OTHER})$ 小於 1，且其 95\% 信賴上界小於 1。
 \end{itemize}
-H1a 並未匹配粒度：DEC 由兩個 CPC 小組（subgroup）構成，而參照對象則為大組。範圍窄且同質的群體可能比範圍廣的群體呈現較高的 OE，因此 H1a 的百分位數可能偏向過度連結。本研究未計算小組層級的參照集。
+H1a 並未匹配粒度：DEC 由兩個 CPC 小組（subgroup）構成，而參照對象則為大組。範圍窄且同質的群體可能比範圍廣的群體呈現較高的 OE，因此 H1a 的百分位數可能偏向過度連結；計畫 5 以粒度匹配的參照集檢驗此點（見下文）。
 
 \paragraph{結果。} 在主要設定下，$O = 30{,}843$，$E = 10{,}112$，得 $\mathrm{OE}(\mathrm{AI},\mathrm{DEC}) = 3.05$（95\% CI 2.94--3.17；以施引專利為群集的 Poisson 群集拔靴法，2,000 次重複）。兩個方向皆呈過度代表：AI$\rightarrow$DEC 為 $O = 21{,}820$、$E = 6{,}686$（O/E 3.26），DEC$\rightarrow$AI 為 $O = 9{,}023$、$E = 3{,}426$（O/E 2.63）。H1a 不成立：OE(AI,DEC) 高於 97.8\% 的 OE(AI,$X$) 值與 92.2\% 的 OE(DEC,$X$) 值，而最低四分位數門檻分別為 0.787（AI 側）與 0.502（DEC 側），中位數分別為 1.240 與 1.095。H1b 不成立：比值為 1.69（95\% CI 1.60--1.77），儘管比較配對本身亦呈過度連結（$\mathrm{OE}(\mathrm{AI},\mathrm{BIZ\text{-}OTHER}) = 1.809$）。預先登錄的判定為 \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}。
 
 全部六項預先登錄的敏感度分析（sensitivity analysis）設定皆與此判定一致（0/6 不一致；表~\ref{zh:tab:aggregate}、圖~\ref{zh:fig:patent_sensitivity}），因此依預先登錄的規則，此判定並不脆弱。OE 的範圍介於 2.59（s2，DEC 擴大至整個 \texttt{G06Q10}）至 4.25（s6，橋接專利於兩側皆計入）之間。
+
+\paragraph{構念效度檢查（預先登錄 5）。} 計畫 5 應審查要求而進行，屬受資料啟發的後續分析，但其規則在計算之前即已凍結，且計畫 1 的判定規則維持不變（表~\ref{zh:tab:app_prereg}）。它改變 DEC 類別（\texttt{/04} + \texttt{/06}，或僅 \texttt{/06}）與 H1a 參照集（179 個大組，或依 DEC 相同方式建構的 826 個小組家族〔subgroup families〕）。三項設定皆回傳 \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}（表~\ref{zh:tab:construct}）：\texttt{ROBUST\_\allowbreak TO\_\allowbreak CONSTRUCT}。\texttt{/04} 與 AI 的連結較為緊密（OE 3.83，描述性的 P5d），但僅佔 DEC 的一小部分（37,501 件中的 5,893 件），因此將其移除幾乎不改變 OE（由 3.05 變為 3.04）。在粒度匹配的參照集下，百分位數降至約 84--90\%，但仍遠高於最低四分位數。因此，領域層級的判定在所檢驗的兩種類別定義與兩種參照粒度下皆成立；它仍是關於這些 CPC 構念的陳述，而非關於整體「決策」的陳述。
+
+\begin{table}[tbp]
+  \centering
+  \caption{構念效度檢查（計畫 5，\texttt{ROBUST\_\allowbreak TO\_\allowbreak CONSTRUCT}；受資料啟發，規則於計算之前凍結）。小組家族為大組加上小組編號的前兩個字元，建構方式與 DEC 相同：在 \texttt{G06}／\texttt{G16}／\texttt{H04} 的 3,763 個家族中，有 826 個至少含 2,000 件專利（排除 \texttt{G06N} 與 \texttt{G06Q10}）。「相對 BIZ 比值」與「百分位數」之定義同表~\ref{zh:tab:aggregate}；$Q_1$ 與中位數為參照分布 OE(AI,$X$)／OE(DEC,$X$) 的值。P5a--P5d 為計畫 5 的設定，與計畫 3 的模組 P5 無關。P5d 為描述性，不作判定。NOT\_SUPPORTED 為 HOLE\_NOT\_SUPPORTED 的縮寫。DIRECT。}
+  \label{zh:tab:construct}
+  \footnotesize
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{@{}p{3.3cm}p{2.7cm}p{2.7cm}p{2.7cm}p{2.7cm}@{}}
+    \toprule
+    & P5a & P5b & P5c & P5d（描述性） \tabularnewline
+    \midrule
+    \raggedright DEC 類別（專利數） & 僅 \texttt{/06}（33,926） & \texttt{/04} + \texttt{/06}（37,501） & 僅 \texttt{/06}（33,926） & 僅 \texttt{/04}（5,893） \tabularnewline
+    \raggedright 參照集 & 179 個大組 & 826 個小組家族 & 826 個小組家族 & 179 個大組 \tabularnewline
+    \raggedright OE(AI,DEC)（95\% CI） & 3.04 (2.92--3.16) & 3.05 (2.94--3.17) & 3.04 (2.92--3.16) & 3.83 (3.59--4.06) \tabularnewline
+    \raggedright 相對 BIZ 比值（95\% CI） & 1.68 (1.60--1.76) & 1.69 (1.60--1.77) & 1.68 (1.60--1.76) & 2.12 (1.96--2.29) \tabularnewline
+    \raggedright 百分位數 AI／DEC & 97.8\% / 90.5\% & 89.8\% / 84.1\% & 89.6\% / 83.5\% & 99.4\% / 93.9\% \tabularnewline
+    \raggedright 參照 $Q_1$ AI／DEC & 0.787 / 0.511 & 0.875 / 0.605 & 0.875 / 0.612 & 0.787 / 0.486 \tabularnewline
+    \raggedright 參照中位數 AI／DEC & 1.240 / 1.077 & 1.419 / 1.316 & 1.419 / 1.330 & 1.240 / 1.129 \tabularnewline
+    \raggedright 判定 & \texttt{NOT\_\allowbreak SUPPORTED} & \texttt{NOT\_\allowbreak SUPPORTED} & \texttt{NOT\_\allowbreak SUPPORTED} & -- \tabularnewline
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 \begin{table}[tbp]
   \centering
@@ -246,7 +270,7 @@ H1a 並未匹配粒度：DEC 由兩個 CPC 小組（subgroup）構成，而參�
   \label{zh:fig:patent_trend}
 \end{figure}
 
-就 RQ1 而言，在此處的操作化定義下（\texttt{G06N} 對 \texttt{G06Q10/04} + \texttt{/06}），證據並不支持 AI 與決策技術之間的知識流動存在結構洞。這是在預先登錄規則下未能支持結構洞，而非證明不存在任何分隔；且過度連結的大小也不是組織整合程度的測量。
+就 RQ1 而言，在此處的操作化定義下（\texttt{G06N} 對 \texttt{G06Q10/04} + \texttt{/06}，或僅對 \texttt{/06}），證據並不支持 AI 與決策技術之間的知識流動存在結構洞。這是在預先登錄規則下未能支持結構洞，而非證明不存在任何分隔；且過度連結的大小也不是組織整合程度的測量。
 
 \subsection{CPC 矩陣上的 V9 檢定組與 M06-P 虛無模型}
 \label{zh:sec:study2_cells}

@@ -9,7 +9,7 @@
 \section{Preregistration and Amendment Log}
 \label{app:prereg}
 
-Study~2 rests on four preregistration plans. Each is a self-timestamped git commit in the project repository (repository identifiers withheld for review; the commit ids are listed in Table~\ref{tab:app_prereg}); none was registered with a third-party registry such as OSF, and the commit timestamps are set by the authors' own tooling. Preregistration is meant to separate confirmatory from exploratory analysis by fixing the plan before outcomes are observed \citep{nosek2018preregistration}. By that standard, Plan~1 was fixed before any patent data were downloaded. Plans 2--4 were written after earlier results were known, so the questions they ask were data-informed; only their definitions, null models, decision rules, thresholds and stop rules were fixed before the analyses they govern were computed. Changes after freezing are recorded as dated amendments that do not overwrite the frozen text. Table~\ref{tab:app_prereg} summarises the four plans, including the commit ids and rule thresholds taken from the frozen texts; Table~\ref{tab:app_amend} lists every amendment and recorded deviation.
+Study~2 rests on five preregistration plans. Each is a self-timestamped git commit in the project repository (repository identifiers withheld for review; the commit ids are listed in Table~\ref{tab:app_prereg}); none was registered with a third-party registry such as OSF, and the commit timestamps are set by the authors' own tooling. Preregistration is meant to separate confirmatory from exploratory analysis by fixing the plan before outcomes are observed \citep{nosek2018preregistration}. By that standard, Plan~1 was fixed before any patent data were downloaded. Plans 2--5 were written after earlier results were known, so the questions they ask were data-informed; only their definitions, null models, decision rules, thresholds and stop rules were fixed before the analyses they govern were computed. Plan~5, the construct checks of Section~\ref{sec:study2_aggregate} (Table~\ref{tab:construct}), was requested by the round-2 review after the Plan~1 verdict was known and frozen on 2026-11-19 before any of its specifications was computed. Changes after freezing are recorded as dated amendments that do not overwrite the frozen text. Table~\ref{tab:app_prereg} summarises the five plans, including the commit ids and rule thresholds taken from the frozen texts; Table~\ref{tab:app_amend} lists every amendment and recorded deviation.
 
 \begin{table}[tbp]
 \centering
@@ -44,6 +44,12 @@ Plan (commit) & Frozen before / known when written & Hypotheses and content & De
 \raggedright T1: OE(AI\_FIRM$\sim$DEC\_FIRM); T2: MIXED median constraint; owner sets permuted within strata (primary; S-tech). The null preserves portfolio counts, not firm degree &
 \raggedright \texttt{ORGANISATIONAL\_\allowbreak HOLE\_\allowbreak BEYOND\_\allowbreak PORTFOLIO} if T1 and T2 both have one-sided $p<.05$; \texttt{PARTIAL} if exactly one; \texttt{PORTFOLIO\_\allowbreak ARTEFACT} if neither; S-tech disagreement $\rightarrow$ \texttt{TECH\_\allowbreak MIX\_\allowbreak SENSITIVE} &
 \raggedright \texttt{PARTIAL} in both stratifications (T1 met, T2 not) \tabularnewline
+\addlinespace
+\raggedright 5.~Construct checks (\texttt{100f06a}) &
+\raggedright Frozen 2026-11-19, before any specification was computed; data-informed, requested by the round-2 review. Known: the Plan~1--4 results &
+\raggedright CV1: DEC = \texttt{G06Q10/06} only; CV2: H1a reference set of subgroup families (main group plus first two subgroup characters, $\geq$2,000 patents) instead of main groups; P5a /06 + main groups, P5b /04 + /06 + families, P5c /06 + families; P5d /04 only, descriptive &
+\raggedright Plan~1's H1a/H1b rule unchanged for each of P5a--P5c; \texttt{ROBUST\_\allowbreak TO\_\allowbreak CONSTRUCT} if all three are \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}, otherwise \texttt{CONSTRUCT\_\allowbreak SENSITIVE} and the claim is restricted &
+\raggedright \texttt{ROBUST\_\allowbreak TO\_\allowbreak CONSTRUCT}; P5d OE 3.83 (Table~\ref{tab:construct}) \tabularnewline
 \bottomrule
 \end{tabular}
 \end{table}
@@ -67,6 +73,8 @@ Item & Plan & When & Change & Effect on design \tabularnewline
 \raggedright Seeding & \raggedright 4 & \raggedright Before any null replicate finished (\texttt{1eb7319}) & \raggedright The first run was stopped by host memory pressure after reproducing P5 exactly. The run was made resumable; each replicate $r$ of scheme $s$ uses its own seed sequence [20261119, $s$, $r$] instead of one stream. & \raggedright Statistic, strata and rule unchanged \tabularnewline
 \addlinespace
 \raggedright P6, P10 & \raggedright 3 & \raggedright Recorded with results & \raggedright The P6 cross-weight-retained metric is identically 1 by construction; P10 Limitation Scout is \texttt{NOT\_\allowbreak APPLICABLE} (patents have no limitation section). & \raggedright Reported as uninformative \tabularnewline
+\addlinespace
+\raggedright Ref.\ exclusion & \raggedright 5 & \raggedright 2026-11-19, frozen with Plan~5 (\texttt{100f06a}) & \raggedright The reference-set exclusion now drops every name beginning with \texttt{G06Q10}, so that subgroup families of \texttt{G06Q10} are excluded too. For main groups this is identical to Plan~1's rule. & \raggedright None for main groups (the 179 groups are unchanged) \tabularnewline
 \bottomrule
 \end{tabular}
 \end{table}

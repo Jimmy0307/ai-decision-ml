@@ -8,7 +8,7 @@
 \chapter{預先登錄與修訂紀錄}
 \label{zh:app:prereg}
 
-研究二以四份預先登錄（preregistration）計畫為基礎。每份計畫皆為本研究計畫儲存庫中自行加註時間戳記的 git 提交（為供審查，儲存庫識別資訊暫不公開；提交編號列於表~\ref{zh:tab:app_prereg}）；沒有任何一份在 OSF 等第三方登錄平台登錄，且提交時間戳記係由作者自有的工具設定。預先登錄的目的，是在觀察到結果之前即固定研究計畫，以區分驗證性與探索性分析 \citep{nosek2018preregistration}。依此標準，計畫 1 是在下載任何專利資料之前即已固定。計畫 2--4 則是在已知先前結果之後撰寫，因此其所提出的問題受到資料啟發；僅其定義、虛無模型（null model）、決策規則、門檻與停止規則（stop rule），是在其所規範的分析計算之前固定的。凍結之後的變更以附日期的修訂（amendment）加以記錄，且不覆寫已凍結的文本。表~\ref{zh:tab:app_prereg} 彙整四份計畫，包括取自凍結文本的提交編號與規則門檻；表~\ref{zh:tab:app_amend} 列出每一項修訂與已記錄的偏離。
+研究二以五份預先登錄（preregistration）計畫為基礎。每份計畫皆為本研究計畫儲存庫中自行加註時間戳記的 git 提交（為供審查，儲存庫識別資訊暫不公開；提交編號列於表~\ref{zh:tab:app_prereg}）；沒有任何一份在 OSF 等第三方登錄平台登錄，且提交時間戳記係由作者自有的工具設定。預先登錄的目的，是在觀察到結果之前即固定研究計畫，以區分驗證性與探索性分析 \citep{nosek2018preregistration}。依此標準，計畫 1 是在下載任何專利資料之前即已固定。計畫 2--5 則是在已知先前結果之後撰寫，因此其所提出的問題受到資料啟發；僅其定義、虛無模型（null model）、決策規則、門檻與停止規則（stop rule），是在其所規範的分析計算之前固定的。計畫 5，即第~\ref{zh:sec:study2_aggregate}~節的構念效度（construct validity）檢查（表~\ref{zh:tab:construct}），係在計畫 1 的判定已知之後應第二輪審查要求而提出，並於 2026-11-19、在計算其任何設定之前凍結。凍結之後的變更以附日期的修訂（amendment）加以記錄，且不覆寫已凍結的文本。表~\ref{zh:tab:app_prereg} 彙整五份計畫，包括取自凍結文本的提交編號與規則門檻；表~\ref{zh:tab:app_amend} 列出每一項修訂與已記錄的偏離。
 
 \begin{table}[tbp]
 \centering
@@ -43,6 +43,12 @@
 \raggedright T1：OE(AI\_FIRM$\sim$DEC\_FIRM)；T2：MIXED 之限制度中位數；在各層內置換專利擁有者集合（主要分層；S-tech）。此虛無模型保留專利組合計數，而非公司度數 &
 \raggedright 若 T1 與 T2 皆為單尾 $p<.05$，則為 \texttt{ORGANISATIONAL\_\allowbreak HOLE\_\allowbreak BEYOND\_\allowbreak PORTFOLIO}；恰有一項成立則為 \texttt{PARTIAL}；皆不成立則為 \texttt{PORTFOLIO\_\allowbreak ARTEFACT}；S-tech 結果不一致 $\rightarrow$ \texttt{TECH\_\allowbreak MIX\_\allowbreak SENSITIVE} &
 \raggedright 兩種分層下皆為 \texttt{PARTIAL}（T1 達成，T2 未達成） \tabularnewline
+\addlinespace
+\raggedright 5.~構念效度檢查（\texttt{100f06a}） &
+\raggedright 於 2026-11-19、計算任何設定之前凍結；受資料啟發，應第二輪審查要求而提出。已知：計畫 1--4 的結果 &
+\raggedright CV1：DEC = 僅 \texttt{G06Q10/06}；CV2：H1a 參照集改用小組家族（大組加上小組編號前兩個字元，專利數 $\geq$2,000），而非大組；P5a 為 /06 + 大組，P5b 為 /04 + /06 + 小組家族，P5c 為 /06 + 小組家族；P5d 僅 /04，屬描述性 &
+\raggedright 對 P5a--P5c 各自沿用計畫 1 的 H1a／H1b 規則，維持不變；三者皆為 \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED} 則為 \texttt{ROBUST\_\allowbreak TO\_\allowbreak CONSTRUCT}，否則為 \texttt{CONSTRUCT\_\allowbreak SENSITIVE}，並限縮主張 &
+\raggedright \texttt{ROBUST\_\allowbreak TO\_\allowbreak CONSTRUCT}；P5d OE 3.83（表~\ref{zh:tab:construct}） \tabularnewline
 \bottomrule
 \end{tabular}
 \end{table}
@@ -66,6 +72,8 @@
 \raggedright 種子設定 & \raggedright 4 & \raggedright 於任何虛無重複樣本完成之前（\texttt{1eb7319}） & \raggedright 首次執行在完全重現 P5 之後，因主機記憶體壓力而中止。之後將執行改為可續跑；方案 $s$ 的每一重複樣本 $r$ 使用各自的種子序列 [20261119, $s$, $r$]，而非單一亂數流。 & \raggedright 統計量、分層與規則皆未改變 \tabularnewline
 \addlinespace
 \raggedright P6、P10 & \raggedright 3 & \raggedright 與結果一併記錄 & \raggedright P6 的跨權重保留指標在建構上恆等於 1；P10 Limitation Scout 為 \texttt{NOT\_\allowbreak APPLICABLE}（專利沒有研究限制章節）。 & \raggedright 以不具資訊性報告 \tabularnewline
+\addlinespace
+\raggedright 參照排除規則 & \raggedright 5 & \raggedright 2026-11-19，與計畫 5 一併凍結（\texttt{100f06a}） & \raggedright 參照集的排除規則改為排除所有以 \texttt{G06Q10} 開頭的名稱，使 \texttt{G06Q10} 的小組家族亦被排除。對大組而言，此規則與計畫 1 的規則相同。 & \raggedright 對大組無影響（179 個大組不變） \tabularnewline
 \bottomrule
 \end{tabular}
 \end{table}

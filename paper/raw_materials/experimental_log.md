@@ -363,6 +363,25 @@ The quantum-computing row is tiny: 74 edges in A.
 
 **Verdict: PARTIAL in both stratifications** (not tech-mix sensitive). Specialist separation is mostly a portfolio effect. The lower constraint of MIXED firms does not survive: real firms are more clustered than the null.
 
+### E3.5 Construct-validity checks (Preregistration 5; `paper/data/PLAN5_CONSTRUCT_RESULTS.json`)
+
+Frozen in commit `100f06a` (2026-11-19 10:44:56) before computation. This is a data-informed follow-up requested by the round-2 review. Plan 1's decision rule is unchanged.
+- **DEC06** = G06Q10/06 only: 33,926 patents (2010+). **DEC04** = G06Q10/04 only: 5,893.
+- **Subgroup-family reference set** = main group + first two characters of the subgroup (built like DEC): 3,763 families in G06/G16/H04, of which 826 have at least 2,000 patents (excluding G06N and G06Q10).
+
+| Spec | DEC | Reference | OE(AI,DEC) (95% CI) | Ratio vs BIZ (95% CI) | Percentile AI / DEC | Ref lowest quartile AI / DEC | Ref median AI / DEC | Verdict |
+|---|---|---|---|---|---|---|---|---|
+| P5a | /06 only | 179 main groups | 3.04 (2.92–3.16) | 1.68 (1.60–1.76) | 97.8% / 90.5% | 0.787 / 0.511 | 1.240 / 1.077 | HOLE_NOT_SUPPORTED |
+| P5b | /04 + /06 | 826 subgroup families | 3.05 (2.94–3.17) | 1.69 (1.60–1.77) | 89.8% / 84.1% | 0.875 / 0.605 | 1.419 / 1.316 | HOLE_NOT_SUPPORTED |
+| P5c | /06 only | 826 subgroup families | 3.04 (2.92–3.16) | 1.68 (1.60–1.76) | 89.6% / 83.5% | 0.875 / 0.612 | 1.419 / 1.330 | HOLE_NOT_SUPPORTED |
+| P5d (descriptive) | /04 only | 179 main groups | 3.83 (3.59–4.06) | 2.12 (1.96–2.29) | 99.4% / 93.9% | 0.787 / 0.486 | 1.240 / 1.129 | — |
+
+**P5a counts:** O = 28,877, E = 9,507.
+
+**Construct verdict: ROBUST_TO_CONSTRUCT.**
+- /04 is more tightly linked to AI (OE 3.83), but it is a small share of DEC, so removing it barely changes OE (3.05 to 3.04).
+- With granularity-matched references, the percentile falls to about 84–90% but stays far above the lowest quartile.
+
 ---
 
 ## E4. Multi-level programming prototype (v1.0; SIMULATED; `paper/data/MLP_SOLVER_RESULTS_v1_0.json`)
