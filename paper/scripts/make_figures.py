@@ -52,7 +52,7 @@ def fig_research_design():
         ax.text(x + w / 2, y + h - 6.6, body, ha="center", va="top", fontsize=6.8, color=INK2, linespacing=1.35)
 
     box(1, 27, 26.5, 21, "Study 1  Literature", "V5-V11.1: function\nco-occurrence and\nnetwork searches\n\nDirection descriptive only;\nsignificance not robust", MUTED)
-    box(36.75, 27, 26.5, 21, "Study 2  Patents", "8.5M US patents,\n4 preregistered analyses\n\nDomain: hole not supported\nFirm: unresolved (PARTIAL)", BLUE)
+    box(36.75, 27, 26.5, 21, "Study 2  Patents", "8.5M US patents; 5 preregistered\nanalyses (1 confirmatory)\n\nDomain: hole not supported\nFirm: unresolved (PARTIAL)", BLUE)
     box(72.5, 27, 26.5, 21, "Study 3  Enterprise", "Plan: discriminates\ncompeting explanations\n(allocation and decision\nrights, data, cost,\nregulation, task fit)", ORANGE)
     box(14, 4, 72, 14, "Multi-level programming model (simulated)", "Formalises only the organisational candidate\nCalibrated only if Study 3 supports that candidate", INK2)
     for x0, x1, lab in ((28.4, 36.3, "co-\noccurrence\nis not flow"), (64.1, 72.0, "which\nconstraint\nbinds?")):
