@@ -233,6 +233,11 @@ over strata s = (citing grant year, cited grant year).
 - WLS slope −0.097 per year (95% CI −0.130 to −0.065).
 - Last-3-year OE 2.69, against a reference median of 1.095.
 - Preregistered label: PERSISTENT. The over-connection declines but remains more than twice the reference median.
+- **H2 rule (Plan 1):**
+  - `CLOSING` if the slope is > 0 with a 95% CI above 0 **and** last-3-year OE ≥ the reference median;
+  - `PERSISTENT` if the slope CI includes 0 or lies below it;
+  - otherwise `NARROWING_BUT_OPEN`.
+  - The rule was written for the hole case.
 
 **Synthetic calibration** (before real data):
 - no hole: OE 0.388 vs reference lowest quartile 0.356; ratio 0.99 (0.79–1.21) → HOLE_NOT_SUPPORTED;
@@ -366,20 +371,36 @@ The quantum-computing row is tiny: 74 edges in A.
 ### E3.5 Construct-validity checks (Preregistration 5; `paper/data/PLAN5_CONSTRUCT_RESULTS.json`)
 
 Frozen in commit `100f06a` (2026-11-19 10:44:56) before computation. This is a data-informed follow-up requested by the round-2 review. Plan 1's decision rule is unchanged.
-- **DEC06** = G06Q10/06 only: 33,926 patents (2010+). **DEC04** = G06Q10/04 only: 5,893.
+- **DEC06** = any G06Q10/06 code: 33,926 patents (2010+). **DEC04** = any G06Q10/04 code: 5,893.
+- Of these, 2,318 carry both /04 and /06 codes, 3,575 carry /04 only, and **31,608 carry /06 with no /04 code (DEC06S, strict)**. DEC06 therefore drops only the 3,575 /04-only patents; it is not a removal of /04.
 - **Subgroup-family reference set** = main group + first two characters of the subgroup (built like DEC): 3,763 families in G06/G16/H04, of which 826 have at least 2,000 patents (excluding G06N and G06Q10).
 
 | Spec | DEC | Reference | OE(AI,DEC) (95% CI) | Ratio vs BIZ (95% CI) | Percentile AI / DEC | Ref lowest quartile AI / DEC | Ref median AI / DEC | Verdict |
 |---|---|---|---|---|---|---|---|---|
-| P5a | /06 only | 179 main groups | 3.04 (2.92–3.16) | 1.68 (1.60–1.76) | 97.8% / 90.5% | 0.787 / 0.511 | 1.240 / 1.077 | HOLE_NOT_SUPPORTED |
+| P5a | any /06 code | 179 main groups | 3.04 (2.92–3.16) | 1.68 (1.60–1.76) | 97.8% / 90.5% | 0.787 / 0.511 | 1.240 / 1.077 | HOLE_NOT_SUPPORTED |
 | P5b | /04 + /06 | 826 subgroup families | 3.05 (2.94–3.17) | 1.69 (1.60–1.77) | 89.8% / 84.1% | 0.875 / 0.605 | 1.419 / 1.316 | HOLE_NOT_SUPPORTED |
-| P5c | /06 only | 826 subgroup families | 3.04 (2.92–3.16) | 1.68 (1.60–1.76) | 89.6% / 83.5% | 0.875 / 0.612 | 1.419 / 1.330 | HOLE_NOT_SUPPORTED |
-| P5d (descriptive) | /04 only | 179 main groups | 3.83 (3.59–4.06) | 2.12 (1.96–2.29) | 99.4% / 93.9% | 0.787 / 0.486 | 1.240 / 1.129 | — |
+| P5c | any /06 code | 826 subgroup families | 3.04 (2.92–3.16) | 1.68 (1.60–1.76) | 89.6% / 83.5% | 0.875 / 0.612 | 1.419 / 1.330 | HOLE_NOT_SUPPORTED |
+| P5d (descriptive) | any /04 code | 179 main groups | 3.83 (3.59–4.06) | 2.12 (1.96–2.29) | 99.4% / 93.9% | 0.787 / 0.486 | 1.240 / 1.129 | — |
+| P5e (amendment C1) | strict /06, no /04 code | 179 main groups | 3.16 (3.05–3.27) | 1.75 (1.66–1.83) | 98.9% / 91.6% | 0.787 / 0.462 | 1.240 / 1.082 | HOLE_NOT_SUPPORTED |
+| P5f (amendment C1) | strict /06, no /04 code | 826 subgroup families | 3.16 (3.05–3.27) | 1.75 (1.66–1.83) | 90.7% / 83.3% | 0.875 / 0.606 | 1.419 / 1.340 | HOLE_NOT_SUPPORTED |
 
-**P5a counts:** O = 28,877, E = 9,507.
+**Counts:** P5a O = 28,877, E = 9,507. P5e O = 29,464, E = 9,328.
 
-**Construct verdict: ROBUST_TO_CONSTRUCT.**
-- /04 is more tightly linked to AI (OE 3.83), but it is a small share of DEC, so removing it barely changes OE (3.05 to 3.04).
+**Amendment C1** (commit `e6dce5c`, frozen 2026-11-19 12:30:21, before P5e/P5f were computed) adds the strict specifications after the round-3 review found the DEC06 overlap.
+
+**Plan 5 decision rule:**
+- Each specification uses Plan 1's rule.
+- Construct verdict: `ROBUST_TO_CONSTRUCT` only if all verdict specifications are HOLE_NOT_SUPPORTED, otherwise `CONSTRUCT_SENSITIVE`.
+- After C1 the verdict specifications are P5a, P5b, P5c, P5e and P5f.
+
+**Known limits of Plan 5:**
+- Granularity is matched on the reference side only; AI stays the whole G06N subclass.
+- P5b has the same DEC as Plan 1, so its H1b is identical to Plan 1's and is not an independent check.
+- Because OE(AI,DEC) is far above every reference quartile, the construct rule was expected to pass unless a respecification changed OE drastically.
+
+**Construct verdict (five specifications): ROBUST_TO_CONSTRUCT.**
+- Removing every /04-coded patent (P5e) raises OE slightly, from 3.05 to 3.16, so the over-connection is not produced by /04.
+- /04 is more tightly linked to AI (OE 3.83).
 - With granularity-matched references, the percentile falls to about 84–90% but stays far above the lowest quartile.
 
 ---
@@ -406,6 +427,30 @@ F2 = Σ_i [0.90 Feas + 0.90 Rel + 0.45 Scalability − 0.55 IntegrationCost − 
 Level 3: Gain = g_im v_i ψ_i flex_Γ; Burden = β_m + 0.03 H + 0.02 EA + 0.02 WI; ResidualRisk = κ · autonomy_m · risk_Γ / (1 + 0.45 H + 0.45 EA).
 
 In the permission probe, Level 1 re-optimises its allocation; capabilities are endogenous and are **not** held fixed.
+
+**Level-3 constants (`04_solver_v1_0.py`; simulated design values).**
+
+Configurations (A, H, WI, EA requirements; base gain g for processes P1/P2/P3; burden β; autonomy):
+
+| Configuration | Requirements (A, H, WI, EA) | Gain g (P1 / P2 / P3) | Burden β | Autonomy |
+|---|---|---|---:|---:|
+| HumanOnly | (0, 0, 0, 0) | 0 / 0 / 0 | 0 | 0 |
+| AIAssist | (1, 0, 1, 1) | 0.80 / 0.60 / 0.40 | 0.15 | 0.20 |
+| AIFirstReview | (2, 2, 2, 2) | 0.65 / 0.90 / 0.70 | 0.25 | 0.50 |
+| HumanFirstAICheck | (2, 1, 2, 1) | 0.75 / 1.00 / 0.80 | 0.30 | 0.40 |
+| BoundedAutomation | (3, 3, 3, 3) | 0.40 / 0.70 / 1.20 | 0.10 | 1.00 |
+
+Processes:
+
+| Process | Description | κ | Value v | (D0, R0, A0, G0) | Selection / execution | τ | Score / truth |
+|---|---|---:|---:|---|---|---:|---|
+| P1 | low-risk informational support | 1 | 1.0 | (1, 1, 0, 1) | no / no | 0.40 | — |
+| P2 | medium-risk recommendation/selection | 2 | 1.2 | (1, 1, 0, 1) | yes / no | 0.60 | 0.65 / 1 |
+| P3 | high-risk bounded execution | 3 | 1.5 | (2, 2, 0, 1) | yes / yes | 0.70 | 0.72 / 1 |
+
+ψ = max(0, (1 + 0.05 EA + 0.03 WI) × V), with V = 1 for a correct decision and 0.35 for an incorrect one.
+
+Level-1 unit resource cost: c_i^r = 1 for every process and resource (canonical model "toy c_i^r=1"; solver output `toy_resource_unit_cost_c_ir` = 1.0). Toy capability map: φ_X(X⁰, b) = min(3, X⁰ + b).
 
 **Governance regimes** (`04_solver_v1_0.py`). The source defines the letters C, F and D only as parameter sets and **does not name them**, so do not expand them (e.g. not "centralised"):
 

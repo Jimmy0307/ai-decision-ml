@@ -23,7 +23,7 @@ c_i \;=\; \sum_{j \in N(i)} \Bigl( p_{ij} + \sum_{q \neq i,j} p_{iq}\, p_{qj} \B
 \section{作為知識領域的 AI 與決策}
 \label{zh:sec:theory_domains}
 
-緒論所回顧的管理與資訊系統研究，將 AI 與決策的交會視為組織設計的問題 \citep{shrestha2019organizational,raisch2021artificial,jarrahi2018artificial,berente2021managing}。本研究所檢驗的前提——屬於本研究專案，而非這些作者——對知識提出了較為狹義的主張：AI 與決策構成彼此分離、少有連結的知識體系。本研究據此將兩個領域操作化。在研究一中，領域是從文獻中的證據句編碼而得的功能族：10 個 AI 功能族與 12 個決策功能族，共計 120 格。在研究二中，領域是一組由審查員指派的合作專利分類（Cooperative Patent Classification, CPC）標籤。AI 為 G06N。DEC 為 G06Q10/04（預測與最佳化）加上 G06Q10/06（資源、工作流程、管理與決策分析）。由於預測與最佳化在方法上與機器學習重疊，AI--DEC 之間的任何連結都可能有一部分是近乎機械性的；因此第~\ref{zh:sec:study2_aggregate}~節亦檢驗僅以 G06Q10/06 定義 DEC 的情形。
+緒論所回顧的管理與資訊系統研究，將 AI 與決策的交會視為組織設計的問題 \citep{shrestha2019organizational,raisch2021artificial,jarrahi2018artificial,berente2021managing}。本研究所檢驗的前提——屬於本研究專案，而非這些作者——對知識提出了較為狹義的主張：AI 與決策構成彼此分離、少有連結的知識體系。本研究據此將兩個領域操作化。在研究一中，領域是從文獻中的證據句編碼而得的功能族：10 個 AI 功能族與 12 個決策功能族，共計 120 格。在研究二中，領域是一組由審查員指派的合作專利分類（Cooperative Patent Classification, CPC）標籤。AI 為 G06N。DEC 為 G06Q10/04（預測與最佳化）加上 G06Q10/06（資源、工作流程、管理與決策分析）。由於預測與最佳化在方法上與機器學習重疊，AI--DEC 之間的任何連結都可能有一部分是近乎機械性的；因此第~\ref{zh:sec:study2_aggregate}~節亦檢驗移除所有帶有 G06Q10/04 分類碼之專利後的 DEC。
 
 專利引用記錄一項發明所依據的先前技術，長久以來被用作知識流動（knowledge flow）的證據 \citep{jaffe1993geographic}。然而，有相當大比例的引用是由審查員加入的，這影響其作為流動測度的用途；應區分發明人或申請人引用與審查員引用（examiner citation）\citep{alcacer2006patent}。因此，研究二的主要設定僅使用申請人引用，並以一項預先登錄（preregistered）的敏感度分析（sensitivity analysis）納入所有引用類別。資料取自 PatentsView 的核准專利資料表，其提供專利、現行 CPC 分類、引用及經消歧的受讓人（assignee）資料 \citep{uspto2026patentsview}。
 

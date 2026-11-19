@@ -9,7 +9,7 @@
 \section{Preregistration and Amendment Log}
 \label{app:prereg}
 
-Study~2 rests on five preregistration plans. Each is a self-timestamped git commit in the project repository (repository identifiers withheld for review; the commit ids are listed in Table~\ref{tab:app_prereg}); none was registered with a third-party registry such as OSF, and the commit timestamps are set by the authors' own tooling. Preregistration is meant to separate confirmatory from exploratory analysis by fixing the plan before outcomes are observed \citep{nosek2018preregistration}. By that standard, Plan~1 was fixed before any patent data were downloaded. Plans 2--5 were written after earlier results were known, so the questions they ask were data-informed; only their definitions, null models, decision rules, thresholds and stop rules were fixed before the analyses they govern were computed. Plan~5, the construct checks of Section~\ref{sec:study2_aggregate} (Table~\ref{tab:construct}), was requested by the round-2 review after the Plan~1 verdict was known and frozen on 2026-11-19 before any of its specifications was computed. Changes after freezing are recorded as dated amendments that do not overwrite the frozen text. Table~\ref{tab:app_prereg} summarises the five plans, including the commit ids and rule thresholds taken from the frozen texts; Table~\ref{tab:app_amend} lists every amendment and recorded deviation.
+Study~2 rests on five preregistration plans. Each is a self-timestamped git commit in the project repository (repository identifiers withheld for review; the commit ids are listed in Table~\ref{tab:app_prereg}); none was registered with a third-party registry such as OSF, and the commit timestamps are set by the authors' own tooling. Preregistration is meant to separate confirmatory from exploratory analysis by fixing the plan before outcomes are observed \citep{nosek2018preregistration}. By that standard, Plan~1 was fixed before any patent data were downloaded. Plans 2--5 were written after earlier results were known, so the questions they ask were data-informed; only their definitions, null models, decision rules, thresholds and stop rules were fixed before the analyses they govern were computed. Only Plan~1 is confirmatory. Plan~5, the construct checks of Section~\ref{sec:study2_aggregate} (Table~\ref{tab:construct}), was added after the main verdict was known, as a data-informed follow-up, and frozen on 2026-11-19 before any of its specifications was computed; amendment C1 added two strict specifications the same day, after the first Plan~5 results were known but before the new specifications were computed. Changes after freezing are recorded as dated amendments that do not overwrite the frozen text. Table~\ref{tab:app_prereg} summarises the five plans, including the commit ids and rule thresholds taken from the frozen texts; Table~\ref{tab:app_amend} lists every amendment and recorded deviation.
 
 \begin{table}[tbp]
 \centering
@@ -24,13 +24,13 @@ Plan (commit) & Frozen before / known when written & Hypotheses and content & De
 \raggedright 1.~Aggregate test (\texttt{a8f3289}) &
 \raggedright Frozen before any patent data were downloaded or inspected. Known: Study~1 only &
 \raggedright H1a: OE(AI,DEC) relative to reference CPC main groups in G06/G16/H04 with $\geq$2,000 patents; H1b: ratio to OE(AI,BIZ-OTHER); H2: trend by citing year; H3 (exploratory): assignees as brokers of a domain-level hole; six sensitivity checks; synthetic calibration &
-\raggedright H1 supported only if OE is in the lowest quartile on both sides (H1a) and the ratio's upper 95\% CI bound is $<1$ (H1b); labels \texttt{HOLE\_\allowbreak SUPPORTED}, \texttt{PARTIAL\_\allowbreak NOT\_\allowbreak CLAIMED}, \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}; $\geq$4 of 6 sensitivity checks disagree $\rightarrow$ \texttt{FRAGILE}; H2 labels \texttt{CLOSING}, \texttt{PERSISTENT}, \texttt{NARROWING\_\allowbreak BUT\_\allowbreak OPEN}, with \texttt{PERSISTENT} if the slope's 95\% CI includes 0 or lies below 0 (written for the hole case, where closing means OE rising) &
+\raggedright H1 supported only if OE is in the lowest quartile on both sides (H1a) and the ratio's upper 95\% CI bound is $<1$ (H1b); labels \texttt{HOLE\_\allowbreak SUPPORTED}, \texttt{PARTIAL\_\allowbreak NOT\_\allowbreak CLAIMED}, \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}; $\geq$4 of 6 sensitivity checks disagree $\rightarrow$ \texttt{FRAGILE}; H2: \texttt{CLOSING} if the slope is $>0$ with a 95\% CI above 0 and the last-3-year OE is $\geq$ the reference median; \texttt{PERSISTENT} if the slope's CI includes 0 or lies below it; otherwise \texttt{NARROWING\_\allowbreak BUT\_\allowbreak OPEN} (written for the hole case, where closing means OE rising) &
 \raggedright \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}; 0/6 disagree; H2 \texttt{PERSISTENT} (slope negative: the over-connection declines) \tabularnewline
 \addlinespace
 \raggedright 2.~V9 battery on the CPC matrix (\texttt{a6266f7}) &
 \raggedright Frozen before any cell-level count. Known: the aggregate verdict &
 \raggedright Unchanged V9 engine on a $6\times7$ matrix fixed from the CPC scheme; Part~A co-classification, Part~B applicant citations &
-\raggedright Full core: q $\leq$ .05 in main, exact and document-preserving tests in the same direction, plus raw; convergent depletion: full-core depleted in both A and B; a depleted cell may not be called a structural hole &
+\raggedright Full core: q $\leq$ .05 in main, exact and document-preserving tests in the same direction, plus raw q $\leq$ .05 in the same direction; convergent depletion: full-core depleted in both A and B; a depleted cell may not be called a structural hole &
 \raggedright Preregistered core 0 by construction (B1); three-test cells exploratory \tabularnewline
 \addlinespace
 \raggedright 3.~Full replication suite (\texttt{d641256}) &
@@ -46,10 +46,10 @@ Plan (commit) & Frozen before / known when written & Hypotheses and content & De
 \raggedright \texttt{PARTIAL} in both stratifications (T1 met, T2 not) \tabularnewline
 \addlinespace
 \raggedright 5.~Construct checks (\texttt{100f06a}) &
-\raggedright Frozen 2026-11-19, before any specification was computed; data-informed, requested by the round-2 review. Known: the Plan~1--4 results &
-\raggedright CV1: DEC = \texttt{G06Q10/06} only; CV2: H1a reference set of subgroup families (main group plus first two subgroup characters, $\geq$2,000 patents) instead of main groups; P5a /06 + main groups, P5b /04 + /06 + families, P5c /06 + families; P5d /04 only, descriptive &
-\raggedright Plan~1's H1a/H1b rule unchanged for each of P5a--P5c; \texttt{ROBUST\_\allowbreak TO\_\allowbreak CONSTRUCT} if all three are \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}, otherwise \texttt{CONSTRUCT\_\allowbreak SENSITIVE} and the claim is restricted &
-\raggedright \texttt{ROBUST\_\allowbreak TO\_\allowbreak CONSTRUCT}; P5d OE 3.83 (Table~\ref{tab:construct}) \tabularnewline
+\raggedright Frozen 2026-11-19, before any specification was computed; a data-informed follow-up added after the main verdict. Known: the Plan~1--4 results. C-e/C-f added by amendment C1 &
+\raggedright DEC = any \texttt{G06Q10/06} code (C-a, C-c), Plan~1's DEC (C-b), any \texttt{/04} code (C-d, descriptive), or \texttt{/06} with no \texttt{/04} code (C-e, C-f); H1a reference set of 179 main groups (C-a, C-d, C-e) or of subgroup families, i.e.\ main group plus first two subgroup characters, $\geq$2,000 patents (C-b, C-c, C-f) &
+\raggedright Each specification uses Plan~1's rule; \texttt{ROBUST\_\allowbreak TO\_\allowbreak CONSTRUCT} only if all verdict specifications are \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}, otherwise \texttt{CONSTRUCT\_\allowbreak SENSITIVE}; after C1 the verdict specifications are C-a, C-b, C-c, C-e and C-f &
+\raggedright \texttt{ROBUST\_\allowbreak TO\_\allowbreak CONSTRUCT} (five specifications); strict DEC OE 3.16; C-d OE 3.83 (Table~\ref{tab:construct}) \tabularnewline
 \bottomrule
 \end{tabular}
 \end{table}
@@ -75,11 +75,13 @@ Item & Plan & When & Change & Effect on design \tabularnewline
 \raggedright P6, P10 & \raggedright 3 & \raggedright Recorded with results & \raggedright The P6 cross-weight-retained metric is identically 1 by construction; P10 Limitation Scout is \texttt{NOT\_\allowbreak APPLICABLE} (patents have no limitation section). & \raggedright Reported as uninformative \tabularnewline
 \addlinespace
 \raggedright Ref.\ exclusion & \raggedright 5 & \raggedright 2026-11-19, frozen with Plan~5 (\texttt{100f06a}) & \raggedright The reference-set exclusion now drops every name beginning with \texttt{G06Q10}, so that subgroup families of \texttt{G06Q10} are excluded too. For main groups this is identical to Plan~1's rule. & \raggedright None for main groups (the 179 groups are unchanged) \tabularnewline
+\addlinespace
+\raggedright C1 & \raggedright 5 & \raggedright 2026-11-19, after the first Plan~5 results, before C-e/C-f were computed (\texttt{e6dce5c}) & \raggedright DEC with any \texttt{/06} code keeps 2,318 patents also coded \texttt{/04} and drops only the 3,575 \texttt{/04}-only patents. C1 adds two strict specifications, C-e and C-f, in which DEC is \texttt{/06} with no \texttt{/04} code (31,608 patents), against main groups and subgroup families. & \raggedright Rule unchanged; verdict specifications C-a, C-b, C-c, C-e, C-f \tabularnewline
 \bottomrule
 \end{tabular}
 \end{table}
 
-Study~1 used frozen V9 seeds: 20260918 for the stub Monte Carlo and 20260919 for the document-preserving swap (E1.1). Its data-validity re-analysis (2026-11-18; E1.3--E1.5) was not preregistered. Its verdict was recorded as follows: directional under-integration DEFENSIBLE; ``16 statistically robust depleted pairs'' NOT DEFENSIBLE as measured; Burt structural hole STOP; research gap NOT SUPPORTED. We qualify the first item in this paper. It rests on the attenuation argument, which holds only for non-differential misclassification, whereas same-term self-pairing and model-inferred labels are non-random errors. The removal checks in Table~\ref{tab:app_s1robust} indicate that self-pairing is not the main driver; the effect of model-inferred labels is untested. The direction survives every check we could run, but it is descriptive and unconfirmed (Section~\ref{sec:discussion_measurement}).
+Study~1 used frozen V9 seeds: 20260918 for the stub Monte Carlo and 20260919 for the document-preserving swap (E1.1). Its data-validity re-analysis (2026-11-18; E1.3--E1.5) was not preregistered. Its verdict was recorded as follows: directional under-integration DEFENSIBLE; ``16 statistically robust depleted pairs'' NOT DEFENSIBLE as measured; Burt structural hole STOP; research gap NOT SUPPORTED. We qualify the first item in this paper. It rests on the attenuation argument, which holds only for non-differential misclassification, whereas same-term self-pairing and model-inferred labels are non-random errors. The removal checks in Table~\ref{tab:app_s1robust} indicate that self-pairing does not appear to be the main driver, although the rule-based keyword matrix also changes the coding instrument; the effect of model-inferred labels is untested. The direction survives every check we could run, but it is descriptive and unconfirmed (Section~\ref{sec:discussion_measurement}).
 
 % ------------------------------------------------------------
 \section{Sensitivity Tables}
@@ -91,7 +93,7 @@ Table~\ref{tab:app_v9cells} lists the 16 depleted cells of the frozen V9 analysi
 
 \begin{table}[tbp]
 \centering
-\caption{The 16 V9 depleted cells with observed counts (DIRECT; \texttt{V9\_ROBUSTNESS\_MASTER\_TABLE.csv}). These are depleted cells, not gaps, and they are withdrawn as anchors of the model (Section~\ref{sec:mlp_model}). Same-term self-pairing in the prediction $\times$ prediction cell can deplete cells in its row and column mechanically under fixed margins, but without the same-term records 13/16 cells keep their direction (Table~\ref{tab:app_s1robust}).}
+\caption{The 16 V9 depleted cells with observed counts (DIRECT; \texttt{V9\_ROBUSTNESS\_MASTER\_TABLE.csv}). These are depleted cells, not gaps, and they are withdrawn as anchors of the model (Section~\ref{sec:mlp_model}). Same-term self-pairing in the prediction $\times$ prediction cell can deplete cells in its row and column mechanically under fixed margins, but in a rule-based keyword matrix that also excludes the same-term records 13/16 cells keep their direction (Table~\ref{tab:app_s1robust}), so self-pairing does not appear to be the main driver.}
 \label{tab:app_v9cells}
 \footnotesize
 \begin{tabular}{llr}
@@ -280,10 +282,10 @@ The minimum requirement vectors $\rho_m=(A,H,WI,EA)$ are given in Table~\ref{tab
 
 \paragraph{Selection processes and the threshold $\tau$.} For a process that selects among alternatives, the AI component produces a score $s_i$, and $\tau_i$ is the score threshold above which it recommends the positive choice:
 \begin{equation}
-d_i=\mathbf{1}\!\left[s_i\geq\tau_i\right], \qquad v_i=\begin{cases}1 & \text{if } d_i \text{ matches the true outcome},\\ 0.35 & \text{otherwise},\end{cases}
+d_i=\mathbf{1}\!\left[s_i\geq\tau_i\right], \qquad V_i=\begin{cases}1 & \text{if } d_i \text{ matches the true outcome},\\ 0.35 & \text{otherwise},\end{cases}
 \label{eq:mlp_tau}
 \end{equation}
-where $v_i$ scales the value the process realises. The threshold is a fixed design parameter of the process, not a decision variable of any level. In the prototype, $s_i$ and the true outcome are a single fixed realisation known to all levels, so $\tau_i$ is a sensitivity device, not a model of error rates.
+where the correctness factor $V_i$ scales the value the process realises through $\psi_i$ (Appendix~\ref{app:mlp_constants}). The threshold is a fixed design parameter of the process, not a decision variable of any level. In the prototype, $s_i$ and the true outcome are a single fixed realisation known to all levels, so $\tau_i$ is a sensitivity device, not a model of error rates.
 
 \subsection{Governance regimes}
 
@@ -334,7 +336,7 @@ Workflow integration, $WI_{\mathrm{req}}(A)$ & $3$ for an execution process with
 
 \subsection{Structure of the Level-2 objective and the Level-3 terms}
 
-The Level-2 objective and its components are those of the canonical model file \texttt{01\_\allowbreak CANONICAL\_\allowbreak MODEL\_\allowbreak v1\_\allowbreak 0.md} in the project repository (identifiers withheld for review). All weights below are uncalibrated design values; we print them so that the prototype can be reproduced from the text together with that file. With $\mathrm{clip}_{[0,1]}$ denoting truncation to $[0,1]$, and $\mathrm{cost}_\Gamma$ and $\mathrm{risk}_\Gamma$ the regime's cost and risk multipliers (Table~\ref{tab:app_regimes}),
+The Level-2 objective and its components are those of the canonical model file \texttt{01\_\allowbreak CANONICAL\_\allowbreak MODEL\_\allowbreak v1\_\allowbreak 0.md} in the project repository (identifiers withheld for review). All weights below are uncalibrated design values; we print them, and the Level-3 and process constants in Appendix~\ref{app:mlp_constants}, so that the prototype can be reproduced from the text. With $\mathrm{clip}_{[0,1]}$ denoting truncation to $[0,1]$, and $\mathrm{cost}_\Gamma$ and $\mathrm{risk}_\Gamma$ the regime's cost and risk multipliers (Table~\ref{tab:app_regimes}),
 \begin{align}
 F_2 &= \sum_{i\in I}\Bigl[0.90\,\mathrm{Feas}_i+0.90\,\mathrm{Rel}_i+0.45\,\mathrm{Scal}_i-0.55\,\mathrm{IntCost}_i-0.75\,\mathrm{GovRisk}_i+0.65\max\!\bigl(0,U_i^{*}\bigr)\Bigr], \label{eq:app_f2}\\
 \mathrm{Feas}_i &= \mathrm{clip}_{[0,1]}\bigl(0.55+0.08(\bar D_i-D_{\mathrm{req}})+0.08(\bar R_i-R_{\mathrm{req}})+0.04(\bar G_i-\max(H_{\mathrm{req}},EA_{\mathrm{req}}))\bigr), \nonumber\\
@@ -350,29 +352,60 @@ At Level~3 the terms of $U_{im}$ in Eq.~\eqref{eq:mlp_l3} are
 \mathrm{Gain}_{im} &= g_{im}\,v_i\,\psi_i\,\mathrm{flex}_\Gamma, \qquad \mathrm{Burden}_{im} = \beta_m+0.03\,H_i+0.02\,EA_i+0.02\,WI_i, \nonumber\\
 \mathrm{ResidualRisk}_{im} &= \kappa_i\,\mathrm{autonomy}_m\,\mathrm{risk}_\Gamma\,/\,(1+0.45\,H_i+0.45\,EA_i), \nonumber
 \end{align}
-where $g_{im}$ is a configuration-specific base gain for the process, $v_i$ is the value factor of Eq.~\eqref{eq:mlp_tau} for selection processes, $\psi_i$ is a factor that increases in $EA_i$ and $WI_i$, $\mathrm{flex}_\Gamma$ is the regime's flexibility multiplier, $\beta_m$ is a configuration-specific base burden and $\mathrm{autonomy}_m$ a configuration-specific autonomy level. These configuration-specific constants and $\psi_i$ are simulated and are given in the canonical model file.
+where $g_{im}$ is a configuration-specific base gain for the process, $v_i$ is the value of process $i$, $\psi_i=\max\bigl(0,(1+0.05\,EA_i+0.03\,WI_i)\,V_i\bigr)$ with the correctness factor $V_i$ of Eq.~\eqref{eq:mlp_tau}, $\mathrm{flex}_\Gamma$ is the regime's flexibility multiplier, $\beta_m$ is a configuration-specific base burden and $\mathrm{autonomy}_m$ a configuration-specific autonomy level. These constants are simulated design values from the prototype solver, printed in Appendix~\ref{app:mlp_constants}.
 
 \subsection{Level-3 configurations and the selection mechanism}
 
-Table~\ref{tab:app_configs} gives the minimum Level-2 state each configuration requires. A process may choose configuration $m$ only if $\mathrm{Allow}_{m\Gamma}=1$ and its state meets $\rho_m$ componentwise; it then receives $U_{im}=\mathrm{Gain}_{im}-0.45\,\mathrm{Burden}_{im}-0.75\,\mathrm{ResidualRisk}_{im}$. For selection processes, the AI recommendation is $d_i=\mathbf{1}[s_i\geq\tau_i]$, and the realised value factor is 1 for a correct recommendation and 0.35 otherwise (Eq.~\eqref{eq:mlp_tau}). Review configurations reduce risk or change utility but do not correct a wrong recommendation. Ties are broken deterministically in the order HumanOnly, AIAssist, HumanFirstAICheck, AIFirstReview, BoundedAutomation.
+Table~\ref{tab:app_configs} gives the minimum Level-2 state each configuration requires. A process may choose configuration $m$ only if $\mathrm{Allow}_{m\Gamma}=1$ and its state meets $\rho_m$ componentwise; it then receives $U_{im}=\mathrm{Gain}_{im}-0.45\,\mathrm{Burden}_{im}-0.75\,\mathrm{ResidualRisk}_{im}$. For selection processes, the AI recommendation is $d_i=\mathbf{1}[s_i\geq\tau_i]$, and the correctness factor $V_i$ is 1 for a correct recommendation and 0.35 otherwise (Eq.~\eqref{eq:mlp_tau}). Review configurations reduce risk or change utility but do not correct a wrong recommendation. Ties are broken deterministically in the order HumanOnly, AIAssist, HumanFirstAICheck, AIFirstReview, BoundedAutomation.
 
 \begin{table}[tbp]
 \centering
-\caption{Minimum Level-2 requirements $\rho_m=(A,H,WI,EA)$ of the five human--AI configurations (canonical v1.0 specification).}
+\caption{The five human--AI configurations: minimum Level-2 requirements $\rho_m=(A,H,WI,EA)$ (canonical v1.0 specification) and Level-3 constants (prototype solver; SIMULATED design values): base gain $g_{im}$ for processes P1 / P2 / P3, base burden $\beta_m$ and autonomy $\mathrm{autonomy}_m$ (E4).}
 \label{tab:app_configs}
 \footnotesize
-\begin{tabular}{lcccc}
+\begin{tabular}{lccccccc}
 \toprule
-Configuration $m$ & $A$ & $H$ & $WI$ & $EA$ \\
+Configuration $m$ & $A$ & $H$ & $WI$ & $EA$ & Gain $g_{im}$ (P1 / P2 / P3) & Burden $\beta_m$ & Autonomy \\
 \midrule
-HumanOnly & 0 & 0 & 0 & 0 \\
-AIAssist & 1 & 0 & 1 & 1 \\
-HumanFirstAICheck & 2 & 1 & 2 & 1 \\
-AIFirstReview & 2 & 2 & 2 & 2 \\
-BoundedAutomation & 3 & 3 & 3 & 3 \\
+HumanOnly & 0 & 0 & 0 & 0 & 0 / 0 / 0 & 0 & 0 \\
+AIAssist & 1 & 0 & 1 & 1 & 0.80 / 0.60 / 0.40 & 0.15 & 0.20 \\
+HumanFirstAICheck & 2 & 1 & 2 & 1 & 0.75 / 1.00 / 0.80 & 0.30 & 0.40 \\
+AIFirstReview & 2 & 2 & 2 & 2 & 0.65 / 0.90 / 0.70 & 0.25 & 0.50 \\
+BoundedAutomation & 3 & 3 & 3 & 3 & 0.40 / 0.70 / 1.20 & 0.10 & 1.00 \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+\subsection{Level-3 and process constants}
+\label{app:mlp_constants}
+
+Table~\ref{tab:app_configs} gives the configuration constants and Table~\ref{tab:app_processes} the three simulated processes. In $\mathrm{Gain}_{im}=g_{im}\,v_i\,\psi_i\,\mathrm{flex}_\Gamma$, the factor is $\psi_i=\max\bigl(0,(1+0.05\,EA_i+0.03\,WI_i)\,V_i\bigr)$, with $V_i=1$ for a correct decision and 0.35 for an incorrect one. In the baseline, all five configurations are permitted under every regime; in the permission probe, AIAssist is disallowed under regime C. All values are simulated design values, not estimates. The unit resource costs of Level~1 are $c_i^r = 1$ for every process and resource, and the toy capability map is $\phi_X(X^0,b)=\min(3,X^0+b)$.
+
+\begin{table}[tbp]
+\centering
+\caption{The three simulated processes of the prototype (SIMULATED; prototype solver; E4): consequence class $\kappa_i$, value $v_i$, initial capabilities $X_i^0=(D,R,A,G)$, whether the process has a selection or execution step, threshold $\tau_i$, and the fixed score and true outcome of the selection step.}
+\label{tab:app_processes}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lp{3.4cm}cccccc}
+\toprule
+Process & Description & $\kappa_i$ & $v_i$ & $(D^0,R^0,A^0,G^0)$ & Sel.\ / exec. & $\tau_i$ & Score / truth \\
+\midrule
+P1 & low-risk informational support & 1 & 1.0 & (1, 1, 0, 1) & no / no & 0.40 & -- \\
+P2 & medium-risk recommendation/selection & 2 & 1.2 & (1, 1, 0, 1) & yes / no & 0.60 & 0.65 / 1 \\
+P3 & high-risk bounded execution & 3 & 1.5 & (2, 2, 0, 1) & yes / yes & 0.70 & 0.72 / 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Simulation probes}
+\label{app:mlp_probes}
+
+Two probes illustrate mechanics, not findings. All values are SIMULATED (E4).
+
+\paragraph{Governance permission probe (regime C, budget 5).} AIAssist is disallowed: $F_1$ falls from 2.158 to 0.837, and the configurations change from AIAssist $\times3$ to HumanOnly $\times2$ plus HumanFirstAICheck $\times1$. The regime and budget are unchanged, but Level~1 re-optimises its allocation, so capabilities are endogenous rather than held fixed. The shift is driven by the permission by construction, since removing the optimal configuration forces the next feasible ones; Study~3 must observe such a pattern in data.
+
+\paragraph{Selection-threshold probe (regime F, budget 5).} Process P2 has score 0.65 and a true outcome of 1. At $\tau\leq0.6$ P2 uses AIAssist ($F_1$ 2.244, equal to the F/5 baseline); at $\tau=0.7$ the recommendation is wrong, Level~1 allocates nothing to P2's AI capability, and P2 reverts to HumanOnly ($F_1$ 1.450). Because score and outcome are fixed and known to all levels, the probe says nothing about error rates.
 
 \subsection{Existence and scope}
 
@@ -408,7 +441,9 @@ Model level & Planned data & Parameters informed \tabularnewline
 \end{tabular}
 \end{table}
 
-\paragraph{Decision rules.} The organisational candidate is supported if, among episodes with a determinable binding constraint, internal permission, decision rights, governance capacity or allocation is the most frequent first binding constraint and exceeds the preregistered share, and if episodes that changed status after an internal rule or allocation changed did so without a recorded change in capability or data. Each alternative (data quality, cost, regulation and liability, task suitability) is supported by the same rule applied to its own signature in Table~\ref{tab:back_study3_rivals}. Internal decision rights and external regulation can both appear as a withheld permission; they are separated by whether the binding rule originates inside the firm, where management can change it, or outside it. Organisational allocation and cost can both appear as a budget refusal; they are separated by whether the budget exists in aggregate. An episode is coded as cost if a feasible, permitted configuration is rejected because its integration cost exceeds the budget even after reallocation, and as allocation if budget exists in aggregate but the leader has allocated it elsewhere, or if an internal decision right blocks adoption. Both codes rest on dated records, such as budget allocations and business cases, not on the model. If no candidate reaches the threshold, the result is reported as mixed, and the model is not calibrated as a governance-bottleneck model.
+\paragraph{Unit, sampling and coding.} The unit of analysis is the decision process, a recurring managerial decision with an identifiable owner; the observed events are \emph{integration episodes}, documented proposals, pilots or deployments of an AI configuration with their outcome (adopted, modified or stopped). The setting is one anonymised manufacturing firm, possibly more; the frame, window and minimum informative sample will be fixed in Study~3's own preregistration. ``Feasible on capability grounds but blocked by permission'' must be observed, not inferred from the model. Records dated \emph{before} each stopping point (approvals, budget allocations, business cases, decision-rights matrices, capability or data assessments), supplemented but not replaced by interviews, identify where and why each episode stopped. Two independent human coders code its first binding constraint (one of the five candidates, or ``indeterminable''), and their agreement is reported before any outcome analysis; given Study~1, model-assisted coding will not substitute for it.
+
+\paragraph{Decision rules.} The organisational candidate is supported if, among episodes with a determinable binding constraint, internal permission, decision rights, governance capacity or allocation is the most frequent first binding constraint and exceeds the preregistered share, and if episodes that changed status after an internal rule or allocation changed did so without a recorded change in business case, capability or data. Each alternative (data quality, cost, regulation and liability, task suitability) is supported by the same rule applied to its own signature in Table~\ref{tab:back_study3_rivals}. Internal decision rights and external regulation can both appear as a withheld permission; they are separated by whether the binding rule originates inside the firm, where management can change it, or outside it. Organisational allocation and cost can both appear as a budget refusal; they are separated by return, not by whether budget exists in aggregate. Cost is defined by return: the expected value of a feasible, permitted configuration does not cover its integration cost, even after reallocation. An episode is coded as cost whenever the rejection cites return or a hurdle threshold, whatever the aggregate budget. It is coded as allocation or decision rights only with positive evidence that a proposal with a positive expected return, by the firm's own business case, was blocked by where the leader allocated budget or by a decision right: for example, the episode proceeds after an internal reallocation or rule change with no change in its business case, capability or data, or the rejection cites priority or decision rights. Otherwise it is coded as cost or as indeterminable. All codes rest on dated records, such as budget allocations and business cases, not on the model. If no candidate reaches the threshold, the result is reported as mixed, and the model is not calibrated as a governance-bottleneck model.
 
 \paragraph{Stop rules.} The study stops and is reported as uninformative if the episodes with a determinable binding constraint fall below the preregistered minimum. Coding stops, and the codebook is revised as a dated amendment before any outcome analysis, if agreement between human coders on a pilot set falls below the preregistered minimum. If the organisational candidate is not supported, the model's governance layer is not calibrated, and the model is reported as unsupported.
 

@@ -55,7 +55,7 @@ Benjamini--Hochberg（BH）程序在 120 格內控制偽發現率（false discov
   \item 同詞兩端共用（same-term self-pairing）膨脹了最強的偏高格（prediction $\times$ prediction）。該格中有 33\% 的紀錄在兩端配對同一詞彙（例如「forecasting」）。移除這些紀錄後，有 2 個與預測相關的偏低格退出核心格。
   \item 規則式關鍵詞矩陣移除 741 筆同詞紀錄，剩下 1,431 條文件邊。在此矩陣中，13/16 個偏低格維持相同方向，6 格顯著，0 格呈顯著反轉，但僅有 7 格進入四項檢定的核心格。
 \end{itemize}
-因此，偏低的方向對種子、來源軌與時期皆具穩健性，對關鍵詞編碼與移除同詞紀錄亦大致穩健。相對地，顯著核心格的組成則取決於句子的編碼方式。表~\ref{zh:tab:app_s1robust} 彙整所有穩健性檢查。
+因此，偏低的方向對種子、來源軌與時期皆具穩健性，對關鍵詞編碼（包括排除同詞紀錄的關鍵詞矩陣）亦大致穩健。相對地，顯著核心格的組成則取決於句子的編碼方式。表~\ref{zh:tab:app_s1robust} 彙整所有穩健性檢查。
 
 \subsection{測量信度與誤分類}
 \label{zh:sec:study1_reliability}
@@ -94,7 +94,7 @@ Benjamini--Hochberg（BH）程序在 120 格內控制偽發現率（false discov
 \end{equation}
 由於正確率乘積至多為 1，隨機誤差只會削弱偏低，而不會製造偏低。然而，此界限並不能保護方向，原因有二。
 
-第一，此界限僅涵蓋非差異性誤分類（non-differential misclassification），而已記錄的兩項誤差來源並非隨機。同詞兩端共用膨脹了 prediction $\times$ prediction 格。在式~\eqref{zh:eq:s1_expected} 下，膨脹某一格會提高其所在列與欄的邊際，從而提高同列與同欄其他格的期望次數，使其 O/E 下降；因此，在固定邊際的矩陣中，編碼可能製造出偏低。本研究自身的移除證據限制了此一機制。在不含 741 筆同詞紀錄的情況下，13/16 個偏低格維持其方向，且無一呈顯著反轉；而自被膨脹的格中移除同詞配對紀錄，僅使 2 個偏低格退出核心格（第~\ref{zh:sec:study1_direction}~節）。因此，同詞兩端共用並非此型態的主要驅動因素。模型推論的標籤是第二個非隨機來源，且尚未經過檢驗：若模型將特定類型的句子導向特定家族，便會以有規律的方式在格與格之間移動紀錄。
+第一，此界限僅涵蓋非差異性誤分類（non-differential misclassification），而已記錄的兩項誤差來源並非隨機。同詞兩端共用膨脹了 prediction $\times$ prediction 格。在式~\eqref{zh:eq:s1_expected} 下，膨脹某一格會提高其所在列與欄的邊際，從而提高同列與同欄其他格的期望次數，使其 O/E 下降；因此，在固定邊際的矩陣中，編碼可能製造出偏低。本研究自身的移除證據限制了此一機制，但並不完整。在同時排除 741 筆同詞紀錄的規則式關鍵詞矩陣中，13/16 個偏低格維持其方向，且無一呈顯著反轉；然而該矩陣同時改變了編碼工具，且僅以第一階段關鍵詞編碼亦得到 13/16。在 LLM 編碼的矩陣內，自被膨脹的格中移除同詞配對紀錄，僅使 2 個偏低格退出核心格（第~\ref{zh:sec:study1_direction}~節）。因此，同詞兩端共用看來並非此型態的主要驅動因素。模型推論的標籤是第二個非隨機來源，且尚未經過檢驗：若模型將特定類型的句子導向特定家族，便會以有規律的方式在格與格之間移動紀錄。
 
 第二，隨機誤差模型與資料並不相符。以最極端格而言，即使採用 95\% 上界，也需要正確率乘積至少為 0.71，而人工稽核所隱含的值約為 0.07。這指向非隨機誤差，或指向稽核規模過小而無法估計正確率；觀察到的幅度不應被解讀為人工編碼資料將會呈現的結果。
 
@@ -126,7 +126,7 @@ Benjamini--Hochberg（BH）程序在 120 格內控制偽發現率（false discov
   \item Burt 結構洞：\texttt{STOP}，因此中介者（broker）搜尋予以終止；
   \item 研究缺口：\texttt{NOT SUPPORTED}。
 \end{itemize}
-本研究對第一項判定加以限定。此方向通過了本研究所能執行的每一項檢查，且同詞兩端共用無法解釋其大部分，但模型推論的標籤仍可能形塑了此方向。這是一個描述性、未經確認的型態，而「defensible」（可辯護）的意義僅止於此。
+本研究對第一項判定加以限定。此方向通過了本研究所能執行的每一項檢查，且同詞兩端共用看來並非其主要驅動因素，但模型推論的標籤仍可能形塑了此方向。這是一個描述性、未經確認的型態，而「defensible」（可辯護）的意義僅止於此。
 
 \subsection{網路分析脈絡 V6--V11.1 與 Gap Validity}
 \label{zh:sec:study1_network}
@@ -185,7 +185,7 @@ Benjamini--Hochberg（BH）程序在 120 格內控制偽發現率（false discov
 \end{itemize}
 跨群體計數排除橋接（BRIDGE）專利。
 
-\paragraph{DEC 的構念效度。} \texttt{G06Q10/04}（預測與最佳化）在方法上與機器學習重疊，因此 AI--DEC 過度連結（over-connection）的一部分可能近乎機械性：兩個分類部分描述的是相同的技術。因此，此檢定所測量的是專利分類之間的技術鄰近性，而非 AI 融入管理決策的程度。敏感度檢查 s2 將 DEC 擴大至整個 \texttt{G06Q10}，使強度 OE（見下文式~\eqref{zh:eq:oe}）由 3.05 降至 2.59，但判定不變（表~\ref{zh:tab:aggregate}）；然而 s2 仍包含 \texttt{/04}，因此只是稀釋而非隔離此一重疊。因此，計畫 5 將 \texttt{/04} 移除（見下文表~\ref{zh:tab:construct}）。
+\paragraph{DEC 的構念效度。} \texttt{G06Q10/04}（預測與最佳化）在方法上與機器學習重疊，因此 AI--DEC 過度連結（over-connection）的一部分可能近乎機械性：兩個分類部分描述的是相同的技術。因此，此檢定所測量的是專利分類之間的技術鄰近性，而非 AI 融入管理決策的程度。敏感度檢查 s2 將 DEC 擴大至整個 \texttt{G06Q10}，使強度 OE（見下文式~\eqref{zh:eq:oe}）由 3.05 降至 2.59，但判定不變（表~\ref{zh:tab:aggregate}）；然而 s2 仍包含 \texttt{/04}，因此只是稀釋而非隔離此一重疊。因此，計畫 5 移除所有帶有 \texttt{/04} 分類碼的專利（見下文表~\ref{zh:tab:construct}）。
 
 \paragraph{統計量。} 引用依 $s = $（施引專利核准年份，被引專利核准年份）分層。在每一層中，$\mathrm{out}_A(s)$ 為群體 $A$ 專利所做出的引用數，$\mathrm{in}_B(s)$ 為群體 $B$ 專利所獲得的引用數，$M(s)$ 為總數。時間分層的組態期望值（configuration expectation）為
 \begin{equation}
@@ -209,26 +209,26 @@ H1a 並未匹配粒度：DEC 由兩個 CPC 小組（subgroup）構成，而參�
 
 全部六項預先登錄的敏感度分析（sensitivity analysis）設定皆與此判定一致（0/6 不一致；表~\ref{zh:tab:aggregate}、圖~\ref{zh:fig:patent_sensitivity}），因此依預先登錄的規則，此判定並不脆弱。OE 的範圍介於 2.59（s2，DEC 擴大至整個 \texttt{G06Q10}）至 4.25（s6，橋接專利於兩側皆計入）之間。
 
-\paragraph{構念效度檢查（預先登錄 5）。} 計畫 5 應審查要求而進行，屬受資料啟發的後續分析，但其規則在計算之前即已凍結，且計畫 1 的判定規則維持不變（表~\ref{zh:tab:app_prereg}）。它改變 DEC 類別（\texttt{/04} + \texttt{/06}，或僅 \texttt{/06}）與 H1a 參照集（179 個大組，或依 DEC 相同方式建構的 826 個小組家族〔subgroup families〕）。三項設定皆回傳 \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}（表~\ref{zh:tab:construct}）：\texttt{ROBUST\_\allowbreak TO\_\allowbreak CONSTRUCT}。\texttt{/04} 與 AI 的連結較為緊密（OE 3.83，描述性的 P5d），但僅佔 DEC 的一小部分（37,501 件中的 5,893 件），因此將其移除幾乎不改變 OE（由 3.05 變為 3.04）。在粒度匹配的參照集下，百分位數降至約 84--90\%，但仍遠高於最低四分位數。因此，領域層級的判定在所檢驗的兩種類別定義與兩種參照粒度下皆成立；它仍是關於這些 CPC 構念的陳述，而非關於整體「決策」的陳述。
+\paragraph{構念效度檢查（預先登錄 5）。} 計畫 5 是在計畫 1 的判定已知之後才擬定的後續分析（受資料啟發）；其規則在計算之前即已凍結，且計畫 1 的判定規則維持不變（表~\ref{zh:tab:app_prereg}）。它改變 DEC 類別與 H1a 參照集（179 個大組，或 826 個小組家族〔subgroup families〕；表~\ref{zh:tab:construct}）。在嚴格設定（C-e、C-f；修訂 C1）中，所有帶有 \texttt{/04} 分類碼的專利皆被移除，剩下 31,608 件；OE 由 3.05 略升至 3.16（95\% CI 3.05--3.27），相對於大組的百分位數為 98.9\% / 91.6\%，相對於小組家族則為 90.7\% / 83.3\%；過度連結並非由 \texttt{/04} 所造成。最初的設定（C-a、C-c）保留任何帶有 \texttt{/06} 分類碼的專利：它們僅排除 3,575 件僅屬 \texttt{/04} 的專利，並保留 2,318 件同時帶有 \texttt{/04} 與 \texttt{/06} 的專利（OE 3.04）。\texttt{/04} 本身與 AI 的連結較為緊密（OE 3.83，描述性的 C-d）。全部五項判定設定皆回傳 \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}：\texttt{ROBUST\_\allowbreak TO\_\allowbreak CONSTRUCT}。此處有三點限定。粒度僅在參照集一側匹配；AI 仍為整個 \texttt{G06N} 小類（subclass）。這些檢查並不獨立於計畫 1：C-b 沿用計畫 1 的 DEC，因此其 H1b 與計畫 1 相同。此外，由於 OE 遠高於每一個參照四分位數，除非重新設定使 OE 大幅改變，構念規則預期必然通過；資訊在於幅度本身。此判定是關於這些 CPC 構念的陳述，而非關於整體「決策」的陳述。
 
 \begin{table}[tbp]
   \centering
-  \caption{構念效度檢查（計畫 5，\texttt{ROBUST\_\allowbreak TO\_\allowbreak CONSTRUCT}；受資料啟發，規則於計算之前凍結）。小組家族為大組加上小組編號的前兩個字元，建構方式與 DEC 相同：在 \texttt{G06}／\texttt{G16}／\texttt{H04} 的 3,763 個家族中，有 826 個至少含 2,000 件專利（排除 \texttt{G06N} 與 \texttt{G06Q10}）。「相對 BIZ 比值」與「百分位數」之定義同表~\ref{zh:tab:aggregate}；$Q_1$ 與中位數為參照分布 OE(AI,$X$)／OE(DEC,$X$) 的值。P5a--P5d 為計畫 5 的設定，與計畫 3 的模組 P5 無關。P5d 為描述性，不作判定。「不成立」即預先登錄之裁決 \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}。DIRECT。}
+  \caption{構念效度檢查（計畫 5，\texttt{ROBUST\_\allowbreak TO\_\allowbreak CONSTRUCT}；受資料啟發，規則於計算之前凍結）。小組家族為大組加上小組編號的前兩個字元，建構方式與 DEC 相同：在 \texttt{G06}／\texttt{G16}／\texttt{H04} 的 3,763 個家族中，有 826 個至少含 2,000 件專利（排除 \texttt{G06N} 與 \texttt{G06Q10}）。粒度僅在參照集一側匹配；AI 為整個 \texttt{G06N} 小類。「相對 BIZ 比值」與「百分位數」之定義同表~\ref{zh:tab:aggregate}；$Q_1$ 與中位數為參照分布 OE(AI,$X$)／OE(DEC,$X$) 的值。C-a--C-f 即結果檔中儲存為 P5a--P5f 的計畫 5 設定，於此更名以免與計畫 3 的模組 P5 混淆。「任一 \texttt{/06}」保留所有帶有 \texttt{G06Q10/06} 分類碼的專利，包括 2,318 件同時帶有 \texttt{/04} 者；「嚴格 \texttt{/06}」僅保留帶有 \texttt{/06} 且無任何 \texttt{/04} 分類碼的專利。C-e 與 C-f 由修訂 C1 加入，加入時尚未計算。C-b 沿用計畫 1 的 DEC，因此其 H1b 比值即計畫 1 之值。C-d 為描述性，不作判定。「不成立」即預先登錄之裁決 \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}。DIRECT。}
   \label{zh:tab:construct}
-  \footnotesize
-  \setlength{\tabcolsep}{4pt}
-  \begin{tabular}{@{}p{3.3cm}p{2.7cm}p{2.7cm}p{2.7cm}p{2.7cm}@{}}
+  \scriptsize
+  \setlength{\tabcolsep}{3pt}
+  \begin{tabular}{@{}p{2.1cm}p{2.0cm}p{2.0cm}p{2.0cm}p{2.0cm}p{2.0cm}p{2.0cm}@{}}
     \toprule
-    & P5a & P5b & P5c & P5d（描述性） \tabularnewline
+    & C-a & C-b & C-c & C-d（描述性） & C-e & C-f \tabularnewline
     \midrule
-    \raggedright DEC 類別（專利數） & \raggedright 僅 \texttt{/06}（33,926） & \raggedright \texttt{/04}\,+\,\texttt{/06}（37,501） & \raggedright 僅 \texttt{/06}（33,926） & \raggedright 僅 \texttt{/04}（5,893） \tabularnewline
-    \raggedright 參照集 & 179 個大組 & 826 個小組家族 & 826 個小組家族 & 179 個大組 \tabularnewline
-    \raggedright OE(AI,DEC)（95\% CI） & 3.04 (2.92--3.16) & 3.05 (2.94--3.17) & 3.04 (2.92--3.16) & 3.83 (3.59--4.06) \tabularnewline
-    \raggedright 相對 BIZ 比值（95\% CI） & 1.68 (1.60--1.76) & 1.69 (1.60--1.77) & 1.68 (1.60--1.76) & 2.12 (1.96--2.29) \tabularnewline
-    \raggedright 百分位數 AI／DEC & 97.8\% / 90.5\% & 89.8\% / 84.1\% & 89.6\% / 83.5\% & 99.4\% / 93.9\% \tabularnewline
-    \raggedright 參照 $Q_1$ AI／DEC & 0.787 / 0.511 & 0.875 / 0.605 & 0.875 / 0.612 & 0.787 / 0.486 \tabularnewline
-    \raggedright 參照中位數 AI／DEC & 1.240 / 1.077 & 1.419 / 1.316 & 1.419 / 1.330 & 1.240 / 1.129 \tabularnewline
-    \raggedright 判定 & 不成立 & 不成立 & 不成立 & -- \tabularnewline
+    \raggedright DEC 類別（專利數） & \raggedright 任一 \texttt{/06}（33,926） & \raggedright \texttt{/04}\,+\,\texttt{/06}（37,501） & \raggedright 任一 \texttt{/06}（33,926） & \raggedright 任一 \texttt{/04}（5,893） & \raggedright 嚴格 \texttt{/06}，無 \texttt{/04}（31,608） & \raggedright 嚴格 \texttt{/06}，無 \texttt{/04}（31,608） \tabularnewline
+    \raggedright 參照集 & \raggedright 179 個大組 & \raggedright 826 個小組家族 & \raggedright 826 個小組家族 & \raggedright 179 個大組 & \raggedright 179 個大組 & \raggedright 826 個小組家族 \tabularnewline
+    \raggedright OE(AI,DEC)（95\% CI） & \raggedright 3.04 (2.92--3.16) & \raggedright 3.05 (2.94--3.17) & \raggedright 3.04 (2.92--3.16) & \raggedright 3.83 (3.59--4.06) & \raggedright 3.16 (3.05--3.27) & \raggedright 3.16 (3.05--3.27) \tabularnewline
+    \raggedright 相對 BIZ 比值（95\% CI） & \raggedright 1.68 (1.60--1.76) & \raggedright 1.69 (1.60--1.77) & \raggedright 1.68 (1.60--1.76) & \raggedright 2.12 (1.96--2.29) & \raggedright 1.75 (1.66--1.83) & \raggedright 1.75 (1.66--1.83) \tabularnewline
+    \raggedright 百分位數 AI／DEC & \raggedright 97.8\% / 90.5\% & \raggedright 89.8\% / 84.1\% & \raggedright 89.6\% / 83.5\% & \raggedright 99.4\% / 93.9\% & \raggedright 98.9\% / 91.6\% & \raggedright 90.7\% / 83.3\% \tabularnewline
+    \raggedright 參照 $Q_1$ AI／DEC & \raggedright 0.787 / 0.511 & \raggedright 0.875 / 0.605 & \raggedright 0.875 / 0.612 & \raggedright 0.787 / 0.486 & \raggedright 0.787 / 0.462 & \raggedright 0.875 / 0.606 \tabularnewline
+    \raggedright 參照中位數 AI／DEC & \raggedright 1.240 / 1.077 & \raggedright 1.419 / 1.316 & \raggedright 1.419 / 1.330 & \raggedright 1.240 / 1.129 & \raggedright 1.240 / 1.082 & \raggedright 1.419 / 1.340 \tabularnewline
+    \raggedright 判定 & \raggedright 不成立 & \raggedright 不成立 & \raggedright 不成立 & \raggedright -- & \raggedright 不成立 & \raggedright 不成立 \tabularnewline
     \bottomrule
   \end{tabular}
 \end{table}
@@ -270,7 +270,7 @@ H1a 並未匹配粒度：DEC 由兩個 CPC 小組（subgroup）構成，而參�
   \label{zh:fig:patent_trend}
 \end{figure}
 
-就 RQ1 而言，在此處的操作化定義下（\texttt{G06N} 對 \texttt{G06Q10/04} + \texttt{/06}，或僅對 \texttt{/06}），證據並不支持 AI 與決策技術之間的知識流動存在結構洞。這是在預先登錄規則下未能支持結構洞，而非證明不存在任何分隔；且過度連結的大小也不是組織整合程度的測量。
+就 RQ1 而言，在此處的操作化定義下（\texttt{G06N} 對 \texttt{G06Q10/04} + \texttt{/06}，或對移除所有 \texttt{/04} 分類碼專利後的 \texttt{/06}），證據並不支持 AI 與決策技術之間的知識流動存在結構洞。這是在預先登錄規則下未能支持結構洞，而非證明不存在任何分隔；且過度連結的大小也不是組織整合程度的測量。
 
 \subsection{CPC 矩陣上的 V9 檢定組與 M06-P 虛無模型}
 \label{zh:sec:study2_cells}
@@ -367,7 +367,7 @@ H1a 並未匹配粒度：DEC 由兩個 CPC 小組（subgroup）構成，而參�
 
 \paragraph{P6：移除否證。} 度數至少為 5 且限制度最低的十家 MIXED 公司為 International Business Machines、General Electric、Tesla、ioCurrents、Google、Accenture、Amazon Technologies、T-Mobile USA、Optum Services 與 Strong Force VCN Portfolio 2019。移除全部 10 家之後，AI\_FIRM 與 DEC\_FIRM 公司仍然相連，且同時包含兩群的最大連通元件僅由 5,954 家縮減至 5,563 家：10/10 名候選者皆被否證為不可或缺的中介者。套組中的「跨群權重保留」指標在建構上恆等於 1，故本研究不據此做任何推論。
 
-\paragraph{P7--P10。} P7（超邊）與 P8（別名）的結果見表~\ref{zh:tab:suite}。Gap Validity（P9）重複研究一的診斷：間接項為零是恆等式，而每個偏低格有 20--30 條長度為 3 的替代路徑，在稠密的 6$\times$7 矩陣中幾乎必然成立；兩者皆非證據。Limitation Scout（P10）是對論文所陳述之研究限制的檢查，不適用於專利。
+\paragraph{P7--P10。} P7（超邊）與 P8（別名）的結果見表~\ref{zh:tab:suite}。Gap Validity（P9）的診斷一為恆等式、一在稠密的 6$\times$7 矩陣中幾乎必然成立，兩者皆非證據。Limitation Scout（P10）不適用於專利。
 
 \subsection{保留專利組合的公司虛無模型}
 \label{zh:sec:study2_firm}

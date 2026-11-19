@@ -53,7 +53,7 @@ Table~\ref{tab:app_v9cells} lists the 16 depleted cells with their observed coun
   \item Same-term self-pairing inflates the strongest enriched cell (prediction $\times$ prediction). In that cell, 33\% of records pair the same term (e.g., ``forecasting'') on both sides. Removing these records drops 2 prediction-related depleted cells from the core.
   \item A rule-based keyword matrix removes 741 same-term records and leaves 1,431 document edges. In it, 13/16 depleted cells keep the same direction, 6 are significant and 0 are significantly reversed, but only 7 cells reach the four-test core.
 \end{itemize}
-The direction of the depletions is thus robust to seeds, source tracks and periods, and largely to keyword coding and to the removal of same-term records. The composition of the significant core, by contrast, depends on how sentences are coded. Table~\ref{tab:app_s1robust} summarises all robustness checks.
+The direction of the depletions is thus robust to seeds, source tracks and periods, and largely to keyword coding, including a keyword matrix without same-term records. The composition of the significant core, by contrast, depends on how sentences are coded. Table~\ref{tab:app_s1robust} summarises all robustness checks.
 
 \subsection{Measurement reliability and misclassification}
 \label{sec:study1_reliability}
@@ -92,7 +92,7 @@ Human--human agreement is very low, on only 20 records, and a coarser taxonomy d
 \end{equation}
 Because the accuracy product is at most one, random error can only attenuate a depletion; it cannot create one. The bound does not, however, protect the direction, for two reasons.
 
-First, it covers only non-differential error, and two documented error sources are non-random. Same-term self-pairing inflates the prediction $\times$ prediction cell. Under Eq.~\eqref{eq:s1_expected}, inflating one cell raises its row and column margins and hence the expected counts of the other cells in that row and column, whose O/E falls; coding can thus create depletion in a fixed-margin matrix. The paper's own removal evidence limits this mechanism. Without the 741 same-term records, 13/16 depleted cells keep their direction and none is significantly reversed, and removing the self-paired records from the inflated cell drops only 2 depleted cells from the core (Section~\ref{sec:study1_direction}). Self-pairing is therefore not the main driver of the pattern. Model-inferred labels are a second non-random source, and it remains untested: a model that routes certain sentence types to certain families moves records between cells in a patterned way.
+First, it covers only non-differential error, and two documented error sources are non-random. Same-term self-pairing inflates the prediction $\times$ prediction cell. Under Eq.~\eqref{eq:s1_expected}, inflating one cell raises its row and column margins and hence the expected counts of the other cells in that row and column, whose O/E falls; coding can thus create depletion in a fixed-margin matrix. The paper's own removal evidence limits this mechanism, though imperfectly. In a rule-based keyword matrix that also excludes the 741 same-term records, 13/16 depleted cells keep their direction and none is significantly reversed; but that matrix also changes the coding instrument, and stage-1 keyword coding alone gives 13/16 too. Within the LLM-coded matrix, removing the self-paired records drops only 2 depleted cells from the core (Section~\ref{sec:study1_direction}). Self-pairing therefore does not appear to be the main driver of the pattern. Model-inferred labels are a second non-random source, and it remains untested: a model that routes certain sentence types to certain families moves records between cells in a patterned way.
 
 Second, the random-error model does not fit. For the most extreme cell, even the 95\% upper bound requires an accuracy product of at least 0.71, whereas the human audit implies about 0.07. This points to non-random error or to an audit too small to estimate accuracy, and the observed magnitudes should not be read as what human-coded data would show.
 
@@ -124,7 +124,7 @@ The re-analysis of 2026-11-18 recorded four verdicts:
   \item Burt structural hole: STOP, so the broker search is discontinued;
   \item research gap: NOT SUPPORTED.
 \end{itemize}
-We qualify the first verdict. The direction survives every check we could run, and self-pairing does not explain most of it, but model-inferred labels may still have shaped it. It is a descriptive, unconfirmed pattern, and ``defensible'' means no more than that.
+We qualify the first verdict. The direction survives every check we could run, and self-pairing does not appear to be its main driver, but model-inferred labels may still have shaped it. It is a descriptive, unconfirmed pattern, and ``defensible'' means no more than that.
 
 \subsection{Network lines V6--V11.1 and Gap Validity}
 \label{sec:study1_network}
@@ -183,7 +183,7 @@ The groups use grant years 2010--2025:
 \end{itemize}
 Bridge patents are excluded from the cross counts.
 
-\paragraph{Construct validity of DEC.} \texttt{G06Q10/04} (forecasting and optimisation) overlaps methodologically with machine learning, so part of any AI--DEC over-connection may be near-mechanical: the two classes partly describe the same techniques. What the test measures is therefore the technological proximity of patent classes, not the integration of AI into managerial decision-making. Sensitivity check s2, which broadens DEC to all of \texttt{G06Q10}, lowers the intensity OE (Eq.~\eqref{eq:oe} below) from 3.05 to 2.59 without changing the verdict (Table~\ref{tab:aggregate}), but s2 still contains \texttt{/04}, so it dilutes the overlap rather than isolating it. Plan~5 therefore removes \texttt{/04} (Table~\ref{tab:construct}, below).
+\paragraph{Construct validity of DEC.} \texttt{G06Q10/04} (forecasting and optimisation) overlaps methodologically with machine learning, so part of any AI--DEC over-connection may be near-mechanical: the two classes partly describe the same techniques. What the test measures is therefore the technological proximity of patent classes, not the integration of AI into managerial decision-making. Sensitivity check s2, which broadens DEC to all of \texttt{G06Q10}, lowers the intensity OE (Eq.~\eqref{eq:oe} below) from 3.05 to 2.59 without changing the verdict (Table~\ref{tab:aggregate}), but s2 still contains \texttt{/04}, so it dilutes the overlap rather than isolating it. Plan~5 therefore removes every \texttt{/04}-coded patent (Table~\ref{tab:construct}, below).
 
 \paragraph{Statistic.} Citations are stratified by $s = $ (citing grant year, cited grant year). In each stratum, $\mathrm{out}_A(s)$ is the number of citations made by group-$A$ patents, $\mathrm{in}_B(s)$ is the number received by group-$B$ patents, and $M(s)$ is the total. The time-stratified configuration expectation is
 \begin{equation}
@@ -207,26 +207,26 @@ H1a is not granularity-matched: DEC consists of two CPC subgroups, whereas the r
 
 All six preregistered sensitivity specifications agree with it (0/6 disagree; Table~\ref{tab:aggregate}, Figure~\ref{fig:patent_sensitivity}), so by the preregistered rule the verdict is not fragile. OE ranges from 2.59 (s2, DEC broadened to all of \texttt{G06Q10}) to 4.25 (s6, bridge patents counted on both sides).
 
-\paragraph{Construct checks (Plan~5).} Plan~5, requested by review, is data-informed, but its rules were frozen before computation and Plan~1's decision rule is unchanged (Table~\ref{tab:app_prereg}). It varies the DEC class (\texttt{/04} + \texttt{/06}, or \texttt{/06} only) and the H1a reference set (179 main groups, or 826 subgroup families built like DEC). All three specifications return \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED} (Table~\ref{tab:construct}): \texttt{ROBUST\_\allowbreak TO\_\allowbreak CONSTRUCT}. \texttt{/04} is more tightly linked to AI (OE 3.83, descriptive P5d) but is a small share of DEC (5,893 of 37,501 patents), so removing it barely changes OE (3.05 to 3.04). Against matched references the percentiles fall to about 84--90\% but remain far above the lowest quartile. The domain verdict thus holds for both class definitions and both reference granularities tested; it remains a statement about these CPC constructs, not about decision-making as a whole.
+\paragraph{Construct checks (Plan~5).} Plan~5 is a follow-up specified after the Plan~1 verdict was known (data-informed); its rules were frozen before computation, and Plan~1's decision rule is unchanged (Table~\ref{tab:app_prereg}). It varies the DEC class and the H1a reference set (179 main groups, or 826 subgroup families; Table~\ref{tab:construct}). In the strict specifications (C-e, C-f; amendment C1), which remove every \texttt{/04}-coded patent and leave 31,608, OE rises slightly from 3.05 to 3.16 (95\% CI 3.05--3.27), with percentiles of 98.9\% / 91.6\% against main groups and 90.7\% / 83.3\% against subgroup families; the over-connection is not produced by \texttt{/04}. The first specifications (C-a, C-c) keep any \texttt{/06}-coded patent: they drop only the 3,575 \texttt{/04}-only patents and retain 2,318 coded both \texttt{/04} and \texttt{/06} (OE 3.04). \texttt{/04} itself is more tightly linked to AI (OE 3.83, descriptive C-d). All five verdict specifications return \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}: \texttt{ROBUST\_\allowbreak TO\_\allowbreak CONSTRUCT}. Three qualifications apply. Granularity is matched on the reference side only; AI remains the whole \texttt{G06N} subclass. The checks are not independent of Plan~1: C-b keeps Plan~1's DEC, so its H1b equals Plan~1's. And because OE lies far above every reference quartile, the construct rule was expected to pass unless a respecification changed OE drastically; the information lies in the magnitudes. The verdict is a statement about these CPC constructs, not about decision-making as a whole.
 
 \begin{table}[tbp]
   \centering
-  \caption{Construct checks (Plan~5, \texttt{ROBUST\_\allowbreak TO\_\allowbreak CONSTRUCT}; data-informed, rules frozen before computation). Subgroup families are main group plus the first two characters of the subgroup, built like DEC: of 3,763 families in \texttt{G06}/\texttt{G16}/\texttt{H04}, 826 have at least 2,000 patents (\texttt{G06N} and \texttt{G06Q10} excluded). Ratio vs BIZ and Percentile as in Table~\ref{tab:aggregate}; $Q_1$ and median are those of the reference distributions OE(AI,$X$) / OE(DEC,$X$). P5a--P5d are Plan~5 specifications, unrelated to module P5 of Plan~3. P5d is descriptive and has no verdict. ``Not supported'' is the preregistered verdict \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}. DIRECT.}
+  \caption{Construct checks (Plan~5, \texttt{ROBUST\_\allowbreak TO\_\allowbreak CONSTRUCT}; data-informed, rules frozen before computation). C-a--C-f are the Plan~5 specifications stored as P5a--P5f in the result file, renamed to avoid confusion with module P5 of Plan~3. ``Any \texttt{/06}'' keeps every patent with a \texttt{G06Q10/06} code, including 2,318 also coded \texttt{/04}; ``strict \texttt{/06}'' keeps only \texttt{/06}-coded patents with no \texttt{/04} code. C-e and C-f were added by amendment C1 before they were computed. Subgroup families are main group plus the first two characters of the subgroup, built like DEC: of 3,763 families in \texttt{G06}/\texttt{G16}/\texttt{H04}, 826 have at least 2,000 patents (\texttt{G06N} and \texttt{G06Q10} excluded). Granularity is matched on the reference side only; AI is the whole \texttt{G06N} subclass. Ratio vs BIZ and Percentile as in Table~\ref{tab:aggregate}; $Q_1$ and median are those of the reference distributions OE(AI,$X$) / OE(DEC,$X$). C-b has Plan~1's DEC, so its H1b ratio is Plan~1's. C-d is descriptive and has no verdict. ``Not supp.'' is the preregistered verdict \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}. DIRECT.}
   \label{tab:construct}
-  \footnotesize
-  \setlength{\tabcolsep}{4pt}
-  \begin{tabular}{@{}p{3.3cm}p{2.7cm}p{2.7cm}p{2.7cm}p{2.7cm}@{}}
+  \scriptsize
+  \setlength{\tabcolsep}{3pt}
+  \begin{tabular}{@{}p{2.1cm}p{2.05cm}p{2.05cm}p{2.05cm}p{2.05cm}p{2.05cm}p{2.05cm}@{}}
     \toprule
-    & P5a & P5b & P5c & P5d (descriptive) \tabularnewline
+    & C-a & C-b & C-c & C-d (descriptive) & C-e & C-f \tabularnewline
     \midrule
-    \raggedright DEC class (patents) & \raggedright \texttt{/06} only (33,926) & \raggedright \texttt{/04}\,+\,\texttt{/06} (37,501) & \raggedright \texttt{/06} only (33,926) & \raggedright \texttt{/04} only (5,893) \tabularnewline
-    \raggedright Reference set & 179 main groups & 826 subgroup families & 826 subgroup families & 179 main groups \tabularnewline
-    \raggedright OE(AI,DEC) (95\% CI) & 3.04 (2.92--3.16) & 3.05 (2.94--3.17) & 3.04 (2.92--3.16) & 3.83 (3.59--4.06) \tabularnewline
-    \raggedright Ratio vs BIZ (95\% CI) & 1.68 (1.60--1.76) & 1.69 (1.60--1.77) & 1.68 (1.60--1.76) & 2.12 (1.96--2.29) \tabularnewline
-    \raggedright Percentile AI / DEC & 97.8\% / 90.5\% & 89.8\% / 84.1\% & 89.6\% / 83.5\% & 99.4\% / 93.9\% \tabularnewline
-    \raggedright Reference $Q_1$ AI / DEC & 0.787 / 0.511 & 0.875 / 0.605 & 0.875 / 0.612 & 0.787 / 0.486 \tabularnewline
-    \raggedright Reference median AI / DEC & 1.240 / 1.077 & 1.419 / 1.316 & 1.419 / 1.330 & 1.240 / 1.129 \tabularnewline
-    \raggedright Verdict & Not supported & Not supported & Not supported & -- \tabularnewline
+    \raggedright DEC class (patents) & \raggedright any \texttt{/06} (33,926) & \raggedright \texttt{/04}\,+\,\texttt{/06} (37,501) & \raggedright any \texttt{/06} (33,926) & \raggedright any \texttt{/04} (5,893) & \raggedright strict \texttt{/06}, no \texttt{/04} (31,608) & \raggedright strict \texttt{/06}, no \texttt{/04} (31,608) \tabularnewline
+    \raggedright Reference set & \raggedright 179 main groups & \raggedright 826 subgroup families & \raggedright 826 subgroup families & \raggedright 179 main groups & \raggedright 179 main groups & \raggedright 826 subgroup families \tabularnewline
+    \raggedright OE(AI,DEC) (95\% CI) & \raggedright 3.04 (2.92--3.16) & \raggedright 3.05 (2.94--3.17) & \raggedright 3.04 (2.92--3.16) & \raggedright 3.83 (3.59--4.06) & \raggedright 3.16 (3.05--3.27) & \raggedright 3.16 (3.05--3.27) \tabularnewline
+    \raggedright Ratio vs BIZ (95\% CI) & \raggedright 1.68 (1.60--1.76) & \raggedright 1.69 (1.60--1.77) & \raggedright 1.68 (1.60--1.76) & \raggedright 2.12 (1.96--2.29) & \raggedright 1.75 (1.66--1.83) & \raggedright 1.75 (1.66--1.83) \tabularnewline
+    \raggedright Percentile AI / DEC & \raggedright 97.8\% / 90.5\% & \raggedright 89.8\% / 84.1\% & \raggedright 89.6\% / 83.5\% & \raggedright 99.4\% / 93.9\% & \raggedright 98.9\% / 91.6\% & \raggedright 90.7\% / 83.3\% \tabularnewline
+    \raggedright Reference $Q_1$ AI / DEC & \raggedright 0.787 / 0.511 & \raggedright 0.875 / 0.605 & \raggedright 0.875 / 0.612 & \raggedright 0.787 / 0.486 & \raggedright 0.787 / 0.462 & \raggedright 0.875 / 0.606 \tabularnewline
+    \raggedright Reference median AI / DEC & \raggedright 1.240 / 1.077 & \raggedright 1.419 / 1.316 & \raggedright 1.419 / 1.330 & \raggedright 1.240 / 1.129 & \raggedright 1.240 / 1.082 & \raggedright 1.419 / 1.340 \tabularnewline
+    \raggedright Verdict & \raggedright Not supp. & \raggedright Not supp. & \raggedright Not supp. & \raggedright -- & \raggedright Not supp. & \raggedright Not supp. \tabularnewline
     \bottomrule
   \end{tabular}
 \end{table}
@@ -268,7 +268,7 @@ All six preregistered sensitivity specifications agree with it (0/6 disagree; Ta
   \label{fig:patent_trend}
 \end{figure}
 
-For RQ1, the evidence does not support a structural hole in knowledge flows between AI and decision technologies, as operationalised here (\texttt{G06N} versus \texttt{G06Q10/04} + \texttt{/06}, or \texttt{/06} alone). This is a failure to support a hole under a preregistered rule, not a proof that no separation exists, and the size of the over-connection is not a measure of organisational integration.
+For RQ1, the evidence does not support a structural hole in knowledge flows between AI and decision technologies, as operationalised here (\texttt{G06N} versus \texttt{G06Q10/04} + \texttt{/06}, or versus \texttt{/06} with every \texttt{/04}-coded patent removed). This is a failure to support a hole under a preregistered rule, not a proof that no separation exists, and the size of the over-connection is not a measure of organisational integration.
 
 \subsection{The V9 battery on the CPC matrix and the M06-P null}
 \label{sec:study2_cells}
@@ -365,7 +365,7 @@ Preregistration~3 consists of ten modules, P1--P10, each giving one original Stu
 
 \paragraph{P6: removal falsification.} The ten MIXED firms with degree at least 5 and the lowest constraint were International Business Machines, General Electric, Tesla, ioCurrents, Google, Accenture, Amazon Technologies, T-Mobile USA, Optum Services and Strong Force VCN Portfolio 2019. After all 10 are removed, AI\_FIRM and DEC\_FIRM firms remain connected, and the largest component containing both groups shrinks only from 5,954 to 5,563 firms: 10/10 candidates are refuted as indispensable brokers. The suite's cross-weight-retained metric is identically 1 by construction, so we draw no inference from it.
 
-\paragraph{P7--P10.} Table~\ref{tab:suite} gives the results of P7 (hyperedges) and P8 (aliases). Gap Validity (P9) repeats the Study~1 diagnostic: the zero indirect term is an identity, and the 20--30 alternative length-3 routes per depleted cell are near-guaranteed in a dense 6$\times$7 matrix; neither is evidence. The Limitation Scout (P10), a check of papers' stated limitations, does not apply to patents.
+\paragraph{P7--P10.} Table~\ref{tab:suite} gives P7 (hyperedges) and P8 (aliases). The Gap Validity diagnostics (P9) are an identity and near-guaranteed in a dense 6$\times$7 matrix, so neither is evidence. The Limitation Scout (P10) does not apply to patents.
 
 \subsection{Portfolio-preserving firm null}
 \label{sec:study2_firm}
