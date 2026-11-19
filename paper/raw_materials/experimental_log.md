@@ -532,6 +532,50 @@ By period, cross citations:
 
 In patent co-classification, AI and decision classes are not a co-occurrence gap. The depletion of Study 1 is specific to the literature coding.
 
+### E3.9 Plan 8: when co-occurrence misjudges flow (taxonomic distance; data-informed; `PREREGISTRATION_DIVERGENCE.md` frozen 6a35b21; `paper/data/PLAN8_RESULTS.json`)
+
+**Data and variables:**
+- The 16,703 eligible Plan 7 pairs, by taxonomic level:
+
+| Level | Definition | Pairs | C-gaps |
+|---|---|---|---|
+| 1 | same subclass | 1,337 | 13 |
+| 2 | same class, different subclass | 6,547 | 1,252 |
+| 3 | different class | 8,819 | 2,911 |
+
+- Δ = percentile rank of OE_flow minus percentile rank of OE_co.
+- Controls: log pair size, size asymmetry, log E_flow.
+- Bootstrap: 1,000 field-cluster replicates.
+- Theory tested: co-occurrence reflects categorisation, so it should understate flow most between taxonomically distant fields.
+
+**H8a: Δ increases with distance. NOT_SUPPORTED.**
+- OLS with controls: level-2 coefficient 0.050 [0.029, 0.070]; level-3 coefficient 0.023 [0.003, 0.046].
+- Unadjusted mean Δ: level 1 −0.023, level 2 0.022, level 3 −0.013. These are not ordered, and the rule requires the ordering L1 < L2 < L3.
+
+**H8b: among C-gaps, false gaps are more frequent at level 3. NOT_SUPPORTED; the difference runs the other way.**
+- False-gap rate: level 3 0.304 (30.4%); levels 1–2 0.398 (39.8%). Difference −0.094 [−0.199, −0.002].
+- Reversal rate: level 3 0.056 (5.6%); levels 1–2 0.103 (10.3%). Difference −0.046 [−0.100, 0.001].
+
+**Secondary:**
+- S1: log OE_flow − log OE_co on 13,716 co-classified pairs. Level-2 coefficient 1.015 [0.825, 1.215]; level-3 coefficient 1.273 [1.085, 1.473].
+- S2: no controls. Level-3 coefficient 0.010 [−0.014, 0.035].
+- S3:
+  - G16 pairs: mean Δ −0.114 (2,055 pairs);
+  - AI × DEC pairs: mean Δ −0.137 (5 pairs);
+  - 294 C-gap reversals, 0.558 (55.8%) of them at level 3.
+
+**Post hoc (not preregistered): PPV and reversal of C-gaps by level.**
+
+| Level | PPV | Reversal |
+|---|---|---|
+| 1 (13 C-gaps) | 0.385 | 0.231 |
+| 2 | 0.605 (60.5%) | 0.101 (10.1%) |
+| 3 | 0.696 (69.6%) | 0.056 (5.6%) |
+
+The least reliable co-occurrence gaps are between neighbouring subclasses of one class. AI (G06N) and decision (G06Q) are such a pair (both in G06).
+
+**Reading:** the taxonomy hypothesis is not supported. Co-occurrence gaps are more trustworthy across classes than within one. Disagreement concentrates in neighbouring subclasses (post hoc).
+
 ## E4. Multi-level programming prototype (v1.0; SIMULATED; `paper/data/MLP_SOLVER_RESULTS_v1_0.json`)
 
 **Model and exactness checks:**
