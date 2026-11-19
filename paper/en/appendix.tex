@@ -1,5 +1,7 @@
 % ============================================================
 % appendix.tex -- Appendices A, B, C (the main file places \appendix before this).
+% The MLP appendices moved with the model to a separate paper (2026-11-19);
+% the Chinese thesis (paper/zh/appendix_zh.tex) keeps them.
 % Numbers come from raw_materials/experimental_log.md. Appendix A additionally
 % states commit ids and preregistered decision rules taken from the frozen
 % preregistration texts (repository identifiers withheld for review).
@@ -9,7 +11,7 @@
 \section{Preregistration and Amendment Log}
 \label{app:prereg}
 
-Study~2 rests on seven preregistered plans (Plans~1--7) and an exploratory plan (Plan~C); the systematic review and R1 have their own frozen protocols (Appendix~\ref{app:review}). Each is a self-timestamped git commit in the project repository (repository identifiers withheld for review; the Study~2 commit ids are listed in Tables~\ref{tab:app_prereg} and~\ref{tab:app_prereg_b}); none was registered with a third-party registry such as OSF, and the commit timestamps are set by the authors' own tooling. Preregistration is meant to separate confirmatory from exploratory analysis by fixing the plan before outcomes are observed \citep{nosek2018preregistration}. By that standard, Plan~1 was fixed before any patent data were downloaded. Plans 2--7 were written after earlier results were known, so the questions they ask were data-informed; only their definitions, null models, decision rules, thresholds and stop rules were fixed before the analyses they govern were computed. Only Plan~1 is confirmatory. Plan~5, the construct checks of Section~\ref{sec:study2_aggregate} (Table~\ref{tab:construct}), was added after the main verdict was known, as a data-informed follow-up, and frozen on 2026-11-19 before any of its specifications was computed; amendment C1 added two strict specifications the same day, after the first Plan~5 results were known but before the new specifications were computed. Changes after freezing are recorded as dated amendments that do not overwrite the frozen text. Tables~\ref{tab:app_prereg} (Plans~1--3) and~\ref{tab:app_prereg_b} (Plans~4--7 and~C) summarise the plans, including the commit ids and rule thresholds taken from the frozen texts; Table~\ref{tab:app_amend} lists every Study~2 amendment and recorded deviation, Table~\ref{tab:app_plan6} gives the descriptive Plan~6 values, and Table~\ref{tab:app_plan7} gives all seven Plan~7 specifications. Plan~7, the last plan, was written after all other results were known and was motivated by the AI--decision contrast between literature co-occurrence and patent flow; it is data-informed.
+Study~2 rests on eight preregistered plans (Plans~1--8) and an exploratory plan (Plan~C); the systematic review and R1 have their own frozen protocols (Appendix~\ref{app:review}). Each is a self-timestamped git commit in the project repository (repository identifiers withheld for review; the Study~2 commit ids are listed in Tables~\ref{tab:app_prereg} and~\ref{tab:app_prereg_b}); none was registered with a third-party registry such as OSF, and the commit timestamps are set by the authors' own tooling. Preregistration is meant to separate confirmatory from exploratory analysis by fixing the plan before outcomes are observed \citep{nosek2018preregistration}. By that standard, Plan~1 was fixed before any patent data were downloaded. Plans 2--8 were written after earlier results were known, so the questions they ask were data-informed; only their definitions, null models, decision rules, thresholds and stop rules were fixed before the analyses they govern were computed. Only Plan~1 is confirmatory. Plan~5, the construct checks of Section~\ref{sec:study2_aggregate} (Table~\ref{tab:construct}), was added after the main verdict was known, as a data-informed follow-up, and frozen on 2026-11-19 before any of its specifications was computed; amendment C1 added two strict specifications the same day, after the first Plan~5 results were known but before the new specifications were computed. Changes after freezing are recorded as dated amendments that do not overwrite the frozen text. Tables~\ref{tab:app_prereg} (Plans~1--3) and~\ref{tab:app_prereg_b} (Plans~4--8 and~C) summarise the plans, including the commit ids and rule thresholds taken from the frozen texts; Table~\ref{tab:app_amend} lists every Study~2 amendment and recorded deviation, Table~\ref{tab:app_plan6} gives the descriptive Plan~6 values, Table~\ref{tab:app_plan7} gives all seven Plan~7 specifications, and Table~\ref{tab:app_plan8} gives the Plan~8 tests. Plan~7 was written after all earlier results were known and was motivated by the AI--decision contrast between literature co-occurrence and patent flow. Plan~8, the last plan, was motivated by Plan~7's disagreement rate and frozen on 2026-11-19, after Plan~7's aggregate results were known but before any breakdown of its pairs by taxonomic distance, size or volume was computed. Both are data-informed.
 
 \begin{table}[tbp]
 \centering
@@ -44,7 +46,7 @@ Plan (commit) & Frozen before / known when written & Hypotheses and content & De
 
 \begin{table}[tbp]
 \centering
-\caption{Preregistration log for Study~2, continued: Plans~4--7 and the exploratory Plan~C. Columns as in Table~\ref{tab:app_prereg}.}
+\caption{Preregistration log for Study~2, continued: Plans~4--8 and the exploratory Plan~C. Columns as in Table~\ref{tab:app_prereg}.}
 \label{tab:app_prereg_b}
 \footnotesize
 \setlength{\tabcolsep}{4pt}
@@ -81,6 +83,12 @@ Plan (commit) & Frozen before / known when written & Hypotheses and content & De
 \raggedright Pairs of the 185 CPC main groups in G06/G16/H04 with $\geq$2,000 patents; co-occurrence = co-classification O/E, flow = Plan~1 citation OE; gap = lowest quartile; PPV = P(flow gap $\mid$ co-occurrence gap), reversal = P(flow OE $\geq 1$ $\mid$ co-occurrence gap), Spearman $\rho$, never co-classified pairs; field-cluster bootstrap (1,000 replicates); S1--S5 descriptive &
 \raggedright \texttt{RELIABLE} if PPV $\geq$ 0.80 and reversal $\leq$ 0.05; \texttt{UNRELIABLE} if PPV $<$ 0.50 or reversal $\geq$ 0.20; otherwise \texttt{MODERATE} &
 \raggedright \texttt{MODERATE} (PPV 0.668, reversal 0.070); Section~\ref{sec:study2_cooc_flow}; Table~\ref{tab:app_plan7} \tabularnewline
+\addlinespace
+\raggedright 8.~Taxonomic distance and divergence (\texttt{6a35b21}) &
+\raggedright Frozen 2026-11-19, before any breakdown of the Plan~7 pairs by distance, size or volume; data-informed. Known: Plan~7's aggregate results, whose disagreement rate motivated the plan &
+\raggedright The 16,703 Plan~7 pairs by CPC distance (same subclass; same class, different subclass; different class); $\Delta$ = percentile rank of flow OE minus that of co-occurrence O/E; controls: log pair size, size asymmetry, log $E_{\mathrm{flow}}$; field-cluster bootstrap (1,000 replicates); S1--S3 descriptive &
+\raggedright H8a ($\Delta$ rises with distance) supported if the level-3 OLS coefficient is $>0$ with a 95\% CI excluding 0 and mean $\Delta$ is ordered level 1 $<$ 2 $<$ 3; H8b supported if, among co-occurrence gaps, the level-3 minus levels-1/2 false-gap difference is $>0$ with a 95\% CI excluding 0; if H8a fails, no claim that taxonomy explains the disagreement &
+\raggedright H8a and H8b \texttt{NOT\_\allowbreak SUPPORTED}; H8b difference $-0.094$, opposite to the prediction; Section~\ref{sec:study2_cooc_flow}; Table~\ref{tab:app_plan8} \tabularnewline
 \bottomrule
 \end{tabular}
 \end{table}
@@ -157,6 +165,31 @@ S5 2019--2025 & 15,741 & 0.640 & 0.102 & 0.772 & \texttt{MODERATE} \\
 \end{tabular}
 \end{table}
 
+\begin{table}[tbp]
+\centering
+\caption{Plan~8, taxonomic distance and the disagreement between co-occurrence and flow (data-informed; DIRECT; E3.9). $\Delta$: percentile rank of flow OE minus that of co-occurrence O/E among the 16,703 eligible Plan~7 pairs. C-gap: co-occurrence gap (lowest quartile, as in Plan~7). Field-bootstrap 95\% intervals (1,000 replicates) in brackets. The PPV and reversal columns are post hoc and descriptive, and level~1 has only 13 C-gaps.}
+\label{tab:app_plan8}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}p{5.4cm}rrrrr@{}}
+\toprule
+Taxonomic level & Pairs & C-gaps & Mean $\Delta$ & PPV$^{a}$ & Reversal$^{a}$ \\
+\midrule
+1 Same subclass & 1,337 & 13 & $-0.023$ & 0.385 & 0.231 \\
+2 Same class, different subclass & 6,547 & 1,252 & 0.022 & 0.605 & 0.101 \\
+3 Different class & 8,819 & 2,911 & $-0.013$ & 0.696 & 0.056 \\
+\midrule
+\multicolumn{6}{@{}l}{\emph{Preregistered tests}} \\
+\multicolumn{6}{@{}p{0.95\linewidth}}{\raggedright H8a, OLS of $\Delta$ with controls (reference level~1): level~2 0.050 [0.029, 0.070]; level~3 0.023 [0.003, 0.046]; the means are not ordered, so \texttt{NOT\_\allowbreak SUPPORTED}.} \\
+\multicolumn{6}{@{}p{0.95\linewidth}}{\raggedright H8b, among C-gaps, level~3 vs levels 1--2: false-gap rate 0.304 vs 0.398, difference $-0.094$ [$-0.199$, $-0.002$]; reversal 0.056 vs 0.103, difference $-0.046$ [$-0.100$, 0.001]; \texttt{NOT\_\allowbreak SUPPORTED}, with the difference opposite to the prediction.} \\
+\midrule
+\multicolumn{6}{@{}l}{\emph{Secondary (descriptive)}} \\
+\multicolumn{6}{@{}p{0.95\linewidth}}{\raggedright S1, $\log \mathrm{OE}_{\mathrm{flow}} - \log \mathrm{OE}_{\mathrm{co}}$ on 13,716 co-classified pairs: level~2 1.015 [0.825, 1.215]; level~3 1.273 [1.085, 1.473]. S2, no controls: level~3 0.010 [$-0.014$, 0.035]. S3: mean $\Delta$ $-0.114$ for 2,055 pairs with a G16 field and $-0.137$ for the 5 AI $\times$ DEC pairs; 294 C-gap reversals, 55.8\% of them at level~3.} \\
+\bottomrule
+\multicolumn{6}{@{}p{0.95\linewidth}}{\raggedright $^{a}$ Post hoc, not preregistered: PPV is the share of C-gaps that are flow gaps; reversal is the share of C-gaps with flow OE $\geq$ 1.} \\
+\end{tabular}
+\end{table}
+
 Study~1 used frozen V9 seeds: 20260918 for the stub Monte Carlo and 20260919 for the document-preserving swap (E1.1). Its data-validity re-analysis (2026-11-18; E1.3--E1.5) was not preregistered. Its verdict was recorded as follows: directional under-integration DEFENSIBLE; ``16 statistically robust depleted pairs'' NOT DEFENSIBLE as measured; Burt structural hole STOP; research gap NOT SUPPORTED. We qualify the first item in this paper. It rests on the attenuation argument, which holds only for non-differential misclassification, whereas same-term self-pairing and model-inferred labels are non-random errors. The removal checks in Table~\ref{tab:app_s1robust} indicate that self-pairing does not appear to be the main driver, although the rule-based keyword matrix also changes the coding instrument; the effect of model-inferred labels is untested. The direction survives every check we could run, but it is descriptive and unconfirmed (Section~\ref{sec:discussion_measurement}).
 
 % ------------------------------------------------------------
@@ -169,7 +202,7 @@ Table~\ref{tab:app_v9cells} lists the 16 depleted cells of the frozen V9 analysi
 
 \begin{table}[tbp]
 \centering
-\caption{The 16 V9 depleted cells with observed counts (DIRECT; \texttt{V9\_ROBUSTNESS\_MASTER\_TABLE.csv}). These are depleted cells, not gaps, and they are withdrawn as anchors of the model (Section~\ref{sec:mlp_model}). Same-term self-pairing in the prediction $\times$ prediction cell can deplete cells in its row and column mechanically under fixed margins, but in a rule-based keyword matrix that also excludes the same-term records 13/16 cells keep their direction (Table~\ref{tab:app_s1robust}), so self-pairing does not appear to be the main driver.}
+\caption{The 16 V9 depleted cells with observed counts (DIRECT; \texttt{V9\_ROBUSTNESS\_MASTER\_TABLE.csv}). These are depleted cells, not gaps, and they are withdrawn as anchors of the project's model (Section~\ref{sec:discussion_implications}). Same-term self-pairing in the prediction $\times$ prediction cell can deplete cells in its row and column mechanically under fixed margins, but in a rule-based keyword matrix that also excludes the same-term records 13/16 cells keep their direction (Table~\ref{tab:app_s1robust}), so self-pairing does not appear to be the main driver.}
 \label{tab:app_v9cells}
 \footnotesize
 \begin{tabular}{llr}
@@ -351,214 +384,6 @@ Source & Scale & Relation type and outcome \tabularnewline
 \end{table}
 
 % ------------------------------------------------------------
-\section{Multi-Level Programming Constraint Details}
-\label{app:mlp}
-
-All values in this appendix describe the simulated v1.0 prototype. They are design assumptions, not estimates, and describe no real firm. The model formalises only the organisational candidate explanation (Section~\ref{sec:discussion_hypothesis}), and its original anchor, the 16 V9 depleted cells, has been withdrawn.
-
-\subsection{Full statement of the three levels}
-\label{app:mlp_full}
-
-This subsection states the model summarised in Section~\ref{sec:mlp_model}. Each process $i$ has an initial capability $X_i^0$ for every resource $X\in\mathcal{R}=\{D,A,R,G\}$.
-
-\paragraph{Level 1: enterprise resource allocation (leader).}
-\begin{align}
-\max_{b}\quad & F_1 = 1.25\,\mathrm{RealizedValue} + 0.20\,\mathrm{AIAdoptions} - 0.22\,\mathrm{ResourceUse} - 0.75\,\mathrm{ResidualRisk} \label{eq:mlp_l1}\\
-\text{s.t.}\quad & b_i^r\in\{0,1,2,3\}, \qquad \sum_{i\in I}\sum_{r\in\mathcal{R}} c_i^r\, b_i^r \leq B_{\mathrm{tot}}, \nonumber\\
-& \bar{X}_i = \phi_X\!\left(X_i^0, b_i^X\right) = \min\!\left(3,\; X_i^0 + b_i^X\right), \qquad X\in\mathcal{R}, \nonumber\\
-& (A_i,H_i,WI_i,EA_i)_{i\in I} \text{ solves Level 2 given } \bar{X}, \text{ and } q \text{ solves Level 3}. \nonumber
-\end{align}
-The toy map $\phi_X$ turns an allocation $b_i^X$ at unit cost $c_i^r$ into a capability ceiling $\bar{X}_i\in\{\bar D_i,\bar A_i,\bar R_i,\bar G_i\}$. RealizedValue, AIAdoptions and ResidualRisk are evaluated at the followers' responses.
-
-\paragraph{Level 2: AI decision architecture and governance.} For each process the architecture chooses AI integration depth $A_i$, human oversight $H_i$, workflow integration $WI_i$ and assurance $EA_i$:
-\begin{align}
-\max_{(A_i,H_i,WI_i,EA_i)_{i\in I}}\quad & F_2 \label{eq:mlp_l2}\\
-\text{s.t.}\quad & (A_i,H_i,WI_i,EA_i)\in\{0,\dots,3\}^4, \nonumber\\
-& A_i\leq\bar{A}_i,\quad H_i\leq\bar{G}_i,\quad EA_i\leq\bar{G}_i,\quad WI_i\leq\bar{D}_i, \nonumber\\
-& \bar{D}_i\geq D_{\mathrm{req}}(A_i),\quad \bar{R}_i\geq R_{\mathrm{req}}(A_i), \nonumber\\
-& H_i\geq H_{\mathrm{req}}(A_i,\kappa_i),\quad EA_i\geq EA_{\mathrm{req}}(A_i,\kappa_i),\quad WI_i\geq WI_{\mathrm{req}}(A_i), \nonumber\\
-& \sum_{i\in I}\left(0.42A_i + 0.24H_i + 0.24EA_i + 0.20WI_i\right)\leq K_\Gamma. \nonumber
-\end{align}
-The requirement thresholds are listed in Table~\ref{tab:app_thresholds}. The capacity constraint is shared by all processes; it represents the organisation's limited capacity to govern AI across processes. $F_2$ sums, over processes, weighted terms for feasibility, reliability and scalability (bounded linear indices of the capability surplus and the Level-2 state), minus integration cost and governance risk, plus the best Level-3 utility the architecture makes available. Eq.~\eqref{eq:app_f2} below states it in full with its weights, which are uncalibrated design values.
-
-\paragraph{Level 3: human--AI configuration (followers).} Given its Level-2 state, each process chooses one configuration $m\in\mathcal{M}=\{$HumanOnly, AIAssist, HumanFirstAICheck, AIFirstReview, BoundedAutomation$\}$:
-\begin{align}
-\max_{q_{i\cdot}}\quad & \sum_{m\in\mathcal{M}} q_{im}\,U_{im}, \qquad U_{im} = \mathrm{Gain}_{im} - 0.45\,\mathrm{Burden}_{im} - 0.75\,\mathrm{ResidualRisk}_{im} \label{eq:mlp_l3}\\
-\text{s.t.}\quad & q_{im}\in\{0,1\},\qquad \sum_{m\in\mathcal{M}} q_{im}=1,\qquad q_{im}\leq\mathrm{Allow}_{m\Gamma}, \nonumber\\
-& q_{im}=1 \;\Rightarrow\; (A_i,H_i,WI_i,EA_i)\geq\rho_m \text{ componentwise}. \nonumber
-\end{align}
-The minimum requirement vectors $\rho_m=(A,H,WI,EA)$ are given in Table~\ref{tab:app_configs}; HumanOnly requires $(0,0,0,0)$, and the requirements rise to $(3,3,3,3)$ for BoundedAutomation.
-
-\paragraph{Selection processes and the threshold $\tau$.} For a process that selects among alternatives, the AI component produces a score $s_i$, and $\tau_i$ is the score threshold above which it recommends the positive choice:
-\begin{equation}
-d_i=\mathbf{1}\!\left[s_i\geq\tau_i\right], \qquad V_i=\begin{cases}1 & \text{if } d_i \text{ matches the true outcome},\\ 0.35 & \text{otherwise},\end{cases}
-\label{eq:mlp_tau}
-\end{equation}
-where the correctness factor $V_i$ scales the value the process realises through $\psi_i$ (Appendix~\ref{app:mlp_constants}). The threshold is a fixed design parameter of the process, not a decision variable of any level. In the prototype, $s_i$ and the true outcome are a single fixed realisation known to all levels, so $\tau_i$ is a sensitivity device, not a model of error rates.
-
-\subsection{Governance regimes}
-
-A governance regime $\Gamma$ is defined by the parameters in Table~\ref{tab:app_regimes} and by the permission matrix $\mathrm{Allow}_{m\Gamma}$. In the prototype source, the flexibility multiplier scales realised gain at Level~3, the risk multiplier scales residual risk at Level~3 and governance risk at Level~2, and the cost multiplier scales integration cost at Level~2. For general background on bilevel and multilevel programming, see \citet{dempe2002foundations}, \citet{colson2007overview}, \citet{fortunyamat1981representation}, \citet{lee2001fuzzy} and \citet{cheng2019fuzzy}; none of these sources supports a specific modelling choice of the prototype.
-
-\begin{table}[tbp]
-\centering
-\caption{Governance regime parameters (SIMULATED; E4). The letters C, F and D are labels for parameter sets only and are not expanded. In the baseline, all five configurations are permitted under every regime.}
-\label{tab:app_regimes}
-\footnotesize
-\begin{tabular}{lrrrr}
-\toprule
-Regime & Capacity $K_\Gamma$ & Risk multiplier & Cost multiplier & Flexibility multiplier \\
-\midrule
-C & 5.5 & 0.85 & 1.10 & 0.95 \\
-F & 6.0 & 1.00 & 1.00 & 1.00 \\
-D & 6.5 & 1.15 & 0.90 & 1.05 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\subsection{Level-2 requirement thresholds and capacity}
-
-Table~\ref{tab:app_thresholds} lists the threshold functions used in Eq.~\eqref{eq:mlp_l2}; $\kappa_i$ is the consequence class of process $i$. The shared capacity constraint is
-\begin{equation}
-\mathrm{CapUse}=\sum_{i\in I}\left(0.42A_i+0.24H_i+0.24EA_i+0.20WI_i\right)\leq K_\Gamma ,
-\label{eq:app_capacity}
-\end{equation}
-with $\mathrm{CapUse}(0,0,0,0)=0$ and $K_\Gamma\geq0$. The prototype source also bounds $H_i$, $EA_i$ and $WI_i$ by $3A_i$. On the ordinal scale this restriction binds only at $A_i=0$, where it rules out oversight, assurance or workflow integration of an absent AI component. It is a design assumption of the prototype.
-
-\begin{table}[tbp]
-\centering
-\caption{Level-2 requirement thresholds as functions of AI depth $A$ and consequence class $\kappa$ (canonical v1.0 specification; design assumptions, not calibrated).}
-\label{tab:app_thresholds}
-\footnotesize
-\begin{tabular}{ll}
-\toprule
-Requirement & Definition \\
-\midrule
-Data, $D_{\mathrm{req}}(A)$ & $A$ \\
-Reliability, $R_{\mathrm{req}}(A)$ & $A$ \\
-Oversight, $H_{\mathrm{req}}(A,\kappa)$ & $0$ if $A=0$; otherwise $\min(3,\max(0,A+\kappa-2))$ \\
-Assurance, $EA_{\mathrm{req}}(A,\kappa)$ & $0$ if $A=0$; otherwise $\min(3,\max(1,A+\kappa-2))$ \\
-Workflow integration, $WI_{\mathrm{req}}(A)$ & $3$ for an execution process with $A=3$; otherwise $A$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\subsection{Structure of the Level-2 objective and the Level-3 terms}
-
-The Level-2 objective and its components are those of the canonical model file \texttt{01\_\allowbreak CANONICAL\_\allowbreak MODEL\_\allowbreak v1\_\allowbreak 0.md} in the project repository (identifiers withheld for review). All weights below are uncalibrated design values; we print them, and the Level-3 and process constants in Appendix~\ref{app:mlp_constants}, so that the prototype can be reproduced from the text. With $\mathrm{clip}_{[0,1]}$ denoting truncation to $[0,1]$, and $\mathrm{cost}_\Gamma$ and $\mathrm{risk}_\Gamma$ the regime's cost and risk multipliers (Table~\ref{tab:app_regimes}),
-\begin{align}
-F_2 &= \sum_{i\in I}\Bigl[0.90\,\mathrm{Feas}_i+0.90\,\mathrm{Rel}_i+0.45\,\mathrm{Scal}_i-0.55\,\mathrm{IntCost}_i-0.75\,\mathrm{GovRisk}_i+0.65\max\!\bigl(0,U_i^{*}\bigr)\Bigr], \label{eq:app_f2}\\
-\mathrm{Feas}_i &= \mathrm{clip}_{[0,1]}\bigl(0.55+0.08(\bar D_i-D_{\mathrm{req}})+0.08(\bar R_i-R_{\mathrm{req}})+0.04(\bar G_i-\max(H_{\mathrm{req}},EA_{\mathrm{req}}))\bigr), \nonumber\\
-\mathrm{Rel}_i &= \mathrm{clip}_{[0,1]}\bigl(0.45+0.10\,EA_i+0.06\,H_i+0.04\,WI_i-0.030\,A_i\kappa_i\bigr), \nonumber\\
-\mathrm{Scal}_i &= \mathrm{clip}_{[0,1]}\bigl(0.30+0.08\,\bar D_i+0.08\,\bar R_i+0.04\,WI_i\bigr), \nonumber\\
-\mathrm{IntCost}_i &= \mathrm{cost}_\Gamma\,\bigl(0.10\,A_i+0.06\,WI_i+0.05\,H_i+0.05\,EA_i\bigr), \nonumber\\
-\mathrm{GovRisk}_i &= \begin{cases} 0 & \text{if } A_i=0,\\ \mathrm{risk}_\Gamma\cdot 0.08\,\kappa_i A_i\,/\,(1+0.4\,H_i+0.4\,EA_i) & \text{otherwise,}\end{cases} \nonumber
-\end{align}
-where $U_i^{*}$ is the best Level-3 utility available to process $i$ in its Level-2 state, and the requirement thresholds are evaluated at $(A_i,\kappa_i)$ (Table~\ref{tab:app_thresholds}).
-
-At Level~3 the terms of $U_{im}$ in Eq.~\eqref{eq:mlp_l3} are
-\begin{align}
-\mathrm{Gain}_{im} &= g_{im}\,v_i\,\psi_i\,\mathrm{flex}_\Gamma, \qquad \mathrm{Burden}_{im} = \beta_m+0.03\,H_i+0.02\,EA_i+0.02\,WI_i, \nonumber\\
-\mathrm{ResidualRisk}_{im} &= \kappa_i\,\mathrm{autonomy}_m\,\mathrm{risk}_\Gamma\,/\,(1+0.45\,H_i+0.45\,EA_i), \nonumber
-\end{align}
-where $g_{im}$ is a configuration-specific base gain for the process, $v_i$ is the value of process $i$, $\psi_i=\max\bigl(0,(1+0.05\,EA_i+0.03\,WI_i)\,V_i\bigr)$ with the correctness factor $V_i$ of Eq.~\eqref{eq:mlp_tau}, $\mathrm{flex}_\Gamma$ is the regime's flexibility multiplier, $\beta_m$ is a configuration-specific base burden and $\mathrm{autonomy}_m$ a configuration-specific autonomy level. These constants are simulated design values from the prototype solver, printed in Appendix~\ref{app:mlp_constants}.
-
-\subsection{Level-3 configurations and the selection mechanism}
-
-Table~\ref{tab:app_configs} gives the minimum Level-2 state each configuration requires. A process may choose configuration $m$ only if $\mathrm{Allow}_{m\Gamma}=1$ and its state meets $\rho_m$ componentwise; it then receives $U_{im}=\mathrm{Gain}_{im}-0.45\,\mathrm{Burden}_{im}-0.75\,\mathrm{ResidualRisk}_{im}$. For selection processes, the AI recommendation is $d_i=\mathbf{1}[s_i\geq\tau_i]$, and the correctness factor $V_i$ is 1 for a correct recommendation and 0.35 otherwise (Eq.~\eqref{eq:mlp_tau}). Review configurations reduce risk or change utility but do not correct a wrong recommendation. Ties are broken deterministically in the order HumanOnly, AIAssist, HumanFirstAICheck, AIFirstReview, BoundedAutomation.
-
-\begin{table}[tbp]
-\centering
-\caption{The five human--AI configurations: minimum Level-2 requirements $\rho_m=(A,H,WI,EA)$ (canonical v1.0 specification) and Level-3 constants (prototype solver; SIMULATED design values): base gain $g_{im}$ for processes P1 / P2 / P3, base burden $\beta_m$ and autonomy $\mathrm{autonomy}_m$ (E4).}
-\label{tab:app_configs}
-\footnotesize
-\begin{tabular}{lccccccc}
-\toprule
-Configuration $m$ & $A$ & $H$ & $WI$ & $EA$ & Gain $g_{im}$ (P1 / P2 / P3) & Burden $\beta_m$ & Autonomy \\
-\midrule
-HumanOnly & 0 & 0 & 0 & 0 & 0 / 0 / 0 & 0 & 0 \\
-AIAssist & 1 & 0 & 1 & 1 & 0.80 / 0.60 / 0.40 & 0.15 & 0.20 \\
-HumanFirstAICheck & 2 & 1 & 2 & 1 & 0.75 / 1.00 / 0.80 & 0.30 & 0.40 \\
-AIFirstReview & 2 & 2 & 2 & 2 & 0.65 / 0.90 / 0.70 & 0.25 & 0.50 \\
-BoundedAutomation & 3 & 3 & 3 & 3 & 0.40 / 0.70 / 1.20 & 0.10 & 1.00 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\subsection{Level-3 and process constants}
-\label{app:mlp_constants}
-
-Table~\ref{tab:app_configs} gives the configuration constants and Table~\ref{tab:app_processes} the three simulated processes. In $\mathrm{Gain}_{im}=g_{im}\,v_i\,\psi_i\,\mathrm{flex}_\Gamma$, the factor is $\psi_i=\max\bigl(0,(1+0.05\,EA_i+0.03\,WI_i)\,V_i\bigr)$, with $V_i=1$ for a correct decision and 0.35 for an incorrect one. In the baseline, all five configurations are permitted under every regime; in the permission probe, AIAssist is disallowed under regime C. All values are simulated design values, not estimates. The unit resource costs of Level~1 are $c_i^r = 1$ for every process and resource, and the toy capability map is $\phi_X(X^0,b)=\min(3,X^0+b)$.
-
-\begin{table}[tbp]
-\centering
-\caption{The three simulated processes of the prototype (SIMULATED; prototype solver; E4): consequence class $\kappa_i$, value $v_i$, initial capabilities $X_i^0=(D,R,A,G)$, whether the process has a selection or execution step, threshold $\tau_i$, and the fixed score and true outcome of the selection step.}
-\label{tab:app_processes}
-\footnotesize
-\setlength{\tabcolsep}{4pt}
-\begin{tabular}{lp{3.4cm}cccccc}
-\toprule
-Process & Description & $\kappa_i$ & $v_i$ & $(D^0,R^0,A^0,G^0)$ & Sel.\ / exec. & $\tau_i$ & Score / truth \\
-\midrule
-P1 & low-risk informational support & 1 & 1.0 & (1, 1, 0, 1) & no / no & 0.40 & -- \\
-P2 & medium-risk recommendation/selection & 2 & 1.2 & (1, 1, 0, 1) & yes / no & 0.60 & 0.65 / 1 \\
-P3 & high-risk bounded execution & 3 & 1.5 & (2, 2, 0, 1) & yes / yes & 0.70 & 0.72 / 1 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\subsection{Simulation probes}
-\label{app:mlp_probes}
-
-Two probes illustrate mechanics, not findings. All values are SIMULATED (E4).
-
-\paragraph{Governance permission probe (regime C, budget 5).} AIAssist is disallowed: $F_1$ falls from 2.158 to 0.837, and the configurations change from AIAssist $\times3$ to HumanOnly $\times2$ plus HumanFirstAICheck $\times1$. The regime and budget are unchanged, but Level~1 re-optimises its allocation, so capabilities are endogenous rather than held fixed. The shift is driven by the permission by construction, since removing the optimal configuration forces the next feasible ones; Study~3 must observe such a pattern in data.
-
-\paragraph{Selection-threshold probe (regime F, budget 5).} Process P2 has score 0.65 and a true outcome of 1. At $\tau\leq0.6$ P2 uses AIAssist ($F_1$ 2.244, equal to the F/5 baseline); at $\tau=0.7$ the recommendation is wrong, Level~1 allocates nothing to P2's AI capability, and P2 reverts to HumanOnly ($F_1$ 1.450). Because score and outcome are fixed and known to all levels, the probe says nothing about error rates.
-
-\subsection{Existence and scope}
-
-\paragraph{Lemma (existence of a selected tri-level profile).} Assume (i) all decision and state domains are finite; (ii) the zero allocation $b=0$ is admissible ($B_{\mathrm{tot}}\geq0$); (iii) HumanOnly has requirement $(0,0,0,0)$ and is permitted under every regime; (iv) Level-3 followers are separable conditional on upstream decisions; and (v) deterministic tie-breaking at every level. Then, for a fixed regime, initial state and parameter snapshot, at least one selected tri-level profile exists, and exhaustive backward induction terminates in finitely many steps.
-
-\paragraph{Proof sketch.} \emph{Level~3:} HumanOnly is feasible for every Level-2 state, so each follower's feasible set is finite and non-empty; a maximiser exists, and tie-breaking selects one. \emph{Level~2:} for any capability vector the null architecture $A_i=H_i=WI_i=EA_i=0$ satisfies the ceilings, every threshold (all are 0 at $A=0$), the $A_i=0$ restriction and the capacity constraint, since $\mathrm{CapUse}=0\leq K_\Gamma$; the feasible set is finite and non-empty, so $F_2$ attains a maximum. \emph{Level~1:} $b=0$ is feasible and the allocation set is finite. Backward induction enumerates finite sets at every level and therefore terminates. $\square$
-
-\paragraph{Scope.} The lemma establishes non-empty feasibility, existence of a selected response and finite termination for this bounded finite prototype only. A selected representative is not a unique optimum, and optimistic and pessimistic formulations are not generally equivalent \citep{dempe2002foundations}. Existence and exact enumeration do not imply tractability for larger, continuous or non-convex tri-level programmes \citep{jeroslow1985polynomial}. The Level-2 capacity constraint couples processes, but it is chosen by a single decision maker. If instead the Level-3 followers shared a constraint (for example, a common pool of reviewers), assumption (iv) would fail. A coupled or generalised equilibrium concept would then be required, and payoff interactions could rule out pure-strategy equilibria. Equilibrium existence in finite non-cooperative games \citep{nash1951noncooperative} serves only as a boundary reference; it does not cover coupled constraints.
-
-\subsection{Conformance and mutation checks}
-
-The solver was checked in two ways (E4). The \emph{conformance check} evaluates, for each of the three processes and every tuple of capability ceilings $(\bar D_i,\bar A_i,\bar R_i,\bar G_i)$, the canonical constraints written above independently of the solver's state generator and compares the two feasible sets. Across 768 cases it counted 3,121 canonical-feasible state occurrences and found 0 mismatches. The \emph{mutation check} runs the real generator with the $A_i=0$ restriction disabled and the corresponding branch relaxed. It detected a mismatch with the canonical set in 720/768 cases, which shows that the conformance check is sensitive to this class of error. Both checks share the threshold-function implementations, so neither can detect a common-mode defect in those functions. The total runtime of the solver script was 13.9 s. These checks verify the toy instance computationally; they leave every coefficient, threshold, score, outcome, permission matrix and regime ordering empirically unverified.
-
-\subsection{Study 3: decision rules, stop rules and network test}
-\label{app:study3}
-
-This subsection states in full the rules summarised in Section~\ref{sec:mlp_study3}. No data have been collected, and all thresholds will be fixed in Study~3's own preregistration before data access. Table~\ref{tab:back_study3} maps the planned data to the levels and parameters of the model.
-
-\begin{table}[tbp]
-\centering
-\caption{Study~3 (plan): planned data mapped to model levels and parameters. Calibration is attempted only if the organisational candidate is supported. No data have been collected; no result is reported or implied.}
-\label{tab:back_study3}
-\footnotesize
-\begin{tabular}{p{2.6cm}p{6.2cm}p{5.4cm}}
-\toprule
-Model level & Planned data & Parameters informed \tabularnewline
-\midrule
-\raggedright Level 1 & \raggedright AI budgets and staffing by process & \raggedright $b_i^r$, $B_{\mathrm{tot}}$ \tabularnewline
-\raggedright Level 2 & \raggedright Approval and audit workflows; decision-rights matrices & \raggedright $\mathrm{Allow}_{m\Gamma}$, $H_{\mathrm{req}}$, $EA_{\mathrm{req}}$, $K_\Gamma$ \tabularnewline
-\raggedright Level 3 & \raggedright Process observation and interviews on the configurations actually used & \raggedright $q_{im}$ \tabularnewline
-\raggedright Optional organisational structural-hole test & \raggedright De-identified aggregate metadata on tickets and meetings between AI staff and decision owners & \raggedright Burt constraint, assessed against nulls that preserve both portfolio-style responsibilities and degree \tabularnewline
-\bottomrule
-\end{tabular}
-\end{table}
-
-\paragraph{Unit, sampling and coding.} The unit of analysis is the decision process, a recurring managerial decision with an identifiable owner; the observed events are \emph{integration episodes}, documented proposals, pilots or deployments of an AI configuration with their outcome (adopted, modified or stopped). The setting is one anonymised manufacturing firm, possibly more; the frame, window and minimum informative sample will be fixed in Study~3's own preregistration. ``Feasible on capability grounds but blocked by permission'' must be observed, not inferred from the model. Records dated \emph{before} each stopping point (approvals, budget allocations, business cases, decision-rights matrices, capability or data assessments), supplemented but not replaced by interviews, identify where and why each episode stopped. Two independent human coders code its first binding constraint (one of the five candidates, or ``indeterminable''), and their agreement is reported before any outcome analysis; given Study~1, model-assisted coding will not substitute for it (unlike the descriptive, abstract-level review of Appendix~\ref{app:review}, whose model coding is disclosed).
-
-\paragraph{Decision rules.} The organisational candidate is supported if, among episodes with a determinable binding constraint, internal permission, decision rights, governance capacity or allocation is the most frequent first binding constraint and exceeds the preregistered share, and if episodes that changed status after an internal rule or allocation changed did so without a recorded change in business case, capability or data. Each alternative (data quality, cost, regulation and liability, task suitability) is supported by the same rule applied to its own signature in Table~\ref{tab:back_study3_rivals}. Internal decision rights and external regulation can both appear as a withheld permission; they are separated by whether the binding rule originates inside the firm, where management can change it, or outside it. Organisational allocation and cost can both appear as a budget refusal; they are separated by return, not by whether budget exists in aggregate. Cost is defined by return: the expected value of a feasible, permitted configuration does not cover its integration cost, even after reallocation. An episode is coded as cost whenever the rejection cites return or a hurdle threshold, whatever the aggregate budget. It is coded as allocation or decision rights only with positive evidence that a proposal with a positive expected return, by the firm's own business case, was blocked by where the leader allocated budget or by a decision right: for example, the episode proceeds after an internal reallocation or rule change with no change in its business case, capability or data, or the rejection cites priority or decision rights. Otherwise it is coded as cost or as indeterminable. All codes rest on dated records, such as budget allocations and business cases, not on the model. If no candidate reaches the threshold, the result is reported as mixed, and the model is not calibrated as a governance-bottleneck model.
-
-\paragraph{Stop rules.} The study stops and is reported as uninformative if the episodes with a determinable binding constraint fall below the preregistered minimum. Coding stops, and the codebook is revised as a dated amendment before any outcome analysis, if agreement between human coders on a pilot set falls below the preregistered minimum. If the organisational candidate is not supported, the model's governance layer is not calibrated, and the model is reported as unsupported.
-
-\paragraph{Optional network test.} If de-identified metadata on tickets and meetings between AI staff and decision owners are available, Burt constraint \citep{burt1992structural} will be computed on real organisational ties, where embeddedness arguments locate economic action \citep{granovetter1985economic}, against a null that preserves both what each unit is responsible for and its degree. A three-expert exercise that translated the AI $\times$ decision categories into enterprise language is a pilot for the instruments only. Study~3 has not been run.
-
-% ------------------------------------------------------------
 \section{Systematic Review: Protocol, Flow and Reliability}
 \label{app:review}
 
@@ -584,7 +409,7 @@ Model level & Planned data & Parameters informed \tabularnewline
   \end{tabular}
 \end{table}
 
-\paragraph{Screeners, coders and adjudicator.} All were Claude (Anthropic) LLM subagents; the model version was not recorded. Agreement is therefore between model instances, not human raters, and no human-coded validation subsample exists. Study~3 excludes model-assisted coding by design (Appendix~\ref{app:study3}): the review is a descriptive, abstract-level screen with disclosed model coding, whereas Study~3's inference rests on its codes of organisational records.
+\paragraph{Screeners, coders and adjudicator.} All were Claude (Anthropic) LLM subagents; the model version was not recorded. Agreement is therefore between model instances, not human raters, and no human-coded validation subsample exists.
 
 \paragraph{Screening and amendment S1.} A primary screener screened all 476 records with an abstract; a second screener, blind to the first, screened a random 25\% (119 records). Agreement on include or exclude was $\kappa = 0.361$ (raw agreement 0.681; 38 disagreements), and 243 of the 476 primary decisions were marked low-confidence. Most disagreements concerned studies that compute Burt measures on co-patenting or co-authorship networks and use them as predictors: the guide lists both relation types and Burt measures, so such studies meet the criteria. Amendment S1, recorded after screening and before adjudication or coding, therefore had the adjudicator re-screen all 254 disputed or low-confidence records under the unchanged guide plus that note; the adjudicator reversed 26 decisions. High-confidence primary decisions outside the overlap stand.
 

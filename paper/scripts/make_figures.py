@@ -52,7 +52,7 @@ def fig_research_design():
         ax.text(x + w / 2, y + h - 6.6, body, ha="center", va="top", fontsize=6.8, color=INK2, linespacing=1.35)
 
     box(1, 27, 26.5, 21, "Study 1  Literature", "V5-V11.1: function\nco-occurrence and\nnetwork searches\n\nDirection descriptive only;\nsignificance not robust", MUTED)
-    box(36.75, 27, 26.5, 21, "Study 2  Patents", "8.5M US patents; 7 preregistered\nanalyses (1 confirmatory)\n+ exploratory Plan C\n\nDomain: hole not supported\nFirm: unresolved (PARTIAL)", BLUE)
+    box(36.75, 27, 26.5, 21, "Study 2  Patents", "8.5M US patents; 8 preregistered\nanalyses (1 confirmatory)\n+ exploratory Plan C\n\nDomain: hole not supported\nFirm: unresolved (PARTIAL)", BLUE)
     box(72.5, 27, 26.5, 21, "Study 3  Enterprise", "Plan: discriminates\ncompeting explanations\n(allocation and decision\nrights, data, cost,\nregulation, task fit)", ORANGE)
     box(1, 4, 30, 14, "Systematic review + R1", "204 indexed studies, model-coded\nfrom abstracts; R1: open\nboard data re-analysed", AQUA)
     ax.annotate("", xy=(14.25, 26.4), xytext=(14.25, 18.6), arrowprops=dict(arrowstyle="-|>", color=MUTED, lw=1.1))
@@ -65,6 +65,38 @@ def fig_research_design():
                 arrowprops=dict(arrowstyle="-|>", color=ORANGE, lw=1.1, ls=(0, (4, 3))))
     ax.text(87, 21.5, "only if\nsupported", ha="left", fontsize=6, color=INK2)
     save(fig, "fig_research_design")
+
+
+def fig_research_design_en():
+    """Journal (English) version of Figure 1: no MLP box; Plans 7-8 shown inside Study 2; Study 3 as a planned box."""
+    fig, ax = plt.subplots(figsize=(8.2, 3.6))
+    ax.set_xlim(0, 100)
+    ax.set_ylim(0, 50)
+    ax.axis("off")
+
+    def box(x, y, w, h, title, body, edge, ls="-", tfs=8.5, bfs=6.8):
+        ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.4,rounding_size=1.2",
+                                    linewidth=1.2, edgecolor=edge, facecolor="white", linestyle=ls))
+        ax.text(x + w / 2, y + h - 2.2, title, ha="center", va="top", fontsize=tfs, fontweight="bold", color=INK)
+        ax.text(x + w / 2, y + h - 6.6, body, ha="center", va="top", fontsize=bfs, color=INK2, linespacing=1.35)
+
+    box(1, 27, 26.5, 21, "Study 1  Literature", "V5-V11.1: function\nco-occurrence and\nnetwork searches\n\nDirection descriptive only;\nsignificance not robust", MUTED)
+    # Study 2 spans both rows; Plans 7-8 sit inside it as a nested box
+    box(35.5, 1.5, 37, 46.5, "Study 2  Patents", "8.5M US patents; 8 preregistered analyses\n(1 confirmatory) + exploratory Plan C\n\nRQ1 domain: hole not supported\nRQ2 firm: unresolved (PARTIAL)", BLUE)
+    box(38.5, 4, 31, 15, "Plans 7-8  Co-occurrence vs flow", "16,703 field pairs: co-occurrence gaps\nare flow gaps in 66.8%\nTaxonomy hypothesis not supported", BLUE, tfs=7.6, bfs=6.4)
+    box(1, 4, 27, 14, "Systematic review + R1", "204 indexed studies, model-coded\nfrom abstracts; R1: open\nboard data re-analysed", AQUA)
+    box(80, 30, 19, 15, "Study 3  Enterprise", "planned; separate\nstudy, no results", ORANGE, ls=(0, (4, 3)), tfs=7.2, bfs=6.4)
+    ax.annotate("", xy=(14.25, 26.4), xytext=(14.25, 18.6), arrowprops=dict(arrowstyle="-|>", color=MUTED, lw=1.1))
+    ax.text(15.5, 22.5, "how common\nis the inference?", ha="left", va="center", fontsize=5.8, color=INK2, linespacing=1.2)
+    ax.annotate("", xy=(34.9, 36.5), xytext=(28.4, 36.5), arrowprops=dict(arrowstyle="-|>", color=MUTED, lw=1.1))
+    ax.text(31.6, 38.2, "co-\noccurrence\nis not flow", ha="center", va="bottom", fontsize=5.8, color=INK2, linespacing=1.2)
+    ax.annotate("", xy=(37.9, 11), xytext=(28.9, 11), arrowprops=dict(arrowstyle="-|>", color=AQUA, lw=1.1))
+    ax.text(33.4, 12.6, "RQ3", ha="center", va="bottom", fontsize=6.4, fontweight="bold", color=INK2)
+    ax.text(33.4, 9.4, "how often,\nand when?", ha="center", va="top", fontsize=5.6, color=INK2, linespacing=1.2)
+    ax.annotate("", xy=(79.4, 37.5), xytext=(73.4, 37.5),
+                arrowprops=dict(arrowstyle="-|>", color=ORANGE, lw=1.1, ls=(0, (4, 3))))
+    ax.text(76.4, 39.2, "which\nconstraint\nbinds?", ha="center", va="bottom", fontsize=5.4, color=INK2, linespacing=1.2)
+    save(fig, "fig_research_design_en")
 
 
 # 2 ---------------------------------------------------------------- Study 1 direction persistence
@@ -342,7 +374,8 @@ def fig_plan7_cooc_flow():
 
 
 if __name__ == "__main__":
-    fig_research_design()
+    fig_research_design()      # Chinese thesis (keeps the MLP box)
+    fig_research_design_en()   # English journal version (no MLP box)
     fig_study1_direction()
     fig_patent_trend()
     fig_patent_sensitivity()

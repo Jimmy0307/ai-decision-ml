@@ -159,7 +159,7 @@ No scenario produced a spurious depleted cell.
 
 ---
 
-## E3. Study 2 — US patents (DIRECT; six preregistered plans, Plans 1–6, and the exploratory Plan C, each frozen before the analysis it governs)
+## E3. Study 2 — US patents (DIRECT; eight preregistered plans, Plans 1–8, and the exploratory Plan C, each frozen before the analysis it governs)
 
 **Data:** USPTO PatentsView `pvgpatdis`, downloaded 2026-11-18.
 - 8,512,829 utility patents granted 1976–2025.
@@ -178,7 +178,9 @@ No scenario produced a spurious depleted cell.
 - firm null `b59fc71`;
 - construct checks (Plan 5) `100f06a`, amendment C1 `e6dce5c` (E3.5);
 - Plan C (exploratory) `969e60b` (E3.6);
-- portfolio-and-degree firm null (Plan 6) `11117c4`, smoke-test note `5718fdb` (E3.7).
+- portfolio-and-degree firm null (Plan 6) `11117c4`, smoke-test note `5718fdb` (E3.7);
+- co-occurrence vs flow (Plan 7) `e6e5a52` (E3.8);
+- taxonomic distance and divergence (Plan 8) `6a35b21` (E3.9).
 
 The commits of Plans 1–4 are in PR #5 of `Jimmy0307/ai-decision-ml`; the later commit ids are listed in their own blocks below. The systematic review protocol and the R1 preregistration are logged in E5 and E5.1.
 

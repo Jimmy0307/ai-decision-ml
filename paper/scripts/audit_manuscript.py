@@ -4,7 +4,9 @@ Checks, for paper/en/*.tex (or paper/zh/*.tex with --zh):
   1. every number in the prose appears in experimental_log.md (or in the allow-list below);
   2. every \\cite key exists in references.bib;
   3. every \\ref / \\label pair resolves, and labels are unique;
-  4. every figure file referenced exists; every figure in paper/figures is used;
+  4. every figure file referenced exists; every figure in paper/figures is used, except the
+     per-language files in FIG_SKIP (the English journal version drops the MLP figure and uses
+     fig_research_design_en.png; the Chinese thesis keeps the MLP figure and fig_research_design.png);
   5. claim-boundary phrases that must not appear.
 Exit code 1 if any check fails.
 """
@@ -22,6 +24,10 @@ ALLOW = {
     "2007", "2013", "2015", "2018", "2019", "2020", "2021", "2022",
 }
 NUM = re.compile(r"(?<![A-Za-z0-9_.\\{])(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?(?![A-Za-z0-9_}])")  # ASCII boundaries so CJK-adjacent numbers are checked
+FIG_SKIP = {  # figures in paper/figures that one language version deliberately does not use
+    "en": {"fig_mlp_scenarios.png", "fig_research_design.png"},
+    "zh": {"fig_research_design_en.png"},
+}
 FORBIDDEN = [r"\bresearch gaps?\b(?![^.]{0,80}(not|no evidence|unsupported|NOT))", r"confirmed structural hole(?! at any)",
              r"\bcentrali[sz]ed\b", r"\bfederated\b", r"\bdecentrali[sz]ed\b", r"13 versions"]
 
@@ -78,7 +84,7 @@ def main(zh=False):
     for g in sorted(figs):
         if Path(g).name not in have:
             print(f"MISSING FIGURE FILE {g}"); fail = 1
-    for g in sorted(have - {Path(x).name for x in figs}):
+    for g in sorted(have - {Path(x).name for x in figs} - FIG_SKIP["zh" if zh else "en"]):
         print(f"UNUSED FIGURE {g}"); fail = 1
     print("AUDIT", "FAIL" if fail else "PASS", f"({len(files)} files, {len(labels)} labels, {len(refs)} refs, {len(figs)} figures)")
     return fail

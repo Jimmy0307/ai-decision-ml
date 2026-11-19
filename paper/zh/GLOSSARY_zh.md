@@ -46,6 +46,11 @@ Translators must use these renderings consistently, and keep the English term in
 | firm / assignee | 公司／受讓人 |
 | specialist firm / mixed-portfolio firm | 專門型公司／混合型（多角化）公司 |
 | research gap | 研究缺口（只能用於否定語境） |
+| CPC class / subclass | CPC 類／次類 |
+| taxonomic distance | 分類距離 |
+| co-occurrence gap / flow gap / false gap | 共現缺口／流動缺口／偽缺口 |
+| reversal (rate) | 反轉（率） |
+| post hoc | 事後（post hoc） |
 
 ## Number and format rules
 

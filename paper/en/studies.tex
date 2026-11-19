@@ -134,7 +134,7 @@ Study~1 therefore supports one descriptive claim: in this literature, as coded, 
 \section{Study 2: Patent Evidence}
 \label{sec:study2}
 
-Study~2 tests the premise on directed knowledge flows: applicant citations between US utility patents, with examiner-assigned CPC classes as group labels. The analyses follow the preregistration plans of Section~\ref{sec:design_prereg} (Tables~\ref{tab:app_prereg} and~\ref{tab:app_prereg_b}); for Plans~2--7 we claim advance fixing of their rules, not their questions. Deviations are dated amendments (Table~\ref{tab:app_amend}). All results in this section are DIRECT.
+Study~2 tests the premise on directed knowledge flows: applicant citations between US utility patents, with examiner-assigned CPC classes as group labels. The analyses follow the preregistration plans of Section~\ref{sec:design_prereg} (Tables~\ref{tab:app_prereg} and~\ref{tab:app_prereg_b}); for Plans~2--8 we claim advance fixing of their rules, not their questions. Deviations are dated amendments (Table~\ref{tab:app_amend}). All results in this section are DIRECT.
 
 \subsection{Data and the aggregate test}
 \label{sec:study2_aggregate}
@@ -381,7 +381,7 @@ Second, most cross citations are between firms, with a MIXED firm as the citing 
 
 Third, within the AI $\times$ decision matrix the risk column is heterogeneous: it is the most over-represented cell for machine learning (G06N20, O/E 1.331) and among the least for neural networks and probabilistic methods (G06N3 0.695; G06N7 0.701).
 
-These are descriptions without a baseline that holds portfolios fixed. Mixed firms own both kinds of patent, so the higher MIXED-citing share, like the lower within-firm share, may follow from portfolios, as most of the specialist separation did (Section~\ref{sec:study2_firm}). Neither is evidence of brokerage or of a boundary inside firms; the latter is a question that Study~3 can ask with internal data (Section~\ref{sec:mlp_study3}).
+These are descriptions without a baseline that holds portfolios fixed. Mixed firms own both kinds of patent, so the higher MIXED-citing share, like the lower within-firm share, may follow from portfolios, as most of the specialist separation did (Section~\ref{sec:study2_firm}). Neither is evidence of brokerage or of a boundary inside firms; the latter is a question for organisation-internal data (Section~\ref{sec:discussion_implications}).
 
 \begin{figure}[tbp]
   \centering
@@ -390,7 +390,7 @@ These are descriptions without a baseline that holds portfolios fixed. Mixed fir
   \label{fig:plan_c_locus}
 \end{figure}
 
-\subsection{How often does a co-occurrence gap mark a flow gap? (Plan~7)}
+\subsection{How often, and when, does a co-occurrence gap mark a flow gap? (Plans~7 and~8)}
 \label{sec:study2_cooc_flow}
 
 Plan~7 asks whether the AI--decision reversal, depleted in literature co-occurrence but over-connected in patent flow, is typical; it is data-informed, with rules frozen before computation. For 16,703 eligible pairs of the 185 CPC main groups in G06, G16 and H04 with $\geq$2,000 patents, co-occurrence is the co-classification O/E and flow the citation OE of Plan~1; a gap is the lowest quartile of either. The inference is \texttt{RELIABLE} if the share of co-occurrence gaps that are also flow gaps (PPV) is $\geq$ 0.80 and the share with above-expected flow (reversal) $\leq$ 0.05, and \texttt{UNRELIABLE} if PPV $<$ 0.50 or reversal $\geq$ 0.20.
@@ -405,6 +405,8 @@ In patents, AI and decision classes are not a co-occurrence gap: pairs of G06N m
   \caption{Plan~7 (data-informed; DIRECT). Left: co-classification O/E against citation OE for 16,703 pairs of CPC main groups in G06, G16 and H04 (log scales; never co-classified pairs plotted at 0). Dashed lines mark the lowest-quartile thresholds (0.0269 and 0.3291), the solid line OE $=1$, and the dots the pairs of G06N main groups with G06Q10. Right: share of co-occurrence gaps that are also flow gaps (blue) and that have flow above expectation (orange), by specification, with the field-bootstrap 95\% interval for the primary PPV; the dotted line is the 25\% base rate. The O/E $\leq$ 0.5 rule is a common absolute rule, not a stricter one; the degenerate decile variant appears only in Table~\ref{tab:app_plan7}.}
   \label{fig:plan7_cooc_flow}
 \end{figure}
+
+\paragraph{When does co-occurrence misjudge flow? (Plan~8).} Plan~8, data-informed and frozen before the Plan~7 pairs were broken down, tested one explanation of the disagreement: if co-occurrence records joint categorisation, it should understate flow most between fields that the classification places far apart. Pairs were grouped as same CPC subclass (1,337), same class but different subclass (6,547) or different class (8,819). The preregistered hypothesis failed. The divergence $\Delta$ (flow percentile rank minus co-occurrence percentile rank) was not ordered by distance (means $-0.023$, $0.022$, $-0.013$). Among co-occurrence gaps, false gaps were less frequent across classes than within a class (30.4\% against 39.8\%; difference $-0.094$, 95\% CI $-0.199$ to $-0.002$), the opposite of the prediction; reversals were 5.6\% against 10.3\%. Only among co-classified pairs did the log divergence grow with distance (Table~\ref{tab:app_plan8}). The data therefore do not support taxonomic distance as the explanation. A post hoc, descriptive breakdown suggests a hypothesis for future work, not a finding: co-occurrence gaps were least reliable between neighbouring subclasses of one class (PPV 60.5\%, reversal 10.1\%) and most reliable across classes (69.6\%, 5.6\%). AI (G06N) and decision (G06Q) are such neighbours, both in class G06.
 
 % ------------------------------------------------------------
 \section{How Common Is the Inference? A Systematic Review}
