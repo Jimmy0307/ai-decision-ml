@@ -134,7 +134,7 @@ Study~1 therefore supports one descriptive claim: in this literature, as coded, 
 \section{Study 2: Patent Evidence}
 \label{sec:study2}
 
-Study~2 tests the premise on directed knowledge flows: applicant citations between US utility patents, with examiner-assigned CPC classes as group labels. The analyses follow the preregistration plans of Section~\ref{sec:design_prereg} (Tables~\ref{tab:app_prereg} and~\ref{tab:app_prereg_b}); for Plans~2--6 we claim advance fixing of their rules, not their questions. Deviations are dated amendments (Table~\ref{tab:app_amend}). All results in this section are DIRECT.
+Study~2 tests the premise on directed knowledge flows: applicant citations between US utility patents, with examiner-assigned CPC classes as group labels. The analyses follow the preregistration plans of Section~\ref{sec:design_prereg} (Tables~\ref{tab:app_prereg} and~\ref{tab:app_prereg_b}); for Plans~2--7 we claim advance fixing of their rules, not their questions. Deviations are dated amendments (Table~\ref{tab:app_amend}). All results in this section are DIRECT.
 
 \subsection{Data and the aggregate test}
 \label{sec:study2_aggregate}
@@ -373,7 +373,7 @@ The contrast with P5---low MIXED constraint against a degree-matched null, high 
 \subsection{Exploratory: where the AI--decision connection runs}
 \label{sec:study2_locus}
 
-Plans~1--6 show what the AI--decision relation is not. Plan~C, frozen before computation but exploratory and without tests, describes where cross citations occur (Figure~\ref{fig:plan_c_locus}), in the 127,114 in-scope patents and 162,339 applicant citations of the firm analyses.
+Plan~C, frozen before computation but exploratory and without tests, describes where cross citations occur (Figure~\ref{fig:plan_c_locus}), in the 127,114 in-scope patents and 162,339 applicant citations of the firm analyses.
 
 First, cross citations rose as a share of in-scope citations while their intensity relative to expectation declined. Citations between AI-only and decision-only patents rose from 10.8\% to 14.4\% of in-scope citations between 2013--2018 and 2019--2025, whereas the time-stratified OE of the same pair fell from 3.90 in 2013 to 2.34 in 2025 (slope $-0.097$ per year; Section~\ref{sec:study2_aggregate}); the rising share is consistent with growth of both classes, not with rising intensity. BRIDGE patents, classified in both G06N and the decision classes, rose from 2.9\% to 4.6\% of in-scope patents between the two periods, but their yearly share peaked at 5.1\% in 2023 and fell to 4.1\% in 2025; co-classification is co-occurrence, not flow.
 
@@ -388,6 +388,22 @@ These are descriptions without a baseline that holds portfolios fixed. Mixed fir
   \includegraphics[width=\linewidth]{fig_plan_c_locus.png}
   \caption{Plan~C (exploratory, descriptive). Left: BRIDGE patents, classified in both G06N and G06Q10/04 or /06, as a share of in-scope patents by grant year; co-classification is co-occurrence, not flow. Right: where applicant citations run, for citations between AI-only and decision-only patents (blue) and for all in-scope citations (orange); categories are mutually exclusive. No tests are made, and the shares ignore clustering by patent and firm.}
   \label{fig:plan_c_locus}
+\end{figure}
+
+\subsection{How often does a co-occurrence gap mark a flow gap? (Plan~7)}
+\label{sec:study2_cooc_flow}
+
+Plan~7 asks whether the AI--decision reversal, depleted in literature co-occurrence but over-connected in patent flow, is typical; it is data-informed, with rules frozen before computation. For 16,703 eligible pairs of the 185 CPC main groups in G06, G16 and H04 with $\geq$2,000 patents, co-occurrence is the co-classification O/E and flow the citation OE of Plan~1; a gap is the lowest quartile of either. The inference is \texttt{RELIABLE} if the share of co-occurrence gaps that are also flow gaps (PPV) is $\geq$ 0.80 and the share with above-expected flow (reversal) $\leq$ 0.05, and \texttt{UNRELIABLE} if PPV $<$ 0.50 or reversal $\geq$ 0.20.
+
+PPV is 66.8\% (95\% CI 61.0--72.1\%, bootstrap over fields), against a 25\% base rate; reversal is 7.0\% (4.6--9.8\%), and Spearman $\rho$ is 0.80 (Figure~\ref{fig:plan7_cooc_flow}). The label is \texttt{MODERATE}. The 2,974 never co-classified pairs (17.8\%) behave alike: 69.2\% are flow gaps and 7.5\% have above-expected flow. A common absolute rule, O/E $\leq$ 0.5 on both sides, is \texttt{UNRELIABLE} (PPV 52.2\%, reversal 22.9\%); its co-occurrence cut-point is looser than the quartile (0.0269), so it is a different rule, not a stricter one. Other variants stay \texttt{MODERATE} (Table~\ref{tab:app_plan7}). A co-occurrence gap is informative, far better than chance, but about a third are not flow gaps and about one in fourteen reverses.
+
+In patents, AI and decision classes are not a co-occurrence gap: pairs of G06N main groups with G06Q10 are enriched in co-classification (O/E 1.26--2.79) and flow (2.03--3.27), except quantum computing (G06N10), low on both. Study~1's depletion is specific to the literature coding. Co-classification is label co-occurrence within documents, as in Study~1, but in patents and three CPC classes only.
+
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=\linewidth]{fig_plan7_cooc_flow.png}
+  \caption{Plan~7 (data-informed; DIRECT). Left: co-classification O/E against citation OE for 16,703 pairs of CPC main groups in G06, G16 and H04 (log scales; never co-classified pairs plotted at 0). Dashed lines mark the lowest-quartile thresholds (0.0269 and 0.3291), the solid line OE $=1$, and the dots the pairs of G06N main groups with G06Q10. Right: share of co-occurrence gaps that are also flow gaps (blue) and that have flow above expectation (orange), by specification, with the field-bootstrap 95\% interval for the primary PPV; the dotted line is the 25\% base rate. The O/E $\leq$ 0.5 rule is a common absolute rule, not a stricter one; the degenerate decile variant appears only in Table~\ref{tab:app_plan7}.}
+  \label{fig:plan7_cooc_flow}
 \end{figure}
 
 % ------------------------------------------------------------

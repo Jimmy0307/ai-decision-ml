@@ -505,7 +505,9 @@ By period, cross citations:
 - Spearman ρ(OE_co, OE_flow) = 0.804, 95% CI 0.777–0.831.
 - Never-co-classified eligible pairs: 2,974 (17.8% of eligible pairs). Of these, 0.692 (69.2%) are F-gaps and 0.075 (7.5%) have OE_flow ≥ 1.
 - Share of all eligible pairs with OE_flow ≥ 1: 0.454.
+- Percentage forms used in the manuscript: PPV 66.8% (95% CI 61.0–72.1%); reversal 7.0% (95% CI 4.6–9.8%); ρ = 0.80 (rounded from 0.804).
 - **Preregistered label: MODERATE.**
+- Preregistered reading rule: RELIABLE if PPV ≥ 0.80 and reversal ≤ 0.05; UNRELIABLE if PPV < 0.50 or reversal ≥ 0.20; MODERATE otherwise.
 
 **Secondary specifications (descriptive):**
 

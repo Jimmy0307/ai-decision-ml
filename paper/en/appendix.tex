@@ -9,7 +9,7 @@
 \section{Preregistration and Amendment Log}
 \label{app:prereg}
 
-Study~2 rests on six preregistered plans (Plans~1--6) and an exploratory plan (Plan~C); the systematic review and R1 have their own frozen protocols (Appendix~\ref{app:review}). Each is a self-timestamped git commit in the project repository (repository identifiers withheld for review; the Study~2 commit ids are listed in Tables~\ref{tab:app_prereg} and~\ref{tab:app_prereg_b}); none was registered with a third-party registry such as OSF, and the commit timestamps are set by the authors' own tooling. Preregistration is meant to separate confirmatory from exploratory analysis by fixing the plan before outcomes are observed \citep{nosek2018preregistration}. By that standard, Plan~1 was fixed before any patent data were downloaded. Plans 2--6 were written after earlier results were known, so the questions they ask were data-informed; only their definitions, null models, decision rules, thresholds and stop rules were fixed before the analyses they govern were computed. Only Plan~1 is confirmatory. Plan~5, the construct checks of Section~\ref{sec:study2_aggregate} (Table~\ref{tab:construct}), was added after the main verdict was known, as a data-informed follow-up, and frozen on 2026-11-19 before any of its specifications was computed; amendment C1 added two strict specifications the same day, after the first Plan~5 results were known but before the new specifications were computed. Changes after freezing are recorded as dated amendments that do not overwrite the frozen text. Tables~\ref{tab:app_prereg} (Plans~1--3) and~\ref{tab:app_prereg_b} (Plans~4--6 and~C) summarise the plans, including the commit ids and rule thresholds taken from the frozen texts; Table~\ref{tab:app_amend} lists every Study~2 amendment and recorded deviation, and Table~\ref{tab:app_plan6} gives the descriptive Plan~6 values.
+Study~2 rests on seven preregistered plans (Plans~1--7) and an exploratory plan (Plan~C); the systematic review and R1 have their own frozen protocols (Appendix~\ref{app:review}). Each is a self-timestamped git commit in the project repository (repository identifiers withheld for review; the Study~2 commit ids are listed in Tables~\ref{tab:app_prereg} and~\ref{tab:app_prereg_b}); none was registered with a third-party registry such as OSF, and the commit timestamps are set by the authors' own tooling. Preregistration is meant to separate confirmatory from exploratory analysis by fixing the plan before outcomes are observed \citep{nosek2018preregistration}. By that standard, Plan~1 was fixed before any patent data were downloaded. Plans 2--7 were written after earlier results were known, so the questions they ask were data-informed; only their definitions, null models, decision rules, thresholds and stop rules were fixed before the analyses they govern were computed. Only Plan~1 is confirmatory. Plan~5, the construct checks of Section~\ref{sec:study2_aggregate} (Table~\ref{tab:construct}), was added after the main verdict was known, as a data-informed follow-up, and frozen on 2026-11-19 before any of its specifications was computed; amendment C1 added two strict specifications the same day, after the first Plan~5 results were known but before the new specifications were computed. Changes after freezing are recorded as dated amendments that do not overwrite the frozen text. Tables~\ref{tab:app_prereg} (Plans~1--3) and~\ref{tab:app_prereg_b} (Plans~4--7 and~C) summarise the plans, including the commit ids and rule thresholds taken from the frozen texts; Table~\ref{tab:app_amend} lists every Study~2 amendment and recorded deviation, Table~\ref{tab:app_plan6} gives the descriptive Plan~6 values, and Table~\ref{tab:app_plan7} gives all seven Plan~7 specifications. Plan~7, the last plan, was written after all other results were known and was motivated by the AI--decision contrast between literature co-occurrence and patent flow; it is data-informed.
 
 \begin{table}[tbp]
 \centering
@@ -44,7 +44,7 @@ Plan (commit) & Frozen before / known when written & Hypotheses and content & De
 
 \begin{table}[tbp]
 \centering
-\caption{Preregistration log for Study~2, continued: Plans~4--6 and the exploratory Plan~C. Columns as in Table~\ref{tab:app_prereg}.}
+\caption{Preregistration log for Study~2, continued: Plans~4--7 and the exploratory Plan~C. Columns as in Table~\ref{tab:app_prereg}.}
 \label{tab:app_prereg_b}
 \footnotesize
 \setlength{\tabcolsep}{4pt}
@@ -75,6 +75,12 @@ Plan (commit) & Frozen before / known when written & Hypotheses and content & De
 \raggedright Plan~4's T1 and T2, with owner sets permuted within type $\times$ year (or S-tech) $\times$ out- and in-degree classes (0--9, 10+) &
 \raggedright Validity gate: median Spearman $\rho$ of firm degree $\geq$ 0.90 and of strength $\geq$ 0.95, otherwise \texttt{INVALID\_\allowbreak NULL}; if valid, Plan~4's rule &
 \raggedright \texttt{INVALID\_\allowbreak NULL} in both schemes ($\rho$ degree 0.817, 0.825); descriptive values in Table~\ref{tab:app_plan6} \tabularnewline
+\addlinespace
+\raggedright 7.~Co-occurrence vs flow across field pairs (\texttt{e6e5a52}) &
+\raggedright Frozen 2026-11-19, before any pair-level co-classification or citation quantity was computed; data-informed. Known: all other results, including the AI--decision contrast between literature co-occurrence and patent flow, which motivated the plan &
+\raggedright Pairs of the 185 CPC main groups in G06/G16/H04 with $\geq$2,000 patents; co-occurrence = co-classification O/E, flow = Plan~1 citation OE; gap = lowest quartile; PPV = P(flow gap $\mid$ co-occurrence gap), reversal = P(flow OE $\geq 1$ $\mid$ co-occurrence gap), Spearman $\rho$, never co-classified pairs; field-cluster bootstrap (1,000 replicates); S1--S5 descriptive &
+\raggedright \texttt{RELIABLE} if PPV $\geq$ 0.80 and reversal $\leq$ 0.05; \texttt{UNRELIABLE} if PPV $<$ 0.50 or reversal $\geq$ 0.20; otherwise \texttt{MODERATE} &
+\raggedright \texttt{MODERATE} (PPV 0.668, reversal 0.070); Section~\ref{sec:study2_cooc_flow}; Table~\ref{tab:app_plan7} \tabularnewline
 \bottomrule
 \end{tabular}
 \end{table}
@@ -125,6 +131,29 @@ Singleton-stratum patent share & 0.0052 & 0.062 \\
 T1 null median [95\%], one-sided $p$ & 0.315 [0.286--0.346], .001 & 0.249 [0.224--0.273], .236 \\
 T2 null median [95\%], one-sided $p$ & 0.130 [0.127--0.135], 1.000 & 0.177 [0.172--0.184], 1.000 \\
 \bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[tbp]
+\centering
+\caption{Plan~7, co-occurrence gaps against flow gaps across pairs of CPC main groups in G06, G16 and H04 (DIRECT; E3.8). PPV: share of co-occurrence gaps that are also flow gaps (base rate 0.250 in the primary specification); reversal: share of co-occurrence gaps with flow OE $\geq$ 1. Only the primary specification carries the preregistered label; S1--S5 are descriptive, and their labels apply the same rule for comparison. Primary 95\% field-bootstrap intervals: PPV 0.610--0.721, reversal 0.046--0.098, $\rho$ 0.777--0.831.}
+\label{tab:app_plan7}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}p{5.6cm}rrrrl@{}}
+\toprule
+Specification & Eligible pairs & PPV & Reversal & Spearman $\rho$ & Label \\
+\midrule
+Primary (lowest quartile; applicant citations) & 16,703 & 0.668 & 0.070 & 0.804 & \texttt{MODERATE} \\
+S1 absolute cut-points (O/E $\leq$ 0.5 on both sides)$^{a}$ & 16,703 & 0.522 & 0.229 & 0.804 & \texttt{UNRELIABLE} \\
+S2 all citation categories & 16,703 & 0.686 & 0.054 & 0.826 & \texttt{MODERATE} \\
+S3 $E \geq 20$ on both measures & 14,486 & 0.667 & 0.064 & 0.812 & \texttt{MODERATE} \\
+S4 lowest decile$^{b}$ & 16,703 & 0.407 & 0.075 & 0.804 & \texttt{UNRELIABLE} \\
+S5 2013--2018 & 14,811 & 0.628 & 0.076 & 0.795 & \texttt{MODERATE} \\
+S5 2019--2025 & 15,741 & 0.640 & 0.102 & 0.772 & \texttt{MODERATE} \\
+\bottomrule
+\multicolumn{6}{p{0.95\linewidth}}{\raggedright $^{a}$ The cut-point 0.5 is looser than the primary co-occurrence quartile (0.0269), so S1 is a different, common absolute rule, not a stricter one.} \\
+\multicolumn{6}{p{0.95\linewidth}}{\raggedright $^{b}$ Degenerate on the co-occurrence side: the decile threshold is 0, so the co-occurrence gaps are the 2,974 never co-classified pairs, more than the decile flow-gap set, and the maximum attainable PPV is about 0.56. S4 is therefore not evidence that stricter gap definitions are less accurate.} \\
 \end{tabular}
 \end{table}
 

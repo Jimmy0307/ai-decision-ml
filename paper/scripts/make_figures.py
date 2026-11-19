@@ -52,7 +52,7 @@ def fig_research_design():
         ax.text(x + w / 2, y + h - 6.6, body, ha="center", va="top", fontsize=6.8, color=INK2, linespacing=1.35)
 
     box(1, 27, 26.5, 21, "Study 1  Literature", "V5-V11.1: function\nco-occurrence and\nnetwork searches\n\nDirection descriptive only;\nsignificance not robust", MUTED)
-    box(36.75, 27, 26.5, 21, "Study 2  Patents", "8.5M US patents; 6 preregistered\nanalyses (1 confirmatory)\n+ exploratory Plan C\n\nDomain: hole not supported\nFirm: unresolved (PARTIAL)", BLUE)
+    box(36.75, 27, 26.5, 21, "Study 2  Patents", "8.5M US patents; 7 preregistered\nanalyses (1 confirmatory)\n+ exploratory Plan C\n\nDomain: hole not supported\nFirm: unresolved (PARTIAL)", BLUE)
     box(72.5, 27, 26.5, 21, "Study 3  Enterprise", "Plan: discriminates\ncompeting explanations\n(allocation and decision\nrights, data, cost,\nregulation, task fit)", ORANGE)
     box(1, 4, 30, 14, "Systematic review + R1", "204 indexed studies, model-coded\nfrom abstracts; R1: open\nboard data re-analysed", AQUA)
     ax.annotate("", xy=(14.25, 26.4), xytext=(14.25, 18.6), arrowprops=dict(arrowstyle="-|>", color=MUTED, lw=1.1))
