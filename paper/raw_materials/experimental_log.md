@@ -484,6 +484,52 @@ By period, cross citations:
 
 **Reading:** no verdict. Firm-level brokerage remains unresolved. A degree-stratified null could not hold firm degree close enough (rank correlation 0.82–0.83 against 0.90).
 
+### E3.8 Plan 7: co-occurrence vs flow across all field pairs (data-informed; `PREREGISTRATION_COOCCURRENCE_VS_FLOW.md` frozen e6e5a52; `paper/data/PLAN7_RESULTS.json`, `PLAN7_PAIRS_primary.csv`)
+
+**Units and measures:**
+- 185 CPC main groups in G06/G16/H04 with ≥ 2,000 patents granted 2010–2025, giving 17,020 pairs.
+- Co-occurrence universe: 1,730,495 patents. OE_co = n_AB·N/(n_A n_B).
+- Flow: symmetric citation OE using the Plan 1 method (strata = citing year × cited year), with applicant citations in the primary specification.
+- Eligible pairs: E_co ≥ 5 and E_flow ≥ 5.
+- C-gap / F-gap: lowest quartile of OE_co / OE_flow.
+- Reversal: a C-gap pair with OE_flow ≥ 1.
+- Bootstrap: 1,000 field-cluster replicates.
+- Run time 859 s.
+
+**Primary specification:**
+- 16,703 eligible pairs.
+- Thresholds: OE_co ≤ 0.0269; OE_flow ≤ 0.3291.
+- 4,176 C-gaps and 4,176 F-gaps. Base rate of an F-gap: 0.250.
+- PPV = P(F-gap | C-gap) = 0.668 (66.8%), 95% CI 0.610–0.721.
+- Reversal rate = 0.070 (7.0%), 95% CI 0.046–0.098.
+- Spearman ρ(OE_co, OE_flow) = 0.804, 95% CI 0.777–0.831.
+- Never-co-classified eligible pairs: 2,974 (17.8% of eligible pairs). Of these, 0.692 (69.2%) are F-gaps and 0.075 (7.5%) have OE_flow ≥ 1.
+- Share of all eligible pairs with OE_flow ≥ 1: 0.454.
+- **Preregistered label: MODERATE.**
+
+**Secondary specifications (descriptive):**
+
+| Spec | Eligible | PPV | Reversal | ρ | Label | Note |
+|---|---|---|---|---|---|---|
+| S1 absolute cut-points (OE ≤ 0.5 both) | 16,703 | 0.522 (52.2%) | 0.229 (22.9%) | 0.804 | UNRELIABLE | the cut-point 0.5 is looser than the primary co-occurrence quartile (0.0269), so this is a different, common rule, not a stricter one |
+| S2 all citation categories | 16,703 | 0.686 | 0.054 | 0.826 | MODERATE | |
+| S3 E ≥ 20 | 14,486 | 0.667 | 0.064 | 0.812 | MODERATE | |
+| S4 lowest decile | 16,703 | 0.407 (40.7%) | 0.075 | 0.804 | UNRELIABLE | the co-occurrence decile threshold is 0, so C-gap = the 2,974 never-co-classified pairs, larger than the decile F-gap set; the maximum attainable PPV is therefore about 0.56 |
+| S5 2013–2018 | 14,811 | 0.628 | 0.076 | 0.795 | MODERATE | |
+| S5 2019–2025 | 15,741 | 0.640 | 0.102 | 0.772 | MODERATE | |
+
+**AI × DEC pairs in patents** (G06N main groups × G06Q10; OE_co, OE_flow):
+
+| Pair | OE_co | OE_flow | C-gap | F-gap |
+|---|---|---|---|---|
+| G06N3 | 1.26 | 2.03 | no | no |
+| G06N5 | 2.79 | 3.27 | no | no |
+| G06N7 | 2.69 | 3.08 | no | no |
+| G06N20 | 2.38 | 2.93 | no | no |
+| G06N10 (quantum) | 0.32 | 0.14 | no | yes |
+
+In patent co-classification, AI and decision classes are not a co-occurrence gap. The depletion of Study 1 is specific to the literature coding.
+
 ## E4. Multi-level programming prototype (v1.0; SIMULATED; `paper/data/MLP_SOLVER_RESULTS_v1_0.json`)
 
 **Model and exactness checks:**

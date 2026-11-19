@@ -279,6 +279,68 @@ def fig_plan_c_locus():
     save(fig, "fig_plan_c_locus")
 
 
+# 9 ---------------------------------------------------------------- Plan 7: co-occurrence vs flow across field pairs
+def fig_plan7_cooc_flow():
+    r = json.load(open(DATA / "PLAN7_RESULTS.json", encoding="utf-8"))
+    p = r["specs"]["primary"]
+    rows = [x for x in csv.DictReader(open(DATA / "PLAN7_PAIRS_primary.csv", encoding="utf-8")) if x["eligible"] == "True"]
+    oc = np.array([float(x["OE_co"]) for x in rows])
+    of = np.array([float(x["OE_flow"]) for x in rows])
+    floor_c, floor_f = 2e-3, 1e-2
+    xc = np.log10(np.where(oc > 0, oc, floor_c))
+    yf = np.log10(np.where(of > 0, of, floor_f))
+    fig, (a1, a2) = plt.subplots(1, 2, figsize=(8.2, 3.4), gridspec_kw={"width_ratios": [1.25, 1]})
+    hb = a1.hexbin(xc, yf, gridsize=45, bins="log", cmap=LinearSegmentedColormap.from_list("b", ["#e9f1fb", BLUE, "#123e75"]),
+                   mincnt=1, linewidths=0)
+    tc, tf = np.log10(p["threshold_co"]), np.log10(p["threshold_flow"])
+    a1.axvline(tc, color=INK2, lw=1, ls="--")
+    a1.axhline(tf, color=INK2, lw=1, ls="--")
+    a1.axhline(0, color=MUTED, lw=0.8)
+    for x in r["ai_dec_pairs"]:
+        a1.plot(np.log10(max(x["OE_co"], floor_c)), np.log10(max(x["OE_flow"], floor_f)), "o", ms=6, color=ORANGE,
+                markeredgecolor="white", markeredgewidth=1.2)
+    a1.annotate("AI × DEC pairs", xy=(np.log10(2.7), np.log10(2.9)), xytext=(np.log10(40), np.log10(1.5)),
+                fontsize=7, color=INK2, ha="center", arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.8))
+    a1.text(tc - 0.05, 1.05, "co-occurrence\ngap ←", fontsize=7, color=INK2, ha="right", va="top")
+    a1.text(1.15, tf - 0.08, "flow gap", fontsize=7, color=INK2, ha="right", va="top")
+    a1.set_xticks([np.log10(floor_c), -2, -1, 0, 1])
+    a1.set_xticklabels(["0", "0.01", "0.1", "1", "10"])
+    a1.set_yticks([-2, -1, 0, 1])
+    a1.set_yticklabels(["0.01", "0.1", "1", "10"])
+    a1.set_xlabel("Co-classification O/E (co-occurrence)")
+    a1.set_ylabel("Citation O/E (flow)")
+    a1.set_title(f"{p['eligible_pairs']:,} field pairs", fontsize=9)
+    cb = fig.colorbar(hb, ax=a1, fraction=0.04, pad=0.02)
+    cb.set_label("pairs", fontsize=7)
+    cb.ax.tick_params(labelsize=6)
+    specs = [("primary", "Primary (quartile)"), ("S2_all_categories", "All citation types"), ("S3_E20", "E ≥ 20"),
+             ("S5_2013_2018", "2013–2018"), ("S5_2019_2025", "2019–2025"), ("S1_strict", "O/E ≤ 0.5 rule")]
+    yy = np.arange(len(specs))[::-1]
+    ppv = [100 * r["specs"][k]["PPV"] for k, _ in specs]
+    rr = [100 * r["specs"][k]["reversal_rate"] for k, _ in specs]
+    h = 0.36
+    a2.barh(yy + h / 2, ppv, h, color=BLUE, label="Co-occurrence gap is also a flow gap")
+    a2.barh(yy - h / 2, rr, h, color=ORANGE, label="Reversal: flow above expectation")
+    lo, hi = (100 * v for v in p["PPV_ci95"])
+    a2.plot([lo, hi], [yy[0] + h / 2] * 2, color=INK, lw=1.2)
+    for k, (y, v) in enumerate(zip(yy, ppv)):
+        a2.text((hi if k == 0 else v) + 1, y + h / 2, f"{v:.0f}%", va="center", fontsize=7, color=INK2)
+    for y, v in zip(yy, rr):
+        a2.text(v + 1, y - h / 2, f"{v:.0f}%", va="center", fontsize=7, color=INK2)
+    a2.axvline(25, color=MUTED, lw=0.8, ls=":")
+    a2.text(25.5, yy[-1] - 0.75, "chance 25%", fontsize=6.5, color=MUTED)
+    a2.set_yticks(yy)
+    a2.set_yticklabels([l for _, l in specs], fontsize=7.5)
+    a2.set_xlim(0, 100)
+    a2.set_ylim(-1.1, len(specs) - 0.4)
+    a2.set_xlabel("Share of co-occurrence gaps (%)")
+    a2.set_title("How often the inference holds", fontsize=9)
+    a2.legend(frameon=False, fontsize=6.5, loc="upper center", bbox_to_anchor=(0.45, -0.2), ncol=1)
+    grid(a2, "x")
+    fig.tight_layout()
+    save(fig, "fig_plan7_cooc_flow")
+
+
 if __name__ == "__main__":
     fig_research_design()
     fig_study1_direction()
@@ -288,3 +350,4 @@ if __name__ == "__main__":
     fig_firm_null()
     fig_mlp_scenarios()
     fig_plan_c_locus()
+    fig_plan7_cooc_flow()
