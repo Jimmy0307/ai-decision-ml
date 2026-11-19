@@ -238,6 +238,44 @@ def fig_mlp_scenarios():
     save(fig, "fig_mlp_scenarios")
 
 
+# 8 ---------------------------------------------------------------- Plan C: where the connection runs (exploratory)
+def fig_plan_c_locus():
+    r = json.load(open(DATA / "PLAN_C_RESULTS.json", encoding="utf-8"))
+    fig, (a1, a2) = plt.subplots(1, 2, figsize=(8.2, 3.0), gridspec_kw={"width_ratios": [1, 1.25]})
+    yrs = sorted(r["C1_bridge_by_year"], key=int)
+    sh = [100 * r["C1_bridge_by_year"][y]["share"] for y in yrs]
+    a1.plot([int(y) for y in yrs], sh, color=BLUE, lw=2, marker="o", ms=4)
+    for y, v in zip(yrs, sh):
+        if y in ("2010", "2023", "2025"):
+            a1.annotate(f"{v:.1f}%", (int(y), v), textcoords="offset points", xytext=(0, -12 if y == "2025" else 6),
+                        ha="center", fontsize=7, color=INK2)
+    a1.set_xticks([2010, 2013, 2016, 2019, 2022, 2025])
+    a1.set_ylim(0, 6.5)
+    a1.set_ylabel("BRIDGE patents (% of in-scope)")
+    a1.set_title("Co-classified in AI and DEC (not flow)", fontsize=9)
+    grid(a1)
+    cats = [("within_firm", "Within firm"), ("between_mixed_citing", "Between firms,\nMIXED firm citing"),
+            ("between_specialist_citing", "Between firms,\nspecialists citing"), ("unowned_end", "Unowned end")]
+    yy = np.arange(len(cats))[::-1]
+    h = 0.36
+    cross = [100 * r["C2_locus_cross"][k]["share"] for k, _ in cats]
+    allc = [100 * r["C2_locus_all"][k]["share"] for k, _ in cats]
+    b1 = a2.barh(yy + h / 2, cross, h, color=BLUE, label="AI↔DEC cross citations")
+    b2 = a2.barh(yy - h / 2, allc, h, color=ORANGE, label="All in-scope citations")
+    for bars in (b1, b2):
+        for b in bars:
+            a2.text(b.get_width() + 1, b.get_y() + b.get_height() / 2, f"{b.get_width():.1f}%", va="center", fontsize=7, color=INK2)
+    a2.set_yticks(yy)
+    a2.set_yticklabels([l for _, l in cats], fontsize=7.5)
+    a2.set_xlim(0, 80)
+    a2.set_xlabel("Share of applicant citations (%)")
+    a2.set_title("Where citations run (2013–2025)", fontsize=9)
+    a2.legend(frameon=False, fontsize=7, loc="lower right")
+    grid(a2, "x")
+    fig.tight_layout()
+    save(fig, "fig_plan_c_locus")
+
+
 if __name__ == "__main__":
     fig_research_design()
     fig_study1_direction()
@@ -246,3 +284,4 @@ if __name__ == "__main__":
     fig_cpc_heatmap()
     fig_firm_null()
     fig_mlp_scenarios()
+    fig_plan_c_locus()

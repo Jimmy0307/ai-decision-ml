@@ -156,9 +156,9 @@ Successive versions of Study~1 searched citation, co-author and higher-order net
   \raggedright\footnotesize SNA = social network analysis. HIST./USER = HISTORICAL / USER\_REPORTED.
 \end{table}
 
-The lines differ in what their relations could carry. The co-author lines (V7, V11) and the higher-order line (V10) rest on projections. A co-author network is a one-mode projection of author--work affiliation data \citep{newman2001scientific}, so a shared paper is not a directed flow, and these lines could not have carried Burt's construct even with perfect data (Section~\ref{sec:theory_cooccurrence}). The citation lines (V6, V8, V9) are different: citations can carry directed flow in principle, which is why Study~2 uses them. These lines failed for reasons of data and design: they screened for candidate brokers in samples of the literature instead of testing group-level flows against a calibrated null. Centrality-based screens, such as the share of shortest paths through a node \citep{freeman1977set}, do not establish brokerage, which requires directed open two-paths between actors with group membership \citep{gould1989structures}; Burt's benefits rest on non-redundant real contacts \citep{burt1992structural}.
+The co-author lines (V7, V11) and the higher-order line (V10) rest on one-mode projections of affiliation data \citep{newman2001scientific}, so they could not have carried Burt's construct even with perfect data (Section~\ref{sec:theory_cooccurrence}). The citation lines (V6, V8, V9) could carry directed flow in principle but screened for candidate brokers in samples of the literature instead of testing group-level flows against a calibrated null. Centrality screens, such as the share of shortest paths through a node \citep{freeman1977set}, do not establish brokerage, which requires directed open two-paths between actors with group membership \citep{gould1989structures} and non-redundant real contacts \citep{burt1992structural}.
 
-A supplementary diagnostic, Gap Validity (DIRECT), records that all 16 depleted cells have alternative routes in the bipartite family network (16/16) and that the indirect term of Burt constraint is zero. Neither is empirical evidence: the zero indirect term is an identity for any strict bipartite graph (Section~\ref{sec:theory_cooccurrence}), and alternative routes are all but guaranteed when 104 of 120 cells are observed. The diagnostic only makes explicit that a depleted cell is not a disconnection.
+A supplementary diagnostic, Gap Validity (DIRECT), finds alternative routes around all 16 depleted cells (16/16) and a zero indirect term of constraint; both follow from the data structure (Section~\ref{sec:discussion_measurement}), so they show only that a depleted cell is not a disconnection.
 
 Study~1 therefore supports one descriptive claim: in this literature, as coded, the 16 depleted pairs co-occur less often than their margins imply, with the same direction in both periods. Whether the pattern belongs to the literature or to the coding cannot be settled with these data. Testing the premise requires directed flows, which Study~2 supplies.
 
@@ -408,6 +408,26 @@ T2 does not meet its criterion. The observed MIXED median constraint (0.358) lie
 \end{figure}
 
 The contrast with P5---low MIXED constraint against a degree-matched null, high against a portfolio-preserving one---shows that the choice of null determines the brokerage reading (Section~\ref{sec:discussion_measurement}); because the portfolio null was motivated by the P5 result, the reversal is a data-informed follow-up. RQ2 is therefore unresolved. Specialist separation beyond portfolio is significant ($p = .001$ in both stratifications), and the degree-matched P5 null favoured lower constraint for MIXED firms ($p = .001$); but no available null holds degree and portfolio fixed together, so whether mixed firms broker the separation cannot be decided here.
+
+\subsection{Exploratory: where the AI--decision connection runs}
+\label{sec:study2_locus}
+
+Plans~1--5 show what the AI--decision relation is not. Plan~C, frozen before computation but exploratory and without tests, describes where it runs (Figure~\ref{fig:plan_c_locus}). It uses the 127,114 in-scope patents and 162,339 applicant citations of the firm analyses.
+
+First, the connection is growing. BRIDGE patents, classified in both G06N and the decision classes, rose from 2.9\% of in-scope patents in 2013--2018 to 4.6\% in 2019--2025, and citations between AI-only and decision-only patents rose from 10.8\% to 14.4\% of in-scope citations. Co-classification is co-occurrence, so the first trend describes artefacts, not flow.
+
+Second, the connection runs mostly between firms, through firms that hold both kinds of patent. Of the 22,796 cross citations, 64.2\% run between firms with a mixed-portfolio firm citing, against 48.2\% of all in-scope citations, and 18.6\% stay within one firm, against 29.1\%. Mixed firms hold 84.8\% of the between-firm cross-citation credit but 74.1\% of patent ownership, and 13 firms, the top 1\% by credit, hold 42.8\%.
+
+Third, within the AI $\times$ decision matrix the risk column is heterogeneous: it is the most over-represented cell for machine learning (G06N20, O/E 1.331) and among the least for neural networks and probabilistic methods (G06N3 0.695; G06N7 0.701).
+
+These are descriptions. The lower within-firm share of cross citations has no baseline that holds portfolios fixed, so it is not evidence of a boundary inside firms; it is a question that Study~3 can ask with internal data (Section~\ref{sec:mlp_study3}).
+
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=\linewidth]{fig_plan_c_locus.png}
+  \caption{Plan~C (exploratory, descriptive). Left: BRIDGE patents, classified in both G06N and G06Q10/04 or /06, as a share of in-scope patents by grant year; co-classification is co-occurrence, not flow. Right: where applicant citations run, for citations between AI-only and decision-only patents (blue) and for all in-scope citations (orange); categories are mutually exclusive. No tests are made, and the shares ignore clustering by patent and firm.}
+  \label{fig:plan_c_locus}
+\end{figure}
 
 % ------------------------------------------------------------
 \section{How Common Is the Inference? A Systematic Review}

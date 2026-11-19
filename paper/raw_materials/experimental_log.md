@@ -405,6 +405,60 @@ Frozen in commit `100f06a` (2026-11-19 10:44:56) before computation. This is a d
 
 ---
 
+### E3.6 Plan C: locus of AI–decision integration (exploratory, descriptive; `PLAN_C_DESCRIPTIVE.md` frozen 969e60b; `paper/data/PLAN_C_RESULTS.json`)
+
+**Scope and wording rules:**
+- No p-values.
+- Co-classification is not flow.
+- Within-firm shares describe where citations occur, not organisational mechanisms.
+
+**Data:**
+- 127,114 in-scope patents: AI only 89,613; DEC only 32,185; BRIDGE 5,316.
+- 14,600 firms.
+- 162,339 applicant citations among the in-scope patents.
+
+**C1 BRIDGE share (co-classification in G06N and G06Q10/04 or /06):**
+- Overall: 5,316 / 127,114 = 0.0418 (4.2%).
+- By year: 2010 1.3% (0.0126); peak 2023 5.1% (0.0514); 2024 0.0449; 2025 4.1% (0.0407).
+- By period:
+  - 2013–2018: 547 / 19,185 = 0.0285 (2.9%);
+  - 2019–2025: 4,669 / 101,641 = 0.0459 (4.6%).
+
+**C2 Cross citations (AI-only ↔ DEC-only, applicant):**
+- Overall: 22,796 / 162,339 = 0.1404 (14.0%).
+- By direction: AI cites DEC 15,999; DEC cites AI 6,797 (raw counts).
+- By period:
+  - 2013–2018: 1,785 / 16,524 = 0.108 (10.8%);
+  - 2019–2025: 21,011 / 145,815 = 0.1441 (14.4%).
+- Bridge citations (a BRIDGE patent at either end): 16,194 (0.0998).
+
+**C2 Locus**, as shares of citations:
+
+| | Cross citations | All in-scope citations |
+|---|---|---|
+| Within firm | 4,249, 18.6% (0.1864) | 47,320, 29.1% (0.2915) |
+| Between firms, a MIXED firm citing | 14,636, 64.2% (0.6420) | 78,306, 48.2% (0.4824) |
+| Between firms, specialists citing | 2,624, 11.5% (0.1151) | 28,155, 17.3% (0.1734) |
+| Unowned end | 1,287, 5.7% (0.0565) | 8,558, 5.3% (0.0527) |
+
+By period, cross citations:
+- 2013–2018: within firm 17.0% (0.1697); between, MIXED citing 58.5% (0.5849); between, specialists citing 18.5% (0.1854).
+- 2019–2025: within firm 18.8% (0.1878); between, MIXED citing 64.7% (0.6469); between, specialists citing 10.9% (0.1091).
+
+**C3 Between-firm cross-citation credit** (one unit per citing owner):
+- 17,372 units held by 1,247 firms.
+- Concentration: top 10 firms 39.2% (0.3924); top 1% of credited firms (13 firms) 42.8% (0.4284).
+- Credit share by owner group: MIXED 84.8% (0.8483), AI_FIRM 10.6% (0.1057), DEC_FIRM 4.6% (0.0460).
+- Reference, share of patent–owner pairs: MIXED 74.1% (0.7412), AI_FIRM 19.2% (0.1920), DEC_FIRM 6.7% (0.0669).
+- Firms by group: AI_FIRM 7,942, DEC_FIRM 4,213, MIXED 2,445.
+- Patents without a non-individual owner: 4,086 (0.0321).
+
+**C4 Within the 6×7 AI × DEC applicant-citation matrix** (O/E relative to the matrix margins; 29 cells with expected ≥ 100):
+- Highest: G06N20 × RISK 1.331; G06N7 × STRATEGY 1.287; G06N3 × FORECAST_OPTIMISE 1.170.
+- Lowest: G06N3 × RISK 0.695; G06N7 × RISK 0.701; G06N5 × RISK 0.848.
+
+**Reading (post hoc):** the lower within-firm share of cross citations (18.6% vs 29.1%) has no baseline that holds portfolios fixed. It is a question for Study 3, not a finding about organisational boundaries.
+
 ## E4. Multi-level programming prototype (v1.0; SIMULATED; `paper/data/MLP_SOLVER_RESULTS_v1_0.json`)
 
 **Model and exactness checks:**
