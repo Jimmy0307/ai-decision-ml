@@ -448,3 +448,56 @@ Model level & Planned data & Parameters informed \tabularnewline
 \paragraph{Stop rules.} The study stops and is reported as uninformative if the episodes with a determinable binding constraint fall below the preregistered minimum. Coding stops, and the codebook is revised as a dated amendment before any outcome analysis, if agreement between human coders on a pilot set falls below the preregistered minimum. If the organisational candidate is not supported, the model's governance layer is not calibrated, and the model is reported as unsupported.
 
 \paragraph{Optional network test.} If de-identified metadata on tickets and meetings between AI staff and decision owners are available, Burt constraint \citep{burt1992structural} will be computed on real organisational ties, where embeddedness arguments locate economic action \citep{granovetter1985economic}, against a null that preserves both what each unit is responsible for and its degree. A three-expert exercise that translated the AI $\times$ decision categories into enterprise language is a pilot for the instruments only. Study~3 has not been run.
+
+% ------------------------------------------------------------
+\section{Systematic Review: Protocol, Flow and Reliability}
+\label{app:review}
+
+\paragraph{Protocol.} The protocol (version 1.0) was committed to the project repository on 2026-11-19, before any record was retrieved beyond the hit counts used to size the streams. It fixes the database, the queries, the sampling seed (20261119), the eligibility criteria, the coding scheme, the reliability procedure, the outputs and the reading rule: the inference counts as a published practice if at least 10 included studies draw a structural-hole or broker claim from a co-occurrence network. Amendment S1 is described below. The queries, the retrieval log, the screening and coding decisions, the agreement statistics and the list of included studies (metadata and codes only) are in \texttt{paper/review\_lit/}. Abstracts are copyrighted and are not published.
+
+\paragraph{Search.} OpenAlex was searched in titles and abstracts for publications dated from 2000-01-01, on 2026-11-19. The six stream-S queries paired ``structural hole'' with co-word, keyword, co-citation, co-occurrence, bibliometric and patent (7, 63, 11, 19, 43 and 165 hits; 261 unique records). Records were deduplicated by OpenAlex identifier and then by DOI, and a record found in several streams was kept in the first stream in the order S, G1, G2, G3.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Review flow by stream.}
+  \label{tab:app_review_flow}
+  \small
+  \begin{tabular}{lrrrrr}
+    \toprule
+    & S & G1 & G2 & G3 & Total \\
+    \midrule
+    Hits & 308 & 133 & 971 & 1,146 & \\
+    After deduplication & 261 & 133 & 964 & 1,087 & \\
+    Screening set (all or sampled) & 261 & 133 & 120 & 80 & 594 \\
+    Screened (abstract available) & 183 & 117 & 110 & 66 & 476 \\
+    Included & 131 & 31 & 25 & 17 & 204 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\paragraph{Screening and amendment S1.} A primary screener screened all 476 records with an abstract; a second screener, blind to the first, screened a random 25\% (119 records). Agreement on include or exclude was $\kappa = 0.361$ (raw agreement 0.681; 38 disagreements), and 243 of the 476 primary decisions were marked low-confidence. Most disagreements concerned studies that compute Burt measures on co-patenting or co-authorship networks and use them as predictors: the guide lists both relation types and Burt measures, so such studies meet the criteria. Amendment S1, recorded after screening and before adjudication or coding, therefore had the adjudicator re-screen all 254 disputed or low-confidence records under the unchanged guide plus that note; the adjudicator reversed 26 decisions. High-confidence primary decisions outside the overlap stand.
+
+\paragraph{Coding.} Two coders, blind to each other, coded all 204 included studies from title and abstract (no coder used full text, so the evidence basis is the abstract for all 204). 182 studies had at least one disagreement on the claim type or on F1--V, and a third agent adjudicated those codes. Where a descriptive code (relation, measure) differed and was not adjudicated, the first coder's code was kept.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Agreement between the two blind coders ($n = 204$).}
+  \label{tab:app_review_kappa}
+  \small
+  \begin{tabular}{lrr}
+    \toprule
+    Variable & $\kappa$ & Raw agreement \\
+    \midrule
+    D1 relation type & 0.739 & 0.809 \\
+    D2 claim type & 0.428 & 0.593 \\
+    D3 measure named & 0.558 & 0.706 \\
+    F1 projection read as flow or brokerage & 0.612 & 0.784 \\
+    F2 Burt measure or betweenness on co-occurrence & 0.626 & 0.789 \\
+    F3 absence read as a gap without a baseline & 0.192 & 0.657 \\
+    F4 label validity unreported & 0.534 & 0.882 \\
+    V validation against independent evidence & 0.312 & 0.657 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\paragraph{Final codes.} Claim type: structural hole 99, several 33, broker 3, gap 66, unclear 3. Measure named: Burt constraint or effective size 111, cluster or map position 39, absent or sparse links 35, none 12, betweenness 7. Relation type: patent co-inventorship, co-application or co-classification 73, mixed 66, co-word 42, other 11, co-authorship 6, co-membership 2, unclear 4. Publication period: 2000--2014, 11 studies; 2015--2019, 28; 2020--2026, 165. ``Unclear'' codes over all 204 studies: F1 9, F2 6, F3 4, F4 20, V 4. Among the 73 patent-network studies, 70 are coded F1, 72 F2 and 63 V; among the 42 co-word studies, 28 are coded F3 and 2 V.

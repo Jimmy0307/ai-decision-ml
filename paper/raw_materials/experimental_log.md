@@ -485,3 +485,63 @@ In the baseline all five configurations are permitted under every regime.
 - at τ = 0.7, Level 1 allocates nothing to P2's AI capability and P2 reverts to HumanOnly (F1 1.450).
 - The τ probe holds the governance regime and budget fixed at regime F, budget 5. Its F1 at τ ≤ 0.6 (2.244) equals the F/5 baseline.
 - In the permission probe (regime C, B = 5), AIAssist is disallowed.
+
+---
+
+## E5. Systematic review of the co-occurrence → hole/gap inference (DIRECT; protocol `paper/review_lit/PROTOCOL.md` v1.0, amendment S1; data `paper/review_lit/data/`)
+
+**Search (OpenAlex, title and abstract, publication date ≥ 2000-01-01; retrieved 2026-11-19; `search_log.json`):**
+- Stream S ("structural hole" + co-word / keyword / co-citation / co-occurrence / bibliometric / patent): hits 7, 63, 11, 19, 43, 165 (sum 308); 261 unique records, all kept.
+- G1 ("research gap" + "co-word"): 133 records, all kept.
+- G2 ("research gap" + "keyword co-occurrence"): 971 hits, 964 after cross-stream deduplication; simple random sample of 120 (seed 20261119).
+- G3 (betweenness + "co-word"): 1,146 hits, 1,087 after deduplication; simple random sample of 80 (seed 20261119).
+- Screening set 594; 118 without an abstract excluded; 476 screened (S 183, G1 117, G2 110, G3 66).
+
+**Screening (`screening_agreement.json`, `screening_flow.json`):**
+- Blind second screen of 119 records (25%): κ 0.361, raw agreement 0.681, 38 disagreements.
+- 243 of 476 primary decisions low-confidence. Amendment S1: the adjudicator re-screened 254 records (all disagreements and all low-confidence decisions); 26 reversals.
+- Included 204 (S 131, G1 31, G2 25, G3 17); excluded 272.
+
+**Coding reliability (two blind coders on all 204; `coding_agreement.json`):**
+
+| Variable | κ | raw agreement |
+|---|---|---|
+| D1 relation | 0.739 | 0.809 |
+| D2 claim | 0.428 | 0.593 |
+| D3 measure | 0.558 | 0.706 |
+| F1 | 0.612 | 0.784 |
+| F2 | 0.626 | 0.789 |
+| F3 | 0.192 | 0.657 |
+| F4 | 0.534 | 0.882 |
+| V | 0.312 | 0.657 |
+
+182 records had at least one disagreement on D2 or F1–V and were adjudicated. E = abstract for all 204.
+
+**Final codes (`review_results.json`, `included_studies_coded.csv`):**
+- D2 claim: hole 99, several 33, broker 3, gap 66, unclear 3. Hole, broker or several: 135 (preregistered "published practice" threshold: ≥ 10).
+- D3 measure: constraint 111, position 39, absence 35, none 12, betweenness 7.
+- D1 relation: patent 73, mixed 66, coword 42, other 11, coauthorship 6, comembership 2, unclear 4.
+- Period: 2000–2014 n = 11; 2015–2019 n = 28; 2020–2026 n = 165.
+
+Prevalence, yes / n with Wilson 95% CI (abstract level; "unclear" counted as not yes):
+
+| | n | F1 projection as flow | F2 Burt/betweenness on co-occurrence | F3 absence as gap, no baseline | F4 label validity unreported | V validation |
+|---|---|---|---|---|---|---|
+| All | 204 | 100 (0.490; 0.422–0.558) | 96 (0.471; 0.403–0.539) | 60 (0.294; 0.236–0.360) | 178 (0.873; 0.820–0.912) | 92 (0.451; 0.384–0.520) |
+| S | 131 | 98 (0.748; 0.667–0.815) | 96 (0.733; 0.651–0.801) | 13 (0.099; 0.059–0.162) | 110 (0.840; 0.767–0.893) | 91 (0.695; 0.611–0.767) |
+| G1 | 31 | 0 (0.000; 0.000–0.110) | 0 (0.000; 0.000–0.110) | 19 (0.613; 0.438–0.763) | 30 (0.968; 0.838–0.994) | 1 (0.032; 0.006–0.162) |
+| G2 (sample) | 25 | 1 (0.040; 0.007–0.195) | 0 (0.000; 0.000–0.133) | 18 (0.720; 0.524–0.857) | 23 (0.920; 0.750–0.978) | 0 (0.000; 0.000–0.133) |
+| G3 (sample) | 17 | 1 (0.059; 0.010–0.270) | 0 (0.000; 0.000–0.184) | 10 (0.588; 0.360–0.784) | 15 (0.882; 0.657–0.967) | 0 (0.000; 0.000–0.184) |
+
+Unclear counts (all 204): F1 9, F2 6, F3 4, F4 20, V 4.
+
+Gap streams G1–G3 combined: n = 73; F2 yes 0; V yes 1. Among the 135 hole, broker or several claims: F1 yes 99, F2 yes 96; among the other 69 studies: F3 yes 46. Hole, broker or several claims by stream: S 131; G1 1; G2 2; G3 1 (G3 also has 3 unclear claims).
+
+By relation (yes counts): patent n = 73: F1 70, F2 72, F3 0, V 63. Coword n = 42: F1 3, F2 5, F3 28, F4 40, V 2.
+By claim (yes counts): hole n = 99: F1 77, F2 81, V 81. Gap n = 66: F3 46, F4 62, V 1.
+
+**Coding observation (interpretation, not a code):** of the 91 stream-S studies coded V = yes, 63 are patent-network studies (D1 = patent), and 71 of the 91 titles name an innovation, performance or other outcome effect (title keyword count: innovat / performance / impact / effect / influence / breakthrough / outcome). In these studies V = yes reflects a test of whether a Burt score computed on a co-inventor, co-applicant or co-classification network predicts later outcomes. That checks the score's predictive association; it does not check that the network carries flow.
+
+**Optional replication (protocol §8):** not done in this round.
+
+**Disclosure:** all screeners, coders and adjudicators were LLM subagents (Claude); agreement is between models, not human inter-rater reliability.

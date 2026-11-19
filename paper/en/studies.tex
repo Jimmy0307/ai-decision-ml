@@ -408,3 +408,47 @@ T2 does not meet its criterion. The observed MIXED median constraint (0.358) lie
 \end{figure}
 
 The contrast with P5---low MIXED constraint against a degree-matched null, high against a portfolio-preserving one---shows that the choice of null determines the brokerage reading (Section~\ref{sec:discussion_measurement}); because the portfolio null was motivated by the P5 result, the reversal is a data-informed follow-up. RQ2 is therefore unresolved. Specialist separation beyond portfolio is significant ($p = .001$ in both stratifications), and the degree-matched P5 null favoured lower constraint for MIXED firms ($p = .001$); but no available null holds degree and portfolio fixed together, so whether mixed firms broker the separation cannot be decided here.
+
+% ------------------------------------------------------------
+\section{How Common Is the Inference? A Systematic Review}
+\label{sec:review}
+
+Studies~1 and~2 show that the inference from co-occurrence to a structural hole fails in one project. A descriptive, preregistered systematic review asks whether published studies draw the same inference and how often they show the failure modes of Section~\ref{sec:theory_cooccurrence}. Its protocol was committed before records were retrieved; one amendment (S1) was recorded before coding (Appendix~\ref{app:review}).
+
+\paragraph{Design.} We searched OpenAlex titles and abstracts (from 2000; retrieved 2026-11-19) in four streams: every record pairing ``structural hole'' with a co-occurrence or bibliometric term (S, 261 records); every record pairing a gap with co-word analysis (G1, 133); random samples of 120 of the 964 records pairing a gap with keyword co-occurrence (G2) and of 80 of the 1,087 pairing betweenness with co-word analysis (G3). Studies were included if they drew a structural-hole, broker or gap inference from the structure of a co-occurrence or affiliation network. Each was coded on four indicators, one per failure mode:
+\begin{itemize}
+  \item \textbf{F1}: projected ties read as channels of flow, or as the source of brokerage positions (projection cliques);
+  \item \textbf{F2}: a Burt measure or betweenness computed on a co-occurrence network and read as brokerage (constraint on affiliation data);
+  \item \textbf{F3}: absent or weak co-occurrence read as a gap, with no null model, expected count or comparison set;
+  \item \textbf{F4}: node labels whose reliability or validation is not reported (model-inferred or unvalidated labels).
+\end{itemize}
+Self-pairing cannot be judged from an abstract and was not coded. A fifth code, V, records whether the claim is checked against independent evidence. LLM agents did all screening, coding and adjudication; two blind coders coded every study and a third resolved disagreements, so agreement is between models, not human raters.
+
+\begin{table}[tbp]
+  \centering
+  \caption{Systematic review: share of included studies coded ``yes'' on each indicator, with Wilson 95\% intervals in brackets. F1: projected ties read as flow or brokerage; F2: Burt measure or betweenness on a co-occurrence network read as brokerage; F3: absence read as a gap without a baseline; F4: label validity unreported; V: claim checked against independent evidence. Codes are made at the abstract level, and ``unclear'' counts as not yes. S and G1 are complete streams; G2 and G3 are random samples and are not weighted.}
+  \label{tab:review}
+  \small
+  \begin{tabular}{lrccccc}
+    \toprule
+    Stream & $n$ & F1 & F2 & F3 & F4 & V \\
+    \midrule
+    All & 204 & 0.490 & 0.471 & 0.294 & 0.873 & 0.451 \\
+    & & {\scriptsize [0.422, 0.558]} & {\scriptsize [0.403, 0.539]} & {\scriptsize [0.236, 0.360]} & {\scriptsize [0.820, 0.912]} & {\scriptsize [0.384, 0.520]} \\[2pt]
+    S & 131 & 0.748 & 0.733 & 0.099 & 0.840 & 0.695 \\
+    & & {\scriptsize [0.667, 0.815]} & {\scriptsize [0.651, 0.801]} & {\scriptsize [0.059, 0.162]} & {\scriptsize [0.767, 0.893]} & {\scriptsize [0.611, 0.767]} \\[2pt]
+    G1 & 31 & 0.000 & 0.000 & 0.613 & 0.968 & 0.032 \\
+    & & {\scriptsize [0.000, 0.110]} & {\scriptsize [0.000, 0.110]} & {\scriptsize [0.438, 0.763]} & {\scriptsize [0.838, 0.994]} & {\scriptsize [0.006, 0.162]} \\[2pt]
+    G2 (sample) & 25 & 0.040 & 0.000 & 0.720 & 0.920 & 0.000 \\
+    & & {\scriptsize [0.007, 0.195]} & {\scriptsize [0.000, 0.133]} & {\scriptsize [0.524, 0.857]} & {\scriptsize [0.750, 0.978]} & {\scriptsize [0.000, 0.133]} \\[2pt]
+    G3 (sample) & 17 & 0.059 & 0.000 & 0.588 & 0.882 & 0.000 \\
+    & & {\scriptsize [0.010, 0.270]} & {\scriptsize [0.000, 0.184]} & {\scriptsize [0.360, 0.784]} & {\scriptsize [0.657, 0.967]} & {\scriptsize [0.000, 0.184]} \\
+    \midrule
+    $\kappa$ (two coders) & & 0.612 & 0.626 & 0.192 & 0.534 & 0.312 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\paragraph{Results.} Of 594 records, 476 had an abstract and were screened, and 204 were included (S 131, G1 31, G2 25, G3 17). Of these, 135 draw a structural-hole or broker claim, and 111 name Burt constraint or effective size as their measure; the preregistered threshold for ``a published practice'' was 10. Table~\ref{tab:review} reports the indicators. Two practices emerge. In stream~S, structural-hole measures are computed on projected collaboration or co-classification networks, most often co-inventor and co-applicant networks built from patents, and read as brokerage (F1 0.748, F2 0.733). Most of these studies relate the measure to later outcomes (V 0.695): 63 of the 91 stream-S studies coded V are patent-network studies, and 71 of the 91 titles name an outcome effect. Such tests check whether the score predicts outcomes. They do not check that the projected network carries flow, which is the premise Studies~1 and~2 tested. In the gap streams no study reads a Burt measure or betweenness as brokerage (F2 0 of 73); the typical inference is the one Study~1's matrix invited, sparse co-occurrence read as a gap without a baseline (F3 0.613 in G1, and 0.720 and 0.588 in the G2 and G3 samples), and 1 of the 73 studies checks the gap against independent evidence. Label validity is unreported in 178 of the 204 studies (0.873).
+
+\paragraph{What the review supports.} The inference this project drew is common in both its forms, Burt measures read from projected networks and absence read as a gap, and mostly recent (165 of 204 studies from 2020). The indicators record exposure to a failure mode at the abstract level, not that any conclusion is wrong, and we name no study. Agreement was poor for some codes ($\kappa$ 0.192 for F3, 0.312 for V, 0.361 for screening), so the estimates are less precise than their intervals suggest (Section~\ref{sec:lim_review}).

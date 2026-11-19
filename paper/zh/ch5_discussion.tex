@@ -23,7 +23,7 @@
 \subsection{對缺口研究的測量啟示}
 \label{zh:sec:discussion_measurement}
 
-本研究計畫記錄了共現資料與隸屬（affiliation）資料的四種失效模式，每一種皆有直接證據。\textbf{投影派系（projection cliques）：}CORDIS 共同成員關係的投影會人為製造封閉性（第~\ref{zh:sec:theory_cooccurrence}~節），而在投影之後計算的中介並非二模中介 \citep{jasny2015two}。\textbf{限制度在二分網路中的退化：}在嚴格的二分網路中，網路限制度（network constraint）會退化為二元集中度——而批評者早已指出，這正是主導該指標的成分 \citep{everett2020unpacking,johnson2026reassessing}。這是一個恆等關係；而在 120 格中有 104 格具觀察值的矩陣中，或在一個稠密的 $6\times7$ 矩陣中，每一個偏低格周圍都能找到替代路徑幾乎是必然的；這些缺口效度（Gap Validity）檢查是對資料結構的診斷，而非關於這些領域的證據。\textbf{同詞兩端共用}（same-term self-pairing）與\textbf{模型推論標籤}（model-inferred labels）（第~\ref{zh:sec:study1_direction}~節與第~\ref{zh:sec:study1_reliability}~節）屬於非隨機誤差。隨機、非差異性的誤分類（misclassification, non-differential）只會削弱偏低，但在邊際固定的矩陣中，膨脹某一格會機械性地使其所在列與欄的其餘部分偏低。在研究一中，同詞兩端共用看來並非主要驅動因素（第~\ref{zh:sec:study1_reliability}~節）。模型推論標籤仍是一個未經檢驗的非隨機誤差來源，因此該方向僅屬描述性，且未獲證實。結構洞測度在不同資料類型之間無法互換 \citep{saglietto2020research}；這四種機制具體說明了其原因。前兩者為已知結果；本研究計畫補充的是它們對缺口推論的影響。
+本研究計畫記錄了共現資料與隸屬（affiliation）資料的四種失效模式，每一種皆有直接證據。\textbf{投影派系（projection cliques）：}CORDIS 共同成員關係的投影會人為製造封閉性（第~\ref{zh:sec:theory_cooccurrence}~節），而在投影之後計算的中介並非二模中介 \citep{jasny2015two}。\textbf{限制度在二分網路中的退化：}在嚴格的二分網路中，網路限制度（network constraint）會退化為二元集中度——而批評者早已指出，這正是主導該指標的成分 \citep{everett2020unpacking,johnson2026reassessing}。這是一個恆等關係；而在 120 格中有 104 格具觀察值的矩陣中，或在一個稠密的 $6\times7$ 矩陣中，每一個偏低格周圍都能找到替代路徑幾乎是必然的；這些缺口效度（Gap Validity）檢查是對資料結構的診斷，而非關於這些領域的證據。\textbf{同詞兩端共用}（same-term self-pairing）與\textbf{模型推論標籤}（model-inferred labels）（第~\ref{zh:sec:study1_direction}~節與第~\ref{zh:sec:study1_reliability}~節）屬於非隨機誤差。隨機、非差異性的誤分類（misclassification, non-differential）只會削弱偏低，但在邊際固定的矩陣中，膨脹某一格會機械性地使其所在列與欄的其餘部分偏低。在研究一中，同詞兩端共用看來並非主要驅動因素（第~\ref{zh:sec:study1_reliability}~節）。模型推論標籤仍是一個未經檢驗的非隨機誤差來源，因此該方向僅屬描述性，且未獲證實。結構洞測度在不同資料類型之間無法互換 \citep{saglietto2020research}；這四種機制具體說明了其原因。前兩者為已知結果；本研究計畫補充的是它們對缺口推論的影響。系統性文獻回顧顯示，這種暴露相當普遍（第~\ref{zh:sec:review}~節）：約四分之三的結構洞研究將投影網路上的 Burt 指標解讀為中介，而多數缺口主張並未提供基準。
 
 有兩項啟示涉及虛無模型。第一，當每份文件皆貢獻一個完整的列 $\times$ 欄區塊時，保留文件結構的交換虛無模型（M06）會退化；M06-P（專利適用之保留文件結構虛無模型）雖保留了該結構，但未經型一錯誤校準（第~\ref{zh:sec:study2_cells}~節）。第二，公司限制度的解讀取決於虛無模型固定了什麼：相對於度數配對的標籤置換虛無模型，混合型公司看似具有較低的限制度（$p=.001$）；相對於保留專利組合的虛無模型（portfolio-preserving null），其限制度則高於預期（$p=1.000$）。前一個虛無模型忽略了公司擁有什麼，後一個則忽略了公司有多少連結；用於檢驗中介的虛無模型必須同時固定兩者。
 
@@ -136,6 +136,11 @@ D & 7 & 2.616 & 3.286 & 0.736 & 3 & \texttt{AIAssist} $\times2$，\texttt{HumanF
 \label{zh:sec:lim_prereg}
 
 五份計畫皆為本研究計畫自有儲存庫中自行加註時間戳記的提交（commit），而非如 OSF 之類的第三方登錄，其時間戳記亦未經獨立認證。只有計畫 1 是在檢視任何專利資料之前撰寫的；計畫 2--5 係在已知先前結果後撰寫，因此其研究問題受到資料啟發，僅其定義、規則與門檻是事先固定的（第~\ref{zh:sec:design_prereg}~節；表~\ref{zh:tab:app_prereg} 與表~\ref{zh:tab:app_amend}）。M06-P 是在 M06 失敗之後、且在計畫 2 的三檢定格結果已知之後才凍結的；而保留專利組合的公司虛無模型則是受 P5 結果所促成，且僅在其重複樣本計算之前才凍結。計畫 5 是在其他所有結果皆已知之後撰寫的，而修訂 C1 則是在計畫 5 的初步結果已知之後撰寫的。研究一的資料效度再分析並未預先登錄。
+
+\subsection{系統性文獻回顧}
+\label{zh:sec:lim_review}
+
+本回顧僅以固定的英文檢索詞搜尋單一資料庫（OpenAlex），因此以其他措辭、其他語言撰寫或未收錄摘要的研究會被遺漏；594 筆紀錄中有 118 筆沒有摘要而遭排除。全部 204 篇研究皆僅依摘要編碼，因此編碼為「否」的研究仍可能在摘要未呈現之處出現失效，而編碼為「是」者亦可能在全文中有所限定。所有篩選、編碼與裁決皆由大型語言模型代理完成，其篩選（$\kappa$ 0.361）、F3（0.192）與 V（0.312）的一致性偏低；修訂 S1 將裁決範圍擴大至全部 254 筆有爭議或低信心的篩選決定，而此修訂是在篩選一致性已知之後才記錄的。G2 與 G3 為抽樣，其比例未依所屬串流加權。各指標記錄的是對失效模式的暴露，而非錯誤；V 記錄的主要是對後續結果的預測，而非網路是否承載流動。回顧計畫書是在研究一與研究二完成後撰寫，且與計畫 1--5 相同，屬自行加註時間戳記的提交；計畫書第 8 節所列、以公開網路資料重新分析一個已發表案例的選擇性分析並未執行。
 
 \subsection{模型與組織候選解釋}
 \label{zh:sec:lim_model}

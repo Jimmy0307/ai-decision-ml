@@ -20,6 +20,7 @@
 3. Research Design and Preregistration (overview of the three studies, the preregistration log, claim boundaries).
 4. Study 1: Literature Evidence (V5–V11.1).
 5. Study 2: Patent Evidence (aggregate test; V9 battery on the CPC matrix; full replication suite; portfolio-preserving firm null).
+5b. Systematic review of the co-occurrence → hole/gap inference (preregistered; descriptive).
 6. Integrative Discussion (what the three data lines jointly show; measurement lessons).
 7. A Multi-Level Programming Agenda (formal model; simulated illustration; Study 3 preregistered plan).
 8. Limitations — **mandatory and explicit.** This overrides any instruction to avoid stating limitations.
