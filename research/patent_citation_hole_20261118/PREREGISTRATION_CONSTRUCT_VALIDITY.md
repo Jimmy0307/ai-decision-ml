@@ -56,3 +56,24 @@ Also reported, without bearing on the verdict:
 ## Implementation note
 
 The code reuses `src/patent_hole.py` (`run_spec`, unchanged statistics). The only change is the reference-exclusion rule, which now drops every reference name beginning `G06Q10`, so that subgroup families of G06Q10 are excluded too. For main groups this is identical to Plan 1's rule.
+
+## Amendments (dated; the text above is unchanged)
+
+**C1, 2026-11-19, recorded after P5a–P5d and before P5e–P5f were computed.**
+
+The round-3 review found that "DEC06" (any `G06Q10/06` code) keeps 2,318 patents that carry both /04 and /06 codes. P5a therefore removed only the 3,575 patents coded /04 alone, not every /04 patent. The earlier description "/06 only removes /04" is corrected to "drops patents coded only /04".
+
+**New definition. DEC06S** = has a `G06Q10/06` code **and no** `G06Q10/04` code: 31,608 patents granted 2010–2025.
+
+**New specifications:**
+
+| Id | DEC | Reference set | Role |
+|---|---|---|---|
+| P5e | DEC06S | main groups (`all`) | CV1, strict |
+| P5f | DEC06S | subgroup families (`sub2`) | CV1 strict + CV2 |
+
+**Decision rule:** Plan 1's rule, unchanged. The construct verdict is re-evaluated over P5a, P5b, P5c, P5e and P5f: `ROBUST_TO_CONSTRUCT` only if all five give `HOLE_NOT_SUPPORTED`, otherwise `CONSTRUCT_SENSITIVE`.
+
+**Also recorded as limitations, not tested here:**
+- Granularity is matched only on the reference side; AI remains the whole `G06N` subclass.
+- P5b shares its DEC definition with Plan 1, so its H1b is identical to Plan 1's and is not an independent check.

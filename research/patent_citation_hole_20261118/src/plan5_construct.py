@@ -72,7 +72,12 @@ SPECS = {
     "P5b_DEC_subfamily": dict(dec="DEC", ref="sub2"),
     "P5c_DEC06_subfamily": dict(dec="DEC06", ref="sub2"),
     "P5d_DEC04_maingroup_descriptive": dict(dec="DEC04", ref="all"),
+    # Amendment C1: strict /06 = has /06 and no /04 code (2,318 dual-coded patents removed)
+    "P5e_DEC06S_maingroup": dict(dec="DEC06S", ref="all"),
+    "P5f_DEC06S_subfamily": dict(dec="DEC06S", ref="sub2"),
 }
+VERDICT_SPECS = ("P5a_DEC06_maingroup", "P5b_DEC_subfamily", "P5c_DEC06_subfamily",
+                 "P5e_DEC06S_maingroup", "P5f_DEC06S_subfamily")
 
 
 def main(argv=None):
@@ -89,6 +94,7 @@ def main(argv=None):
     z = np.load(cache, allow_pickle=False)
     n = len(u.pid)
     u.flags = {k[5:]: z[k] for k in z.files if k.startswith("flag_")}
+    u.flags["DEC06S"] = u.flags["DEC06"] & ~u.flags["DEC04"]
     csr_all, names_all = csr_from(n, z["idx"], z["main"])
     csr_sub, names_sub = csr_from(n, z["idx"], z["fam"])
     ph.log("groups: main", len(names_all), "sub2", len(names_sub),
@@ -116,7 +122,8 @@ def main(argv=None):
         out_file.write_text(json.dumps(R, indent=2, default=float), encoding="utf-8")
         ph.log(name, r["verdict"], "OE", round(r["AI_DEC"]["OE"], 3), "pct", r["reference"]["percentile_rank_in_AI_ref"],
                r["reference"]["percentile_rank_in_DEC_ref"], "ratio", round(r["ratio_point"], 3), "nref", r["reference"]["n_fields"])
-    v = [R["specs"][k]["verdict"] for k in ("P5a_DEC06_maingroup", "P5b_DEC_subfamily", "P5c_DEC06_subfamily")]
+    v = [R["specs"][k]["verdict"] for k in VERDICT_SPECS]
+    R["construct_verdict_specs"] = list(VERDICT_SPECS)
     R["construct_verdict"] = "ROBUST_TO_CONSTRUCT" if all(x == "HOLE_NOT_SUPPORTED" for x in v) else "CONSTRUCT_SENSITIVE"
     R["seconds"] = round(time.time() - t0)
     out_file.write_text(json.dumps(R, indent=2, default=float), encoding="utf-8")
