@@ -72,3 +72,12 @@
 - A short report.
 - The raw data are not committed (licence), only the download URLs, file names and SHA-256 hashes.
 - The manuscript reports the result in the review section and in limitations, whatever the result.
+
+## Amendments (dated; the text above is unchanged)
+
+**R1-A1, 2026-11-19, recorded after step 0 and before any data download.**
+- **What happened:** step 0 found that the article's analysis snapshot is August 2009. That date is neither the primary snapshot (the last available file) nor one of the preregistered secondary snapshots.
+- **Change:** the file for 2009-08-01 is added as a fourth snapshot. It is secondary (descriptive), with R = 200, and uses the same diagnostics as the other secondary snapshots.
+  - If no file exists for exactly 2009-08-01, the nearest available file is used.
+  - The primary snapshot and all rules are unchanged.
+- **Mapping recorded in `R1_CLAIM_RECORD.md`:** S1 and S2 concern the article's betweenness-based prominence claim. S3 and S4 (constraint) test the generic structural-hole reading and are not claims of the article.
