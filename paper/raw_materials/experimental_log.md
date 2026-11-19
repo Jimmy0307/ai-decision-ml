@@ -159,7 +159,7 @@ No scenario produced a spurious depleted cell.
 
 ---
 
-## E3. Study 2 — US patents (DIRECT; four preregistrations frozen before analysis)
+## E3. Study 2 — US patents (DIRECT; six preregistered plans, Plans 1–6, and the exploratory Plan C, each frozen before the analysis it governs)
 
 **Data:** USPTO PatentsView `pvgpatdis`, downloaded 2026-11-18.
 - 8,512,829 utility patents granted 1976–2025.
@@ -175,9 +175,12 @@ No scenario produced a spurious depleted cell.
 - aggregate test `a8f3289`;
 - V9 battery `a6266f7`;
 - full suite `d641256`;
-- firm null `b59fc71`.
+- firm null `b59fc71`;
+- construct checks (Plan 5) `100f06a`, amendment C1 `e6dce5c` (E3.5);
+- Plan C (exploratory) `969e60b` (E3.6);
+- portfolio-and-degree firm null (Plan 6) `11117c4`, smoke-test note `5718fdb` (E3.7).
 
-All commits are in PR #5 of `Jimmy0307/ai-decision-ml`.
+The commits of Plans 1–4 are in PR #5 of `Jimmy0307/ai-decision-ml`; the later commit ids are listed in their own blocks below. The systematic review protocol and the R1 preregistration are logged in E5 and E5.1.
 
 ### E3.1 Aggregate test (preregistration 1; `paper/data/PATENT_HOLE_RESULTS.json`)
 
@@ -618,9 +621,19 @@ By claim (yes counts): hole n = 99: F1 77, F2 81, V 81. Gap n = 66: F3 46, F4 62
 
 **Coding observation (interpretation, not a code):** of the 91 stream-S studies coded V = yes, 63 are patent-network studies (D1 = patent), and 71 of the 91 titles name an innovation, performance or other outcome effect (title keyword count: innovat / performance / impact / effect / influence / breakthrough / outcome). In these studies V = yes reflects a test of whether a Burt score computed on a co-inventor, co-applicant or co-classification network predicts later outcomes. That checks the score's predictive association; it does not check that the network carries flow.
 
-**Optional replication (protocol §8):** not done in this round.
+**Optional replication (protocol §8):** done; see E5.1 (R1).
 
-**Disclosure:** all screeners, coders and adjudicators were LLM subagents (Claude); agreement is between models, not human inter-rater reliability.
+**Disclosure:** all screeners, coders and adjudicators were LLM subagents (Claude, Anthropic); agreement is between models, not human inter-rater reliability. The model version was not recorded in the review files. No human-coded validation subsample exists.
+
+**Relation type of the 135 hole, broker or several claims** (`included_studies_coded.csv`, D2 in {hole, broker, several} × D1; computed 2026-11-19):
+- patent (co-inventorship, co-application or co-classification) 73, all in stream S; mixed 28; coword 11; other 11; coauthorship 6; unclear 4; comembership 2.
+- F2 yes among the 73 patent claims: 72.
+- All 73 D1 = patent studies in the included set are hole, broker or several claims.
+
+**Work type of the 204 included studies** (OpenAlex `type` in `screening_set_meta.csv`, joined on rid; computed 2026-11-19):
+- article 151; review 15; conference-paper 11; conference-abstract 11; preprint 6; dissertation 6; book-chapter 3; dataset 1.
+- Grouped: journal articles and reviews 166; conference papers and abstracts 22; preprints, dissertations, book chapters and a dataset 16.
+- By stream: the 11 conference abstracts are all in S (Academy of Management Proceedings).
 
 
 ### E5.1 R1: re-analysis of an open-data case (protocol §8; `paper/review_lit/replication/`; prereg c16ad60, step 0 and amendment R1-A1 2787d90)

@@ -28,7 +28,7 @@ def main(lang="en"):
         print(f"{n:10s} {c:6d}")
         if n in ("front", "studies", "back"):
             main_total += c
-    print(f"main text (Sections 1-9) prose words: {main_total}")
+    print(f"main text (front+studies+back) prose words: {main_total}")
 
 
 if __name__ == "__main__":

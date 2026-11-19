@@ -9,11 +9,11 @@
 \section{Preregistration and Amendment Log}
 \label{app:prereg}
 
-Study~2 rests on five preregistration plans. Each is a self-timestamped git commit in the project repository (repository identifiers withheld for review; the commit ids are listed in Table~\ref{tab:app_prereg}); none was registered with a third-party registry such as OSF, and the commit timestamps are set by the authors' own tooling. Preregistration is meant to separate confirmatory from exploratory analysis by fixing the plan before outcomes are observed \citep{nosek2018preregistration}. By that standard, Plan~1 was fixed before any patent data were downloaded. Plans 2--5 were written after earlier results were known, so the questions they ask were data-informed; only their definitions, null models, decision rules, thresholds and stop rules were fixed before the analyses they govern were computed. Only Plan~1 is confirmatory. Plan~5, the construct checks of Section~\ref{sec:study2_aggregate} (Table~\ref{tab:construct}), was added after the main verdict was known, as a data-informed follow-up, and frozen on 2026-11-19 before any of its specifications was computed; amendment C1 added two strict specifications the same day, after the first Plan~5 results were known but before the new specifications were computed. Changes after freezing are recorded as dated amendments that do not overwrite the frozen text. Table~\ref{tab:app_prereg} summarises the five plans, including the commit ids and rule thresholds taken from the frozen texts; Table~\ref{tab:app_amend} lists every amendment and recorded deviation.
+Study~2 rests on six preregistered plans (Plans~1--6) and an exploratory plan (Plan~C); the systematic review and R1 have their own frozen protocols (Appendix~\ref{app:review}). Each is a self-timestamped git commit in the project repository (repository identifiers withheld for review; the Study~2 commit ids are listed in Tables~\ref{tab:app_prereg} and~\ref{tab:app_prereg_b}); none was registered with a third-party registry such as OSF, and the commit timestamps are set by the authors' own tooling. Preregistration is meant to separate confirmatory from exploratory analysis by fixing the plan before outcomes are observed \citep{nosek2018preregistration}. By that standard, Plan~1 was fixed before any patent data were downloaded. Plans 2--6 were written after earlier results were known, so the questions they ask were data-informed; only their definitions, null models, decision rules, thresholds and stop rules were fixed before the analyses they govern were computed. Only Plan~1 is confirmatory. Plan~5, the construct checks of Section~\ref{sec:study2_aggregate} (Table~\ref{tab:construct}), was added after the main verdict was known, as a data-informed follow-up, and frozen on 2026-11-19 before any of its specifications was computed; amendment C1 added two strict specifications the same day, after the first Plan~5 results were known but before the new specifications were computed. Changes after freezing are recorded as dated amendments that do not overwrite the frozen text. Tables~\ref{tab:app_prereg} (Plans~1--3) and~\ref{tab:app_prereg_b} (Plans~4--6 and~C) summarise the plans, including the commit ids and rule thresholds taken from the frozen texts; Table~\ref{tab:app_amend} lists every Study~2 amendment and recorded deviation, and Table~\ref{tab:app_plan6} gives the descriptive Plan~6 values.
 
 \begin{table}[tbp]
 \centering
-\caption{Preregistration log for Study~2. ``Frozen before'' states what had not yet been computed when the plan was committed, and ``Known when written'' what had. Commit ids and decision rules are quoted from the frozen texts; outcomes are DIRECT results (E3).}
+\caption{Preregistration log for Study~2, Plans~1--3 (continued in Table~\ref{tab:app_prereg_b}). ``Frozen before'' states what had not yet been computed when the plan was committed, and ``Known when written'' what had. Commit ids and decision rules are quoted from the frozen texts; outcomes are DIRECT results (E3).}
 \label{tab:app_prereg}
 \footnotesize
 \setlength{\tabcolsep}{4pt}
@@ -38,7 +38,20 @@ Plan (commit) & Frozen before / known when written & Hypotheses and content & De
 \raggedright P1 with the patent-adapted null M06-P; P2 seeds, null false positives, power, segmentation; P3 time split; P4 label face validity; P5 firm network; P6 removal; P7 hyperedges; P8 aliases; P9 Gap Validity; P10 Limitation Scout &
 \raggedright Three-test agreement for P3 and P9; replicated depleted cell must pass in both halves; P4 pass if lift $\geq$1.5; P5 firm hole if O/E $<1$ and below both MIXED O/Es; a candidate is refuted if AI and DEC firms stay connected after its removal &
 \raggedright See Appendix~\ref{app:sens}; P5 criterion met (later \texttt{PARTIAL} under the Plan~4 null; not a confirmed hole); 10/10 candidates refuted; P10 \texttt{NOT\_\allowbreak APPLICABLE} \tabularnewline
-\addlinespace
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[tbp]
+\centering
+\caption{Preregistration log for Study~2, continued: Plans~4--6 and the exploratory Plan~C. Columns as in Table~\ref{tab:app_prereg}.}
+\label{tab:app_prereg_b}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{2.0cm}p{2.5cm}p{3.7cm}p{4.3cm}p{2.3cm}}
+\toprule
+Plan (commit) & Frozen before / known when written & Hypotheses and content & Decision rule & Outcome \tabularnewline
+\midrule
 \raggedright 4.~Portfolio-preserving firm null (\texttt{b59fc71}) &
 \raggedright Frozen before any null replicate was computed. Known: the P5 result, which motivated the plan &
 \raggedright T1: OE(AI\_FIRM$\sim$DEC\_FIRM); T2: MIXED median constraint; owner sets permuted within strata (primary; S-tech). The null preserves portfolio counts, not firm degree &
@@ -61,7 +74,7 @@ Plan (commit) & Frozen before / known when written & Hypotheses and content & De
 \raggedright Frozen before any replicate; data-informed. Known: all other results, including the P5--Plan~4 contradiction &
 \raggedright Plan~4's T1 and T2, with owner sets permuted within type $\times$ year (or S-tech) $\times$ out- and in-degree classes (0--9, 10+) &
 \raggedright Validity gate: median Spearman $\rho$ of firm degree $\geq$ 0.90 and of strength $\geq$ 0.95, otherwise \texttt{INVALID\_\allowbreak NULL}; if valid, Plan~4's rule &
-\raggedright \texttt{INVALID\_\allowbreak NULL} in both schemes ($\rho$ degree 0.817, 0.825) \tabularnewline
+\raggedright \texttt{INVALID\_\allowbreak NULL} in both schemes ($\rho$ degree 0.817, 0.825); descriptive values in Table~\ref{tab:app_plan6} \tabularnewline
 \bottomrule
 \end{tabular}
 \end{table}
@@ -78,7 +91,7 @@ Item & Plan & When & Change & Effect on design \tabularnewline
 \midrule
 \raggedright A1 & \raggedright 1 & \raggedright 2026-11-18, before any citation data or result was computed (\texttt{a158e70}) & \raggedright The CPC file labels inventive codes ``inventional''; the code accepts both spellings so that sensitivity check s4 keeps its meaning. CPC rows are loaded in chunks. & \raggedright None \tabularnewline
 \addlinespace
-\raggedright A2 & \raggedright 1 & \raggedright 2026-11-18, after the run (data note) & \raggedright Before 2013, non-examiner citations are labelled ``cited by other'', so the applicant-only specification effectively covers citing years 2013--2025; s1 (all categories) agrees with the primary verdict. H3 was not run. H3 asked whether assignees broker a \emph{domain-level} hole, so it was conditional on H1; with H1 unsupported there was no such hole to broker. The later firm analysis asks a different question---whether specialist AI and DEC firms are separated, and whether mixed-portfolio firms span that separation, irrespective of the domain-level verdict. It was preregistered separately in Plan~3 (P5) as the patent analogue of the Study~1 author-network line, and followed up in Plan~4. & \raggedright None to H1; H3 moot; firm-level question re-posed in Plans 3--4 \tabularnewline
+\raggedright A2 & \raggedright 1 & \raggedright 2026-11-18, after the run (data note) & \raggedright Before 2013, non-examiner citations are labelled ``cited by other'', so the applicant-only specification effectively covers citing years 2013--2025; s1 (all categories) agrees with the primary verdict. H3, whether assignees broker a \emph{domain-level} hole, was conditional on H1 and was not run. The firm-level question (are specialist firms separated, and do mixed firms span the separation, whatever the domain verdict) was preregistered separately in Plan~3 (P5) and followed up in Plans~4 and~6. & \raggedright None to H1; H3 moot; firm-level question re-posed in Plans 3, 4 and 6 \tabularnewline
 \addlinespace
 \raggedright B1 & \raggedright 2 & \raggedright 2026-11-18, after the run & \raggedright M06 accepted 0 of 21,843,600 proposed swaps because each document is a complete row $\times$ column block; the preregistered core is 0 by construction and uninformative. Three-test cells are reported as exploratory. The replacement M06-P was specified only after this failure and after the Plan~2 three-test cell results were known; it was then frozen in Plan~3 (module P1, \texttt{d641256}) before it was computed. The Plan~2 result file records only the degenerate core; all M06-P counts come from the Plan~3 P1 output. & \raggedright Documented, data-informed deviation from Plan~2 \tabularnewline
 \addlinespace
@@ -93,6 +106,28 @@ Item & Plan & When & Change & Effect on design \tabularnewline
 \end{tabular}
 \end{table}
 
+\begin{table}[tbp]
+\centering
+\caption{Plan~6, portfolio-and-degree firm null (1,000 replicates per scheme; DIRECT; E3.7). The null failed its preregistered validity gate (\texttt{INVALID\_\allowbreak NULL}) in both schemes. As the preregistration requires, T1 and T2 are reported as descriptive only and are not interpreted. A 2-replicate smoke test, with T1 and T2 sealed unread, had shown the gate failing before the full run. Observed values: T1 0.240, T2 0.358.}
+\label{tab:app_plan6}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lll}
+\toprule
+& Primary (type $\times$ year) & S-tech (+ technology mix) \\
+\midrule
+Median Spearman $\rho$, firm degree (gate $\geq$ 0.90) & 0.817 & 0.825 \\
+Median Spearman $\rho$, firm strength (gate $\geq$ 0.95) & 0.952 & 0.956 \\
+Firms with null degree within $\pm$20\% of observed & 0.336 & 0.366 \\
+Singleton-stratum patent share & 0.0052 & 0.062 \\
+\midrule
+\multicolumn{3}{l}{\emph{Descriptive only; not interpreted}} \\
+T1 null median [95\%], one-sided $p$ & 0.315 [0.286--0.346], .001 & 0.249 [0.224--0.273], .236 \\
+T2 null median [95\%], one-sided $p$ & 0.130 [0.127--0.135], 1.000 & 0.177 [0.172--0.184], 1.000 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 Study~1 used frozen V9 seeds: 20260918 for the stub Monte Carlo and 20260919 for the document-preserving swap (E1.1). Its data-validity re-analysis (2026-11-18; E1.3--E1.5) was not preregistered. Its verdict was recorded as follows: directional under-integration DEFENSIBLE; ``16 statistically robust depleted pairs'' NOT DEFENSIBLE as measured; Burt structural hole STOP; research gap NOT SUPPORTED. We qualify the first item in this paper. It rests on the attenuation argument, which holds only for non-differential misclassification, whereas same-term self-pairing and model-inferred labels are non-random errors. The removal checks in Table~\ref{tab:app_s1robust} indicate that self-pairing does not appear to be the main driver, although the rule-based keyword matrix also changes the coding instrument; the effect of model-inferred labels is untested. The direction survives every check we could run, but it is descriptive and unconfirmed (Section~\ref{sec:discussion_measurement}).
 
 % ------------------------------------------------------------
@@ -101,7 +136,7 @@ Study~1 used frozen V9 seeds: 20260918 for the stub Monte Carlo and 20260919 for
 
 \subsection{Study 1}
 
-Table~\ref{tab:app_v9cells} lists the 16 depleted cells of the frozen V9 analysis, and Table~\ref{tab:app_s1robust} the robustness checks of the data-validity re-analysis.
+Table~\ref{tab:app_v9cells} lists the 16 depleted cells of the frozen V9 analysis, Table~\ref{tab:app_s1robust} the robustness checks of the data-validity re-analysis, and Table~\ref{tab:network_lines} the network lines.
 
 \begin{table}[tbp]
 \centering
@@ -152,6 +187,35 @@ Check & Result \tabularnewline
 \bottomrule
 \end{tabular}
 \end{table}
+
+\paragraph{Network lines V6--V11.1.} Successive versions of Study~1 searched citation, co-author and higher-order networks for Burt brokers (Table~\ref{tab:network_lines}). According to these HISTORICAL / USER\_REPORTED records, no line confirmed a broker. The V10.1 external review of 8 candidate pairs refuted 6 and left 2 unresolved. The V11.1 identity and peer validation rejected 3 of 4 candidates and found the evidence on the fourth insufficient.
+
+\begin{table}[tbp]
+  \centering
+  \small
+  \caption{Network search for Burt brokers, V6--V11.1. All rows are HISTORICAL / USER\_REPORTED. They are taken from earlier project logs or reported by the researcher, and the raw files were not re-verified.}
+  \label{tab:network_lines}
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{l p{0.17\linewidth} p{0.33\linewidth} p{0.17\linewidth} l}
+    \toprule
+    Version & Line & Scale & Result & Grade \\
+    \midrule
+    V6 & citation SNA & 458 leads; 13 candidates & 0 confirmed & HIST./USER \\
+    V7 & author SNA & 446 works; 8 cross-domain authors; 2 focal candidates & 0 confirmed & HIST./USER \\
+    V8 & citation enrichment & 1,111 citing works; 5,592 references & unconfirmed & HIST./USER \\
+    V9 & citation line & 3,983 discovery + 3,897 confirmation works (7,880 total) & no confirmed Burt result & HIST./USER \\
+    V10 & higher-order network & 14 exploratory candidates $\rightarrow$ 8 pairs / 7 brokers & exploratory only & HIST./USER \\
+    V10.1 & external review & 8 candidate pairs & 6 refuted, 2 unresolved, 0 confirmed & HIST./USER \\
+    V11 & co-author SNA & 26,443 V9 authors; 30,140 merged authors & 0 confirmed & HIST./USER \\
+    V11.1 & external identity / peer validation & 95 OpenAlex requests; 7,880 works examined; 4 candidates & 3 rejected, 1 insufficient, 0 confirmed & HIST./USER \\
+    \bottomrule
+  \end{tabular}
+
+  \smallskip
+  \raggedright\footnotesize SNA = social network analysis. HIST./USER = HISTORICAL / USER\_REPORTED.
+\end{table}
+
+The co-author lines (V7, V11) and the higher-order line (V10) rest on one-mode projections of affiliation data \citep{newman2001scientific}, so they could not have carried Burt's construct even with perfect data (Section~\ref{sec:theory_cooccurrence}). The citation lines (V6, V8, V9) could carry directed flow in principle but screened for candidate brokers in samples of the literature instead of testing group-level flows against a calibrated null. Centrality screens, such as the share of shortest paths through a node \citep{freeman1977set}, do not establish brokerage, which requires directed open two-paths between actors with group membership \citep{gould1989structures} and non-redundant real contacts \citep{burt1992structural}.
 
 \subsection{Study 2}
 
@@ -230,6 +294,10 @@ G06N20 & 2.18 & STRATEGY (hit rate 4.5\%) & 4.40 \\
 \end{tabular}
 \end{table}
 
+\paragraph{Replication suite, P6--P10.}
+\label{app:suite_detail}
+P6 (removal falsification): the ten MIXED firms with degree at least 5 and the lowest constraint were International Business Machines, General Electric, Tesla, ioCurrents, Google, Accenture, Amazon Technologies, T-Mobile USA, Optum Services and Strong Force VCN Portfolio 2019. After all 10 are removed, AI\_FIRM and DEC\_FIRM firms remain connected, and the largest component containing both groups shrinks only from 5,954 to 5,563 firms: 10/10 candidates are refuted as indispensable brokers. The suite's cross-weight-retained metric is identically 1 by construction, so we draw no inference from it. P7 finds 2,546 co-assignment hyperedges, of which 32\% join an AI\_FIRM with a DEC\_FIRM or MIXED firm, and P8 checked 54 firms and found 0 possible alias collisions (Table~\ref{tab:suite}). The Gap Validity diagnostics (P9) are an identity and near-guaranteed in a dense 6$\times$7 matrix, so neither is evidence (Table~\ref{tab:app_suite}). The Limitation Scout (P10) does not apply to patents.
+
 \subsection{External-data feasibility}
 
 Table~\ref{tab:app_sources} gives the scale and outcome of the six public sources screened for flow validity.
@@ -246,7 +314,7 @@ Source & Scale & Relation type and outcome \tabularnewline
 \raggedright CORDIS H2020 & \raggedright 35,389 projects; 179,063 organisation participations; keyword candidates 195 projects $\times$ 1,105 organisations = 1,436 edges; projection 1,049 nodes, 12,181 edges, 102,660 within-project triads, 156 edges recurring across $\geq$2 projects & \raggedright Co-membership (affiliation). Degree-preserving bipartite swap null (49 reps): 5 testable candidates, $p=.41$--$.86$, BH q $\geq$ .80; 0 significant \tabularnewline
 \raggedright GLEIF Level-2 & \raggedright 663,449 relationship records (481,247 active) & \raggedright Legal consolidation, not information flow \tabularnewline
 \raggedright OpenAlex & \raggedright 8 works & \raggedright Fails gates \tabularnewline
-\raggedright OCDS & \raggedright 0 verifiable buyer--supplier edges in the round-3 sample & \raggedright Fails gates \tabularnewline
+\raggedright OCDS & \raggedright 0 verifiable buyer--supplier edges in the records retrieved & \raggedright Fails gates \tabularnewline
 \raggedright SEC & \raggedright Not fetched (requires a genuine contact User-Agent) & \raggedright Not assessed \tabularnewline
 \raggedright PyPSA & \raggedright 8,786 buses & \raggedright Physical grid topology, not information flow \tabularnewline
 \bottomrule
@@ -453,7 +521,7 @@ Model level & Planned data & Parameters informed \tabularnewline
 \end{tabular}
 \end{table}
 
-\paragraph{Unit, sampling and coding.} The unit of analysis is the decision process, a recurring managerial decision with an identifiable owner; the observed events are \emph{integration episodes}, documented proposals, pilots or deployments of an AI configuration with their outcome (adopted, modified or stopped). The setting is one anonymised manufacturing firm, possibly more; the frame, window and minimum informative sample will be fixed in Study~3's own preregistration. ``Feasible on capability grounds but blocked by permission'' must be observed, not inferred from the model. Records dated \emph{before} each stopping point (approvals, budget allocations, business cases, decision-rights matrices, capability or data assessments), supplemented but not replaced by interviews, identify where and why each episode stopped. Two independent human coders code its first binding constraint (one of the five candidates, or ``indeterminable''), and their agreement is reported before any outcome analysis; given Study~1, model-assisted coding will not substitute for it.
+\paragraph{Unit, sampling and coding.} The unit of analysis is the decision process, a recurring managerial decision with an identifiable owner; the observed events are \emph{integration episodes}, documented proposals, pilots or deployments of an AI configuration with their outcome (adopted, modified or stopped). The setting is one anonymised manufacturing firm, possibly more; the frame, window and minimum informative sample will be fixed in Study~3's own preregistration. ``Feasible on capability grounds but blocked by permission'' must be observed, not inferred from the model. Records dated \emph{before} each stopping point (approvals, budget allocations, business cases, decision-rights matrices, capability or data assessments), supplemented but not replaced by interviews, identify where and why each episode stopped. Two independent human coders code its first binding constraint (one of the five candidates, or ``indeterminable''), and their agreement is reported before any outcome analysis; given Study~1, model-assisted coding will not substitute for it (unlike the descriptive, abstract-level review of Appendix~\ref{app:review}, whose model coding is disclosed).
 
 \paragraph{Decision rules.} The organisational candidate is supported if, among episodes with a determinable binding constraint, internal permission, decision rights, governance capacity or allocation is the most frequent first binding constraint and exceeds the preregistered share, and if episodes that changed status after an internal rule or allocation changed did so without a recorded change in business case, capability or data. Each alternative (data quality, cost, regulation and liability, task suitability) is supported by the same rule applied to its own signature in Table~\ref{tab:back_study3_rivals}. Internal decision rights and external regulation can both appear as a withheld permission; they are separated by whether the binding rule originates inside the firm, where management can change it, or outside it. Organisational allocation and cost can both appear as a budget refusal; they are separated by return, not by whether budget exists in aggregate. Cost is defined by return: the expected value of a feasible, permitted configuration does not cover its integration cost, even after reallocation. An episode is coded as cost whenever the rejection cites return or a hurdle threshold, whatever the aggregate budget. It is coded as allocation or decision rights only with positive evidence that a proposal with a positive expected return, by the firm's own business case, was blocked by where the leader allocated budget or by a decision right: for example, the episode proceeds after an internal reallocation or rule change with no change in its business case, capability or data, or the rejection cites priority or decision rights. Otherwise it is coded as cost or as indeterminable. All codes rest on dated records, such as budget allocations and business cases, not on the model. If no candidate reaches the threshold, the result is reported as mixed, and the model is not calibrated as a governance-bottleneck model.
 
@@ -487,6 +555,8 @@ Model level & Planned data & Parameters informed \tabularnewline
   \end{tabular}
 \end{table}
 
+\paragraph{Screeners, coders and adjudicator.} All were Claude (Anthropic) LLM subagents; the model version was not recorded. Agreement is therefore between model instances, not human raters, and no human-coded validation subsample exists. Study~3 excludes model-assisted coding by design (Appendix~\ref{app:study3}): the review is a descriptive, abstract-level screen with disclosed model coding, whereas Study~3's inference rests on its codes of organisational records.
+
 \paragraph{Screening and amendment S1.} A primary screener screened all 476 records with an abstract; a second screener, blind to the first, screened a random 25\% (119 records). Agreement on include or exclude was $\kappa = 0.361$ (raw agreement 0.681; 38 disagreements), and 243 of the 476 primary decisions were marked low-confidence. Most disagreements concerned studies that compute Burt measures on co-patenting or co-authorship networks and use them as predictors: the guide lists both relation types and Burt measures, so such studies meet the criteria. Amendment S1, recorded after screening and before adjudication or coding, therefore had the adjudicator re-screen all 254 disputed or low-confidence records under the unchanged guide plus that note; the adjudicator reversed 26 decisions. High-confidence primary decisions outside the overlap stand.
 
 \paragraph{Coding.} Two coders, blind to each other, coded all 204 included studies from title and abstract (no coder used full text, so the evidence basis is the abstract for all 204). 182 studies had at least one disagreement on the claim type or on F1--V, and a third agent adjudicated those codes. Where a descriptive code (relation, measure) differed and was not adjudicated, the first coder's code was kept.
@@ -512,7 +582,7 @@ Model level & Planned data & Parameters informed \tabularnewline
   \end{tabular}
 \end{table}
 
-\paragraph{Final codes.} Claim type: structural hole 99, several 33, broker 3, gap 66, unclear 3. Measure named: Burt constraint or effective size 111, cluster or map position 39, absent or sparse links 35, none 12, betweenness 7. Relation type: patent co-inventorship, co-application or co-classification 73, mixed 66, co-word 42, other 11, co-authorship 6, co-membership 2, unclear 4. Publication period: 2000--2014, 11 studies; 2015--2019, 28; 2020--2026, 165. ``Unclear'' codes over all 204 studies: F1 9, F2 6, F3 4, F4 20, V 4. Among the 73 patent-network studies, 70 are coded F1, 72 F2 and 63 V; among the 42 co-word studies, 28 are coded F3 and 2 V.
+\paragraph{Final codes.} Claim type: structural hole 99, several 33, broker 3, gap 66, unclear 3. Measure named: Burt constraint or effective size 111, cluster or map position 39, absent or sparse links 35, none 12, betweenness 7. Relation type: patent co-inventorship, co-application or co-classification 73, mixed 66, co-word 42, other 11, co-authorship 6, co-membership 2, unclear 4. Publication period: 2000--2014, 11 studies; 2015--2019, 28; 2020--2026, 165. ``Unclear'' codes over all 204 studies: F1 9, F2 6, F3 4, F4 20, V 4. Among the 73 patent-network studies, 70 are coded F1, 72 F2 and 63 V; among the 42 co-word studies, 28 are coded F3 and 2 V. All 73 patent-network studies are structural-hole or broker claims in stream~S; the remaining such claims use mixed (28), co-word (11), other (11), co-authorship (6), unclear (4) and co-membership (2) relations. Work type (OpenAlex): article 151, review 15, conference paper 11, conference abstract 11 (all Academy of Management Proceedings), preprint 6, dissertation 6, book chapter 3, dataset 1.
 
 \paragraph{Re-analysis R1 (protocol \S8).} The re-analysis was preregistered before any data were downloaded. A step-0 record of the original article's measures followed. The article's full text was not accessible, and the record shows that it reads betweenness and the number of directorships as proxies of influence, while the broker reading appears in the citing literature. Amendment R1-A1 then added the article's August 2009 snapshot. The data are the public two-mode director $\times$ board files (CC BY-NC 3.0; not redistributed; hashes recorded). The null is a curveball randomisation that keeps every director's number of seats and every board's size. On the two-mode graph, constraint equals 1/(number of boards) for all 1,421 directors in the primary snapshot. All four snapshots meet the rule that projection closure is dominated by board cliques.
 
