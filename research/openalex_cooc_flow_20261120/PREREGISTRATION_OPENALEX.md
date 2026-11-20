@@ -97,3 +97,15 @@
   - n(1803) = 875,053;
   - n(1702 and 1803) = 60,128.
   - No other co-occurrence count was seen.
+
+**R10-A2, 2026-11-20: run paused; no analysis.**
+- **What happened:** after retrieving the first `group_by` page for all 252 subfields, OpenAlex returned HTTP 429. The response headers show that anonymous access is now limited to 1,000 requests per day, with a retry delay of about 21 hours. The plan needs about 40,000 further requests: pairwise co-occurrence fills and reference lookups.
+- **Decision (by the researcher):** the run is paused. No paid API key is used for now.
+  - The partial co-occurrence data stay local and are **not analysed**.
+  - No flow data were retrieved.
+- **Reasons recorded:**
+  - OpenAlex topics are assigned by a classifier, so subfield co-assignment carries the label-validity concern (F4) that the manuscript itself raises.
+  - The literature side of the question is partly addressed by Study 1, the systematic review and R1.
+  - Plan 9 has priority.
+- **Resumption:** the code and cache are kept. If the run resumes (for example with an API key), a further amendment will record that before any analysis.
+- **Reporting:** the manuscript reports Plan 10 as preregistered but not completed.
