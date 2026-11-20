@@ -84,3 +84,16 @@
 **Code:**
 - `openalex_fetch.py`: retrieval and aggregation.
 - `openalex_analyse.py`: L7, L8, L9 and the AI × decision location.
+
+## Amendments (dated; the text above is unchanged)
+
+**R10-A1, 2026-11-20, recorded before any co-occurrence row was completed and before any flow data were retrieved.**
+- **What happened:** the first grouped co-occurrence query needed a second page. OpenAlex returned HTTP 401 for anonymous cursor paging, so the run stopped as designed.
+- **Change in retrieval only** (the definitions of n_S, n_ST and N are unchanged):
+  - For each subfield S, the first page of `group_by=topics.subfield.id` is retrieved without a cursor. These are the 200 largest co-assigned subfields, with exact counts.
+  - For every subfield T not in that page and not already known from T's own row, n_ST is retrieved as the count of works matching `topics.subfield.id:S+T`.
+- **Values seen while checking the syntax:**
+  - n(Artificial Intelligence, 1702) = 1,120,805;
+  - n(1803) = 875,053;
+  - n(1702 and 1803) = 60,128.
+  - No other co-occurrence count was seen.

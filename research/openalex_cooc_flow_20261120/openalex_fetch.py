@@ -113,14 +113,29 @@ def cooccurrence(c, sf):
     ix = {k: i for i, k in enumerate(ids)}
     G = len(ids)
     N = c.get("works", {"filter": BASE_FILTER, "per_page": 1})["meta"]["count"]
-    C = np.zeros((G, G), np.int64)
-    for i, s in enumerate(ids):
-        row = grouped(c, f"{BASE_FILTER},topics.subfield.id:{s}")
-        for k, v in row.items():
+    C = -np.ones((G, G), np.int64)                 # -1 = unknown
+    for i, s in enumerate(ids):                     # amendment R10-A1: first group_by page only (no cursor)
+        d = c.get("works", {"filter": f"{BASE_FILTER},topics.subfield.id:{s}", "group_by": "topics.subfield.id",
+                            "per_page": 200})
+        for g in d["group_by"]:
+            k = str(g["key"]).rsplit("/", 1)[-1]
             if k in ix:
-                C[i, ix[k]] = v
+                C[i, ix[k]] = g["count"]
         if i % 25 == 0:
             log("co-occurrence rows", i + 1, "of", G)
+    C = np.where(C >= 0, C, C.T)                    # known from the other row
+    pairs = 0
+    for i in range(G):
+        for j in range(i + 1, G):
+            if C[i, j] < 0:
+                d = c.get("works", {"filter": f"{BASE_FILTER},topics.subfield.id:{ids[i]}+{ids[j]}", "per_page": 1,
+                                    "select": "id"})
+                C[i, j] = C[j, i] = d["meta"]["count"]
+                pairs += 1
+                if pairs % 1000 == 0:
+                    log("pairwise co-occurrence queries", pairs)
+    assert (C >= 0).all()
+    log("pairwise co-occurrence queries total", pairs)
     return C, N
 
 
