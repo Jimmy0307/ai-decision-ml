@@ -1,0 +1,45 @@
+% 第二章 文獻探討（對應英文稿 Section 2, en/front.tex）
+\chapter{文獻探討}
+\label{zh:sec:theory}
+
+\section{結構洞及其測量}
+\label{zh:sec:theory_holes}
+
+結構洞（structural hole）是自我中心網路（ego network）中非冗餘聯繫對象之間的分隔。若一行動者的聯繫對象彼此並不相連，該行動者便能獲得非冗餘的資訊，並能使聯繫對象相互牽制；此即中介（brokerage）的資訊利益與控制利益 \citep{burt1992structural}。有論者主張，跨越結構洞的管理者擁有較佳的構想，而此一意義下的中介以真實的連帶與可觀察的結果為前提 \citep{burt2004structural}。此一論點援引了一項較早的觀察：弱連帶能跨越群體傳遞資訊，而強連帶則傾向於在社群內部相互重疊 \citep{granovetter1973strength}。
+
+Burt 用以衡量此類機會之闕如的指標為網路限制度（network constraint；Burt constraint）：
+\begin{equation}
+c_i \;=\; \sum_{j \in N(i)} \Bigl( p_{ij} + \sum_{q \neq i,j} p_{iq}\, p_{qj} \Bigr)^{2},
+\label{zh:eq:constraint}
+\end{equation}
+其中 $N(i)$ 為 $i$ 的聯繫對象集合，$p_{ij}$ 為 $i$ 對 $j$ 之連帶的比例強度，亦即該連帶權重占 $i$ 全部連帶權重的比例 \citep{burt1992structural}。直接項 $p_{ij}$ 記錄 $i$ 的網路有多少投注於 $j$。間接項 $\sum_{q} p_{iq} p_{qj}$ 記錄此一投注有多少係經由本身亦與 $j$ 相連的第三方 $q$ 而再次觸及 $j$。當 $i$ 的連帶集中於少數聯繫對象，且這些聯繫對象彼此相連時，限制度便高。低限制度被解讀為能接觸到結構洞。
+
+有三條批評路線與此指標的使用方式相關。第一，限制度受度數與二元連帶所驅動；它並非一個衡量排他性中介的單純 0--1 指標 \citep{everett2020unpacking}。因此，除非固定度數，否則比較不同行動者群體的限制度，同時也是在比較其度數。第二，限制度主要操作化的是二元層次的構念（替代選項、夥伴多樣性與集中度），而非更廣泛的網路結構。這要求重新詮釋結構洞的研究發現，但並未否證該理論 \citep{johnson2026reassessing}。第三，不同的結構洞指標適用於不同的資料類型，不能任意相互替代 \citep{saglietto2020research}。中介中心性（betweenness centrality）係指其他節點配對之間的最短路徑中通過某一節點的比例 \citep{freeman1977set}，常被用來篩選中介者，但單憑高中介中心性分數，並不足以確立 Burt 意義下的中介。
+
+一個要求更高的中介定義是關係性且以群體為基礎的。\citet{gould1989structures} 以有向的開放二步路徑 $s \rightarrow v \rightarrow t$（且不存在直接的 $s \rightarrow t$ 連帶），結合 $s$、$v$ 與 $t$ 的群組成員身分，定義了五種中介角色。\citet{zador2022weighted} 將這些角色擴展為加權且標準化的測度，以避免二值化所造成的資訊損失。兩種表述皆要求連帶具有方向，且行動者帶有群組標籤。
+
+本研究從上述文獻中歸納出一項要求，並將其貫徹全文：要檢驗兩個領域之間的結構洞，有效的檢驗需要帶有群組標籤之行動者之間的有向二元流動關係 \citep{gould1989structures}，亦即 Burt 構念所預設的那種真實連帶 \citep{burt2004structural}。在隸屬圖上計算限制度，或在投影網路上計算中介中心性，或許能描述結構，但並不能檢驗 Burt 的構念。因此，研究二將由審查員標記之群組之間的有向申請人引用（applicant citation）與一個相對參照集進行比較，並且僅在保留專利組合的虛無模型（portfolio-preserving null）下，將 Burt 限制度應用於公司對公司的引用網路（第~\ref{zh:sec:study2}~節）。
+
+\section{作為知識領域的 AI 與決策}
+\label{zh:sec:theory_domains}
+
+緒論所回顧的管理與資訊系統研究，將 AI 與決策的交會視為組織設計的問題 \citep{shrestha2019organizational,raisch2021artificial,jarrahi2018artificial,berente2021managing}。本研究所檢驗的前提——屬於本研究專案，而非這些作者——對知識提出了較為狹義的主張：AI 與決策構成彼此分離、少有連結的知識體系。本研究據此將兩個領域操作化。在研究一中，領域是從文獻中的證據句編碼而得的功能族：10 個 AI 功能族與 12 個決策功能族，共計 120 格。在研究二中，領域是一組由審查員指派的合作專利分類（Cooperative Patent Classification, CPC）標籤。AI 為 G06N。DEC 為 G06Q10/04（預測與最佳化）加上 G06Q10/06（資源、工作流程、管理與決策分析）。由於預測與最佳化在方法上與機器學習重疊，AI--DEC 之間的任何連結都可能有一部分是近乎機械性的；因此第~\ref{zh:sec:study2_aggregate}~節亦檢驗移除所有帶有 G06Q10/04 分類碼之專利後的 DEC。
+
+專利引用記錄一項發明所依據的先前技術，長久以來被用作知識流動（knowledge flow）的證據 \citep{jaffe1993geographic}。然而，有相當大比例的引用是由審查員加入的，這影響其作為流動測度的用途；應區分發明人或申請人引用與審查員引用（examiner citation）\citep{alcacer2006patent}。因此，研究二的主要設定僅使用申請人引用，並以一項預先登錄（preregistered）的敏感度分析（sensitivity analysis）納入所有引用類別。資料取自 PatentsView 的核准專利資料表，其提供專利、現行 CPC 分類、引用及經消歧的受讓人（assignee）資料 \citep{uspto2026patentsview}。
+
+領域檢驗必須是相對的。引用具有領域在地性，因此幾乎任何兩個領域之間的 OE 都低於 1，若採絕對判準，幾乎每一對領域都會被標記為分隔。因此，研究二探問：相較於 179 個可比較的 CPC 大組（CPC main group）（H1a）以及其他商業方法（H1b），AI--DEC 配對是否異常地弱連結；第~\ref{zh:sec:study2_aggregate}~節提供正式定義，以及粒度匹配的 H1a 檢查。
+
+同樣的知識流動也發生在組織之間。公司（firm）持有專門的 AI 專利組合、專門的決策專利組合或混合型組合，而將兩者結合的經濟行動，鑲嵌於組織之間與組織內部的具體關係之中 \citep{granovetter1985economic}。RQ2 探問在此一層次上，是否存在公司專利組合尚未解釋的分隔。
+
+\section{為何共現不等於流動}
+\label{zh:sec:theory_cooccurrence}
+
+許多可能被當作 AI 與決策之間「缺口」證據的材料，包括研究一的矩陣，都屬於共現（co-occurrence）：同一篇論文中同時提及某一 AI 功能與某一決策功能，或兩個組織參與同一專案。此類資料屬於二模（two-mode）資料，亦即隸屬（affiliation）資料。它們將行動者連結至事件，而非將行動者彼此相連，且不記錄任何移轉的方向。在此類資料中，稀疏的共現表示兩個標籤很少出現在同一份文件中；它並不表示知識未能在其背後的人或組織之間流動（flow）。
+
+將限制度應用於嚴格的二分網路（bipartite network）會產生一項形式上的後果。設 $i$ 屬於其中一模。則每一個聯繫對象 $j \in N(i)$ 皆屬於另一模，每一個滿足 $p_{iq} > 0$ 的第三方 $q$ 亦然。由於 $q$ 與 $j$ 屬於同一模，兩者不可能相連，故 $p_{qj} = 0$，而式~\eqref{zh:eq:constraint} 中的間接項恆等於零。限制度化約為 $c_i = \sum_{j} p_{ij}^{2}$。若再加上 $i$ 的所有連帶權重皆相等，則對 $i$ 的 $k_i$ 個聯繫對象而言，各 $p_{ij} = 1/k_i$，且 $c_i = 1/k_i$。在此等權條件下，限制度除度數之外不攜帶任何資訊。由於這是一項恆等式，研究一的 Gap Validity 附屬分析（sidecar）與研究二的模組 P9 所報告的零間接項，只是對程式實作的檢查，而非實證證據。兩者在偏低格（depleted cell）周圍所發現的替代路徑亦是如此：在稠密的二分矩陣中，此類路徑幾乎必然存在。
+
+投影無法修補此一問題。例如，共同著作網路是將論文—作者二模資料投影為單模而建構的 \citep{newman2001scientific}，而本研究並不將共同著作視為知識流動的直接證據。單模投影（one-mode projection）會創造人為的封閉性，這正是群聚（clustering）必須針對二模資料重新定義的原因 \citep{opsahl2013triadic}。在投影後計算的中介，並非 \citet{gould1989structures} 意義下開放二步路徑上的中介，因為投影恰恰封閉了這些角色賴以定義的二步路徑；二模中介鏈是一種替代做法 \citep{jasny2015two}。本研究自身的資料說明了此一扭曲的程度。在本研究所篩檢的 CORDIS H2020 專案資料中，經關鍵詞比對之組織的共同成員身分投影包含 1,049 個節點與 12,181 條邊。它產生了 102,660 個專案內三元組（triad），然而僅有 156 條邊在 $\geq 2$ 個專案中重複出現。
+
+研究一另揭示了兩種失效模式：同詞兩端共用（same-term self-pairing），即同一個詞被編碼於配對的兩端；以及人工信度偏低的模型推論標籤（第~\ref{zh:sec:study1_direction}~節與第~\ref{zh:sec:study1_reliability}~節）。兩者皆非隨機雜訊。在邊際固定的封閉矩陣中，因編碼錯誤而膨脹的一格，會提高同列與同欄其他格的期望次數，因此系統性錯誤可能製造出偏低，而不僅是使其模糊。
+
+Burt 的構念需要帶有標籤之行動者之間的有向二元流動。原則上，引用可以提供此類流動：施引文件汲取被引文件的內容。研究一的引用資料線（V6、V8 與 V9）係以引用為基礎，但它們之所以失敗，是由於資料與設計上的原因，而非因為引用無法承載流動（第~\ref{zh:sec:study1_network}~節）。專利引用則進一步提供了由審查員指派的分類與母體層級的涵蓋範圍。這促成了研究二。

@@ -1,0 +1,299 @@
+{
+ "granovetter1973strength": {
+  "type": "article",
+  "title": "The Strength of Weak Ties",
+  "authors": "Granovetter, Mark S.",
+  "year": "1973",
+  "venue": "American Journal of Sociology",
+  "doi": "10.1086/225469",
+  "abstract_or_role": "Weak ties can carry information across groups; strong ties are associated with overlap within communities. Theoretical background only."
+ },
+ "freeman1977set": {
+  "type": "article",
+  "title": "A Set of Measures of Centrality Based on Betweenness",
+  "authors": "Freeman, Linton C.",
+  "year": "1977",
+  "venue": "Sociometry",
+  "doi": "10.2307/3033543",
+  "abstract_or_role": "Betweenness centrality: the share of shortest paths between other node pairs that pass through a node. Not a sufficient test of Burt brokerage."
+ },
+ "gould1989structures": {
+  "type": "article",
+  "title": "Structures of Mediation: A Formal Approach to Brokerage in Transaction Networks",
+  "authors": "Gould, Roger V. and Fernandez, Roberto M.",
+  "year": "1989",
+  "venue": "Sociological Methodology",
+  "doi": "10.2307/270949",
+  "abstract_or_role": "Five brokerage roles defined on directed open two-paths (s->v->t with no direct s->t tie), combined with group membership."
+ },
+ "burt1992structural": {
+  "type": "book",
+  "title": "Structural Holes: The Social Structure of Competition",
+  "authors": "Burt, Ronald S.",
+  "year": "1992",
+  "venue": "Harvard University Press",
+  "doi": "10.4159/9780674029095",
+  "abstract_or_role": "Structural holes: non-redundant contacts in an ego network give information and control benefits. Defines network constraint."
+ },
+ "newman2001scientific": {
+  "type": "article",
+  "title": "Scientific collaboration networks. {I}. Network construction and fundamental results",
+  "authors": "Newman, M. E. J.",
+  "year": "2001",
+  "venue": "Physical Review E",
+  "doi": "10.1103/PhysRevE.64.016131",
+  "abstract_or_role": "Co-authorship collaboration networks built from article-author two-mode data and projected to one mode. In this paper, co-authorship is not treated as direct evidence of knowledge flow."
+ },
+ "burt2004structural": {
+  "type": "article",
+  "title": "Structural Holes and Good Ideas",
+  "authors": "Burt, Ronald S.",
+  "year": "2004",
+  "venue": "American Journal of Sociology",
+  "doi": "10.1086/421787",
+  "abstract_or_role": "Managers who span structural holes have better ideas; brokerage needs real ties and observed outcomes."
+ },
+ "opsahl2013triadic": {
+  "type": "article",
+  "title": "Triadic closure in two-mode networks: Redefining the global and local clustering coefficients",
+  "authors": "Opsahl, Tore",
+  "year": "2013",
+  "venue": "Social Networks",
+  "doi": "10.1016/j.socnet.2011.07.001",
+  "abstract_or_role": "One-mode projection of two-mode networks creates artificial closure; clustering must be redefined for two-mode data."
+ },
+ "jasny2015two": {
+  "type": "article",
+  "title": "Two-mode brokerage in policy networks",
+  "authors": "Jasny, Lorien and Lubell, Mark",
+  "year": "2015",
+  "venue": "Social Networks",
+  "doi": "10.1016/j.socnet.2014.11.005",
+  "abstract_or_role": "Two-mode brokerage chains with group heterogeneity, as an alternative to computing brokerage after projection."
+ },
+ "everett2020unpacking": {
+  "type": "article",
+  "title": "Unpacking {Burt}'s constraint measure",
+  "authors": "Everett, Martin G. and Borgatti, Stephen P.",
+  "year": "2020",
+  "venue": "Social Networks",
+  "doi": "10.1016/j.socnet.2020.02.001",
+  "abstract_or_role": "Burt's constraint is driven by degree and dyadic ties; it is not a simple 0-1 index of exclusive brokerage."
+ },
+ "saglietto2020research": {
+  "type": "article",
+  "title": "Research on Structural Holes: An Assessment on Measurement Issues",
+  "authors": "Saglietto, Laurence and C{\\'e}zanne, C{\\'e}cile and David, Delphine",
+  "year": "2020",
+  "venue": "Journal of Economic Surveys",
+  "doi": "10.1111/joes.12371",
+  "abstract_or_role": "Review of measurement issues in structural-hole research: different measures suit different data types and cannot be substituted arbitrarily."
+ },
+ "zador2022weighted": {
+  "type": "article",
+  "title": "A Weighted and Normalized {Gould--Fernandez} brokerage measure",
+  "authors": "Z{\\'a}dor, Zs{\\'o}fia and Zhu, Zhen and Smith, Matthew and Gorgoni, Sara",
+  "year": "2022",
+  "venue": "PLOS ONE",
+  "doi": "10.1371/journal.pone.0274475",
+  "abstract_or_role": "Weighted and normalised Gould-Fernandez brokerage measure that avoids information loss from dichotomisation."
+ },
+ "johnson2026reassessing": {
+  "type": "article",
+  "title": "Reassessing Constraint's Meaning: A Framework for Reinterpreting Structural Holes' Findings",
+  "authors": "Johnson, John Chandler and Sasson, Amir",
+  "year": "2026",
+  "venue": "Strategy Science",
+  "doi": "10.1287/stsc.2024.0297",
+  "abstract_or_role": "Network constraint operationalises mainly dyadic constructs (alternatives, partner diversity, concentration) rather than broader network structure. A reinterpretation framework for structural-hole findings, not a refutation of the theory."
+ },
+ "dempe2002foundations": {
+  "type": "book",
+  "title": "Foundations of Bilevel Programming",
+  "authors": "Dempe, Stephan",
+  "year": "2002",
+  "venue": "Springer",
+  "doi": "10.1007/b101970",
+  "abstract_or_role": "Foundations of bilevel programming: hierarchy, non-unique follower responses, optimistic and pessimistic formulations."
+ },
+ "colson2007overview": {
+  "type": "article",
+  "title": "An overview of bilevel optimization",
+  "authors": "Colson, Beno{\\^\\i}t and Marcotte, Patrice and Savard, Gilles",
+  "year": "2007",
+  "venue": "Annals of Operations Research",
+  "doi": "10.1007/s10479-007-0176-2",
+  "abstract_or_role": "Overview of bilevel optimisation formulations and solution approaches, including MPEC."
+ },
+ "fortunyamat1981representation": {
+  "type": "article",
+  "title": "A Representation and Economic Interpretation of a Two-Level Programming Problem",
+  "authors": "Fortuny-Amat, Jos{\\'e} and McCarl, Bruce",
+  "year": "1981",
+  "venue": "Journal of the Operational Research Society",
+  "doi": "10.1057/jors.1981.156",
+  "abstract_or_role": "KKT/complementarity reformulation of two-level programming problems."
+ },
+ "jeroslow1985polynomial": {
+  "type": "article",
+  "title": "The polynomial hierarchy and a simple model for competitive analysis",
+  "authors": "Jeroslow, Robert G.",
+  "year": "1985",
+  "venue": "Mathematical Programming",
+  "doi": "10.1007/BF01586088",
+  "abstract_or_role": "Complexity of multilevel (competitive) programming: existence does not imply tractability."
+ },
+ "lee2001fuzzy": {
+  "type": "book",
+  "title": "Fuzzy and Multi-Level Decision Making: An Interactive Computational Approach",
+  "authors": "Lee, E. Stanley and Shih, Hsu-Shih",
+  "year": "2001",
+  "venue": "Springer",
+  "doi": "10.1007/978-1-4471-0683-8",
+  "abstract_or_role": "Interactive fuzzy approaches to multi-level decision making."
+ },
+ "cheng2019fuzzy": {
+  "type": "book",
+  "title": "Fuzzy and Multi-Level Decision Making: Soft Computing Approaches",
+  "authors": "Cheng, Chi-Bin and Shih, Hsu-Shih and Lee, E. Stanley",
+  "year": "2019",
+  "venue": "Springer",
+  "doi": "10.1007/978-3-319-92525-7",
+  "abstract_or_role": "Updated soft-computing methods for fuzzy and multi-level decision making."
+ },
+ "nash1951noncooperative": {
+  "type": "article",
+  "title": "Non-Cooperative Games",
+  "authors": "Nash, John",
+  "year": "1951",
+  "venue": "Annals of Mathematics",
+  "doi": "10.2307/1969529",
+  "abstract_or_role": "Existence of mixed-strategy equilibrium in finite non-cooperative games; a boundary reference only, not a coupled generalised equilibrium."
+ },
+ "jaffe1993geographic": {
+  "type": "article",
+  "title": "Geographic Localization of Knowledge Spillovers as Evidenced by Patent Citations",
+  "authors": "Jaffe, Adam B. and Trajtenberg, Manuel and Henderson, Rebecca",
+  "year": "1993",
+  "venue": "The Quarterly Journal of Economics",
+  "doi": "10.2307/2118401",
+  "abstract_or_role": "Patent citations as evidence of knowledge spillovers (flows), with a matched-control design."
+ },
+ "alcacer2006patent": {
+  "type": "article",
+  "title": "Patent Citations as a Measure of Knowledge Flows: The Influence of Examiner Citations",
+  "authors": "Alc{\\'a}cer, Juan and Gittelman, Michelle",
+  "year": "2006",
+  "venue": "Review of Economics and Statistics",
+  "doi": "10.1162/rest.88.4.774",
+  "abstract_or_role": "Examiner-added citations make up a large share of patent citations and affect their use as measures of knowledge flow; inventor or applicant citations should be distinguished."
+ },
+ "benjamini1995controlling": {
+  "type": "article",
+  "title": "Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing",
+  "authors": "Benjamini, Yoav and Hochberg, Yosef",
+  "year": "1995",
+  "venue": "Journal of the Royal Statistical Society: Series B (Methodological)",
+  "doi": "10.1111/j.2517-6161.1995.tb02031.x",
+  "abstract_or_role": "False discovery rate control (BH procedure) for multiple testing."
+ },
+ "cohen1960coefficient": {
+  "type": "article",
+  "title": "A Coefficient of Agreement for Nominal Scales",
+  "authors": "Cohen, Jacob",
+  "year": "1960",
+  "venue": "Educational and Psychological Measurement",
+  "doi": "10.1177/001316446002000104",
+  "abstract_or_role": "Cohen's kappa: chance-corrected agreement for nominal scales."
+ },
+ "nosek2018preregistration": {
+  "type": "article",
+  "title": "The preregistration revolution",
+  "authors": "Nosek, Brian A. and Ebersole, Charles R. and DeHaven, Alexander C. and Mellor, David T.",
+  "year": "2018",
+  "venue": "Proceedings of the National Academy of Sciences",
+  "doi": "10.1073/pnas.1708274114",
+  "abstract_or_role": "Preregistration separates confirmatory from exploratory research by fixing the analysis plan before observing outcomes."
+ },
+ "granovetter1985economic": {
+  "type": "article",
+  "title": "Economic Action and Social Structure: The Problem of Embeddedness",
+  "authors": "Granovetter, Mark",
+  "year": "1985",
+  "venue": "American Journal of Sociology",
+  "doi": "10.1086/228311",
+  "abstract_or_role": "Economic action is embedded in concrete ongoing social relations. Background for locating integration problems inside organisations."
+ },
+ "uspto2026patentsview": {
+  "type": "misc",
+  "title": "{PatentsView} granted patent disambiguated tables (dataset pvgpatdis), {USPTO} Open Data Portal",
+  "authors": "{United States Patent and Trademark Office}",
+  "year": "2026",
+  "venue": "\\url{https://data.uspto.gov/bulkdata/datasets/pvgpatdis}",
+  "doi": null,
+  "abstract_or_role": "USPTO PatentsView granted-patent tables (pvgpatdis): patents, current CPC classifications, US patent citations and disambiguated assignees."
+ },
+ "shrestha2019organizational": {
+  "type": "article",
+  "title": "Organizational Decision-Making Structures in the Age of Artificial Intelligence",
+  "authors": "Shrestha, Yash Raj and Ben-Menahem, Shiko M. and von Krogh, Georg",
+  "year": "2019",
+  "venue": "California Management Review",
+  "doi": "10.1177/0008125619862257",
+  "abstract_or_role": "Organisational decision-making structures that combine humans and AI (full delegation to AI, sequential human-AI or AI-human decision-making, aggregated decision-making), and the decision-task conditions under which each fits."
+ },
+ "raisch2021artificial": {
+  "type": "article",
+  "title": "Artificial Intelligence and Management: The Automation--Augmentation Paradox",
+  "authors": "Raisch, Sebastian and Krakowski, Sebastian",
+  "year": "2021",
+  "venue": "Academy of Management Review",
+  "doi": "10.5465/amr.2018.0072",
+  "abstract_or_role": "Automation versus augmentation of managerial tasks with AI as a paradox; argues the two are interdependent across time and space and should be managed together."
+ },
+ "jarrahi2018artificial": {
+  "type": "article",
+  "title": "Artificial intelligence and the future of work: Human-{AI} symbiosis in organizational decision making",
+  "authors": "Jarrahi, Mohammad Hossein",
+  "year": "2018",
+  "venue": "Business Horizons",
+  "doi": "10.1016/j.bushor.2018.03.007",
+  "abstract_or_role": "Human-AI symbiosis in organisational decision making: AI is suited to complexity, while humans contribute where decisions involve uncertainty and equivocality."
+ },
+ "berente2021managing": {
+  "type": "article",
+  "title": "Managing Artificial Intelligence",
+  "authors": "Berente, Nicholas and Gu, Bin and Recker, Jan and Santhanam, Radhika",
+  "year": "2021",
+  "venue": "MIS Quarterly",
+  "doi": "10.25300/MISQ/2021/16274",
+  "abstract_or_role": "Managing AI as the frontier of computing; the facets of autonomy, learning and inscrutability raise distinctive management challenges for information-systems research."
+ },
+ "swanson1986fish": {
+  "type": "article",
+  "title": "Fish Oil, {Raynaud's} Syndrome, and Undiscovered Public Knowledge",
+  "authors": "Swanson, Don R.",
+  "year": "1986",
+  "venue": "Perspectives in Biology and Medicine",
+  "doi": "10.1353/pbm.1986.0087",
+  "abstract_or_role": "Literature-based discovery: links between literatures that are never co-cited or co-mentioned can point to undiscovered public knowledge; the absence of co-occurrence is used to generate hypotheses about connections."
+ },
+ "callon1983translations": {
+  "type": "article",
+  "title": "From translations to problematic networks: An introduction to co-word analysis",
+  "authors": "Callon, Michel and Courtial, Jean-Pierre and Turner, William A. and Bauin, Serge",
+  "year": "1983",
+  "venue": "Social Science Information",
+  "doi": "10.1177/053901883022002003",
+  "abstract_or_role": "Co-word analysis: co-occurrence of keywords is used to map the structure of research fields and the relations, or lack of relations, between research themes."
+ },
+ "seierstad2011few": {
+  "type": "article",
+  "title": "For the few not the many? {The} effects of affirmative action on presence, prominence, and social capital of women directors in {Norway}",
+  "authors": "Seierstad, Cathrine and Opsahl, Tore",
+  "year": "2011",
+  "venue": "Scandinavian Journal of Management",
+  "doi": "10.1016/j.scaman.2010.10.002",
+  "abstract_or_role": "Norwegian board-gender quota study; source of the open two-mode board-membership data re-analysed in the review (R1). Cite for the case and data only; its own measures are recorded in R1_CLAIM_RECORD.md."
+ }
+}

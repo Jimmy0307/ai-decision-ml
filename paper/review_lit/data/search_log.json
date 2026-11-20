@@ -1,0 +1,79 @@
+{
+  "protocol": "PROTOCOL.md v1.0",
+  "retrieved": "2026-11-19",
+  "queries": [
+    {
+      "stream": "S",
+      "query": "\"structural hole\" \"co-word\"",
+      "hits": 7
+    },
+    {
+      "stream": "S",
+      "query": "\"structural hole\" \"keyword\"",
+      "hits": 63
+    },
+    {
+      "stream": "S",
+      "query": "\"structural hole\" \"co-citation\"",
+      "hits": 11
+    },
+    {
+      "stream": "S",
+      "query": "\"structural hole\" \"co-occurrence\"",
+      "hits": 19
+    },
+    {
+      "stream": "S",
+      "query": "\"structural hole\" bibliometric",
+      "hits": 43
+    },
+    {
+      "stream": "S",
+      "query": "\"structural hole\" patent",
+      "hits": 165
+    },
+    {
+      "stream": "G1",
+      "query": "\"research gap\" \"co-word\"",
+      "hits": 133
+    },
+    {
+      "stream": "G2",
+      "query": "\"research gap\" \"keyword co-occurrence\"",
+      "hits": 971
+    },
+    {
+      "stream": "G3",
+      "query": "betweenness \"co-word\"",
+      "hits": 1146
+    }
+  ],
+  "streams": {
+    "S": {
+      "retrieved_unique": 261,
+      "after_cross_stream_dedup": 261,
+      "screening_set": 261,
+      "sampled": false
+    },
+    "G1": {
+      "retrieved_unique": 133,
+      "after_cross_stream_dedup": 133,
+      "screening_set": 133,
+      "sampled": false
+    },
+    "G2": {
+      "retrieved_unique": 971,
+      "after_cross_stream_dedup": 964,
+      "screening_set": 120,
+      "sampled": true
+    },
+    "G3": {
+      "retrieved_unique": 1146,
+      "after_cross_stream_dedup": 1087,
+      "screening_set": 80,
+      "sampled": true
+    }
+  },
+  "screening_set_total": 594,
+  "no_abstract": 118
+}

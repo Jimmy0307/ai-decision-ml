@@ -1,0 +1,98 @@
+{
+  "preregistration": "PREREGISTRATION_V9_MATRIX.md v1.0",
+  "engine_sha256": "09c3d60ce7043d036b8eb331858d1d9b55c2281827768d1823cb412edfd9bc33",
+  "rows": [
+    "G06N3",
+    "G06N5",
+    "G06N7",
+    "G06N10",
+    "G06N20",
+    "G06N_OTHER"
+  ],
+  "cols": [
+    "FORECAST_OPTIMISE",
+    "RESOURCE_SCHEDULING",
+    "WORKFLOW",
+    "RISK",
+    "STRATEGY",
+    "PERFORMANCE",
+    "MGMT_GENERAL"
+  ],
+  "window": [
+    2010,
+    2025
+  ],
+  "parts": {
+    "A_coclassification": {
+      "cells": 42,
+      "edges": 14573,
+      "raw_records": 35363,
+      "observed_nonzero": 37,
+      "main_q05": 20,
+      "exact_q05": 20,
+      "raw_q05": 29,
+      "doc_q05": 0,
+      "structural_core": 0,
+      "full_core": 0,
+      "full_core_by_direction": {},
+      "doc_null_diagnostics": {
+        "attempts": 21843600,
+        "accepted": 0,
+        "acceptance_rate": 0.0,
+        "documents_touched": 0,
+        "exchangeable_documents": 3422,
+        "degrees_preserved": true
+      },
+      "documents": 5316,
+      "seconds": 46.7
+    },
+    "B_citation_applicant": {
+      "cells": 42,
+      "edges": 66056,
+      "raw_records": 120475,
+      "observed_nonzero": 41,
+      "main_q05": 22,
+      "exact_q05": 22,
+      "raw_q05": 27,
+      "doc_q05": 0,
+      "structural_core": 0,
+      "full_core": 0,
+      "full_core_by_direction": {},
+      "doc_null_diagnostics": {
+        "attempts": 21843600,
+        "accepted": 0,
+        "acceptance_rate": 0.0,
+        "documents_touched": 0,
+        "exchangeable_documents": 17843,
+        "degrees_preserved": true
+      },
+      "documents": 30843,
+      "seconds": 72.6
+    },
+    "B_citation_all_categories": {
+      "cells": 42,
+      "edges": 80849,
+      "raw_records": 146404,
+      "observed_nonzero": 42,
+      "main_q05": 21,
+      "exact_q05": 21,
+      "raw_q05": 26,
+      "doc_q05": 0,
+      "structural_core": 0,
+      "full_core": 0,
+      "full_core_by_direction": {},
+      "doc_null_diagnostics": {
+        "attempts": 21843600,
+        "accepted": 0,
+        "acceptance_rate": 0.0,
+        "documents_touched": 0,
+        "exchangeable_documents": 21798,
+        "degrees_preserved": true
+      },
+      "documents": 38252,
+      "seconds": 83.0
+    }
+  },
+  "convergent_depleted_cells": [],
+  "convergent_depleted_count": 0
+}
