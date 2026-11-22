@@ -100,3 +100,33 @@
 .source-rows{display:flex;flex-direction:column;gap:8px;margin:15px 0}.source-rows a{display:block;border:1px solid #d4e4e6;border-radius:8px;background:#f6fafb;padding:9px 13px;text-decoration:none;font-weight:700}
 @media(max-width:900px){.three-up{grid-template-columns:1fr 1fr}.journey-teaching{grid-template-columns:1fr}.journey-bridge{display:flex;flex-direction:column}.journey-bridge b{transform:rotate(90deg)}.journey-bridge small{display:none}.evidence-compare{grid-template-columns:1fr}.layer-rail{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:650px){.three-up,.two-up,.visual-comparison,.world-comparison,.status-layout{grid-template-columns:1fr}.evidence-pipeline{display:grid;grid-template-columns:1fr}.evidence-pipeline b{transform:rotate(90deg)}.contrast-block{grid-template-columns:1fr}.symbol-vs{line-height:1;transform:rotate(90deg)}.layer-rail{grid-template-columns:1fr 1fr}.model-route{flex-direction:column}.model-route>span{transform:rotate(90deg)}.next-choice{display:block}.next-choice a{display:inline-block;margin-top:9px}.lesson{padding:18px}.teaching-hero{padding:37px 0 46px}}
+
+/* Research-genealogy: professor-friendly dual-track diagram and detail cards */
+.genealogy-figure{background:linear-gradient(180deg,#f7fcfb,#fff);border:1px solid #d8e9e8;border-radius:16px;overflow-x:auto;padding:12px;margin:18px 0}
+.genealogy-figure svg{display:block;min-width:810px;width:100%;height:auto}
+.legend-line{display:flex;flex-wrap:wrap;gap:15px;align-items:center;font-size:.82rem;color:#486776}
+.legend-line span{display:flex;align-items:center;gap:7px}.legend-node{width:15px;height:15px;border-radius:4px;background:#156f72;display:inline-block}.legend-node.blue{background:#345f81}.legend-node.neutral{background:#173a4d}
+.mechanism-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0}
+.mechanism-grid span{padding:12px;border:1px solid #c8e1dc;background:#f4faf8;border-radius:9px;font-weight:750}
+.mechanism-grid strong{display:inline-grid;place-items:center;background:#e2f1ed;color:#096861;border-radius:6px;padding:2px 7px;margin-right:8px}
+.study-sequence{display:grid;gap:10px;max-width:950px;margin:15px auto}
+.study-sequence>div:not(.step-arrow){background:#f6fbfa;border:1px solid #d2e5e1;border-radius:13px;padding:18px 21px}
+.study-sequence>div>b{font-size:.86rem;color:#0d736b}.study-sequence h3{margin:5px 0 8px}
+.study-sequence>div.step-arrow{text-align:center;color:#0b867d;font-size:1.8rem;line-height:1}
+.bilevel-frame{border:1px solid #c6dfdc;padding:15px;border-radius:13px;background:#fff}
+.bilevel-frame>div:not(.step-arrow){background:#eaf6f4;border-radius:9px;padding:14px 18px}
+.bilevel-frame>div small{display:block;font-size:.81rem;color:#15665f;font-weight:850}
+.bilevel-frame>div strong{display:block;margin:5px 0;font-size:1.05rem}
+.bilevel-frame>div p{margin:3px 0;font-size:.9rem}.bilevel-frame .step-arrow{text-align:center;color:#0d7b72;font-size:.85rem;padding:8px;font-weight:850}
+.formula-compare{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+.formula-compare>div{background:white;border:1px solid #d5e6e9;border-radius:10px;padding:13px}
+.formula-compare h3{font-size:.94rem}
+.formula-compare .equation-block{font-size:.94rem;padding:8px;line-height:1.8;overflow-wrap:anywhere}
+.formula-compare p{font-size:.84rem}
+.claim-rails{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:15px 0}
+.claim-rails>div{border:1px solid #cfe1e1;border-radius:11px;background:#f6fbfb;padding:17px}
+.claim-rails>div:nth-child(2){background:#fff9ec;border-color:#ead4a7}
+.claim-rails>div:nth-child(3){background:#fff5f5;border-color:#eac9c9}
+.claim-rails strong{font-size:1.06rem}.claim-rails p{font-size:.9rem}
+@media(max-width:850px){.formula-compare,.claim-rails{grid-template-columns:1fr}}
+@media(max-width:580px){.mechanism-grid{grid-template-columns:1fr}.genealogy-figure svg{min-width:740px}}
