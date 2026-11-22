@@ -18,8 +18,8 @@
 
 ## 發布邊界
 - 不包含原始專利、第三方摘要、文獻全文、人類審查包、私人關鍵字、個人或企業內部資料。
-- GitHub `has_pages=false`（2026-11-22 檢查時）；GitHub 來源檔更新不等於 Pages 已公開部署。
-- 本次修改透過獨立 `docs/research-portfolio-20261122` 分支及 PR 提交，未合併 main。
+- 正式網站已由 Vercel Production 部署：https://ai-decision-research.vercel.app/；GitHub Pages 未啟用，兩者是不同服務。
+- 2026-11-22 初版已經由 PR #8 合併至 `main`；本次圖解補強先在獨立 `docs/structural-hole-logic-20261122` 分支審查與發佈。
 - 舊歷史頁的文字與數值未被覆寫，只有新的導覽通知。
 
 ## 2026-11-22 補充：從低整合到 Burt 結構洞的圖解
