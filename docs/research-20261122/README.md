@@ -28,3 +28,10 @@
 - 教授頁新增導覽連結；依使用者 11/22 最新回報修正第二輪決策審查狀態。
 - 公式來源為公開論文分支 `paper/zh/ch2_literature.tex`、`paper/zh/ch4_results.tex`，不得將共現 O/E 視為 Burt network constraint。
 - 概念圖與 W1/W2 皆為教育性例子，不是經驗發現；M0–M3 的確認性結果仍待真人標註。
+
+## 2026-11-22 教授零基礎導覽
+- `index.html` 重構為完整八步教學（點與線、Burt、文獻矩陣、16 格、研究延伸、專利 O/E、M0–M3、教授決策），`research-notes.html` 保存前版首頁。
+- `original.html` 新增逐步研究來源、固定邊際期望公式、MLP 企業三層決策解釋。
+- `five-layers.html` 新增五層的日常例子、雙世界可識別性反例、三套 O/E 的非技術說明。
+- `advisor.html` 新增四步口頭解說與三條論文定位路線。
+- 所有示意圖與假設例子不當成實際研究數據；正式結論與人工證據限制保留。

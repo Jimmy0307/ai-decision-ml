@@ -1,6 +1,27 @@
 <!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="AI × Decision 研究的兩條論文線、五層證據、假說與教授決策狀態，2026-11-22。"><title>研究 A｜原始 V1.8.7 與企業 MLP｜AI × Decision 研究中心</title><link rel="stylesheet" href="styles.css"></head><body><a class="sr-only" href="#main">跳到主要內容</a><div class="top"><div class="wrap topbar"><a href="index.html" class="brand">AI × Decision · Research Portfolio</a><nav aria-label="研究導覽" class="nav"><a href="index.html">全研究總覽</a><a href="original.html" class="selected" aria-current="page">原始論文／MLP</a><a href="five-layers.html">五層實證研究</a><a href="advisor.html">教授決策與稽核</a><a href="../index.html">V5–V11.1 歷史頁</a></nav></div><header class="hero"><div class="wrap"><div class="eyebrow">Research status · 2026.11.22</div><h1>研究 A｜原始 V1.8.7 與企業 MLP</h1><p>不要把原始研究錯誤描述為「建立在 Burt 結構洞已成立的前提」。文獻功能分析、機制轉譯與企業多層級模型各有獨立證據邊界。</p><div class="hero-links"><a href="advisor.html">教授決策材料</a><a class="secondary" href="index.html">返回研究地圖</a></div></div></header></div><main id="main" class="wrap main">
 <div class="notice"><strong>權威來源優先：</strong>V1.8.7 權威稿為 <code>V1_8_7_THEORY_GROUNDING_Q1_PROPAGATION_FINAL_20261021/01_V1_8_7_MANUSCRIPT.md</code>。候選稿的盲編回收與 P1–P13 狀態不能當成權威版內容。11/22 勘誤仍是提案，未修改主稿。</div>
-<div class="split"><aside class="side" aria-label="本頁目錄"><a href="#scope">研究是什麼</a><a href="#evidence">功能證據</a><a href="#validity">16 組低整合怎麼解釋</a><a href="#blind">V1 盲編偏離</a><a href="#mlp">企業 MLP</a><a href="#boundary">與新研究的邊界</a></aside><div>
+
+<section class="lesson" id="beginner-original"><div class="lesson-kicker">老師入門版 · 從原始研究開始</div><h2>原始研究不是先找結構洞，而是先問：AI 與決策哪些功能被一起討論？</h2>
+<p>假設有一篇文章談 AI 預測，有一篇文章談企業資源分配。原始研究關心的是：如果把許多文獻讀完，AI 的功能與管理決策功能會形成什麼樣的共同出現模式？這就是為什麼我們需要<strong>功能矩陣</strong>，而不是直接畫出三位真人 A、B、C。</p>
+<div class="evidence-pipeline" aria-label="原始研究的資料流程">
+<div><strong>2,118</strong><span>來源文件</span></div><b aria-hidden="true">→</b>
+<div><strong>1,729</strong><span>解析全文</span></div><b aria-hidden="true">→</b>
+<div><strong>6,499</strong><span>嚴格納入證據</span></div><b aria-hidden="true">→</b>
+<div><strong>2,180</strong><span>去重後的文件配對</span></div></div>
+<div class="explain-grid two-up">
+<div class="explain-card"><h3>10 × 12 是什麼意思？</h3><p>先把 AI 功能分成 10 類，把決策功能分成 12 類。每種 AI × 決策組合是一格，共 120 格。<strong>格子代表功能配對，不是人與人之間的實際交換關係。</strong></p></div>
+<div class="explain-card"><h3>16 個偏低格又是什麼？</h3><p>在正式零模型比較後，有 16 個配對相對偏少。另外還有 16 個<strong>沒有觀察到配對的零值格</strong>，兩者互不重疊。這不等於發現 16 個 Burt 結構洞。</p></div></div>
+<details class="math-disclosure" open><summary>研究一的期望公式：每個符號代表什麼？</summary>
+<div class="equation-block">E<sub>ad</sub> = (k<sub>a</sub> × k<sub>d</sub>) / M</div>
+<p>E<sub>ad</sub> 是一組 AI 與決策功能在指定零模型下預期出現的次數；k<sub>a</sub> 和 k<sub>d</sub> 是兩端功能類別的邊際配對數；M 是全部文件層級的配對邊數，本研究為 2,180。</p>
+<p>若<strong>假設</strong>期望有 20 次，但只觀察到 5 次，就叫「相對偏低」。它仍然有出現 5 次，不是 0。這只是教學示意；真正的核心格經過多項檢定和多重比較調整。<a href="https://github.com/Jimmy0307/ai-decision-ml/blob/paper/ai-decision-manuscript-20261119/paper/zh/ch4_results.tex">正式論文第四章來源 →</a></p></details>
+<div class="lesson-takeaway"><strong>能主張的只有：</strong>在該語料與編碼下，部分配對比統計基準預期少。標籤誤分類壓力測試可能使顯著性不保留；不能自動推到功能不存在、網絡有洞或企業發生瓶頸。</div>
+</section>
+<section class="lesson" id="beginner-mlp"><div class="lesson-kicker">原始研究的模型貢獻 · 用公司情境看懂 MLP</div><h2>為什麼研究會出現 MLP？因為企業的資源、治理與使用者選擇是多層決策</h2>
+<p>企業只有有限預算，各部門卻都想導入 AI。即使技術具備功能，企業還需安排資源、治理規則、以及員工實際如何使用。多層規劃（MLP）就是將這些彼此影響的決策形式化。</p>
+<div class="journey-teaching"><div class="journey-tile left"><span>第一層 · 企業 Leader</span><h3>有限資源如何分配？</h3><p>預算、AI 能力、資料、可靠性與風險。</p></div><div class="journey-bridge" aria-hidden="true"><b>→</b></div><div class="journey-tile center"><span>第二層 · 架構與治理</span><h3>哪些做法可被允許？</h3><p>AI 整合深度、人工監督、保證、共享治理容量。</p></div><div class="journey-bridge" aria-hidden="true"><b>→</b></div><div class="journey-tile right"><span>第三層 · 流程 Follower</span><h3>最後選哪種人機配置？</h3><p>人工、AI 輔助或受限自動化。</p></div></div>
+<p><strong>重要邊界：</strong>已有形式模型及合成情境求解，不代表已用公司真實資料驗證其效果。原始權威版沒有主張「Burt 洞已證明，因此 MLP 才有效」。<a href="https://github.com/Jimmy0307/ai-decision-ml/blob/paper/ai-decision-manuscript-20261119/paper/zh/ch5_discussion.tex">正式論文對形式模型與模擬的限制 →</a></p>
+<div class="callout">原始研究先提出「相對低整合」這項觀察和企業候選問題；<strong>延伸研究</strong>才追問這些觀察究竟可否支持「結構洞」或「功能依賴缺失」。<a href="five-layers.html#beginner-five">接續閱讀延伸研究 →</a></div></section><div class="split"><aside class="side" aria-label="本頁目錄"><a href="#scope">研究是什麼</a><a href="#evidence">功能證據</a><a href="#validity">16 組低整合怎麼解釋</a><a href="#blind">V1 盲編偏離</a><a href="#mlp">企業 MLP</a><a href="#boundary">與新研究的邊界</a></aside><div>
 <section class="section" id="scope"><h2>原稿的三段研究鏈</h2><div class="grid"><div class="card"><span class="label">RQ1–RQ2</span><h3>文獻功能地圖</h3><p>用 10 類 AI × 12 類 Decision 建立 120 格矩陣；檢查相對於指定零模型的高／低呈現以及不同假設下的穩健性。</p></div><div class="card"><span class="label">RQ3</span><h3>企業機制轉譯</h3><p>將功能低整合配對轉為組織中的治理、工作流程、人機使用及評估問題；轉譯需獨立構念驗證。</p></div><div class="card"><span class="label">RQ4–RQ6</span><h3>多層級決策</h3><p>企業層資源、治理與共享能力對事業單位導入選擇的影響，包含使用者反應及不確定性。</p></div></div></section>
 <section class="section" id="evidence"><h2>實際完成的文獻端工作</h2><div class="grid"><div class="card"><div class="metric">2,118</div><p>來源文獻 PDF；其中 1,729 可解析全文（原稿記錄）</p></div><div class="card"><div class="metric">6,499</div><p>嚴格證據紀錄；3,125 筆完成雙端功能分類</p></div><div class="card"><div class="metric">2,180</div><p>文獻層級配對邊；10×12 矩陣的凍結分析基準</p></div></div><p>原稿的主要結果包含 16 組偏高及 16 組偏低的候選核心；這些數字屬於指定語料、編碼工具與零模型下的計算結果，不是已實際觀測的企業流程缺口。</p></section>
 <section class="section" id="validity"><h2>最需要先說清楚：穩健的到底是什麼？</h2><div class="table-wrap"><table><thead><tr><th>層次</th><th>目前結果</th><th>不能直接推論</th></tr></thead><tbody>
