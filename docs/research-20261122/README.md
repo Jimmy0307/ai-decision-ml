@@ -18,6 +18,13 @@
 
 ## 發布邊界
 - 不包含原始專利、第三方摘要、文獻全文、人類審查包、私人關鍵字、個人或企業內部資料。
-- GitHub `has_pages=false`（2026-11-22 檢查時）；GitHub 來源檔更新不等於 Pages 已公開部署。
-- 本次修改透過獨立 `docs/research-portfolio-20261122` 分支及 PR 提交，未合併 main。
+- 正式網站已由 Vercel Production 部署：https://ai-decision-research.vercel.app/；GitHub Pages 未啟用，兩者是不同服務。
+- 2026-11-22 初版已經由 PR #8 合併至 `main`；本次圖解補強先在獨立 `docs/structural-hole-logic-20261122` 分支審查與發佈。
 - 舊歷史頁的文字與數值未被覆寫，只有新的導覽通知。
+
+## 2026-11-22 補充：從低整合到 Burt 結構洞的圖解
+- 首頁新增「研究 A → 延伸問題 → 研究 B」可視化流程。
+- 五層頁新增 `#structural-hole`：開放／閉合三元組 SVG、Burt constraint、文獻固定邊際配對期望、專利分層 O/E、構造性不可識別反例、R/K/F/N/O 推論流程及停止規則。
+- 教授頁新增導覽連結；依使用者 11/22 最新回報修正第二輪決策審查狀態。
+- 公式來源為公開論文分支 `paper/zh/ch2_literature.tex`、`paper/zh/ch4_results.tex`，不得將共現 O/E 視為 Burt network constraint。
+- 概念圖與 W1/W2 皆為教育性例子，不是經驗發現；M0–M3 的確認性結果仍待真人標註。

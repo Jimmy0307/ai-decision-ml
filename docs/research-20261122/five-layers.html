@@ -1,5 +1,89 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="AI × Decision 研究的兩條論文線、五層證據、假說與教授決策狀態，2026-11-22。"><title>研究 B｜五層證據與可識別性｜AI × Decision 研究中心</title><link rel="stylesheet" href="styles.css"></head><body><a class="sr-only" href="#main">跳到主要內容</a><div class="top"><div class="wrap topbar"><a href="index.html" class="brand">AI × Decision · Research Portfolio</a><nav aria-label="研究導覽" class="nav"><a href="index.html">全研究總覽</a><a href="original.html">原始論文／MLP</a><a href="five-layers.html" class="selected" aria-current="page">五層實證研究</a><a href="advisor.html">教授決策與稽核</a><a href="../index.html">V5–V11.1 歷史頁</a></nav></div><header class="hero"><div class="wrap"><div class="eyebrow">Research status · 2026.11.22</div><h1>研究 B｜五層證據與可識別性</h1><p>同一個 A–B–C 圖，在文字、分類、引用、行動者與企業組織中代表不同關係。先定義估計對象，再談有洞或沒洞。</p><div class="hero-links"><a href="advisor.html">教授決策材料</a><a class="secondary" href="index.html">返回研究地圖</a></div></div></header></div><main id="main" class="wrap main">
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="AI × Decision 研究的兩條論文線、五層證據、假說與教授決策狀態，2026-11-22。"><title>研究 B｜五層證據與可識別性｜AI × Decision 研究中心</title><link rel="stylesheet" href="styles.css"></head><body><a class="sr-only" href="#main">跳到主要內容</a><div class="top"><div class="wrap topbar"><a href="index.html" class="brand">AI × Decision · Research Portfolio</a><nav aria-label="研究導覽" class="nav"><a href="index.html">全研究總覽</a><a href="original.html">原始論文／MLP</a><a href="five-layers.html" class="selected" aria-current="page">五層實證研究</a><a href="advisor.html">教授決策與稽核</a><a href="../index.html">V5–V11.1 歷史頁</a></nav></div><header class="hero"><div class="wrap"><div class="eyebrow">Research status · 2026.11.22</div><h1>研究 B｜五層證據與可識別性</h1><p>同一個 A–B–C 圖，在文字、分類、引用、行動者與企業組織中代表不同關係。先定義估計對象，再談有洞或沒洞。</p><div class="hero-links"><a href="#structural-hole">先看結構洞圖解</a><a class="secondary" href="index.html">返回研究地圖</a></div></div></header></div><main id="main" class="wrap main">
 <div class="notice"><strong>研究定位：</strong>這是 2026/11/21 整合稿 v2 的候選研究線（本頁稱 IRQ，不取代 V1.8.7 的 RQ）。主要進展是清楚拆開不同測量層次，不是已證明「所有結構洞都不存在」。</div>
+
+<section class="section" id="structural-hole" aria-labelledby="sh-title">
+  <div class="section-heading"><div><span class="label">From research A to research B · 圖解與公式</span><h2 id="sh-title">先理解 Burt 結構洞，再說明我們為什麼不能直接宣稱「有洞」</h2></div><span class="tag amber">理論說明 ≠ 實證已成立</span></div>
+  <div class="callout"><strong>研究真正的延伸點：</strong>原始 V1.8.7 先用功能矩陣辨識相對低整合，並提出企業 MLP 問題；新研究沿用這個現象作為<strong>待解釋的起點</strong>，逐層檢驗低整合能否代表行動者網絡的結構洞、功能依賴缺失或組織問題。原始權威稿並未預先宣稱 Burt 洞已成立。</div>
+  <div class="hole-cards">
+    <article class="card"><div class="label">01｜原始研究量到什麼？</div><h3>AI × Decision 的相對低整合</h3>
+      <div class="formula-card"><div class="formula-caption">文獻功能矩陣的固定邊際期望值</div><div class="equation">E<sub>ad</sub> = (k<sub>a</sub> × k<sub>d</sub>) / M</div><div class="equation-note">M = 2,180；k<sub>a</sub>、k<sub>d</sub> 是兩端功能類別的邊際度數。</div></div>
+      <p>將實際觀測 O<sub>ad</sub> 與指定期望 E<sub>ad</sub> 比較，篩選出 16 組「低於期望」的配對。<strong>這是共現或配對頻率的描述，不是行動者關係的缺邊判定。</strong></p>
+      <p class="mini muted">誤分類壓力測試使部分結果失去顯著性；方向較穩健，不能把「16 組」誇大成已通過人類真值確認。</p>
+    </article>
+    <article class="card"><div class="label">02｜Burt 真正在量什麼？</div><h3>非冗餘聯繫與 Network Constraint</h3>
+      <div class="formula-card"><div class="formula-caption">Burt constraint（行動者 i）</div><div class="equation equation-dense">c<sub>i</sub> = ∑<sub>j∈N(i)</sub> (p<sub>ij</sub> + ∑<sub>q≠i,j</sub> p<sub>iq</sub>p<sub>qj</sub>)<sup>2</sup></div><div class="equation-note">p<sub>ij</sub> 表示 i 對 j 的相對聯繫強度；含直接投入與經其他聯繫對象產生的間接冗餘。</div></div>
+      <p>若 i 連結多個彼此不直接聯繫的行動者，就可能取得非冗餘資訊。<strong>低 constraint 只是可接近結構洞的指標，不是單純的二元「有／沒有」，且受度數、權重與網絡定義影響。</strong></p>
+      <p class="mini muted">依 <a href="https://github.com/Jimmy0307/ai-decision-ml/blob/paper/ai-decision-manuscript-20261119/paper/zh/ch2_literature.tex">公開論文第二章：結構洞及其測量</a>。</p>
+    </article>
+  </div>
+  <div class="diagram-surface" aria-labelledby="diagram-title">
+    <h3 id="diagram-title">老師的 A–B–C 示意圖：到底缺的是什麼？</h3>
+    <div class="graph-grid">
+      <figure class="graph-panel">
+        <svg role="img" aria-labelledby="open-title open-desc" viewBox="0 0 430 214" xmlns="http://www.w3.org/2000/svg">
+          <title id="open-title">開放三元組：行動者 B 連結 A 與 C，但 A、C 未直接相連</title><desc id="open-desc">A 在左下，B 在中上，C 在右下，A 與 B、B 與 C 有實線，A 與 C 間以虛線標示沒有直接連帶。</desc>
+          <path d="M83 158 L216 56 L347 158" fill="none" stroke="#0f7772" stroke-width="7" stroke-linecap="round"/>
+          <line x1="101" y1="160" x2="328" y2="160" stroke="#b8873c" stroke-width="4" stroke-dasharray="9 9" stroke-linecap="round"/>
+          <circle cx="78" cy="164" r="32" fill="#dceef2" stroke="#195f75" stroke-width="3"/><circle cx="216" cy="46" r="34" fill="#0b756b" stroke="#0b756b" stroke-width="3"/><circle cx="352" cy="164" r="32" fill="#dceef2" stroke="#195f75" stroke-width="3"/>
+          <text x="78" y="173" font-size="24" text-anchor="middle" font-weight="750" fill="#17495d">A</text><text x="216" y="55" font-size="25" text-anchor="middle" font-weight="750" fill="#fff">B</text><text x="352" y="173" font-size="24" text-anchor="middle" font-weight="750" fill="#17495d">C</text>
+          <text x="216" y="197" font-size="14" text-anchor="middle" fill="#9b6720">A–C：無直接連帶</text>
+        </svg>
+        <figcaption><strong>B 是存在的中介行動者，不是「消失的節點」。</strong> A、C 不直接相連，才形成開放的三元結構；B 可能具有資訊或控制優勢，但要看真實聯繫與衡量方式。</figcaption>
+      </figure>
+      <figure class="graph-panel">
+        <svg role="img" aria-labelledby="closed-title closed-desc" viewBox="0 0 430 214" xmlns="http://www.w3.org/2000/svg">
+          <title id="closed-title">閉合三元組：A、B、C 三個行動者彼此都有連帶</title><desc id="closed-desc">A-B、B-C、A-C 皆有連結，不再是開放的三元組。</desc>
+          <path d="M83 158 L216 56 L347 158 L83 158" fill="none" stroke="#698b98" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="78" cy="164" r="32" fill="#dceef2" stroke="#195f75" stroke-width="3"/><circle cx="216" cy="46" r="34" fill="#587e90" stroke="#587e90" stroke-width="3"/><circle cx="352" cy="164" r="32" fill="#dceef2" stroke="#195f75" stroke-width="3"/>
+          <text x="78" y="173" font-size="24" text-anchor="middle" font-weight="750" fill="#17495d">A</text><text x="216" y="55" font-size="25" text-anchor="middle" font-weight="750" fill="#fff">B</text><text x="352" y="173" font-size="24" text-anchor="middle" font-weight="750" fill="#17495d">C</text>
+          <text x="216" y="197" font-size="14" text-anchor="middle" fill="#56717b">A–C：有直接連帶</text>
+        </svg>
+        <figcaption><strong>一旦 A、C 直接相連，B 的非冗餘性可能下降。</strong> 但不能只看三條線的有無：Burt 的 constraint 還會看連帶強度和冗餘程度。</figcaption>
+      </figure>
+    </div>
+    <p class="mini muted">示意圖是說明 Burt 架構的理論例子，不是研究已經發現的 AI × Decision 真實三人網絡；與 Swanson 文獻 A–B–C 潛在連結也不是同一概念。</p>
+  </div>
+  <div class="logic-break"><span class="logic-break-label">跨層推論不能直接跳過的步驟</span><div class="logic-break-line" aria-hidden="true">↓</div>
+    <div class="inference-flow" aria-label="從文獻共現到組織效果的五層檢驗">
+      <a class="inference-stage" href="#five"><strong>R 表徵</strong><span>文章有沒有一起寫？</span></a>
+      <span class="inference-arrow" aria-hidden="true">→</span>
+      <a class="inference-stage" href="#taxonomy"><strong>K 分類</strong><span>功能標籤是否穩定？</span></a>
+      <span class="inference-arrow" aria-hidden="true">→</span>
+      <a class="inference-stage" href="#compare"><strong>F 流動</strong><span>實際引用與參照？</span></a>
+      <span class="inference-arrow" aria-hidden="true">→</span>
+      <a class="inference-stage" href="#trend"><strong>N 網絡</strong><span>行動者是否形成仲介？</span></a>
+      <span class="inference-arrow" aria-hidden="true">→</span>
+      <a class="inference-stage" href="original.html#mlp"><strong>O 組織</strong><span>企業是否有實際缺口？</span></a>
+    </div>
+    <p class="mini muted">這是<strong>推論檢核路徑</strong>，不是聲稱資料已證明 R 造成 K、K 造成 F，或 F 一定導致企業效果。</p>
+  </div>
+  <div class="hole-cards">
+    <article class="card"><div class="label">03｜從文章跳到專利，統計量也變了</div><h3>專利引用 O/E：先指定「預期連結」</h3>
+      <div class="formula-card"><div class="formula-caption">按施引／被引年份分層的引用期望與 O/E</div>
+        <div class="equation equation-dense">E(A→B) = ∑<sub>s</sub> [out<sub>A</sub>(s) × in<sub>B</sub>(s) / M(s)]</div>
+        <div class="equation equation-dense">OE(A,B) = [O(A→B) + O(B→A)] / [E(A→B) + E(B→A)]</div>
+      </div>
+      <p>研究二 <strong>3.05</strong> 依預先登錄的<strong>相對判準</strong>不支持該特定領域洞假說；專利 R2 <strong>0.35–0.38</strong> 依另一個事先凍結的 <strong>OE＜1 絕對判準</strong>標記 HOLE_SUPPORTED。事後的全體專利參照得到不同方向，但<strong>不能回填為事前確認性結果</strong>。</p>
+      <p class="mini muted">兩套零模型、參照及母體不一致；O/E 不是 Burt constraint。公式與判準見 <a href="https://github.com/Jimmy0307/ai-decision-ml/blob/paper/ai-decision-manuscript-20261119/paper/zh/ch4_results.tex">公開論文第四章</a>。</p>
+    </article>
+    <article class="card"><div class="label">04｜為什麼「功能全部打散」仍可能無法識別？</div><h3>同樣的功能標籤，可以對應不同關係</h3>
+      <div class="scenario-cards">
+        <div class="scenario"><div class="scenario-name">合成世界 W1</div><div class="scenario-symbol">A　 B　 C</div><p>三個功能都存在，但在構造的真實世界裡各自運作、沒有 A→B 的功能依賴。</p></div>
+        <div class="scenario"><div class="scenario-name">合成世界 W2</div><div class="scenario-symbol">A → B → C</div><p>三個功能都存在，而且 A 的輸出實際進入 B，再交給 C。</p></div>
+      </div>
+      <div class="formula-card"><div class="equation equation-dense">X(W1) = X(W2) = (1, 1, 1)</div><div class="equation-note">同樣的原子化 Multi-label 向量 X，不能單獨確定真實的功能關係 R(W1) 和 R(W2)。這是<strong>構造性反例</strong>，不是宣稱實際專利已有兩種世界。</div></div>
+      <p><strong>所以教授的建議應作為 M1 基準方法。</strong> 只有人類標註的獨立真值才能進一步檢驗 M2 的關係證據、M3 的時間資訊是否帶來增量。<a href="#concept">查看 M0–M3 對照設計 →</a></p>
+    </article>
+  </div>
+  <div class="rule-strip" aria-label="研究解釋規範">
+    <div><strong>規則 1</strong><span>估計對象先行</span><small>共現 ≠ 流動 ≠ 仲介 ≠ 組織效果</small></div>
+    <div><strong>規則 2</strong><span>低整合 ≠ Burt 洞</span><small>需有適當行動者／連結測量</small></div>
+    <div><strong>規則 3</strong><span>UNKNOWN ≠ 0</span><small>沒有觀測不等於確定不存在</small></div>
+    <div><strong>規則 4</strong><span>預註冊 ≠ 事後校準</span><small>必須如實揭露兩種判準</small></div>
+  </div>
+  <div class="callout sh-summary"><strong>老師可以直接引用的結論：</strong>「原始研究回答哪些功能配對在文獻中相對低整合；延伸研究則檢驗這項稀少，能否合理推論到真正的結構洞、功能依賴或企業問題。兩個研究由同一個問題延伸而來，但 estimand 不同；目前的工作是提高推論效度，不是宣布新方法已驗證或原始 MLP 不成立。」</div>
+  <p class="mini muted">依據：<a href="https://github.com/Jimmy0307/ai-decision-ml/blob/paper/ai-decision-manuscript-20261119/paper/zh/ch2_literature.tex">結構洞原始理論與 constraint 公式</a>、<a href="https://github.com/Jimmy0307/ai-decision-ml/blob/paper/ai-decision-manuscript-20261119/paper/zh/ch4_results.tex">功能矩陣／專利 O/E 與誤分類敏感度</a>、<a href="https://github.com/Jimmy0307/ai-decision-ml-private-backup-20261018/blob/research/cooccurrence-mechanisms-20261120/claude/r14_merge_rq123_integration_20261105/INTEGRATED_MANUSCRIPT_20261121/INTEGRATED_ARTICLE_ZH.md">五層整合稿 v2（私人來源）</a>。圖形、合成世界與推論條件屬教育性說明，不能當成實證觀察。</p>
+</section>
 <section class="section" id="five"><h2>R／K／F／N／O 五層：各自能回答什麼？</h2><div class="table-wrap"><table><thead><tr><th>層次</th><th>觀測單位</th><th>最新證據</th><th>不能回答</th></tr></thead><tbody>
 <tr><td><strong>R 表徵</strong><br>Representation</td><td>論文／段落的共同提及</td><td>16 組偏低配對；E5 同段 O/E 中位數 0.24（描述性）</td><td>是否有真實知識交換</td></tr>
 <tr><td><strong>K 分類</strong><br>Knowledge taxonomy</td><td>CPC 歷史與現行類別</td><td>42 格中 8 格顯著性判定隨版本改變</td><td>是否真的發生功能融合</td></tr>
