@@ -188,3 +188,94 @@
 @media(max-width:980px){.abc-three{grid-template-columns:1fr 1fr}.four-concepts,.formula-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){.abc-three,.four-concepts,.worked-example,.two-meaning,.patent-data-grid,.verification-rows,.formula-grid{grid-template-columns:1fr}.example-read{border-left:0;border-top:1px solid #d8e7e5;padding:12px 0 0}.two-meaning-drawing span{font-size:.76rem;padding:6px}}
 @media print{.topbar,.hero-links,.foot,.reader-route{display:none!important}.hero{padding:20px 0}.lesson{break-inside:avoid;box-shadow:none}.abc-three,.four-concepts{grid-template-columns:repeat(3,1fr)}a{color:#164d5a;text-decoration:none}}
+
+/* Elementary visual textbook: large diagrams LEFT + always-visible formulas RIGHT + sources BELOW */
+.visual-hero{background:radial-gradient(circle at 80% 0%,#1c7375,transparent 55%),linear-gradient(130deg,#0e2e3e,#134b52)}
+.source-hero{background:radial-gradient(circle at 80% 5%,#237083,transparent 55%),linear-gradient(130deg,#133443,#174a59)}
+.visual-story,.source-story{max-width:1160px}
+.visual-contents{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin:16px 0 23px}
+.visual-contents span{font-size:.82rem;color:#536c75;font-weight:800;margin-right:7px}
+.visual-contents a{font-size:.8rem;text-decoration:none;border:1px solid #c6dcd8;background:#eef7f5;border-radius:30px;color:#13645d;padding:7px 11px;font-weight:780}
+.story-scene{scroll-margin-top:15px;padding:clamp(19px,3vw,34px);margin:26px 0}
+.story-scene h2,.source-teach h2{font-size:clamp(1.35rem,2.1vw,1.9rem)}
+.story-question{font-size:1.045rem;line-height:1.85;color:#42626c}
+.picture-and-math,.source-diagram-formula{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:17px;margin:17px 0;align-items:stretch}
+.story-picture,.source-diagram{border:1px solid #d0e3df;background:linear-gradient(140deg,#f9fcfb,#f0f8f7);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.story-picture svg{width:100%;height:auto;display:block;max-height:300px}
+.story-micro,.math-eyebrow{font-size:.82rem;font-weight:890;color:#1a6773}
+.story-math,.source-math{border:1px solid #bed7dd;background:#eef5f8;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:11px}
+.math-display{font:730 clamp(1.06rem,1.53vw,1.4rem)/1.98 "Cambria Math",Georgia,"Times New Roman",serif;overflow-wrap:anywhere;color:#164856;border:1px solid #d0e0e5;background:white;border-radius:10px;padding:14px}
+.math-display sub,.math-display sup{font-size:.65em}
+.math-secondary{font-size:.89em;border-top:1px solid #e1eaf0;margin-top:7px;padding-top:6px;color:#38677b}
+.math-explanation{font-size:.91rem;line-height:1.8;color:#436573}
+.story-boundaries{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:14px 0}
+.story-boundaries>div{background:#edf8f4;border:1px solid #c7ded8;border-radius:11px;padding:14px}
+.story-boundaries>div:nth-child(2){background:#fff8e9;border-color:#e8d6b1}
+.story-boundaries strong{font-size:.9rem;color:#17645b}
+.story-boundaries>div:nth-child(2) strong{color:#956924}
+.story-boundaries p{font-size:.88rem;line-height:1.65;margin:5px 0 0}
+.story-source{font-size:.8rem!important;line-height:1.7;color:#536e78;border-top:1px dashed #d8e4e6;padding-top:11px}
+.dual-pictures{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.dual-pictures figure{margin:0;background:white;border:1px solid #d8e8e5;border-radius:9px;padding:6px}
+.dual-pictures svg{max-height:183px}
+.dual-pictures figcaption{font-size:.82rem;display:grid;gap:3px;line-height:1.5;text-align:center}
+.dual-pictures figcaption span{color:#537079}
+.mini-numbers,.picture-tags{display:flex;gap:7px;flex-wrap:wrap}
+.mini-numbers span,.picture-tags span{font-size:.77rem;background:#e5f2ef;border:1px solid #c7e1db;padding:5px 8px;border-radius:7px}
+.mini-numbers b{color:#0d7167}
+.two-counts,.result-mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.two-counts>div,.result-mini-grid>div{display:grid;gap:4px;border:1px solid #d3e5e1;border-radius:9px;background:white;padding:9px 11px;font-size:.8rem}
+.two-counts b{font-size:.82rem}.two-counts span{color:#49717a}
+.result-mini-grid small{font-size:.73rem;color:#506d75}
+.result-mini-grid b{font-size:1.28rem;color:#146a63}
+.result-mini-grid>div:nth-child(2) b{color:#a8762c}
+.result-mini-grid span{font-size:.76rem}
+.source-unit-strip,.source-units{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;margin:17px 0}
+.source-unit-strip a,.source-units>div{display:flex;flex-direction:column;align-items:center;gap:5px;text-align:center;background:#f0f8f6;border:1px solid #d3e7e1;border-radius:11px;text-decoration:none;padding:13px 7px;color:#165a61}
+.source-unit-strip span,.source-units span{font-size:1.65rem}
+.source-unit-strip strong,.source-units strong{font-size:.86rem}
+.source-unit-strip small,.source-units small{font-size:.76rem;color:#4c6a73}
+.final-three,.source-map-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin:17px 0}
+.final-three>div{border:1px solid #d4e4e5;background:#f8fbfb;border-radius:12px;padding:17px}
+.final-three span{background:#147e72;color:white;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:900;margin-bottom:9px}
+.final-three p{font-size:.89rem;margin:0}
+.final-actions{display:flex;flex-wrap:wrap;gap:8px}
+.final-actions a{padding:9px 13px;background:#e8f5f2;border:1px solid #c5e0d8;border-radius:8px;color:#0f6e65;font-weight:750;text-decoration:none;font-size:.88rem}
+.source-map-origin{display:flex;align-items:center;flex-direction:column;gap:6px;padding:16px;background:#1b4857;border-radius:12px;color:white;text-align:center}
+.source-map-origin span{color:#deeff3;font-size:.9rem}
+.source-map-origin.secondary{background:#e8f6f1;border:1px solid #c8e1d6;color:#155d54}
+.source-map-origin.secondary span{color:#436d64}
+.source-map-branch{text-align:center;color:#237d73;padding:11px;font-weight:850}
+.source-map-cell{display:flex;flex-direction:column;gap:7px;min-height:137px;padding:15px;background:#f4faf8;border:1px solid #cadfd9;border-radius:12px;text-decoration:none;color:#235a61;line-height:1.5}
+.source-map-cell strong{font-size:.91rem}.source-map-cell small{font-size:.8rem;color:#4e6d72}
+.source-map-cell.blue{background:#f2f8fc;border-color:#c7dce8}
+.source-map-cell.gold{background:#fff9ee;border-color:#ead6b1}
+.source-letter{width:31px;height:31px;display:grid;place-items:center;border-radius:8px;background:#14786f;color:white;font-weight:900}
+.source-map-cell.blue .source-letter{background:#356f94}
+.source-map-cell.gold .source-letter{background:#ac803b}
+.source-illustration{display:flex;align-items:center;gap:16px;background:#e3f5ee;border-radius:11px;padding:13px 17px}
+.source-illustration.blue{background:#e5f0f9}
+.source-illustration.gold{background:#fff2dc}
+.source-illustration-letter{flex:0 0 50px;height:50px;display:grid;place-items:center;background:#14766b;color:white;border-radius:13px;font-size:1.4rem;font-weight:900}
+.source-illustration.blue .source-illustration-letter{background:#336f95}
+.source-illustration.gold .source-illustration-letter{background:#ad7e37}
+.source-illustration p{margin:0;font-size:.88rem}
+.source-pipeline{display:flex;flex-direction:column;gap:6px}
+.source-pipeline>div{background:white;border:1px solid #d7e6e3;border-radius:9px;padding:11px 14px;display:grid;gap:3px}
+.source-pipeline span{font-size:.76rem;font-weight:820;color:#39756e}
+.source-pipeline strong{font-size:.88rem;line-height:1.7}
+.source-pipeline b{align-self:center;color:#0f786d}
+.source-math p{font-size:.88rem;margin:0}
+.source-credit{margin-top:auto;border-top:1px solid #d4e0e5;padding-top:11px}
+.source-credit>span{font-weight:850;color:#2b6675;font-size:.78rem}
+.source-credit p{font-size:.79rem;margin:4px 0}
+.source-credit a{font-size:.84rem}
+.source-missing,.source-proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+.source-missing>div,.source-proof-grid>div{padding:17px;border:1px solid #d7e4e5;background:#f8fbfa;border-radius:12px}
+.source-missing>div{background:#fff9ef;border-color:#e9d9b4}
+.source-missing span{font-size:1.8rem}
+.source-missing p,.source-proof-grid p{font-size:.89rem}
+.source-missing small{font-size:.77rem;color:#796440}
+@media(max-width:900px){.picture-and-math,.source-diagram-formula{grid-template-columns:1fr}.source-unit-strip,.source-units{grid-template-columns:repeat(3,1fr)}.source-map-grid{grid-template-columns:repeat(2,1fr)}.final-three{grid-template-columns:1fr}}
+@media(max-width:650px){.story-boundaries,.dual-pictures,.two-counts,.result-mini-grid,.source-missing,.source-proof-grid{grid-template-columns:1fr}.source-unit-strip,.source-units{grid-template-columns:repeat(2,1fr)}.source-map-grid{grid-template-columns:1fr}.story-math,.story-picture,.source-math,.source-diagram{padding:13px}.picture-and-math{gap:9px}.story-scene{padding:16px}}
+@media print{.picture-and-math,.source-diagram-formula{grid-template-columns:1.1fr .9fr}.story-scene,.source-teach{break-inside:avoid}.visual-contents{display:none}}
