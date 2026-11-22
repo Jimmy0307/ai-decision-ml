@@ -330,3 +330,5 @@
 @media(max-width:880px){.teacher-split{grid-template-columns:1fr}.teacher-microflow{display:grid;grid-template-columns:1fr}.teacher-microflow>b{justify-self:center;transform:rotate(90deg)}}
 @media(max-width:620px){.teacher-result,.tiny-strip{grid-template-columns:1fr}.teacher-chapter{padding:17px}.teacher-picture,.teacher-formula{padding:12px}}
 @media print{.teacher-chapter{break-inside:avoid;box-shadow:none}.teacher-split{grid-template-columns:1.1fr .9fr}.teacher-picture,.teacher-formula{-webkit-print-color-adjust:exact;print-color-adjust:exact}.teacher-route{display:none}}
+
+.teacher-picture:has(.curriculum-large){overflow-x:auto}.teacher-picture .curriculum-large{min-width:730px;max-height:none}
