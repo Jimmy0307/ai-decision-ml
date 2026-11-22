@@ -1,3 +1,5 @@
+> **2026-11-22｜最新研究兩軌與 Gate 決策版**：[研究總覽](docs/research-20261122/index.html) · [原始 V1.8.7／MLP](docs/research-20261122/original.html) · [五層研究與不同 O/E](docs/research-20261122/five-layers.html) · [教授決策與待辦](docs/research-20261122/advisor.html)。此版本為待教授審閱，不等於確認性研究或投稿封版；下方保留 11/18 歷史研究網站與數學 v1.0 封版。
+
 > **2026-11-17｜AI × Decision supervisor research status**  
 > [研究進度總覽（HTML）](docs/index.html) · [完整稽核報告](docs/RESEARCH_AUDIT_20261117.md) · [11/18 老師會議摘要](docs/SUPERVISOR_BRIEF_20261118.md)  
 > **文獻與公式：** [12 篇方法研究 HTML](docs/THEORY_LITERATURE_COMPARISON_20261117.html) · [逐篇對照與公式 Markdown](docs/THEORY_LITERATURE_COMPARISON_20261117.md) · [來源 CSV](docs/data/LITERATURE_METHODS_20261117.csv)（有 DOI、適用條件與實作狀態）  
