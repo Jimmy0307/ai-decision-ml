@@ -279,3 +279,5 @@
 @media(max-width:900px){.picture-and-math,.source-diagram-formula{grid-template-columns:1fr}.source-unit-strip,.source-units{grid-template-columns:repeat(3,1fr)}.source-map-grid{grid-template-columns:repeat(2,1fr)}.final-three{grid-template-columns:1fr}}
 @media(max-width:650px){.story-boundaries,.dual-pictures,.two-counts,.result-mini-grid,.source-missing,.source-proof-grid{grid-template-columns:1fr}.source-unit-strip,.source-units{grid-template-columns:repeat(2,1fr)}.source-map-grid{grid-template-columns:1fr}.story-math,.story-picture,.source-math,.source-diagram{padding:13px}.picture-and-math{gap:9px}.story-scene{padding:16px}}
 @media print{.picture-and-math,.source-diagram-formula{grid-template-columns:1.1fr .9fr}.story-scene,.source-teach{break-inside:avoid}.visual-contents{display:none}}
+
+.source-cartoon{display:block;width:100%;height:auto;max-height:172px;border-radius:11px}.source-diagram .source-cartoon{flex:0 0 auto}
