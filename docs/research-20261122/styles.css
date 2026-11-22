@@ -130,3 +130,61 @@
 .claim-rails strong{font-size:1.06rem}.claim-rails p{font-size:.9rem}
 @media(max-width:850px){.formula-compare,.claim-rails{grid-template-columns:1fr}}
 @media(max-width:580px){.mechanism-grid{grid-template-columns:1fr}.genealogy-figure svg{min-width:740px}}
+
+
+/* A–B–C to patent: novice-friendly research explanations, no external assets */
+.abc-three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:22px 0}
+.abc-case{margin:0;border:1px solid #d6e3e7;background:#f9fbfc;border-radius:13px;padding:13px}
+.abc-case.abc-emphasized{border:2px solid #13877e;background:#eef9f5}
+.abc-case svg{width:100%;height:auto;display:block}
+.abc-case figcaption{display:grid;gap:8px;padding:4px 5px 10px}
+.abc-case figcaption strong{font-size:.93rem;line-height:1.6}.abc-case figcaption span{font-size:.85rem;line-height:1.68;color:#486575}
+.four-concepts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin:20px 0}
+.concept{border:1px solid #d7e4e7;border-radius:12px;background:#f8fafb;padding:17px 13px;display:flex;flex-direction:column;gap:7px}
+.concept-icon{display:grid;place-items:center;width:46px;height:46px;border-radius:10px;background:#dcf1eb;color:#0b716c;font-size:1.75rem;font-weight:900}
+.concept h3{margin:0;font-size:1.02rem}.concept p{font-size:.85rem;line-height:1.7;margin:0}
+.concept-formula{margin-top:auto;background:#eaf3f6;border:1px solid #d3e5e9;border-radius:8px;padding:8px;font-size:1.1rem;text-align:center;font-weight:850;color:#225a66}
+.concept small{font-size:.77rem;line-height:1.5;color:#695737}
+.worked-example{display:grid;grid-template-columns:1fr 1fr;gap:15px;border:1px solid #dbe8e9;background:#f8fbfb;border-radius:13px;padding:21px;margin:20px 0}
+.worked-example h3{margin:7px 0}.worked-example p{font-size:.93rem}
+.example-meters{display:grid;gap:10px;margin:15px 0}.meter-row{display:grid;grid-template-columns:66px minmax(0,1fr) 30px;align-items:center;gap:8px;font-size:.87rem}
+.meter-track{height:17px;background:#edf1f2;border-radius:30px;overflow:hidden}.meter-track i{display:block;height:100%;border-radius:30px}
+.example-read{border-left:1px solid #d8e7e5;padding-left:18px}
+.two-meaning{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:18px 0}
+.two-meaning article{padding:18px;background:#f6fafb;border:1px solid #d6e4e7;border-radius:12px}
+.two-meaning article p{font-size:.9rem}
+.two-meaning-drawing{display:flex;align-items:center;justify-content:space-around;gap:4px;border-radius:10px;background:#e7f3f0;padding:14px 8px;margin:13px 0}
+.two-meaning-drawing span{background:#fff;border:1px solid #baded8;border-radius:30px;padding:6px 10px;font-weight:800;font-size:.85rem}
+.two-meaning-drawing b{color:#158477;font-size:1.2rem}
+.patent-example{background:#fff;border:1px solid #d7e7e7;border-radius:13px;padding:20px;margin:20px 0}
+.patent-example-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;margin-bottom:15px}
+.patent-data-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.patent-data-grid>div{padding:16px;border:1px solid #d6e4e7;border-radius:10px;background:#f8fbfa}
+.patent-data-grid small{display:block;font-size:.78rem;color:#28736c;font-weight:850}
+.patent-data-grid strong{display:block;font-size:1.04rem;margin:7px 0}
+.patent-data-grid p{font-size:.87rem;margin:0}
+.patent-route{max-width:950px;margin:23px auto}
+.patent-step{display:grid;grid-template-columns:48px minmax(0,1fr);gap:12px;background:#f5faf9;border:1px solid #d5e5e1;border-radius:12px;padding:17px 19px;align-items:start}
+.patent-step.pending{background:#fff8e8;border-color:#e6d1a3}
+.step-num{width:41px;height:41px;border-radius:11px;display:grid;place-items:center;background:#126e67;color:white;font-size:1.25rem;font-weight:900}
+.patent-step.pending .step-num{background:#b27f2c}
+.patent-step strong{font-size:1.05rem}.patent-step p{font-size:.91rem;margin:5px 0}.patent-step small{font-size:.81rem;color:#3f7474;font-weight:750}
+.patent-route-arrow{text-align:center;color:#14847b;font-size:1.35rem;font-weight:900}
+.verification-rows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:22px 0}
+.verification-rows>div{border:1px solid #d4e5e9;background:#fbfcfc;border-radius:12px;padding:17px}
+.v-label{color:#24736d;font-weight:850;font-size:.81rem}
+.verification-rows strong{display:block;font-size:1.4rem;line-height:1.3;margin:7px 0;color:#194e5b}
+.verification-rows p{font-size:.87rem;margin:8px 0 1px}
+.formula-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.formula-grid>div{background:#fff;border:1px solid #dce7e9;border-radius:10px;padding:13px}
+.formula-grid h3{font-size:.91rem}.formula-grid .equation-block{font-size:1rem;padding:10px;line-height:1.9}
+.formula-grid p{font-size:.84rem}
+.claim-flow{display:grid;gap:8px;margin:20px auto;max-width:950px}
+.claim-flow>div{border:1px solid #cce0df;background:#f3faf8;border-radius:11px;padding:16px 20px;display:grid;gap:5px}
+.claim-flow>div.last{background:#fff6e1;border-color:#e8d3aa}
+.claim-flow strong{font-size:1.04rem}.claim-flow span{font-size:.89rem;color:#426570}.claim-flow>b{justify-self:center;color:#097c72;font-size:.94rem}
+.speaker-script{background:#f8fbfc;border-left:5px solid #128076;padding:19px 23px;border-radius:9px;font-size:1.04rem}
+.speaker-script p{line-height:1.98}
+@media(max-width:980px){.abc-three{grid-template-columns:1fr 1fr}.four-concepts,.formula-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.abc-three,.four-concepts,.worked-example,.two-meaning,.patent-data-grid,.verification-rows,.formula-grid{grid-template-columns:1fr}.example-read{border-left:0;border-top:1px solid #d8e7e5;padding:12px 0 0}.two-meaning-drawing span{font-size:.76rem;padding:6px}}
+@media print{.topbar,.hero-links,.foot,.reader-route{display:none!important}.hero{padding:20px 0}.lesson{break-inside:avoid;box-shadow:none}.abc-three,.four-concepts{grid-template-columns:repeat(3,1fr)}a{color:#164d5a;text-decoration:none}}

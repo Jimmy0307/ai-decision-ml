@@ -1,0 +1,102 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="description" content="教授可直接閱讀的 AI × Decision 圖解：A–B–C、少一個節點、少一條邊、文獻低整合與零值的差別，以及用專利引用與分類逐步檢核結構洞推論。"/><title>A–B–C 到專利驗證｜低整合、零值與結構洞</title><link rel="stylesheet" href="styles.css"/></head><body><a class="sr-only" href="#definition">跳到教學圖解</a>
+<div class="top"><div class="wrap topbar"><a class="brand" href="index.html">AI × Decision · 教授導覽</a><nav class="nav" aria-label="研究網頁導覽"><a href="index.html">零基礎首頁</a><a href="abc-to-patents.html" class="selected" aria-current="page">A–B–C 與專利驗證</a><a href="study-map.html">研究甲乙演進</a><a href="original.html">研究甲</a><a href="five-layers.html">研究乙</a><a href="advisor.html">教授決策</a></nav></div>
+<header class="hero" style="background:radial-gradient(circle at 80% 10%,#176a70,transparent 52%),#123447"><div class="wrap"><div class="eyebrow">Start with a drawing · Explain before statistics</div><h1>從 A–B–C 開始：為什麼還要分「零值」「偏低」與「結構洞」？</h1><p>老師先理解 A—B—C 這張圖，我們就從它出發，一步步說明「缺一個人」「少一條線」「沒有觀察到」「比期望少」為何完全不同，然後解釋為什麼需要專利文件、引用網絡和多輪檢驗。</p><div class="hero-links"><a href="#definition">先看三張比較圖</a><a href="#patent-chain" class="secondary">看專利檢核流程</a></div></div></header></div>
+<main class="wrap main">
+<div class="intro-notice"><strong>這整段的核心：</strong>我們先在文獻資料發現有些 AI×Decision 配對比預期少，但那不是 Burt 結構洞的直接證據。後續才透過專利的文字、分類、引用和行動者網絡反覆檢查，每一種「缺少」究竟是什麼。<strong>驗證的目的是區分解釋，不是硬把結果證明成「有洞」。</strong></div>
+<section class="lesson" id="definition"><div class="lesson-kicker">圖一 · 先把老師熟悉的 A–B–C 講準確</div><h2>老師說「沒了 B，就是洞」——這和 Burt 所說的結構洞差在哪裡？</h2>
+<p>我們先讓 A、B、C 都代表<strong>真正的人或公司</strong>，線代表「有實際合作或資訊交流」。同樣三個字母，可以畫出三種不同的網絡情況：</p>
+<div class="abc-three">
+<figure class="abc-case"><svg viewBox="0 0 425 211" role="img" aria-labelledby="abc-cut-title abc-cut-desc" xmlns="http://www.w3.org/2000/svg"><title id="abc-cut-title">B 被移除：A 和 C 沒有連接</title><desc id="abc-cut-desc">A、C 各自孤立，中間的 B 節點被移除</desc><circle cx="90" cy="150" r="30" fill="#e4f3ef" stroke="#156c67" stroke-width="2"/><text x="90" y="158" text-anchor="middle" font-size="24" font-weight="800" fill="#1b5661">A</text><circle cx="335" cy="150" r="30" fill="#e4f3ef" stroke="#156c67" stroke-width="2"/><text x="335" y="158" text-anchor="middle" font-size="24" font-weight="800" fill="#1b5661">C</text><circle cx="212" cy="52" r="30" fill="#f1f2f3" stroke="#a3acb1" stroke-dasharray="5 5" stroke-width="2"/><text x="212" y="58" font-size="20" fill="#8a949c" text-anchor="middle">×</text><text x="212" y="199" font-size="14" fill="#526c75" text-anchor="middle">B 不在網絡中</text></svg><figcaption><strong>情況 ①：B 被移除</strong><span>原本由 B 連起的路徑可能斷開。這是節點消失／網絡斷裂，不是正在衡量 B 的仲介位置。</span></figcaption></figure>
+<figure class="abc-case abc-emphasized"><svg viewBox="0 0 425 211" role="img" aria-labelledby="abc-open-title abc-open-desc" xmlns="http://www.w3.org/2000/svg"><title id="abc-open-title">B 仍存在，A 與 C 沒有直接連帶</title><desc id="abc-open-desc">A、B、C 三個節點；A–B 和 B–C 相連，但 A–C 不相連</desc><path d="M90 150 L212 53 L335 150" fill="none" stroke="#14847b" stroke-width="6" stroke-linecap="round"/><path d="M100 150 L323 150" fill="none" stroke="#bd8733" stroke-width="4" stroke-dasharray="8 10"/><circle cx="90" cy="150" r="30" fill="#e4f3ef" stroke="#156c67" stroke-width="2"/><text x="90" y="158" text-anchor="middle" font-size="24" font-weight="800" fill="#1b5661">A</text><circle cx="212" cy="52" r="30" fill="#156c67" stroke="#156c67" stroke-width="2"/><text x="212" y="60" text-anchor="middle" font-size="24" font-weight="800" fill="white">B</text><circle cx="335" cy="150" r="30" fill="#e4f3ef" stroke="#156c67" stroke-width="2"/><text x="335" y="158" text-anchor="middle" font-size="24" font-weight="800" fill="#1b5661">C</text><text x="212" y="199" font-size="14" fill="#526c75" text-anchor="middle">虛線代表 A–C 沒有直接線</text></svg><figcaption><strong>情況 ②：B 還在，A–C 沒有直接連線</strong><span>B 可能連結彼此不直接往來的 A、C，這才是典型的 Burt 結構洞仲介情境。</span></figcaption></figure>
+<figure class="abc-case"><svg viewBox="0 0 425 211" role="img" aria-labelledby="abc-closed-title abc-closed-desc" xmlns="http://www.w3.org/2000/svg"><title id="abc-closed-title">B 仍存在，A 與 C 另有直接連帶</title><desc id="abc-closed-desc">A、B、C 三個節點；三個兩兩相連</desc><path d="M90 150 L212 53 L335 150" fill="none" stroke="#14847b" stroke-width="6" stroke-linecap="round"/><path d="M90 150 L335 150" fill="none" stroke="#14847b" stroke-width="6"/><circle cx="90" cy="150" r="30" fill="#e4f3ef" stroke="#156c67" stroke-width="2"/><text x="90" y="158" text-anchor="middle" font-size="24" font-weight="800" fill="#1b5661">A</text><circle cx="212" cy="52" r="30" fill="#156c67" stroke="#156c67" stroke-width="2"/><text x="212" y="60" text-anchor="middle" font-size="24" font-weight="800" fill="white">B</text><circle cx="335" cy="150" r="30" fill="#e4f3ef" stroke="#156c67" stroke-width="2"/><text x="335" y="158" text-anchor="middle" font-size="24" font-weight="800" fill="#1b5661">C</text><text x="212" y="199" font-size="14" fill="#526c75" text-anchor="middle">A–C 也直接有線</text></svg><figcaption><strong>情況 ③：A–C 也連上</strong><span>A、C 可以直接交流，B 所擁有的非冗餘中介機會可能降低。</span></figcaption></figure>
+</div>
+<div class="lesson-takeaway"><strong>讓老師記住：</strong>這種理論圖的「洞」，重點是<strong>某些行動者之間缺少直接連帶，而另有人占據橋接位置</strong>。Burt 的完整測量還要看聯繫強度及冗餘程度，不是只有缺一條線就能推定企業有問題。若把 A、B、C 換成功能類別，圖看起來一樣，測量意義已經改變。</div>
+</section>
+<section class="lesson" id="four-words"><div class="lesson-kicker">圖二 · 四個術語，絕不能互相替代</div><h2>同樣說「少了一條線」，可能是四件不同的事情</h2>
+<div class="four-concepts">
+<div class="concept"><div class="concept-icon" aria-hidden="true">0</div><h3>零值 Zero</h3><p>在<strong>特定資料與觀察範圍</strong>內，沒有記錄到這一對功能共同出現。</p><div class="concept-formula">O = 0</div><small>零觀察 ≠ 現實中確認沒有連結</small></div>
+<div class="concept"><div class="concept-icon" aria-hidden="true">↓</div><h3>偏低 Low / Depleted</h3><p>確實有記錄，但比事先指定的比較模型預期少；是否顯著還要看統計檢定。</p><div class="concept-formula">0 &lt; O &lt; E</div><small>有出現 ≠ 完全不存在</small></div>
+<div class="concept"><div class="concept-icon" aria-hidden="true">∅</div><h3>缺邊 Missing tie</h3><p>在<strong>已定義的網絡</strong>裡，A 與 C 沒有觀測到指定種類的直接連結。</p><div class="concept-formula">e<sub>AC</sub> = 0</div><small>觀測缺邊 ≠ 必然有 B 來橋接</small></div>
+<div class="concept"><div class="concept-icon" aria-hidden="true">B</div><h3>Burt 結構洞</h3><p>考察真實行動者的連帶是否非冗餘，及 B 是否可能橋接彼此未直接連結的對象。</p><div class="concept-formula">B → brokerage ?</div><small>需要行動者身分、關係定義與網絡測量</small></div>
+</div>
+<div class="worked-example">
+<div><span class="label">純教學示例｜不是研究真實格數</span><h3>假設一對 AI×Decision 功能</h3><p>比較模型預期被一起觀察到 <strong>20 次</strong>，實際觀察到 <strong>5 次</strong>。</p><div class="example-meters"><div class="meter-row"><span>期望 E</span><div class="meter-track"><i style="width:100%;background:#a2bbc5"></i></div><strong>20</strong></div><div class="meter-row"><span>觀察 O</span><div class="meter-track"><i style="width:25%;background:#b4873f"></i></div><strong>5</strong></div></div></div>
+<div class="example-read"><h3>我們可以說什麼？</h3><p>「在這個模型下，配對的觀察次數只有期望的 <strong>1/4</strong>。」</p><p>但不能說：「這個配對根本不存在」「它一定是企業功能缺口」或「它就是 Burt 結構洞」。</p><p class="mini muted">O/E = 5/20 = 0.25 是示意計算；還沒有統計顯著性，也沒有真實連結的證據。</p></div>
+</div>
+<div class="contrast-block"><div><div class="big-stat">16</div><strong>原始研究的 16 個零值格</strong><p>10×12 矩陣中 120 格，有 16 格沒有配對紀錄。</p></div><div class="symbol-vs">≠</div><div><div class="big-stat">16</div><strong>研究甲的 16 組不足呈現核心配對 G01–G16</strong><p>四項分析交集後的 16 組偏低配對；與零值格不重疊。</p></div></div>
+<p class="mini muted">研究甲權威版記載：120 格中 104 格非零；四分析共同保留 16 組過度及 16 組不足。之後的誤分類壓力測試降低顯著性可靠性，故不能把「16 組」當成已確認的現實世界缺口。</p>
+</section>
+<section class="lesson" id="change-nodes"><div class="lesson-kicker">圖三 · 老師看到的圖，和我們研究的圖不是同一個東西</div><h2>把 A、B、C 從「人」換成「功能」，結論為什麼不再一樣？</h2>
+<div class="two-meaning">
+<article><h3>網絡一：A、B、C 是三家公司</h3><div class="two-meaning-drawing"><span>公司 A</span><b>—</b><span>公司 B</span><b>—</b><span>公司 C</span></div><p>如果線是<strong>實際合作</strong>，我們能討論 B 的仲介位置與資訊冗餘；但要知道 A–C 是否真的沒有直接聯繫。</p></article>
+<article><h3>網絡二：A、B、C 是三個 AI／決策功能</h3><div class="two-meaning-drawing"><span>預測</span><b>—</b><span>分類</span><b>—</b><span>配置</span></div><p>如果線只代表<strong>文獻共同提及</strong>，我們最多知道作者如何一起描述功能；不能據此推論系統內有資料傳遞或誰在企業裡當橋樑。</p></article>
+</div>
+<div class="lesson-takeaway"><strong>這就是延伸研究乙出現的原因：</strong>原始研究甲很清楚，G01–G16 是統計的「不足呈現」，而且 Burt 型結構洞<strong>未檢驗</strong>。後續分析才進一步檢查：「從文字中少一起出現，能不能跨到真實網絡缺邊與仲介？」</div>
+<p><a href="study-map.html#genealogy">觀看研究甲的雙層 MLP 與研究乙五層驗證如何從同一文獻結果分岔 →</a></p>
+</section>
+<section class="lesson" id="patent-why"><div class="lesson-kicker">圖四 · 為什麼要引入專利？</div><h2>因為專利可以讓我們多看幾種「連結」，但每種連結仍有各自限制</h2>
+<p>文獻矩陣只記錄作者怎麼談功能。專利則可能同時提供<strong>技術文字、分類碼、專利間的引用，以及申請人／權利人資訊</strong>。這讓我們能從好幾個角度核對「兩項功能是否被分開」「是否有知識傳遞」「誰可能在中間」。但並不是每件專利都能取得完整文字，也不能把引用當成企業系統內真的 A→B 使用關係。</p>
+<div class="patent-example">
+<div class="patent-example-head"><span class="label">虛構示例｜不是資料庫裡的一件真實專利</span><strong>一個專利的不同欄位，能回答不同問題</strong></div>
+<div class="patent-data-grid">
+<div><small>技術摘要或權利項</small><strong>包含 AI 預測與排程</strong><p>只能先說可能包含兩項功能。若原文說「預測值輸入排程器」，才有較直接的功能依賴文字證據。</p></div>
+<div><small>CPC 分類</small><strong>可能被分入兩組碼</strong><p>兩個碼共同出現是分類標記；不同年度可能有代碼調整，不能把更名當融合。</p></div>
+<div><small>專利引用</small><strong>P2 引用了 P1</strong><p>代表資料庫記錄一條<strong>有向引用關係</strong>；不必然代表 P1 的 AI 輸出真的成為 P2 的決策輸入。</p></div>
+<div><small>申請人／公司</small><strong>公司 X 持有 P1、P2</strong><p>可以檢查公司知識組合與網絡位置；不能直接推導員工有使用或公司管理已有效整合。</p></div>
+</div>
+</div>
+</section>
+<section class="lesson" id="patent-chain"><div class="lesson-kicker">圖五 · 同一主張如何經不同資料反覆檢查</div><h2>從「低整合」到「真的有結構洞」——專利驗證的六道關卡</h2>
+<p>這不是把一件專利重複算六遍就算六次獨立證明，而是用<strong>不同的觀測、不同的模型和事先凍結的判準</strong>檢查同一個解釋。任何一道關卡資料不足，都只能停在該層結論。</p>
+<div class="patent-route" aria-label="六道由文獻到專利與人工驗證的研究檢核流程">
+<div class="patent-step"><div class="step-num">0</div><div><strong>文獻產生候選</strong><p>先由研究甲的 10×12 矩陣找到 G01–G16。不先叫它結構洞。</p><small>表徵 R｜已完成；構念效度仍有風險</small></div></div>
+<div class="patent-route-arrow" aria-hidden="true">↓</div>
+<div class="patent-step"><div class="step-num">1</div><div><strong>確認專利身分與功能文字</strong><p>專利號、時間、可讀的摘要／說明／權利項；區分「同時有功能」和「A 的輸出真的被 B 使用」。</p><small>功能關係的人工真值尚未完成；不能把沒寫當不存在</small></div></div>
+<div class="patent-route-arrow" aria-hidden="true">↓</div>
+<div class="patent-step"><div class="step-num">2</div><div><strong>檢查分類與歷史版本</strong><p>比較不同時期 CPC 碼、官方修訂與回溯分類。變動可能是分類體系改版，而非技術實際融合。</p><small>分類 K｜現有研究：42 格中 8 格判定改變</small></div></div>
+<div class="patent-route-arrow" aria-hidden="true">↓</div>
+<div class="patent-step"><div class="step-num">3</div><div><strong>看專利之間是否真正有引用</strong><p>建立「誰引用誰」的有向網絡，依年份、母體與零模型計算觀察 O 與預期 E。</p><small>流動 F｜研究二與專利 R2 判準不一致，必須分開報告</small></div></div>
+<div class="patent-route-arrow" aria-hidden="true">↓</div>
+<div class="patent-step"><div class="step-num">4</div><div><strong>看公司／專利是否形成仲介位置</strong><p>以可定義的行動者網絡，測試公司或專利在兩群之間是否比指定零模型擁有更多非冗餘仲介。</p><small>網絡 N｜測過的零模型下未偵測到超額仲介</small></div></div>
+<div class="patent-route-arrow" aria-hidden="true">↓</div>
+<div class="patent-step"><div class="step-num">5</div><div><strong>換版本、換參照、換時間重算</strong><p>檢查結果是否只依賴某一個分類版本、專利引用覆蓋或參照母體；<strong>事後換參照不得冒稱原先的確認性檢定。</strong></p><small>敏感性與可重現性｜已完成多輪，但有推論邊界</small></div></div>
+<div class="patent-route-arrow" aria-hidden="true">↓</div>
+<div class="patent-step pending"><div class="step-num">6</div><div><strong>雙人盲審：最後確認「誰用誰」</strong><p>對新抽樣的同時具有 AI／決策功能專利，由兩名獨立人類審查文字及方向，再比較事先指定的 M0–M3 萃取方法。</p><small>功能可識別性｜尚未執行，不能宣布確認性結論</small></div></div>
+</div>
+<div class="lesson-takeaway"><strong>老師可以這樣理解：</strong>文獻告訴我們「哪裡看起來少」；專利的不同欄位幫我們排除「只是分類或表述方式」的可能；網絡檢定再問「有沒有較少流動／較多仲介」。最後是否真的「A 的輸出被 B 使用」，仍需要原始文字和獨立人工真值。</div>
+</section>
+<section class="lesson" id="what-results"><div class="lesson-kicker">圖六 · 我們目前實際跑出來的結果與其限制</div><h2>反覆檢查之後發現：答案不是唯一的「有洞」或「沒洞」</h2>
+<div class="verification-rows">
+<div><div class="v-label">文獻結果</div><strong>16 個偏低核心配對</strong><p>在研究甲的四種分析下共同保留，但誤分類壓力測試使顯著性不保留；不能直接變成網絡缺邊。</p></div>
+<div><div class="v-label">CPC 分類</div><strong>8 / 42</strong><p>變換分類版本後，有 8 格統計判定改變。這說明<strong>類別標記本身會影響結論</strong>，不是官方已確認融合。</p></div>
+<div><div class="v-label">研究二：預先登錄的相對判準</div><strong>O/E = 3.05 [2.94, 3.17]</strong><p>指定比較下不支持領域洞假說。這不是「Burt constraint = 3.05」。</p></div>
+<div><div class="v-label">專利 R2：另一套事先凍結的絕對判準</div><strong>O/E = 0.353 / 0.380</strong><p>在內部參照下，依 OE&lt;1 的規則標為 HOLE_SUPPORTED；<strong>不得因事後改參照就把原判定抹掉</strong>。</p></div>
+<div><div class="v-label">後續全體專利參照（探索性）</div><strong>3.58–3.90 / 2.81–2.92</strong><p>擴大到全體核准案及補入公開申請案的結果，方向又不同。這是比較母體的影響，不是同一假說的獨立重複驗證。</p></div>
+<div><div class="v-label">公司／專利仲介</div><strong>0.36× / 0.64× 零模型</strong><p>測試的跨群二步路徑少於指定重接線參照；不能稱所有局部 Burt 洞都不存在。</p></div>
+</div>
+<details class="math-disclosure"><summary>三種不同公式的差別：讓老師知道我們到底「算了什麼」</summary>
+<div class="formula-grid">
+<div><h3>文獻矩陣的基準</h3><div class="equation-block">E<sub>ad</sub> = (k<sub>a</sub> × k<sub>d</sub>) / M</div><p>比較功能配對在文獻中出現得多不多。</p></div>
+<div><h3>專利引用的 O/E</h3><div class="equation-block">O/E = 觀察引用量 / 期望引用量</div><p>比較特定零模型下的引用流動。正式分析依年份分層。</p></div>
+<div><h3>Burt Network Constraint</h3><div class="equation-block">c<sub>i</sub> = ∑<sub>j</sub>(p<sub>ij</sub> + ∑<sub>q</sub> p<sub>iq</sub>p<sub>qj</sub>)<sup>2</sup></div><p>衡量行動者連帶冗餘與約束。不是用專利 O/E 自動換算而來。</p></div>
+</div><p class="mini muted">各式子使用不同節點、連線與估計對象，不能把它們當成同一個「洞」的三種算法。完整公式請參照下方來源。</p></details>
+</section>
+<section class="lesson" id="decision-tree"><div class="lesson-kicker">圖七 · 一份專利文獻究竟允許我們說哪一種結論？</div><h2>給教授的「有證據才能往下說」判讀流程</h2>
+<div class="claim-flow">
+<div><strong>專利文本有 A、B 兩項功能嗎？</strong><span>沒有或資料不足 → 只標 UNKNOWN／不納入適用判定</span></div>
+<b aria-hidden="true">↓ 有</b>
+<div><strong>文本有沒有寫出 A 的輸出被 B 使用？</strong><span>只有共同提到 → 只能說 CO-PRESENT，不能說 DEPENDENCY</span></div>
+<b aria-hidden="true">↓ 有可引用句與方向</b>
+<div><strong>專利分類、引用與行動者資料是否支持相同推論？</strong><span>不同資料不一致 → 分別報告，不可挑單一有利結果</span></div>
+<b aria-hidden="true">↓ 仍需獨立驗證</b>
+<div class="last"><strong>兩名人類審查者獨立判讀；保留無法判定的 UNKNOWN</strong><span>完成前：只能說「尚未證明功能依賴比例／原子化方法增量」</span></div>
+</div>
+<div class="lesson-takeaway"><strong>關鍵研究問題：</strong>只把專利打散成 A、B、C 多標籤（M1），和補入「A 的輸出被 B 使用」的可追溯關係證據（M2），哪一種能恢復真正的依賴？目前只有合成反例與實驗設計；<strong>沒有完成真實確認性人類驗證</strong>。</div>
+</section>
+<section class="lesson" id="professor-script"><div class="lesson-kicker">給教授的兩分鐘口頭講法</div><h2>順著圖講，老師不需要先知道任何統計公式</h2>
+<div class="speaker-script"><p>「老師，我們先從您說的 A—B—C 開始。B 如果整個被拿掉，是節點消失、網絡可能斷裂；但 Burt 特別關心的是 <strong>B 還在，A 和 C 卻沒有直接連線</strong>，所以 B 可能有仲介位置。</p><p>我們原始論文的 A、B、C 其實不是人，而是 AI 和決策的功能類別。我們在文獻中發現有 16 組配對比期望少，而且另外有 16 格完全沒有觀察到。『比期望少』『觀察為零』和『Burt 洞』是不同概念。</p><p>所以後續我們才引入專利，從技術文字、分類版本、引用方向、專利和公司網絡反覆交叉檢查，看看文獻中少出現的配對，能否推論成實際知識流動少、缺乏仲介，甚至功能之間沒有真實依賴。</p><p>目前的結果很重要：不同的事前判準和參照會得到不同的標籤，分類版本也會改變一些結果。因此我們不能先宣布一定有洞或一定沒洞。<strong>下一步要用新的專利樣本，讓兩位真人判讀 A 的輸出究竟有沒有被 B 使用</strong>，再決定單純打散功能是否足夠。」</p></div>
+</section>
+<section class="lesson" id="references"><div class="lesson-kicker">研究依據與版本邊界</div><h2>圖形是教學示意；下列來源才是實際研究依據</h2>
+<div class="source-rows"><a href="https://github.com/Jimmy0307/ai-decision-ml-private-backup-20261018/blob/audit/gates-20261121/GATES_AUDIT_20261121/STUDY_EXPLAINERS_20261122/STUDY_A_ORIGINAL_THESIS_V187_EXPLAINER_ZH.md">研究甲：原始 V1.8.7 文獻、四機制與雙層 MLP（私人庫）</a><a href="https://github.com/Jimmy0307/ai-decision-ml-private-backup-20261018/blob/audit/gates-20261121/GATES_AUDIT_20261121/STUDY_EXPLAINERS_20261122/STUDY_B_INTEGRATED_FIVE_LAYER_EXPLAINER_ZH.md">研究乙：五層、專利結果、E1 方法及限制（私人庫）</a><a href="https://github.com/Jimmy0307/ai-decision-ml/blob/paper/ai-decision-manuscript-20261119/paper/zh/ch2_literature.tex">公開論文：Burt 理論與網絡 Constraint</a><a href="https://github.com/Jimmy0307/ai-decision-ml/blob/paper/ai-decision-manuscript-20261119/paper/zh/ch4_results.tex">公開論文：文獻矩陣、分層專利引用 O/E、研究二結果</a></div>
+<p class="mini muted">本頁新圖使用自行繪製的 SVG 與假設範例。專利欄位展示為「可能可取得的證據類型」，不假裝研究已有每件專利的全文或雙人關係真值。專利 R2「事先凍結」不等於研究二的正式預先登錄。網站不展示第三方全文與個人敏感資料。研究甲 V1.8.7 與研究乙的正式稿均未因此改動。</p></section>
+</main><footer class="foot"><div class="wrap"><strong>AI × Decision｜從 A–B–C 到專利驗證</strong><p>研究解說供教授審閱，不等於學術投稿核准。<a href="index.html">研究入門</a> · <a href="study-map.html">研究甲／乙關係</a> · <a href="five-layers.html">五層實證</a> · <a href="advisor.html">教授決策</a></p></div></footer></body></html>
