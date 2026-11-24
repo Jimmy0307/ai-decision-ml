@@ -1,0 +1,460 @@
+% ============================================================
+% appendix.tex -- Appendices A, B, C (the main file places \appendix before this).
+% The MLP appendices moved with the model to a separate paper (2026-11-19);
+% the Chinese thesis (paper/zh/appendix_zh.tex) keeps them.
+% Numbers come from raw_materials/experimental_log.md. Appendix A additionally
+% states commit ids and preregistered decision rules taken from the frozen
+% preregistration texts (repository identifiers withheld for review).
+% Revised in rounds 1 and 2 (REVISION_PLAN_round1.md, REVISION_PLAN_round2.md).
+% ============================================================
+
+\section{Preregistration and Amendment Log}
+\label{app:prereg}
+
+Study~2 rests on eight preregistered plans (Plans~1--8) and an exploratory plan (Plan~C); the systematic review and R1 have their own frozen protocols (Appendix~\ref{app:review}). Each is a self-timestamped git commit in the project repository (repository identifiers withheld for review; the Study~2 commit ids are listed in Tables~\ref{tab:app_prereg} and~\ref{tab:app_prereg_b}); none was registered with a third-party registry such as OSF, and the commit timestamps are set by the authors' own tooling. Preregistration is meant to separate confirmatory from exploratory analysis by fixing the plan before outcomes are observed \citep{nosek2018preregistration}. By that standard, Plan~1 was fixed before any patent data were downloaded. Plans 2--8 were written after earlier results were known, so the questions they ask were data-informed; only their definitions, null models, decision rules, thresholds and stop rules were fixed before the analyses they govern were computed. Only Plan~1 is confirmatory. Plan~5, the construct checks of Section~\ref{sec:study2_aggregate} (Table~\ref{tab:construct}), was added after the main verdict was known, as a data-informed follow-up, and frozen on 2026-11-19 before any of its specifications was computed; amendment C1 added two strict specifications the same day, after the first Plan~5 results were known but before the new specifications were computed. Changes after freezing are recorded as dated amendments that do not overwrite the frozen text. Tables~\ref{tab:app_prereg} (Plans~1--3) and~\ref{tab:app_prereg_b} (Plans~4--8 and~C) summarise the plans, including the commit ids and rule thresholds taken from the frozen texts; Table~\ref{tab:app_amend} lists every Study~2 amendment and recorded deviation, Table~\ref{tab:app_plan6} gives the descriptive Plan~6 values, Table~\ref{tab:app_plan7} gives all seven Plan~7 specifications, and Table~\ref{tab:app_plan8} gives the Plan~8 tests. Plan~7 was written after all earlier results were known and was motivated by the AI--decision contrast between literature co-occurrence and patent flow. Plan~8, the last plan, was motivated by Plan~7's disagreement rate and frozen on 2026-11-19, after Plan~7's aggregate results were known but before any breakdown of its pairs by taxonomic distance, size or volume was computed. Both are data-informed.
+
+\begin{table}[tbp]
+\centering
+\caption{Preregistration log for Study~2, Plans~1--3 (continued in Table~\ref{tab:app_prereg_b}). ``Frozen before'' states what had not yet been computed when the plan was committed, and ``Known when written'' what had. Commit ids and decision rules are quoted from the frozen texts; outcomes are DIRECT results (E3).}
+\label{tab:app_prereg}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{2.0cm}p{2.5cm}p{3.7cm}p{4.3cm}p{2.3cm}}
+\toprule
+Plan (commit) & Frozen before / known when written & Hypotheses and content & Decision rule & Outcome \tabularnewline
+\midrule
+\raggedright 1.~Aggregate test (\texttt{a8f3289}) &
+\raggedright Frozen before any patent data were downloaded or inspected. Known: Study~1 only &
+\raggedright H1a: OE(AI,DEC) relative to reference CPC main groups in G06/G16/H04 with $\geq$2,000 patents; H1b: ratio to OE(AI,BIZ-OTHER); H2: trend by citing year; H3 (exploratory): assignees as brokers of a domain-level hole; six sensitivity checks; synthetic calibration &
+\raggedright H1 supported only if OE is in the lowest quartile on both sides (H1a) and the ratio's upper 95\% CI bound is $<1$ (H1b); labels \texttt{HOLE\_\allowbreak SUPPORTED}, \texttt{PARTIAL\_\allowbreak NOT\_\allowbreak CLAIMED}, \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}; $\geq$4 of 6 sensitivity checks disagree $\rightarrow$ \texttt{FRAGILE}; H2: \texttt{CLOSING} if the slope is $>0$ with a 95\% CI above 0 and the last-3-year OE is $\geq$ the reference median; \texttt{PERSISTENT} if the slope's CI includes 0 or lies below it; otherwise \texttt{NARROWING\_\allowbreak BUT\_\allowbreak OPEN} (written for the hole case, where closing means OE rising) &
+\raggedright \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}; 0/6 disagree; H2 \texttt{PERSISTENT} (slope negative: the over-connection declines) \tabularnewline
+\addlinespace
+\raggedright 2.~V9 battery on the CPC matrix (\texttt{a6266f7}) &
+\raggedright Frozen before any cell-level count. Known: the aggregate verdict &
+\raggedright Unchanged V9 engine on a $6\times7$ matrix fixed from the CPC scheme; Part~A co-classification, Part~B applicant citations &
+\raggedright Full core: q $\leq$ .05 in main, exact and document-preserving tests in the same direction, plus raw q $\leq$ .05 in the same direction; convergent depletion: full-core depleted in both A and B; a depleted cell may not be called a structural hole &
+\raggedright Preregistered core 0 by construction (B1); three-test cells exploratory \tabularnewline
+\addlinespace
+\raggedright 3.~Full replication suite (\texttt{d641256}) &
+\raggedright Frozen before any module P1--P10 was run. Known: the aggregate verdict, the Plan~2 full-window cell results and the M06 failure (B1) &
+\raggedright P1 with the patent-adapted null M06-P; P2 seeds, null false positives, power, segmentation; P3 time split; P4 label face validity; P5 firm network; P6 removal; P7 hyperedges; P8 aliases; P9 Gap Validity; P10 Limitation Scout &
+\raggedright Three-test agreement for P3 and P9; replicated depleted cell must pass in both halves; P4 pass if lift $\geq$1.5; P5 firm hole if O/E $<1$ and below both MIXED O/Es; a candidate is refuted if AI and DEC firms stay connected after its removal &
+\raggedright See Appendix~\ref{app:sens}; P5 criterion met (later \texttt{PARTIAL} under the Plan~4 null; not a confirmed hole); 10/10 candidates refuted; P10 \texttt{NOT\_\allowbreak APPLICABLE} \tabularnewline
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[tbp]
+\centering
+\caption{Preregistration log for Study~2, continued: Plans~4--8 and the exploratory Plan~C. Columns as in Table~\ref{tab:app_prereg}.}
+\label{tab:app_prereg_b}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{2.0cm}p{2.5cm}p{3.7cm}p{4.3cm}p{2.3cm}}
+\toprule
+Plan (commit) & Frozen before / known when written & Hypotheses and content & Decision rule & Outcome \tabularnewline
+\midrule
+\raggedright 4.~Portfolio-preserving firm null (\texttt{b59fc71}) &
+\raggedright Frozen before any null replicate was computed. Known: the P5 result, which motivated the plan &
+\raggedright T1: OE(AI\_FIRM$\sim$DEC\_FIRM); T2: MIXED median constraint; owner sets permuted within strata (primary; S-tech). The null preserves portfolio counts, not firm degree &
+\raggedright \texttt{ORGANISATIONAL\_\allowbreak HOLE\_\allowbreak BEYOND\_\allowbreak PORTFOLIO} if T1 and T2 both have one-sided $p<.05$; \texttt{PARTIAL} if exactly one; \texttt{PORTFOLIO\_\allowbreak ARTEFACT} if neither; S-tech disagreement $\rightarrow$ \texttt{TECH\_\allowbreak MIX\_\allowbreak SENSITIVE} &
+\raggedright \texttt{PARTIAL} in both stratifications (T1 met, T2 not) \tabularnewline
+\addlinespace
+\raggedright 5.~Construct checks (\texttt{100f06a}) &
+\raggedright Frozen 2026-11-19, before any specification was computed; a data-informed follow-up added after the main verdict. Known: the Plan~1--4 results. C-e/C-f added by amendment C1 &
+\raggedright DEC = any \texttt{G06Q10/06} code (C-a, C-c), Plan~1's DEC (C-b), any \texttt{/04} code (C-d, descriptive), or \texttt{/06} with no \texttt{/04} code (C-e, C-f); H1a reference set of 179 main groups (C-a, C-d, C-e) or of subgroup families, i.e.\ main group plus first two subgroup characters, $\geq$2,000 patents (C-b, C-c, C-f) &
+\raggedright Each specification uses Plan~1's rule; \texttt{ROBUST\_\allowbreak TO\_\allowbreak CONSTRUCT} only if all verdict specifications are \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}, otherwise \texttt{CONSTRUCT\_\allowbreak SENSITIVE}; after C1 the verdict specifications are C-a, C-b, C-c, C-e and C-f &
+\raggedright \texttt{ROBUST\_\allowbreak TO\_\allowbreak CONSTRUCT} (five specifications); strict DEC OE 3.16; C-d OE 3.83 (Table~\ref{tab:construct}) \tabularnewline
+\addlinespace
+\raggedright C.~Locus of integration (\texttt{969e60b}) &
+\raggedright Frozen before any quantity was computed; exploratory. Known: all other results &
+\raggedright Descriptive: BRIDGE share by year; locus of AI--DEC cross citations (within firm, between firms with a MIXED or a specialist citer, unowned end) against all in-scope citations; concentration of between-firm cross citations by citing firm &
+\raggedright No tests and no verdict; co-classification is not described as flow; within-firm shares are not read as organisational mechanisms &
+\raggedright Section~\ref{sec:study2_locus}; Figure~\ref{fig:plan_c_locus} \tabularnewline
+\addlinespace
+\raggedright 6.~Portfolio-and-degree firm null (\texttt{11117c4}) &
+\raggedright Frozen before any replicate; data-informed. Known: all other results, including the P5--Plan~4 contradiction &
+\raggedright Plan~4's T1 and T2, with owner sets permuted within type $\times$ year (or S-tech) $\times$ out- and in-degree classes (0--9, 10+) &
+\raggedright Validity gate: median Spearman $\rho$ of firm degree $\geq$ 0.90 and of strength $\geq$ 0.95, otherwise \texttt{INVALID\_\allowbreak NULL}; if valid, Plan~4's rule &
+\raggedright \texttt{INVALID\_\allowbreak NULL} in both schemes ($\rho$ degree 0.817, 0.825); descriptive values in Table~\ref{tab:app_plan6} \tabularnewline
+\addlinespace
+\raggedright 7.~Co-occurrence vs flow across field pairs (\texttt{e6e5a52}) &
+\raggedright Frozen 2026-11-19, before any pair-level co-classification or citation quantity was computed; data-informed. Known: all other results, including the AI--decision contrast between literature co-occurrence and patent flow, which motivated the plan &
+\raggedright Pairs of the 185 CPC main groups in G06/G16/H04 with $\geq$2,000 patents; co-occurrence = co-classification O/E, flow = Plan~1 citation OE; gap = lowest quartile; PPV = P(flow gap $\mid$ co-occurrence gap), reversal = P(flow OE $\geq 1$ $\mid$ co-occurrence gap), Spearman $\rho$, never co-classified pairs; field-cluster bootstrap (1,000 replicates); S1--S5 descriptive &
+\raggedright \texttt{RELIABLE} if PPV $\geq$ 0.80 and reversal $\leq$ 0.05; \texttt{UNRELIABLE} if PPV $<$ 0.50 or reversal $\geq$ 0.20; otherwise \texttt{MODERATE} &
+\raggedright \texttt{MODERATE} (PPV 0.668, reversal 0.070); Section~\ref{sec:study2_cooc_flow}; Table~\ref{tab:app_plan7} \tabularnewline
+\addlinespace
+\raggedright 8.~Taxonomic distance and divergence (\texttt{6a35b21}) &
+\raggedright Frozen 2026-11-19, before any breakdown of the Plan~7 pairs by distance, size or volume; data-informed. Known: Plan~7's aggregate results, whose disagreement rate motivated the plan &
+\raggedright The 16,703 Plan~7 pairs by CPC distance (same subclass; same class, different subclass; different class); $\Delta$ = percentile rank of flow OE minus that of co-occurrence O/E; controls: log pair size, size asymmetry, log $E_{\mathrm{flow}}$; field-cluster bootstrap (1,000 replicates); S1--S3 descriptive &
+\raggedright H8a ($\Delta$ rises with distance) supported if the level-3 OLS coefficient is $>0$ with a 95\% CI excluding 0 and mean $\Delta$ is ordered level 1 $<$ 2 $<$ 3; H8b supported if, among co-occurrence gaps, the level-3 minus levels-1/2 false-gap difference is $>0$ with a 95\% CI excluding 0; if H8a fails, no claim that taxonomy explains the disagreement &
+\raggedright H8a and H8b \texttt{NOT\_\allowbreak SUPPORTED}; H8b difference $-0.094$, opposite to the prediction; Section~\ref{sec:study2_cooc_flow}; Table~\ref{tab:app_plan8} \tabularnewline
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[tbp]
+\centering
+\caption{Amendments and recorded deviations. Amendments are appended to the frozen texts, which remain unchanged.}
+\label{tab:app_amend}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{1.3cm}p{1.2cm}p{2.6cm}p{6.4cm}p{3.1cm}}
+\toprule
+Item & Plan & When & Change & Effect on design \tabularnewline
+\midrule
+\raggedright A1 & \raggedright 1 & \raggedright 2026-11-18, before any citation data or result was computed (\texttt{a158e70}) & \raggedright The CPC file labels inventive codes ``inventional''; the code accepts both spellings so that sensitivity check s4 keeps its meaning. CPC rows are loaded in chunks. & \raggedright None \tabularnewline
+\addlinespace
+\raggedright A2 & \raggedright 1 & \raggedright 2026-11-18, after the run (data note) & \raggedright Before 2013, non-examiner citations are labelled ``cited by other'', so the applicant-only specification effectively covers citing years 2013--2025; s1 (all categories) agrees with the primary verdict. H3, whether assignees broker a \emph{domain-level} hole, was conditional on H1 and was not run. The firm-level question (are specialist firms separated, and do mixed firms span the separation, whatever the domain verdict) was preregistered separately in Plan~3 (P5) and followed up in Plans~4 and~6. & \raggedright None to H1; H3 moot; firm-level question re-posed in Plans 3, 4 and 6 \tabularnewline
+\addlinespace
+\raggedright B1 & \raggedright 2 & \raggedright 2026-11-18, after the run & \raggedright M06 accepted 0 of 21,843,600 proposed swaps because each document is a complete row $\times$ column block; the preregistered core is 0 by construction and uninformative. Three-test cells are reported as exploratory. The replacement M06-P was specified only after this failure and after the Plan~2 three-test cell results were known; it was then frozen in Plan~3 (module P1, \texttt{d641256}) before it was computed. The Plan~2 result file records only the degenerate core; all M06-P counts come from the Plan~3 P1 output. & \raggedright Documented, data-informed deviation from Plan~2 \tabularnewline
+\addlinespace
+\raggedright Seeding & \raggedright 4 & \raggedright Before any null replicate finished (\texttt{1eb7319}) & \raggedright The first run was stopped by host memory pressure after reproducing P5 exactly. The run was made resumable; each replicate $r$ of scheme $s$ uses its own seed sequence [20261119, $s$, $r$] instead of one stream. & \raggedright Statistic, strata and rule unchanged \tabularnewline
+\addlinespace
+\raggedright P6, P10 & \raggedright 3 & \raggedright Recorded with results & \raggedright The P6 cross-weight-retained metric is identically 1 by construction; P10 Limitation Scout is \texttt{NOT\_\allowbreak APPLICABLE} (patents have no limitation section). & \raggedright Reported as uninformative \tabularnewline
+\addlinespace
+\raggedright Ref.\ exclusion & \raggedright 5 & \raggedright 2026-11-19, frozen with Plan~5 (\texttt{100f06a}) & \raggedright The reference-set exclusion now drops every name beginning with \texttt{G06Q10}, so that subgroup families of \texttt{G06Q10} are excluded too. For main groups this is identical to Plan~1's rule. & \raggedright None for main groups (the 179 groups are unchanged) \tabularnewline
+\addlinespace
+\raggedright C1 & \raggedright 5 & \raggedright 2026-11-19, after the first Plan~5 results, before C-e/C-f were computed (\texttt{e6dce5c}) & \raggedright DEC with any \texttt{/06} code keeps 2,318 patents also coded \texttt{/04} and drops only the 3,575 \texttt{/04}-only patents. C1 adds two strict specifications, C-e and C-f, in which DEC is \texttt{/06} with no \texttt{/04} code (31,608 patents), against main groups and subgroup families. & \raggedright Rule unchanged; verdict specifications C-a, C-b, C-c, C-e, C-f \tabularnewline
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[tbp]
+\centering
+\caption{Plan~6, portfolio-and-degree firm null (1,000 replicates per scheme; DIRECT; E3.7). The null failed its preregistered validity gate (\texttt{INVALID\_\allowbreak NULL}) in both schemes. As the preregistration requires, T1 and T2 are reported as descriptive only and are not interpreted. A 2-replicate smoke test, with T1 and T2 sealed unread, had shown the gate failing before the full run. Observed values: T1 0.240, T2 0.358.}
+\label{tab:app_plan6}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lll}
+\toprule
+& Primary (type $\times$ year) & S-tech (+ technology mix) \\
+\midrule
+Median Spearman $\rho$, firm degree (gate $\geq$ 0.90) & 0.817 & 0.825 \\
+Median Spearman $\rho$, firm strength (gate $\geq$ 0.95) & 0.952 & 0.956 \\
+Firms with null degree within $\pm$20\% of observed & 0.336 & 0.366 \\
+Singleton-stratum patent share & 0.0052 & 0.062 \\
+\midrule
+\multicolumn{3}{l}{\emph{Descriptive only; not interpreted}} \\
+T1 null median [95\%], one-sided $p$ & 0.315 [0.286--0.346], .001 & 0.249 [0.224--0.273], .236 \\
+T2 null median [95\%], one-sided $p$ & 0.130 [0.127--0.135], 1.000 & 0.177 [0.172--0.184], 1.000 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[tbp]
+\centering
+\caption{Plan~7, co-occurrence gaps against flow gaps across pairs of CPC main groups in G06, G16 and H04 (DIRECT; E3.8). PPV: share of co-occurrence gaps that are also flow gaps (base rate 0.250 in the primary specification); reversal: share of co-occurrence gaps with flow OE $\geq$ 1. Only the primary specification carries the preregistered label; S1--S5 are descriptive, and their labels apply the same rule for comparison. Primary 95\% field-bootstrap intervals: PPV 0.610--0.721, reversal 0.046--0.098, $\rho$ 0.777--0.831.}
+\label{tab:app_plan7}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}p{5.6cm}rrrrl@{}}
+\toprule
+Specification & Eligible pairs & PPV & Reversal & Spearman $\rho$ & Label \\
+\midrule
+Primary (lowest quartile; applicant citations) & 16,703 & 0.668 & 0.070 & 0.804 & \texttt{MODERATE} \\
+S1 absolute cut-points (O/E $\leq$ 0.5 on both sides)$^{a}$ & 16,703 & 0.522 & 0.229 & 0.804 & \texttt{UNRELIABLE} \\
+S2 all citation categories & 16,703 & 0.686 & 0.054 & 0.826 & \texttt{MODERATE} \\
+S3 $E \geq 20$ on both measures & 14,486 & 0.667 & 0.064 & 0.812 & \texttt{MODERATE} \\
+S4 lowest decile$^{b}$ & 16,703 & 0.407 & 0.075 & 0.804 & \texttt{UNRELIABLE} \\
+S5 2013--2018 & 14,811 & 0.628 & 0.076 & 0.795 & \texttt{MODERATE} \\
+S5 2019--2025 & 15,741 & 0.640 & 0.102 & 0.772 & \texttt{MODERATE} \\
+\bottomrule
+\multicolumn{6}{p{0.95\linewidth}}{\raggedright $^{a}$ The cut-point 0.5 is looser than the primary co-occurrence quartile (0.0269), so S1 is a different, common absolute rule, not a stricter one.} \\
+\multicolumn{6}{p{0.95\linewidth}}{\raggedright $^{b}$ Degenerate on the co-occurrence side: the decile threshold is 0, so the co-occurrence gaps are the 2,974 never co-classified pairs, more than the decile flow-gap set, and the maximum attainable PPV is about 0.56. S4 is therefore not evidence that stricter gap definitions are less accurate.} \\
+\end{tabular}
+\end{table}
+
+\begin{table}[tbp]
+\centering
+\caption{Plan~8, taxonomic distance and the disagreement between co-occurrence and flow (data-informed; DIRECT; E3.9). $\Delta$: percentile rank of flow OE minus that of co-occurrence O/E among the 16,703 eligible Plan~7 pairs. C-gap: co-occurrence gap (lowest quartile, as in Plan~7). Field-bootstrap 95\% intervals (1,000 replicates) in brackets. The PPV and reversal columns are post hoc and descriptive, and level~1 has only 13 C-gaps.}
+\label{tab:app_plan8}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}p{5.4cm}rrrrr@{}}
+\toprule
+Taxonomic level & Pairs & C-gaps & Mean $\Delta$ & PPV$^{a}$ & Reversal$^{a}$ \\
+\midrule
+1 Same subclass & 1,337 & 13 & $-0.023$ & 0.385 & 0.231 \\
+2 Same class, different subclass & 6,547 & 1,252 & 0.022 & 0.605 & 0.101 \\
+3 Different class & 8,819 & 2,911 & $-0.013$ & 0.696 & 0.056 \\
+\midrule
+\multicolumn{6}{@{}l}{\emph{Preregistered tests}} \\
+\multicolumn{6}{@{}p{0.95\linewidth}}{\raggedright H8a, OLS of $\Delta$ with controls (reference level~1): level~2 0.050 [0.029, 0.070]; level~3 0.023 [0.003, 0.046]; the means are not ordered, so \texttt{NOT\_\allowbreak SUPPORTED}.} \\
+\multicolumn{6}{@{}p{0.95\linewidth}}{\raggedright H8b, among C-gaps, level~3 vs levels 1--2: false-gap rate 0.304 vs 0.398, difference $-0.094$ [$-0.199$, $-0.002$]; reversal 0.056 vs 0.103, difference $-0.046$ [$-0.100$, 0.001]; \texttt{NOT\_\allowbreak SUPPORTED}, with the difference opposite to the prediction.} \\
+\midrule
+\multicolumn{6}{@{}l}{\emph{Secondary (descriptive)}} \\
+\multicolumn{6}{@{}p{0.95\linewidth}}{\raggedright S1, $\log \mathrm{OE}_{\mathrm{flow}} - \log \mathrm{OE}_{\mathrm{co}}$ on 13,716 co-classified pairs: level~2 1.015 [0.825, 1.215]; level~3 1.273 [1.085, 1.473]. S2, no controls: level~3 0.010 [$-0.014$, 0.035]. S3: mean $\Delta$ $-0.114$ for 2,055 pairs with a G16 field and $-0.137$ for the 5 AI $\times$ DEC pairs; 294 C-gap reversals, 55.8\% of them at level~3.} \\
+\bottomrule
+\multicolumn{6}{@{}p{0.95\linewidth}}{\raggedright $^{a}$ Post hoc, not preregistered: PPV is the share of C-gaps that are flow gaps; reversal is the share of C-gaps with flow OE $\geq$ 1.} \\
+\end{tabular}
+\end{table}
+
+Study~1 used frozen V9 seeds: 20260918 for the stub Monte Carlo and 20260919 for the document-preserving swap (E1.1). Its data-validity re-analysis (2026-11-18; E1.3--E1.5) was not preregistered. Its verdict was recorded as follows: directional under-integration DEFENSIBLE; ``16 statistically robust depleted pairs'' NOT DEFENSIBLE as measured; Burt structural hole STOP; research gap NOT SUPPORTED. We qualify the first item in this paper. It rests on the attenuation argument, which holds only for non-differential misclassification, whereas same-term self-pairing and model-inferred labels are non-random errors. The removal checks in Table~\ref{tab:app_s1robust} indicate that self-pairing does not appear to be the main driver, although the rule-based keyword matrix also changes the coding instrument; the effect of model-inferred labels is untested. The direction survives every check we could run, but it is descriptive and unconfirmed (Section~\ref{sec:discussion_measurement}).
+
+% ------------------------------------------------------------
+\section{Sensitivity Tables}
+\label{app:sens}
+
+\subsection{Study 1}
+
+Table~\ref{tab:app_v9cells} lists the 16 depleted cells of the frozen V9 analysis, Table~\ref{tab:app_s1robust} the robustness checks of the data-validity re-analysis, and Table~\ref{tab:network_lines} the network lines.
+
+\begin{table}[tbp]
+\centering
+\caption{The 16 V9 depleted cells with observed counts (DIRECT; \texttt{V9\_ROBUSTNESS\_MASTER\_TABLE.csv}). These are depleted cells, not gaps, and they are withdrawn as anchors of the project's model (Section~\ref{sec:discussion_implications}). Same-term self-pairing in the prediction $\times$ prediction cell can deplete cells in its row and column mechanically under fixed margins, but in a rule-based keyword matrix that also excludes the same-term records 13/16 cells keep their direction (Table~\ref{tab:app_s1robust}), so self-pairing does not appear to be the main driver.}
+\label{tab:app_v9cells}
+\footnotesize
+\begin{tabular}{llr}
+\toprule
+AI family & Decision family & $O$ \\
+\midrule
+\texttt{COORDINATION\_EXECUTION} & \texttt{HUMAN\_REVIEW\_ACCOUNTABILITY} & 10 \\
+\texttt{COORDINATION\_EXECUTION} & \texttt{RISK\_ASSESSMENT} & 3 \\
+\texttt{EVALUATION\_ASSESSMENT} & \texttt{ALLOCATION\_PLANNING} & 12 \\
+\texttt{EVALUATION\_ASSESSMENT} & \texttt{PREDICTION\_DIAGNOSIS} & 9 \\
+\texttt{EXPLANATION\_ASSURANCE} & \texttt{ALLOCATION\_PLANNING} & 7 \\
+\texttt{EXPLANATION\_ASSURANCE} & \texttt{EVALUATION\_SELECTION} & 7 \\
+\texttt{EXPLANATION\_ASSURANCE} & \texttt{PREDICTION\_DIAGNOSIS} & 15 \\
+\texttt{GENERATION\_SYNTHESIS} & \texttt{PREDICTION\_DIAGNOSIS} & 7 \\
+\texttt{HUMAN\_AUGMENTATION} & \texttt{EVALUATION\_SELECTION} & 2 \\
+\texttt{HUMAN\_AUGMENTATION} & \texttt{PREDICTION\_DIAGNOSIS} & 3 \\
+\texttt{PREDICTION\_RISK\_ESTIMATION} & \texttt{EVALUATION\_SELECTION} & 8 \\
+\texttt{PREDICTION\_RISK\_ESTIMATION} & \texttt{GENERAL\_DECISION\_PROCESS} & 8 \\
+\texttt{PREDICTION\_RISK\_ESTIMATION} & \texttt{GOVERNANCE\_OVERSIGHT} & 26 \\
+\texttt{PREDICTION\_RISK\_ESTIMATION} & \texttt{HUMAN\_REVIEW\_ACCOUNTABILITY} & 6 \\
+\texttt{PREDICTION\_RISK\_ESTIMATION} & \texttt{INFORMATION\_ACQUISITION} & 21 \\
+\texttt{RECOMMENDATION\_OPTIMIZATION} & \texttt{HUMAN\_REVIEW\_ACCOUNTABILITY} & 8 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[tbp]
+\centering
+\caption{Study~1 robustness checks (DIRECT; data-validity re-analysis, 2026-11-18; E1.3). Core cells are defined by BH-FDR within each test \citep{benjamini1995controlling} combined with agreement across tests, so the core has no single defined false discovery rate. The checks test the stability of the pattern; none of them addresses non-random coding error.}
+\label{tab:app_s1robust}
+\footnotesize
+\begin{tabular}{p{3.6cm}p{11.0cm}}
+\toprule
+Check & Result \tabularnewline
+\midrule
+\raggedright Re-implementation & \raggedright Exact and raw tests reproduce the official q values ($|\Delta q|\leq 6\times10^{-12}$); Jaccard overlap of the 32-cell core .94 \tabularnewline
+\raggedright 20 Monte Carlo seeds & \raggedright 31 cells in the core under every seed, including all 16 depleted cells; 2 boundary cells, exactly the one-in / one-out pair of the human-corrected sidecar \tabularnewline
+\raggedright Exclusion bias & \raggedright Depleted core cells pass the strict filter more often than other cells (38\% vs 28\%) \tabularnewline
+\raggedright Track-stratified null & \raggedright 16/16 depleted and 16/16 enriched cells remain significant with unchanged direction \tabularnewline
+\raggedright Two periods ($\leq$2023 vs $\geq$2024) & \raggedright 16/16 cells depleted in both periods; change does not differ from a permutation null ($p=.86$) \tabularnewline
+\raggedright Keyword (stage-1) coding & \raggedright 13/16 depleted cells keep the same direction \tabularnewline
+\raggedright Same-term self-pairing & \raggedright 33\% of records in the strongest enriched cell pair the same term; removing them drops 2 prediction-related depleted cells from the core \tabularnewline
+\raggedright Rule-based keyword matrix & \raggedright 741 same-term records removed, 1,431 document edges; 13/16 same direction, 6 significant, 0 significantly reversed; only 7 cells reach the four-test core \tabularnewline
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Network lines V6--V11.1.} Successive versions of Study~1 searched citation, co-author and higher-order networks for Burt brokers (Table~\ref{tab:network_lines}). According to these HISTORICAL / USER\_REPORTED records, no line confirmed a broker. The V10.1 external review of 8 candidate pairs refuted 6 and left 2 unresolved. The V11.1 identity and peer validation rejected 3 of 4 candidates and found the evidence on the fourth insufficient.
+
+\begin{table}[tbp]
+  \centering
+  \small
+  \caption{Network search for Burt brokers, V6--V11.1. All rows are HISTORICAL / USER\_REPORTED. They are taken from earlier project logs or reported by the researcher, and the raw files were not re-verified.}
+  \label{tab:network_lines}
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{l p{0.17\linewidth} p{0.33\linewidth} p{0.17\linewidth} l}
+    \toprule
+    Version & Line & Scale & Result & Grade \\
+    \midrule
+    V6 & citation SNA & 458 leads; 13 candidates & 0 confirmed & HIST./USER \\
+    V7 & author SNA & 446 works; 8 cross-domain authors; 2 focal candidates & 0 confirmed & HIST./USER \\
+    V8 & citation enrichment & 1,111 citing works; 5,592 references & unconfirmed & HIST./USER \\
+    V9 & citation line & 3,983 discovery + 3,897 confirmation works (7,880 total) & no confirmed Burt result & HIST./USER \\
+    V10 & higher-order network & 14 exploratory candidates $\rightarrow$ 8 pairs / 7 brokers & exploratory only & HIST./USER \\
+    V10.1 & external review & 8 candidate pairs & 6 refuted, 2 unresolved, 0 confirmed & HIST./USER \\
+    V11 & co-author SNA & 26,443 V9 authors; 30,140 merged authors & 0 confirmed & HIST./USER \\
+    V11.1 & external identity / peer validation & 95 OpenAlex requests; 7,880 works examined; 4 candidates & 3 rejected, 1 insufficient, 0 confirmed & HIST./USER \\
+    \bottomrule
+  \end{tabular}
+
+  \smallskip
+  \raggedright\footnotesize SNA = social network analysis. HIST./USER = HISTORICAL / USER\_REPORTED.
+\end{table}
+
+The co-author lines (V7, V11) and the higher-order line (V10) rest on one-mode projections of affiliation data \citep{newman2001scientific}, so they could not have carried Burt's construct even with perfect data (Section~\ref{sec:theory_cooccurrence}). The citation lines (V6, V8, V9) could carry directed flow in principle but screened for candidate brokers in samples of the literature instead of testing group-level flows against a calibrated null. Centrality screens, such as the share of shortest paths through a node \citep{freeman1977set}, do not establish brokerage, which requires directed open two-paths between actors with group membership \citep{gould1989structures} and non-redundant real contacts \citep{burt1992structural}.
+
+\subsection{Study 2}
+
+Table~\ref{tab:app_oeyear} gives the yearly intensities behind Figure~\ref{fig:patent_trend} and the synthetic calibration run before the real data. Table~\ref{tab:app_suite} summarises the calibration (P2), time-split (P3) and Gap Validity (P9) modules, and Table~\ref{tab:app_lift} gives the label face-validity lifts (P4). P4 is a title-keyword check, not a human coding audit.
+
+\begin{table}[tbp]
+\centering
+\caption{OE(AI,DEC) by citing grant year, primary specification (applicant citations), with 95\% CI; and synthetic calibration of the aggregate rule (DIRECT; E3.1). The synthetic generator is simple (field-local citing with planted suppression), and its no-hole baseline lies far below the real OE.}
+\label{tab:app_oeyear}
+\footnotesize
+\begin{tabular}{lrl@{\hspace{1.2cm}}lrl}
+\toprule
+Year & OE & 95\% CI & Year & OE & 95\% CI \\
+\midrule
+2013 & 3.90 & 3.16--4.85 & 2020 & 3.55 & 3.18--3.94 \\
+2014 & 2.84 & 2.42--3.41 & 2021 & 3.34 & 3.03--3.69 \\
+2015 & 3.79 & 3.14--4.55 & 2022 & 2.95 & 2.62--3.30 \\
+2016 & 4.05 & 3.42--4.75 & 2023 & 3.05 & 2.78--3.34 \\
+2017 & 3.29 & 2.78--3.86 & 2024 & 2.69 & 2.40--2.98 \\
+2018 & 3.20 & 2.81--3.64 & 2025 & 2.34 & 2.08--2.64 \\
+2019 & 3.99 & 3.48--4.54 & & & \\
+\midrule
+\multicolumn{6}{p{8.4cm}}{WLS slope $-0.097$ per year (95\% CI $-0.130$ to $-0.065$); last-3-year OE 2.69 vs DEC-side reference median 1.095 (AI side 1.240); label \texttt{PERSISTENT} (slope CI not above 0).} \\
+\midrule
+\multicolumn{6}{l}{\emph{Synthetic calibration (before real data)}} \\
+\multicolumn{6}{p{8.4cm}}{No hole: OE 0.388 vs reference lowest quartile 0.356; ratio 0.99 (0.79--1.21) $\rightarrow$ \texttt{HOLE\_\allowbreak NOT\_\allowbreak SUPPORTED}.} \\
+\multicolumn{6}{p{8.4cm}}{30\% suppression: OE 0.275; ratio 0.66 (0.52--0.83) $\rightarrow$ detected.} \\
+\multicolumn{6}{p{8.4cm}}{50\% suppression: OE 0.223; ratio 0.47 $\rightarrow$ detected.} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[tbp]
+\centering
+\caption{Replication suite: calibration (P2), time split (P3) and Gap Validity (P9). Part~A is co-classification; Part~B is applicant citations (DIRECT; E3.3). The P2 null matrices are stub permutations that treat edges as independent, so they cannot detect anti-conservatism from document clustering. The first half of Part~A is small. The P9 entries are diagnostics, not evidence: the zero indirect term is an identity of bipartite graphs, and alternative routes are near-guaranteed in a dense $6\times7$ matrix.}
+\label{tab:app_suite}
+\footnotesize
+\begin{tabular}{lp{6.0cm}ll}
+\toprule
+Module & Statistic & Part A & Part B \\
+\midrule
+P2 seeds & Seeds (20 $\times$ 10,000): cells always q $\leq$ .05 / boundary & 20 / 4 & 22 / 0 \\
+P2 null & Mean false cells per matrix (1,000 null matrices) & 0.045 & 0.049 \\
+ & Share of matrices with any false cell & 3.6\% & 4.4\% \\
+P2 power & 20\% depletion detected, cells with $E\geq100$ & 18/27 = 67\% & 23/29 = 79\% \\
+P2 segmentation & S1 inventive codes only: depleted (overlap with P1) & 8 (6) & 11 (8) \\
+ & S2 single-code documents: depleted (overlap with P1) & 8 (5) & 8 (4) \\
+\midrule
+P3 time split & First half: documents, depleted & 2010--2017: 543, 0 & 2013--2018: 4,772, 3 \\
+ & Second half: documents, depleted & 2018--2025: 4,773, 8 & 2019--2025: 26,071, 11 \\
+ & Depleted cells replicated in both halves & 0 & 0 \\
+\midrule
+P9 Gap Validity & Indirect constraint term (bipartite; identity) & 0 & 0 \\
+ & Alternative length-3 routes per depleted cell & 20--30 & 20--30 \\
+ & Depleted cells at q $\leq$ .01 vs q $\leq$ .05 & 7 vs 9 & 9 vs 10 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[tbp]
+\centering
+\caption{Label face validity (P4): lift of the title-keyword hit rate over other AI$\cup$DEC patents. A label passes if lift $\geq$ 1.5; all 11 pass (DIRECT; E3.3). This is not inter-rater reliability.}
+\label{tab:app_lift}
+\footnotesize
+\begin{tabular}{lr@{\hspace{1.2cm}}lr}
+\toprule
+AI-method label & Lift & Decision-function label & Lift \\
+\midrule
+G06N3 & 4.69 & FORECAST\_OPTIMISE & 3.31 \\
+G06N5 & 7.81 & RESOURCE\_SCHEDULING & 4.51 \\
+G06N7 & 14.28 & WORKFLOW & 4.88 \\
+G06N10 & 1,650 & RISK & 55.39 \\
+G06N20 & 2.18 & STRATEGY (hit rate 4.5\%) & 4.40 \\
+ & & PERFORMANCE & 6.32 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Replication suite, P6--P10.}
+\label{app:suite_detail}
+P6 (removal falsification): the ten MIXED firms with degree at least 5 and the lowest constraint were International Business Machines, General Electric, Tesla, ioCurrents, Google, Accenture, Amazon Technologies, T-Mobile USA, Optum Services and Strong Force VCN Portfolio 2019. After all 10 are removed, AI\_FIRM and DEC\_FIRM firms remain connected, and the largest component containing both groups shrinks only from 5,954 to 5,563 firms: 10/10 candidates are refuted as indispensable brokers. The suite's cross-weight-retained metric is identically 1 by construction, so we draw no inference from it. P7 finds 2,546 co-assignment hyperedges, of which 32\% join an AI\_FIRM with a DEC\_FIRM or MIXED firm, and P8 checked 54 firms and found 0 possible alias collisions (Table~\ref{tab:suite}). The Gap Validity diagnostics (P9) are an identity and near-guaranteed in a dense 6$\times$7 matrix, so neither is evidence (Table~\ref{tab:app_suite}). The Limitation Scout (P10) does not apply to patents.
+
+\subsection{External-data feasibility}
+
+Table~\ref{tab:app_sources} gives the scale and outcome of the six public sources screened for flow validity.
+
+\begin{table}[tbp]
+\centering
+\caption{Six public sources screened for flow validity (DIRECT; E2). No source passes the independent-relation and validation gates.}
+\label{tab:app_sources}
+\footnotesize
+\begin{tabular}{p{2.2cm}p{6.6cm}p{5.6cm}}
+\toprule
+Source & Scale & Relation type and outcome \tabularnewline
+\midrule
+\raggedright CORDIS H2020 & \raggedright 35,389 projects; 179,063 organisation participations; keyword candidates 195 projects $\times$ 1,105 organisations = 1,436 edges; projection 1,049 nodes, 12,181 edges, 102,660 within-project triads, 156 edges recurring across $\geq$2 projects & \raggedright Co-membership (affiliation). Degree-preserving bipartite swap null (49 reps): 5 testable candidates, $p=.41$--$.86$, BH q $\geq$ .80; 0 significant \tabularnewline
+\raggedright GLEIF Level-2 & \raggedright 663,449 relationship records (481,247 active) & \raggedright Legal consolidation, not information flow \tabularnewline
+\raggedright OpenAlex & \raggedright 8 works & \raggedright Fails gates \tabularnewline
+\raggedright OCDS & \raggedright 0 verifiable buyer--supplier edges in the records retrieved & \raggedright Fails gates \tabularnewline
+\raggedright SEC & \raggedright Not fetched (requires a genuine contact User-Agent) & \raggedright Not assessed \tabularnewline
+\raggedright PyPSA & \raggedright 8,786 buses & \raggedright Physical grid topology, not information flow \tabularnewline
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ------------------------------------------------------------
+\section{Systematic Review: Protocol, Flow and Reliability}
+\label{app:review}
+
+\paragraph{Protocol.} The protocol (version 1.0) was committed to the project repository on 2026-11-19, before any record was retrieved beyond the hit counts used to size the streams. It fixes the database, the queries, the sampling seed (20261119), the eligibility criteria, the coding scheme, the reliability procedure, the outputs and the reading rule: the inference counts as a published practice if at least 10 included studies draw a structural-hole or broker claim from a co-occurrence network. Amendment S1 is described below. The queries, the retrieval log, the screening and coding decisions, the agreement statistics and the list of included studies (metadata and codes only) are in \texttt{paper/review\_lit/}. Abstracts are copyrighted and are not published.
+
+\paragraph{Search.} OpenAlex was searched in titles and abstracts for publications dated from 2000-01-01, on 2026-11-19. The six stream-S queries paired ``structural hole'' with co-word, keyword, co-citation, co-occurrence, bibliometric and patent (7, 63, 11, 19, 43 and 165 hits; 261 unique records). Records were deduplicated by OpenAlex identifier and then by DOI, and a record found in several streams was kept in the first stream in the order S, G1, G2, G3.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Review flow by stream.}
+  \label{tab:app_review_flow}
+  \small
+  \begin{tabular}{lrrrrr}
+    \toprule
+    & S & G1 & G2 & G3 & Total \\
+    \midrule
+    Hits & 308 & 133 & 971 & 1,146 & \\
+    After deduplication & 261 & 133 & 964 & 1,087 & \\
+    Screening set (all or sampled) & 261 & 133 & 120 & 80 & 594 \\
+    Screened (abstract available) & 183 & 117 & 110 & 66 & 476 \\
+    Included & 131 & 31 & 25 & 17 & 204 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\paragraph{Screeners, coders and adjudicator.} All were Claude (Anthropic) LLM subagents; the model version was not recorded. Agreement is therefore between model instances, not human raters, and no human-coded validation subsample exists.
+
+\paragraph{Screening and amendment S1.} A primary screener screened all 476 records with an abstract; a second screener, blind to the first, screened a random 25\% (119 records). Agreement on include or exclude was $\kappa = 0.361$ (raw agreement 0.681; 38 disagreements), and 243 of the 476 primary decisions were marked low-confidence. Most disagreements concerned studies that compute Burt measures on co-patenting or co-authorship networks and use them as predictors: the guide lists both relation types and Burt measures, so such studies meet the criteria. Amendment S1, recorded after screening and before adjudication or coding, therefore had the adjudicator re-screen all 254 disputed or low-confidence records under the unchanged guide plus that note; the adjudicator reversed 26 decisions. High-confidence primary decisions outside the overlap stand.
+
+\paragraph{Coding.} Two coders, blind to each other, coded all 204 included studies from title and abstract (no coder used full text, so the evidence basis is the abstract for all 204). 182 studies had at least one disagreement on the claim type or on F1--V, and a third agent adjudicated those codes. Where a descriptive code (relation, measure) differed and was not adjudicated, the first coder's code was kept.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Agreement between the two blind coders ($n = 204$).}
+  \label{tab:app_review_kappa}
+  \small
+  \begin{tabular}{lrr}
+    \toprule
+    Variable & $\kappa$ & Raw agreement \\
+    \midrule
+    D1 relation type & 0.739 & 0.809 \\
+    D2 claim type & 0.428 & 0.593 \\
+    D3 measure named & 0.558 & 0.706 \\
+    F1 projection read as flow or brokerage & 0.612 & 0.784 \\
+    F2 Burt measure or betweenness on co-occurrence & 0.626 & 0.789 \\
+    F3 absence read as a gap without a baseline & 0.192 & 0.657 \\
+    F4 label validity unreported & 0.534 & 0.882 \\
+    V validation against independent evidence & 0.312 & 0.657 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\paragraph{Final codes.} Claim type: structural hole 99, several 33, broker 3, gap 66, unclear 3. Measure named: Burt constraint or effective size 111, cluster or map position 39, absent or sparse links 35, none 12, betweenness 7. Relation type: patent co-inventorship, co-application or co-classification 73, mixed 66, co-word 42, other 11, co-authorship 6, co-membership 2, unclear 4. Publication period: 2000--2014, 11 studies; 2015--2019, 28; 2020--2026, 165. ``Unclear'' codes over all 204 studies: F1 9, F2 6, F3 4, F4 20, V 4. Among the 73 patent-network studies, 70 are coded F1, 72 F2 and 63 V; among the 42 co-word studies, 28 are coded F3 and 2 V. All 73 patent-network studies are structural-hole or broker claims in stream~S; the remaining such claims use mixed (28), co-word (11), other (11), co-authorship (6), unclear (4) and co-membership (2) relations. Work type (OpenAlex): article 151, review 15, conference paper 11, conference abstract 11 (all Academy of Management Proceedings), preprint 6, dissertation 6, book chapter 3, dataset 1.
+
+\paragraph{Re-analysis R1 (protocol \S8).} The re-analysis was preregistered before any data were downloaded. A step-0 record of the original article's measures followed. The article's full text was not accessible, and the record shows that it reads betweenness and the number of directorships as proxies of influence, while the broker reading appears in the citing literature. Amendment R1-A1 then added the article's August 2009 snapshot. The data are the public two-mode director $\times$ board files (CC BY-NC 3.0; not redistributed; hashes recorded). The null is a curveball randomisation that keeps every director's number of seats and every board's size. On the two-mode graph, constraint equals 1/(number of boards) for all 1,421 directors in the primary snapshot. All four snapshots meet the rule that projection closure is dominated by board cliques.
+
+\begin{table}[htbp]
+  \centering
+  \caption{R1, Norwegian boards: statistics against an affiliation-preserving null. Primary snapshot August 2011 (1,421 directors, 513 women, 55 with $\geq 3$ seats; 1,000 replicates). One-sided $p$: upper tail for S1 and S2, lower tail for S3 and S4. Secondary snapshots (200 replicates, descriptive): 2008-02 and 2009-08 \texttt{EXPLAINED}; 2002-05 (pre-quota, 87 women) \texttt{MIXED}, with S3 $p=.005$.}
+  \label{tab:app_r1}
+  \small
+  \begin{tabular}{lrrr}
+    \toprule
+    Statistic & Observed & Null median [95\%] & $p$ \\
+    \midrule
+    S1 women $-$ men, mean betweenness & 0.000787 & 0.001477 [0.000937, 0.002154] & .996 \\
+    S2 multi-seat, median betweenness & 0.0142 & 0.0225 [0.0171, 0.0293] & 1.000 \\
+    S3 women $-$ men, median constraint & $-0.0155$ & $-0.0209$ [$-0.0545$, 0.0010] & .653 \\
+    S4 multi-seat, median constraint & 0.192 & 0.178 [0.167, 0.191] & .987 \\
+    \midrule
+    \multicolumn{4}{l}{Overall: \texttt{BROKERAGE\_\allowbreak READING\_\allowbreak EXPLAINED}} \\
+    \bottomrule
+  \end{tabular}
+\end{table}

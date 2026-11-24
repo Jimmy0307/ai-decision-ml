@@ -1,0 +1,36 @@
+{
+ "screening_set": 594,
+ "excluded_no_abstract": 118,
+ "screened": 476,
+ "re_screened_by_adjudicator": 254,
+ "adjudicator_reversals": 26,
+ "missing_adjudication": [],
+ "included": 204,
+ "excluded": 272,
+ "included_by_stream": {
+  "S": 131,
+  "G1": 31,
+  "G2": 25,
+  "G3": 17
+ },
+ "screened_by_stream": {
+  "S": 183,
+  "G1": 117,
+  "G2": 110,
+  "G3": 66
+ },
+ "included_claim_type": {
+  "hole": 97,
+  "several": 29,
+  "broker": 14,
+  "gap": 64
+ },
+ "included_relation_type": {
+  "coauthorship": 32,
+  "coword": 70,
+  "cocitation": 8,
+  "patent": 75,
+  "other": 5,
+  "comembership": 14
+ }
+}

@@ -1,0 +1,741 @@
+{
+  "preregistration": "PREREGISTRATION_FULL_SUITE.md v1.0",
+  "P1": {
+    "A": {
+      "cells": 42,
+      "edges": 14573,
+      "raw_records": 35363,
+      "observed_nonzero": 37,
+      "main_q05": 20,
+      "exact_q05": 20,
+      "raw_q05": 29,
+      "documents": 5316,
+      "m06p": {
+        "documents": 5316,
+        "strata": 21,
+        "exchangeable_strata": 19,
+        "exchangeable_documents": 5314
+      },
+      "m06p_q05": 22,
+      "adapted_full_core_depleted": 8,
+      "adapted_full_core_enriched": 7,
+      "three_test_depleted": 9,
+      "three_test_enriched": 8
+    },
+    "B": {
+      "cells": 42,
+      "edges": 66056,
+      "raw_records": 120475,
+      "observed_nonzero": 41,
+      "main_q05": 22,
+      "exact_q05": 22,
+      "raw_q05": 27,
+      "documents": 30843,
+      "m06p": {
+        "documents": 30843,
+        "strata": 21,
+        "exchangeable_strata": 19,
+        "exchangeable_documents": 30841
+      },
+      "m06p_q05": 25,
+      "adapted_full_core_depleted": 9,
+      "adapted_full_core_enriched": 8,
+      "three_test_depleted": 10,
+      "three_test_enriched": 8
+    },
+    "B_all": {
+      "cells": 42,
+      "edges": 80849,
+      "raw_records": 146404,
+      "observed_nonzero": 42,
+      "main_q05": 21,
+      "exact_q05": 21,
+      "raw_q05": 26,
+      "documents": 38252,
+      "m06p": {
+        "documents": 38252,
+        "strata": 22,
+        "exchangeable_strata": 21,
+        "exchangeable_documents": 38251
+      },
+      "m06p_q05": 24,
+      "adapted_full_core_depleted": 8,
+      "adapted_full_core_enriched": 8,
+      "three_test_depleted": 9,
+      "three_test_enriched": 8
+    },
+    "convergent_adapted_full_core_depleted": [
+      [
+        "G06N10",
+        "PERFORMANCE"
+      ],
+      [
+        "G06N20",
+        "FORECAST_OPTIMISE"
+      ],
+      [
+        "G06N3",
+        "MGMT_GENERAL"
+      ],
+      [
+        "G06N3",
+        "RISK"
+      ],
+      [
+        "G06N5",
+        "RISK"
+      ]
+    ],
+    "convergent_three_test_depleted": [
+      [
+        "G06N10",
+        "PERFORMANCE"
+      ],
+      [
+        "G06N20",
+        "FORECAST_OPTIMISE"
+      ],
+      [
+        "G06N3",
+        "MGMT_GENERAL"
+      ],
+      [
+        "G06N3",
+        "RISK"
+      ],
+      [
+        "G06N5",
+        "RISK"
+      ]
+    ]
+  },
+  "P2": {
+    "seed_A": {
+      "seeds": 20,
+      "cells_always_q05": 20,
+      "boundary_cells": [
+        [
+          "G06N5",
+          "WORKFLOW",
+          "ENRICHED",
+          2
+        ],
+        [
+          "G06N20",
+          "STRATEGY",
+          "ENRICHED",
+          2
+        ],
+        [
+          "G06N3",
+          "PERFORMANCE",
+          "ENRICHED",
+          3
+        ],
+        [
+          "G06N_OTHER",
+          "RESOURCE_SCHEDULING",
+          "DEPLETED",
+          5
+        ]
+      ]
+    },
+    "fpr_power_A": {
+      "null_reps": 1000,
+      "mean_false_cells": 0.045,
+      "share_any_false": 0.036,
+      "power_cells_tested": 27,
+      "power_detected_20pct": 18,
+      "power": 0.6666666666666666
+    },
+    "seed_B": {
+      "seeds": 20,
+      "cells_always_q05": 22,
+      "boundary_cells": []
+    },
+    "fpr_power_B": {
+      "null_reps": 1000,
+      "mean_false_cells": 0.049,
+      "share_any_false": 0.044,
+      "power_cells_tested": 29,
+      "power_detected_20pct": 23,
+      "power": 0.7931034482758621
+    },
+    "S1_inventive_A": {
+      "cells": 42,
+      "edges": 12091,
+      "raw_records": 28072,
+      "observed_nonzero": 37,
+      "main_q05": 25,
+      "exact_q05": 24,
+      "raw_q05": 28,
+      "documents": 4765,
+      "m06p": {
+        "documents": 4765,
+        "strata": 20,
+        "exchangeable_strata": 18,
+        "exchangeable_documents": 4763
+      },
+      "m06p_q05": 22,
+      "adapted_full_core_depleted": 8,
+      "adapted_full_core_enriched": 7,
+      "three_test_depleted": 10,
+      "three_test_enriched": 9,
+      "overlap_with_P1_depleted": 6,
+      "three_test_overlap_with_P1": 8
+    },
+    "S1_inventive_B": {
+      "cells": 42,
+      "edges": 53264,
+      "raw_records": 91000,
+      "observed_nonzero": 40,
+      "main_q05": 24,
+      "exact_q05": 24,
+      "raw_q05": 27,
+      "documents": 26618,
+      "m06p": {
+        "documents": 26618,
+        "strata": 19,
+        "exchangeable_strata": 18,
+        "exchangeable_documents": 26617
+      },
+      "m06p_q05": 26,
+      "adapted_full_core_depleted": 11,
+      "adapted_full_core_enriched": 9,
+      "three_test_depleted": 12,
+      "three_test_enriched": 9,
+      "overlap_with_P1_depleted": 8,
+      "three_test_overlap_with_P1": 9
+    },
+    "S2_single_code_A": {
+      "cells": 42,
+      "edges": 1894,
+      "raw_records": 3152,
+      "observed_nonzero": 31,
+      "main_q05": 15,
+      "exact_q05": 15,
+      "raw_q05": 21,
+      "documents": 1894,
+      "m06p": {
+        "documents": 1894,
+        "strata": 1,
+        "exchangeable_strata": 1,
+        "exchangeable_documents": 1894
+      },
+      "m06p_q05": 15,
+      "adapted_full_core_depleted": 8,
+      "adapted_full_core_enriched": 7,
+      "three_test_depleted": 8,
+      "three_test_enriched": 7,
+      "overlap_with_P1_depleted": 5,
+      "three_test_overlap_with_P1": 5
+    },
+    "S2_single_code_B": {
+      "cells": 42,
+      "edges": 13000,
+      "raw_records": 20602,
+      "observed_nonzero": 33,
+      "main_q05": 20,
+      "exact_q05": 20,
+      "raw_q05": 19,
+      "documents": 13000,
+      "m06p": {
+        "documents": 13000,
+        "strata": 1,
+        "exchangeable_strata": 1,
+        "exchangeable_documents": 13000
+      },
+      "m06p_q05": 20,
+      "adapted_full_core_depleted": 8,
+      "adapted_full_core_enriched": 10,
+      "three_test_depleted": 8,
+      "three_test_enriched": 10,
+      "overlap_with_P1_depleted": 4,
+      "three_test_overlap_with_P1": 4
+    }
+  },
+  "P3": {
+    "A_2010_2017": {
+      "cells": 42,
+      "edges": 897,
+      "raw_records": 1221,
+      "observed_nonzero": 32,
+      "main_q05": 1,
+      "exact_q05": 1,
+      "raw_q05": 7,
+      "documents": 543,
+      "m06p": {
+        "documents": 543,
+        "strata": 13,
+        "exchangeable_strata": 9,
+        "exchangeable_documents": 539
+      },
+      "m06p_q05": 4,
+      "adapted_full_core_depleted": 0,
+      "adapted_full_core_enriched": 1,
+      "three_test_depleted": 0,
+      "three_test_enriched": 1
+    },
+    "A_2018_2025": {
+      "cells": 42,
+      "edges": 13676,
+      "raw_records": 34142,
+      "observed_nonzero": 37,
+      "main_q05": 18,
+      "exact_q05": 18,
+      "raw_q05": 27,
+      "documents": 4773,
+      "m06p": {
+        "documents": 4773,
+        "strata": 21,
+        "exchangeable_strata": 19,
+        "exchangeable_documents": 4771
+      },
+      "m06p_q05": 17,
+      "adapted_full_core_depleted": 8,
+      "adapted_full_core_enriched": 5,
+      "three_test_depleted": 8,
+      "three_test_enriched": 7
+    },
+    "A_replicated_three_test_depleted": [],
+    "A_replicated_adapted_core_depleted": [],
+    "A_discovery_three_test_depleted": 0,
+    "B_2013_2018": {
+      "cells": 42,
+      "edges": 8708,
+      "raw_records": 12650,
+      "observed_nonzero": 35,
+      "main_q05": 9,
+      "exact_q05": 9,
+      "raw_q05": 10,
+      "documents": 4772,
+      "m06p": {
+        "documents": 4772,
+        "strata": 18,
+        "exchangeable_strata": 18,
+        "exchangeable_documents": 4772
+      },
+      "m06p_q05": 9,
+      "adapted_full_core_depleted": 3,
+      "adapted_full_core_enriched": 2,
+      "three_test_depleted": 3,
+      "three_test_enriched": 2
+    },
+    "B_2019_2025": {
+      "cells": 42,
+      "edges": 57348,
+      "raw_records": 107825,
+      "observed_nonzero": 41,
+      "main_q05": 23,
+      "exact_q05": 23,
+      "raw_q05": 25,
+      "documents": 26071,
+      "m06p": {
+        "documents": 26071,
+        "strata": 21,
+        "exchangeable_strata": 19,
+        "exchangeable_documents": 26069
+      },
+      "m06p_q05": 27,
+      "adapted_full_core_depleted": 11,
+      "adapted_full_core_enriched": 8,
+      "three_test_depleted": 11,
+      "three_test_enriched": 8
+    },
+    "B_replicated_three_test_depleted": [],
+    "B_replicated_adapted_core_depleted": [],
+    "B_discovery_three_test_depleted": 3
+  },
+  "P4": {
+    "G06N3": {
+      "n": 53086,
+      "hit_rate": 0.2104321289982293,
+      "base_rate": 0.04487491219538553,
+      "lift": 4.689304529043022,
+      "pass": true
+    },
+    "G06N5": {
+      "n": 29517,
+      "hit_rate": 0.07815834942575466,
+      "base_rate": 0.010010553603082062,
+      "lift": 7.807595116586875,
+      "pass": true
+    },
+    "G06N7": {
+      "n": 14161,
+      "hit_rate": 0.05070263399477438,
+      "base_rate": 0.0035501491770913566,
+      "lift": 14.281831964119078,
+      "pass": true
+    },
+    "G06N10": {
+      "n": 3240,
+      "hit_rate": 0.7459876543209877,
+      "base_rate": 0.00045207226698096455,
+      "lift": 1650.1513337742504,
+      "pass": true
+    },
+    "G06N20": {
+      "n": 50366,
+      "hit_rate": 0.2690306953103284,
+      "base_rate": 0.12349507479022255,
+      "lift": 2.1784730748762486,
+      "pass": true
+    },
+    "FORECAST_OPTIMISE": {
+      "n": 5893,
+      "hit_rate": 0.2640420838282708,
+      "base_rate": 0.07973865914321776,
+      "lift": 3.311343414416182,
+      "pass": true
+    },
+    "RESOURCE_SCHEDULING": {
+      "n": 13765,
+      "hit_rate": 0.1466037050490374,
+      "base_rate": 0.03251021182365967,
+      "lift": 4.5094663130538235,
+      "pass": true
+    },
+    "WORKFLOW": {
+      "n": 2102,
+      "hit_rate": 0.41294005708848713,
+      "base_rate": 0.08463987457204108,
+      "lift": 4.87878862269596,
+      "pass": true
+    },
+    "RISK": {
+      "n": 2329,
+      "hit_rate": 0.31558608844997854,
+      "base_rate": 0.00569780021637216,
+      "lift": 55.38735590327788,
+      "pass": true
+    },
+    "STRATEGY": {
+      "n": 2781,
+      "hit_rate": 0.04458827759798634,
+      "base_rate": 0.010126032509470535,
+      "lift": 4.403331468300584,
+      "pass": true
+    },
+    "PERFORMANCE": {
+      "n": 5665,
+      "hit_rate": 0.17511032656663725,
+      "base_rate": 0.02772357121096098,
+      "lift": 6.316297609501492,
+      "pass": true
+    }
+  },
+  "P5": {
+    "firms_with_ties": 6201,
+    "ties": 20681,
+    "tie_weight": 109508.0,
+    "groups": {
+      "AI_FIRM": 2926,
+      "DEC_FIRM": 1570,
+      "MIXED": 1705
+    },
+    "group_OE": {
+      "AI_FIRM~DEC_FIRM": {
+        "O": 886.0,
+        "E": 3699.7439867406947,
+        "OE": 0.23947602946995408
+      },
+      "AI_FIRM~MIXED": {
+        "O": 26399.0,
+        "E": 32615.076222741718,
+        "OE": 0.8094109552193106
+      },
+      "DEC_FIRM~MIXED": {
+        "O": 12135.0,
+        "E": 12511.943447054096,
+        "OE": 0.9698733095582488
+      }
+    },
+    "firm_level_hole": true,
+    "broker_test": {
+      "mixed_median_constraint": 0.35841995309816355,
+      "null_median": 0.4441551336250496,
+      "p_one_sided_lower": 0.000999000999000999,
+      "verdict": "MIXED_LOWER_CONSTRAINT"
+    },
+    "median_constraint_by_group": {
+      "AI_FIRM": 0.6219981947565891,
+      "DEC_FIRM": 0.7626984448414872,
+      "MIXED": 0.35841995309816355
+    },
+    "candidates": [
+      {
+        "firm": "International Business Machines Corporation",
+        "constraint": 0.026171641771800865,
+        "degree": 1473,
+        "strength": 11909.0
+      },
+      {
+        "firm": "General Electric Company",
+        "constraint": 0.030034623613829445,
+        "degree": 250,
+        "strength": 931.0
+      },
+      {
+        "firm": "Tesla, Inc.",
+        "constraint": 0.033923083699924285,
+        "degree": 94,
+        "strength": 3876.0
+      },
+      {
+        "firm": "ioCurrents, Inc.",
+        "constraint": 0.0343307022147677,
+        "degree": 100,
+        "strength": 408.0
+      },
+      {
+        "firm": "GOOGLE LLC",
+        "constraint": 0.03899388322228238,
+        "degree": 661,
+        "strength": 5581.0
+      },
+      {
+        "firm": "ACCENTURE GLOBAL SERVICES LIMITED",
+        "constraint": 0.03964040856340266,
+        "degree": 200,
+        "strength": 867.0
+      },
+      {
+        "firm": "Amazon Technologies, Inc.",
+        "constraint": 0.03997416321815805,
+        "degree": 613,
+        "strength": 4512.0
+      },
+      {
+        "firm": "T-Mobile USA, Inc.",
+        "constraint": 0.040697007662872445,
+        "degree": 96,
+        "strength": 231.0
+      },
+      {
+        "firm": "Optum Services (Ireland) Limited",
+        "constraint": 0.042656616464573645,
+        "degree": 56,
+        "strength": 124.0
+      },
+      {
+        "firm": "STRONG FORCE VCN PORTFOLIO 2019, LLC",
+        "constraint": 0.0426884838376767,
+        "degree": 55,
+        "strength": 166.0
+      }
+    ]
+  },
+  "P6": {
+    "all_10_removed": {
+      "connected": true,
+      "largest_component_with_both": 5563,
+      "cross_weight_retained": 1.0
+    },
+    "baseline": {
+      "connected": true,
+      "largest_component_with_both": 5954,
+      "cross_weight_retained": 1.0
+    },
+    "one_at_a_time_refuted": 10
+  },
+  "P7": {
+    "hyperedges": 2546,
+    "size_distribution": {
+      "2": 2281,
+      "3": 228,
+      "4": 23,
+      "5": 8,
+      "6": 6
+    },
+    "group_composition": {
+      "MIXED": 1118,
+      "AI_FIRM+MIXED": 826,
+      "AI_FIRM": 438,
+      "DEC_FIRM+MIXED": 121,
+      "DEC_FIRM": 43
+    },
+    "share_joining_AI_FIRM_with_DEC_or_MIXED": 0.3244304791830322
+  },
+  "P8": {
+    "checked": 54,
+    "with_possible_alias": 0,
+    "examples": []
+  },
+  "P9": {
+    "A": {
+      "M16_constraint": {
+        "G06N3": {
+          "constraint": 0.19832325382485028,
+          "dyadic": 0.19832325382485028,
+          "indirect": 0.0
+        },
+        "G06N5": {
+          "constraint": 0.1847756367081525,
+          "dyadic": 0.18477563670815247,
+          "indirect": 2.7755575615628914e-17
+        },
+        "G06N7": {
+          "constraint": 0.1921999431856764,
+          "dyadic": 0.19219994318567638,
+          "indirect": 2.7755575615628914e-17
+        },
+        "G06N10": {
+          "constraint": 0.31081081081081086,
+          "dyadic": 0.3108108108108108,
+          "indirect": 5.551115123125783e-17
+        },
+        "G06N20": {
+          "constraint": 0.18072801791065837,
+          "dyadic": 0.18072801791065837,
+          "indirect": 0.0
+        },
+        "G06N_OTHER": {
+          "constraint": 0.4591836734693877,
+          "dyadic": 0.4591836734693877,
+          "indirect": 0.0
+        },
+        "FORECAST_OPTIMISE": {
+          "constraint": 0.25673705174235717,
+          "dyadic": 0.25673705174235717,
+          "indirect": 0.0
+        },
+        "RESOURCE_SCHEDULING": {
+          "constraint": 0.28020615717784964,
+          "dyadic": 0.2802061571778497,
+          "indirect": -5.551115123125783e-17
+        },
+        "WORKFLOW": {
+          "constraint": 0.30151525648039096,
+          "dyadic": 0.301515256480391,
+          "indirect": -5.551115123125783e-17
+        },
+        "RISK": {
+          "constraint": 0.30036305621019765,
+          "dyadic": 0.30036305621019777,
+          "indirect": -1.1102230246251565e-16
+        },
+        "STRATEGY": {
+          "constraint": 0.30366436454771406,
+          "dyadic": 0.30366436454771406,
+          "indirect": 0.0
+        },
+        "PERFORMANCE": {
+          "constraint": 0.27214628921017436,
+          "dyadic": 0.27214628921017436,
+          "indirect": 0.0
+        },
+        "MGMT_GENERAL": {
+          "constraint": 0.283865043102008,
+          "dyadic": 0.2838650431020081,
+          "indirect": -1.1102230246251565e-16
+        }
+      },
+      "M17_alt_routes_for_depleted": {
+        "G06N3xSTRATEGY": 23,
+        "G06N5xRISK": 25,
+        "G06N10xPERFORMANCE": 20,
+        "G06N5xPERFORMANCE": 23,
+        "G06N7xRESOURCE_SCHEDULING": 23,
+        "G06N20xFORECAST_OPTIMISE": 25,
+        "G06N3xMGMT_GENERAL": 25,
+        "G06N3xRISK": 25
+      },
+      "depleted_set_used": "adapted_full_core",
+      "M18_three_test_depleted_by_threshold": {
+        "0.01": 7,
+        "0.05": 9
+      }
+    },
+    "B": {
+      "M16_constraint": {
+        "G06N3": {
+          "constraint": 0.21254227054849717,
+          "dyadic": 0.21254227054849711,
+          "indirect": 5.551115123125783e-17
+        },
+        "G06N5": {
+          "constraint": 0.22696535319358443,
+          "dyadic": 0.2269653531935844,
+          "indirect": 2.7755575615628914e-17
+        },
+        "G06N7": {
+          "constraint": 0.20551651152207928,
+          "dyadic": 0.20551651152207923,
+          "indirect": 5.551115123125783e-17
+        },
+        "G06N10": {
+          "constraint": 0.2603460207612457,
+          "dyadic": 0.2603460207612457,
+          "indirect": 0.0
+        },
+        "G06N20": {
+          "constraint": 0.21089151849363952,
+          "dyadic": 0.21089151849363952,
+          "indirect": 0.0
+        },
+        "G06N_OTHER": {
+          "constraint": 0.23080138124570845,
+          "dyadic": 0.2308013812457085,
+          "indirect": -5.551115123125783e-17
+        },
+        "FORECAST_OPTIMISE": {
+          "constraint": 0.2779064982099676,
+          "dyadic": 0.2779064982099676,
+          "indirect": 0.0
+        },
+        "RESOURCE_SCHEDULING": {
+          "constraint": 0.2832247813032241,
+          "dyadic": 0.28322478130322404,
+          "indirect": 5.551115123125783e-17
+        },
+        "WORKFLOW": {
+          "constraint": 0.2852320896108706,
+          "dyadic": 0.28523208961087065,
+          "indirect": -5.551115123125783e-17
+        },
+        "RISK": {
+          "constraint": 0.3652970794230102,
+          "dyadic": 0.3652970794230102,
+          "indirect": 0.0
+        },
+        "STRATEGY": {
+          "constraint": 0.27641841929250893,
+          "dyadic": 0.27641841929250893,
+          "indirect": 0.0
+        },
+        "PERFORMANCE": {
+          "constraint": 0.28792679114105046,
+          "dyadic": 0.28792679114105046,
+          "indirect": 0.0
+        },
+        "MGMT_GENERAL": {
+          "constraint": 0.2964961254386047,
+          "dyadic": 0.2964961254386047,
+          "indirect": 0.0
+        }
+      },
+      "M17_alt_routes_for_depleted": {
+        "G06N5xFORECAST_OPTIMISE": 29,
+        "G06N5xRISK": 29,
+        "G06N10xPERFORMANCE": 30,
+        "G06N3xMGMT_GENERAL": 29,
+        "G06N20xRESOURCE_SCHEDULING": 29,
+        "G06N20xFORECAST_OPTIMISE": 29,
+        "G06N_OTHERxPERFORMANCE": 24,
+        "G06N7xRISK": 29,
+        "G06N3xRISK": 29
+      },
+      "depleted_set_used": "adapted_full_core",
+      "M18_three_test_depleted_by_threshold": {
+        "0.01": 9,
+        "0.05": 10
+      }
+    }
+  },
+  "P10": {
+    "status": "NOT_APPLICABLE",
+    "reason": "patents have no limitation/future-work section; full texts not downloaded"
+  },
+  "seconds": 1690
+}

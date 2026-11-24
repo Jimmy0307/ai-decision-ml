@@ -1,0 +1,83 @@
+{
+ "2011-08-01": {
+  "D1": {
+   "directors": 1421,
+   "boards": 355,
+   "two_mode_edges": 1746,
+   "projection_edges": 3855,
+   "projection_transitivity": 0.6814022530399773,
+   "projection_triangles": 5585,
+   "triangles_within_one_board": 5578,
+   "share_triangles_within_one_board": 0.998746642793196,
+   "dominated_by_board_cliques": true,
+   "two_mode_4paths": 18558,
+   "two_mode_closed_4paths": 142,
+   "opsahl_two_mode_transitivity": 0.007651686604159931
+  },
+  "women": 513,
+  "men": 908,
+  "gender_missing": 0,
+  "D2": {
+   "directors": 1421,
+   "max_abs_diff": 2.7755575615628914e-17,
+   "share_within_1e-9": 1.0
+  }
+ },
+ "2002-05-01": {
+  "D1": {
+   "directors": 1013,
+   "boards": 204,
+   "two_mode_edges": 1130,
+   "projection_edges": 3189,
+   "projection_transitivity": 0.8560723981900452,
+   "projection_triangles": 7883,
+   "triangles_within_one_board": 7879,
+   "share_triangles_within_one_board": 0.9994925789673982,
+   "dominated_by_board_cliques": true,
+   "two_mode_4paths": 9578,
+   "two_mode_closed_4paths": 198,
+   "opsahl_two_mode_transitivity": 0.02067237419085404
+  },
+  "women": 87,
+  "men": 926,
+  "gender_missing": 0
+ },
+ "2008-02-01": {
+  "D1": {
+   "directors": 1527,
+   "boards": 369,
+   "two_mode_edges": 1893,
+   "projection_edges": 4404,
+   "projection_transitivity": 0.6982825664290343,
+   "projection_triangles": 7183,
+   "triangles_within_one_board": 7176,
+   "share_triangles_within_one_board": 0.9990254768202701,
+   "dominated_by_board_cliques": true,
+   "two_mode_4paths": 25522,
+   "two_mode_closed_4paths": 858,
+   "opsahl_two_mode_transitivity": 0.033618055011362745
+  },
+  "women": 567,
+  "men": 960,
+  "gender_missing": 0
+ },
+ "2009-08-01": {
+  "D1": {
+   "directors": 1495,
+   "boards": 367,
+   "two_mode_edges": 1834,
+   "projection_edges": 4065,
+   "projection_transitivity": 0.6805273040212799,
+   "projection_triangles": 5799,
+   "triangles_within_one_board": 5788,
+   "share_triangles_within_one_board": 0.9981031212277979,
+   "dominated_by_board_cliques": true,
+   "two_mode_4paths": 19362,
+   "two_mode_closed_4paths": 220,
+   "opsahl_two_mode_transitivity": 0.011362462555521124
+  },
+  "women": 574,
+  "men": 921,
+  "gender_missing": 0
+ }
+}

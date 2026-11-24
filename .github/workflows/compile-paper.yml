@@ -1,0 +1,49 @@
+name: Compile manuscript (EN + ZH)
+
+on:
+  push:
+    paths:
+      - "paper/**"
+      - ".github/workflows/compile-paper.yml"
+  pull_request:
+    paths:
+      - "paper/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  latex:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile English manuscript (pdflatex + bibtex)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          working_directory: paper/en
+          latexmk_use_lualatex: false
+
+      - name: Compile Chinese thesis version (xelatex + bibtex, ctex/Fandol fonts)
+        if: hashFiles('paper/zh/thesis_zh.tex') != ''
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: thesis_zh.tex
+          working_directory: paper/zh
+          latexmk_use_xelatex: true
+          extra_system_packages: "font-noto-cjk fontconfig"
+
+      - name: Upload PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: manuscript-pdfs
+          path: |
+            paper/en/main.pdf
+            paper/zh/thesis_zh.pdf
+            paper/en/main.log
+            paper/zh/thesis_zh.log
+          if-no-files-found: warn
+          retention-days: 30
