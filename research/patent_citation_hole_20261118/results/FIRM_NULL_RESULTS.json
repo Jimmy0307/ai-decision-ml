@@ -1,0 +1,86 @@
+{
+  "preregistration": "PREREGISTRATION_FIRM_NULL.md v1.0",
+  "observed": {
+    "T1": 0.23947602946995408,
+    "T2": 0.35841995309816355,
+    "OE_AI_MIXED": 0.8094109552193106,
+    "OE_DEC_MIXED": 0.9698733095582488,
+    "ties": 20681,
+    "weight": 109508.0
+  },
+  "reps": 1000,
+  "seeding": "replicate r of scheme s uses default_rng([20261119, s, r])",
+  "n_patents": 127114,
+  "n_firms": 14600,
+  "n_citations": 162339,
+  "reproduces_P5": true,
+  "portfolio_preserved_check": true,
+  "primary": {
+    "T1": {
+      "observed": 0.23947602946995408,
+      "null_median": 0.3557162110347734,
+      "null_2.5": 0.31682341533617325,
+      "null_97.5": 0.3983112666684108,
+      "p_lower": 0.000999000999000999
+    },
+    "T2": {
+      "observed": 0.35841995309816355,
+      "null_median": 0.10389920463338255,
+      "null_2.5": 0.09803549872020288,
+      "null_97.5": 0.11045893996165723,
+      "p_lower": 1.0
+    },
+    "OE_AI_MIXED": {
+      "observed": 0.8094109552193106,
+      "null_median": 0.9995841780541042,
+      "null_2.5": 0.989312655772122,
+      "null_97.5": 1.0090084551408922,
+      "p_lower": 0.000999000999000999
+    },
+    "OE_DEC_MIXED": {
+      "observed": 0.9698733095582488,
+      "null_median": 1.0094739040803735,
+      "null_2.5": 0.992417173410736,
+      "null_97.5": 1.0245779524464433,
+      "p_lower": 0.000999000999000999
+    },
+    "share_of_T1_gap_reproduced_by_null": 0.8471577674484002,
+    "verdict": "PARTIAL",
+    "strata": 48
+  },
+  "S_tech": {
+    "T1": {
+      "observed": 0.23947602946995408,
+      "null_median": 0.3069879855149709,
+      "null_2.5": 0.2766276069674573,
+      "null_97.5": 0.3451418756394154,
+      "p_lower": 0.000999000999000999
+    },
+    "T2": {
+      "observed": 0.35841995309816355,
+      "null_median": 0.11572602957727582,
+      "null_2.5": 0.10949905118728022,
+      "null_97.5": 0.1216455344212219,
+      "p_lower": 1.0
+    },
+    "OE_AI_MIXED": {
+      "observed": 0.8094109552193106,
+      "null_median": 0.9845422434186446,
+      "null_2.5": 0.9724594589521498,
+      "null_97.5": 0.9963242800077424,
+      "p_lower": 0.000999000999000999
+    },
+    "OE_DEC_MIXED": {
+      "observed": 0.9698733095582488,
+      "null_median": 1.0250700483503064,
+      "null_2.5": 1.0086195420734847,
+      "null_97.5": 1.0436109606893555,
+      "p_lower": 0.000999000999000999
+    },
+    "share_of_T1_gap_reproduced_by_null": 0.911229680245365,
+    "verdict": "PARTIAL",
+    "strata": 1795
+  },
+  "tech_mix_sensitive": false,
+  "seconds": 2344
+}

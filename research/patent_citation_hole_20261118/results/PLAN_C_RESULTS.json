@@ -1,0 +1,526 @@
+{
+ "plan": "PLAN_C_DESCRIPTIVE.md",
+ "n_patents": 127114,
+ "n_citations": 162339,
+ "n_firms": 14600,
+ "C1_bridge_by_year": {
+  "2010": {
+   "count": 22,
+   "n": 1747,
+   "share": 0.0126,
+   "wilson95": [
+    0.0083,
+    0.019
+   ]
+  },
+  "2011": {
+   "count": 26,
+   "n": 2016,
+   "share": 0.0129,
+   "wilson95": [
+    0.0088,
+    0.0188
+   ]
+  },
+  "2012": {
+   "count": 52,
+   "n": 2525,
+   "share": 0.0206,
+   "wilson95": [
+    0.0157,
+    0.0269
+   ]
+  },
+  "2013": {
+   "count": 53,
+   "n": 2844,
+   "share": 0.0186,
+   "wilson95": [
+    0.0143,
+    0.0243
+   ]
+  },
+  "2014": {
+   "count": 71,
+   "n": 3002,
+   "share": 0.0237,
+   "wilson95": [
+    0.0188,
+    0.0297
+   ]
+  },
+  "2015": {
+   "count": 81,
+   "n": 2812,
+   "share": 0.0288,
+   "wilson95": [
+    0.0232,
+    0.0357
+   ]
+  },
+  "2016": {
+   "count": 111,
+   "n": 3122,
+   "share": 0.0356,
+   "wilson95": [
+    0.0296,
+    0.0426
+   ]
+  },
+  "2017": {
+   "count": 127,
+   "n": 3592,
+   "share": 0.0354,
+   "wilson95": [
+    0.0298,
+    0.0419
+   ]
+  },
+  "2018": {
+   "count": 104,
+   "n": 3813,
+   "share": 0.0273,
+   "wilson95": [
+    0.0226,
+    0.0329
+   ]
+  },
+  "2019": {
+   "count": 297,
+   "n": 7338,
+   "share": 0.0405,
+   "wilson95": [
+    0.0362,
+    0.0452
+   ]
+  },
+  "2020": {
+   "count": 457,
+   "n": 10580,
+   "share": 0.0432,
+   "wilson95": [
+    0.0395,
+    0.0472
+   ]
+  },
+  "2021": {
+   "count": 626,
+   "n": 13289,
+   "share": 0.0471,
+   "wilson95": [
+    0.0436,
+    0.0508
+   ]
+  },
+  "2022": {
+   "count": 832,
+   "n": 17011,
+   "share": 0.0489,
+   "wilson95": [
+    0.0458,
+    0.0523
+   ]
+  },
+  "2023": {
+   "count": 994,
+   "n": 19328,
+   "share": 0.0514,
+   "wilson95": [
+    0.0484,
+    0.0546
+   ]
+  },
+  "2024": {
+   "count": 816,
+   "n": 18183,
+   "share": 0.0449,
+   "wilson95": [
+    0.042,
+    0.048
+   ]
+  },
+  "2025": {
+   "count": 647,
+   "n": 15912,
+   "share": 0.0407,
+   "wilson95": [
+    0.0377,
+    0.0438
+   ]
+  }
+ },
+ "C1_bridge_total": {
+  "count": 5316,
+  "n": 127114,
+  "share": 0.0418,
+  "wilson95": [
+   0.0407,
+   0.0429
+  ]
+ },
+ "C1_type_counts": {
+  "AI_only": 89613,
+  "DEC_only": 32185,
+  "BRIDGE": 5316
+ },
+ "C2_cross_share_of_all": {
+  "count": 22796,
+  "n": 162339,
+  "share": 0.1404,
+  "wilson95": [
+   0.1387,
+   0.1421
+  ]
+ },
+ "C2_bridge_share_of_all": {
+  "count": 16194,
+  "n": 162339,
+  "share": 0.0998,
+  "wilson95": [
+   0.0983,
+   0.1012
+  ]
+ },
+ "C2_cross_direction": {
+  "AI_cites_DEC": 15999,
+  "DEC_cites_AI": 6797
+ },
+ "C2_locus_cross": {
+  "within_firm": {
+   "count": 4249,
+   "n": 22796,
+   "share": 0.1864,
+   "wilson95": [
+    0.1814,
+    0.1915
+   ]
+  },
+  "between_mixed_citing": {
+   "count": 14636,
+   "n": 22796,
+   "share": 0.642,
+   "wilson95": [
+    0.6358,
+    0.6482
+   ]
+  },
+  "between_specialist_citing": {
+   "count": 2624,
+   "n": 22796,
+   "share": 0.1151,
+   "wilson95": [
+    0.111,
+    0.1193
+   ]
+  },
+  "unowned_end": {
+   "count": 1287,
+   "n": 22796,
+   "share": 0.0565,
+   "wilson95": [
+    0.0535,
+    0.0595
+   ]
+  }
+ },
+ "C2_locus_all": {
+  "within_firm": {
+   "count": 47320,
+   "n": 162339,
+   "share": 0.2915,
+   "wilson95": [
+    0.2893,
+    0.2937
+   ]
+  },
+  "between_mixed_citing": {
+   "count": 78306,
+   "n": 162339,
+   "share": 0.4824,
+   "wilson95": [
+    0.4799,
+    0.4848
+   ]
+  },
+  "between_specialist_citing": {
+   "count": 28155,
+   "n": 162339,
+   "share": 0.1734,
+   "wilson95": [
+    0.1716,
+    0.1753
+   ]
+  },
+  "unowned_end": {
+   "count": 8558,
+   "n": 162339,
+   "share": 0.0527,
+   "wilson95": [
+    0.0516,
+    0.0538
+   ]
+  }
+ },
+ "C2_locus_bridge": {
+  "within_firm": {
+   "count": 3305,
+   "n": 16194,
+   "share": 0.2041,
+   "wilson95": [
+    0.198,
+    0.2104
+   ]
+  },
+  "between_mixed_citing": {
+   "count": 11305,
+   "n": 16194,
+   "share": 0.6981,
+   "wilson95": [
+    0.691,
+    0.7051
+   ]
+  },
+  "between_specialist_citing": {
+   "count": 652,
+   "n": 16194,
+   "share": 0.0403,
+   "wilson95": [
+    0.0373,
+    0.0434
+   ]
+  },
+  "unowned_end": {
+   "count": 932,
+   "n": 16194,
+   "share": 0.0576,
+   "wilson95": [
+    0.0541,
+    0.0612
+   ]
+  }
+ },
+ "C2_citing_year_before_2013": 0,
+ "C2_by_period": {
+  "2013-2018": {
+   "cross_share_of_all": {
+    "count": 1785,
+    "n": 16524,
+    "share": 0.108,
+    "wilson95": [
+     0.1034,
+     0.1128
+    ]
+   },
+   "bridge_share_of_all": {
+    "count": 678,
+    "n": 16524,
+    "share": 0.041,
+    "wilson95": [
+     0.0381,
+     0.0442
+    ]
+   },
+   "locus_cross": {
+    "within_firm": {
+     "count": 303,
+     "n": 1785,
+     "share": 0.1697,
+     "wilson95": [
+      0.153,
+      0.1879
+     ]
+    },
+    "between_mixed_citing": {
+     "count": 1044,
+     "n": 1785,
+     "share": 0.5849,
+     "wilson95": [
+      0.5619,
+      0.6075
+     ]
+    },
+    "between_specialist_citing": {
+     "count": 331,
+     "n": 1785,
+     "share": 0.1854,
+     "wilson95": [
+      0.1681,
+      0.2041
+     ]
+    },
+    "unowned_end": {
+     "count": 107,
+     "n": 1785,
+     "share": 0.0599,
+     "wilson95": [
+      0.0498,
+      0.0719
+     ]
+    }
+   }
+  },
+  "2019-2025": {
+   "cross_share_of_all": {
+    "count": 21011,
+    "n": 145815,
+    "share": 0.1441,
+    "wilson95": [
+     0.1423,
+     0.1459
+    ]
+   },
+   "bridge_share_of_all": {
+    "count": 15516,
+    "n": 145815,
+    "share": 0.1064,
+    "wilson95": [
+     0.1048,
+     0.108
+    ]
+   },
+   "locus_cross": {
+    "within_firm": {
+     "count": 3946,
+     "n": 21011,
+     "share": 0.1878,
+     "wilson95": [
+      0.1826,
+      0.1931
+     ]
+    },
+    "between_mixed_citing": {
+     "count": 13592,
+     "n": 21011,
+     "share": 0.6469,
+     "wilson95": [
+      0.6404,
+      0.6533
+     ]
+    },
+    "between_specialist_citing": {
+     "count": 2293,
+     "n": 21011,
+     "share": 0.1091,
+     "wilson95": [
+      0.105,
+      0.1134
+     ]
+    },
+    "unowned_end": {
+     "count": 1180,
+     "n": 21011,
+     "share": 0.0562,
+     "wilson95": [
+      0.0531,
+      0.0594
+     ]
+    }
+   }
+  }
+ },
+ "C1_bridge_by_period": {
+  "2013-2018": {
+   "count": 547,
+   "n": 19185,
+   "share": 0.0285,
+   "wilson95": [
+    0.0262,
+    0.031
+   ]
+  },
+  "2019-2025": {
+   "count": 4669,
+   "n": 101641,
+   "share": 0.0459,
+   "wilson95": [
+    0.0447,
+    0.0472
+   ]
+  }
+ },
+ "C3": {
+  "credit_total": 17372,
+  "firms_with_credit": 1247,
+  "top10_share": 0.3924,
+  "top1pct_firms": 13,
+  "top1pct_share": 0.4284,
+  "credit_share_by_group": {
+   "AI_FIRM": 0.1057,
+   "DEC_FIRM": 0.046,
+   "MIXED": 0.8483
+  },
+  "patent_owner_pair_share_by_group": {
+   "AI_FIRM": 0.192,
+   "DEC_FIRM": 0.0669,
+   "MIXED": 0.7412
+  },
+  "patents_without_owner": {
+   "count": 4086,
+   "n": 127114,
+   "share": 0.0321,
+   "wilson95": [
+    0.0312,
+    0.0331
+   ]
+  },
+  "firms_by_group": {
+   "AI_FIRM": 7942,
+   "DEC_FIRM": 4213,
+   "MIXED": 2445
+  }
+ },
+ "C4_cells_expected_ge_100": 29,
+ "C4_lowest3": [
+  {
+   "ai_family": "G06N3",
+   "decision_family": "RISK",
+   "observed": "1050",
+   "expected_independence": "1510.601505",
+   "oe_ratio": "0.695087",
+   "three_test": "DEPLETED"
+  },
+  {
+   "ai_family": "G06N7",
+   "decision_family": "RISK",
+   "observed": "624",
+   "expected_independence": "889.768318",
+   "oe_ratio": "0.701306",
+   "three_test": "DEPLETED"
+  },
+  {
+   "ai_family": "G06N5",
+   "decision_family": "RISK",
+   "observed": "2008",
+   "expected_independence": "2366.556694",
+   "oe_ratio": "0.84849",
+   "three_test": "DEPLETED"
+  }
+ ],
+ "C4_highest3": [
+  {
+   "ai_family": "G06N20",
+   "decision_family": "RISK",
+   "observed": "4209",
+   "expected_independence": "3161.527492",
+   "oe_ratio": "1.331318",
+   "three_test": "ENRICHED"
+  },
+  {
+   "ai_family": "G06N7",
+   "decision_family": "STRATEGY",
+   "observed": "666",
+   "expected_independence": "517.553591",
+   "oe_ratio": "1.286823",
+   "three_test": "ENRICHED"
+  },
+  {
+   "ai_family": "G06N3",
+   "decision_family": "FORECAST_OPTIMISE",
+   "observed": "1356",
+   "expected_independence": "1159.131479",
+   "oe_ratio": "1.169841",
+   "three_test": "ENRICHED"
+  }
+ ],
+ "C4_note": "cells from SUITE_P1_B_CELLS.csv (Plan 3 P1, applicant citations, Part B)"
+}
