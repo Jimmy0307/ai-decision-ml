@@ -365,3 +365,8 @@
 @media(max-width:790px){.abc-compare,.abc-formula-grid,.abc-method-pair,.abc-integration{grid-template-columns:1fr}.abc-bars>div{grid-template-columns:130px minmax(0,1fr) 60px;gap:7px}}
 @media(max-width:420px){.abc-bars>div{grid-template-columns:110px minmax(0,1fr) 56px;font-size:.72rem}}
 @media print{.abc-compare{grid-template-columns:repeat(3,minmax(0,1fr))}.abc-network-card,.abc-method-pair>div{break-inside:avoid}}
+
+/* 2026-11-25: F/K/C research-grade measurement explainer */
+.abc-network-card svg{max-height:255px}.teacher-picture svg{width:100%;height:auto}.teacher-chapter .abc-method-pair .teacher-math{font-size:1.05rem}.teacher-chapter .abc-c-table table{font-variant-numeric:tabular-nums}.teacher-chapter .abc-c-table p{font-size:.9rem}
+@media(max-width:790px){.teacher-chapter .abc-method-pair{grid-template-columns:1fr}.teacher-chapter .abc-c-table{max-width:100%;overflow-x:auto}}
+@media print{.abc-network-card,.abc-c-table{break-inside:avoid}}
