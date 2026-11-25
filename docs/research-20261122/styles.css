@@ -370,3 +370,65 @@
 .abc-network-card svg{max-height:255px}.teacher-picture svg{width:100%;height:auto}.teacher-chapter .abc-method-pair .teacher-math{font-size:1.05rem}.teacher-chapter .abc-c-table table{font-variant-numeric:tabular-nums}.teacher-chapter .abc-c-table p{font-size:.9rem}
 @media(max-width:790px){.teacher-chapter .abc-method-pair{grid-template-columns:1fr}.teacher-chapter .abc-c-table{max-width:100%;overflow-x:auto}}
 @media print{.abc-network-card,.abc-c-table{break-inside:avoid}}
+
+
+/* Professor-first three data editions: literature / patent / CPC */
+.three-source-hero{background:radial-gradient(circle at 76% 5%,#27776f,transparent 58%),linear-gradient(130deg,#103442,#184c55)}
+.three-source-textbook{max-width:1150px}
+.source-edition-intro{background:#f0f8f5;border:1px solid #c9dfd7;border-left:5px solid #128075;border-radius:13px;padding:19px 23px;margin:20px 0;font-size:1.025rem;line-height:1.84}
+.source-edition-intro p{margin:8px 0 0;font-size:.96rem}
+.source-edition-jumps{display:flex;flex-wrap:wrap;gap:9px;margin:17px 0 26px}
+.source-edition-jumps a{display:inline-block;color:#126e67;text-decoration:none;border:1px solid #d3e4dd;background:#eef7f3;border-radius:100px;padding:7px 12px;font-size:.82rem;font-weight:780}
+.source-edition-jumps a:hover{background:#d9eee7}
+.source-lesson{background:#fff;border:1px solid #d6e4e5;border-radius:17px;margin:27px 0;padding:clamp(18px,3vw,34px);scroll-margin-top:20px;box-shadow:0 5px 23px #143c440a}
+.source-lesson-number{font-size:.78rem;font-weight:900;letter-spacing:.045em;color:#17756b;margin-bottom:10px}
+.source-lesson h2{font-size:clamp(1.31rem,2.2vw,1.9rem);margin:0 0 15px}
+.source-lesson-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:15px;align-items:stretch}
+.source-lesson-diagram{background:#f6fbf9;border:1px solid #d1e5e0;border-radius:12px;display:flex;flex-direction:column;gap:11px;padding:15px;margin:0}
+.source-lesson-diagram svg{width:100%;height:auto;display:block;max-height:285px}
+.source-lesson-kicker{font-size:.78rem;color:#2c6d67;font-weight:880}
+.source-lesson-diagram figcaption{font-size:.81rem;color:#557277;line-height:1.7}
+.source-lesson-formula{background:#f0f6fa;border:1px solid #cbdde7;border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.source-lesson-formula strong{font-size:.85rem;color:#2c6275}
+.source-formula-body{font:740 clamp(1.02rem,1.55vw,1.3rem)/1.93 "Cambria Math","Noto Serif TC",Georgia,serif;overflow-wrap:anywhere;color:#204e60;background:white;border:1px solid #d7e5e9;border-radius:9px;padding:12px 13px}
+.source-formula-body sub,.source-formula-body sup{font-size:.62em}
+.source-lesson-formula p{font-size:.89rem;line-height:1.8;margin:0}
+.source-lesson-pair{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:15px 0}
+.source-lesson-pair>div{padding:14px;background:#edf8f4;border:1px solid #d0e6df;border-radius:11px}
+.source-lesson-pair>div:nth-child(2){background:#fff8eb;border-color:#e9d9b5}
+.source-lesson-pair strong{display:block;font-size:.87rem;color:#14756b}
+.source-lesson-pair>div:nth-child(2) strong{color:#9b6a2c}
+.source-lesson-pair p{font-size:.88rem;line-height:1.72;margin:6px 0 0}
+.source-lesson-ref{font-size:.79rem;line-height:1.8;color:#546c75;border-top:1px dashed #d4e3e4;padding-top:10px;margin:12px 0 0}
+.source-summary-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:14px 0}
+.source-summary-metrics>div{background:#f2f8f6;border:1px solid #d5e7e1;border-radius:10px;padding:14px 10px;display:flex;flex-direction:column;gap:4px;align-items:center;text-align:center}
+.source-summary-metrics strong{font:850 clamp(1.16rem,2vw,1.65rem)/1.4 system-ui;color:#146b64}
+.source-summary-metrics span{font-size:.78rem;color:#4c6a70}
+.source-edition-end{background:#123c46;border-radius:13px;padding:19px 24px;margin:24px 0;color:white}
+.source-edition-end p{font-size:.91rem;color:#e4f1f1}.source-edition-end a{color:#c7f8eb}
+.source-qa{display:grid;gap:11px;margin:20px 0}
+.source-qa>div{background:#f8fbfa;border:1px solid #d7e6e5;border-radius:12px;padding:14px 18px}
+.source-qa strong{color:#23615c}.source-qa p{font-size:.91rem;margin:5px 0 0}
+.edition-overview-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:23px 0}
+.edition-overview-card{background:white;border:1px solid #d2e3e1;border-radius:15px;overflow:hidden;display:flex;flex-direction:column}
+.edition-overview-card .edition-visual{padding:18px 16px;background:#eff7f4;min-height:145px}
+.edition-overview-card:nth-child(2) .edition-visual{background:#edf4f9}
+.edition-overview-card:nth-child(3) .edition-visual{background:#fff8eb}
+.edition-overview-card .edition-visual svg{display:block;width:100%;height:auto;max-height:155px}
+.edition-overview-card .edition-content{padding:20px;display:flex;flex-direction:column;gap:9px;flex:1}
+.edition-overview-card h3{font-size:1.36rem;margin:0}
+.edition-overview-card .edition-value{font-size:1.04rem;font-weight:780;color:#156c65}
+.edition-overview-card p{font-size:.89rem;margin:0}
+.edition-overview-card a{margin-top:auto;font-weight:850;text-decoration:none;padding-top:8px}
+.edition-overview-card a:hover{text-decoration:underline}
+.edition-reference-table{overflow-x:auto}
+.edition-reference-table table{width:100%;border-collapse:collapse;min-width:680px;background:#fff;border-radius:10px;font-size:.88rem}
+.edition-reference-table th,.edition-reference-table td{border-bottom:1px solid #dce8e8;padding:13px;text-align:left;vertical-align:top}
+.edition-reference-table th{background:#e9f5f2;color:#1d615d}
+.source-small-script{padding:19px 22px;border-radius:11px;background:#f7fbfb;border-left:5px solid #247e78}
+.source-small-script p{margin:6px 0 0}
+.edition-context-footer{border-top:2px dashed #d5e5e2;padding-top:19px;margin:34px 0}
+.edition-context-footer p{font-size:.89rem}
+@media(max-width:920px){.source-lesson-grid{grid-template-columns:1fr}.edition-overview-cards{grid-template-columns:1fr}.edition-overview-card{display:grid;grid-template-columns:minmax(180px,.45fr) 1fr}.edition-overview-card .edition-visual{height:100%;min-height:165px;display:flex;align-items:center}}
+@media(max-width:620px){.source-lesson-pair{grid-template-columns:1fr}.source-summary-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.edition-overview-card{display:flex}.source-lesson{padding:17px}.source-lesson-diagram,.source-lesson-formula{padding:13px}.source-edition-intro{padding:15px 16px}.edition-overview-card .edition-visual{min-height:130px}}
+@media print{.source-lesson{break-inside:avoid;box-shadow:none}.source-lesson-grid{grid-template-columns:1.1fr .9fr}.source-edition-jumps{display:none}.source-lesson-diagram,.source-lesson-formula{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
