@@ -1,9 +1,16 @@
-# AI × Decision｜2026-11-22 研究兩軌與五層證據網站
+# AI × Decision｜文獻版・專利版・CPC 版 教授教學網站
 
 本資料夾是新增的公開說明網站。原有 `docs/index.html`（V5–V11.1 2026-11-18 版本）完整保留，僅加入入口提示。所有網站頁面使用靜態 HTML/CSS，不使用外部 API、分析追蹤或第三方素材。
 
-## 頁面
-- `index.html`：兩條研究線、核心結論、Gate 狀態
+## 現行網站主頁面
+- `index.html`：文獻版／專利版／CPC 版三大資料入口與教學總覽
+- `literature.html`：文獻資料、明示功能配對／共現、低整合、Burt ES／Constraint
+- `patent.html`：專利引用、公司引用、兩種不同 O/E 估計對象、零模型、群別限制度
+- `cpc.html`：CPC 分類、42 格版本敏感度、共分類網絡檢驗待補
+- `course-notes.html`：先前六堂課深入圖解保留
+
+## 技術附錄與研究背景
+- `index.html`：三種資料入口
 - `original.html`：權威 V1.8.7、功能分析、MLP 與編碼效度
 - `five-layers.html`：R/K/F/N/O、研究二 vs 專利 R2/R4、CPC、E9、M0–M3
 - `advisor.html`：教授決策、Gate 0–4、B1/M1–M8、人工校準、停止條件
