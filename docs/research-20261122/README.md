@@ -72,3 +72,11 @@
 - 新增 `three-source-network.html`：教授導向三軌證據對照，A=文獻 RQ1 folder 34 分析結案（配對型結構洞 0/16，Graph K 低 constraint 0/22）；C=專利引用 R2 與公司引用 R4 的既有 200 次零模型結果（liaison O/E 0.355639 / 0.639887），本輪重新核對 JSON 而非從 raw 重建；B 保持 PENDING。
 - 機器可讀資料 `data/three-source-evidence-20261125.json`，將 A/C 歸檔來源及 B 必需欄位分離；`THREE_SOURCE_B_INTAKE_CONTRACT.md` 明定 B 的 repo/commit SHA、CPC 時間版本、圖建構、Burt/零模型、種子與結果檢查門檻。
 - 本版只更改公開網頁，不改私人 canonical、原始論文、凍結協定或 Google Drive。請勿把不同網絡量或零模型檢定當作三次獨立驗證。
+
+## 2026-11-25 Graph F/K 與大型引用網絡釐清
+- 新增 `network-measurements.html`，五張原創 SVG：Graph F 二模明示配對、Graph K 單模功能同篇共現、C 大型專利引用、Binary vs Bipartite、開放／閉合三角形的 Burt 差異。
+- Graph F 22 功能節點、104/120 邊與 2,180 條文件配對支持不能誤解為 2,180 條文獻引用邊；Graph K 22 節點、225/231 共現邊不是學術引用圖。文獻×家族原生二模亦不是另一批樣本。
+- 圖旁明示：Binary 二值化不是 Bipartite 二模；Graph F 二值 W≥1/2/3/5 門檻、WP1 B&C 專用二模方法的 ES 常數退化，和單模 Burt 加權指標要分開。
+- 真實 A 指標：Graph F H1–H3 0/16，W≥1 有 8/16 的 H2/H3 無法檢定；Graph K 低 Constraint 0/22、高 ES 17–18/22；治理與監督 ES 10.104 vs 8.559、Constraint .23326 vs .23214。
+- C 大型引用網絡 38,322 專利／101,630 引用、4,537 公司／13,312 引用連線；跨群路徑 O/E .3556/.6399。C 既有摘要沒有提供同 A 可比較的 ES 顯著性分析。
+- F/K 不代表已完成論文→論文的大型學術引用網絡。B CPC 仍待使用者推送，數字未提前填寫。本次僅公開教學網站，不改研究資料或凍結協定。
