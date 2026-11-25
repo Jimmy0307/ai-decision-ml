@@ -1,0 +1,139 @@
+{
+  "schema_version": "1.0",
+  "snapshot_date": "2026-11-25",
+  "owner_scope": "teaching_website_sidecar_only",
+  "research_note": "A, B, C are not statistically independent replications",
+  "A": {
+    "status": "ANALYTIC_CLOSED_LEVEL_1",
+    "dataset": "V5 frozen literature RQ1",
+    "snapshot": "2026-11-10 closure; GitHub verified 2026-11-25",
+    "source_sha": "97022752e9265e3c988aa20df7d8572adb29093e",
+    "paper_level_corpus": 783,
+    "doc_pair_edges": 2180,
+    "graph_f": {
+      "ai_classes": 10,
+      "decision_classes": 12,
+      "potential_cells": 120,
+      "direct_cells": 104,
+      "low_pairs": 16,
+      "high_pairs": 16,
+      "low_pair_direct_weight_range": [
+        2,
+        26
+      ],
+      "hole_candidate_H1_H3_supported": 0,
+      "low_pairs_direct_edge_present": 16,
+      "unidentifiable_H2_H3": 8,
+      "oe_baseline_range": [
+        0.12,
+        0.47
+      ],
+      "oe_document_preserving_range": [
+        0.18,
+        0.55
+      ],
+      "source_stratified_BH": 16,
+      "source_stratified_Holm": 12
+    },
+    "graph_k": {
+      "families": 22,
+      "cooccurrence_edges": 225,
+      "potential_edges": 231,
+      "low_constraint_significant": 0,
+      "high_effective_size_original": 17,
+      "high_effective_size_replay": 18,
+      "articulation_points": 0,
+      "bridges": 0,
+      "maximum_node_removal_cross_class_efficiency_loss_pct": 0.545
+    },
+    "repeatability": {
+      "folder32": 54,
+      "independent_replay": 22,
+      "tests_total": 1149
+    },
+    "not_done": [
+      "independent external corpus replication",
+      "388 no-candidate human review",
+      "enterprise validation"
+    ],
+    "references": {
+      "final": "https://github.com/Jimmy0307/ai-decision-ml-private-backup-20261018/blob/97022752e9265e3c988aa20df7d8572adb29093e/claude/r14_merge_rq123_integration_20261105/16_RQ123_INTEGRATION_METHOD_SIDECAR_20261105/34_RQ1_FINAL_VALIDATION_AND_COMPLETE_CLOSURE_20261110/FINAL_HANDOFF.md",
+      "network_replay": "https://github.com/Jimmy0307/ai-decision-ml-private-backup-20261018/blob/97022752e9265e3c988aa20df7d8572adb29093e/claude/r14_merge_rq123_integration_20261105/16_RQ123_INTEGRATION_METHOD_SIDECAR_20261105/34_RQ1_FINAL_VALIDATION_AND_COMPLETE_CLOSURE_20261110/05_NETWORK_AND_ROBUSTNESS_REPLAY/README.md",
+      "analytic_verdict": "https://github.com/Jimmy0307/ai-decision-ml-private-backup-20261018/blob/97022752e9265e3c988aa20df7d8572adb29093e/claude/r14_merge_rq123_integration_20261105/16_RQ123_INTEGRATION_METHOD_SIDECAR_20261105/33_RQ1_FINAL_ANALYTIC_CLOSURE_PRIOR_ART_20261110/01_FINAL_VERDICT.md"
+    }
+  },
+  "C": {
+    "status": "EXISTING_R2_R4_CALCULATIONS_REVIEWED_NOT_RAW_REBUILT",
+    "snapshot": "Original run seed 20261121; source files inspected 2026-11-25",
+    "patent_R2": {
+      "nodes": 38322,
+      "edges": 101630,
+      "observed_liaisons": 340150,
+      "null_mean_liaisons": 956447.255,
+      "null_ci95": [
+        948386.475,
+        966064.1
+      ],
+      "observed_expected_ratio": 0.3556390571689183,
+      "reps": 200,
+      "seed": 20261121,
+      "reported_p": 1,
+      "label": "NOT_DETECTED_UNDER_THIS_NULL",
+      "mean_constraint": {
+        "AI_only": 0.5996176176294579,
+        "BOTH": 0.5512304402714435,
+        "DEC_only": 0.6110865385090446
+      },
+      "source": "https://drive.google.com/file/d/1qh3eghYeszXIcvdvnBT3Ut7hW7eNzbOu/view"
+    },
+    "firm_R4": {
+      "firms": 4537,
+      "edges": 13312,
+      "observed_liaisons": 51906,
+      "null_mean_liaisons": 81117.49,
+      "null_ci95": [
+        73820.325,
+        87735.375
+      ],
+      "observed_expected_ratio": 0.6398866631598191,
+      "reps": 200,
+      "reported_p": 1,
+      "label": "NOT_DETECTED_UNDER_THIS_NULL",
+      "mean_constraint": {
+        "AI_FIRM": 0.6340864563707297,
+        "DEC_FIRM": 0.7581757814557104,
+        "MIXED": 0.4281184831881344
+      },
+      "source": "https://drive.google.com/file/d/19jWUKoN9pugQ8Og7iMWuW8J_dX76TTs3/view"
+    },
+    "limits": [
+      "R2 and R4 are different network units and share patent base",
+      "null-model non-detection is not proof of absence",
+      "citation tie not equal direct enterprise functional dependency"
+    ]
+  },
+  "B": {
+    "status": "PENDING_USER_GITHUB_PUSH",
+    "dataset": "CPC co-classification network",
+    "note": "Historical 8/42 classification sensitivity is not this Burt network result.",
+    "required": [
+      "repository_full_name",
+      "branch",
+      "commit_sha",
+      "artifact_paths",
+      "node_definition",
+      "tie_definition",
+      "patent_universe_and_year_range",
+      "CPC_revision_vintages",
+      "deduplication_and_time_alignment",
+      "nodes_edges_and_weighting",
+      "Burt_constraint_and_effective_size",
+      "zero_model_definition",
+      "simulation_reps_and_seed",
+      "test_statistics_with_multiplicity_control",
+      "robustness_and_limitations",
+      "repro_command_or_manifest"
+    ],
+    "results": null
+  }
+}
