@@ -67,3 +67,8 @@
 - 原先 A–B–C 八張與各頁研究者細節完整保留；未變更任何 canonical 研究、預先登錄、真實標註、原始資料或私人庫 audit 分支。
 
 **研究分級：** V1.8.7 雙層 MLP 不以 Burt 洞已成立為前提；研究二 3.05 是唯一研究層級的預先登錄流動檢定；專利 R2 0.353/0.380 為事先凍結絕對判準的相反判定；事後全體參照探索性；功能依賴、E9、人類真值與企業實證未確認。此頁是溝通教材，不是原稿更新或投稿授權。
+
+## 2026-11-25 A/C 結構洞核對與 B 待接入
+- 新增 `three-source-network.html`：教授導向三軌證據對照，A=文獻 RQ1 folder 34 分析結案（配對型結構洞 0/16，Graph K 低 constraint 0/22）；C=專利引用 R2 與公司引用 R4 的既有 200 次零模型結果（liaison O/E 0.355639 / 0.639887），本輪重新核對 JSON 而非從 raw 重建；B 保持 PENDING。
+- 機器可讀資料 `data/three-source-evidence-20261125.json`，將 A/C 歸檔來源及 B 必需欄位分離；`THREE_SOURCE_B_INTAKE_CONTRACT.md` 明定 B 的 repo/commit SHA、CPC 時間版本、圖建構、Burt/零模型、種子與結果檢查門檻。
+- 本版只更改公開網頁，不改私人 canonical、原始論文、凍結協定或 Google Drive。請勿把不同網絡量或零模型檢定當作三次獨立驗證。
