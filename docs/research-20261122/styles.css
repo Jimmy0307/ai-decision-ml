@@ -432,3 +432,37 @@
 @media(max-width:920px){.source-lesson-grid{grid-template-columns:1fr}.edition-overview-cards{grid-template-columns:1fr}.edition-overview-card{display:grid;grid-template-columns:minmax(180px,.45fr) 1fr}.edition-overview-card .edition-visual{height:100%;min-height:165px;display:flex;align-items:center}}
 @media(max-width:620px){.source-lesson-pair{grid-template-columns:1fr}.source-summary-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.edition-overview-card{display:flex}.source-lesson{padding:17px}.source-lesson-diagram,.source-lesson-formula{padding:13px}.source-edition-intro{padding:15px 16px}.edition-overview-card .edition-visual{min-height:130px}}
 @media print{.source-lesson{break-inside:avoid;box-shadow:none}.source-lesson-grid{grid-template-columns:1.1fr .9fr}.source-edition-jumps{display:none}.source-lesson-diagram,.source-lesson-formula{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+
+/* 2026-11-25 plain-language reading-first narrative */
+.research-story-intro,.research-plain-opening{margin:25px 0 27px;padding:23px 27px;border:1px solid #d6e5e0;border-radius:17px;background:#fafcfa}
+.research-story-intro h2,.research-plain-opening h2{margin:7px 0 14px;font-size:clamp(1.3rem,2.15vw,1.75rem);line-height:1.43}
+.research-story-intro p,.research-plain-opening p{font-size:1.03rem;line-height:1.95;margin:10px 0;color:#254c50}
+.story-eyebrow{font-weight:820;font-size:.8rem;letter-spacing:.04em;color:#23756b}
+.research-story-path{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-top:15px;border-top:1px solid #dce9e4;padding-top:15px}
+.research-story-path span{font-size:.82rem;color:#215c55;font-weight:760;background:#e7f4ee;border:1px solid #cae2d8;border-radius:6px;padding:7px 10px}
+.research-story-path b{color:#829d98}
+.story-explainer{background:#f8fbfa;border-left:4px solid #2a8b7b;margin:13px 0 16px;padding:14px 19px;border-radius:0 9px 9px 0}
+.story-explainer p{margin:7px 0 11px;font-size:1rem;line-height:1.95;color:#27494d}
+.story-explainer p:last-child{margin-bottom:3px}
+.story-explainer strong{color:#215e56}
+.story-question{font-size:1.06rem !important}
+.story-next-step{font-size:.94rem;line-height:1.85;border-top:1px dashed #d9e6e2;margin:15px 0 9px;padding:15px 14px 3px;color:#355b62}
+.story-next-step strong{color:#197568}
+.research-plain-glossary{border-top:1px solid #d3e4dc;border-bottom:1px solid #d3e4dc;padding:23px 5px;margin:34px 0}
+.research-plain-glossary h2{font-size:1.27rem;margin-bottom:13px}
+.research-plain-glossary dl{display:grid;grid-template-columns:160px 1fr;gap:0 18px;margin:0}
+.research-plain-glossary dt,.research-plain-glossary dd{padding:12px 0;margin:0;border-bottom:1px solid #e5eded;line-height:1.75;font-size:.92rem}
+.research-plain-glossary dt{font-weight:850;color:#1d7366}
+.research-plain-glossary dd{color:#34545c}
+.research-plain-glossary p{font-size:.95rem;line-height:1.83}
+.research-three-questions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-top:17px}
+.research-three-questions article{border:1px solid #d6e6e1;background:#fff;border-radius:12px;padding:17px;display:flex;flex-direction:column}
+.research-three-questions h3{font-size:1.05rem;margin:0 0 8px;color:#205f57}
+.research-three-questions p{font-size:.92rem;line-height:1.85}
+.research-three-questions a{margin-top:auto;font-weight:850;color:#1b786c}
+.source-lesson-formula{align-self:stretch}
+.source-lesson h2{line-height:1.48}
+@media(max-width:850px){.research-three-questions{grid-template-columns:1fr}}
+@media(max-width:620px){.research-story-intro,.research-plain-opening{padding:17px 17px}.story-explainer{padding:12px 13px}.research-plain-glossary dl{grid-template-columns:1fr}.research-plain-glossary dt{border-bottom:0;padding-bottom:2px}.research-plain-glossary dd{padding-top:1px}.research-story-path{gap:6px}.research-story-path span{font-size:.75rem}}
+@media print{.story-explainer,.research-story-intro,.research-plain-opening{break-inside:avoid}}
