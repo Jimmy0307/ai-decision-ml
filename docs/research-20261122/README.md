@@ -6,7 +6,7 @@
 - `index.html`：文獻版／專利版／CPC 版三大資料入口與教學總覽
 - `literature.html`：文獻資料、明示功能配對／共現、低整合、Burt ES／Constraint
 - `patent.html`：專利引用、公司引用、兩種不同 O/E 估計對象、零模型、群別限制度
-- `cpc.html`：CPC 分類、42 格版本敏感度、共分類網絡檢驗待補
+- `cpc.html`：CPC 分類、歷史 8/42 與本輪 7/42 區別、共分類 5,000 次零模型、19/32 低限制度、G06Q50 候選類別橋
 - `course-notes.html`：先前六堂課深入圖解保留
 
 ## 技術附錄與研究背景
@@ -96,3 +96,10 @@
 - CPC 版：核對原始 `p3_cells_main.csv`（42 格，as-of vs current 14 格標籤不同，其中 8 格 OVER/UNDER/NS 實質改判，另外 6 格涉及 INSUFFICIENT）。共分類網絡 Burt 與零模型仍 `PENDING_USER_GITHUB_PUSH`；不宣稱已通過或沒有洞。
 - 既有 A/C 聚合證據的 `data/three-source-evidence-20261125.json` 保留為唯讀資料快照，B 的接入契約 `THREE_SOURCE_B_INTAKE_CONTRACT.md` 不變。
 - 全站網站導覽統一三種資料。原始論文、私人備份與凍結研究未修改。教學圖不等於新增驗證。
+
+## 2026-11-25｜B（CPC 版）已接入，可回查版本
+- GitHub 私人來源：`Jimmy0307/ai-decision-ml-private-backup-20261018` branch `research/structural-holes-abc-20261125`，commit `e03e0f32cc8253e13d4d37f3cf7c6503032360f8`。
+- `STRUCTURAL_HOLES_ABC_20261125/02_RESULTS_B_ZH.md`、`outputs/B_strat_nodes_5000.json`、`logs/REVIEW_B_FINAL.md` 經讀取。最終審查 `NO_BLOCKING`，仍有兩項非阻斷措辭提醒與節點 runner 單元測試待補。
+- B 在 2016–2025 專利上建兩種 CPC 投影：97,948/112,170 件、各 432 節點；三塊 Curveball 200 次格檢定、**事後修訂** 5,000 次節點檢定，19/425／32/420 低限制度，8／10 高有效規模，集合 Jaccard .457，G06Q50 兩版符合候選條件（AI–DEC 兩步路徑份額 .083/.055），但份額沒有獨立虛無檢定。
+- 原預先登錄的整體 O/E .26/.27 不能與選樣偏誤區分，已撤回該整體 UNDER 推論；本輪 42 格有 7 格改判，與舊 CPC 8/42 OR 對照不同。
+- **Burt 類別網絡 ≠ 行動者結構洞**；此處更新的是公開網站證據快照及教學文字，沒有修改私人研究與原輸出。
