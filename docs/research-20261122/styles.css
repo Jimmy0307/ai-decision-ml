@@ -332,3 +332,36 @@
 @media print{.teacher-chapter{break-inside:avoid;box-shadow:none}.teacher-split{grid-template-columns:1.1fr .9fr}.teacher-picture,.teacher-formula{-webkit-print-color-adjust:exact;print-color-adjust:exact}.teacher-route{display:none}}
 
 .teacher-picture:has(.curriculum-large){overflow-x:auto}.teacher-picture .curriculum-large{min-width:730px;max-height:none}
+
+/* A/B/C network evidence report 2026-11-25 */
+.abc-holes-hero{background:radial-gradient(circle at 75% 4%,#1c7776,transparent 55%),linear-gradient(130deg,#113343,#1a5060)}
+.abc-compare{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0 23px}
+.abc-compare article{border:1px solid #d2e2e3;border-radius:12px;padding:18px;background:#f9fcfb;display:flex;flex-direction:column;gap:8px}
+.abc-compare article.abc-pending{background:#f7f7f5;border-color:#dadfdc}
+.abc-source-title{color:#195f65;font-weight:850;font-size:.86rem}
+.abc-figure{font-size:clamp(1.3rem,2vw,1.75rem);color:#174f5a;line-height:1.35}
+.abc-compare p{font-size:.9rem;line-height:1.74;margin:0}
+.abc-compare a{font-size:.87rem;font-weight:800;margin-top:auto}
+.abc-network-card{background:#f8fbfa;border:1px solid #d4e5e2;border-radius:12px;padding:15px;margin:13px 0}
+.abc-network-card h3{font-size:1rem;margin:0 0 8px}
+.abc-network-card svg{display:block;width:100%;height:auto;max-height:240px}
+.abc-network-card p{font-size:.9rem;margin:8px 0 0}
+.abc-formula-grid,.abc-method-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:15px 0}
+.abc-formula-grid>div,.abc-method-pair>div{border:1px solid #cfe2e5;border-radius:11px;padding:15px;background:#f9fcfc}
+.abc-formula-grid strong{font-size:.88rem}.abc-formula-grid p,.abc-method-pair p{font-size:.88rem}
+.abc-method-pair h3{margin:2px 0 9px;font-size:1.04rem}
+.abc-c-table,.abc-b-pending{overflow-x:auto}
+.abc-c-table table,.abc-b-pending table{width:100%;border-collapse:collapse;font-size:.86rem;min-width:610px}
+.abc-c-table td,.abc-c-table th,.abc-b-pending td,.abc-b-pending th{border-bottom:1px solid #d7e5e6;text-align:left;padding:12px 10px}
+.abc-c-table th,.abc-b-pending th{background:#eaf4f4;color:#285c65}
+.abc-bars{border:1px solid #d9e6e4;border-radius:11px;padding:17px;display:grid;gap:15px;margin:17px 0;background:#fafdfc}
+.abc-bars>div{display:grid;grid-template-columns:210px minmax(0,1fr) 72px;gap:12px;align-items:center;font-size:.85rem}
+.abc-bartrack{height:20px;background:#eaf1f1;border-radius:30px;overflow:hidden}
+.abc-bartrack i{display:block;height:100%;border-radius:30px}
+.abc-integration{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0}
+.abc-integration>div{border:1px solid #d7e5e5;border-radius:12px;padding:15px;background:#f8fbfb}
+.abc-integration strong{font-size:.96rem}
+.abc-integration p{font-size:.89rem;margin:6px 0 0}
+@media(max-width:790px){.abc-compare,.abc-formula-grid,.abc-method-pair,.abc-integration{grid-template-columns:1fr}.abc-bars>div{grid-template-columns:130px minmax(0,1fr) 60px;gap:7px}}
+@media(max-width:420px){.abc-bars>div{grid-template-columns:110px minmax(0,1fr) 56px;font-size:.72rem}}
+@media print{.abc-compare{grid-template-columns:repeat(3,minmax(0,1fr))}.abc-network-card,.abc-method-pair>div{break-inside:avoid}}
